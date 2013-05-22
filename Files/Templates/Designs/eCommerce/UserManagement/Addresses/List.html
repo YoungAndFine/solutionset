@@ -1,0 +1,54 @@
+<!--@UserManagement:User.ManageAddresses.MakeDefault.Javascript-->
+<!--@UserManagement:User.ManageAddresses.DeleteAddress.Javascript-->
+<!--@UserManagement:User.ManageAddresses.AddAddress.Javascript-->
+<!--@UserManagement:User.ManageAddresses.UpdateAddress.Javascript-->
+
+<h2><!--@Translate(manageAddresses, "Manage Addresses")--></h2>
+<div class="orderlist-wr">
+    
+    <!--@UserManagement:User.ManageAddresses.FormStart-->
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th><!--@Translate(description, "Description")--></th>            
+                <th><!--@Translate(address, "Address")--></th>          
+                <th class="to-hide"><!--@Translate(zipcode, "Zip code")--></th>
+                <th class="to-hide"><!--@Translate(city, "City")--></th>            
+                <th class="to-hide"><!--@Translate(country, "Country")--></th>
+                <th class="to-hide"><!--@Translate(default, "Default")--></th>            
+                <th><!--@Translate(actions, "Actions")--></th>
+            </tr>
+        </thead>
+        <tbody>        		
+		    <!--@LoopStart(UserManagement:User.UserAddresses)-->
+		    <tr>		    
+		        <td><!--@UserManagement:User.UserAddress.Description--></td>
+                <td><!--@UserManagement:User.UserAddress.Address--></td>
+                <td class="to-hide"><!--@UserManagement:User.UserAddress.Zip--></td>
+                <td class="to-hide"><!--@UserManagement:User.UserAddress.City--></td>
+                <td class="to-hide"><!--@UserManagement:User.UserAddress.Country--></td>
+                <td class="to-hide">
+                    <!--@If Defined(UserManagement:User.UserAddress.Default)-->
+                        <img src="/Admin/images/Check.gif" align="middle" style="vertical-align: middle;">
+                    <!--@EndIf(UserManagement:User.UserAddress.Default)-->                
+                </td>		    
+			    <td>                
+                    <input type="image" onclick="makeDefaultAddress('<!--@UserManagement:User.UserAddress.ID-->');" title="Set default" alt="Set default" src="/Admin/Images/Ribbon/Icons/Small/document_ok.png" style="vertical-align: middle;border:0px;float:left;" />
+                    <input type="image" onclick="deleteAddress('<!--@UserManagement:User.UserAddress.ID-->');" title="Delete" alt="Delete" src="/Admin/images/Ribbon/Icons/Small/DeleteDocument.png" style="vertical-align: middle;border:0px;float:left;" />                
+                    <input type="image" onclick="updateAddress('<!--@UserManagement:User.UserAddress.ID-->');" title="Edit" alt="Edit" src="/Admin/Images/Ribbon/Icons/Small/EditDocument.png" style="vertical-align: middle;border:0px;float:left;" />                
+                </td>
+            </tr>
+            <!--@LoopEnd(UserManagement:User.UserAddresses)-->                                
+        </tbody>
+    </table>
+   
+    <br />
+    <a href="javascript: void(0)" class="dw-button dw-button-green dw-button-small cl" onclick="addAddress();"><!--@Translate(addaddress, "Add address")--></a>
+    <!--@If Defined(UserManagement:User.DetailUrl)-->
+	    <a href="<!--@UserManagement:User.DetailUrl-->" class="dw-button dw-button-green dw-button-small cl"><!--@Translate(backtodetails, "Back to details")--></a>
+    <!--@EndIf(UserManagement:User.DetailUrl)-->
+
+    <!--@UserManagement:User.ManageAddresses.FormEnd-->
+
+</div>
+    

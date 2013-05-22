@@ -1,0 +1,19 @@
+<!--@Ecom:CustomerCenter.SelectEmail.Javascript-->
+<p><!--@Translate(selectemailaddresses, "Select the mail addresses that you want to send to or enter a new address.")--></p>
+
+<br />
+
+<!--@LoopStart(EMailAddresses)-->
+    <input type="checkbox" name="EmailListEntry" id="EmailListEntry_<!--@Ecom:CustomerCenter.EMailList.EmailIndex-->" value="<!--@Ecom:CustomerCenter.EMailList.Email-->" />
+    <label for="EmailListEntry_<!--@Ecom:CustomerCenter.EMailList.EmailIndex-->"><!--@Ecom:CustomerCenter.EMailList.Email--></label>
+<!--@LoopEnd(EMailAddresses)-->
+
+<br />
+
+<!--@Translate(otheremails, "Other e-mail address")-->:
+<input style="width:200px;" type="text" name="EmailListEntryOther" id="txtEmailListEntryOther" />
+
+<br /><br />
+
+<button class="button button-green" onclick="javascript: doSpecifyEmailOK();"><!--@Translate(ok, "Ok")--></button>
+<a href="#" onclick="javascript: doSpecifyEmailCancel();"><!--@Translate(cancel, "Cancel")--></a>

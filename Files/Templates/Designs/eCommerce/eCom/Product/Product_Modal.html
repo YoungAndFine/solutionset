@@ -1,0 +1,78 @@
+<div class="product-list-item-wrapper">
+  <div class="row-fluid">
+    <div class="span7">
+      <div class="popup-variants-partleft">
+        <img src="/Admin/Public/getimage.ashx?Image=<!--@Ecom:Product.ImageSmall.Default.Clean-->&amp;Width=350" class="product-image">
+      </div><!-- / .popup-variants-partleft -->
+    </div>
+    <div class="span5">
+      <div class="popup-variants-partright">
+        <h2 class="product-name"><!--@Ecom:Product.Name--></h2>
+        <div class="product-rating-comments">
+          <div class="product-rating">
+            <!--@Ecom:Product.RatingStars-->
+          </div>
+          <div class="product-pricelabel"><!--@Translate(ProductNumberShort, "no.")-->:&nbsp;<!--@Ecom:Product.Number--></div>
+          <div class="clearfix"></div>
+        </div>
+        <div class="product-description">
+          <!--@Ecom:Product.ShortDescription.Raw-->
+        </div>
+        <div class="product-description">
+          <h4><!--@Translate(productdetails, 'Product details')--></h4>
+          <table class="striped">
+          <!--@LoopStart(ProductCategories)-->
+          <!--@LoopStart(ProductCategoryFields)-->
+            <tr>
+              <td><!--@Ecom:Product.CategoryField.Label-->:</td>
+              <td><!--@Ecom:Product.CategoryField.Value--></td>
+            </tr>
+          <!--@LoopEnd(ProductCategoryFields)-->
+          <!--@LoopEnd(ProductCategories)-->
+          </table>
+        </div>
+        <div class="product-pricebox-wrapper">
+          <div class="product-pricebox">
+            <div>
+              <div>&nbsp;</div>
+              <div><!--@Ecom:Product.Price.PriceWithVATFormatted--> / <!--@Translate(unit, "unit")--></div>
+            </div>
+
+            <!--@LoopStart(BOMProducts)-->
+            <div>
+              <div><!--@Ecom:Product.Link--></div>
+              <div><!--@Ecom:Product.Price.PriceWithVATFormatted--></div>
+            </div>
+            <!--@LoopEnd(BOMProducts)-->
+
+            <!--@LoopStart(BOMConfigurators)-->
+            <div>
+              <b><!--@Ecom:Product.Configurator.Name--></b>
+              <br>
+              <!--@LoopStart(ConfiguratorProducts)-->
+              <div>
+                <!--@Ecom:Product.Configurator.Selected-->>
+                <!--@Ecom:Product.Name-->
+                (<!--@Ecom:Product.ActualPrice-->)
+              </div>
+              <!--@LoopEnd(ConfiguratorProducts)-->
+            </div>
+            <!--@LoopEnd(BOMConfigurators)-->
+
+          </div>
+        </div>
+        <div class="product-facts">
+          <ul>
+            <li>
+              <span class="sprite signv-red" <!--@If Defined(Ecom:Product:Stock.Image.Clean)-->style="background: url('<!--@Ecom:Product:Stock.Image.Clean-->') no-repeat 0 0 !important;"<!--@EndIf(Ecom:Product:Stock.Image.Clean)-->></span> <!--@Ecom:Product:Stock.Text-->
+            </li>
+            <li>
+              <span class="sprite signv"></span> <!--@Translate(ProductDelivary, "Delivery")--> <!--@Ecom:Product.IsInCart)--> <!--@Ecom:Product:Stock.DeliveryText--> <!--@Ecom:Product:Stock.DeliveryUnit-->
+            </li>
+          </ul>
+        </div>
+        <div class="clearfix"></div>
+      </div><!-- / .popup-variants-partright -->
+    </div>
+  </div>
+</div>

@@ -1,0 +1,121 @@
+<div style="width:800px; margin:0 auto; overflow:hidden;">
+
+        <h1><!--@Ecom:Product.Name--></h1>
+        <div style="float:left; width:600px;">
+            <!--@If Defined(Ecom:Product.ImageLarge.Default.Clean)-->
+            <img src='http://<!--@Global:Request.Host-->/Admin/Public/getimage.ashx?fmImage_path=<!--@Ecom:Product.ImageLarge.Clean-->&amp;Width=400&amp;Height=400' />
+            <!--@EndIf(Ecom:Product.ImageLarge.Default.Clean)-->
+
+            <div id="descriptionContent">
+
+                <div class="product-description-s">
+                    <div itemprop="description"><!--@Ecom:Product.ShortDescription--></div>
+                </div>
+                <div class="product-number">
+                    <b><!--@Translate(Product_number, "Product no.")-->:</b> <span itemprop="identifier" content="mpn:<!--@Ecom:Product.Number-->"><!--@Ecom:Product.Number--></span>
+                </div>
+            </div>
+                <div id="detailsContent">
+                    <br />
+                    <span class="label"><b><!--@Translate(productdetails, 'Product details')-->:</b></span>
+                    <table class="striped">
+                    <!--@LoopStart(ProductCategories)-->
+                        <!--@LoopStart(ProductCategoryFields)-->
+                            <tr>
+                                <td><!--@Ecom:Product.CategoryField.Label-->:</td>
+                                <td><!--@Ecom:Product.CategoryField.Value--></td>
+                            </tr>
+                            <!--@LoopEnd(ProductCategoryFields)-->
+                    <!--@LoopEnd(ProductCategories)-->
+                    </table>
+                </div>
+
+
+                <h3><!--@Translate(reviews, "reviews")--></h3>
+
+                <div id="reviewsContent">
+                    <div class="fiveCommentDivContainer tabContentShown">
+                    <!--@If(Comments.Count==0)-->
+                        <!--@Translate(noreviews, "There are currently no reviews")-->
+                    <!--@EndIf-->
+
+
+                    <!--@LoopStart(Comments)-->
+                        <div class="CustomerComment">
+                            <!-- @Comments.LoopCounter -->
+                            <!-- @Comments.LoopMod5 -->
+                            <div class="comment-stars"><!--@Stars--></div>
+                            <div class="comment-commenter"><!--@Name--> - <i><!--@CreatedDate.GeneralDate--></i></div>
+                            <div class="comment-text">"<!--@Text-->"</div>
+                        </div>
+
+                    <!--@LoopEnd(Comments)-->
+                    </div>
+                </div>
+
+
+        </div>
+
+        <div style="float:right; width:190px;">
+
+             <div style="font-weight:bold; font-size:20px;"><!--@Ecom:Product.Price.PriceWithVATFormatted--> / <!--@Translate(unit, "unit")--></div>
+                 <br />
+                 <div class="product-rating">
+                     <span><!--@Comments.Stars--></span><br />
+                     <span itemprop="rating" class="micro_hide"><!--@Comments.Rating--></span>
+                     <span class="label">(<span itemprop="count" class="micro_n"><!--@Ecom:Product.CommentCount--></span> <!--@Translate(reviews, "reviews")-->)
+                 </div>
+                 <br />
+
+                    <!--@If(Ecom:Product.VariantCount>0)-->
+                    <div><b><!--@Translate(Choose_variant, "Choose your variant")--></b>:</div>
+                    <div class="product-variants <!--@If Defined(Ecom:Product.IsInCart)-->hidden<!--@EndIf(Ecom:Product.IsInCart)-->">
+                        <!--@LoopStart(VariantCombinations)-->
+                        <div>
+                            <!--@Ecom:VariantCombination.VariantText-->
+                        </div>
+                        <!--@LoopEnd(VariantCombinations)-->
+                    </div>
+                    <!--@EndIf-->
+
+                    <div class="product-pricebox">
+
+                        <!--@LoopStart(BOMProducts)-->
+                        <div>
+                            <div><!--@Ecom:Product.Link--></div>
+                            <div><!--@Ecom:Product.Price.PriceWithVATFormatted--></div>
+                        </div>
+                        <!--@LoopEnd(BOMProducts)-->
+                        <!-- ### TODO: Need to reproduce this layout and apply styles ### -->
+                        <!--@LoopStart(BOMConfigurators)-->
+                        <div>
+                            <b><!--@Ecom:Product.Configurator.Name--></b>
+                            <br>
+                                <!--@LoopStart(ConfiguratorProducts)-->
+                                <div>
+                                    <!--@Ecom:Product.Configurator.Selected-->>
+                                    <!--@Ecom:Product.Name-->
+                                    (<!--@Ecom:Product.ActualPrice-->)
+                                </div>
+                                <!--@LoopEnd(ConfiguratorProducts)-->
+                        </div>
+                        <!--@LoopEnd(BOMConfigurators)-->
+
+                    </div>
+                    <br />
+
+
+                 <div class="product-delivery">
+                     <div style="background: url('<!--@Ecom:Product:Stock.Image.Clean-->') no-repeat; padding:0 0 0 20px;">
+                         <span itemprop="availability" content="<!--@If(Ecom:Product.Stock>0)-->in_stock<!--@EndIf--><!--@If(Ecom:Product.Stock<=0)-->out_of_stock<!--@EndIf-->" class="micro_n"><!--@Ecom:Product:Stock.Text--></span>
+                     </div>
+                     <div style="background: url('<!--@Ecom:Product:Stock.Image.Clean-->') no-repeat; padding:0 0 0 20px;">
+                         <!--@Translate(Delivery_in, "Delivery in")-->
+                         <!--@Ecom:Product:Stock.DeliveryText-->
+                         <!--@Ecom:Product:Stock.DeliveryUnit-->
+                     </div>
+                 </div>
+                 <br /><br />
+
+            </div>
+</div>

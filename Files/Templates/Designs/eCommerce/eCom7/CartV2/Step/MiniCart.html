@@ -1,0 +1,91 @@
+<!--@LoopStart(OrderLines)--> 
+<div class="product-line">
+
+  <!--@If Not Defined(Ecom:Order:OrderLine.IsProduct)-->
+  <div class="product-name">
+    <!--@Translate(discount, 'Discount')--> <!--@Ecom:Order:OrderLine.ProductName-->
+    <i class="discount-price"><!--@Ecom:Order:OrderLine.Price.PriceWithoutVATFormatted--></i>
+  </div>
+  <!--@EndIf(Ecom:Order:OrderLine.IsProduct)-->
+
+  <!--@If Defined(Ecom:Order:OrderLine.IsProduct)-->
+  <div class="product-name">
+    <div>
+      <a href="/Default.aspx?ID=<!--@If(Global:Area.ID==1)-->489<!--@EndIf--><!--@If(Global:Area.ID==17)-->527<!--@EndIf--><!--@If(Global:Area.ID==18)-->503<!--@EndIf--><!--@If(Global:Area.ID==19)-->528<!--@EndIf-->&ProductID=<!--@Ecom:Order:OrderLine.ProductID-->" data-toggle="modal" data-target="#productPreview"><!--@Ecom:Order:OrderLine.ProductName--></a>
+    </div>
+    <div>
+      <i><!--@Translate(Product_number, "Product no.")-->: <!--@Ecom:Product.Number--></i>
+    </div>
+  </div>
+  <div class="product-image">
+    <a href="/Default.aspx?ID=<!--@If(Global:Area.ID==1)-->489<!--@EndIf--><!--@If(Global:Area.ID==17)-->527<!--@EndIf--><!--@If(Global:Area.ID==18)-->503<!--@EndIf--><!--@If(Global:Area.ID==19)-->528<!--@EndIf-->&ProductID=<!--@Ecom:Order:OrderLine.ProductID-->" data-toggle="modal" data-target="#productPreview" data-cache="false">
+      <img src='/Admin/Public/getimage.ashx?fmImage_path=<!--@Ecom:Product.ImageLarge.Clean-->&amp;Width=250' width="250" height="250" />
+    </a>  
+  </div>
+  <div class="quantity-text">
+    <!--@Ecom:Order:OrderLine.Quantity--> <!--@Translate(pcs, "pcs")-->.
+  </div>
+  <!--@EndIf(Ecom:Order:OrderLine.IsProduct)-->
+
+</div>
+<!--@LoopEnd(OrderLines)-->
+
+<div class="price-line">
+  <div class="price-label">
+    <!--@Translate(paymentfee, "Payment fee")-->
+  </div>
+  <div class="price-value">
+   <!--@Ecom:Order.ShippingFee.Currency.Symbol--> <span class="cart_pay_price"><!--@Ecom:Order.PaymentFee.Price--></span> <!--Ecom:Order.PaymentFee.PriceWithoutVATFormatted-->  
+  </div>
+  <div class="clearfix"></div>
+  <div class="price-label">
+    <!--@Translate(shippingfee, "Shipping fee")-->
+  </div>
+  <div class="price-value">
+    <!--@Ecom:Order.ShippingFee.Currency.Symbol--> <span class="cart_ship_price"><!--@Ecom:Order.ShippingFee.PriceWithVAT--></span> <!--Ecom:Order.ShippingFee.PriceWithoutVATFormatted--> 
+  </div>
+  <div class="clearfix"></div>
+</div>    
+
+<div class="price-line">
+  <div class="price-label">
+  <!--@Translate(totalPrice, "Total price")--> (<!--@Translate(noVAT, "excl. VAT")-->)
+  </div>
+  <div class="price-value price_withoutvat" data-goods_price="<!--@Ecom:Order.PriceWithoutFees.PriceWithoutVAT-->">
+      <!--@Ecom:Order.ShippingFee.Currency.Symbol--> <span><!--@Ecom:Order.Price.PriceWithoutVAT--></span>
+  </div>
+  <div class="clearfix"></div>
+  <div class="price-label">
+      <!--@Translate(vat, "VAT")-->
+  </div>
+  <div class="price-value goods_vat" data-goodsvat="<!--@Ecom:Order.Price.VAT-->">
+      <!--@Ecom:Order.Price.VAT-->
+  </div>
+  <div class="clearfix"></div>
+</div>
+
+<div class="price-line">
+  <div class="price-label">
+    <strong><!--@Translate(totalPrice, "Total price")--> (<!--@Translate(withVAT, "incl. VAT")-->)</strong>
+  </div>
+  <div class="price-value">
+    <strong><!--@Ecom:Order.ShippingFee.Currency.Symbol--> <span class="cart_total"><!--@Ecom:Order.OrderLines.TotalPriceWithoutSymbol--></span></strong>
+  </div>
+  <div class="clearfix"></div>
+</div>
+
+<div class="action-line">
+  <a href="/Default.aspx?ID=<!--@If(Global:Area.ID==1)-->52<!--@EndIf--><!--@If(Global:Area.ID==17)-->325<!--@EndIf--><!--@If(Global:Area.ID==18)-->377<!--@EndIf--><!--@If(Global:Area.ID==19)-->440<!--@EndIf-->" class="btn dw-button-gray"><!--@Translate(showcart, "edit order")--></a>
+</div>
+
+<div class="modal hide fade modal-type-variants" id="productPreview" tabindex="-1" role="dialog">
+  <div class="modal-header">
+    <button type="button" class="close sprite blue-close" data-dismiss="modal"></button>
+    <h3><!--@Translate(productpreview, "Product preview")--></h3>
+  </div><!-- / .modal-header -->
+  <div class="modal-body">
+    <div class="row-fluid no-space">
+      <div class="loader"></div>
+    </div>
+  </div><!-- / .modal-body -->
+</div><!-- / .modal -->

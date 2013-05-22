@@ -1,0 +1,76 @@
+﻿<div class="box-rounded product-comparation">
+  <legend class="box-headline">
+    <h3>
+      <!--@Translate(SelectedProducts, "Selected products")-->
+    </h3>
+  </legend>
+  <div class="box-content productlist">
+
+    <!--@LoopStart(Products)-->
+    <div class="product-list-item-wrapper">
+      <div class="product-link-wrapper">
+        <a href="<!--@Ecom:Product.LinkGroup.Clean-->" class="product-link" title="<!--@Ecom:Product.Name-->">
+          <!--@Ecom:Product.Name-->
+        </a>
+      </div>
+      <!--@If Defined(Ecom:Product.ImageSmall.Default.Clean)-->
+      <a class="product-image" href="<!--@Ecom:Product.ImageSmall.Default.Clean-->">
+        <img src="/Admin/Public/getimage.ashx?Image=<!--@Ecom:Product.ImageSmall.Default.Clean-->&Width=185" alt="" title="<!--@Ecom:Product.Name-->" />
+      </a>
+      <!--@EndIf(Ecom:Product.ImageSmall.Default.Clean)-->
+      <div class="product-price">
+        <!--@Ecom:Product.Price.PriceWithoutVATFormatted-->
+      </div>
+      <div class="product-description">
+        <!--@Ecom:Product.ShortDescription-->
+      </div>
+      <div class="product-rating-comments">
+        <div class="product-rating">
+          <span itemscope itemtype="http://data-vocabulary.org/Review-aggregate">  
+            <span itemprop="itemreviewed" class="hidden"><!--@Ecom:Product.Name--></span>
+            <span itemprop="rating" itemscope itemtype="http://data-vocabulary.org/Rating">
+              <span itemprop="average"><!--@Ecom:Product.Rating--></span> 
+              out of
+              <span itemprop="best">5</span> 
+            </span>
+            <div class="product-comments">
+              <div class="sprite commentSmall"></div>
+              (<a href="<!--@Ecom:Product.LinkGroup.Clean-->&TabReviews=true"><span itemprop="count"><!--@Ecom:Product.CommentCount--></span></a>)
+            </div>
+          </span>
+        </div>
+      </div>
+      <div>
+        <ul>
+          <li><!--@Translate(ProductNumber, "Product nr.")-->:&nbsp;<span><!--@Ecom:Product.Number--></span></li>
+          <li><!--@Translate(StockState, "Stock")-->:&nbsp;<span><!--@Ecom:Product:Stock.Text--></span></li>
+          <li><!--@Translate(EstimatedDelivaryTime, "Est. delivary time")-->:&nbsp;<span><!--@Ecom:Product:Stock.DeliveryText--> <!--@Ecom:Product:Stock.DeliveryUnit--></span></li>
+          <!--@LoopStart(ProductCategories)-->
+          <!--@LoopStart(ProductCategoryFields)-->
+          <li><!--@Ecom:Product.CategoryField.Label-->:&nbsp;<!--If(Ecom:Product.CategoryField.Value<>'')--><span><!--@Ecom:Product.CategoryField.Value--></span><!--@EndIf--><!--If(Ecom:Product.CategoryField.Value='')--><span class="product-comparison-various-notspecified">(<!--@Translate(NotSpecified, "Not specified")-->)</span><!--@EndIf--></li>
+          <!--@LoopEnd(ProductCategoryFields)-->
+          <!--@LoopEnd(ProductCategories)-->
+        </ul>
+      </div>
+      <div>
+        <a class="btn dw-button-green" href="/<!--@Ecom:Product.LinkGroup.Clean-->&cartcmd=add">
+          <i class="icon sprite cart-tiny-white"></i>
+          <strong><!--@Translate(AddToCart, "Add to cart")--></strong>
+        </a>
+      </div>
+    </div>
+    <!--@LoopEnd(Products)-->
+
+  </div>
+</div>
+
+<script type="text/javascript">
+  require(
+    ["jquery", "layout"], 
+    function ($) {
+      $(document).ready(function () {
+        Layout.Products.MicroformatReviewConvert();
+      });
+    }
+  );
+</script>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<items>
+  <item name="Slider" systemName="Slider" description="">
+    <fields>
+      <field name="Slide" systemName="Slide" type="System.String, mscorlib">
+        <editor type="Dynamicweb.Content.Items.Editors.LongTextEditor, Dynamicweb" />
+      </field>
+      <field name="Slide text" systemName="SlideText" type="System.String, mscorlib">
+        <editor type="Dynamicweb.Content.Items.Editors.TextEditor, Dynamicweb" />
+      </field>
+    </fields>
+  </item>
+</items>

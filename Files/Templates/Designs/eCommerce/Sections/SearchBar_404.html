@@ -1,0 +1,32 @@
+<section class="container searchbar-wrapper searchbar-wrapper-top">
+  <div class="row">
+    <div class="span12 instant-search">
+      <div class="search-box">
+        <form action="/Default.aspx">
+          <div class="sprite search"></div>
+          <label style="display:none;" for="q">&nbsp;</label>
+          <input type="hidden" id="searchstring" value="I want">
+          <!--@If(Global:Area.ID==1)-->
+            <input type="hidden" value="48" name="ID">
+          <!--@EndIf-->
+          <!--@If(Global:Area.ID==17)-->
+            <input type="hidden" value="324" name="ID">
+          <!--@EndIf-->
+          <!--@If(Global:Area.ID==18)-->
+            <input type="hidden" value="376" name="ID">
+          <!--@EndIf-->
+          <!--@If(Global:Area.ID==19)-->
+            <input type="hidden" value="439" name="ID">
+          <!--@EndIf-->
+          <input type="text" tabindex="1" spellcheck="false" autocomplete="off" name="eComQuery" id="q">
+          <input type="submit" onclick="eCommerce.Overlay.show(document.body);" value="Search" class="dw-button dw-button-green">
+          <div id="search-box-preloader-top"></div>
+        </form>
+
+        <!-- "Instant search results" template -->
+        <!--@Include(Sections/InstantSearchTop.html)--> 
+        
+      </div>
+    </div>
+  </div>
+</section>

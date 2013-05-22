@@ -1,0 +1,273 @@
+<!--@MasterPageFile(MasterPages/Main.html)-->
+<!--@Layout.Title(Products)-->
+<!--@Layout.Description()-->
+<script type="text/javascript" src="assets/javascripts/variant.js"></script>
+
+<section class="container content-wrapper productlist <!--@If Defined(Server:Request.productid)-->product-details<!--@EndIf(Server:Request.productid)-->" data-autoloader-pageid="<!--@If(Global:Area.ID==1)-->494<!--@EndIf--><!--@If(Global:Area.ID==17)-->495<!--@EndIf-->">
+  <!--@If Not Defined(Server:Request.productid)-->
+  <div class="row">
+    <div class="span12">
+      <h1>
+				<!--@If Defined(Server:Request.compare)-->
+				<!--@Translate(ProductComparison, "Product comparison table")-->
+				<!--@EndIf(Server:Request.compare)-->
+
+				<!--@If Not Defined(Server:Request.compare)-->
+        <!--@If Defined(Server:Request.ecomquery)-->
+        <!--@Translate(productssearch, "Search results")-->&nbsp;(<!--@Page:Ecom.ProductList.PageProdCnt-->&nbsp;<!--@Translate(Products, "products")-->)
+        <!--@EndIf(Server:Request.ecomquery)-->
+
+        <!--@If Not Defined(Server:Request.ecomquery)-->
+        <!--@If Defined(Page:Ecom.ProductList.GroupName)-->
+        <!--@Page:Ecom.ProductList.GroupName-->
+        <!--@EndIf(Page:Ecom.ProductList.GroupName)-->
+        <!--@If Not Defined(Page:Ecom.ProductList.GroupName)-->
+        <!--@Global:Page.Name-->
+        <!--@EndIf(Page:Ecom.ProductList.GroupName)-->
+        <!--@EndIf(Server:Request.ecomquery)-->
+				<!--@EndIf(Server:Request.compare)-->
+      </h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span12 catalog-header">
+      <div class="row-fluid no-space">
+        <div class="span3">
+          <div>
+            <strong>
+							<span id="ProductsDisplayCount"><!--@Page:Ecom.ProductList.PageSize--></span> <!--@Translate(of, "of")--> <!--@Page:Ecom.ProductList.PageProdCnt-->&nbsp;<!--@Translate(products, "products")-->
+						</strong>
+          </div>
+        </div>
+        <div class="span4">
+          <div><!--@Translate(sortby, "Sort By")--></div>
+          <div>
+            <select id="lstOrderBy" name="lstOrderBy">
+              <option value="Rating,DESC"><!--@Translate(Rating, "Rating")--></option>
+              <option value="Name,ASC"><!--@Translate(Name, "Name")--></option>
+              <option value="Number,ASC"><!--@Translate(Number, "Number")--></option>
+              <option value="Price,ASC"><!--@Translate(PriceAscending, "Price, lowest first")--></option>
+              <option value="Price,DESC"><!--@Translate(PriceDescending, "Price, highest first")--></option>
+              <option value="MostSold,DESC"><!--@Translate(MostSold, "Most sold")--></option>
+            </select>
+          </div>
+        </div>
+        <div class="span3">
+          <span class="list-mode">
+          <div class="btn-toolbar">
+            <div class="btn-group">
+              <!-- <button data-list-mode="List" class="sprite mode-list list-mode-list"></button> -->
+              <button type="button" class="btn btn-small list-mode-list" data-list-mode="List"><i class="icon-th-list"></i></button>
+              <!-- <button data-list-mode="Tiles" class="sprite mode-tiles list-mode-tiles"></button> -->
+              <button type="button" class="btn btn-small list-mode-tiles" data-list-mode="Tiles"><i class="icon-th"></i></button>
+              <!-- <button type="button" class="btn btn-small filter-collapse" data-toggle="collapse" data-target=".catalog-content .filler-left"><i class="icon-filter-collapse"></i></button> -->
+            </div>
+          </div>
+          </span>
+        </div>
+      </div>
+      <span id="allProductCount" style="display:none;"><!--@Page:Ecom.ProductList.PageProdCnt--></span>
+      <span id="productsPageSize" style="display:none;"><!--@Page:Ecom.ProductList.PageSize--></span>
+    </div>
+  </div>
+  <!--@EndIf(Server:Request.productid)-->
+  <div class="row">
+    <div class="span12 catalog-content">
+      <div class="container-fluid fill">
+        <div class="row-fluid no-space">
+          <!--@If Not Defined(Server:Request.productid)-->
+          <div class="span3 filler-left">
+            <div class="filter-wrapper filter-reset filter-colored">
+              <div class="filter-content">
+                <div class="colored-section">
+                  <!--@Translate(refineselection, "Refine selection")-->
+                  <button type="button" class="btn btn-small filter-collapse collapsed" data-toggle="collapse" data-target="#collapsable-filterset"><i class="icon-filter-collapse"></i></button>
+                </div>
+              </div>
+            </div>
+            <div class="collapse" id="collapsable-filterset">
+              <div class="filter-wrapper filter-reset">
+                <div class="filter-content">
+                  <a href="Default.aspx?ID=<!--@DwPageID-->&GroupID=<!--@Server:Request.groupid-->" class="dw-button dw-button-small dw-button-gray"><!--@Translate(resetall, "Reset all selections")--></a>
+                </div>
+              </div>
+              <!--@Page:Ecom.Search-->
+            </div>
+            <div class="clearfix"></div>
+          </div>
+          <!--@EndIf(Server:Request.productid)-->
+
+
+          <div class="<!--@If Not Defined(Server:Request.productid)-->span9 productlist-wrapper<!--@EndIf(Server:Request.productid)--><!--@If Defined(Server:Request.productid)-->span12 productdetails-wrapper<!--@EndIf(Server:Request.productid)--> dwcontent" id="content-main" title="Main content" data-productlist-mode="list">
+
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--@If Not Defined(Server:Request.productid)-->
+<!-- [!] Need review the code of autoloader plugin and remove this section -->
+<!--@If(Page:Ecom.ProductList.TotalPages>1)-->
+<div class="productlist-paging" style="display: none;">
+  <ul>
+    <li class="product-list-paging-hint"><!--@Translate(page, "Page")-->:</li>
+    <!--@If(Page:Ecom.ProductList.CurrentPage>1)-->
+    <li><a href="<!--@Page:Ecom.ProductList.PrevPage.Clean-->">&laquo;&nbsp;<span><!--@Translate(PreviousPage, "Previous")--></span></a></li>
+    <li><span class="product-list-paging-separator">|</span></li>
+    <!--@EndIf-->
+
+    <!--@LoopStart(Page:Ecom.ProductList.Pages7)-->
+
+    <!--@If Defined(Page:Ecom.ProductList.Pages7.Page.IsCurrent)-->
+    <li class="product-list-paging-current"><a href="<!--@Page:Ecom.ProductList.Pages7.Page.UrlHtmlEncoded-->"><!--@Page:Ecom.ProductList.Pages7.Page.Number--></a></li>
+    <!--@EndIf(Page:Ecom.ProductList.Pages7.Page.IsCurrent)-->
+
+    <!--@If Not Defined(Page:Ecom.ProductList.Pages7.Page.IsCurrent)-->
+    <li><a class="product-list-paging-page" href="<!--@Page:Ecom.ProductList.Pages7.Page.UrlHtmlEncoded-->"><!--@Page:Ecom.ProductList.Pages7.Page.Number--></a></li>
+    <!--@EndIf(Page:Ecom.ProductList.Pages7.Page.IsCurrent)-->
+
+    <!--@If Not Defined(Page:Ecom.ProductList.Pages7.Page.IsLastPageGlobal)-->
+    <li class="separator">|</li>
+    <!--@EndIf(Page:Ecom.ProductList.Pages7.Page.IsLastPageGlobal)-->
+
+    <!--@LoopEnd(Page:Ecom.ProductList.Pages7)-->
+
+    <!--@If(Page:Ecom.ProductList.TotalPages>7)-->
+    <!--@If Not Defined(Page:Ecom.ProductList.Pages7.EndsWithLastPage)-->
+    <li>...<!--@Translate(PagingOf, " of ")--><!--@Page:Ecom.ProductList.TotalPages--><!--@Translate(PagingPages, " pages ")--></li>
+    <!--@EndIf(Page:Ecom.ProductList.Pages7.EndsWithLastPage)-->
+    <!--@EndIf-->
+
+    <!--@If(Page:Ecom.ProductList.TotalPages>Page:Ecom.ProductList.CurrentPage)-->
+    <li class="separator">|</li>
+    <li class="product-list-paging-last"><a href="<!--@Page:Ecom.ProductList.NextPage.Clean-->"><!--@Translate(NextPage, "Next")--></a></li>
+    <!--@EndIf-->
+    <li class="separator">|</li>
+    <li class="product-list-paging-all"><a href="#" onclick="$.viewall()"><!--@Translate(viewall, "View all")--></a></li>
+  </ul>
+</div>
+<div class="clearfix"></div>
+<!--@EndIf-->
+
+<script type="text/javascript">
+    require([ 'jquery', 'jquery-productsload', 'jquery-cookie' ], function($) {
+
+        $(document).ready(function () {
+
+            var requestPageID = $(".container.productlist").data("autoloader-pageid");
+
+            /*
+            //Free shipping
+            var need = 50;
+            need = '<!--@If(Global:Area.ID==1)--><!--@Global:Paragraph.Content(1985)--><!--@EndIf--><!--@If(Global:Area.ID==17)--><!--@Global:Paragraph.Content(1986)--><!--@EndIf-->';
+
+            var basket = 0;
+            basket = '<!--@Ecom:Order.OrderLines.TotalPriceWithoutSymbol-->';
+            basket = parseInt(basket.replace(',', ''));
+            var free_shipping = parseInt(need) - basket;
+            if(free_shipping > 0){
+                $('.purchase').show();
+                $('.need_more').html(free_shipping);
+            }
+            else{
+                $('.purchase').hide();
+            }*/
+
+
+            //$('.purchase').hide();
+
+
+            <!--@If(Global:Area.ID!=22)-->
+            // Show added2Cart dialog
+            if ($.cookie("addedtocart") == '1') {
+                $("#addedModal").modal('show');
+                $.cookie("addedtocart", null);
+            }
+            <!--@EndIf-->
+
+            $(".productlist").productsAutoLoad({
+                productsContainer: ".productlist-wrapper",
+                pagingSelector: ".productlist-paging",
+                requestPath: "/Default.aspx?ID=" + requestPageID + "<!--@If Defined(Server:Request.groupid)-->&groupid=<!--@Server:Request.groupid--><!--@EndIf(Server:Request.groupid)-->",
+                onProductsLoaded: function () {
+                  // Update product list counter
+                  $.updateProductsListCounter({
+                    productList: ".productlist-wrapper[data-productlist-mode='list']",
+                    productListItem: ".product-list-item-wrapper",
+                    productTilesList: ".productlist-wrapper[data-productlist-mode='tiles']",
+                    productTilesListItem: ".product-list-item-wrapper",
+                    itemsDisplayed: "#ProductsDisplayCount",
+                    productsPerPage: parseInt($("#productsPageSize").html())
+                  });
+
+                  Layout.Products.MicroformatReviewConvert();
+                }
+            });
+
+
+
+        });
+
+    }
+  );
+</script>
+<!--@EndIf(Server:Request.productid)-->
+
+<!--@If Defined(Server:Request.productid)-->
+<script type="text/javascript">
+    require(
+    ['jquery', 'jquery.cookie'],
+    function ($) {
+
+        $(document).ready(function () {
+
+            <!--@If(Global:Area.ID!=22)-->
+
+            // Show added2Cart dialog
+            if ($.cookie("addedtocart") == '1') {
+                $("#addedModal").modal('show');
+                $.cookie("addedtocart", null);
+            }
+            <!--@EndIf-->
+
+
+        });
+
+    }
+  );
+</script>
+<!--@EndIf(Server:Request.productid)-->
+
+<script type="text/javascript">
+  require(['layout'], function ($) {
+    Layout.Translate.ProductVariantIsEmpty = '<!--@Translate(ProductVariantIsEmpty, 'Please select the variant you would like')-->';
+  });
+</script>
+
+<div class="TODO">Modal added to cart</div>
+
+<!--@If(Global:Area.ID!=22)-->
+<!--Modal added to cart-->
+<div class="modal fade hide added-to-cart" id="addedModal" tabindex="-1" role="dialog">
+  <div class="modal-body">
+    <h3><span class="sprite"></span><!--@If(Global:Area.ID==1)--><!--@Global:Paragraph.Content(2009)--><!--@EndIf--><!--@If(Global:Area.ID==17)--><!--@Global:Paragraph.Content(2010)--><!--@EndIf--></h3>
+    <div class="purchase"><!--@If(Global:Area.ID==1)--><!--@Global:Paragraph.Content(2011)--><!--@EndIf--><!--@If(Global:Area.ID==17)--><!--@Global:Paragraph.Content(2012)--><!--@EndIf--></div>
+    <div class="added-to-cart-btns">
+      <a class="dw-button dw-button-gray" data-dismiss="modal">
+        <!--@Translate(buymore, "Buy More")-->
+      </a>
+      <a class="dw-button dw-button-green" href="/Default.aspx?ID=<!--@If(Global:Area.ID==1)-->52<!--@EndIf--><!--@If(Global:Area.ID==17)-->325<!--@EndIf--><!--@If(Global:Area.ID==18)-->377<!--@EndIf--><!--@If(Global:Area.ID==19)-->440<!--@EndIf--><!--@If(Global:Area.ID==22)-->613<!--@EndIf-->">
+        <!--@Translate(viewcart, "View Cart")-->
+        <span class="sprite arr-forward-small-white"></span>
+      </a>
+    </div>
+    <div class="dont">
+      <label><input type="checkbox" class="dont" /> <!--@Translate(dontshow, "Don't show this message next time I add a product to the cart")--></label>
+    </div>
+  </div>
+</div>
+<!--@EndIf-->

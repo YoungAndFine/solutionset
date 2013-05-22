@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	    <title><!--@Translate(yourOrder, "Your order")--></title>
+    </head>
+    <body style="margin:0;padding:0; line-height:1.4;">
+
+        <div style="color: #4B4F5B;font-family:Arial;font-size: 13px;">
+            <div style="float: right; background: url(http://<!--@Global:Request.Host-->/Files/Templates/Designs/eCommerce01_responsive/assets/img/Logo.png) no-repeat center;"></div>
+            <div id="content">
+                <h1 style="margin-top: 20px; margin-bottom: 10px;color: #FF8500; font-size: 22px;"><!--@Translate(thankYou, "Thank you for your order")-->, <!--@Ecom:Order.Customer.Name--></h1>
+                <p style="padding-bottom: 30px;"><a style="margin-bottom: 30px;" href="http://<!--@Global:Request.Host-->/Default.aspx?ID=55&CC42=Order&OrderID=<!--@Ecom:Order.ID-->"><!--@Translate(orderinbrowser, "Click here to see your order in a browser")--></a></p>
+               
+               
+                
+    
+	                <div style="float:left;margin-right:1%;width:32%;background:#F4F4F4;overflow: hidden;border: 1px solid #C3C3C3;border-radius:5px;box-shadow: 1px 1px 3px #ECECEC;margin-bottom: 10px;padding: 0 !important;">
+		                <h3 style="font-size: 14px;background:#F4F4F4; border-bottom: 1px solid #C3C3C3; height: 24px; line-height: 20px; margin: 5px 0 0; padding-left: 10px; text-shadow: 1px 1px 2px #FFFFFF;">Order information</h3>
+		                <div style="height: 110px;background: #FFFFFF; padding: 10px 10px 5px !important;">
+		                    <div>Order number: <b><!--@Ecom:Order.ID--></b></div>
+	                        <div>Date: <b><!--@Ecom:Order.Date--></b></div>
+	                        <div>Payment method: <b><!--@Ecom:Order.PaymentMethod--></b></div>
+                        </div>
+                    </div>
+	
+	                <div style="float: left;margin-right:1%;width:32%;background:#F4F4F4;overflow: hidden;border: 1px solid #C3C3C3;border-radius:5px;box-shadow: 1px 1px 3px #ECECEC;margin-bottom: 10px;padding: 0 !important;">
+		                <h3 style="font-size: 14px;background:#F4F4F4; border-bottom: 1px solid #C3C3C3; height: 24px; line-height: 20px; margin: 5px 0 0; padding-left: 10px; text-shadow: 1px 1px 2px #FFFFFF;">Contact information</h3>
+		                <div style="height: 110px;background: #FFFFFF; padding: 10px 10px 5px !important;">
+                            <b>
+			                    <!--@Ecom:Order.Customer.Company--><br />
+			                    <!--@Ecom:Order.Customer.Name--><br />
+			                    <!--@Ecom:Order.Customer.Address--><br />
+			                    <!--@Ecom:Order.Customer.Zip--> <!--@Ecom:Order.Customer.City--><br />
+                                <!--@Ecom:Order.Customer.Country-->
+                            </b>
+                        </div>
+                    </div>
+	
+	                <div style="float:left;width:32%;background:#F4F4F4;overflow: hidden;border: 1px solid #C3C3C3;border-radius:5px;box-shadow: 1px 1px 3px #ECECEC;margin-bottom: 10px;padding: 0 !important;">
+		                <h3 style="font-size: 14px;background:#F4F4F4; border-bottom: 1px solid #C3C3C3; height: 24px; line-height: 20px; margin: 5px 0 0; padding-left: 10px; text-shadow: 1px 1px 2px #FFFFFF;">Delivery information</h3>
+		                <div style="height: 110px;background: #FFFFFF; padding: 10px 10px 5px !important;">
+                            <b>
+                                <!--@If Not Defined(Ecom:Order.Delivery.Address)-->
+					                <!--@Ecom:Order.Customer.Company--><br />
+					                <!--@Ecom:Order.Customer.Name--><br />
+					                <!--@Ecom:Order.Customer.Address--><br />
+					                <!--@Ecom:Order.Customer.Zip--> <!--@Ecom:Order.Customer.City--><br />
+                                    <!--@Ecom:Order.Customer.Country-->
+                                <!--@EndIf(Ecom:Order.Delivery.Address)-->
+                                <!--@If Defined(Ecom:Order.Delivery.Address)-->
+					                <!--@Ecom:Order.Delivery.Company--><br />
+					                <!--@Ecom:Order.Delivery.Name--><br />
+					                <!--@Ecom:Order.Delivery.Address--><br />
+					                <!--@Ecom:Order.Delivery.Zip--> <!--@Ecom:Order.Delivery.City--><br />
+                                    <!--@Ecom:Order.Delivery.Country-->
+                                <!--@EndIf(Ecom:Order.Delivery.Address)-->
+                            </b>
+                        </div>
+                    </div>
+
+	
+	                <div style="width:98%;background:#F4F4F4;overflow: hidden;border: 1px solid #C3C3C3;border-radius:5px;box-shadow: 1px 1px 3px #ECECEC;margin-bottom: 10px;padding: 0 !important;">
+		                <h3 style="font-size: 14px;background:#F4F4F4; border-bottom: 1px solid #C3C3C3; height: 24px; line-height: 20px; margin: 5px 0 0; padding-left: 10px; text-shadow: 1px 1px 2px #FFFFFF;"><!--@Translate(yourOrder, "Your order")--></h3>
+		                <div style="min-height: 110px;background: #FFFFFF; padding: 10px 10px 5px !important;">
+			                
+                            <table style="width:100%;color: #4B4F5B;font-family:Arial; font-size: 13px;">
+                                <thead>
+                                    <tr>
+                                        <th><!--@Translate(translateProductName, "Product name")--></th>
+                                        <th><!--@Translate(expecteddelivery, "Expected delivery")--></th>
+                                        <th><!--@Translate(translateQuantity, "Quantity")--></th>
+                                        <th><!--@Translate(translatePrice, "Price")--></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!--@LoopStart(OrderLines)-->
+                                    <tr>
+                                        <td>
+                                            <!--@If Not Defined(Ecom:Order:OrderLine.IsProduct)-->
+                                                <!--@If(Ecom:Order:OrderLine.Price.IsZero=true)-->
+                                                    <img src="http://<!--@Global:Request.Host-->/Admin/Public/getimage.ashx?Image=/Files/Images/Ecom/Products/<!--@Ecom:Product.Number-->.jpg&Width=80"/>
+                                                    <br/> <!--@Ecom:Order:OrderLine.ProductName--><br/>
+                                                    <!--@Translate(productnumber, "Product number")-->: <!--@Ecom:Product.Number-->	
+                                                <!--@EndIf-->                                            
+                                                <!--@If(Ecom:Order:OrderLine.Price.IsZero!=true)-->
+                                                    <img src="http://<!--@Global:Request.Host-->/Admin/Public/getimage.ashx?Image=/Files/Images/discount_pic.jpg&Width=80"/>
+                                                    <br /> <!--@Ecom:Order:OrderLine.ProductName-->                                                					                   
+                                                <!--@EndIf-->
+                                            <!--@EndIf(Ecom:Order:OrderLine.IsProduct)-->
+
+                                            <!--@If Defined(Ecom:Order:OrderLine.IsProduct)-->
+                                                <a href="<!--@Ecom:Order:OrderLine.ProductLink-->">
+                                                    <img border="0" src="http://<!--@Global:Request.Host-->/Admin/Public/getimage.ashx?Image=/Files/Images/Ecom/Products/<!--@Ecom:Product.Number-->.jpg&Width=80"/><br />
+							                        <!--@Ecom:Order:OrderLine.ProductName-->
+							                        <!--@If Defined(Ecom:Order:OrderLine.ProductVariantText)-->
+								                        (<!--@Ecom:Order:OrderLine.ProductVariantText-->)
+							                        <!--@EndIf(Ecom:Order:OrderLine.ProductVariantText)-->
+						                        </a>
+                                                <br />
+                                                <!--@Translate(productnumber, "Product number")-->: <!--@Ecom:Product.Number-->
+                                            <!--@EndIf(Ecom:Order:OrderLine.IsProduct)-->
+                                            <!--@LoopStart(BOMItems)-->  
+					                        <div class="fee-line">
+                                                <div class="product-image"></div>
+						                        <div class="product-text">- <!--@Ecom:Order:OrderLine.ProductName--></div>
+						                        <div class="quantity-text"><!--@Ecom:Order:OrderLine.Quantity--></div>
+                                                <div class="bom-price-text"><!--@Ecom:Order:OrderLine.Price.PriceWithoutVATFormatted--></div>
+					                        </div>
+				                            <!--@LoopEnd(BOMItems)-->
+                                        </td>
+                                        <td style="text-align:center">
+                                            <!--@Ecom:Product:Stock.DeliveryText--> <!--@Ecom:Product:Stock.DeliveryUnit-->
+                                        </td>
+                                        <td style="text-align:center">
+                                            <!--@If Defined(Ecom:Order:OrderLine.IsProduct)-->
+                                                <!--@Ecom:Order:OrderLine.Quantity-->
+						                    <!--@EndIf(Ecom:Order:OrderLine.IsProduct)-->
+                                        </td>
+                                        <td style="text-align:right">
+                                            <!--@Ecom:Order:OrderLine.Price.PriceWithoutVATFormatted-->
+                                        </td>
+	                                </tr>
+			                        <!--@LoopEnd(OrderLines)-->
+
+                                    <tr>
+                                        <td style="font-weight:bold;"><!--@Translate(total, "Total")--> (<!--@Translate(withVat, "with VAT")-->)</td>
+                                        <td colspan="3" style="text-align:right; font-weight:bold;"><!--@Ecom:Order.PriceWithoutFees.PriceWithVATFormatted--></td>
+                                    </tr>
+                                    <tr>
+                                        <td><!--@Translate(vatPercent, "VAT")--></td>
+                                        <td colspan="3" style="text-align:right;"><!--@Ecom:Order.Price.VATFormatted--></td>
+                                    </tr>
+                                    <tr>
+                                        <td><!--@Translate(total, "Total")--> (<!--@Translate(noVat, "without VAT")-->)</td>
+                                        <td colspan="3" style="text-align:right;"><!--@Ecom:Order.PriceWithoutFees.PriceWithoutVATFormatted--></td>
+                                    </tr>
+                                    <tr>
+                                        <td><!--@Translate(paymentfee, "Payment fee")--><!--@If Defined(Ecom:Order.PaymentMethod)--> (<!--@Ecom:Order.PaymentMethod-->)<!--@EndIf(Ecom:Order.PaymentMethod)--></td>
+                                        <td colspan="3" style="text-align:right;"><!--@Ecom:Order.PaymentFee.PriceFormatted--></td>
+                                    </tr>
+                                    <tr>
+                                        <td><!--@Translate(shippingfee, "Shipping fee")--><!--@If Defined(Ecom:Order.ShippingMethod)--> (<!--@Ecom:Order.ShippingMethod-->)<!--@EndIf(Ecom:Order.ShippingMethod)--></td>
+                                        <td colspan="3" style="text-align:right;"><!--@Ecom:Order.ShippingFee.PriceFormatted--></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="font-weight:bold;"><!--@Translate(total, "Total")--> (<!--@Translate(withVat, "incl. VAT")-->)</td>
+                                        <td colspan="3" style="text-align:right; font-weight:bold;"><!--@Ecom:Order.OrderLines.Total.PriceWithVAT--></td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+
+	                    </div>
+                    </div>
+                </div>
+            </div>
+
+    </body>
+</html>
+

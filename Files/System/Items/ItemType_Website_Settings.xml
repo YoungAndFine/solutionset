@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<items>
+  <item name="Website Settings" systemName="Website_Settings" description="">
+    <fields>
+      <field name="Show &quot;Quick add&quot;" systemName="Show_Quick_Add" type="System.Boolean, mscorlib">
+        <editor type="Dynamicweb.Content.Items.Editors.CheckboxEditor, Dynamicweb" />
+      </field>
+      <field name="Show Cart Page ID" systemName="Show_Cart_Page_ID" type="System.Int32, mscorlib">
+        <editor type="Dynamicweb.Content.Items.Editors.IntegerEditor, Dynamicweb" />
+        <validators>
+          <validator type="Dynamicweb.Content.Items.Editors.RequiredValidator, Dynamicweb" errorMessage="" />
+        </validators>
+      </field>
+      <field name="Show &quot;Product added to cart&quot; Popup" systemName="Show__ProductAddedToCart__Popup" type="System.Boolean, mscorlib">
+        <editor type="Dynamicweb.Content.Items.Editors.CheckboxEditor, Dynamicweb" />
+      </field>
+      <field name="Product Added Content ID" systemName="Product_Added_Content_ID" type="System.Int32, mscorlib">
+        <editor type="Dynamicweb.Content.Items.Editors.IntegerEditor, Dynamicweb" />
+      </field>
+      <field name="Purchase More Content ID" systemName="Purchase_More_Content_ID" type="System.Int32, mscorlib">
+        <editor type="Dynamicweb.Content.Items.Editors.IntegerEditor, Dynamicweb" />
+      </field>
+    </fields>
+    <layout>
+      <groups>
+        <group name="General" systemName="General">
+          <fields>
+            <field systemName="Show_Quick_Add" />
+            <field systemName="Show_Cart_Page_ID" />
+          </fields>
+        </group>
+        <group name="Product Added To Cart" systemName="Product_Added_To_Cart">
+          <fields>
+            <field systemName="Show__ProductAddedToCart__Popup" />
+            <field systemName="Product_Added_Content_ID" />
+            <field systemName="Purchase_More_Content_ID" />
+          </fields>
+        </group>
+      </groups>
+    </layout>
+  </item>
+</items>

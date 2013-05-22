@@ -1,0 +1,452 @@
+<link href="/Files/Templates/Designs/eCommerce01_responsive/assets/css/checkout.css" rel="stylesheet">
+<script type="text/javascript">
+    require(["jquery-printElement"]);
+</script>
+<div class="row checkout-receipt">
+
+  <div class="span9 checkout-step" id="checkout-wrapper">
+    <div class="box-rounded">
+
+      <div class="box-content">
+        <div class="receipt-content">
+          <h2><!--@Translate(thankyoufororder, "Thank you for your order")--></h2>
+          <strong><!--@Translate(ordernumber, "Order number")-->: <!--@Ecom:Order.ID--></strong>
+          <br><br>
+          <!--@Translate(justemailed, "We have just e-mailed your order confirmation to")-->:
+          <br>
+          <strong><!--@Ecom:Order.Customer.Email--></strong>
+        </div>
+
+        <div class="receipt-actions">
+          <a href="#" data-toggle="modal" data-target="#order_print" ><i class="icon sprite print"></i><!--@Translate(printreceipt, "View & print receipt")--></a>
+          &nbsp;&nbsp;&nbsp;
+
+          <!--@If(Global:Extranet.UserID>0)-->
+          <a href="/Default.aspx?ID=<!--@If(Global:Area.ID==1)-->55<!--@EndIf--><!--@If(Global:Area.ID==17)-->342<!--@EndIf-->&amp;CC42=Order&OrderID=<!--@Ecom:Order.ID-->">
+              <i class="icon sprite order-status"></i><!--@Translate(orderstatus, "Order status")-->
+          </a>
+          <!--@EndIf-->
+
+        </div>
+        <div class="receipt-content-payment">
+          <p><!--@Translate(paymentwillappear, "The payment will appear with the text")--> <b>"dynamicweb <!--@Ecom:Order.ID-->"</b> <!--@Translate(inyouraccount, "in your account")--></p>
+        </div>
+      </div>
+
+      <legend class="box-headline">
+        <h3><!--@Translate(recomendation, "Recommendation for your next visit")--></h3>
+      </legend>
+      <div class="box-content">
+        <div class="productlist">
+        <!--@LoopStart(eCom:Related.MostPopularProducts)-->
+        <section class="product-list-item-wrapper version-frontpage">
+          <div class="row-fluid">
+            <!--@If Defined(Ecom:Product.ImageSmall.Default.Clean)-->
+            <div class="product-image span3">
+              <a href="<!--@Ecom:Product.LinkGroup.Clean-->" title="<!--@Ecom:Product.Name-->" class="thumbnail">
+                <img src="/Admin/Public/getimage.ashx?Image=<!--@Ecom:Product.ImageSmall.Default.Clean-->&amp;Width=160" alt="" />
+              </a>
+            </div><!-- / .product-image -->
+            <!--@EndIf(Ecom:Product.ImageSmall.Default.Clean)-->
+            <div class="details hidden-phone">
+              <div class="product-price">
+                <!--@Ecom:Product.Price.PriceWithVATFormatted-->
+              </div>
+              <div class="product-rating-comments">
+                <div class="product-rating">
+                  <span itemscope itemtype="http://data-vocabulary.org/Review-aggregate">  
+                    <span itemprop="itemreviewed" class="hidden"><!--@Ecom:Product.Name--></span>
+                    <span itemprop="rating" itemscope itemtype="http://data-vocabulary.org/Rating">
+                      <span itemprop="average"><!--@Ecom:Product.Rating--></span> 
+                      out of
+                      <span itemprop="best">5</span> 
+                    </span>
+                    <div class="product-comments">
+                      <div class="sprite commentSmall"></div>
+                      (<a href="<!--@Ecom:Product.LinkGroup.Clean-->&TabReviews=true"><span itemprop="count"><!--@Ecom:Product.CommentCount--></span></a>)
+                    </div>
+                  </span>
+                </div>
+              </div>
+              <div class="product-addtocart">
+                <a class="btn" href="<!--@Ecom:Product.LinkGroup.Clean-->" title="<!--@Ecom:Product.Name-->">
+                  <!--@Translate(ReadMore, "Read more")-->
+                </a>
+              </div>
+            </div><!-- / .details -->
+            <div class="content">
+              <div class="product-name">
+                <a href="<!--@Ecom:Product.LinkGroup.Clean-->" class="product-link" title="<!--@Ecom:Product.Name-->">
+                  <!--@Ecom:Product.Name-->
+                </a>          
+              </div>              
+              <div class="product-description">
+                <!--@Ecom:Product.ShortDescription-->
+              </div>
+              <div class="product-number">
+                <!--@Translate(ProductNumber, "Product no.")-->:
+                &nbsp;<!--@Ecom:Product.Number-->
+              </div>
+              <div class="product-rating-comments visible-phone">
+                <div class="product-rating">
+                  <span itemscope itemtype="http://data-vocabulary.org/Review-aggregate">  
+                    <span itemprop="itemreviewed" class="hidden"><!--@Ecom:Product.Name--></span>
+                    <span itemprop="rating" itemscope itemtype="http://data-vocabulary.org/Rating">
+                      <span itemprop="average"><!--@Ecom:Product.Rating--></span> 
+                      out of
+                      <span itemprop="best">5</span> 
+                    </span>
+                    <div class="product-comments">
+                      <div class="sprite commentSmall"></div>
+                      (<a href="<!--@Ecom:Product.LinkGroup.Clean-->&TabReviews=true"><span itemprop="count"><!--@Ecom:Product.CommentCount--></span></a>)
+                    </div>
+                  </span>
+                </div>
+              </div>
+              <div class="product-addtocart visible-phone">
+                <a class="btn" href="<!--@Ecom:Product.LinkGroup.Clean-->" title="<!--@Ecom:Product.Name-->">
+                  <!--@Translate(ReadMore, "Read more")-->
+                </a>
+              </div>
+            </div><!-- / .content -->
+          </div>
+        </section><!-- / .product-list-item-wrapper -->
+        <!--@LoopEnd(eCom:Related.MostPopularProducts)-->
+        </div>
+      </div>
+
+    </div><!-- / .box-rounded -->
+  </div><!-- / #checkout-wrapper -->
+
+  <div class="span3 checkout-step">
+    <div class="checkout-links">
+      <h4><!--@Translate(praticalinfo, "Practical info")-->:</h4>
+      <ul>
+        <li><a href="#" data-toggle="modal" data-target="#checkoutDelivery"><!--@Translate(pracdelivery, "Delivery")--></a></li>
+        <li><a href="#" data-toggle="modal" data-target="#checkoutPayment"><!--@Translate(pracpayment, "Payment")--></a></li>
+        <li><a href="#" data-toggle="modal" data-target="#checkoutReturn"><!--@Translate(pracpolicy, "Return policy")--></a></li> 
+        <li><a href="#" data-toggle="modal" data-target="#checkoutSecurity"><!--@Translate(pracsecurity, "Security")--></a></li>
+        <li><a href="#" data-toggle="modal" data-target="#checkoutSupport"><!--@Translate(pracsupport, "Support")--></a></li>
+      </ul>
+      <br>
+      <h4><!--@Translate(mostaskedquestions, "Frequently asked questions")-->:</h4>
+      <ul>
+        <li><a href="#" data-toggle="modal" data-target="#checkoutPayinfo"><!--@Translate(whatcanIpaywith, "What payment methods do you support?")--></a></li>
+        <li><a href="#" data-toggle="modal" data-target="#checkoutCallyou"><!--@Translate(canIcallyou, "Can I call you?")--></a></li>
+        <li><a href="#" data-toggle="modal" data-target="#checkoutRaisemoney"><!--@Translate(whendoyouraisemymoney, "When do you raise my money?")--></a></li>
+        <li><a href="#" data-toggle="modal" data-target="#checkoutTrackorder"><!--@Translate(canItrackmyorder, "Can I track my order?")--></a></li>
+        <li><a href="#" data-toggle="modal" data-target="#checkoutDonotfit"><!--@Translate(clothesdonotfit, "Clothes do not fit, then what?")--></a></li>
+      </ul>
+    </div><!-- / .checkout-links -->
+  </div>
+
+</div>
+
+
+
+<div class="modal hide fade modal-type-standart" id="order_print" tabindex="-1" role="dialog">
+  <div class="modal-header">
+    <button type="button" class="close sprite blue-close" data-dismiss="modal"></button>
+    <a href="#" class="print_win sprite"></a>    
+    <h3><!--@Translate(pracdeliverypopup, 'Delivery')--></h3>
+  </div><!-- / .modal-header -->
+  <div class="modal-body">
+    <img src="/Files/Templates/Designs/eCommerce01/images/Logo.png" />
+    
+    <h2><!--@Translate(ordernumber, "Order number")-->: <!--@Ecom:Order.ID--></h2>
+    
+    <!-- printDiv($('.fancybox-wrap .printfriendly-popup.popup-text').parents('.fancybox-inner'));return false; -->
+    <a href="#" class="print-button-popup" style="display:none;" onclick="printDiv($('.orderPrintSection').clone().show());return false;"><!--@Translate(print, "Print")--></a>
+
+
+          <table class="table cart-table">
+          <caption></caption>
+          <thead>
+            <tr>
+              <th class="cart-cell-product">
+                <!--@Translate(translateProduct, "Product")-->
+              </th>
+              <th class="cart-cell-delivery hidden-phone">
+                <!--@Translate(delivery, "Delivery")-->
+              </th>
+              <th class="cart-cell-quantity">
+                <!--@Translate(translateQuantity, "Quantity")-->
+              </th>
+              <th class="cart-cell-price hide-350">
+                <!--@Translate(translatePrice, "Price")-->
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <!--@LoopStart(OrderLines)-->
+            <tr>
+              <td class="cart-cell-product">
+                <!--@If Defined(Ecom:Product.ID)-->
+                  <!--@If Defined(Ecom:Product.ImageSmall.Default.Clean)-->
+                  <img src="/Admin/Public/getimage.ashx?Image=<!--@Ecom:Product.ImageSmall.Default.Clean-->&Width=100" alt="" title="<!--@Ecom:Product.Name-->" /> 
+                  <!--@EndIf(Ecom:Product.ImageSmall.Default.Clean)-->
+
+                  <!--@If Not Defined(Ecom:Product.ImageSmall.Default.Clean)-->
+                  <img src="/Admin/Public/getimage.ashx?Image=<!--@Ecom:Product.ImageLarge.Default.Clean-->&Width=100" alt="" title="<!--@Ecom:Product.Name-->" />
+                  <!--@EndIf(Ecom:Product.ImageSmall.Default.Clean)-->
+                <!--@EndIf(Ecom:Product.ID)-->
+                
+                <!--@If Not Defined(Ecom:Product.ID)-->
+                  <img src="http://<!--@Global:Request.Host-->/Admin/Public/getimage.ashx?Image=/Files/Images/discount_pic.jpg&Width=100"/>
+                <!--@EndIf(Ecom:Product.ID)-->            
+
+                <!--@If Not Defined(Ecom:Product.ID)-->
+                  <!--@Translate(discount, 'Discount')--> <!--@Ecom:Order:OrderLine.ProductName-->
+                <!--@EndIf(Ecom:Product.ID)-->
+
+                <div class="cart-cell-product-text">
+                  <!--@If Defined(Ecom:Product.ID)-->
+                  <a href="/Default.aspx?ID=<!--@If(Global:Area.ID==1)-->489<!--@EndIf--><!--@If(Global:Area.ID==17)-->527<!--@EndIf-->&ProductID=<!--@Ecom:Order:OrderLine.ProductID-->" data-toggle="modal" data-target="#productPreview" data-cache="false">
+                    <!--@Ecom:Order:OrderLine.ProductName-->
+                    <!--@If Defined(Ecom:Order:OrderLine.ProductVariantText)-->
+                      (<!--@Ecom:Order:OrderLine.ProductVariantText-->)
+                    <!--@EndIf(Ecom:Order:OrderLine.ProductVariantText)-->
+                  </a>
+                  <!--@EndIf(Ecom:Product.ID)-->
+
+                  <!--@If Defined(Ecom:Product.ID)-->
+                    <br>
+                    <i><!--@Translate(productnumber, "Product number")-->: 
+                    <!--@Ecom:Product.Number--></i>
+                  <!--@EndIf(Ecom:Product.ID)-->
+
+                  <i class="visible-phone">
+                    <!--@Translate(expecteddeliveryshort, "Delivery")-->
+                    <!--@Ecom:Product:Stock.DeliveryText--> 
+                    <!--@Ecom:Product:Stock.DeliveryUnit-->
+                  </i>
+                </div>
+              </td>
+              <td class="cart-cell-delivery hidden-phone">
+                <!--@Ecom:Product:Stock.DeliveryText--> 
+                <!--@Ecom:Product:Stock.DeliveryUnit-->
+              </td>
+              <td class="cart-cell-quantity">
+                <!--@Ecom:Order:OrderLine.Quantity--> <!--@Translate(pcs, "pcs")-->.
+              </td>
+              <td class="cart-cell-price">
+                <!--@Ecom:Order:OrderLine.Price.PriceWithVATFormatted-->
+              </td>
+            </tr>
+            <!--@LoopEnd(OrderLines)-->
+          </tbody>
+        </table>
+        <table class="table cart-table">
+          <tbody>
+            <tr>
+              <td class="cart-cell-fee">
+                <div class="cart-cell-wrapper">
+                  <ul>
+                    <li><!--@Translate(totalVat, "Total (with VAT)")--></li>
+                    <li><!--@Translate(vat, "VAT")--></li>
+                    <li><!--@Translate(totalwithoutovat, "Total (without VAT)")--></li>
+                    <li><!--@Translate(paymentfee, "Payment fee")--><!--@If Defined(Ecom:Order.PaymentMethod)--> (<!--@Ecom:Order.PaymentMethod-->)<!--@EndIf(Ecom:Order.PaymentMethod)--></li>
+                    <li><!--@Translate(shippingfee, "Shipping fee")--><!--@If Defined(Ecom:Order.ShippingMethod)--> (<!--@Ecom:Order.ShippingMethod-->)<!--@EndIf(Ecom:Order.ShippingMethod)--></li>
+                  </ul>
+                </div>
+              </td>
+              <td class="cart-cell-fee-value">
+                <ul>
+                  <li><!--@Ecom:Order.PriceWithoutFees.PriceWithVATFormatted--></li>
+                  <li><!--@Ecom:Order.Price.VATFormatted--></li>
+                  <li><!--@Ecom:Order.PriceWithoutFees.PriceWithoutVATFormatted--></li>
+                  <li><!--@Ecom:Order.PaymentFee.PriceFormatted--></li>
+                  <li><!--@Ecom:Order.ShippingFee.PriceFormatted--></li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td class="cart-cell-fee">
+                <div class="cart-cell-wrapper">
+                  <strong>
+                    <!--@Translate(total, "Total")--> (<!--@Translate(withVat, "incl. VAT")-->)
+                  </strong>
+                </div>
+              </td>
+              <td class="cart-cell-fee-value">
+                <strong>
+                  <!--@Ecom:Order.OrderLines.Total.PriceWithVAT-->
+                </strong>
+              </td>     
+            </tr>   
+          </tbody>
+        </table> 
+  </div><!-- / .modal-body -->
+</div><!-- / .modal -->
+
+
+
+
+
+<div class="modal hide fade modal-type-standart" id="checkoutDelivery" tabindex="-1" role="dialog">
+  <div class="modal-header">
+    <button type="button" class="close sprite blue-close" data-dismiss="modal"></button>
+    <h3><!--@Translate(pracdeliverypopup, 'Delivery')--></h3>
+  </div><!-- / .modal-header -->
+  <div class="modal-body">
+    <div class="row-fluid no-space">
+      <!--@Global:Paragraph.Content(416)-->
+    </div>
+  </div><!-- / .modal-body -->
+</div><!-- / .modal -->
+
+<div class="modal hide fade modal-type-standart" id="checkoutPayment" tabindex="-1" role="dialog">
+  <div class="modal-header">
+    <button type="button" class="close sprite blue-close" data-dismiss="modal"></button>
+    <h3><!--@Translate(pracpaymentpopup, 'Payment')--></h3>
+  </div><!-- / .modal-header -->
+  <div class="modal-body">
+    <div class="row-fluid no-space">
+      <!--@Global:Paragraph.Content(417)-->
+    </div>
+  </div><!-- / .modal-body -->
+</div><!-- / .modal -->
+
+<div class="modal hide fade modal-type-standart" id="checkoutReturn" tabindex="-1" role="dialog">
+  <div class="modal-header">
+    <button type="button" class="close sprite blue-close" data-dismiss="modal"></button>
+    <h3><!--@Translate(pracpolicy, "Return policy")--></h3>
+  </div><!-- / .modal-header -->
+  <div class="modal-body">
+    <div class="row-fluid no-space">
+      <!--@Global:Paragraph.Content(419)-->
+    </div>
+  </div><!-- / .modal-body -->
+</div><!-- / .modal -->
+
+<div class="modal hide fade modal-type-standart" id="checkoutSecurity" tabindex="-1" role="dialog">
+  <div class="modal-header">
+    <button type="button" class="close sprite blue-close" data-dismiss="modal"></button>
+    <h3><!--@Translate(pracsecuritypopup, 'Security')--></h3>
+  </div><!-- / .modal-header -->
+  <div class="modal-body">
+    <div class="row-fluid no-space">
+      <!--@Global:Paragraph.Content(420)-->
+    </div>
+  </div><!-- / .modal-body -->
+</div><!-- / .modal -->
+
+<div class="modal hide fade modal-type-standart" id="checkoutSupport" tabindex="-1" role="dialog">
+  <div class="modal-header">
+    <button type="button" class="close sprite blue-close" data-dismiss="modal"></button>
+    <h3><!--@Translate(pracsupportpopup, 'Support')--></h3>
+  </div><!-- / .modal-header -->
+  <div class="modal-body">
+    <div class="row-fluid no-space">
+      <!--@Global:Paragraph.Content(422)-->
+    </div>
+  </div><!-- / .modal-body -->
+</div><!-- / .modal -->
+
+<div class="modal hide fade modal-type-standart" id="checkoutPayinfo" tabindex="-1" role="dialog">
+  <div class="modal-header">
+    <button type="button" class="close sprite blue-close" data-dismiss="modal"></button>
+    <h3><!--@Translate(whatcanIpaywith, "What payment methods do you support?")--></h3>
+  </div><!-- / .modal-header -->
+  <div class="modal-body">
+    <div class="row-fluid no-space">
+      <!--@Global:Paragraph.Content(339)-->
+    </div>
+  </div><!-- / .modal-body -->
+</div><!-- / .modal -->
+
+<div class="modal hide fade modal-type-standart" id="checkoutCallyou" tabindex="-1" role="dialog">
+  <div class="modal-header">
+    <button type="button" class="close sprite blue-close" data-dismiss="modal"></button>
+    <h3><!--@Translate(canIcallyou, "Can I call you?")--></h3>
+  </div><!-- / .modal-header -->
+  <div class="modal-body">
+    <div class="row-fluid no-space">
+      <!--@Global:Paragraph.Content(364)-->
+    </div>
+  </div><!-- / .modal-body -->
+</div><!-- / .modal -->
+
+<div class="modal hide fade modal-type-standart" id="checkoutRaisemoney" tabindex="-1" role="dialog">
+  <div class="modal-header">
+    <button type="button" class="close sprite blue-close" data-dismiss="modal"></button>
+    <h3><!--@Translate(whendoyouraisemymoney, "When do you raise my money?")--></h3>
+  </div><!-- / .modal-header -->
+  <div class="modal-body">
+    <div class="row-fluid no-space">
+      <!--@Global:Paragraph.Content(364)-->
+    </div>
+  </div><!-- / .modal-body -->
+</div><!-- / .modal -->
+
+<div class="modal hide fade modal-type-standart" id="checkoutTrackorder" tabindex="-1" role="dialog">
+  <div class="modal-header">
+    <button type="button" class="close sprite blue-close" data-dismiss="modal"></button>
+    <h3><!--@Translate(canItrackmyorder, "Can I track my order?")--></h3>
+  </div><!-- / .modal-header -->
+  <div class="modal-body">
+    <div class="row-fluid no-space">
+      <!--@Global:Paragraph.Content(366)-->
+    </div>
+  </div><!-- / .modal-body -->
+</div><!-- / .modal -->
+
+<div class="modal hide fade modal-type-standart" id="checkoutDonotfit" tabindex="-1" role="dialog">
+  <div class="modal-header">
+    <button type="button" class="close sprite blue-close" data-dismiss="modal"></button>
+    <h3><!--@Translate(clothesdonotfit, "Clothes do not fit, then what?")--></h3>
+  </div><!-- / .modal-header -->
+  <div class="modal-body">
+    <div class="row-fluid no-space">
+      <!--@Global:Paragraph.Content(317)-->
+    </div>
+  </div><!-- / .modal-body -->
+</div><!-- / .modal -->
+
+<div class="modal hide fade modal-type-standart" id="checkoutTerms" tabindex="-1" role="dialog">
+  <div class="modal-header">
+    <button type="button" class="close sprite blue-close" data-dismiss="modal"></button>
+    <h3><!--@Translate(terms, 'Terms and Conditions')--></h3>
+  </div><!-- / .modal-header -->
+  <div class="modal-body">
+    <div class="row-fluid no-space">
+      <!--@Global:Paragraph.Content(316)-->
+    </div>
+  </div><!-- / .modal-body -->
+</div><!-- / .modal -->
+
+<div class="modal hide fade modal-type-standart" id="checkoutInfoEmail" tabindex="-1" role="dialog">
+  <div class="modal-header">
+    <button type="button" class="close sprite blue-close" data-dismiss="modal"></button>
+    <h3><!--@Translate(emailinfo, 'Email information')--></h3>
+  </div><!-- / .modal-header -->
+  <div class="modal-body">
+    <div class="row-fluid no-space">
+      <!--@Global:Paragraph.Content(341)-->
+    </div>
+  </div><!-- / .modal-body -->
+</div><!-- / .modal -->
+
+<div class="modal hide fade modal-type-standart" id="checkoutInfoMobile" tabindex="-1" role="dialog">
+  <div class="modal-header">
+    <button type="button" class="close sprite blue-close" data-dismiss="modal"></button>
+    <h3><!--@Translate(mobileinfo, 'Mobile information')--></h3>
+  </div><!-- / .modal-header -->
+  <div class="modal-body">
+    <div class="row-fluid no-space">
+      <!--@Global:Paragraph.Content(340)-->
+    </div>
+  </div><!-- / .modal-body -->
+</div><!-- / .modal -->
+
+<div class="modal hide fade modal-type-standart" id="checkoutInfoPhone" tabindex="-1" role="dialog">
+  <div class="modal-header">
+    <button type="button" class="close sprite blue-close" data-dismiss="modal"></button>
+    <h3><!--@Translate(phoneinfo, 'Phone information')--></h3>
+  </div><!-- / .modal-header -->
+  <div class="modal-body">
+    <div class="row-fluid no-space">
+      <!--@Global:Paragraph.Content(342)-->
+    </div>
+  </div><!-- / .modal-body -->
+</div><!-- / .modal -->

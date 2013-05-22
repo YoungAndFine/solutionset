@@ -1,0 +1,110 @@
+﻿<div class="row-fluid no-space fill customer_center">
+    
+    <!--Left Menu-->
+    <div class="span3 ">        
+        <!--@Ecom:CustomerCenter.Menu-->        
+    </div>
+    <!--/ Left Menu-->
+
+    <div class="span9 box-rounded no-left-round span9_ex">
+        <div class="box-headline">
+            <h3><!--@Translate(yourmostboughtitems, "Your most bought items")--></h3>
+        </div>
+
+        <div class="orderlist-wr">
+            <!--@ DwTemplateTags-->
+            <!--@If Defined(Ecom:CustomerCenter.FrequentlyBoughtItems.NoProducts)-->
+              <strong>The products has not found</strong>
+            <!--@EndIf(Ecom:CustomerCenter.FrequentlyBoughtItems.NoProducts)-->
+
+            <!--@If Not Defined(Ecom:CustomerCenter.FrequentlyBoughtItems.NoProducts)-->
+                <!--@LoopStart(FrequentlyBoughtItems)-->
+                    <!--@HeaderStart-->
+                    <table class="table table-striped table-hover">
+                        <colgroup>
+                            <col class="col_id">
+                            <col class="col_name2">
+                            <col class="to-hide">
+                            <col class="col_add">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th class="to-cut"><!--@Translate(productname, "Product Name")--></th>
+                                <th class="to-hide"><!--@Translate(quantity, "Quantity")--></th>
+                                <th>
+                                    <button onclick="$.addAllToCart('.table', 'tbody tr')" class="dw-button dw-button-green dw-button-small fav_btn to-r">
+                                        <span class="long_text"><!--@Translate(addalltobasket, "Add all to cart")--></span>
+                                        <span class="short_text"><!--@Translate(addall, "Add all")--></span>
+                                    </button>
+                                </th>
+                            </tr>
+                        </thead>        
+                        <tbody>
+                            <!--@HeaderEnd-->
+                            <tr>
+                                <td>
+                                    <!--@If(Global:Area.ID==1)-->
+                                        <a href="/Default.aspx?ID=489&ProductID=<!--@Ecom:Product.ID-->" data-cache="false" data-target="#productPreview" data-toggle="modal" title="<!--@Ecom:Product.Name-->"><!--@Ecom:Product.ID--></a>
+                                    <!--@EndIf-->
+                                    <!--@If(Global:Area.ID==17)-->
+                                        <a href="/Default.aspx?ID=527&ProductID=<!--@Ecom:Product.ID-->" data-cache="false" data-target="#productPreview" data-toggle="modal" title="<!--@Ecom:Product.Name-->"><!--@Ecom:Product.ID--></a>
+                                    <!--@EndIf-->
+                                    <!--@If(Global:Area.ID==18)-->
+                                        <a href="/Default.aspx?ID=503&ProductID=<!--@Ecom:Product.ID-->" data-cache="false" data-target="#productPreview" data-toggle="modal" title="<!--@Ecom:Product.Name-->"><!--@Ecom:Product.ID--></a>
+                                    <!--@EndIf-->
+                                    <!--@If(Global:Area.ID==19)-->
+                                        <a href="/Default.aspx?ID=528&ProductID=<!--@Ecom:Product.ID-->" data-cache="false" data-target="#productPreview" data-toggle="modal" title="<!--@Ecom:Product.Name-->"><!--@Ecom:Product.ID--></a>
+                                    <!--@EndIf-->
+                                    
+                                </td>
+                                <td class="to-cut">
+                                    <!--@If(Global:Area.ID==1)-->
+                                        <a href="/Default.aspx?ID=489&ProductID=<!--@Ecom:Product.ID-->" data-cache="false" data-target="#productPreview" data-toggle="modal" title="<!--@Ecom:Product.Name-->"><!--@Ecom:Product.Name--></a>
+                                    <!--@EndIf-->
+                                    <!--@If(Global:Area.ID==17)-->
+                                        <a href="/Default.aspx?ID=527&ProductID=<!--@Ecom:Product.ID-->" data-cache="false" data-target="#productPreview" data-toggle="modal" title="<!--@Ecom:Product.Name-->"><!--@Ecom:Product.Name--></a>
+                                    <!--@EndIf-->
+                                    <!--@If(Global:Area.ID==18)-->
+                                        <a href="/Default.aspx?ID=503&ProductID=<!--@Ecom:Product.ID-->" data-cache="false" data-target="#productPreview" data-toggle="modal" title="<!--@Ecom:Product.Name-->"><!--@Ecom:Product.Name--></a>
+                                    <!--@EndIf-->
+                                    <!--@If(Global:Area.ID==19)-->
+                                        <a href="/Default.aspx?ID=528&ProductID=<!--@Ecom:Product.ID-->" data-cache="false" data-target="#productPreview" data-toggle="modal" title="<!--@Ecom:Product.Name-->"><!--@Ecom:Product.Name--></a>
+                                    <!--@EndIf-->
+                                </td>
+                                <td class="to-hide"><!--@Ecom:FrequentlyBoughtItems.Quantity--></td>
+                                <td>                                
+                                    <div class="product-addtocart">
+                                        <a onclick="$.addToCart(this, '', 'tr'); return false;" class="dw-button dw-button-green dw-button-small fav_btn product-link" href="/Default.aspx?ID=48&ProductID=<!--@Ecom:Product.ID-->">
+                                            <span class="long_text"><!--@Translate(addtobasket, "Add to cart")--></span>
+                                            <span class="short_text"><!--@Translate(add, "Add")--></span>
+                                        </a>
+                                    </div>
+                                    <div class="product-quantity">
+                                        <input type="number" placeholder="0" value="0" name="quantity" class="customer_quan" />
+                                        <input type="hidden" value="<!--@Ecom:Product.ID-->" name="ProductID" />
+                                    </div>
+                                </td>
+                            </tr>
+                            <!--@FooterStart-->
+                        </tbody>
+                    </table>
+                    <!--@FooterEnd-->
+                <!--@LoopEnd(FrequentlyBoughtItems)-->
+            <!--@EndIf(Ecom:CustomerCenter.FrequentlyBoughtItems.NoProducts)-->
+
+        </div>
+    </div>
+</div>
+
+<div class="modal hide fade modal-type-variants" id="productPreview" tabindex="-1" role="dialog">
+  <div class="modal-header">
+    <button type="button" class="close sprite blue-close" data-dismiss="modal"></button>
+    <h3><!--@Translate(productpreview, "Product preview")--></h3>
+  </div><!-- / .modal-header -->
+  <div class="modal-body">
+    <div class="row-fluid no-space">
+      <div class="loader"></div>
+    </div>
+  </div><!-- / .modal-body -->
+</div><!-- / .modal -->

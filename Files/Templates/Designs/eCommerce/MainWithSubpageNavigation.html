@@ -1,0 +1,27 @@
+﻿<!--@MasterPageFile(MasterPages/Main.html)-->
+<!--@Layout.Title(Main with subpage navigation)-->
+<!--@Layout.Description()-->
+
+<section class="container content-wrapper">
+  <div class="row">
+    <div class="span12">
+      <h1><!--@Global:Page.Name--></h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span3">
+      <div class="well subpages-navbox">
+        <button type="button" class="btn btn-small visible-phone collapsed" data-toggle="collapse" data-target=".well .collapse">
+          <i class="icon-filter-collapse"></i>
+        </button>
+        <div class="collapse">
+					<div class="TODO">parentid:232 [MainWithSubpageNavigation.html]</div>
+          <div class="dwnavigation" id="aboutNav" settings="parentid:232;expandmode:All;startlevel:3;endlevel:4;template:SubpageNavigation.xslt;"></div>
+        </div>
+      </div>
+    </div>
+    <div class="span9">
+      <div class="dwcontent" id="content-main" title="Main content"></div>
+    </div>
+	</div>
+</section>

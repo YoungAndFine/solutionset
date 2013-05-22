@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<translations>
+  <key name="ProductComparison">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[]]></translation>
+  </key>
+  <key name="productssearch">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[]]></translation>
+  </key>
+  <key name="Products">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[]]></translation>
+  </key>
+  <key name="of">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[]]></translation>
+  </key>
+  <key name="products">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[]]></translation>
+  </key>
+  <key name="sortby">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[]]></translation>
+  </key>
+  <key name="Rating">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[]]></translation>
+  </key>
+  <key name="Name">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[]]></translation>
+  </key>
+  <key name="Number">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[]]></translation>
+  </key>
+  <key name="PriceAscending">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[]]></translation>
+  </key>
+  <key name="PriceDescending">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[]]></translation>
+  </key>
+  <key name="MostSold">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[]]></translation>
+  </key>
+  <key name="refineselection">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[]]></translation>
+  </key>
+  <key name="resetall">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[]]></translation>
+  </key>
+  <key name="page">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[]]></translation>
+  </key>
+  <key name="PreviousPage">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[]]></translation>
+  </key>
+  <key name="PagingOf">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[]]></translation>
+  </key>
+  <key name="PagingPages">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[]]></translation>
+  </key>
+  <key name="NextPage">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[]]></translation>
+  </key>
+  <key name="viewall">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[]]></translation>
+  </key>
+  <key name="ProductVariantIsEmpty">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[]]></translation>
+  </key>
+  <key name="buymore">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[]]></translation>
+  </key>
+  <key name="viewcart">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[]]></translation>
+  </key>
+  <key name="dontshow">
+    <translation culture="en-US"><![CDATA[Vis ikke næste gang]]></translation>
+    <translation culture="da-DK"><![CDATA[]]></translation>
+  </key>
+  <key name="ShowingProductsMOfN">
+    <translation culture="en-US"><![CDATA[Hest]]></translation>
+  </key>
+</translations>

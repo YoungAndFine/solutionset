@@ -1,0 +1,197 @@
+﻿<!--@LoopStart(Products)-->
+<!--@If(Ecom:Product.IsInCart=="True")--><!--@EndIf-->
+<section class="product-list-item-wrapper">
+  <div class="row-fluid">
+    <!--@If Defined(Ecom:Product.ImageSmall.Default.Clean)-->
+    <div class="product-image span3">
+      <div class="product-price visible-phone">
+        <span class="price_novat"><!--@Ecom:Product.Price.PriceWithoutVATFormatted--></span>
+        <span class="price_vat"><!--@Ecom:Product.Price.PriceWithVATFormatted--></span>
+      </div>
+      <a href="<!--@Ecom:Product.LinkGroup.Clean-->" title="<!--@Ecom:Product.Name-->" class="thumbnail">
+        <img src="/Admin/Public/getimage.ashx?Image=<!--@Ecom:Product.ImageSmall.Default.Clean-->&amp;Width=160" alt="" />
+      </a>
+      <div class="product-compare hidden-phone">
+        <input type="checkbox" name="Compare" class="product-compare-selection" value="<!--@Ecom:Product.ID-->$<!--@Ecom:Product.LanguageID-->$<!--@Ecom:Product.VariantID-->" title="<!--@Translate(CompareProduct, "Compare")-->" />
+        <button class="btn btn-small dw-button-gray product-compare-activator"><!--@Translate(CompareProduct, "Compare")--></button>
+      </div>        
+    </div><!-- / .product-image -->
+    <!--@EndIf(Ecom:Product.ImageSmall.Default.Clean)-->
+    <div class="details hidden-phone">
+      <div class="product-price">
+        <span class="price_novat"><!--@Ecom:Product.Price.PriceWithoutVATFormatted--></span>
+        <span class="price_vat"><!--@Ecom:Product.Price.PriceWithVATFormatted--></span>
+      </div>
+      <div class="product-feetooltip">
+          <a href="#" data-rel="tooltip" data-container=".paymentshippingfee" data-position="bottom">
+            <!--@Translate(expaymentshippingfee, 'Ex. shipping and payment fees')-->
+          </a>
+      </div>
+      <div class="product-rating-comments">
+        <div class="product-rating">
+          <span itemscope itemtype="http://data-vocabulary.org/Review-aggregate">  
+            <span itemprop="itemreviewed" class="hidden"><!--@Ecom:Product.Name--></span>
+            <span itemprop="rating" itemscope itemtype="http://data-vocabulary.org/Rating">
+              <span itemprop="average"><!--@Ecom:Product.Rating--></span> 
+              out of
+              <span itemprop="best">5</span> 
+            </span>
+            <div class="product-comments">
+              <div class="sprite commentSmall"></div>
+              (<a href="<!--@Ecom:Product.LinkGroup.Clean-->&TabReviews=true"><span itemprop="count"><!--@Ecom:Product.CommentCount--></span></a>)
+            </div>
+          </span>
+        </div>
+      </div>
+      <div class="stock">
+        <span class="sprite signv-red" <!--@If Defined(Ecom:Product:Stock.Image.Clean)-->style="background: url('<!--@Ecom:Product:Stock.Image.Clean-->') no-repeat 0 0 !important;"<!--@EndIf(Ecom:Product:Stock.Image.Clean)-->></span> 
+        <!--@Ecom:Product:Stock.Text-->
+      </div>
+      <div class="delivery">
+        <span class="sprite signv"></span> 
+        <!--@Translate(ProductDelivary, "Delivery")--> <!--@Ecom:Product.IsInCart)--> <!--@Ecom:Product:Stock.DeliveryText--> <!--@Ecom:Product:Stock.DeliveryUnit-->        
+      </div>
+      <div class="product-addtocart">
+        <button type="button" class="btn dw-button-green" <!--@If(Ecom:Product.VariantCount>0)-->data-toggle="modal" data-target="#productVariantChooser<!--@Ecom:Product.ID-->"<!--@EndIf--><!--@If(Ecom:Product.VariantCount==0)-->onclick="$.addToCart(this)"<!--@EndIf-->>
+          <i class="icon sprite cart-tiny-white"></i>
+          <!--@Translate(AddToCart, "Add to cart")-->
+        </button>
+      </div>
+      <!--@If Defined(Ecom:Product.IsInCart)-->
+        <!--@Include(/eCommerce01R_AddedToCart.html)-->
+      <!--@EndIf(Ecom:Product.IsInCart)-->
+    </div><!-- / .details -->
+    <div class="content">
+      <div class="product-name">
+        <a href="<!--@Ecom:Product.LinkGroup.Clean-->" class="product-link" title="<!--@Ecom:Product.Name-->">
+          <!--@Ecom:Product.Name-->
+        </a>          
+      </div>              
+      <div class="product-description">
+        <!--@Ecom:Product.ShortDescription-->
+      </div>
+      <div class="product-number">
+        <!--@Translate(ProductNumber, "Product no.")-->:
+        &nbsp;<!--@Ecom:Product.Number-->
+      </div>
+      <div class="product-rating-comments visible-phone">
+        <div class="product-rating">
+          <span itemscope itemtype="http://data-vocabulary.org/Review-aggregate">  
+            <span itemprop="itemreviewed" class="hidden"><!--@Ecom:Product.Name--></span>
+            <span itemprop="rating" itemscope itemtype="http://data-vocabulary.org/Rating">
+              <span itemprop="average"><!--@Ecom:Product.Rating--></span> 
+              out of
+              <span itemprop="best">5</span> 
+            </span>
+            <div class="product-comments">
+              <div class="sprite commentSmall"></div>
+              (<a href="<!--@Ecom:Product.LinkGroup.Clean-->&TabReviews=true"><span itemprop="count"><!--@Ecom:Product.CommentCount--></span></a>)
+            </div>
+          </span>
+        </div>
+      </div>
+      <div class="stock visible-phone">
+        <span class="sprite signv-red" <!--@If Defined(Ecom:Product:Stock.Image.Clean)-->style="background: url('<!--@Ecom:Product:Stock.Image.Clean-->') no-repeat 0 0 !important;"<!--@EndIf(Ecom:Product:Stock.Image.Clean)-->></span> 
+        <!--@Ecom:Product:Stock.Text-->
+      </div>
+      <div class="delivery visible-phone">
+        <span class="sprite signv"></span> 
+        <!--@Translate(ProductDelivary, "Delivery")--> <!--@Ecom:Product.IsInCart)--> <!--@Ecom:Product:Stock.DeliveryText--> <!--@Ecom:Product:Stock.DeliveryUnit-->        
+      </div>
+      <div class="product-addtocart visible-phone <!--@If Defined(Ecom:Product.IsInCart)-->product-incart<!--@EndIf(Ecom:Product.IsInCart)-->">
+        <button type="button" class="btn dw-button-green" <!--@If(Ecom:Product.VariantCount>0)-->data-toggle="modal" data-target="#productVariantChooser<!--@Ecom:Product.ID-->"<!--@EndIf--><!--@If(Ecom:Product.VariantCount==0)-->onclick="$.addToCart(this)"<!--@EndIf-->>
+          <i class="icon sprite cart-tiny-white"></i>
+          <!--@Translate(AddToCart, "Add to cart")-->
+        </button>
+        <!--@If Defined(Ecom:Product.IsInCart)-->
+        <!-- @Include(/eCommerce01B2C_AddedToCart.html) -->
+        <button type="button" class="btn dw-button-green">
+          <!--@Translate(checkout, "Checkout")-->
+          <i class="icon sprite arr-forward-small-white"></i>
+        </button>
+        <!--@EndIf(Ecom:Product.IsInCart)-->
+      </div>
+    </div><!-- / .content -->
+  </div>
+  <!--@If(Ecom:Product.VariantCount>0)-->
+  <div class="modal hide fade modal-type-variants" id="productVariantChooser<!--@Ecom:Product.ID-->" tabindex="-1" role="dialog">
+    <div class="modal-header">
+      <button type="button" class="close sprite blue-close" data-dismiss="modal"></button>
+      <h3><!--@Ecom:Product.Name--></h3>
+    </div><!-- / .modal-header -->
+    <div class="modal-body">
+      <div class="row-fluid">
+        <div class="span7">
+          <div class="popup-variants-partleft">
+            <img src="/Admin/Public/getimage.ashx?Image=<!--@Ecom:Product.ImageSmall.Default.Clean-->&amp;Width=350" class="product-image">
+            <div class="product-allinfolink">
+              <a href="<!--@Ecom:Product.LinkGroup.Clean-->"><!--@Translate(allproductinformation, "All product informations - Click here")--></a>
+            </div>
+          </div><!-- / .popup-variants-partleft -->
+        </div>
+        <div class="span5">
+          <div class="popup-variants-partright">
+            <div class="product-rating-comments">
+              <div class="product-rating">
+                <!--@Ecom:Product.RatingStars-->
+              </div>
+              <div class="product-pricelabel"><!--@Translate(ProductNumberShort, "no.")-->:&nbsp;<!--@Ecom:Product.Number--></div>
+              <div class="clearfix"></div>
+            </div>
+            <div class="product-description">
+              <!--@Ecom:Product.ShortDescription-->
+            </div>
+            <div class="product-pricebox-wrapper">
+              <div class="product-pricebox-title"><!--@Translate(shoosevariant, "Choose your variant:")--></div>  
+              <div class="product-variants">
+                <select class="variants-selector input-large" name="variantid">
+                  <option value=""><!--@Translate(selectyourvariant, 'Select your option')--></option>
+                  <!--@LoopStart(VariantCombinations)-->
+                  <option id="vOpt<!--@Ecom:VariantCombination.VariantID-->" value="<!--@Ecom:VariantCombination.VariantID-->">
+                      <!--@Ecom:VariantCombination.VariantText-->
+                  </option>
+                  <!--@LoopEnd(VariantCombinations)-->
+                </select>
+                <!--@LoopStart(BOMConfigurators)-->
+                  <!--@LoopStart(ConfiguratorProducts)-->
+                    <input type="hidden" id="<!--@Ecom:Product.ID-->" value="<!--@Ecom:Product.ActualPrice-->" />
+                  <!--@LoopEnd(ConfiguratorProducts)-->
+                <!--@LoopEnd(BOMConfigurators)-->
+              </div>
+              <div class="product-pricebox">
+                <div>
+                  <div>&nbsp;</div>
+                  <div>
+                    <span class="price_novat"><!--@Ecom:Product.Price.PriceWithoutVATFormatted--></span>
+                    <span class="price_vat"><!--@Ecom:Product.Price.PriceWithVATFormatted--></span>
+                    / <!--@Translate(unit, "unit")--></div>
+                </div>    
+              </div>
+              <div class="product-addtocart">
+                <input name="quantity" class="input-mini" onclick="this.value='';" value="1" type="number"><span class="help-inline"><!--@Translate(unit, "unit")--></span>
+                <button class="btn dw-button-green" data-dw-cmd="addtocart" onclick="Layout.Cart.AddToCart(this)">
+                  <span><!--@Translate(AddToCart, "Add to cart")--></span>
+                </button>            
+              </div>
+            </div>
+            <div class="product-facts">
+              <ul>
+                <li>
+                  <span class="sprite signv-red" <!--@If Defined(Ecom:Product:Stock.Image.Clean)-->style="background: url('<!--@Ecom:Product:Stock.Image.Clean-->') no-repeat 0 0 !important;"<!--@EndIf(Ecom:Product:Stock.Image.Clean)-->></span> <!--@Ecom:Product:Stock.Text-->
+                </li>
+                <li>
+                  <span class="sprite signv"></span> <!--@Translate(ProductDelivary, "Delivery")--> <!--@Ecom:Product.IsInCart)--> <!--@Ecom:Product:Stock.DeliveryText--> <!--@Ecom:Product:Stock.DeliveryUnit-->
+                </li>
+              </ul>
+            </div>
+            <div class="clearfix"></div>
+          </div><!-- / .popup-variants-partright -->
+        </div>
+      
+      </div>
+    
+    </div><!-- / .modal-body -->
+  </div><!-- / .modal.popup-variants -->
+  <!--@EndIf-->
+</section><!-- / .product-list-item-wrapper -->
+<!--@LoopEnd(Products)-->

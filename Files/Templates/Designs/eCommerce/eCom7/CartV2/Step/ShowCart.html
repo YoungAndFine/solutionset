@@ -1,0 +1,198 @@
+<div class="box-rounded cart-box">
+  <legend class="box-headline">
+    <h3>
+      <!--@Translate(translateShoppingCart, "Shopping Cart")-->
+
+      <!--@If(Global:Area.ID==1)-->
+      <a href="/Default.aspx?ID=235" class="btn dw-button-green">
+      <!--@EndIf-->
+      <!--@If(Global:Area.ID==17)-->
+      <a href="/Default.aspx?ID=336" class="btn dw-button-green">
+      <!--@EndIf-->
+        <!--@Translate(checkout, "Checkout")-->
+        <i class="icon sprite arr-forward-small-white"></i>
+      </a>
+    </h3>
+  </legend>
+  <div class="box-content">
+
+    <!--@If(Ecom:Order.IsEmpty!='true')-->
+    <table class="table cart-table">
+      <caption></caption>
+      <thead>
+        <tr>
+          <th class="cart-cell-product">
+            <!--@Translate(translateProduct, "Product")-->
+          </th>
+          <th class="cart-cell-delivery hidden-phone">
+            <!--@Translate(expecteddelivery, "Expected delivery")-->
+          </th>
+          <th class="cart-cell-quantity">
+            <!--@Translate(translateQuantity, "Quantity")-->
+          </th>
+          <th class="cart-cell-price hide-350">
+            <!--@Translate(translatePrice, "Price")-->
+          </th>
+          <th class="cart-cell-actions hide-350"></th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <!--@LoopStart(OrderLines)-->
+        <tr>
+          <td class="cart-cell-product">
+            <!--@If Defined(Ecom:Product.ID)-->
+              <!--@If Defined(Ecom:Product.ImageSmall.Default.Clean)-->
+              <img src="/Admin/Public/getimage.ashx?Image=<!--@Ecom:Product.ImageSmall.Default.Clean-->&Width=100" alt="" title="<!--@Ecom:Product.Name-->" />
+              <!--@EndIf(Ecom:Product.ImageSmall.Default.Clean)-->
+
+              <!--@If Not Defined(Ecom:Product.ImageSmall.Default.Clean)-->
+              <img src="/Admin/Public/getimage.ashx?Image=<!--@Ecom:Product.ImageLarge.Default.Clean-->&Width=100" alt="" title="<!--@Ecom:Product.Name-->" />
+              <!--@EndIf(Ecom:Product.ImageSmall.Default.Clean)-->
+            <!--@EndIf(Ecom:Product.ID)-->
+
+            <!--@If Not Defined(Ecom:Product.ID)-->
+              <img src="http://<!--@Global:Request.Host-->/Admin/Public/getimage.ashx?Image=/Files/Images/discount_pic.jpg&Width=100"/>
+            <!--@EndIf(Ecom:Product.ID)-->
+
+            <div class="cart-cell-product-content">
+                <!--@If Not Defined(Ecom:Product.ID)-->
+                    <!--@Translate(discount, 'Discount')--> <!--@Ecom:Order:OrderLine.ProductName-->
+                <!--@EndIf(Ecom:Product.ID)-->
+
+                <!--@If Defined(Ecom:Product.ID)-->
+                    <a href="<!--@Ecom:Order:OrderLine.ProductLink-->">
+                        <!--@Ecom:Order:OrderLine.ProductName-->
+                            <!--@If Defined(Ecom:Order:OrderLine.ProductVariantText)-->
+                        (<!--@Ecom:Order:OrderLine.ProductVariantText-->)
+                        <!--@EndIf(Ecom:Order:OrderLine.ProductVariantText)-->
+                    </a>
+                <!--@EndIf(Ecom:Product.ID)-->
+                <ul>
+                <!--@LoopStart(BOMItems)-->
+                  <li><!--@Ecom:Order:OrderLine.ProductName--> (<!--@Ecom:Order:OrderLine.Price.PriceWithoutVATFormatted-->)</li>
+                <!--@LoopEnd(BOMItems)-->
+                </ul>
+
+                <!--@If Defined(Ecom:Product.ID)-->
+                    <br>
+                    <i><!--@Translate(productnumber, "Product number")-->:
+                    <!--@Ecom:Product.Number--></i>
+                <!--@EndIf(Ecom:Product.ID)-->
+
+            </div>
+
+            <i class="visible-phone">
+              <!--@Translate(expecteddeliveryshort, "Delivery")-->
+              <!--@Ecom:Product:Stock.DeliveryText-->
+              <!--@Ecom:Product:Stock.DeliveryUnit-->
+            </i>
+          </td>
+          <td class="cart-cell-delivery hidden-phone">
+            <!--@Ecom:Product:Stock.DeliveryText-->
+            <!--@Ecom:Product:Stock.DeliveryUnit-->
+          </td>
+          <td class="cart-cell-quantity">
+            <span class="show-350">
+              <!--@Ecom:Order:OrderLine.Price.PriceWithVATFormatted-->
+            </span>
+
+            <!--@If Defined(Ecom:Order:OrderLine.IsProduct)-->
+            <div class="input-append">
+              <input  id="<!--@Ecom:Order:OrderLine.Quantity.Input.Name-->" value="<!--@Ecom:Order:OrderLine.Quantity-->" type="number" size="16">
+              <a href="/<!--@Ecom:Order:OrderLine.DeleteLink-->" class="btn btn-small show-350">
+                <i class="icon-remove"></i>
+              </a>
+              <button class="btn btn-info" type="button" onclick="Layout.Cart.UpdateProductQuantity('<!--@Ecom:Order:OrderLine.ID-->');">
+                <!--@Translate(update, "Update")-->
+              </button>
+            </div>
+            <!--@EndIf(Ecom:Order:OrderLine.IsProduct)-->
+          </td>
+          <td class="cart-cell-price hide-350">
+            <!--@Ecom:Order:OrderLine.Price.PriceWithVATFormatted-->
+          </td>
+          <td class="cart-cell-actions hide-350">
+            <!--@If Defined(Ecom:Order:OrderLine.IsProduct)-->
+            <a href="/<!--@Ecom:Order:OrderLine.DeleteLink-->" class="btn btn-small dw-button-gray hidden-phone">
+              <!--@Translate(delete, "Delete")-->
+            </a>
+            <a href="/<!--@Ecom:Order:OrderLine.DeleteLink-->" class="btn btn-small visible-phone">
+              <i class="icon-remove"></i>
+            </a>
+            <!--@EndIf(Ecom:Order:OrderLine.IsProduct)-->
+          </td>
+        </tr>
+        <!--@LoopEnd(OrderLines)-->
+      </tbody>
+    </table>
+    <table class="table cart-table">
+      <tbody>
+        <tr>
+          <td class="cart-cell-fee">
+            <div class="cart-cell-wrapper">
+              <ul>
+                <li><!--@Translate(totalVat, "Total (with VAT)")--></li>
+                <li><!--@Translate(vat, "VAT")--></li>
+                <li><!--@Translate(totalwithoutovat, "Total (without VAT)")--></li>
+                <li><!--@Translate(paymentfee, "Payment fee")--><!--@If Defined(Ecom:Order.PaymentMethod)--> (<!--@Ecom:Order.PaymentMethod-->)<!--@EndIf(Ecom:Order.PaymentMethod)--></li>
+                <li><!--@Translate(shippingfee, "Shipping fee")--><!--@If Defined(Ecom:Order.ShippingMethod)--> (<!--@Ecom:Order.ShippingMethod-->)<!--@EndIf(Ecom:Order.ShippingMethod)--></li>
+              </ul>
+            </div>
+          </td>
+          <td class="cart-cell-fee-value">
+            <ul>
+              <li><!--@Ecom:Order.PriceWithoutFees.PriceWithVATFormatted--></li>
+              <li><!--@Ecom:Order.Price.VATFormatted--></li>
+              <li><!--@Ecom:Order.PriceWithoutFees.PriceWithoutVATFormatted--></li>
+              <li><!--@Ecom:Order.PaymentFee.PriceFormatted--></li>
+              <li><!--@Ecom:Order.ShippingFee.PriceFormatted--></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td class="cart-cell-fee">
+            <div class="cart-cell-wrapper">
+              <strong>
+                <!--@Translate(total, "Total")--> (<!--@Translate(withVat, "incl. VAT")-->)
+              </strong>
+            </div>
+          </td>
+          <td class="cart-cell-fee-value">
+            <strong>
+              <!--@Ecom:Order.OrderLines.Total.PriceWithVAT-->
+            </strong>
+          </td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td class="cart-foot-actions">
+            <a href="<!--@Ecom:Cart.EmptyCartLink-->" class="btn dw-button-gray">
+              <!--@Translate(emptycart, "Empty Cart")-->
+            </a>
+          </td>
+          <td class="cart-foot-actions right">
+            <!--@If(Global:Area.ID==1)-->
+            <a href="/Default.aspx?ID=235" class="btn dw-button-green">
+            <!--@EndIf-->
+            <!--@If(Global:Area.ID==17)-->
+            <a href="/Default.aspx?ID=336" class="btn dw-button-green">
+            <!--@EndIf-->
+              <!--@Translate(checkout, "Checkout")-->
+              <i class="icon sprite arr-forward-small-white hide-350"></i>
+            </a>
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+    <!--@EndIf-->
+
+    <!--@If(Ecom:Order.IsEmpty='true')-->
+    <strong>
+      <!--@Translate(translateEmptyCart, "Your cart is empty")-->
+    </strong>
+    <!--@EndIf-->
+
+  </div>
+</div>
