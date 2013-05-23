@@ -1,0 +1,14 @@
+// You can modifiy default values of variables here, i.e.:
+// $documentBackground: red;
+
+@import "default";
+
+
+div.TODO {
+	border: solid 10px red;
+	background: yellow;
+	color: blue;
+	position: fixed;
+	top: 0;
+	left: 0;
+}

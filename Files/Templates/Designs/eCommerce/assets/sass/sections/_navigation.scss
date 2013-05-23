@@ -1,0 +1,439 @@
+@import "__vars";
+
+// Top Menu
+.topmenu-wrapper {
+  background: inherit;
+  position: relative;
+  top: 0;
+  z-index: 3;
+
+  .container {
+    position:relative;
+  }
+
+  @media (max-width: 979px) {
+    min-height: 40px;
+    padding-top: 5px;
+    padding-left: 0;
+    padding-right: 20px;
+  }
+  @media (max-width: 767px) {
+    margin: 0 0 0 10px;
+  }
+}
+.topmenu {
+  float: right;
+  padding: 15px 0 0px;
+
+  .btn {
+    &.btn-navbar {
+      margin: 0;
+    }
+  }
+  .navbar {
+    margin-bottom: 0;
+  }
+  .navbar .btn.btn-navbar {
+    padding:2px 5px 4px;
+  }
+
+  .navbar-inner {
+    @include bg-remove;
+    padding: 0;
+    box-shadow: none;
+    min-height: 0;
+  }
+  .nav {
+    overflow: auto;
+    margin: 0 0 0 50px;
+
+    > li {
+      float: left;
+      list-style-type: none;
+
+      > span {
+        display: block;
+		    padding-left:10px;
+        line-height: 14px;
+        text-decoration: none;
+        font-size: 12px;
+      }
+      > a {
+        line-height: 14px;
+        text-decoration: underline;
+        font-size: 12px;
+        text-shadow: none;
+        color: $colorLink;
+        border-right: 1px solid #999;
+        margin: 0;
+        padding: 0 10px;
+
+        &:hover { cursor: pointer; }
+        &#quicklinks-login {
+          padding-left: 20px;
+          background: url(../images/locked.png) no-repeat left center;
+          background-size: 16px;
+        }
+      }
+
+      &:hover {
+        > a {
+          color: $colorLink;
+        }
+      }
+      &:first-child {
+      }
+      &:last-child {
+        border: none;
+        padding-right: 0;
+        margin-right: 0;
+
+        > a {
+          border-right: none;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 979px) {
+    float: left;
+    width: 100%;
+    padding: 5px 0 0;
+
+    .nav {
+     // width: 100%;
+      overflow: inherit;
+      min-height: 30px;
+
+      > li > a, > li > span {
+        margin: 7px 0 0;
+      }
+    }
+  }
+}
+
+// Main menu
+.mainmenu-wrapper {
+  @include bg-gradient(#009bdc, #004f71);
+  border: 1px solid #004f71;
+  border-left: 0;
+  border-right: 0;
+}
+
+// Default top variant
+.mainmenu {
+  .navbar {
+    margin: 0;
+  }
+  .navbar-inner {
+    background: transparent;
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  }
+  .expandable {
+    .nav {
+      > li {
+        > a {
+          padding: 0;
+          border-width: 0;
+        }
+      }
+    }
+    &.expanded {
+      .nav > li {
+        border: none;
+        border-bottom: 1px solid #55564A;
+
+        a {
+          border: none;
+          border-bottom: 1px solid rgba(216, 216, 216, 0.4);
+        }
+        &.wrapped, &.wrapped > a {}
+      }
+    }
+    .nav > li.active {}
+    .nav > li:hover > a,
+    .nav > li.active > a,
+    &.expanded .nav > li:hover > a,
+    &.expanded .nav > li.active > a {
+      background: none;
+      color: white;
+      outline: 1px solid #55564A;
+      border-left: 1px solid rgba(216, 216, 216, 0.4);
+      border-right: 1px solid rgba(216, 216, 216, 0.4);
+    }
+  }
+  .navbar-inner {
+    padding: 0;
+    box-shadow: none;
+    background: none;
+    min-height: 0;
+  }
+  .btn {
+    &.btn-navbar {
+      @include bg-gradient(#004f71, #003d57);
+      margin: 4px 0 5px;
+      padding: 7px 8px;
+      border: 1px solid #003d57;
+      // background-color: #004f71;
+      // background: -webkit-gradient(linear, center top, center bottom, from(#004f71), to(#003d57));
+      // background: -moz-linear-gradient(top, #004f71, #003d57);
+      // background: -o-linear-gradient(top, #004f71, #003d57);
+      // filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#004f71', endColorstr='#003d57', GradientType=0);
+    }
+  }
+  .nav {
+    min-height: 35px;
+    line-height: 35px;
+    margin: 0;
+    float: none;
+    padding-right: 40px;
+
+    &.with-images {
+      > li {
+
+      }
+      .dropdown-menu {
+        padding-top: 5px;
+        width: 320px;
+
+        li {
+          border: 1px solid transparent;
+          background: none;
+          float: left;
+          width: 49%;
+
+          &:hover {
+            border: 1px solid #e3e3e3;
+            border-radius: 4px;
+            -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+               -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+                    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+          }
+        }
+        a {
+          padding-left: 0;
+        }
+        .nav-item-img {
+          margin: 0 5px;
+        }
+      }
+    }
+    &.collapse {
+      overflow: visible;
+    }
+    li.dropdown:hover > .dropdown-menu {
+      display: block;
+    }
+    > li {
+      &:first-child > a {
+        border-left: none;
+      }
+      &:hover, &.active {
+        @include bg-gradient(#009ee0, #00aff9);
+        // background: -webkit-gradient(linear, center top, center bottom, from(#009ee0), to(#00aff9));
+        // background-image: -moz-linear-gradient(top, #009ee0, #00aff9);
+        // background: -o-linear-gradient(top, #009ee0, #00aff9);
+        // filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#009ee0', endColorstr='#00aff9', GradientType=0);
+        border-left-color: transparent;
+        -webkit-transition:background-color 0.1s ease-in;
+        -moz-transition:background-color 0.1s ease-in;
+        -o-transition:background-color 0.1s ease-in;
+        transition:background-color 0.1s ease-in;
+      }
+      &.open {
+        > a {
+          background: transparent !important;
+          color: white !important;
+        }
+      }
+      &.wrapped {
+        border-top: 1px solid #55564A;
+        border-right: 1px solid #55564A;
+
+        &:last-child, &:last-child > a {
+          border-right: none;
+        }
+        > a {
+          border-top: 1px solid rgba(216, 216, 216, 0.4);
+          border-right: 1px solid rgba(216, 216, 216, 0.4);
+          border-left: none;
+        }
+      }
+
+      > a:hover,
+      > .dropdown-menu li a:hover,
+      > .dropdown-menu li a:focus,
+      &.active > a, &.active > a:hover {
+        @include bg-remove;
+        background: none !important;
+        text-decoration: none  !important;
+      }
+      &.active > a, &.active > a:hover,
+      > a:hover, > a:focus {
+        color: white !important;
+      }
+
+      > a {
+        display: block;
+        height: 35px;
+        min-width: 70px;
+        padding: 0 25px;
+        margin: 0;
+        // moved from styles.scss
+        border-radius: 0;
+        border-left: 1px solid rgba(216, 216, 216, 0.4);
+        border-right: 1px solid #55564A;
+        color: #FFFFFF;
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 35px;
+        outline: 0 none;
+        text-align: center;
+        text-shadow: 1px 1px 2px #0A6E93;
+      }
+      > .dropdown-menu {
+        background: #FFFFFF;
+        border: 1px solid #4B4F5B;
+        border-top: none;
+        border-radius: 0 0 5px 5px;
+        box-shadow: 1px 0px 5px -1px #666;
+        margin: 0;
+        padding: 0 10px 5px;
+        left: -1px;
+
+        &::before, &::after {
+          /* Remove small caret on top of dropdown menu */
+          border: none;
+          content: none;
+        }
+        li {
+          background: url("../images/i_arr_forward_small.png") no-repeat left center;
+
+          a {
+            color: #006699;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 479px) {
+    .nav {
+      &.with-images {
+        .dropdown-menu {
+          width: 160px;
+
+          li {
+            float: none;
+            width: auto;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Main menu. Bottom variant
+.mainmenu-wrapper-bottom {
+  position: relative;
+  min-height: 40px;
+  padding: 0 10px;
+  border-top: 1px solid #EDEDED;
+
+  background: -webkit-gradient(linear, center top, center bottom, from(#f7f7f7), to(#EDEDED));
+  background: -moz-linear-gradient(top, #f7f7f7, #EDEDED);
+  background: -o-linear-gradient(top, #f7f7f7, #EDEDED);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f7f7f7', endColorstr='#EDEDED', GradientType=0);
+
+  .mainmenu-bottom-totop {
+    padding: 10px 0;
+
+    a {
+      border-right: 1px solid #DFE4E7;
+      color: #005173;
+      font: bold 16px/20px arial;
+      height: 20px;
+      text-decoration: underline;
+      text-shadow: 0 1px 1px #FFFFFF;
+      padding: 0 0 0 20px;
+      // font-size: 14px;
+      border-right: none;
+      background: url(../images/footer_totop.png) no-repeat left center;
+    }
+
+    @media (max-width: 979px) {
+      display: none;
+    }
+  }
+  .mainmenu-bottom {
+    .navbar {
+      margin: 0;
+    }
+    .navbar-inner {
+      background: none;
+      box-shadow: none;
+      padding: 0;
+    }
+    .nav {
+      > li {
+        padding: 10px 0;
+
+        > a {
+          display: block;
+          color: $colorLink;
+          // color: #005173;
+          margin-right: 10px;
+          padding: 0 20px 0 10px;
+          border-right: 1px solid #DFE4E7;
+          font: bold 16px/20px arial;
+          height: 20px;
+          text-decoration: underline;
+          text-shadow: 0 1px 1px #FFFFFF;
+        }
+        > a:hover, &.active > a, &.active > a:hover {
+          background: none;
+          color: $colorLink;
+          // color: #005173;
+          text-decoration: none;
+          box-shadow: none;
+        }
+
+        &:last-child > a {
+          border-right: none;
+        }
+      }
+    }
+
+    @media (max-width: 979px) {
+      width: 100%;
+      margin-left: 5px;
+    }
+  }
+}
+
+
+// Styles for wrappable menu plugin
+.navbar.wrappable {
+  .nav {
+    float: none;
+
+    > li.wrapped { display: none; }
+  }
+  .btn-navbar {
+    margin-bottom: 0;
+    visibility: hidden;
+  }
+  .btn-navbar i { background-position: -312px -96px; }
+  &.expandable {
+    .btn-navbar {
+      display: block;
+      visibility: visible;
+      position: relative;
+      z-index: 100;
+    }
+  }
+  &.expanded {
+    .btn-navbar i { background-position: -289px -96px; }
+    .nav > li.wrapped { display: block; }
+  }
+}

@@ -1,0 +1,28 @@
+// Compass libraries import
+@import "compass/css3";
+@import "compass/utilities/general/hacks";  //filter-gradient needs this
+
+@import "__vars";
+
+// Basic reusable page components import
+@import
+  "components/basic",
+  "components/sprites",
+  "components/buttons",
+  "components/modals";
+
+// Page sections specific styles
+@import
+  "sections/header",
+  "sections/footer",
+  "sections/instant-search",
+  "sections/searchbar",
+  "sections/navigation";
+
+// Special pages types styles
+@import
+  "product-catalog",
+  "customer-center",
+  "frontpage",
+  "cart",
+  "404";

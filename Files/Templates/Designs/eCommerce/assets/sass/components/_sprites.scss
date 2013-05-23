@@ -1,0 +1,204 @@
+@import "__vars";
+
+.sprite {  
+  background-image: url($spriteImgSrc) !important; 
+
+  &.slider-arrow-r-circle {
+    background-position: -70px -100px;
+    width: 30px;
+    height: 30px; 
+  }
+  &.slider-arrow-r {
+    background-position: -78px -133px;
+    width: 8px;
+    height: 14px; 
+  }
+  &.slider-arrow-l-circle {
+    background-position: -70px -71px;
+    width: 30px;
+    height: 30px; 
+  }
+  &.slider-arrow-l {
+    background-position: -88px -133px;
+    width: 8px;
+    height: 14px; 
+  }
+  &.cart-big-hover {
+    background-position: 0 -50px ;
+    width: 45px;
+    height: 45px; 
+  }
+  &.cart-big-normal {
+    background-position: 0 0;
+    width: 45px;
+    height: 45px; 
+  }
+  &.blue-close {
+    background-position: -80px -29px !important;
+    width: 20px;
+    height: 20px; 
+  }
+  &.search {
+    background-position: -51px -169px ;
+    width: 30px;
+    height: 30px; 
+  }
+  &.signv {
+    background-position: -49px -39px ;
+    width: 20px;
+    height: 20px; 
+  }
+  &.signv-red {
+    background-position: -49px -18px ;
+    width: 20px;
+    height: 20px; 
+  }
+  &.bg-modal-header {
+    // Background can't be used as it must
+    background-position: -40px -149px;
+    width: 10px; 
+    height: 50px; 
+  }
+  &.commentSmall {
+    background-position: -81px -1px ;
+    width: 10px;
+    height: 10px; 
+  }
+  &.filters-selection-tr {
+    background-position: -49px 0;
+    width: 30px;
+    height: 19px; 
+  }
+  &.footer-gradient {
+    background-position: 0 -100px ;
+    width: 40px;
+    height: 100px; 
+  }
+  &.footer-totop {
+    background-position: -80px -50px ;
+    width: 20px;
+    height: 20px; 
+  }
+  &.full-star {
+    background-position: -50px -60px ;
+    width: 18px;
+    height: 18px; 
+  }
+  &.half-star {
+    background-position: -50px -81px ;
+    width: 18px;
+    height: 18px; 
+  }
+  &.empty-star {
+    background-position: -50px -100px;
+    width: 18px;
+    height: 18px; 
+  }
+  &.arr-forward-small {
+    background-position: -81px -14px ;
+    width: 10px;
+    height: 10px; 
+  }
+  &.arr-forward-small-white {
+    background-position: -85px -151px;
+    width: 15px;
+    height: 13px; 
+  }
+  &.arr-back-small {
+    background-position: -70px -20px;
+    width: 10px;
+    height: 10px; 
+  }
+  &.cart {
+    background-position: -76px -75px;
+    width: 24px;
+    height: 24px; 
+  }
+  &.cart-small-white {
+    background-position: -50px -125px;
+    width: 24px;
+    height: 24px; 
+  }
+  &.cart-tiny-white {
+    background-position: -30px -100px;
+    width: 18px;
+    height: 18px; 
+  }
+  &.locked {
+    background-position: -80px -150px;
+    width: 20px;
+    height: 20px; 
+  }
+  &.mode-list {
+    background-position: -25px -175px;
+    width: 24px;
+    height: 24px; 
+  }
+  &.mode-tiles {
+    background-position: 0 -175px;
+    width: 24px;
+    height: 24px; 
+  }
+  &.key {
+    background-position: 0 -100px;
+    width: 32px;
+    height: 32px; 
+  }
+  &.info-circle {
+    background-position: 0px -150px;
+    width: 24px;
+    height: 24px; 
+  }
+  &.info-circle-small {
+    background-position: -83px -175px;
+    width: 16px;
+    height: 16px; 
+  }  
+  &.cart-small {
+    background-position: -25px -148px;
+    width: 26px;
+    height: 26px; 
+  }
+  &.icon-pdf {
+    background-position: -30px -128px;
+    width: 20px;
+    height: 20px;
+  }
+  &.arrow-circle-left{
+    background-position: -25px -200px;
+    width: 25px;
+    height: 25px;
+  }
+  &.arrow-circle-right{
+    background-position: 0 -200px;
+    width: 25px;
+    height: 25px;
+  }
+  &.support {
+    background-position: -50px -150px;
+    width: 20px;
+    height: 20px;
+  }
+  &.order-status {
+    background-position: -38px -225px;
+    width: 18px;
+    height: 18px;
+  }
+  &.print {
+    background-position: -18px -225px;
+    width: 18px;
+    height: 18px;
+  }
+  &.receipt {
+    background-position: 0 -225px;
+    width: 18px;
+    height: 18px;
+  }
+}
+
+
+.dw-search-result-item .arr-forward-small-white {
+    background-position: -85px -147px;
+    width: 15px;
+    height: 13px; 
+  }

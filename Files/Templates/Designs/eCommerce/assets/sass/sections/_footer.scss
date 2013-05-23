@@ -1,0 +1,47 @@
+@import "__vars";
+
+.footer-wrapper { 
+  height: 120px; 
+  background: $footerBackground;
+  
+  .footer-section {
+    padding: 10px;
+    height: 100px;
+    color: #fff; 
+
+    h1 {
+      color: #fff;
+      font: bold 16px/24px arial;
+    }
+    a {
+      color: #fff; 
+
+      &:hover {
+        text-decoration: none; 
+      }
+    }
+    .vcard {
+      .fn.n { 
+        display: none; 
+      }
+    }
+
+    &.payment-icons {
+      ul {
+        margin: 0;
+        overflow: auto;
+        padding: 0;
+        
+        li {
+          float: left;
+          margin: 5px 10px 5px 0;
+          list-style-type: none;
+          
+          img { 
+          	display: block; 
+          }
+        }
+      }
+    }
+  }
+}

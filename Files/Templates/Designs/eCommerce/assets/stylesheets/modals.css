@@ -1,0 +1,255 @@
+/*
+ * Modal windows custom layouts
+ */
+/* line 6, ../sass/modals.scss */
+.modal-type-loginbox {
+  width: 400px;
+  margin-left: -200px; }
+  /* line 10, ../sass/modals.scss */
+  .modal-type-loginbox .modal-body {
+    padding-top: 25px; }
+  /* line 13, ../sass/modals.scss */
+  .modal-type-loginbox .modal-header h3 .key {
+    display: block;
+    float: left;
+    margin-right: 10px; }
+  /* line 18, ../sass/modals.scss */
+  .modal-type-loginbox input.input-large {
+    width: 210px !important; }
+  /* line 21, ../sass/modals.scss */
+  .modal-type-loginbox .control-group {
+    margin-bottom: 10px; }
+  /* line 24, ../sass/modals.scss */
+  .modal-type-loginbox .controls {
+    margin-left: 145px; }
+    /* line 28, ../sass/modals.scss */
+    .modal-type-loginbox .controls > .radio:first-child,
+    .modal-type-loginbox .controls > .checkbox:first-child {
+      padding-top: 0; }
+  /* line 32, ../sass/modals.scss */
+  .modal-type-loginbox .control-label {
+    text-align: left; }
+  /* line 35, ../sass/modals.scss */
+  .modal-type-loginbox .dw-button {
+    float: right; }
+  /* line 39, ../sass/modals.scss */
+  .modal-type-loginbox .login-form-lostpasswordhint,
+  .modal-type-loginbox .login-form-signuphint {
+    width: 50%;
+    margin-top: 10px; }
+  /* line 43, ../sass/modals.scss */
+  .modal-type-loginbox .login-form-lostpasswordhint {
+    float: left; }
+  /* line 44, ../sass/modals.scss */
+  .modal-type-loginbox .login-form-signuphint {
+    text-align: right;
+    float: right; }
+    /* line 48, ../sass/modals.scss */
+    .modal-type-loginbox .login-form-signuphint.hint-goback > a {
+      line-height: 33px; }
+  @media (max-width: 479px) {
+    /* line 54, ../sass/modals.scss */
+    .modal-type-loginbox .controls {
+      margin-left: 0; }
+      /* line 59, ../sass/modals.scss */
+      .modal-type-loginbox .controls input[type="text"],
+      .modal-type-loginbox .controls input[type="password"],
+      .modal-type-loginbox .controls input[type="submit"] {
+        width: 100% !important;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box; } }
+
+/* line 70, ../sass/modals.scss */
+.modal-type-variants {
+  width: 640px;
+  margin-left: -320px; }
+  /* line 74, ../sass/modals.scss */
+  .modal-type-variants .product-allinfolink {
+    margin: 5px 0 10px;
+    font: italic bold 16px/24px arial; }
+  /* line 78, ../sass/modals.scss */
+  .modal-type-variants .product-rating {
+    float: left; }
+    /* line 80, ../sass/modals.scss */
+    .modal-type-variants .product-rating .rating-star {
+      float: left; }
+  /* line 84, ../sass/modals.scss */
+  .modal-type-variants .product-pricelabel {
+    float: right;
+    font-style: italic; }
+  /* line 89, ../sass/modals.scss */
+  .modal-type-variants .product-description,
+  .modal-type-variants .product-rating-comments {
+    clear: both;
+    float: none;
+    width: 100%; }
+  /* line 94, ../sass/modals.scss */
+  .modal-type-variants .product-description {
+    margin-bottom: 15px; }
+  /* line 95, ../sass/modals.scss */
+  .modal-type-variants .product-rating-comments {
+    margin-bottom: 10px; }
+  /* line 96, ../sass/modals.scss */
+  .modal-type-variants .product-pricebox-title {
+    padding: 0 5px;
+    margin: 5px 0;
+    font: 700 14px/14px arial;
+    text-shadow: 0px 1px 1px #FFFFFF; }
+    /* line 102, ../sass/modals.scss */
+    .modal-type-variants .product-pricebox-title b {
+      color: #f8941d;
+      font-weight: 700; }
+  /* line 107, ../sass/modals.scss */
+  .modal-type-variants .product-pricebox-wrapper {
+    padding: 5px;
+    position: relative;
+    border: 1px solid black;
+    border-color: #dfe4e7;
+    background: #ededed;
+    background: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#ededed));
+    background: -moz-linear-gradient(top, #f9f9f9, #ededed);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9f9f9', endColorstr='#ededed'); }
+    @media (max-width: 479px) {
+      /* line 117, ../sass/modals.scss */
+      .modal-type-variants .product-pricebox-wrapper .input-large {
+        width: 100%; } }
+    @media (min-width: 768px) {
+      /* line 117, ../sass/modals.scss */
+      .modal-type-variants .product-pricebox-wrapper .input-large {
+        width: 232px; } }
+    /* line 125, ../sass/modals.scss */
+    .modal-type-variants .product-pricebox-wrapper .input-mini {
+      width: 30px; }
+  /* line 127, ../sass/modals.scss */
+  .modal-type-variants .product-pricebox {
+    border: 1px solid black;
+    border-color: #ededed; }
+    /* line 131, ../sass/modals.scss */
+    .modal-type-variants .product-pricebox > div {
+      padding: 5px;
+      border: 1px solid black;
+      background: #fff;
+      border-color: #ededed;
+      overflow: auto; }
+      /* line 138, ../sass/modals.scss */
+      .modal-type-variants .product-pricebox > div > div {
+        float: right;
+        font-size: 12px; }
+        /* line 142, ../sass/modals.scss */
+        .modal-type-variants .product-pricebox > div > div :first-child {
+          float: left;
+          max-width: 150px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap; }
+      /* line 150, ../sass/modals.scss */
+      .modal-type-variants .product-pricebox > div:first-child {
+        border-top: none; }
+  /* line 155, ../sass/modals.scss */
+  .modal-type-variants .product-facts {
+    margin: 10px 0 0;
+    overflow: auto; }
+  /* line 159, ../sass/modals.scss */
+  .modal-type-variants .product-addtocart {
+    overflow: auto;
+    margin: 7px 0 2px; }
+    /* line 163, ../sass/modals.scss */
+    .modal-type-variants .product-addtocart input[type="text"], .modal-type-variants .product-addtocart input[type="number"] {
+      border: 1px solid black;
+      /* [!] move to styles.css */
+      border-color: #4AA400;
+      text-align: center;
+      box-shadow: 0 2px 4px -4px black inset; }
+    /* line 170, ../sass/modals.scss */
+    .modal-type-variants .product-addtocart .btn {
+      width: auto;
+      float: right; }
+  @media (max-width: 479px) {
+    /* line 177, ../sass/modals.scss */
+    .modal-type-variants [class*="row"] > [class*="span"] {
+      width: 100%;
+      margin-left: 0 !important; }
+    /* line 181, ../sass/modals.scss */
+    .modal-type-variants .product-allinfolink {
+      text-align: center;
+      font-size: 14px; }
+    /* line 185, ../sass/modals.scss */
+    .modal-type-variants .product-facts {
+      margin-bottom: 10px !important; }
+      /* line 189, ../sass/modals.scss */
+      .modal-type-variants .product-facts ul li {
+        float: left !important;
+        clear: none !important;
+        margin-right: 10px; } }
+  @media (max-height: 360px) {
+    /* line 198, ../sass/modals.scss */
+    .modal-type-variants .modal-body {
+      max-height: 300px; } }
+  @media (max-height: 300px) {
+    /* line 203, ../sass/modals.scss */
+    .modal-type-variants .modal-body {
+      max-height: 160px; } }
+
+/* line 210, ../sass/modals.scss */
+.modal-type-commentadd {
+  width: 400px;
+  margin-left: -200px; }
+  /* line 215, ../sass/modals.scss */
+  .modal-type-commentadd .modal-body .row-fluid [class*="span"] {
+    margin: 10px 0 0; }
+    /* line 218, ../sass/modals.scss */
+    .modal-type-commentadd .modal-body .row-fluid [class*="span"]:first-child {
+      margin: 0; }
+  /* line 222, ../sass/modals.scss */
+  .modal-type-commentadd .modal-body input[type="text"], .modal-type-commentadd .modal-body textarea, .modal-type-commentadd .modal-body select {
+    color: #666;
+    font-weight: normal; }
+  /* line 226, ../sass/modals.scss */
+  .modal-type-commentadd .modal-body textarea {
+    height: 150px; }
+  /* line 229, ../sass/modals.scss */
+  .modal-type-commentadd .modal-body .btn {
+    font-weight: bold; }
+
+/* line 236, ../sass/modals.scss */
+.modal-type-imagesslider {
+  width: 502px;
+  margin-left: -251px; }
+  /* line 241, ../sass/modals.scss */
+  .modal-type-imagesslider .modal-body .thumbnail {
+    border: none;
+    -webkit-box-shadow: none;
+    box-shadow: none; }
+  /* line 246, ../sass/modals.scss */
+  .modal-type-imagesslider .modal-body .thumbnails-carousel {
+    position: relative;
+    margin: 0 30px; }
+    /* line 250, ../sass/modals.scss */
+    .modal-type-imagesslider .modal-body .thumbnails-carousel .span2 {
+      width: 93px;
+      padding: 5px;
+      margin: 5px !important;
+      border: 3px solid #ccc;
+      opacity: 0.7; }
+      /* line 257, ../sass/modals.scss */
+      .modal-type-imagesslider .modal-body .thumbnails-carousel .span2:hover {
+        opacity: 1; }
+    /* line 261, ../sass/modals.scss */
+    .modal-type-imagesslider .modal-body .thumbnails-carousel .item {
+      position: relative;
+      width: 2000000em; }
+    /* line 265, ../sass/modals.scss */
+    .modal-type-imagesslider .modal-body .thumbnails-carousel .carousel-control {
+      background-color: transparent;
+      border-radius: 25px;
+      height: 25px;
+      width: 25px;
+      top: 50%;
+      margin-top: -16px;
+      opacity: 1;
+      left: -30px; }
+      /* line 275, ../sass/modals.scss */
+      .modal-type-imagesslider .modal-body .thumbnails-carousel .carousel-control.right {
+        left: auto;
+        right: -30px; }

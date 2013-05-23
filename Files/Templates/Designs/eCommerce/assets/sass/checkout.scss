@@ -1,0 +1,957 @@
+@import "__vars";
+
+
+.checkout-stepmap {
+  margin-left: 30px;
+  position: absolute;
+  top: -75px;
+
+  h1 {
+
+  }
+  i {
+    font-size: 16px;
+    font-style: normal;
+  }
+  ul {
+    background: #DFE4E7;
+    height: 2px;
+    margin: 26px 50px 0;
+
+    li {
+      float: left;
+      left: -35px;
+      position: relative;
+      width: 150px;
+      list-style-type: none;
+
+      &:last-child {
+        width: 45px;
+
+        h4 {
+          width: 150px;
+        }
+        span {
+
+        }
+      }
+      &.active {
+        border-top: 2px solid #20a9e3;
+        left: 0;
+
+        &:after {
+          content: '';
+          position: absolute;
+          display: block;
+          width: 8px;
+          height: 14px;
+          right: 4px;
+          top: -8px;
+          background: url("images/checkout-map-arrow.png") no-repeat right center;
+        }
+        h4 {
+          color: #009ddf;
+          left: -30px;
+          position: relative;
+        }
+        span {
+          background: url("images/circle-blue.png") no-repeat left center;
+          left: -2px;
+        }
+      }
+      h4 {
+        margin: 30px 0 0 0;
+        max-width: 110px;
+        text-align:center;
+        color: #ddd;
+        line-height: 14px;
+        font-size: 12px;
+      }
+      span {
+        position: absolute;
+        top: -28px;
+        left: 28px;
+        display: block;
+        width: 55px;
+        height:55px;
+        background: no-repeat 0 0;
+        background: url("images/circle-grey.png") no-repeat left center;
+
+        i {
+          color: white;
+          display: block;
+          font-size: 24px;
+          font-weight: bold;
+          line-height: 55px;
+          text-align: center;
+          width: 53px;
+          color: white;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 979px) {
+    display: none;
+  }
+}
+
+.checkout-headline-wrapper {
+  border-top: 1px solid $border-color;
+  padding-top: 20px;
+
+  .checkout-headline {
+    h1 {
+      font: bold 30px/35px arial;
+    }
+  }
+  .chat-support {
+    font: bold 14px/35px arial;
+  }
+
+  @media (max-width: 767px) {
+    [class*="span"] {
+      clear: both;
+    }
+    .checkout-headline h1 {
+      padding: 0;
+      font: bold 22px/22px arial;
+    }
+  }
+}
+
+.validation-errors {
+  color: #F7941D;
+  font-size: 14px;
+  padding: 0 0 10px 10px;
+
+  li {
+    margin-bottom: 5px;
+  }
+}
+
+.checkout-links {
+  padding: 20px 0;
+
+  h4 {
+    font-size: 12px;
+  }
+  ul {
+    color: #069;
+
+    li {
+      margin-top: 2px;
+    }
+  }
+  a {
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+#checkout-wrapper{
+  margin-bottom: 20px;
+
+  .box-headline {
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+
+    h3 {
+      width: auto;
+    }
+  }
+  .control-label {
+    width: 155px;
+  }
+}
+
+.form-horizontal {
+  &.pay-and-shipp {
+    padding: 10px 0 !important;
+
+    .control-group {
+      margin: 0;
+    }
+    .payment-section {
+      float: left;
+      width: 45%;
+    }
+    .shipping-section {
+      // float: right;
+      float: left;
+      width: 45%;
+      margin-left: 10%;
+    }
+    .control-section-content {
+      font-weight: bold;
+      font-size: 14px;
+      margin-bottom: 10px;
+
+      span {
+        font-weight: normal;
+      }
+    }
+    .provider {
+      margin: 10px 0;
+
+      .parcel-shops-wrapper {
+        clear: both;
+        float: none;
+        position: relative;
+      }
+      .parcel-shop {
+        margin-bottom: 5px;
+
+        label {
+          margin-bottom: 0;
+        }
+        input[type='radio'] {
+          margin: -1px 5px 0 0;
+          padding: 0;
+        }
+        .adr {
+          span {
+            padding: 0 5px 0 0;
+          }
+        }
+      }
+      .parcel-shops-loading {
+        display: none;
+        height: 16px;
+        left: 0;
+        position: absolute;
+        top: -25px;
+        padding-left: 20px;
+        line-height: 16px;
+        background: $loader-image no-repeat left center;
+      }
+      .parcel-shop {}
+      .input-large {
+        width: 297px;
+      }
+      .input-mini {
+        width: 72px;
+      }
+      input {
+        // height: 30px;
+        min-height: 30px;
+        -webkit-box-sizing: border-box;
+           -moz-box-sizing: border-box;
+                box-sizing: border-box;
+      }
+      button {
+        float: right;
+        margin-top: 5px;
+        font-weight: bold;
+      }
+    }
+  }
+  hr {
+    border-bottom-width: 0;
+    border-color: $border-color;
+    margin: 30px 0;
+  }
+  .icon {
+    vertical-align: middle;
+  }
+  .voucher_block {
+    display: none;
+  }
+  .control-group {
+    &.actions-group {
+      margin-bottom: 5px;
+      overflow: auto;
+
+      .btn {
+        float: right;
+      }
+    }
+  }
+  .control-action-group {
+    background:
+      url("images/arrow-right-big.png")
+      no-repeat
+      left
+      center;
+    padding: 5px 0;
+
+    .controls {
+      margin-left: 50px;
+    }
+    .checkbox {
+      float: left;
+    }
+    .btn {
+      float: right;
+      margin-right: 43px !important;
+    }
+  }
+  .control-label {
+    text-align: left;
+    padding: 6px 0;
+    margin: 0;
+    // width: 155px;
+
+    &.control-label-wide {
+      width: 330px !important;
+    }
+    span {
+      background: white;
+      padding-right: 10px;
+    }
+    b {
+      color: #F7941D;
+      display: block;
+      float: right;
+      margin-top: 5px;
+      padding-left: 10px;
+      font: bold 17px/15px arial;
+      width: 10px;
+    }
+    hr {
+      margin: -10px 0 0;
+    }
+  }
+  .required-fields-note {
+    @extend .control-label;
+    overflow: hidden;
+    padding: 0;
+    margin: 20px 0;
+    float: none;
+    width: auto !important;
+
+    b {
+      margin: 0;
+      padding: 0;
+      float: left;
+      width: auto !important;
+
+      small {
+        font-size: 14px;
+      }
+    }
+  }
+  .controls {
+    &.with-button {
+      input[type="text"], input[type="email"], input[type="number"], select {
+        width: 400px;
+      }
+      .btn {
+        @include text-cut;
+        width: 200px;
+        padding-top: 6px;
+        padding-bottom: 6px;
+        font-weight: bold;
+        -webkit-box-sizing: border-box;
+           -moz-box-sizing: border-box;
+                box-sizing: border-box;
+      }
+    }
+    input[type="text"], input[type="email"], input[type="number"], select, .btn {
+      margin-right: 10px;
+    }
+    input[type="text"], input[type="email"], input[type="number"], select {
+      width: 610px;
+    }
+    input[name="EcomOrderCustomerZip"],
+    input[name="EcomOrderDeliveryZip"] {
+      width: 50px;
+    }
+    input[name="EcomOrderCustomerCity"],
+    input[name="EcomOrderDeliveryCity"] {
+      width: 535px;
+    }
+    select {
+      font: bold 14px/28px arial;
+      border: 1px solid #9F9F9F;
+      width: 622px; // need to check this value
+    }
+    .control-info {
+      @include text-cut;
+      width: 30px;
+      float: right;
+      text-align: right;
+      line-height: 32px;
+      text-decoration: underline;
+    }
+    .help-block {
+      font-size: 14px;
+      font-style: italic;
+      margin-top: 5px;
+    }
+  }
+
+  @media (min-width: 980px) and (max-width: 1200px) {
+    .controls {
+      &.with-button {
+        input[type="text"], input[type="email"], input[type="number"], select {
+          width: 235px;
+        }
+      }
+      input[type="text"], input[type="email"], input[type="number"], select {
+        width: 445px;
+      }
+      select {
+        width: 457px;
+      }
+      input[name="EcomOrderCustomerZip"],
+      input[name="EcomOrderDeliveryZip"] {
+        width: 50px;
+      }
+      input[name="EcomOrderCustomerCity"],
+      input[name="EcomOrderDeliveryCity"] {
+        width: 370px;
+      }
+    }
+    .control-action-group {
+      .btn {
+        margin-right: 38px !important;
+      }
+    }
+    &.pay-and-shipp {
+      .provider {
+        .parcel-shops-wrapper {}
+        .parcel-shop {
+          label {}
+          input[type='radio'] {}
+          .adr {
+            span {}
+          }
+        }
+        .parcel-shops-loading {}
+        .parcel-shop {}
+        .input-large {}
+        .input-mini {
+          margin-top: 5px;
+        }
+        button {}
+      }
+    }
+  }
+  @media (min-width: 768px) and (max-width: 979px) {
+    .controls {
+      &.with-button {
+        input[type="text"], input[type="email"], input[type="number"], select {
+          width: 120px;
+        }
+        .btn {
+          width: 150px;
+        }
+      }
+      input[type="text"], input[type="email"], input[type="number"], select {
+        width: 285px;
+      }
+      select {
+        width: 290px;
+      }
+      input[name="EcomOrderCustomerZip"],
+      input[name="EcomOrderDeliveryZip"] {
+        width: 50px;
+      }
+      input[name="EcomOrderCustomerCity"],
+      input[name="EcomOrderDeliveryCity"] {
+        width: 210px;
+      }
+    }
+  }
+  @media (max-width: 767px) {
+    .control-group {
+      margin-bottom: 15px;
+    }
+    .control-label {
+      float: none;
+      width: auto;
+
+      span {
+        padding-right: 5px;
+      }
+      hr {
+        display: none;
+      }
+      b {
+        display: inline;
+        padding: 0;
+        float: none;
+      }
+    }
+    .controls {
+      margin-left: 0;
+
+      &.with-button {
+        input[type="text"], select {
+          width: 40%;
+        }
+        .btn {
+          width: 45%;
+        }
+      }
+      input[type="text"], input[type="email"], input[type="number"], select {
+        width: 90%;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+      input[name="EcomOrderCustomerZip"],
+      input[name="EcomOrderDeliveryZip"] {
+        width: 25%;
+        margin-right: 5%;
+      }
+      input[name="EcomOrderCustomerCity"],
+      input[name="EcomOrderDeliveryCity"] {
+        width: 60%;
+      }
+    }
+    .control-action-group {
+      background-position: left top;
+      margin-top: 20px;
+
+      .btn {
+        float: none;
+        width: auto !important;
+      }
+    }
+    // &.pay-and-shipp {
+    //   .payment-section, .shipping-section {
+    //     float: none;
+    //     margin-bottom: 15px;
+    //   }
+    // }
+  }
+  @media (max-width: 979px) {
+    &.pay-and-shipp {
+      .payment-section, .shipping-section {
+        float: none;
+        margin-bottom: 15px;
+        margin-left: 0;
+        width: auto;
+      }
+    }
+  }
+  @media (min-width: 480px) and (max-width: 979px) {
+    &.pay-and-shipp {
+      .payment-section, .shipping-section {
+        float: none;
+        margin-bottom: 15px;
+        margin-left: 0;
+        width: auto;
+      }
+      .provider {
+        .parcel-shops-wrapper {}
+        .parcel-shop {
+          label {}
+          input[type='radio'] {}
+          .adr {
+            span {}
+          }
+        }
+        .parcel-shops-loading {}
+        .parcel-shop {}
+        .input-large {
+          width: 49%;
+          margin-right: 1%;
+        }
+        .input-mini {
+          width: 18%;
+          margin-right: 1%;
+        }
+        input {
+          height: 30px;
+        }
+        button {
+          margin-top: 0;
+          width: 30%;
+          min-width: 150px;
+        }
+      }
+    }
+  }
+  @media (max-width: 479px) {
+    padding-top: 10px !important;
+
+    hr {
+      margin: 10px 0;
+    }
+    .required-fields-note {
+      margin: 10px 0;
+
+      b small {
+        font-size: 12px;
+      }
+    }
+    .control-group {
+      margin-bottom: 15px;
+    }
+    .control-label {
+      font-size: 12px;
+
+      &.control-label-wide {
+        width: auto !important;
+      }
+    }
+    .controls {
+      &.with-button {
+        .btn {
+          display: block;
+          font-size: 12px;
+          height: 28px;
+          margin: 5px 0;
+          padding-bottom: 4px;
+          padding-top: 4px;
+          width: 100%;
+        }
+      }
+      a {
+        display: none;
+      }
+      .help-block {
+        font-size: 12px;
+      }
+      input[type="text"], input[type="email"], input[type="number"], select {
+        width: 100% !important;
+      }
+      input[name="EcomOrderCustomerZip"],
+      input[name="EcomOrderDeliveryZip"] {
+        margin-bottom: 5px;
+      }
+      label {
+        font-size: 12px;
+
+        a {
+          display: inline;
+        }
+      }
+    }
+    &.pay-and-shipp {
+      .control-section-content {
+        font-size: 12px;
+      }
+      .provider {
+        .parcel-shops-wrapper {}
+        .parcel-shop {
+          label {}
+          input[type='radio'] {}
+          .adr {
+            span {}
+          }
+        }
+        .parcel-shops-loading {}
+        .parcel-shop {}
+        .input-large {
+          width: 70%;
+        }
+        .input-mini {
+          width: 25%;
+          float: right;
+        }
+        button {}
+      }
+    }
+    .control-action-group {
+      .btn {
+        width: 100% !important;
+        clear: both;
+        height: 35px !important;
+        font: bold 14px/25px arial !important;
+      }
+    }
+  }
+}
+
+.modal {
+  .form-horizontal {
+    .controls {
+      input[type="text"], input[type="email"], input[type="number"], select {
+        width: 420px;
+        margin-right: 0;
+      }
+      select {
+        width: 430px;
+      }
+      input[name="EcomOrderCustomerZip"],
+      input[name="EcomOrderDeliveryZip"] {
+        width: 50px;
+        margin-right: 10px;
+      }
+      input[name="EcomOrderCustomerCity"],
+      input[name="EcomOrderDeliveryCity"] {
+        width: 345px;
+      }
+
+    }
+  }
+}
+
+// Alternative styles for checkout with different steps
+.checkout-step {
+  &.checkout-headline-wrapper {
+    .btn {
+      float: right;
+    }
+  }
+  &.provider-content {
+    border-top: 1px solid #DFE4E7;
+
+    .pay-and-shipp {
+      padding: 5px 0 0 0 !important;
+    }
+    .parcel-shops-loading {
+      left: auto;
+      overflow: hidden;
+      right: 155px;
+      top: -23px;
+      width: 0;
+    }
+  }
+  // &.box-content {
+  //   .form-horizontal {
+  //     padding-top: 0;
+  //   }
+  // }
+  .checkout-links {
+    padding-top: 0;
+  }
+  .box-headline {
+    .btn {
+      float: right;
+      margin: -15px 0 0;
+      position: relative;
+      top: 50%;
+    }
+  }
+  .billing-address, .shipping-address {
+    @extend .pay-and-shipp;
+    padding-top: 0px !important;
+
+    label {
+      width: auto !important;
+    }
+    span {
+      font-size: 12px;
+      display: block;
+    }
+  }
+  .order-lines {
+    padding-left: 0;
+    padding-right: 0;
+
+    .table {
+
+    }
+    .cart-cell-product {
+      width: 70%;
+      padding-left: 20px;
+    }
+    .cart-cell-product-text {
+      padding-left: 120px;
+    }
+    .cart-cell-wrapper {
+      padding-left: 130px;
+    }
+    .control-action-group {
+      margin-left: 20px;
+      margin-top: 10px;
+
+      .btn {
+        width: auto;
+        margin-right: 20px !important;
+      }
+    }
+  }
+  .pay-and-shipp {
+    padding-bottom: 0 !important;
+
+    .controls {
+      margin-left: 0;
+      float: left;
+      width: 50%;
+      overflow: auto;
+
+      .radio {
+        img {
+          max-height: 24px;
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+  .actions-group {
+    margin-top: 15px;
+    overflow: auto;
+
+    .btn {
+      float: right;
+
+      &.btn-link {
+        text-decoration: underline;
+        padding-left: 0;
+        padding-right: 0;
+
+        &:hover {
+          text-decoration: none;
+        }
+        .icon {
+          vertical-align: baseline;
+          margin-right: 3px;
+        }
+      }
+    }
+  }
+  .product-list-item-wrapper {
+    .product-addtocart {
+      .btn {
+        -webkit-box-sizing: border-box;
+           -moz-box-sizing: border-box;
+                box-sizing: border-box;
+      }
+    }
+  }
+
+  @media (max-width: 979px) {
+    .checkout-links {
+      // padding-top: 0;
+      padding-left: 10px;
+    }
+    .pay-and-shipp {
+      .controls {
+        // margin-left: 0;
+        float: none;
+        width: auto;
+      }
+    }
+    .order-lines {
+      .cart-cell-wrapper {
+        padding-left: 20px;
+      }
+      .cart-cell-fee-value {
+        padding-right: 20px;
+      }
+      .cart-cell-product-text {
+        padding-left: 60px;
+      }
+      .control-action-group {
+        margin-top: 0;
+
+        .btn {
+          float: right;
+        }
+      }
+    }
+  }
+  @media (max-width: 479px) {
+    .order-lines {
+      .control-action-group {
+        background: none;
+        margin-top: 0;
+        margin-left: 0;
+
+        .controls {
+          margin-left: 20px;
+          margin-right: 20px;
+        }
+        .btn {
+          float: none;
+          margin-right: 0 !important;
+        }
+      }
+    }
+  }
+}
+
+.checkout-receipt {
+  font-size: 14px;
+
+  .receipt-content {
+    margin-bottom: 10px;
+
+    h2 {
+      color: #4B4F5B;
+      font-size: 22px;
+      margin: 5px 0 10px;
+    }
+  }
+  .receipt-content-payment {
+
+  }
+  .receipt-actions {
+    margin-bottom: 10px;
+
+    .icon {
+      margin-right: 5px;
+    }
+  }
+}
+
+/* Custom dropdown list */
+.customDropdown {
+  // font-size: 13px;
+  // width: 230px;
+  position: relative;
+
+  background-color: #FFFFFF;
+  border: 1px solid #9F9F9F;
+  box-shadow: 0 1px 0 #E3E3E3 inset;
+  color: #55564A;
+  // font: bold 14px/28px arial;
+  height: 28px;
+  margin: 0;
+  padding: 2px 5px 0;
+  border-radius: 3px;
+
+  span {
+    // border: 1px solid #ccc;
+    // padding: 2px 10px 2px 2px;
+    padding: 0 20px 0 0;
+    font: normal 14px/28px arial;
+    display: block;
+    cursor: pointer;
+    background: url(../images/tr.png) 100% 3px no-repeat;
+    white-space: nowrap;
+  }
+  img {
+    vertical-align: middle;
+    width: 30px;
+  }
+  ul {
+    display: none;
+    position: absolute;
+    top: 28px;
+    left: -1px;
+    // width: 370px;
+    width: 100%;
+    z-index: 10;
+    background: #fff;
+    border: 1px solid #9F9F9F;
+    border-top-color: #DDD;
+    margin: 0;
+    border-radius: 0 0 3px 3px;
+    padding-top: 3px;
+
+    li {
+      padding: 2px 5px 1px;
+      cursor: pointer;
+      display: block;
+      // padding: 3px 0;
+
+      &:hover {
+        background: #eee;
+      }
+      i {
+        font-style: normal;
+      }
+    }
+  }
+}
+
+
+// [?]
+input.disabled_class {border:1px solid #ccc; color:#ccc;}
+.content-wrapper {
+  padding-top: 10px;
+  z-index: auto;
+}
