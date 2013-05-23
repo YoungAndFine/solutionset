@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<items>
+  <item name="Carousel Item" systemName="Carousel" description="">
+    <fields>
+      <field name="Header" systemName="Header" type="System.String, mscorlib">
+        <editor type="Dynamicweb.Content.Items.Editors.TextEditor, Dynamicweb" />
+      </field>
+      <field name="Image" systemName="Image" type="System.String, mscorlib">
+        <editor type="Dynamicweb.Content.Items.Editors.FileEditor, Dynamicweb" />
+      </field>
+      <field name="Text" systemName="Text" type="System.String, mscorlib">
+        <editor type="Dynamicweb.Content.Items.Editors.TextEditor, Dynamicweb" />
+      </field>
+      <field name="Link" systemName="Link" type="System.String, mscorlib">
+        <editor type="Dynamicweb.Content.Items.Editors.LinkEditor, Dynamicweb" />
+      </field>
+    </fields>
+    <layout>
+      <groups>
+        <group name="General" systemName="General">
+          <fields>
+            <field systemName="Header" />
+            <field systemName="Image" />
+            <field systemName="Text" />
+            <field systemName="Link" />
+          </fields>
+        </group>
+      </groups>
+    </layout>
+  </item>
+</items>
