@@ -1,0 +1,31 @@
+// You can modifiy default values of variables here, i.e.:
+// $documentBackground: red;
+
+// Compass libraries import
+@import "compass/css3";
+@import "compass/utilities/general/hacks";  //filter-gradient needs this
+
+@import "__vars";
+
+// Basic reusable page components import
+@import
+  "partials/basic",
+  "partials/sprites",
+  "partials/buttons",
+  "partials/modals";
+
+// Page sections specific styles
+@import
+  "partials/header",
+  "partials/footer",
+  "partials/instant-search",
+  "partials/searchbar",
+  "partials/navigation";
+
+// Special pages types styles
+@import
+  "partials/product-catalog",
+  "partials/customer-center",
+  "partials/frontpage",
+  "partials/cart",
+  "partials/404";

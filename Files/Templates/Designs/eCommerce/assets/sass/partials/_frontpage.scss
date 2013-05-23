@@ -1,0 +1,312 @@
+@import "__vars";
+
+// Regular front page type.
+// Implemented like a 'Frontpage Tiles'
+.frontpage {
+  .feature-slider-wrapper, .feature-wrapper {
+    margin-bottom: 20px;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    cursor:pointer;
+  }
+  .feature-slider-wrapper, .feature-slider-wrapper .item { 
+    height: 290px; 
+    overflow: hidden;
+  }
+  .feature-slider-wrapper {
+    height: auto; 
+  
+    .carousel { 
+      margin-bottom: 0; 
+    }
+    .carousel-control { 
+      top: 50%; 
+    }
+    .carousel-inner {
+      .carousel-caption {
+        color: #fff;
+        font: normal 12px/18px arial;
+        left: 50%;
+        right: 0;
+        bottom: 5%;
+        border-radius: 5px 0 0 5px;
+        padding: 15px;
+  
+        a { 
+          color: white; 
+        }
+        h4 { 
+          text-transform: uppercase; 
+
+        }
+      }
+    }
+  }
+
+  .feature-wrapper {
+    height: 135px;
+    padding-top: 20px;
+    padding-bottom: 2px;
+    
+    > .feature {
+      height: inherit;
+      border-radius: inherit;
+      border: 1px solid #DFE4E7; 
+      -webkit-box-shadow: 1px 1px 3px #ececec; 
+         -moz-box-shadow: 1px 1px 3px #ececec;
+              box-shadow: 1px 1px 3px #ececec;
+      
+      background: -webkit-gradient(linear, center top, center bottom, from(#f4f4f4), to(#ffffff));
+      background: -moz-linear-gradient(top, #f4f4f4, #ffffff);
+      background: -o-linear-gradient(top, #f4f4f4, #ffffff);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f4f4f4', endColorstr='#ffffff', GradientType=0);
+
+      > .feature-image {
+        width: 300px;
+        height: 300px;
+        position: absolute;
+        top: -50px;
+        left: -130px;
+      }
+      > .feature-text {
+        font: 14px/21px arial;
+        position: absolute;
+        right: 20px;
+        top: 75px;  
+
+        h1, h2, h3, h4, h5 {
+          background: #333;
+          background: rgba(0, 0, 0, 0.6);
+          float: none;
+          padding: 0;  
+          padding:5px;
+          float:left;
+          color: white;
+        }
+        h1 {
+          font: bold 22px/33px arial;
+        }
+        p {
+          background: #333;
+          background: rgba(0, 0, 0, 0.6);
+          white-space:nowrap;
+          padding:5px;
+          clear:left;
+          float:left;
+        }  
+        a {
+          color: white;
+        }
+      }
+    }
+
+    &.alternative {
+      padding-top: 0;
+
+      > .feature {
+        > .feature-image {
+          left: auto;
+          right: -130px;
+        }
+        > .feature-text {
+          left: 20px;
+          top: 55px;   
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .feature-slider-wrapper .item { 
+      height: 200px; 
+    }
+    .feature-slider-wrapper .carousel-inner .carousel-caption {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      border-radius: 0 0 5px 5px;
+    }
+  }
+}
+
+// Front page implemented like a 'Frontpage Catalog' 
+.frontpage-catalog {
+  // !!!!
+  .span12, .span6 { margin:0; }
+  #content-main {
+    .half-width {
+      &:nth-child(odd) {
+        margin-right: 2.12766%;
+
+        @media (max-width: 767px) {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+  // !!!!
+
+  .box-rounded {
+    // min-height: 150px;
+    font-size: 14px;
+
+    .box-content.collapse {
+      &.in {
+        padding: 5px 20px 10px;
+      }
+    }
+    ul {
+      color: $colorLink;
+    }
+    .box-content-image {
+      float: left;
+      margin: -10px 10px 10px -20px;
+    }
+    .productlist {
+      margin: -10px -20px;
+      padding-top: 20px;
+    }
+    .product-list-item-wrapper {
+      a.btn { 
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+
+        &:hover {
+          background-image: none;
+        }
+      }
+    }
+
+    @media (max-width: 767px) {
+      .box-content.collapse {
+        padding: 0;
+      }
+    }
+  }
+  .tree-groups {
+    > ul {
+      margin-left: 0;
+
+      > li {
+        border-bottom: 1px solid #DFE4E7;
+        padding: 10px 0;
+        list-style-type: none;
+
+        &:last-child {
+          border: none;
+        }
+        a {
+          font: bold 14px/21px arial;
+        }
+        li {
+          list-style-type: disc;
+          color: $colorLink;
+
+          a {
+            font-weight: normal;
+            text-decoration: none;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+
+    @media (max-width: 767px) {
+      > ul {
+        > li {
+          float: left;
+          width: 47%;
+          // margin-left: 18px;
+          border: none;
+
+          &:nth-child(odd) {
+            // float: left;
+            // width: 150px;
+            margin-right: 6%;
+          }
+        }
+      }
+    }
+  }
+  .carousel {
+    @include rounded-borders(#DFE4E7);
+    @include bg-gradient(#FDFDFD, #EDEDED);
+    margin-bottom: 20px;
+    position: relative;
+
+    .item { 
+      min-height: 250px;
+    }
+    .carousel-text {
+      font: 16px/22px arial;
+      margin: 0 65px;
+      padding-top: 25px;
+
+      h1, h2, h3, h4 {
+        color: #00B3FF;
+      }
+      h1 {
+        float: none;
+        padding-left: 0;
+        font: bold 40px/40px arial;
+        text-shadow: 0 1px 2px #FFFFFF;
+      }
+      a {
+        text-decoration: underline;
+      }
+    }    
+    .carousel-image {
+      float: right;
+      margin-right: 60px;
+    }
+
+    @media (max-width: 767px) {
+      .item {
+        min-height: 200px;
+      }
+      .carousel-control{
+        &.left {
+          left: 5px;
+        } 
+        &.right {
+          right: 5px;
+        } 
+      }
+      .carousel-text {
+        font: 14px/21px arial;
+        margin-left: 50px;
+        margin-right: 50px;
+
+        h1 {
+          font: bold 22px/22px arial;
+        }
+      }      
+      .carousel-image {
+        max-width: 35%;
+        margin-right: 40px;
+      }
+    }
+  }
+}
+
+
+@media (min-width: 480px) and (max-width: 767px) {
+  .frontpage .feature-wrapper,
+  .footer-section-wrapper {
+    float: left;
+    clear: left;
+    width: 48.93617020799999%;
+    *width: 48.88297871863829%;
+  }
+  .frontpage .feature-wrapper:nth-child(2n),
+  .footer-section-wrapper:nth-child(2n) {
+    clear: right;
+    margin-left: 2.127659574%;
+    *margin-left: 2.0744680846382977%;
+  }
+}
