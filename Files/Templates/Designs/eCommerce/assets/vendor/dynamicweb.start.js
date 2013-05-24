@@ -1,5 +1,5 @@
 /*
- * Start - 
+ * Start -
  *
  * Copyright (c) 2013 Dynamicweb
  *
@@ -35,7 +35,9 @@ require.config({
     "jquery-cookie" : "../vendor/jquery.cookie",
     // Bootstrap JS and its componetns
     "bootstrap" : "../vendor/bootstrap/bootstrap",
-    "dw-carousel" : "bootstrap-thumbnailsCarousel"
+    "dw-carousel" : "bootstrap-thumbnailsCarousel",
+		"filters" : "dynamicweb.filters",
+		"layout" : "dynamicweb.layout"
   },
   shim: {
     "layout" : [

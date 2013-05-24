@@ -9,12 +9,17 @@
 
     <!-- We have no correct way of rendering path here in "data-main" attribute -->
     <script src="assets/vendor/require-jquery.js"></script>
-    <script src="assets/javascripts/start.js"></script>
+		<script>
+		// @TODO: put this into a tag @Template:BaseUrl
+		var designName = 'eCommerce';
+		var designBaseUrl = '/Files/Templates/Designs/'+designName+'/';
+		</script>
+    <script src="assets/vendor/dynamicweb.start.js"></script>
 
     <link href="assets/vendor/bootstrap/bootstrap.css" rel="stylesheet">
     <link href="assets/vendor/bootstrap/bootstrap-responsive.min.css" rel="stylesheet">
     <link href="assets/vendor/smoothness/jquery-ui-1.8.23.custom.css" rel="stylesheet">
-    <link href="assets/stylesheets/skin.css" rel="stylesheet">
+    <link href="assets/stylesheets/screen.css" rel="stylesheet">
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
