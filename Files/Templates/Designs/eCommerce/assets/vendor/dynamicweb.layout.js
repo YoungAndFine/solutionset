@@ -1404,9 +1404,7 @@ function is_cook_exists() {
 
         }
     }
-    // console.log('2');
     return 2;
-
 }
 
 
@@ -1425,13 +1423,3 @@ Number.prototype.formatMoney = function(c, d, t) {
     + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t)
     + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
 };
-
-
-
-(function($, undefined) {
-	$(document).ready(function() {
-		$('.TODO').each(function(index, el) {
-			$(el).css('top', (4*index)+'em');
-		});
-	});
-}(jQuery));
