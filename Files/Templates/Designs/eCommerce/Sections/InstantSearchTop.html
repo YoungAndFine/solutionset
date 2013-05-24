@@ -1,4 +1,3 @@
-<div class="TODO">Hvorfor skal den overhovedet teste for det?! [Sections/InstantSearchTop.html]</div>
 <!-- "Suggested queries" template -->
 <div id="product-suggestions" class="dw-search-suggestions product-suggestions-box" style="display: none">
   <a class="dw-suggestion-item"></a>
@@ -27,16 +26,9 @@
           <span class="sprite arr-forward-small-white"></span>
         </a>
       </div>
-      <!--@If(Global:Area.Name=='Solution Set B2C ENG')-->
-        <!--@If(Global:Extranet.UserID>0)-->
-          <div class="dw-search-result-price"></div>
-        <!--@EndIf-->
-       <!--@EndIf-->
-       <!--@If(Global:Area.Name=='Solution Set B2C DK')-->
-        <!--@If(Global:Extranet.UserID>0)-->
-          <div class="dw-search-result-price"></div>
-        <!--@EndIf-->
-      <!--@EndIf-->
+          <!--@If Defined(Item.Area.Show_Price_In_InstantSearch)-->
+			<div class="dw-search-result-price"></div>
+		  <!--@EndIf(Item.Area.Show_Price_In_InstantSearch)-->
     </div>
   </div>
   <div class="dw-no-results">
