@@ -1,0 +1,15 @@
+<!--@If(0=1)-->
+<!-- http://www.1stwebdesigner.com/design/snippets-html5-boilerplate/#highlighter_966946 -->
+<!--@EndIf-->
+<!--@If Defined(Item.Area.Google_Analytics_ID)-->
+<script>
+var _gaq = [['_setAccount', '<!--@Item.Area.Google_Analytics_ID-->'], ['_trackPageview']];
+(function(d, t) {
+	var g = d.createElement(t),
+	s = d.getElementsByTagName(t)[0];
+	g.async = true;
+	g.src = '//www.google-analytics.com/ga.js';
+	s.parentNode.insertBefore(g, s);
+})(document, 'script');
+</script>
+<!--@EndIf(Item.Area.Google_Analytics_ID)-->
