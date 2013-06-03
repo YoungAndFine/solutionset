@@ -73,13 +73,17 @@
     </section>
 
     <footer>
-      <!--@ Include(Sections/NavigationMainBottom.html)-->
       <section class="container footer-wrapper">
-        <div class="row dwcontent" id="footerSections" title="Footer sections"></div>
+        <div class="row" id="footerSections" title="Footer sections">
+		<!--@If Defined(Item.Area.Footer_Content_Page_ID)-->
+			<!--@Global:Page.Content(<!--@Item.Area.Footer_Content_Page_ID-->)-->
+		<!--@EndIf(Item.Area.Footer_Content_Page_ID)-->
+		</div>
       </section>
     </footer>
 
     <!--@Include(Sections/Login.html)-->
-		<!--@Include(Sections/GoogleAnalytics.html)-->
+		<!--@Include(Sections/GoogleAnalytics.html)-->'
   </body>
 </html>
+
