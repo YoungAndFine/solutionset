@@ -1,3 +1,4 @@
 ﻿<ItemLayouts>
+  <ItemLayout systemname="Carousel_Item" template="" />
   <ItemLayout systemname="Website_Settings" template="" />
 </ItemLayouts>
