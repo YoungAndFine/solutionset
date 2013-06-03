@@ -1,176 +1,174 @@
 <div class="row-fluid no-space fill customer_center">
-    
-    <!--Left Menu-->
-    <div class="span3 ">        
-        <!--@Ecom:CustomerCenter.Menu-->        
-    </div>
-    <!--/ Left Menu-->
+	<!--Left Menu-->
+	<div class="span3 ">
+		<!--@Ecom:CustomerCenter.Menu-->
+	</div>
+	<!--/ Left Menu-->
 
-    <div class="span9 box-rounded no-left-round span9_ex">
-        
-        <div class="box-headline">
-            <h3><!--@Translate(Account_information, "Account information")--></h3>
-        </div>
+	<div class="span9 box-rounded no-left-round span9_ex">
 
-        <!--@If Defined(Server:Request.addr)-->
-            <div class="customer_wr">
-                <!--@Global:Paragraph.Content(1481)-->
-            </div>
-        <!--@EndIf(Server:Request.addr)-->
-        
-        
-        <!--@If Not Defined(Server:Request.addr)--> 
-        
-        <div class="customer_wr">
-                       
-            <a class="edit_user" href="<!--@Global:Pageview.Url-->?addr=1&ID=272&amp;ObjectID=<!--@Global:Extranet.UserID-->&amp;Action=Edit"><!--@Translate(edit, "Edit")--></a>
-            <h4><!--@Global:Extranet.Name--></h4>
+		<div class="box-headline">
+			<h3><!--@Translate(Account_information, "Account information")--></h3>
+		</div>
 
-            <div class="row-fluid">
-                <ul class="customer_center_block">
-                    <!--@If Defined(Global:Extranet.Company)-->
-                        <li><span><!--@Translate(Company, "Company")-->:</span> <!--@Global:Extranet.Company--></li>
-                    <!--@EndIf(Global:Extranet.Company)-->
+		<!--@If Defined(Server:Request.addr)-->
+		<div class="customer_wr">
+			<!--@Global:Paragraph.Content(1481)-->
+		</div>
+		<!--@EndIf(Server:Request.addr)-->
 
-                    <!--@If Defined(Global:Extranet.Jobtitle)-->
-                        <li><span><!--@Translate(Job_title, "Job title")-->: </span> <!--@Global:Extranet.Jobtitle--></li>
-                    <!--@EndIf(Global:Extranet.Jobtitle)--> 
-                                           
-                    <!--@If Defined(Global:Extranet.Address)-->
-                        <li><span><!--@Translate(Address, "Address")-->:</span> <!--@Global:Extranet.Address--> <!--@Global:Extranet.Address2--></li>
-                    <!--@EndIf(Global:Extranet.Address)-->
 
-                    <!--@If Defined(Global:Extranet.City)-->
-                        <li><span><!--@Translate(City, "City")-->:</span> <!--@Global:Extranet.Zip--> <!--@Global:Extranet.City--></li>
-                    <!--@EndIf(Global:Extranet.City)-->
+		<!--@If Not Defined(Server:Request.addr)-->
 
-                    <!--@If Defined(Global:Extranet.Email)-->
-                        <li><span><!--@Translate(Email, "E-mail")-->:</span> <!--@Global:Extranet.Email--></li>
-                    <!--@EndIf(Global:Extranet.Email)-->
+		<div class="customer_wr">
+			<a class="edit_user" href="<!--@Global:Pageview.Url-->?addr=1&ID=272&amp;ObjectID=<!--@Global:Extranet.UserID-->&amp;Action=Edit"><!--@Translate(edit, "Edit")--></a>
+			<h4><!--@Global:Extranet.Name--></h4>
 
-                    <!--@If Defined(Global:Extranet.Phone)-->
-                        <li><span><!--@Translate(Phone, "Phone")-->:</span> <!--@Global:Extranet.Phone--></li>
-                    <!--@EndIf(Global:Extranet.Phone)-->
-                </ul>
-                <div class="customer_center_block">
-                    <p class="invoice_title"><!--@Translate(in_info, "Invoice Information")--></p>
-                    <p><!--@Translate(boughtfromgivendate, "Bought From 1. January")-->:	<b><!--@Ecom:CustomerCenter.BoughtFromGivenDate--></b><p>
-                    <p><!--@Translate(boughtfor12months, "Bought For 12 Months")-->:	<b><!--@Ecom:CustomerCenter.BoughtFor12Months--></b><p>
-                    <a href="<!--@Global:Request.Url-->&amp;addr=1&amp;ObjectID=<!--@Global:Extranet.UserID-->&amp;Action=ManageAddresses"  class="dw-button dw-button-green dw-button-small"><!--@Translate(myaddresses, "My Addresses")--></a>                          
-                </div>
-            </div>
-        </div>
+			<div class="row-fluid">
+				<ul class="customer_center_block">
+					<!--@If Defined(Global:Extranet.Company)-->
+					<li><span><!--@Translate(Company, "Company")-->:</span> <!--@Global:Extranet.Company--></li>
+					<!--@EndIf(Global:Extranet.Company)-->
 
-        <div class="box-headline">
-            <h3><!--@Translate(latestorders, "Latest Orders")--></h3>
-        </div>
+					<!--@If Defined(Global:Extranet.Jobtitle)-->
+					<li><span><!--@Translate(Job_title, "Job title")-->: </span> <!--@Global:Extranet.Jobtitle--></li>
+					<!--@EndIf(Global:Extranet.Jobtitle)-->
 
-        <div class="orderlist-wr">
-            <table class="table table-striped table-hover">
-                <colgroup>
-                    <col class="to-hide col_date">
-                    <col class="to-cut col_name3">
-                    <col class="col_price">
-                    <col class="to-hide col_id">
-                    <col class="to-hide col-delivery">
-                    <col class="col_export">
-                </colgroup>
-                <thead>
-                    <tr>
-                        <th class="to-hide">
-                            <!--@Translate(date, "Date")-->
-                            <!--@Ecom:CustomerCenter.SortByDate.Desc-->
-                            <span class="tr_img"><!--@Ecom:CustomerCenter.SortByDate.Asc--></span>
-                        </th>
-                        <th class="to-cut">
-                            <!--@Translate(orderif, "Order ID")-->
-                            <!--@Ecom:CustomerCenter.SortByID.Desc-->
-                            <span class="tr_img"><!--@Ecom:CustomerCenter.SortByID.Asc--></span>
-                        </td>
-                        <th>
-                            <!--@Translate(price, "Price")-->
-                            <!--@Ecom:CustomerCenter.SortByPrice.Desc-->
-                            <span class="tr_img"><!--@Ecom:CustomerCenter.SortByPrice.Asc--></span>
-                        </th>
-                        <th class="to-hide">
-                            <!--@Translate(state, "State")-->
-                            <!--@Ecom:CustomerCenter.SortByStateName.Desc-->
-                            <span class="tr_img"><!--@Ecom:CustomerCenter.SortByStateName.Asc--></span>
-                        </th>
-                        <th class="to-hide col-delivery">
-                            <!--@Translate(delivery, "Delivery")-->
-                            <!--@Ecom:CustomerCenter.SortByShippingMethod.Desc-->
-                            <span class="tr_img"><!--@Ecom:CustomerCenter.SortByShippingMethod.Asc--></span>
-                        </th>
-                        <th>
-                            <a href="/Admin/Public/CustomerCenter/ExcelExport.aspx" title="Excel" class="export_excel">
-                                <img alt="excel" title="Export to Excel" src="/Files/Templates/Designs/eCommerce01/images/export.png" />                                
-                                <span class="long_text"><!--@Translate(toexcel, "export to Excel")--></span>
-                                <span class="short_text"><!--@Translate(excel, "Excel")--></span>
-                            </a>
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!--@If Defined(Ecom:CustomerCenter.Orders.EmptyList)-->
-                    <tr class="warning"> 
-                        <td colspan="6"><!--@Translate(noordefound, "No orders found")--></td>
-                    </tr>
-                    <!--@EndIf(Ecom:CustomerCenter.Orders.EmptyList)-->
-        
-                    <!--@If Not Defined(Ecom:CustomerCenter.Orders.EmptyList)-->
-        
-                    <!--@LoopStart(Orders)-->
-                    <tr>
-                        <td class="to-hide"><a href="<!--@Ecom:CustomerCenter.Orders.OrderDetailsURL-->"><!--@Ecom:Order.Date--></a></td>
-                        <td class="to-cut"><a href="<!--@Ecom:CustomerCenter.Orders.OrderDetailsURL-->"><!--@Ecom:Order.ID--></a></td>
-                        <td><!--@Ecom:Order.OrderLines.Total.Price--></td>
-                        <td class="to-hide"><!--@Ecom:Order:Orderstate.Name--></td>
-                        <td class="to-hide col-delivery"><!--@Ecom:Order.ShippingMethod--></td>           
-                        <td class="nowr">
-                            <a href="<!--@Ecom:CustomerCenter.Orders.OrderDetailsURL-->&reorder=1">
-                                <img alt="" src="/Files/Templates/Designs/eCommerce01/images/cart.png" title="Reorder" />
-                                    <span class="long_text">reorder</span>
-                            </a>
-                            <a target="_blank" href="<!--@Ecom:CustomerCenter.Orders.PrintOrderURL-->">
-                                <img src="/Files/Templates/Designs/eCommerce01/images/i_print.png" alt="Print" title="Print" />
-                            </a>
-                            <a href="<!--@Ecom:CustomerCenter.Orders.MailOrderURL-->">
-                                <img src="/Files/Templates/Designs/eCommerce01/images/mail.png" alt="Email" title="Email" />
-                            </a>
-                        </td>
-                    </tr>
-                    <!--@LoopEnd(Orders)-->
-                    <!--@EndIf(Ecom:CustomerCenter.Orders.EmptyList)-->
-                </tbody>
-            </table>
+					<!--@If Defined(Global:Extranet.Address)-->
+					<li><span><!--@Translate(Address, "Address")-->:</span> <!--@Global:Extranet.Address--> <!--@Global:Extranet.Address2--></li>
+					<!--@EndIf(Global:Extranet.Address)-->
 
-            <div class="paging">        
-                <!--@If Defined(Ecom:CustomerCenter.Orders.Paging.Show)-->
-                        <!--@If Defined(Ecom:CustomerCenter.Paging.Back.URL)-->
-                        <!--@Ecom:CustomerCenter.Paging.Back-->
-                        <!--@EndIf(Ecom:CustomerCenter.Paging.Back.URL)-->
+					<!--@If Defined(Global:Extranet.City)-->
+					<li><span><!--@Translate(City, "City")-->:</span> <!--@Global:Extranet.Zip--> <!--@Global:Extranet.City--></li>
+					<!--@EndIf(Global:Extranet.City)-->
 
-                        <!--@If Defined(Ecom:CustomerCenter.Paging.HasPages)-->
-                        <!--@LoopStart(Ecom:CustomerCenter.Paging.Pages)-->
-                        <a class="<!--@Ecom:CustomerCenter.Paging.PageClass-->" href="<!--@Ecom:CustomerCenter.Paging.PageIndexUrl-->"><!--@Ecom:CustomerCenter.Paging.PageIndex--></a>
-                        <!--@LoopEnd(Ecom:CustomerCenter.Paging.Pages)-->
-                        <!--@EndIf(Ecom:CustomerCenter.Paging.HasPages)-->
-                
-                        <!--@If Defined(Ecom:CustomerCenter.Paging.Forward.URL)-->
-                        <!--@Ecom:CustomerCenter.Paging.Forward-->
-                        <!--@EndIf(Ecom:CustomerCenter.Paging.Forward.URL)-->
-                <!--<tr>
-                    <td style="text-align:center" colspan="6">-->
-                        <!-- @Translate(page, "Page")--> <!--@Ecom:CustomerCenter.Paging.CurrentPage--><!--&nbsp;of&nbsp;--><!--@Ecom:CustomerCenter.Paging.NumPages-->
-                    <!--</td>
-                </tr>-->
-                <!--@EndIf(Ecom:CustomerCenter.Orders.Paging.Show)--> 
-        
-                <!--@EndIf(Ecom:CustomerCenter.Orders.EmptyList)-->
-            </div>                 
-        </div> 
-        <!--@EndIf(Server:Request.addr)-->
-        
-    </div>
+					<!--@If Defined(Global:Extranet.Email)-->
+					<li><span><!--@Translate(Email, "E-mail")-->:</span> <!--@Global:Extranet.Email--></li>
+					<!--@EndIf(Global:Extranet.Email)-->
+
+					<!--@If Defined(Global:Extranet.Phone)-->
+					<li><span><!--@Translate(Phone, "Phone")-->:</span> <!--@Global:Extranet.Phone--></li>
+					<!--@EndIf(Global:Extranet.Phone)-->
+				</ul>
+				<div class="customer_center_block">
+					<p class="invoice_title"><!--@Translate(in_info, "Invoice Information")--></p>
+					<p><!--@Translate(boughtfromgivendate, "Bought From 1. January")-->:	<b><!--@Ecom:CustomerCenter.BoughtFromGivenDate--></b><p>
+					<p><!--@Translate(boughtfor12months, "Bought For 12 Months")-->:	<b><!--@Ecom:CustomerCenter.BoughtFor12Months--></b><p>
+						<a href="<!--@Global:Request.Url-->&amp;addr=1&amp;ObjectID=<!--@Global:Extranet.UserID-->&amp;Action=ManageAddresses"	class="dw-button dw-button-green dw-button-small"><!--@Translate(myaddresses, "My Addresses")--></a>
+				</div>
+			</div>
+		</div>
+
+		<div class="box-headline">
+			<h3><!--@Translate(latestorders, "Latest Orders")--></h3>
+		</div>
+
+		<div class="orderlist-wr">
+			<table class="table table-striped table-hover">
+				<colgroup>
+					<col class="to-hide col_date">
+					<col class="to-cut col_name3">
+					<col class="col_price">
+					<col class="to-hide col_id">
+					<col class="to-hide col-delivery">
+					<col class="col_export">
+				</colgroup>
+				<thead>
+					<tr>
+						<th class="to-hide">
+							<!--@Translate(date, "Date")-->
+							<!--@Ecom:CustomerCenter.SortByDate.Desc-->
+							<span class="tr_img"><!--@Ecom:CustomerCenter.SortByDate.Asc--></span>
+						</th>
+						<th class="to-cut">
+							<!--@Translate(orderif, "Order ID")-->
+							<!--@Ecom:CustomerCenter.SortByID.Desc-->
+							<span class="tr_img"><!--@Ecom:CustomerCenter.SortByID.Asc--></span>
+						</th>
+						<th>
+							<!--@Translate(price, "Price")-->
+							<!--@Ecom:CustomerCenter.SortByPrice.Desc-->
+							<span class="tr_img"><!--@Ecom:CustomerCenter.SortByPrice.Asc--></span>
+						</th>
+						<th class="to-hide">
+							<!--@Translate(state, "State")-->
+							<!--@Ecom:CustomerCenter.SortByStateName.Desc-->
+							<span class="tr_img"><!--@Ecom:CustomerCenter.SortByStateName.Asc--></span>
+						</th>
+						<th class="to-hide col-delivery">
+							<!--@Translate(delivery, "Delivery")-->
+							<!--@Ecom:CustomerCenter.SortByShippingMethod.Desc-->
+							<span class="tr_img"><!--@Ecom:CustomerCenter.SortByShippingMethod.Asc--></span>
+						</th>
+						<th>
+							<a href="/Admin/Public/CustomerCenter/ExcelExport.aspx" title="Excel" class="export_excel">
+								<img alt="excel" title="Export to Excel" src="/Files/Templates/Designs/eCommerce01/images/export.png" />
+								<span class="long_text"><!--@Translate(toexcel, "export to Excel")--></span>
+								<span class="short_text"><!--@Translate(excel, "Excel")--></span>
+							</a>
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					<!--@If Defined(Ecom:CustomerCenter.Orders.EmptyList)-->
+					<tr class="warning">
+						<td colspan="6"><!--@Translate(noordefound, "No orders found")--></td>
+					</tr>
+					<!--@EndIf(Ecom:CustomerCenter.Orders.EmptyList)-->
+
+					<!--@If Not Defined(Ecom:CustomerCenter.Orders.EmptyList)-->
+
+					<!--@LoopStart(Orders)-->
+					<tr>
+						<td class="to-hide"><a href="<!--@Ecom:CustomerCenter.Orders.OrderDetailsURL-->"><!--@Ecom:Order.Date--></a></td>
+						<td class="to-cut"><a href="<!--@Ecom:CustomerCenter.Orders.OrderDetailsURL-->"><!--@Ecom:Order.ID--></a></td>
+						<td><!--@Ecom:Order.OrderLines.Total.Price--></td>
+						<td class="to-hide"><!--@Ecom:Order:Orderstate.Name--></td>
+						<td class="to-hide col-delivery"><!--@Ecom:Order.ShippingMethod--></td>
+						<td class="nowr">
+							<a href="<!--@Ecom:CustomerCenter.Orders.OrderDetailsURL-->&reorder=1">
+								<img alt="" src="/Files/Templates/Designs/eCommerce01/images/cart.png" title="Reorder" />
+								<span class="long_text">reorder</span>
+							</a>
+							<a target="_blank" href="<!--@Ecom:CustomerCenter.Orders.PrintOrderURL-->">
+								<img src="/Files/Templates/Designs/eCommerce01/images/i_print.png" alt="Print" title="Print" />
+							</a>
+							<a href="<!--@Ecom:CustomerCenter.Orders.MailOrderURL-->">
+								<img src="/Files/Templates/Designs/eCommerce01/images/mail.png" alt="Email" title="Email" />
+							</a>
+						</td>
+					</tr>
+					<!--@LoopEnd(Orders)-->
+					<!--@EndIf(Ecom:CustomerCenter.Orders.EmptyList)-->
+				</tbody>
+			</table>
+
+			<div class="paging">
+				<!--@If Defined(Ecom:CustomerCenter.Orders.Paging.Show)-->
+				<!--@If Defined(Ecom:CustomerCenter.Paging.Back.URL)-->
+				<!--@Ecom:CustomerCenter.Paging.Back-->
+				<!--@EndIf(Ecom:CustomerCenter.Paging.Back.URL)-->
+
+				<!--@If Defined(Ecom:CustomerCenter.Paging.HasPages)-->
+				<!--@LoopStart(Ecom:CustomerCenter.Paging.Pages)-->
+				<a class="<!--@Ecom:CustomerCenter.Paging.PageClass-->" href="<!--@Ecom:CustomerCenter.Paging.PageIndexUrl-->"><!--@Ecom:CustomerCenter.Paging.PageIndex--></a>
+				<!--@LoopEnd(Ecom:CustomerCenter.Paging.Pages)-->
+				<!--@EndIf(Ecom:CustomerCenter.Paging.HasPages)-->
+
+				<!--@If Defined(Ecom:CustomerCenter.Paging.Forward.URL)-->
+				<!--@Ecom:CustomerCenter.Paging.Forward-->
+				<!--@EndIf(Ecom:CustomerCenter.Paging.Forward.URL)-->
+				<!--<tr>
+						<td style="text-align:center" colspan="6">-->
+				<!-- @Translate(page, "Page")--> <!--@Ecom:CustomerCenter.Paging.CurrentPage--><!--&nbsp;of&nbsp;--><!--@Ecom:CustomerCenter.Paging.NumPages-->
+				<!--</td>
+						</tr>-->
+				<!--@EndIf(Ecom:CustomerCenter.Orders.Paging.Show)-->
+
+				<!--@EndIf(Ecom:CustomerCenter.Orders.EmptyList)-->
+			</div>
+		</div>
+		<!--@EndIf(Server:Request.addr)-->
+
+	</div>
 </div>
