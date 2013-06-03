@@ -22,6 +22,9 @@
         <li><span>Welcome back, <strong><xsl:value-of select="$UserName" /></strong></span></li>
         <li>
           <a class="left-spacing right-spacing">
+          	<xsl:if test="(@NavigationTag='login') and ($UserID=1)">
+          		<i class="icon-unlock-alt"><xsl:text> </xsl:text></i>
+          	</xsl:if>
             <xsl:attribute name="href">
               /Admin/Public/ExtranetLogoff.aspx?ID=<xsl:value-of select="//GlobalTags/Global.Page.ID" />
             </xsl:attribute>
@@ -53,6 +56,9 @@
                 </xsl:attribute>
               </xsl:otherwise>
             </xsl:choose>
+            <xsl:if test="(@NavigationTag='login') and ($UserID=0)">
+          		<i class="icon-lock"><xsl:text> </xsl:text></i>
+          	</xsl:if>
             <xsl:value-of select="@MenuText" disable-output-escaping="yes" />
           </a>
         </li>

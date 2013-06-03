@@ -1,11 +1,2 @@
-$fontPath:   "../fonts" !default;
-//Font Awesome
-//@include font-face("FontAwesome", font-files("#{$fontPath}/fontawesome-webfont.ttf", "#{$fontPath}/FontAwesome.otf"));
 
-@font-face {
-  font-family: 'FontAwesome';
-  src: url('#{$fontPath}/fontawesome-webfont.eot');
-  src: url('#{$fontPath}/fontawesome-webfont.eot?#iefix') format("embedded-opentype"),
-    url('#{$fontPath}/fontawesome-webfont.woff') format("woff"),
-    url('#{$fontPath}/fontawesome-webfont.ttf') format("truetype");
-}
+@import "font-awesome";
