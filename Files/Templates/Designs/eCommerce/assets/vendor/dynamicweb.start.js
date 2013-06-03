@@ -22,6 +22,7 @@ require.config({
     "InstantSearch" : "/Admin/Content/JsLib/dw/InstantSearch.min",
     // jQuery and its plugins
     "jquery": "empty:",
+    "modernizer" : "../vendor/modernizr.min",
     "jquery-ui" : "../vendor/jquery-ui-1.8.23.custom.min",
     "touch-punch" : "../vendor/jquery.ui.touch-punch.min",
     "jquery-autocomplete" : "jquery.ui.autocompleteAddress",
@@ -41,6 +42,7 @@ require.config({
   },
   shim: {
     "layout" : [
+      "modernizer",
       "jquery",
       "jquery-query",
       "jquery-ui",

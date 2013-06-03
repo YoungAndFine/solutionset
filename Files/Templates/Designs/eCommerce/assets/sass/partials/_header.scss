@@ -13,8 +13,6 @@
  *
  */
 
-@import "__vars";
-
 // Language selector on top of the page
 .lang_selector {
   position: absolute;
@@ -70,9 +68,14 @@
 
     .logo-image {
       display: block;
-      background: url("../images/logo.png") left center no-repeat;
+      background: url("../images/global-logo.svg") left center no-repeat;
+      background-size: contain;
       height: 80px;
       width: auto;
+    }
+    
+    .no-svg .logo-image {
+	    background: url("../images/global-logo.png") left center no-repeat;
     }
   }
   .payoff {
