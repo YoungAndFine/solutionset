@@ -21,7 +21,7 @@
 <section class="product-details-content" itemscope itemtype="http://data-vocabulary.org/Product">
   <div class="row-fluid">
     <div class="span12">
-      <div class="product-name-vs-number">      
+      <div class="product-name-vs-number">
         <h1 itemprop="name"><!--@Ecom:Product.Name--></h1>
         <div class="product-number visible-phone"><!--@Translate(Product_number, "Product no.")-->: <span itemprop="identifier"><!--@Ecom:Product.Number--></span></div>
       </div>
@@ -34,7 +34,7 @@
         <img src="/Admin/Public/getimage.ashx?Image=<!--@Ecom:Product.ImageLarge.Default.Clean-->&amp;Width=320" alt="" data-full-image="<!--@Ecom:Product.ImageLarge.Default.Clean-->">
       </a>
       <div class="row-fluid product-image-subthumbs">
- 
+
         <!--@LoopStart(Details)-->
         <!--@If Defined(Ecom:Product:Detail.Image.Clean)-->
         <div class="span4">
@@ -123,16 +123,16 @@
           <button class="btn dw-button-green" data-dw-cmd="addtocart" onclick="Layout.Cart.AddToCart(this, '', '.product-pricebox-wrapper')">
             <i class="icon sprite cart-tiny-white"></i>
             <!--@Translate(AddToCart, "Add to cart")-->
-          </button>   
+          </button>
         </div>
       </div>
       <div class="product-rating-comments visible-phone">
         <div class="product-rating">
-          <span itemscope itemtype="http://data-vocabulary.org/Review-aggregate">  
+          <span itemscope itemtype="http://data-vocabulary.org/Review-aggregate">
             <span itemprop="itemreviewed" class="hidden"><!--@Ecom:Product.Name--></span>
             <span itemprop="rating" itemscope itemtype="http://data-vocabulary.org/Rating">
               <span itemprop="average"><!--@Ecom:Product.Rating--></span> out of
-              <span itemprop="best">5</span> 
+              <span itemprop="best">5</span>
             </span>
             <div class="product-comments">
               <div class="sprite commentSmall"></div>
@@ -142,12 +142,12 @@
         </div>
       </div>
       <div class="stock">
-        <span class="sprite signv-red" <!--@If Defined(Ecom:Product:Stock.Image.Clean)-->style="background: url('<!--@Ecom:Product:Stock.Image.Clean-->') no-repeat 0 0 !important;"<!--@EndIf(Ecom:Product:Stock.Image.Clean)-->></span> 
+        <span class="sprite signv-red" <!--@If Defined(Ecom:Product:Stock.Image.Clean)-->style="background: url('<!--@Ecom:Product:Stock.Image.Clean-->') no-repeat 0 0 !important;"<!--@EndIf(Ecom:Product:Stock.Image.Clean)-->></span>
         <!--@Ecom:Product:Stock.Text-->
       </div>
       <div class="delivery">
-        <span class="sprite signv"></span> 
-        <!--@Translate(ProductDelivary, "Delivery")--> <!--@Ecom:Product.IsInCart)--> <!--@Ecom:Product:Stock.DeliveryText--> <!--@Ecom:Product:Stock.DeliveryUnit-->        
+        <span class="sprite signv"></span>
+        <!--@Translate(ProductDelivary, "Delivery")--> <!--@Ecom:Product.IsInCart)--> <!--@Ecom:Product:Stock.DeliveryText--> <!--@Ecom:Product:Stock.DeliveryUnit-->
       </div>
       <div class="product-addthis">
         <div class="addthis_toolbox addthis_default_style ">
@@ -161,22 +161,22 @@
         <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=xa-4ffa83b21df57f59"></script>
       </div>
     </div><!-- / .details -->
-    <div class="content">      
+    <div class="content">
       <div class="tab-content">
         <div class="tab-pane <!--@If Not Defined(Server:Request.tabreviews)-->active<!--@EndIf(Server:Request.tabreviews)-->" id="tab-description">
-        
+
           <h2 class="tab-pane-headline visible-phone">
             <!--@Translate(description, "Description")-->
             <button type="button" class="btn btn-mini filter-collapse visible-phone" data-toggle="collapse" data-target="#tab-description .collapse"><i class="icon-filter-collapse"></i></button>
           </h2>
-          <div class="collapse in">        
+          <div class="collapse in">
             <div class="product-rating-comments hidden-phone">
               <div class="product-rating">
-                <span itemscope itemtype="http://data-vocabulary.org/Review-aggregate">  
+                <span itemscope itemtype="http://data-vocabulary.org/Review-aggregate">
                   <span itemprop="itemreviewed" class="hidden"><!--@Ecom:Product.Name--></span>
                   <span itemprop="rating" itemscope itemtype="http://data-vocabulary.org/Rating">
                     <span itemprop="average"><!--@Ecom:Product.Rating--></span> out of
-                    <span itemprop="best">5</span> 
+                    <span itemprop="best">5</span>
                   </span>
                   <div class="product-comments">
                     <div class="sprite commentSmall"></div>
@@ -190,7 +190,7 @@
             </div>
             <div class="product-number">
               <!--@Translate(Product_number, "Product no.")-->: <span itemprop="identifier"><!--@Ecom:Product.Number--></span>
-              <a href="/Default.aspx?ID=<!--@If(Global:Area.ID==1)-->497<!--@EndIf--><!--@If(Global:Area.ID==17)-->605<!--@EndIf-->&amp;ProductID=<!--@Ecom:Product.ID-->&amp;PDF=TRUE&amp;filename=Product_<!--@Ecom:Product.Name-->" class="load_pdf"> 
+              <a href="/Default.aspx?ID=<!--@If(Global:Area.ID==1)-->497<!--@EndIf--><!--@If(Global:Area.ID==17)-->605<!--@EndIf-->&amp;ProductID=<!--@Ecom:Product.ID-->&amp;PDF=TRUE&amp;filename=Product_<!--@Ecom:Product.Name-->" class="load_pdf">
                 <span class="sprite icon-pdf"></span>
                 <!--@Translate(download_pdf, "Download PDF")-->
               </a>
@@ -206,10 +206,10 @@
             </div>
             <!--@EndIf(Ecom:Product.AddToFavorites)-->
           </div>
-        
+
         </div>
         <div class="tab-pane" id="tab-details">
-        
+
           <h2 class="tab-pane-headline visible-phone">
             <!--@Translate(details, "Details")-->
             <button type="button" class="btn btn-mini filter-collapse visible-phone collapsed" data-toggle="collapse" data-target="#tab-details .collapse"><i class="icon-filter-collapse"></i></button>
@@ -226,15 +226,16 @@
             <!--@LoopEnd(ProductCategories)-->
             </table>
           </div>
-          
+
         </div>
         <div class="tab-pane <!--@If Defined(Server:Request.tabreviews)-->active<!--@EndIf(Server:Request.tabreviews)-->" id="tab-reviews">
-        
+
           <h2 class="tab-pane-headline visible-phone">
             <!--@Translate(reviews, "Reviews")-->
             <button type="button" class="btn btn-mini filter-collapse visible-phone collapsed" data-toggle="collapse" data-target="#tab-reviews .collapse"><i class="icon-filter-collapse"></i></button>
           </h2>
           <div class="collapse">
+            <a class="btn dw-button-gray" href="#" data-toggle="modal" data-target="#productCommentAdd"><i class="icon-plus"></i> <!--@Translate(addnewcomment, "Write a comment")--></a>
             <div class="fiveCommentDivContainer tabContentShown">
               <!--@If(Comments.Count==0)-->
               <!--@Translate(noreviews, "There are currently no reviews")-->
@@ -248,7 +249,6 @@
                 </span>
                 <span itemprop="count"><!--@Comments.Count--></span> user reviews.
               </div>
-
               <!--@LoopStart(Comments)-->
               <div class="CustomerComment">
                 <!-- @Comments.LoopCounter -->
@@ -282,15 +282,14 @@
             <!--@If(Comments.Count>5)-->
             <div class="comments-pagination">
               <a id="previousCommentsButton" class="disabledLink" onclick="previous();">previous 5</a>
-              - 
+              -
               <a id="nextCommentsButton" onclick="nextComments();">next 5</a>
             </div>
             <!--@EndIf-->
           </div>
-          
         </div>
       </div>
-    </div><!-- / .content -->    
+    </div><!-- / .content -->
     <div class="product-pricebox-wrapper visible-phone">
       <!--@If(Ecom:Product.VariantCount>0)-->
       <h3><!--@Translate(Choose_variant, "Choose your variant")-->:</h3>
@@ -354,10 +353,10 @@
         <button class="btn dw-button-green" data-dw-cmd="addtocart" onclick="$.addToCart(this)">
           <i class="icon sprite cart-tiny-white"></i>
           <!--@Translate(AddToCart, "Add to cart")-->
-        </button>   
+        </button>
       </div>
     </div><!-- / .product-pricebox-wrapper -->
-  </div>  
+  </div>
 </section>
 
 
@@ -387,8 +386,8 @@
                 <div class="product-name">
                   <a href="<!--@Ecom:Product.LinkGroup.Clean-->" class="product-link" title="<!--@Ecom:Product.Name-->">
                     <!--@Ecom:Product.Name-->
-                  </a>          
-                </div>              
+                  </a>
+                </div>
                 <div class="product-price" itemprop="offerDetails" itemscope itemtype="http://data-vocabulary.org/Offer">
                   <meta itemprop="currency" content="<!--@Ecom:Product.Currency.Code-->" />
                   <span itemprop="price"><!--@Ecom:Product.Price.PriceWithVATFormatted--></span> / <!--@Translate(unit, "unit")-->
@@ -433,7 +432,7 @@
                         <!--@Ecom:Product.ShortDescription-->
                       </div>
                       <div class="product-pricebox-wrapper">
-                        <div class="product-pricebox-title"><!--@Translate(shoosevariant, "Choose your variant:")--></div>  
+                        <div class="product-pricebox-title"><!--@Translate(shoosevariant, "Choose your variant:")--></div>
                         <div class="product-variants">
                           <select class="variants-selector input-large">
                             <option value=""><!--@Translate(selectyourvariant, 'Select your option')--></option>
@@ -453,13 +452,13 @@
                           <div>
                             <div>&nbsp;</div>
                             <div><!--@Ecom:Product.Price.PriceWithVATFormatted--> / <!--@Translate(unit, "unit")--></div>
-                          </div>    
+                          </div>
                         </div>
                         <div class="product-addtocart">
                           <input name="quantity" class="input-mini" onclick="this.value='';" value="1" type="text"><span class="help-inline"><!--@Translate(unit, "unit")--></span>
                           <button class="btn dw-button-green" data-dw-cmd="addtocart" onclick="$.addToCart(this)">
                             <span><!--@Translate(AddToCart, "Add to cart")--></span>
-                          </button>            
+                          </button>
                         </div>
                       </div>
                       <div class="product-facts">
@@ -475,9 +474,9 @@
                       <div class="clearfix"></div>
                     </div><!-- / .popup-variants-partright -->
                   </div>
-                
+
                 </div>
-              
+
               </div><!-- / .modal-body -->
             </div><!-- / .modal.popup-variants -->
             <!--@EndIf-->
@@ -511,8 +510,8 @@
                 <div class="product-name">
                   <a href="<!--@Ecom:Product.LinkGroup.Clean-->" class="product-link" title="<!--@Ecom:Product.Name-->">
                     <!--@Ecom:Product.Name-->
-                  </a>          
-                </div>              
+                  </a>
+                </div>
                 <div class="product-price" itemprop="offerDetails" itemscope itemtype="http://data-vocabulary.org/Offer">
                   <meta itemprop="currency" content="<!--@Ecom:Product.Currency.Code-->" />
                   <span itemprop="price"><!--@Ecom:Product.Price.PriceWithVATFormatted--></span> / <!--@Translate(unit, "unit")-->
@@ -557,7 +556,7 @@
                         <!--@Ecom:Product.ShortDescription-->
                       </div>
                       <div class="product-pricebox-wrapper">
-                        <div class="product-pricebox-title"><!--@Translate(shoosevariant, "Choose your variant:")--></div>  
+                        <div class="product-pricebox-title"><!--@Translate(shoosevariant, "Choose your variant:")--></div>
                         <div class="product-variants">
                           <select class="variants-selector input-large">
                             <option value=""><!--@Translate(selectyourvariant, 'Select your option')--></option>
@@ -577,13 +576,13 @@
                           <div>
                             <div>&nbsp;</div>
                             <div><!--@Ecom:Product.Price.PriceWithVATFormatted--> / <!--@Translate(unit, "unit")--></div>
-                          </div>    
+                          </div>
                         </div>
                         <div class="product-addtocart">
                           <input name="quantity" class="input-mini" onclick="this.value='';" value="1" type="text"><span class="help-inline"><!--@Translate(unit, "unit")--></span>
                           <button class="btn dw-button-green" data-dw-cmd="addtocart" onclick="$.addToCart(this)">
                             <span><!--@Translate(AddToCart, "Add to cart")--></span>
-                          </button>            
+                          </button>
                         </div>
                       </div>
                       <div class="product-facts">
@@ -599,9 +598,9 @@
                       <div class="clearfix"></div>
                     </div><!-- / .popup-variants-partright -->
                   </div>
-                
+
                 </div>
-              
+
               </div><!-- / .modal-body -->
             </div><!-- / .modal.popup-variants -->
             <!--@EndIf-->
@@ -637,8 +636,8 @@
                 <div class="product-name">
                   <a href="<!--@Ecom:Product.LinkGroup.Clean-->" class="product-link" title="<!--@Ecom:Product.Name-->">
                     <!--@Ecom:Product.Name-->
-                  </a>          
-                </div>              
+                  </a>
+                </div>
                 <div class="product-price" itemprop="offerDetails" itemscope itemtype="http://data-vocabulary.org/Offer">
                   <meta itemprop="currency" content="<!--@Ecom:Product.Currency.Code-->" />
                   <span itemprop="price"><!--@Ecom:Product.Price.PriceWithVATFormatted--></span> / <!--@Translate(unit, "unit")-->
@@ -683,7 +682,7 @@
                         <!--@Ecom:Product.ShortDescription-->
                       </div>
                       <div class="product-pricebox-wrapper">
-                        <div class="product-pricebox-title"><!--@Translate(shoosevariant, "Choose your variant:")--></div>  
+                        <div class="product-pricebox-title"><!--@Translate(shoosevariant, "Choose your variant:")--></div>
                         <div class="product-variants">
                           <select class="variants-selector input-large">
                             <option value=""><!--@Translate(selectyourvariant, 'Select your option')--></option>
@@ -703,13 +702,13 @@
                           <div>
                             <div>&nbsp;</div>
                             <div><!--@Ecom:Product.Price.PriceWithVATFormatted--> / <!--@Translate(unit, "unit")--></div>
-                          </div>    
+                          </div>
                         </div>
                         <div class="product-addtocart">
                           <input name="quantity" class="input-mini" onclick="this.value='';" value="1" type="text"><span class="help-inline"><!--@Translate(unit, "unit")--></span>
                           <button class="btn dw-button-green" data-dw-cmd="addtocart" onclick="$.addToCart(this)">
                             <span><!--@Translate(AddToCart, "Add to cart")--></span>
-                          </button>            
+                          </button>
                         </div>
                       </div>
                       <div class="product-facts">
@@ -725,9 +724,9 @@
                       <div class="clearfix"></div>
                     </div><!-- / .popup-variants-partright -->
                   </div>
-                
+
                 </div>
-              
+
               </div><!-- / .modal-body -->
             </div><!-- / .modal.popup-variants -->
             <!--@EndIf-->
@@ -765,8 +764,8 @@
                 <div class="product-name">
                   <a href="<!--@Ecom:Product.LinkGroup.Clean-->" class="product-link" title="<!--@Ecom:Product.Name-->">
                     <!--@Ecom:Product.Name-->
-                  </a>          
-                </div>              
+                  </a>
+                </div>
                 <div class="product-price" itemprop="offerDetails" itemscope itemtype="http://data-vocabulary.org/Offer">
                   <meta itemprop="currency" content="<!--@Ecom:Product.Currency.Code-->" />
                   <span itemprop="price"><!--@Ecom:Product.Price.PriceWithVATFormatted--></span> / <!--@Translate(unit, "unit")-->
@@ -811,7 +810,7 @@
                         <!--@Ecom:Product.ShortDescription-->
                       </div>
                       <div class="product-pricebox-wrapper">
-                        <div class="product-pricebox-title"><!--@Translate(shoosevariant, "Choose your variant:")--></div>  
+                        <div class="product-pricebox-title"><!--@Translate(shoosevariant, "Choose your variant:")--></div>
                         <div class="product-variants">
                           <select class="variants-selector input-large">
                             <option value=""><!--@Translate(selectyourvariant, 'Select your option')--></option>
@@ -831,13 +830,13 @@
                           <div>
                             <div>&nbsp;</div>
                             <div><!--@Ecom:Product.Price.PriceWithVATFormatted--> / <!--@Translate(unit, "unit")--></div>
-                          </div>    
+                          </div>
                         </div>
                         <div class="product-addtocart">
                           <input name="quantity" class="input-mini" onclick="this.value='';" value="1" type="text"><span class="help-inline"><!--@Translate(unit, "unit")--></span>
                           <button class="btn dw-button-green" data-dw-cmd="addtocart" onclick="$.addToCart(this)">
                             <span><!--@Translate(AddToCart, "Add to cart")--></span>
-                          </button>            
+                          </button>
                         </div>
                       </div>
                       <div class="product-facts">
@@ -853,9 +852,9 @@
                       <div class="clearfix"></div>
                     </div><!-- / .popup-variants-partright -->
                   </div>
-                
+
                 </div>
-              
+
               </div><!-- / .modal-body -->
             </div><!-- / .modal.popup-variants -->
             <!--@EndIf-->
@@ -892,8 +891,8 @@
                 <div class="product-name">
                   <a href="<!--@Ecom:Product.LinkGroup.Clean-->" class="product-link" title="<!--@Ecom:Product.Name-->">
                     <!--@Ecom:Product.Name-->
-                  </a>          
-                </div>              
+                  </a>
+                </div>
                 <div class="product-price" itemprop="offerDetails" itemscope itemtype="http://data-vocabulary.org/Offer">
                   <meta itemprop="currency" content="<!--@Ecom:Product.Currency.Code-->" />
                   <span itemprop="price"><!--@Ecom:Product.Price.PriceWithVATFormatted--></span> / <!--@Translate(unit, "unit")-->
@@ -938,7 +937,7 @@
                         <!--@Ecom:Product.ShortDescription-->
                       </div>
                       <div class="product-pricebox-wrapper">
-                        <div class="product-pricebox-title"><!--@Translate(shoosevariant, "Choose your variant:")--></div>  
+                        <div class="product-pricebox-title"><!--@Translate(shoosevariant, "Choose your variant:")--></div>
                         <div class="product-variants">
                           <select class="variants-selector input-large">
                             <option value=""><!--@Translate(selectyourvariant, 'Select your option')--></option>
@@ -958,13 +957,13 @@
                           <div>
                             <div>&nbsp;</div>
                             <div><!--@Ecom:Product.Price.PriceWithVATFormatted--> / <!--@Translate(unit, "unit")--></div>
-                          </div>    
+                          </div>
                         </div>
                         <div class="product-addtocart">
                           <input name="quantity" class="input-mini" onclick="this.value='';" value="1" type="text"><span class="help-inline"><!--@Translate(unit, "unit")--></span>
                           <button class="btn dw-button-green" data-dw-cmd="addtocart" onclick="$.addToCart(this)">
                             <span><!--@Translate(AddToCart, "Add to cart")--></span>
-                          </button>            
+                          </button>
                         </div>
                       </div>
                       <div class="product-facts">
@@ -980,9 +979,9 @@
                       <div class="clearfix"></div>
                     </div><!-- / .popup-variants-partright -->
                   </div>
-                
+
                 </div>
-              
+
               </div><!-- / .modal-body -->
             </div><!-- / .modal.popup-variants -->
             <!--@EndIf-->
@@ -1019,8 +1018,8 @@
                 <div class="product-name">
                   <a href="<!--@Ecom:Product.LinkGroup.Clean-->" class="product-link" title="<!--@Ecom:Product.Name-->">
                     <!--@Ecom:Product.Name-->
-                  </a>          
-                </div>              
+                  </a>
+                </div>
                 <div class="product-price" itemprop="offerDetails" itemscope itemtype="http://data-vocabulary.org/Offer">
                   <meta itemprop="currency" content="<!--@Ecom:Product.Currency.Code-->" />
                   <span itemprop="price"><!--@Ecom:Product.Price.PriceWithVATFormatted--></span> / <!--@Translate(unit, "unit")-->
@@ -1065,7 +1064,7 @@
                         <!--@Ecom:Product.ShortDescription-->
                       </div>
                       <div class="product-pricebox-wrapper">
-                        <div class="product-pricebox-title"><!--@Translate(shoosevariant, "Choose your variant:")--></div>  
+                        <div class="product-pricebox-title"><!--@Translate(shoosevariant, "Choose your variant:")--></div>
                         <div class="product-variants">
                           <select class="variants-selector input-large">
                             <option value=""><!--@Translate(selectyourvariant, 'Select your option')--></option>
@@ -1085,13 +1084,13 @@
                           <div>
                             <div>&nbsp;</div>
                             <div><!--@Ecom:Product.Price.PriceWithVATFormatted--> / <!--@Translate(unit, "unit")--></div>
-                          </div>    
+                          </div>
                         </div>
                         <div class="product-addtocart">
                           <input name="quantity" class="input-mini" onclick="this.value='';" value="1" type="text"><span class="help-inline"><!--@Translate(unit, "unit")--></span>
                           <button class="btn dw-button-green" data-dw-cmd="addtocart" onclick="$.addToCart(this)">
                             <span><!--@Translate(AddToCart, "Add to cart")--></span>
-                          </button>            
+                          </button>
                         </div>
                       </div>
                       <div class="product-facts">
@@ -1107,9 +1106,9 @@
                       <div class="clearfix"></div>
                     </div><!-- / .popup-variants-partright -->
                   </div>
-                
+
                 </div>
-              
+
               </div><!-- / .modal-body -->
             </div><!-- / .modal.popup-variants -->
             <!--@EndIf-->
@@ -1147,7 +1146,7 @@
       <input type="hidden" name="Comment.ItemType" value="ecomProduct" />
       <input type="hidden" name="Comment.ItemID" value="<!--@Ecom:Product.ID-->" />
       <input type="hidden" name="Comment.LangID" value="<!--@Ecom:Product.LanguageID-->" />
-      
+
       <div class="controls">
         <select name="Comment.Rating" id="Comment.Rating" class="span12">
           <option value=""><!--@Translate(rateproduct, 'Rate product...')--></option>
@@ -1162,7 +1161,7 @@
         <textarea name="Comment.Text" id="Comment.Text" placeholder="<!--@Translate(leaveyourcomment, "Leave your comment")-->" class="span12"></textarea>
         <input type="submit" value="<!--@Translate(addyourcomment, "Add your comment")-->" class="span12 btn dw-button-green">
       </div>
-      
+
     </form>
     </div>
   </div><!-- / .modal-body -->
@@ -1223,7 +1222,7 @@
 
 <script type="text/javascript">
   require(
-    ['jquery', 'layout', 'jquery-lazyload', 'dw-carousel'], 
+    ['jquery', 'layout', 'jquery-lazyload', 'dw-carousel'],
     function ($) {
 
       Layout.params.currency = {
@@ -1234,7 +1233,7 @@
 
       $(document).ready(function () {
 
-        // Changing active tab after clicking on 
+        // Changing active tab after clicking on
         // comments link from details tab
         $('.product-comments a[data-toggle="tab"]').on('click', function (e) {
           var $navtabs = $('.nav-tabs'),
@@ -1242,10 +1241,10 @@
 
           $navtabs.find('.active').removeClass('active');
           $tabHeader.parent().addClass('active');
-        });        
+        });
 
-        // Attach thumbnail carousel plugin for thumbnails 
-        // under the popup modal box  
+        // Attach thumbnail carousel plugin for thumbnails
+        // under the popup modal box
         $('#productImagesSlider').live('shown', function () {
           $(this).find('img').lazyload({
             effect : 'fadeIn'
@@ -1259,30 +1258,30 @@
         var imageZoomed = '.product-image-zoomed';
         if (!Layout.isMobile.any()) {
           require(['jquery-zoom'], function () {
-            $(imageZoomed).zoom({ 
-              url: $(imageZoomed + ' img').data().fullImage 
-            });        
+            $(imageZoomed).zoom({
+              url: $(imageZoomed + ' img').data().fullImage
+            });
             $('.product-image-subthumbs a').on('click', function (e) {
               var data = $(this).data()
                 , $imageZoomedImg = $(imageZoomed + ' img');
-              // Changing the zoomed image sources 
+              // Changing the zoomed image sources
               $imageZoomedImg.data('fullImage', data.fullImage);
               // Destroy and reinit the instance of zoomed image
               $(imageZoomed).zoom('destroy');
-              $(imageZoomed).zoom({ 
-                url: $imageZoomedImg.data().fullImage 
-              });        
-            });          
+              $(imageZoomed).zoom({
+                url: $imageZoomedImg.data().fullImage
+              });
+            });
           });
         }
-        // Changing the main image source attribute  
+        // Changing the main image source attribute
         $('.product-image-subthumbs a').on('click', function (e) {
           var data = $(this).data()
             , $imageZoomedImg = $(imageZoomed + ' img');
           $imageZoomedImg.attr('src', data.thumbImage);
         });
 
-        // Manually trigger the modal box after 
+        // Manually trigger the modal box after
         // click on big product image
         $('.product-image-zoomed').on('click', function (e) {
           var $target = $($(this).data().target);
@@ -1293,4 +1292,3 @@
     }
   );
 </script>
-

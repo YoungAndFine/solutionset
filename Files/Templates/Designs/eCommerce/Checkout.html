@@ -4,7 +4,7 @@
 
 <script type="text/javascript">
   require(["jquery", "layout"], function ($) {
-  
+
     //Redirects for last step in checkout to change template
     var query = $.getUrlParams()
       , receiptAction = $('#content-main').data().receiptAction;
@@ -12,17 +12,16 @@
     if (receiptAction && query["CompletedOrderId"] && query["CompletedOrderSecret"]) {
       location.href =
         receiptAction
-        + "&CompletedOrderId=" 
-        + query["CompletedOrderId"] 
-        + "&CompletedOrderSecret=" 
+        + "&CompletedOrderId="
+        + query["CompletedOrderId"]
+        + "&CompletedOrderSecret="
         + query["CompletedOrderSecret"];
     }
-  
-  });	
+
+  });
 </script>
 
 <section class="container content-wrapper">
-  <div class="row dwcontent" id="content-main" title="Main content" data-receipt-action="/Default.aspx?ID=<!--@If(Global:Area.ID==1)-->599<!--@EndIf--><!--@If(Global:Area.ID==17)-->600<!--@EndIf--><!--@If(Global:Area.ID==18)-->595<!--@EndIf--><!--@If(Global:Area.ID==19)-->596<!--@EndIf-->">
-    
+  <div class="row dwcontent" id="content-main" title="Main content" data-receipt-action="/Default.aspx?ID=<!--@If(Global:Area.ID==1)-->599<!--@EndIf--><!--@If(Global:Area.ID==17)-->600<!--@EndIf--><!--@If(Global:Area.ID==18)-->595<!--@EndIf--><!--@If(Global:Area.ID==19)-->596<!--@EndIf--><!--@If(Global:Area.ID==22)-->628<!--@EndIf-->">
   </div>
 </section>

@@ -115,27 +115,56 @@
         });
         $("#EcomOrderCustomerCountry").trigger("change");
 
+      Number.prototype.formatMoney = function(c, d, t) {
+        var n = this
+        , c = isNaN(c = Math.abs(c)) ? 2 : c
+        , d = d == undefined ? "," : d
+        , t = t == undefined ? "." : t
+        , s = n < 0 ? "-" : ""
+        , i = parseInt(n = Math.abs(+n || 0).toFixed(c)) + ""
+        , j = (j = i.length) > 3 ? j % 3 : 0;
+
+        return s
+        + (j ? i.substr(0, j) + t : "")
+        + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t)
+        + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
+      };
+
         //Recount fees by changing method
         $('.pay-and-shipp select').change(function () {
+
           var item = $(this).find('option:selected');
           if (item.data('type') == 'payment') {
-            $('.cart_pay_price').html(parseFloat(item.data('cost')).toFixed(2));
+            $('.cart_pay_price').html(parseFloat(item.data('cost') || 0).formatMoney(2, '.', ','));
           }
           else if (item.data('type') == 'delivery') {
-            $('.cart_ship_price').html(parseFloat(item.data('cost')).toFixed(2));
+            $('.cart_ship_price').html(parseFloat(item.data('cost') || 0).formatMoney(2, '.', ','));
           }
-          var priceclear = (parseFloat($('.cart_pay_price').html()) + parseFloat($('.cart_ship_price').html()) + parseFloat($('.price_withoutvat').data('goods_price'))).toFixed(2);
-          $('.price_withoutvat span').html(priceclear);
-          var pricevat = (parseFloat(priceclear) + parseFloat($('.goods_vat').data('goodsvat'))).toFixed(2);
+
+          var cart_pay_price = $('.cart_pay_price').html() || '';
+          var cart_ship_price = $('.cart_ship_price').html() || '';
+          var price_withoutvat = $('.price_withoutvat').data('goods_price') + '' || '';
+
+          var priceclear = (parseFloat(cart_pay_price.replace(/,/, '')) + parseFloat(cart_ship_price.replace(/,/, '')) + parseFloat(price_withoutvat.replace(/,/, '')));
+
+          priceclear = priceclear || 0;
+
+          $('.price_withoutvat span').html(priceclear.formatMoney(2, '.', ','));
+
+          var pricevat = (parseFloat(priceclear) + parseFloat($('.goods_vat').data('goodsvat'))).formatMoney(2, '.', ',');
+
           $('.cart_total').html(pricevat);
-        })
+
+        });
+
+        $('.pay-and-shipp select').trigger('change');
 
         //Custom js dropdown list in ready
         $('select[name="EcomCartPaymethodID"]').customDrop();
         $('select[name="EcomCartShippingmethodID"]').customDrop();
         $('body').not('.custom_drop').click(function (event) {
           $('.custom_drop').find('ul').hide();
-        })
+        });
 
         // [!]
         // Obsolete scripts
@@ -496,8 +525,8 @@
             </div>
             <!--@LoopStart(Shippingmethods)-->
             <!--@HeaderStart--><select name="EcomCartShippingmethodID"><!--@HeaderEnd-->
-              <option value="<!--@Ecom:Cart.Shippingmethod.ID-->" <!--@If Defined(Ecom:Cart.Shippingmethod.IsSelected)-->selected="selected" <!--@EndIf(Ecom:Cart.Shippingmethod.IsSelected)--> data-type="delivery" data-cost="<!--@Ecom:Cart.Shippingmethod.PriceOverMaxWeight.PriceWithoutVAT-->">
-                <!--@Ecom:Cart.Shippingmethod.Name--> (<!--@Ecom:Cart.ShippingMethod.Price-->)
+              <option value="<!--@Ecom:Cart.Shippingmethod.ID-->" <!--@If Defined(Ecom:Cart.Shippingmethod.IsSelected)-->selected="selected" <!--@EndIf(Ecom:Cart.Shippingmethod.IsSelected)--> data-type="delivery" data-cost="<!--@Ecom:Cart.ShippingMethod.Price.Price-->">
+                <!--@Ecom:Cart.Shippingmethod.Name--> (<!--@Ecom:Cart.ShippingMethod.Price.PriceFormatted-->)
               </option>
             <!--@FooterStart--></select><!--@FooterEnd-->
             <!--@LoopEnd(Shippingmethods)-->

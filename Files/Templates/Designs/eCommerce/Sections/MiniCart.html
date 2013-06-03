@@ -16,7 +16,7 @@
         0 <!--@Translate(productMultiple, "products")-->
       <!--@EndIf-->
       <!--@If Not Defined(Ecom:Order.IsEmpty)-->
-        <!--@Ecom:Order.OrderLines.TotalProductQuantity--> 
+        <!--@Ecom:Order.OrderLines.TotalProductQuantity-->
         <!--@If(Ecom:Order.OrderLines.TotalProductQuantity='1')-->
           <!--@Translate(productSingle, "product")-->:
         <!--@EndIf-->
@@ -32,7 +32,7 @@
       </a>
     </div>
   </div>
-    
+
   <div class="minicart-popup dropdown-menu" role="menu" aria-labelledby="dLabel">
     <div class="minicart-header">
       <div class="product-text">
@@ -45,7 +45,7 @@
         <!--@Translate(priceWithCapital, "Price")-->
       </div>
     </div>
-      
+
     <!--@LoopStart(OrderLines)-->
       <div class="product-line">
         <div class="product-text">
@@ -68,14 +68,14 @@
       </div>
       <div class="product-line-spacer"></div>
     <!--@LoopEnd(OrderLines)-->
-      
+
     <div class="minicart-fees">
       <div class="product-line">
         <div class="total-price-text">
           <!--@Translate(paymentfee, "Payment fee")-->
         </div>
         <div class="total-price-value">
-          <!--@Ecom:Order.PaymentFee.PriceWithVATFormatted-->	
+          <!--@Ecom:Order.PaymentFee.PriceWithVATFormatted-->
         </div>
       </div>
       <div class="product-line">
@@ -83,7 +83,7 @@
           <!--@Translate(shippingfee, "Shipping fee")-->
         </div>
         <div class="total-price-value">
-          <!--@Ecom:Order.ShippingFee.PriceWithVATFormatted-->	
+          <!--@Ecom:Order.ShippingFee.PriceWithVATFormatted-->
         </div>
       </div>
     </div>
@@ -97,7 +97,7 @@
         <!--@Ecom:Order.Price.PriceWithVATFormatted-->
       </div>
     </div>
-      
+
     <div class="minicart-buttons">
       <div class="left-button-container">
         <a href="/Default.aspx?ID=<!--@If(Global:Area.ID==1)-->52<!--@EndIf--><!--@If(Global:Area.ID==17)-->325<!--@EndIf--><!--@If(Global:Area.ID==22)-->613<!--@EndIf-->" class="dw-button dw-button-gray dw-button-small">
@@ -106,12 +106,10 @@
       </div>
       <div class="right-button-container">
         <a href="/Default.aspx?ID=<!--@If(Global:Area.ID==1)-->235<!--@EndIf--><!--@If(Global:Area.ID==17)-->336<!--@EndIf--><!--@If(Global:Area.ID==22)-->625<!--@EndIf-->" class="dw-button dw-button-green dw-button-small">
-        <!--@EndIf-->
-          <!--@Translate(checkout, "Checkout")-->                
+          <!--@Translate(checkout, "Checkout")-->
           <div class="sprite arr-forward-small-white"></div>
         </a>
       </div>
     </div>
   </div>
-
 </div>

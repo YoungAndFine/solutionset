@@ -6,15 +6,15 @@
           <div class="sprite search"></div>
           <label style="display:none;" for="q-bottom">&nbsp;</label>
           <input type="hidden" id="searchstring" value="I want">
-          <input type="hidden" value="48" name="ID">
-          <input type="text" tabindex="1" spellcheck="false" autocomplete="off" name="eComQuery" id="q-bottom">
+          <input type="hidden" value="<!--@Item.Area.Product_Catalog_Page_Id-->" name="ID">
+          <input type="text" spellcheck="false" autocomplete="off" name="eComQuery" id="q-bottom">
           <input type="submit" onclick="eCommerce.Overlay.show(document.body);" value="Search" class="dw-button dw-button-green">
           <div id="search-box-preloader-bottom"></div>
         </form>
 
         <!-- "Instant search results" template -->
-        <!--@Include(Sections/InstantSearchBottom.html)--> 
-
-    </div>
-  </div>
+        <!--@Include(Sections/InstantSearchBottom.html)-->
+			</div>
+		</div>
+	</div>
 </section>

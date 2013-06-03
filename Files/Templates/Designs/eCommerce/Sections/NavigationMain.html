@@ -1,70 +1,23 @@
-<section class="container mainmenu-wrapper">    
-  <div class="row">
-    <div class="span12 mainmenu">
-      <div class="navbar wrappable" data-equable="true">
-        <div class="navbar-inner">
-          <div class="container">
-       
-            <a class="btn btn-navbar" data-toggle="collapse" data-target=".mainmenu .nav-collapse">
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </a>
-            
-            <ul class="nav dwnavigation" id="NavMain" data-settings="endlevel:1;template:NavMainDropdownWithGroups.xslt">
-              <li class="active"><a href="index.html">Home</a></li>
-              <li class="dropdown">
-                <a data-toggle="dropdown" href="/en-US/Products/Bikes.aspx">
-                  Bikes
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a href="/en-US/Products/Bikes/Mountain-bikes.aspx">Mountain bikes</a></li>
-                  <li><a href="/en-US/Products/Bikes/Road-bikes.aspx">Road bikes</a></li>
-                  <li><a href="/en-US/Products/Bikes/Hybrid-bikes.aspx">Hybrid bikes</a></li>
-                  <li><a href="/en-US/Products/Bikes/Coasting-bikes.aspx">Coasting bikes</a></li>
-                  <li><a href="/en-US/Products/Bikes/Cruiser-bikes.aspx">Cruiser bikes</a></li>
-                </ul>
-              </li>
-              <li><a href="/en-US/Products/Eyewear.aspx">Eyewear</a></li>
-              <li class="dropdown">
-                <a data-toggle="dropdown" href="/en-US/Products/Accessories.aspx">
-                  Accessories
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a href="/en-US/Products/Accessories/Helmets.aspx">Helmets</a></li>
-                  <li><a href="/en-US/Products/Accessories/Packs/Racks.aspx">Packs/Racks</a></li>
-                  <li><a href="/en-US/Products/Accessories/Lights2.aspx">Lights</a></li>
-                </ul>
-              </li>
-              <li class="dropdown">
-                <a data-toggle="dropdown" href="/en-US/Products/Components.aspx">
-                  Components
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a href="/en-US/Products/Components/Wheels.aspx">Wheels</a></li>
-                  <li><a href="/en-US/Products/Components/Pedals.aspx">Pedals</a></li>
-                  <li><a href="/en-US/Products/Components/Frames.aspx">Frames</a></li>
-                  <li><a href="/en-US/Products/Components/Saddles.aspx">Saddles</a></li>
-                  <li><a href="/en-US/Products/Components/Chainrings.aspx">Chainrings</a></li>
-                </ul>
-              </li>
-              <li class="dropdown">
-                <a data-toggle="dropdown" href="/en-US/Products/Clothing.aspx">
-                  Clothing
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a href="/en-US/Products/Clothing/Men.aspx">Men</a></li>
-                  <li><a href="/en-US/Products/Clothing/Women.aspx">Women</a></li>
-                  <li><a href="/en-US/Products/Clothing/Accessories.aspx">Accessories</a></li>
-                  <li><a href="/en-US/Products/Clothing/Shoes.aspx">Shoes</a></li>
-                </ul>
-              </li>
-              <li><a href="/en-US/Products/Campaign.aspx">Campaign</a></li>
-            </ul>
-       
-          </div>
-        </div>
-      </div>
-    </div> <!-- / .span12.mainmenu -->
-  </div>
-</section><!-- / .mainmenu-wrapper -->
+<section class="container mainmenu-wrapper">
+	<div class="row">
+		<div class="span12 mainmenu">
+			<div class="navbar wrappable" data-equable="true">
+				<div class="navbar-inner">
+					<div class="container">
+						<a class="btn btn-navbar" data-toggle="collapse" data-target=".mainmenu .nav-collapse">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</a>
+
+						<!--@If(Global:Area.ID==22)-->
+						<ul class="nav dwnavigation" id="NavMainFashiom" data-settings="endlevel:1;eComPageShow:true;template:NavMainDropdownWithImages.xslt"></ul>
+						<!--@Else-->
+						<ul class="nav dwnavigation" id="NavMain" data-settings="endlevel:1;template:NavMainDropdownWithImages.xslt"></ul>
+						<!--@EndIf-->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

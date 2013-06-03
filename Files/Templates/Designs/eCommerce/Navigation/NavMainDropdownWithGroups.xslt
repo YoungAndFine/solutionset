@@ -1,12 +1,11 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0"  xmlns:xsl="http://www.w3.org/1999/XSL/Transform" >
 
   <xsl:output method="xml" omit-xml-declaration="yes" indent="yes"  encoding="utf-8" />
   <xsl:param name="html-content-type" />
 
-
   <xsl:template match="/NavigationTree">
-    <xsl:if test="count(//Page) > 0">
+    <xsl:if test="//Page">
       <ul>
         <xsl:attribute name="class">nav</xsl:attribute>
         <xsl:apply-templates select="Page">
@@ -15,10 +14,10 @@
       </ul>
     </xsl:if>
   </xsl:template>
-  
-  
-  <xsl:template match="//Page">
+
+<xsl:template match="//Page">
     <xsl:param name="depth"/>
+		<xsl:variable name="dropdown-target" select="concat('dropdown-', @ID)"/>
     <xsl:choose>
       <xsl:when test="Page[@SmallImage]">
         <xsl:for-each select="Page">
@@ -28,22 +27,21 @@
               <xsl:if test="count(child::Page) &gt;0">dropdown</xsl:if>
             </xsl:attribute>
             <a>
-              <xsl:attribute name="class">
-                <xsl:if test="count(child::Page) &gt;0">dropdown-toggle</xsl:if>
-              </xsl:attribute>
-              <xsl:attribute name="data-toggle">
-                <xsl:if test="count(child::Page) &gt; 0">dropdown</xsl:if>
-              </xsl:attribute>
+							<xsl:if test="Page">
+								<xsl:attribute name="class">dropdown-toggle</xsl:attribute>
+								<xsl:attribute name="data-toggle">dropdown</xsl:attribute>
+								<xsl:attribute name="data-target">#<xsl:value-of select="$dropdown-target"/></xsl:attribute>
+							</xsl:if>
               <xsl:attribute name="href">
                 <xsl:value-of select="@FriendlyHref" disable-output-escaping="yes"/>
               </xsl:attribute>
               <xsl:value-of select="@MenuText" disable-output-escaping="yes"/>
             </a>
-            <xsl:if test="count(child::Page) &gt;0">
-              <ul class="dropdown-menu">
+            <xsl:if test="Page">
+							<ul class="dropdown-menu" id="{$dropdown-target}">
                 <xsl:for-each select="Page">
                   <li>
-                    <a> 
+                    <a>
                       <xsl:attribute name="href">
                         <xsl:value-of select="@FriendlyHref" disable-output-escaping="yes"/>
                       </xsl:attribute>
@@ -59,36 +57,36 @@
       <xsl:otherwise>
         <li>
           <xsl:attribute name="class">
-            <xsl:if test="@Active='True'">active </xsl:if>
+            <xsl:if test="@Active='True' or @InPath='True'">active </xsl:if>
             <xsl:if test="count(child::Page) &gt;0">dropdown</xsl:if>
           </xsl:attribute>
           <a>
-            <xsl:attribute name="data-toggle">
-              <xsl:if test="count(child::Page) &gt; 0">dropdown</xsl:if>
-            </xsl:attribute>
+						<xsl:if test="Page">
+							<xsl:attribute name="class">dropdown-toggle</xsl:attribute>
+							<xsl:attribute name="data-toggle">dropdown</xsl:attribute>
+							<xsl:attribute name="data-target">#<xsl:value-of select="$dropdown-target"/></xsl:attribute>
+						</xsl:if>
             <xsl:attribute name="href">
               <xsl:value-of select="@FriendlyHref" disable-output-escaping="yes"/>
             </xsl:attribute>
             <xsl:value-of select="@MenuText" disable-output-escaping="yes"/>
           </a>
-          <!-- <xsl:if test="count(child::Page) &gt; 0">
-            <div class="dropdown_1column">
+          <xsl:if test="Page">
+						<ul class="dropdown-menu" id="{$dropdown-target}">
               <xsl:for-each select="Page">
-                <div class="col_1">
-                  <a> 
+                <li>
+                  <a>
                     <xsl:attribute name="href">
                       <xsl:value-of select="@FriendlyHref" disable-output-escaping="yes"/>
                     </xsl:attribute>
-
                     <xsl:value-of select="@MenuText" disable-output-escaping="yes"/>
                   </a>
-                </div>
+                </li>
               </xsl:for-each>
-            </div>
-          </xsl:if> --> 
+            </ul>
+          </xsl:if>
         </li>
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
-
 </xsl:stylesheet>

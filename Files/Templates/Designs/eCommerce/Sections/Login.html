@@ -8,87 +8,103 @@
   </div><!-- / .modal-header -->
   <div class="modal-body">
 
-<!--@If(Global:Area.Lang=='da')-->
-  <div class="loginbox-login-failed alert alert-error"><!--@DW_extranet_error_dk--></div>
-<!--@EndIf-->
-<!--@If(Global:Area.Lang!='da')-->
-  <div class="loginbox-login-failed alert alert-error"><!--@DW_extranet_error_uk--></div>
-<!--@EndIf-->
+    <!--@If(Global:Area.Lang=='da')-->
+    <div class="loginbox-login-failed alert alert-error"><!--@DW_extranet_error_dk--></div>
+    <!--@EndIf-->
+    <!--@If(Global:Area.Lang!='da')-->
+    <div class="loginbox-login-failed alert alert-error"><!--@DW_extranet_error_uk--></div>
+    <!--@EndIf-->
 
-  <div class="alert alert-info">
-    <!--@Global:Paragraph.Content(1987)-->
-  </div>
-
-  <div class="login-box-mode" data-login-box-mode="login">
-    <form class="form-horizontal" action="<!--@Global:Pageview.Url-->" method="post" onsubmit="return Layout.LoginBox.validate(this);">
-      <input type="hidden" name="ID" value="<!--@Global:Page.ID-->" />
-      <input type="hidden" name="DWExtranetUsernameRemember" value="True" />
-      <input type="hidden" name="DWExtranetPasswordRemember" value="True" />
-
-      <div class="control-group">
-        <label class="control-label" for="login-username"><!--@Translate(Username, "Username")--></label>
-        <div class="controls">
-          <input type="text" id="login-username" class="input-large login-credentials login-username-field" name="username" spellcheck="false" />
+    <div class="social hidden">
+      <div class="row-fluid">
+        <div class="span6">
+          <div class="alert">Facebook</div>
+        </div>
+        <div class="span6">
+          <div class="alert">Twitter</div>
         </div>
       </div>
-      <div class="control-group">
-        <label class="control-label" for="login-password"><!--@Translate(Password, "Password")--></label>
-        <div class="controls">
-          <input type="password" id="login-password" class="input-large login-credentials login-password-field" name="password"  />
+      <div class="row-fluid">
+        <div class="span6">
+          <div class="alert">LinkedIn</div>
+        </div>
+        <div class="span6">
+          <div class="alert">OpenID</div>
         </div>
       </div>
-      <div class="control-group">
-        <div class="controls">
-          <label class="checkbox">
-            <input type="checkbox" id="chkRemember" name="AutoLogin" value="True" /> <!--@Translate(RememberMe, "Remember me")-->
-          </label>
-          <input type="submit" class="dw-button dw-button-green" value="Login" />
+    </div>
+
+    <p class="centered-text hidden"><!--@Translate(or, "or")--></p>
+
+    <div class="alert alert-info">
+      <!--@Global:Paragraph.Content(1987)-->
+    </div>
+
+    <div class="login-box-mode" data-login-box-mode="login">
+      <form class="form-horizontal" action="<!--@Global:Pageview.Url-->" method="post" onsubmit="return Layout.LoginBox.validate(this);">
+        <input type="hidden" name="ID" value="<!--@Global:Page.ID-->" />
+        <input type="hidden" name="DWExtranetUsernameRemember" value="True" />
+        <input type="hidden" name="DWExtranetPasswordRemember" value="True" />
+        <input type="text" id="login-username" class="input-block-level login-credentials login-username-field" name="username" spellcheck="false" placeholder='<!--@Translate(Username, "Username")-->'>
+        <input type="password" id="login-password" class="input-block-level login-credentials login-password-field" name="password" placeholder='<!--@Translate(Password, "Password")-->'>
+
+        <div class="row-fluid">
+          <div class="span6">
+            <label class="checkbox">
+              <input type="checkbox" id="chkRemember" name="AutoLogin" value="True" /> <!--@Translate(RememberMe, "Remember me")-->
+            </label>
+          </div>
+          <div class="span6">
+            <input type="submit" class="btn dw-button dw-button-green" value="Login" />
         </div>
-      </div>
-      <div class="login-form-lostpasswordhint">
-        <!--@Translate(ForgotYourLogin, "Forgot your password?")-->&nbsp;<a href="#" onclick="Layout.LoginBox.mode('lostpassword', $(this).parents('form'))"><!--@Translate(ClickHere, "Click here")--></a>
-      </div>
-      <div class="login-form-signuphint">
-        <!--@If(Global:Area.ID==1)-->
-          <a href="/Default.aspx?ID=237"><!--@Translate(SignupAccount, "Sign up for an account")--></a>
-        <!--@EndIf-->
-        <!--@If(Global:Area.ID==17)-->
-          <a href="/Default.aspx?ID=328"><!--@Translate(SignupAccount, "Sign up for an account")--></a>
-        <!--@EndIf-->
-        <!--@If(Global:Area.ID==18)-->
-          <a href="/Default.aspx?ID=380"><!--@Translate(SignupAccount, "Sign up for an account")--></a>
-        <!--@EndIf-->
-        <!--@If(Global:Area.ID==19)-->
-          <a href="/Default.aspx?ID=443"><!--@Translate(SignupAccount, "Sign up for an account")--></a>
-        <!--@EndIf-->       
-      </div>
-    </form>
-  </div>
-  
-  <div class="login-box-mode" data-login-box-mode="lostpassword" style="display: none">
+        </div>
+        <div class="login-form-lostpasswordhint">
+          <!--@Translate(ForgotYourLogin, "Forgot your password?")-->&nbsp;<a href="#" onclick="Layout.LoginBox.mode('lostpassword', $(this).parents('form'))"><!--@Translate(ClickHere, "Click here")--></a>
+        </div>
+      </form>
+    </div>
+
+    <div class="login-box-mode" data-login-box-mode="lostpassword" style="display: none">
       <form class="form-horizontal" action="/Default.aspx" method="post" onsubmit="return Layout.LoginBox.validate(this) ? $('#emailsent').show() : false;">
         <input type="hidden" name="ID" value="<!--@Global:Page.ID-->" />
         <input type="hidden" name="ForgotPassword" value="True" />
         <input type="hidden" name="ForgotPasswordConfirm" value='<!--@Translate(PasswordSent, "The password has been sent to your email.")-->' />
+          <input type="text" id="login-email" class="input-block-level  login-credentials login-email-field" name="username" spellcheck="false" placeholder='<!--@Translate(EmailAddress, "Email address")-->'>
 
-        <div class="control-group">
-          <label class="control-label" for="login-email"><!--@Translate(EmailAddress, "Email address")--></label>
-          <div class="controls">
-            <input type="text" id="login-email" class="input-large login-credentials login-email-field" name="username" spellcheck="false" />
-          </div>
+          <div id="emailsent" class="alert alert-success hidden">
+            <strong><!--@Translate(newpasssent, 'Your new password  has been successfully sent by email')--></strong>
         </div>
 
-        <div id="emailsent" style="display: none;"><b><!--@Translate(newpasssent, 'Your new password  has been successfully sent by email')--></b></div>
-        
-
-        <div class="login-form-lostpasswordhint hint-goback">
-          <a href="javascript:void(0);" onclick="Layout.LoginBox.mode('login', $(this).parents('form'));"><!--@Translate(GoBack, "Go back")--></a>
+          <div class="row-fluid">
+            <div class="span4">
+              <a href="javascript:void(0);" onclick="Layout.LoginBox.mode('login', $(this).parents('form'));" class="login-form-lostpasswordhint">
+                <!--@Translate(GoBack, "Go back")-->
+              </a>
         </div>
-        <div class="login-form-signuphint">
-          <input type="submit" class="dw-button dw-button-green" value='<!--@Translate(sendpassword, "Send password")-->' />          
+            <div class="span8">
+          <input type="submit" class="dw-button dw-button-green" value='<!--@Translate(sendpassword, "Send password")-->' />
+            </div>
         </div>
       </form>
-  </div>
-  
+    </div>
+
   </div><!-- / .modal-body -->
-</div><!-- / .modal.modal-type-loginbox -->
+  <div class="modal-footer">
+    <!--@Translate(donthaveaccount, "Don't have an account?")-->
+    <a href="/Default.aspx?ID=<!--@If(Global:Area.ID==1)-->700<!--@EndIf--><!--@If(Global:Area.ID==17)-->701<!--@EndIf--><!--@If(Global:Area.ID==18)-->702<!--@EndIf--><!--@If(Global:Area.ID==19)-->703<!--@EndIf--><!--@If(Global:Area.ID==22)-->708<!--@EndIf-->" class="btn dw-button-gray" data-toggle="modal" data-target="#signUpModal" onclick="$(this).parents('.modal').modal('hide')">
+      <!--@Translate(signupforaccount, "Sign up for an account")-->
+    </a>
+  </div>
+</div><!-- / .modal-type-loginbox -->
+
+<div class="modal hide fade modal-type-loginbox" id="signUpModal" tabindex="-1" role="dialog">
+  <div class="modal-header">
+    <button type="button" class="close sprite blue-close" data-dismiss="modal"></button>
+    <h3><!--@Translate(signup, "Signup")--></h3>
+  </div><!-- / .modal-header -->
+  <div class="modal-body">
+    <div class="row-fluid no-space">
+      <div class="loader"></div>
+    </div>
+  </div><!-- / .modal-body -->
+</div><!-- / .modal -->

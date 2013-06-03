@@ -7,34 +7,31 @@
           <label style="display:none;" for="q">&nbsp;</label>
           <input type="hidden" id="searchstring" value="I want">
           <input type="hidden" value="<!--@Item.Area.Product_Catalog_Page_Id-->" name="ID">
-          <input type="text"tabindex="1" spellcheck="false" autocomplete="off" name="eComQuery" id="q" data-provide="typeahead" >
+          <input type="text" spellcheck="false" autocomplete="off" name="eComQuery" id="q"/>
           <input type="submit" onclick="eCommerce.Overlay.show(document.body);" value="Search" class="dw-button dw-button-green">
           <div id="search-box-preloader-top"></div>
         </form>
 
         <!-- "Instant search results" template -->
         <!--@Include(Sections/InstantSearchTop.html)-->
-
       </div>
     </div>
     <div class="span4">
-		
-		<!--@If Defined(Item.Area.Show_Quick_Add)-->
+			<!--@If Defined(Item.Area.Show_Quick_Add)-->
 		  <div class="quick-add">
-			<form>
-			  <span class="quick-add-box-label">Quick add</span>
-			  <input type="hidden" value="add" name="cartcmd" disabled="disabled"/>
-			  <input type="text" tabindex="2" placeholder="Product Number" value="" name="eComQuery" class="input-small" id="quickaddinput"/>
-			  <input type="text" tabindex="3" placeholder="Quantity" value="1" name="quantity" class="input-small"/>
-			  <input type="submit" class="dw-button dw-button-small dw-button-green" value="Add"/>
-			  <div id="search-box-preloader-quickadd"></div>
-			</form>
+				<form>
+					<span class="quick-add-box-label">Quick add</span>
+					<input type="hidden" value="add" name="cartcmd" disabled="disabled"/>
+					<input type="text" tabindex="2" placeholder="Product Number" value="" name="eComQuery" class="input-small" id="quickaddinput"/>
+					<input type="text" tabindex="3" placeholder="Quantity" value="1" name="quantity" class="input-small"/>
+					<input type="submit" class="dw-button dw-button-small dw-button-green" value="Add"/>
+					<div id="search-box-preloader-quickadd"></div>
+				</form>
 
         <!-- "Quick add search results" templates -->
         <!--@Include(Sections/InstantSearchQuickadd.html)-->
-		
-		<!--@EndIf(Item.Area.Show_Quick_Add)-->
       </div>
+			<!--@EndIf(Item.Area.Show_Quick_Add)-->
     </div>
   </div>
 </section>
