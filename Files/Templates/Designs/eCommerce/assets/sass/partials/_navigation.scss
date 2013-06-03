@@ -59,6 +59,7 @@
   .nav {
     overflow: auto;
     margin: 0 0 0 50px;
+    height: 30px;
 
     > li {
       float: left;
@@ -84,8 +85,16 @@
         &:hover { cursor: pointer; }
         &#quicklinks-login {
           padding-left: 20px;
-          background: url(../images/locked.png) no-repeat left center;
           background-size: 16px;
+          
+          i{
+	          text-decoration: none;
+	          font-size: 1.3em;
+	          position: absolute;
+	          margin-left: -19px;
+	          margin-top: -1px;
+	          color: #c7883a;
+          }
         }
       }
 
