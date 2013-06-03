@@ -1,679 +1,679 @@
 <link href="/Files/Templates/Designs/eCommerce01_responsive/assets/css/checkout.css" rel="stylesheet">
 <script type="text/javascript">
-  require(
-    ["jquery", "bootstrap", "jquery-autocomplete", "/Files/Templates/eCom7/CartV2/Step/InfoDirekt.js"],
-    function ($) {
+	require(
+		["jquery", "bootstrap", "jquery-autocomplete", "/Files/Templates/eCom7/CartV2/Step/InfoDirekt.js"],
+		function ($) {
 
-      //Custom js dropdown list
-      (function ($) {
-        $.fn.customDrop = function (options) {
-          return this.each(function () {
+			//Custom js dropdown list
+			(function ($) {
+				$.fn.customDrop = function (options) {
+					return this.each(function () {
 
-              var custom_drop = $(this);
-              custom_drop.hide();
+						var custom_drop = $(this);
+						custom_drop.hide();
 
-              custom_drop.after('<div class="customDropdown"><span></span><ul></ul></div>');
-              custom_drop.next().find('span').html(custom_drop.find('option:selected').html());
-              if (custom_drop.find('option:selected').data('icon')) {
-                  custom_drop.next().find('span').prepend('<img src="' + custom_drop.find('option:selected').data('icon') + '" /> ');
-              }
-              custom_drop.find('option').each(function () {
-                  var item = $(this);
-                  custom_drop.next().find('ul').append('<li><i>' + item.html() + '</i></li>');
-                  custom_drop.next().find('ul').find('li').last().attr({
-                      'data-val': item.val(),
-                      'data-cost': item.data('cost'),
-                      'data-type': item.data('type')
-                  })
-                  if (item.data('icon')) {
-                      custom_drop.next().find('li').last().prepend('<img src="' + item.data('icon') + '" /> ');
-                  }
-              })
+						custom_drop.after('<div class="customDropdown"><span></span><ul></ul></div>');
+						custom_drop.next().find('span').html(custom_drop.find('option:selected').html());
+						if (custom_drop.find('option:selected').data('icon')) {
+							custom_drop.next().find('span').prepend('<img src="' + custom_drop.find('option:selected').data('icon') + '" /> ');
+						}
+						custom_drop.find('option').each(function () {
+							var item = $(this);
+							custom_drop.next().find('ul').append('<li><i>' + item.html() + '</i></li>');
+							custom_drop.next().find('ul').find('li').last().attr({
+								'data-val': item.val(),
+								'data-cost': item.data('cost'),
+								'data-type': item.data('type')
+							})
+							if (item.data('icon')) {
+								custom_drop.next().find('li').last().prepend('<img src="' + item.data('icon') + '" /> ');
+							}
+						})
 
-              custom_drop.next().click(function(event){
-                  event.stopPropagation();
-                  $('.customDropdown').find('ul').not($(this).find('ul')).hide();
-                  $(this).find('ul').toggle();
-              });
+							custom_drop.next().click(function(event){
+								event.stopPropagation();
+								$('.customDropdown').find('ul').not($(this).find('ul')).hide();
+								$(this).find('ul').toggle();
+							});
 
-              custom_drop.next().find('li').click(function () {
-                  var index = $(this).index();
-                  $(this).parent().parent().find('span').html($(this).find('i').html());
-                  var cur_pic = custom_drop.find('option:eq(' + index + ')').data('icon');
-                  if (cur_pic){
-                      $(this).parent().parent().find('span').prepend('<img src="' + cur_pic + '" /> ');
-                  }
-                  custom_drop.find('option:eq(' + index + ')').attr('selected', 'selected');
-                  $('.pay-and-shipp select').trigger("change");
-              })
-          });
-        }
-      }(jQuery));
+						custom_drop.next().find('li').click(function () {
+							var index = $(this).index();
+							$(this).parent().parent().find('span').html($(this).find('i').html());
+							var cur_pic = custom_drop.find('option:eq(' + index + ')').data('icon');
+							if (cur_pic){
+								$(this).parent().parent().find('span').prepend('<img src="' + cur_pic + '" /> ');
+							}
+							custom_drop.find('option:eq(' + index + ')').attr('selected', 'selected');
+							$('.pay-and-shipp select').trigger("change");
+						})
+					});
+				}
+			}(jQuery));
 
-      $(document).ready(function () {
+			$(document).ready(function () {
 
-        // Show/Hide extra fields for delivery details
-        $("input[name=deliveryToggle]").live("change", function () {
-          var val = $(this).val();
-          switch (val) {
-            case "yes" :
-              checkoutDeliveryDetailsHide("#delivery-fields");
-              break;
-            case "no" :
-              checkoutDeliveryDetailsShow("#delivery-fields");
-              break;
-          }
-        });
+				// Show/Hide extra fields for delivery details
+				$("input[name=deliveryToggle]").live("change", function () {
+					var val = $(this).val();
+					switch (val) {
+					case "yes" :
+						checkoutDeliveryDetailsHide("#delivery-fields");
+						break;
+					case "no" :
+						checkoutDeliveryDetailsShow("#delivery-fields");
+						break;
+					}
+				});
 
-        // Handler for open popup sections
-        // $(".info-control > a").live("click", function () {
-        //   var lbl = $(this).attr("rel").split("field-")[1];
-        //   $.fancybox(
-        //     $(".formfield-popup-" + lbl).width(630).height(400),
-        //     { title: $(this).attr("title") }
-        //   );
-        // });
+				// Handler for open popup sections
+				// $(".info-control > a").live("click", function () {
+				//	 var lbl = $(this).attr("rel").split("field-")[1];
+				//	 $.fancybox(
+				//		 $(".formfield-popup-" + lbl).width(630).height(400),
+				//		 { title: $(this).attr("title") }
+				//	 );
+				// });
 
-        // Handling the Enter click on phone field
-        $("input[name=EcomOrderCustomerPhone]").live("keypress", function (e) {
-          code = (e.keyCode ? e.keyCode : e.which);
-          if (code == 13) infoDirectRequest();
-        });
+				// Handling the Enter click on phone field
+				$("input[name=EcomOrderCustomerPhone]").live("keypress", function (e) {
+					code = (e.keyCode ? e.keyCode : e.which);
+					if (code == 13) infoDirectRequest();
+				});
 
-        // Address autocoplete plugin initialization
-        $("#EcomOrderCustomerCountry").live("change", function () {
-          var disable = ($(this).val() != "DK");
-          var inputAddress = $("#EcomOrderCustomerAddress");
-          if (disable) {
-            inputAddress.autocompleteAddress("destroy");
-          } else {
-            inputAddress.autocompleteAddress({
-              appendTo: ".address_drop",
-              zipCode: "#EcomOrderCustomerZip",
-              city: "#EcomOrderCustomerCity"
-            });
-          }
-        });
-        $("#EcomOrderCustomerCountry").trigger("change");
+				// Address autocoplete plugin initialization
+				$("#EcomOrderCustomerCountry").live("change", function () {
+					var disable = ($(this).val() != "DK");
+					var inputAddress = $("#EcomOrderCustomerAddress");
+					if (disable) {
+						inputAddress.autocompleteAddress("destroy");
+					} else {
+						inputAddress.autocompleteAddress({
+							appendTo: ".address_drop",
+							zipCode: "#EcomOrderCustomerZip",
+							city: "#EcomOrderCustomerCity"
+						});
+					}
+				});
+				$("#EcomOrderCustomerCountry").trigger("change");
 
-        //Recount fees by changing method
-        $('.pay-and-shipp select').change(function () {
-          var item = $(this).find('option:selected');
-          if (item.data('type') == 'payment') {
-            $('.cart_pay_price').html(parseFloat(item.data('cost')).toFixed(2));
-          }
-          else if (item.data('type') == 'delivery') {
-            $('.cart_ship_price').html(parseFloat(item.data('cost')).toFixed(2));
-          }
-          var priceclear = (parseFloat($('.cart_pay_price').html()) + parseFloat($('.cart_ship_price').html()) + parseFloat($('.price_withoutvat').data('goods_price'))).toFixed(2);
-          $('.price_withoutvat span').html(priceclear);
-          var pricevat = (parseFloat(priceclear) + parseFloat($('.goods_vat').data('goodsvat'))).toFixed(2);
-          $('.cart_total').html(pricevat);
-        })
+				//Recount fees by changing method
+				$('.pay-and-shipp select').change(function () {
+					var item = $(this).find('option:selected');
+					if (item.data('type') == 'payment') {
+						$('.cart_pay_price').html(parseFloat(item.data('cost')).toFixed(2));
+					}
+					else if (item.data('type') == 'delivery') {
+						$('.cart_ship_price').html(parseFloat(item.data('cost')).toFixed(2));
+					}
+					var priceclear = (parseFloat($('.cart_pay_price').html()) + parseFloat($('.cart_ship_price').html()) + parseFloat($('.price_withoutvat').data('goods_price'))).toFixed(2);
+					$('.price_withoutvat span').html(priceclear);
+					var pricevat = (parseFloat(priceclear) + parseFloat($('.goods_vat').data('goodsvat'))).toFixed(2);
+					$('.cart_total').html(pricevat);
+				})
 
-        //Custom js dropdown list in ready
-        $('select[name="EcomCartPaymethodID"]').customDrop();
-        $('select[name="EcomCartShippingmethodID"]').customDrop();
-        $('body').not('.custom_drop').click(function (event) {
-          $('.custom_drop').find('ul').hide();
-        })
+				//Custom js dropdown list in ready
+				$('select[name="EcomCartPaymethodID"]').customDrop();
+				$('select[name="EcomCartShippingmethodID"]').customDrop();
+				$('body').not('.custom_drop').click(function (event) {
+					$('.custom_drop').find('ul').hide();
+				})
 
-        // [!]
-        // Obsolete scripts
-        // Need rework this peace of code
-        var errorFields = new Array;
-        errorFields[0] = "Dummy";
-        <!--@LoopStart(ValidationErrors)-->
-        errorFields[<!--@ValidationErrors.LoopCounter-->] = "<!--@Ecom:Cart.ValidationError.FieldSystemName-->";
-        <!--@LoopEnd(ValidationErrors)-->
+				// [!]
+				// Obsolete scripts
+				// Need rework this peace of code
+				var errorFields = new Array;
+				errorFields[0] = "Dummy";
+					<!--@LoopStart(ValidationErrors)-->
+					errorFields[<!--@ValidationErrors.LoopCounter-->] = "<!--@Ecom:Cart.ValidationError.FieldSystemName-->";
+					<!--@LoopEnd(ValidationErrors)-->
 
-        if (errorFields.length > 0) {
-          for (i = 1; i < errorFields.length; i++) {
-            // $("#" + errorFields[i]).css("border-color", "red");
-            $("#" + errorFields[i]).addClass("error");
-          }
-        }
+				if (errorFields.length > 0) {
+					for (i = 1; i < errorFields.length; i++) {
+						// $("#" + errorFields[i]).css("border-color", "red");
+						$("#" + errorFields[i]).addClass("error");
+					}
+				}
 
-        if ($('#delivery-content input.error').length > 0) {
-          checkoutDeliveryDetailsShow('#delivery-content');
-          $('#deliveryToggle_no').attr('checked', 'checked');
-        }
+				if ($('#delivery-content input.error').length > 0) {
+					checkoutDeliveryDetailsShow('#delivery-content');
+					$('#deliveryToggle_no').attr('checked', 'checked');
+				}
 
-      });
+			});
 
 
-      function checkoutDeliveryDetailsShow(sId) {
-        var container = $(sId);
-        container.find("input").removeAttr("disabled");
-        container.find("input").val('');
-        container.show();
-      }
+			function checkoutDeliveryDetailsShow(sId) {
+				var container = $(sId);
+				container.find("input").removeAttr("disabled");
+				container.find("input").val('');
+				container.show();
+			}
 
-      function checkoutDeliveryDetailsHide(sId) {
-        var container = $(sId);
-        //container.find("input").attr("disabled", "disabled");
-        container.hide();
-      }
+			function checkoutDeliveryDetailsHide(sId) {
+				var container = $(sId);
+				//container.find("input").attr("disabled", "disabled");
+				container.hide();
+			}
 
-      // Custom copy main address to shipping address if needed
-      // function copy_address() {
-      //   // need copy all fields
-      //   if($('#deliveryToggle_yes').is(":checked")){
-      //     $('#EcomOrderDeliveryCompany').val($('#EcomOrderCustomerCompany').val());
-      //     $('#EcomOrderDeliveryName').val($('#EcomOrderCustomerName').val());
-      //     $('#EcomOrderDeliveryAddress').val($('#EcomOrderCustomerAddress').val());
-      //     $('#EcomOrderDeliveryZip').val($('#EcomOrderCustomerZip').val());
-      //     $('#EcomOrderDeliveryCity').val($('#EcomOrderCustomerCity').val());
-      //     var index = $('#EcomOrderCustomerCountry option:selected').index();
-      //     $('#EcomOrderDeliveryCountry option:eq('+index+')').attr('selected', 'selected');
-      //   }
-      // }
+			// Custom copy main address to shipping address if needed
+			// function copy_address() {
+			//	 // need copy all fields
+			//	 if($('#deliveryToggle_yes').is(":checked")){
+			//		 $('#EcomOrderDeliveryCompany').val($('#EcomOrderCustomerCompany').val());
+			//		 $('#EcomOrderDeliveryName').val($('#EcomOrderCustomerName').val());
+			//		 $('#EcomOrderDeliveryAddress').val($('#EcomOrderCustomerAddress').val());
+			//		 $('#EcomOrderDeliveryZip').val($('#EcomOrderCustomerZip').val());
+			//		 $('#EcomOrderDeliveryCity').val($('#EcomOrderCustomerCity').val());
+			//		 var index = $('#EcomOrderCustomerCountry option:selected').index();
+			//		 $('#EcomOrderDeliveryCountry option:eq('+index+')').attr('selected', 'selected');
+			//	 }
+			// }
 
-      function FillAddress(list) {
-        var addressId = list.options[list.selectedIndex].value;
-        $.ajax({
-          url: 'Admin/Module/Usermanagement/UserAddresses.ashx?cmd=GetAddress&AddressID=' + addressId,
-          success: function (data) {
-            var address = data;
-            if (address) {
-              $('#EcomOrderCustomerAddress').val(address.Address);
-              $('#EcomOrderCustomerAddress2').val(address.Address2);
-              $('#EcomOrderCustomerZip').val(address.Zip);
-              $('#EcomOrderCustomerCity').val(address.City);
-            }
-          }
-        });
-      }
+			function FillAddress(list) {
+				var addressId = list.options[list.selectedIndex].value;
+				$.ajax({
+					url: 'Admin/Module/Usermanagement/UserAddresses.ashx?cmd=GetAddress&AddressID=' + addressId,
+					success: function (data) {
+						var address = data;
+						if (address) {
+							$('#EcomOrderCustomerAddress').val(address.Address);
+							$('#EcomOrderCustomerAddress2').val(address.Address2);
+							$('#EcomOrderCustomerZip').val(address.Zip);
+							$('#EcomOrderCustomerCity').val(address.City);
+						}
+					}
+				});
+			}
 
-    }
-  );
+		}
+	);
 </script>
 
 <!--@LoopStart(StepButtons)-->
 <!-- @If(CartV2.CurrentStepButtonName=Step.ButtonName) -->
 <!--@HeaderStart-->
 <div class="checkout-stepmap">
-  <ul>
-    <!--@HeaderEnd-->
-    <li <!--@If(Step.Index==0)-->class="active"<!--@EndIf-->>
-      <span><i><!--@Step.Index--></i></span>
-      <h4><!--@Step.Name--></h4>
-    </li>
-    <!--@FooterStart-->
-  </ul>
+	<ul>
+		<!--@HeaderEnd-->
+		<li <!--@If(Step.Index==0)-->class="active"<!--@EndIf-->>
+			<span><i><!--@Step.Index--></i></span>
+			<h4><!--@Step.Name--></h4>
+		</li>
+		<!--@FooterStart-->
+	</ul>
 </div>
 <script>
-  $(document).ready(function () {
-    $(".cart-step-map ul li").each(function () {
-      var el = $(this).find("span > i");
-      el.html(parseInt(el.html()) + 1);
-    });
-  });
+	$(document).ready(function () {
+		$(".cart-step-map ul li").each(function () {
+			var el = $(this).find("span > i");
+			el.html(parseInt(el.html()) + 1);
+		});
+	});
 </script>
 <!--@FooterEnd-->
 <!--@LoopEnd(StepButtons)-->
 
 <div class="span12 checkout-step checkout-headline-wrapper">
-  <div class="row">
-    <div class="span9">
-      <div class="checkout-headline">
-        <h1><!--@Translate(contactdetails, "Contact details")--></h1>
-         <a href="#" onclick="copy_address(); $('#ordersubmit').submit();" class="btn dw-button-green">
-            <strong>
-              <!--@Translate(nextpage, "Next page")-->
-            </strong>
-            <i class="icon sprite arr-forward-small-white"></i>
-          </a>
-      </div>
-    </div>
-  </div>
+	<div class="row">
+		<div class="span9">
+			<div class="checkout-headline">
+				<h1><!--@Translate(contactdetails, "Contact details")--></h1>
+				<a href="#" onclick="copy_address(); $('#ordersubmit').submit();" class="btn dw-button-green">
+					<strong>
+						<!--@Translate(nextpage, "Next page")-->
+					</strong>
+					<i class="icon sprite arr-forward-small-white"></i>
+				</a>
+			</div>
+		</div>
+	</div>
 </div><!-- / .checkout-headline-wrapper -->
 
 <!--@LoopStart(ValidationErrors)-->
 <!--@HeaderStart-->
 <div class="span12 validation-errors" id="errors">
-  <ul>
-  <!--@HeaderEnd-->
-    <li><!--@Translate(errorininputfield, "Error in the input field")--> "<!--@Ecom:Cart.ValidationError.FieldName-->": <a href="javascript:document.getElementById('<!--@Ecom:Cart.ValidationError.FieldSystemName-->').focus();"><!--@Ecom:Cart.ValidationError.ErrorMessage--></a></li>
-  <!--@FooterStart-->
-    </ul>
+	<ul>
+		<!--@HeaderEnd-->
+		<li><!--@Translate(errorininputfield, "Error in the input field")--> "<!--@Ecom:Cart.ValidationError.FieldName-->": <a href="javascript:document.getElementById('<!--@Ecom:Cart.ValidationError.FieldSystemName-->').focus();"><!--@Ecom:Cart.ValidationError.ErrorMessage--></a></li>
+		<!--@FooterStart-->
+	</ul>
 </div><!-- / .validation-errors -->
 <!--@FooterEnd-->
 <!--@LoopEnd(ValidationErrors)-->
 
 <div class="span9 checkout-step" id="checkout-wrapper">
-  <form name="ordersubmit" id="ordersubmit" method="post">
-    <input type="hidden" name="<!--@CartV2.NextStepButtonName-->" id="<!--@CartV2.NextStepButtonName-->" value="true"/>
-    <div class="box-rounded">
-      <legend class="box-headline">
-        <h3><!--@Translate(youradress, "Your address")--></h3>
-        <a href="#" class="box-headline-info" data-toggle="modal" data-target="#checkoutDataProtection"><!--@Translate(aboutinfo, "About personal data protection")--></a>
-      </legend>
-      <div class="box-content">
-        <!--@If(Global:Extranet.UserID==0)-->
-        <a href="#" class="btn dw-button-orange" data-toggle="modal" data-target="#LoginBox"><strong><!--@Translate(alreadymember, 'Already a customer - login here')--></strong></a>
-        <!--@EndIf-->
-        <div class="form-horizontal">
-          <div class="control-group">
-            <label class="control-label" for="EcomOrderCustomerPhone">
-              <span><!--@Translate(phone, "Phone")--></span>
-              <hr>
-            </label>
-            <div class="controls <!--@If(Global:Area.ID!=1)--><!--@If(Global:Area.ID!=18)-->with-button<!--@EndIf--><!--@EndIf-->">
-              <input type="number" name="EcomOrderCustomerPhone" id="EcomOrderCustomerPhone" value="<!--@Ecom:Order.Customer.Phone-->" tabindex="1" />
-              <!--@If(Global:Area.ID!=1)-->
-              <!--@If(Global:Area.ID!=18)-->
-              <input type="hidden" id="EcomOrderCustomerPhoneEmpty" value="<!--@Translate(emptyinformationinput, "Please, first fill out the 'Phone' field")-->" />
-              <input type="button" onclick="infoDirectRequest();" class="btn dw-button-gray" value="<!--@Translate(getmyinfo, 'Get my information')-->" />
-              <!--@EndIf-->
-              <!--@EndIf-->
-              <a href="#" data-toggle="modal" data-target="#checkoutInfoPhone"><!--@Translate(info, "Info")--></a>
-            </div>
-          </div>
-          <hr>
-          <div class="required-fields-note">
-            <b>* <small><!--@Translate(requiredFields, "these fields are required")--></small></b>
-          </div>
-          <div class="control-group">
-            <label class="control-label" for="EcomOrderCustomerCompany">
-              <span><!--@Translate(company, "Company")--></span>
-              <hr>
-            </label>
-            <div class="controls">
-              <input type="text" name="EcomOrderCustomerCompany" id="EcomOrderCustomerCompany" value="<!--@Ecom:Order.Customer.Company-->" tabindex="2" />
-            </div>
-          </div>
-          <div class="control-group">
-            <label class="control-label" for="EcomOrderCustomerName">
-              <span><!--@Translate(name, "Name")--></span>
-              <b>*</b><hr>
-            </label>
-            <div class="controls">
-              <input type="text" name="EcomOrderCustomerName" id="EcomOrderCustomerName" value="<!--@Ecom:Order.Customer.Name-->"  tabindex="3" />
-            </div>
-          </div>
-          <div class="control-group address_drop">
-            <label class="control-label" for="EcomOrderCustomerAddress">
-              <span><!--@Translate(address, "Address")--></span>
-              <b>*</b><hr>
-            </label>
-            <div class="controls">
-              <input type="text" name="EcomOrderCustomerAddress" id="EcomOrderCustomerAddress" value="<!--@Ecom:Order.Customer.Address-->" tabindex="4" />
-            </div>
-          </div>
-          <div class="control-group">
-            <label class="control-label" for="EcomOrderCustomerZip">
-              <span><!--@Translate(zipandcity, "Zipcode & City")--></span>
-              <b>*</b><hr>
-            </label>
-            <div class="controls">
-              <input type="text" name="EcomOrderCustomerZip" id="EcomOrderCustomerZip" value="<!--@Ecom:Order.Customer.Zip-->" tabindex="5" />
-              <input type="text" name="EcomOrderCustomerCity" id="EcomOrderCustomerCity" value="<!--@Ecom:Order.Customer.City-->"  tabindex="6" />
-            </div>
-          </div>
-          <div class="control-group">
-            <label class="control-label" for="EcomOrderCustomerCountry">
-              <span><!--@Translate(country, "Country")--></span>
-              <b>*</b><hr>
-            </label>
-            <div class="controls">
-              <select name="EcomOrderCustomerCountry" id="EcomOrderCustomerCountry" tabindex="7">
-                <!--@LoopStart(Countries)-->
-                <option value="<!--@Ecom:Country.Code2-->" <!--@If(Ecom:Country.Code2==Server:Request.ecomordercustomercountry)-->selected="selected"<!--@EndIf--><!--@If Not Defined(Server:Request.ecomordercustomercountry)--><!--@If(Ecom:Country.Code2==Global:Area.Culture.CountryCode)-->selected="selected"<!--@EndIf--><!--@EndIf(Server:Request.ecomordercustomercountry)-->>
-                  <!--@Ecom:Country.Name-->
-                </option>
-                <!--@LoopEnd(Countries)-->
-              </select>
-            </div>
-          </div>
-          <div class="control-group">
-            <label class="control-label" for="EcomOrderCustomerEmail">
-              <span><!--@Translate(email, "E-mail")--></span>
-              <b>*</b><hr>
-            </label>
-            <div class="controls">
-              <input type="email" name="EcomOrderCustomerEmail" id="EcomOrderCustomerEmail" value="<!--@Ecom:Order.Customer.Email-->" tabindex="8" />
-              <a href="#" data-toggle="modal" data-target="#checkoutInfoEmail"><!--@Translate(info, "Info")--></a>
-              <span class="help-block">
-                <!--@Translate(sendreceiptto, "We send your receipt to this email")-->
-              </span>
-            </div>
-          </div>
-          <div class="control-group">
-            <label class="control-label" for="EcomOrderCustomerCell">
-              <span><!--@Translate(mobile, "Mobile")--></span>
-              <hr>
-            </label>
-            <div class="controls">
-              <input type="number" name="EcomOrderCustomerCell" id="EcomOrderCustomerCell" value="<!--@Ecom:Order.Customer.Cell-->" tabindex="9" />
-              <a href="#" data-toggle="modal" data-target="#checkoutInfoMobile" title="<!--@Translate(mobileinfo, 'Mobile information')-->"><!--@Translate(info, "Info")--></a>
-            </div>
-          </div>
-          <!--@If Defined(Ecom:Cart.UseNewsletterSubscription)-->
-          <div class="control-group">
-            <label class="control-label hidden-phone" for="EcomOrderSubscribeToNewsletter">
-              <span><!--@Translate(newsletter, "Newsletter")--></span>
-              <hr>
-            </label>
-            <div class="controls">
-              <label class="checkbox" for="EcomOrderSubscribeToNewsletter">
-                <input type="hidden" name="EcomOrderSubscribeToNewsletter" />
-                <input type="checkbox" name="EcomOrderSubscribeToNewsletter" id="EcomOrderSubscribeToNewsletter" <!--@If Defined(Ecom:Order.Customer.NewsletterSubscribe)-->checked="checked"<!--@EndIf(Ecom:Order.Customer.NewsletterSubscribe)--> tabindex="9" />
-                <strong><!--@Translate(subscribetonews, "Subscribe to our newsletter")--></strong>
-              </label>
-              <!--<a href="#" class="longlink">Translate(latestnewsletter, "See the latest newsletter")</a>-->
-            </div>
-          </div>
-          <!--@EndIf(Ecom:Cart.UseNewsletterSubscription)-->
-        </div>
-      </div>
-      <legend class="box-headline">
-        <h3>2. <!--@Translate(shippingInfo, "Shipping information")--></h3>
-      </legend>
-      <div class="box-content">
-        <div class="form-horizontal">
-          <div class="control-group">
-            <label class="control-label control-label-wide">
-              <span><!--@Translate(sameAsAbove, "Is the address above also the delivery address?")--></span>
-            </label>
-            <div class="controls">
-              <label class="radio inline">
-                <input type="radio" name="deliveryToggle" id="deliveryToggle_yes" value="yes" <!--@If(Server:Request.deliverytoggle=='yes')-->checked="checked"<!--@EndIf--><!--@If Not Defined(Server:Request.deliverytoggle)--> checked="checked"<!--@EndIf(Server:Request.deliverytoggle)-->/>
-                <!--@Translate(yes, "Yes")-->
-              </label>
-              <label class="radio inline">
-                <input type="radio" name="deliveryToggle" id="deliveryToggle_no" value="no"   <!--@If(Server:Request.deliverytoggle=='no')-->checked="checked"<!--@EndIf-->>
-                <!--@Translate(no, "No")-->
-              </label>
-            </div>
-          </div>
-          <div id="delivery-fields"<!--@If(Server:Request.deliverytoggle=='yes')--> style="display: none;"<!--@EndIf--> <!--@If Not Defined(Server:Request.deliverytoggle)--> style="display: none;"<!--@EndIf(Server:Request.deliverytoggle)-->>
-            <div class="control-group">
-              <label class="control-label" for="EcomOrderDeliveryCompany">
-                <span><!--@Translate(company, "Company")--></span>
-                <b></b><hr>
-              </label>
-              <div class="controls">
-                <input type="text" name="EcomOrderDeliveryCompany" id="EcomOrderDeliveryCompany" value="<!--@Ecom:Order.Delivery.Company-->" />
-              </div>
-            </div>
-            <div class="control-group">
-              <label class="control-label" for="EcomOrderDeliveryName">
-                <span><!--@Translate(name, "Name")--></span>
-                <b>*</b><hr>
-              </label>
-              <div class="controls">
-                <input type="text" name="EcomOrderDeliveryName" id="EcomOrderDeliveryName" value="<!--@Ecom:Order.Delivery.Name-->" />
-              </div>
-            </div>
-            <div class="control-group">
-              <label class="control-label" for="EcomOrderDeliveryAddress">
-                <span><!--@Translate(address, "Address")--></span>
-                <b>*</b><hr>
-              </label>
-              <div class="controls">
-                <input type="text" name="EcomOrderDeliveryAddress" id="EcomOrderDeliveryAddress" value="<!--@Ecom:Order.Delivery.Address-->" />
-              </div>
-            </div>
-            <div class="control-group">
-              <label class="control-label" for="EcomOrderDeliveryZip">
-                <span><!--@Translate(zipcity, "Zipcode & City")--></span>
-                <b>*</b><hr>
-              </label>
-              <div class="controls">
-                <input type="number" name="EcomOrderDeliveryZip" id="EcomOrderDeliveryZip" value="<!--@Ecom:Order.Delivery.Zip-->" style="width: 50px;" />
-                <input type="text" name="EcomOrderDeliveryCity" id="EcomOrderDeliveryCity" value="<!--@Ecom:Order.Delivery.City-->" />
-              </div>
-            </div>
-            <div class="control-group">
-              <label class="control-label" for="EcomOrderDeliveryCountry">
-                <!--@Translate(country, "Country")-->
-                <b>*</b><hr>
-              </label>
-              <div class="controls">
-                <select name="EcomOrderDeliveryCountry" id="EcomOrderDeliveryCountry">
-                  <!--@LoopStart(Countries)-->
-                  <option value="<!--@Ecom:Country.Code2-->" <!--@If(Ecom:Country.Code2==Server:Request.ecomorderdeliverycountry)-->selected="selected"<!--@EndIf-->
-                  <!--@If Not Defined(Server:Request.ecomorderdeliverycountry)--><!--@If(Ecom:Country.Code2==Global:Area.Culture.CountryCode)-->selected="selected"<!--@EndIf--><!--@EndIf(Server:Request.ecomorderdeliverycountry)-->
-                  >
-                    <!--@Ecom:Country.Name-->
-                  </option>
-                  <!--@LoopEnd(Countries)-->
-                </select>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div><!-- / .box-rounded -->
+	<form name="ordersubmit" id="ordersubmit" method="post">
+		<input type="hidden" name="<!--@CartV2.NextStepButtonName-->" id="<!--@CartV2.NextStepButtonName-->" value="true"/>
+		<div class="box-rounded">
+			<legend class="box-headline">
+				<h3><!--@Translate(youradress, "Your address")--></h3>
+				<a href="#" class="box-headline-info" data-toggle="modal" data-target="#checkoutDataProtection"><!--@Translate(aboutinfo, "About personal data protection")--></a>
+			</legend>
+			<div class="box-content">
+				<!--@If(Global:Extranet.UserID==0)-->
+				<a href="#" class="btn dw-button-orange" data-toggle="modal" data-target="#LoginBox"><strong><!--@Translate(alreadymember, 'Already a customer - login here')--></strong></a>
+				<!--@EndIf-->
+				<div class="form-horizontal">
+					<div class="control-group">
+						<label class="control-label" for="EcomOrderCustomerPhone">
+							<span><!--@Translate(phone, "Phone")--></span>
+							<hr>
+						</label>
+						<div class="controls <!--@If(Global:Area.ID!=1)--><!--@If(Global:Area.ID!=18)-->with-button<!--@EndIf--><!--@EndIf-->">
+							<input type="number" name="EcomOrderCustomerPhone" id="EcomOrderCustomerPhone" value="<!--@Ecom:Order.Customer.Phone-->" tabindex="1" />
+							<!--@If(Global:Area.ID!=1)-->
+							<!--@If(Global:Area.ID!=18)-->
+							<input type="hidden" id="EcomOrderCustomerPhoneEmpty" value="<!--@Translate(emptyinformationinput, "Please, first fill out the 'Phone' field")-->" />
+							<input type="button" onclick="infoDirectRequest();" class="btn dw-button-gray" value="<!--@Translate(getmyinfo, 'Get my information')-->" />
+							<!--@EndIf-->
+							<!--@EndIf-->
+							<a href="#" data-toggle="modal" data-target="#checkoutInfoPhone"><!--@Translate(info, "Info")--></a>
+						</div>
+					</div>
+					<hr>
+					<div class="required-fields-note">
+						<b>* <small><!--@Translate(requiredFields, "these fields are required")--></small></b>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="EcomOrderCustomerCompany">
+							<span><!--@Translate(company, "Company")--></span>
+							<hr>
+						</label>
+						<div class="controls">
+							<input type="text" name="EcomOrderCustomerCompany" id="EcomOrderCustomerCompany" value="<!--@Ecom:Order.Customer.Company-->" tabindex="2" />
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="EcomOrderCustomerName">
+							<span><!--@Translate(name, "Name")--></span>
+							<b>*</b><hr>
+						</label>
+						<div class="controls">
+							<input type="text" name="EcomOrderCustomerName" id="EcomOrderCustomerName" value="<!--@Ecom:Order.Customer.Name-->"	 tabindex="3" />
+						</div>
+					</div>
+					<div class="control-group address_drop">
+						<label class="control-label" for="EcomOrderCustomerAddress">
+							<span><!--@Translate(address, "Address")--></span>
+							<b>*</b><hr>
+						</label>
+						<div class="controls">
+							<input type="text" name="EcomOrderCustomerAddress" id="EcomOrderCustomerAddress" value="<!--@Ecom:Order.Customer.Address-->" tabindex="4" />
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="EcomOrderCustomerZip">
+							<span><!--@Translate(zipandcity, "Zipcode & City")--></span>
+							<b>*</b><hr>
+						</label>
+						<div class="controls">
+							<input type="text" name="EcomOrderCustomerZip" id="EcomOrderCustomerZip" value="<!--@Ecom:Order.Customer.Zip-->" tabindex="5" />
+							<input type="text" name="EcomOrderCustomerCity" id="EcomOrderCustomerCity" value="<!--@Ecom:Order.Customer.City-->"	 tabindex="6" />
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="EcomOrderCustomerCountry">
+							<span><!--@Translate(country, "Country")--></span>
+							<b>*</b><hr>
+						</label>
+						<div class="controls">
+							<select name="EcomOrderCustomerCountry" id="EcomOrderCustomerCountry" tabindex="7">
+								<!--@LoopStart(Countries)-->
+								<option value="<!--@Ecom:Country.Code2-->" <!--@If(Ecom:Country.Code2==Server:Request.ecomordercustomercountry)-->selected="selected"<!--@EndIf--><!--@If Not Defined(Server:Request.ecomordercustomercountry)--><!--@If(Ecom:Country.Code2==Global:Area.Culture.CountryCode)-->selected="selected"<!--@EndIf--><!--@EndIf(Server:Request.ecomordercustomercountry)-->>
+									<!--@Ecom:Country.Name-->
+								</option>
+								<!--@LoopEnd(Countries)-->
+							</select>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="EcomOrderCustomerEmail">
+							<span><!--@Translate(email, "E-mail")--></span>
+							<b>*</b><hr>
+						</label>
+						<div class="controls">
+							<input type="email" name="EcomOrderCustomerEmail" id="EcomOrderCustomerEmail" value="<!--@Ecom:Order.Customer.Email-->" tabindex="8" />
+							<a href="#" data-toggle="modal" data-target="#checkoutInfoEmail"><!--@Translate(info, "Info")--></a>
+							<span class="help-block">
+								<!--@Translate(sendreceiptto, "We send your receipt to this email")-->
+							</span>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="EcomOrderCustomerCell">
+							<span><!--@Translate(mobile, "Mobile")--></span>
+							<hr>
+						</label>
+						<div class="controls">
+							<input type="number" name="EcomOrderCustomerCell" id="EcomOrderCustomerCell" value="<!--@Ecom:Order.Customer.Cell-->" tabindex="9" />
+							<a href="#" data-toggle="modal" data-target="#checkoutInfoMobile" title="<!--@Translate(mobileinfo, 'Mobile information')-->"><!--@Translate(info, "Info")--></a>
+						</div>
+					</div>
+					<!--@If Defined(Ecom:Cart.UseNewsletterSubscription)-->
+					<div class="control-group">
+						<label class="control-label hidden-phone" for="EcomOrderSubscribeToNewsletter">
+							<span><!--@Translate(newsletter, "Newsletter")--></span>
+							<hr>
+						</label>
+						<div class="controls">
+							<label class="checkbox" for="EcomOrderSubscribeToNewsletter">
+								<input type="hidden" name="EcomOrderSubscribeToNewsletter" />
+								<input type="checkbox" name="EcomOrderSubscribeToNewsletter" id="EcomOrderSubscribeToNewsletter" <!--@If Defined(Ecom:Order.Customer.NewsletterSubscribe)-->checked="checked"<!--@EndIf(Ecom:Order.Customer.NewsletterSubscribe)--> tabindex="9" />
+								<strong><!--@Translate(subscribetonews, "Subscribe to our newsletter")--></strong>
+							</label>
+							<!--<a href="#" class="longlink">Translate(latestnewsletter, "See the latest newsletter")</a>-->
+						</div>
+					</div>
+					<!--@EndIf(Ecom:Cart.UseNewsletterSubscription)-->
+				</div>
+			</div>
+			<legend class="box-headline">
+				<h3>2. <!--@Translate(shippingInfo, "Shipping information")--></h3>
+			</legend>
+			<div class="box-content">
+				<div class="form-horizontal">
+					<div class="control-group">
+						<label class="control-label control-label-wide">
+							<span><!--@Translate(sameAsAbove, "Is the address above also the delivery address?")--></span>
+						</label>
+						<div class="controls">
+							<label class="radio inline">
+								<input type="radio" name="deliveryToggle" id="deliveryToggle_yes" value="yes" <!--@If(Server:Request.deliverytoggle=='yes')-->checked="checked"<!--@EndIf--><!--@If Not Defined(Server:Request.deliverytoggle)--> checked="checked"<!--@EndIf(Server:Request.deliverytoggle)-->/>
+								<!--@Translate(yes, "Yes")-->
+							</label>
+							<label class="radio inline">
+								<input type="radio" name="deliveryToggle" id="deliveryToggle_no" value="no"		<!--@If(Server:Request.deliverytoggle=='no')-->checked="checked"<!--@EndIf-->>
+								<!--@Translate(no, "No")-->
+							</label>
+						</div>
+					</div>
+					<div id="delivery-fields"<!--@If(Server:Request.deliverytoggle=='yes')--> style="display: none;"<!--@EndIf--> <!--@If Not Defined(Server:Request.deliverytoggle)--> style="display: none;"<!--@EndIf(Server:Request.deliverytoggle)-->>
+						<div class="control-group">
+							<label class="control-label" for="EcomOrderDeliveryCompany">
+								<span><!--@Translate(company, "Company")--></span>
+								<b></b><hr>
+							</label>
+							<div class="controls">
+								<input type="text" name="EcomOrderDeliveryCompany" id="EcomOrderDeliveryCompany" value="<!--@Ecom:Order.Delivery.Company-->" />
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label" for="EcomOrderDeliveryName">
+								<span><!--@Translate(name, "Name")--></span>
+								<b>*</b><hr>
+							</label>
+							<div class="controls">
+								<input type="text" name="EcomOrderDeliveryName" id="EcomOrderDeliveryName" value="<!--@Ecom:Order.Delivery.Name-->" />
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label" for="EcomOrderDeliveryAddress">
+								<span><!--@Translate(address, "Address")--></span>
+								<b>*</b><hr>
+							</label>
+							<div class="controls">
+								<input type="text" name="EcomOrderDeliveryAddress" id="EcomOrderDeliveryAddress" value="<!--@Ecom:Order.Delivery.Address-->" />
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label" for="EcomOrderDeliveryZip">
+								<span><!--@Translate(zipcity, "Zipcode & City")--></span>
+								<b>*</b><hr>
+							</label>
+							<div class="controls">
+								<input type="number" name="EcomOrderDeliveryZip" id="EcomOrderDeliveryZip" value="<!--@Ecom:Order.Delivery.Zip-->" style="width: 50px;" />
+								<input type="text" name="EcomOrderDeliveryCity" id="EcomOrderDeliveryCity" value="<!--@Ecom:Order.Delivery.City-->" />
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label" for="EcomOrderDeliveryCountry">
+								<!--@Translate(country, "Country")-->
+								<b>*</b><hr>
+							</label>
+							<div class="controls">
+								<select name="EcomOrderDeliveryCountry" id="EcomOrderDeliveryCountry">
+									<!--@LoopStart(Countries)-->
+									<option value="<!--@Ecom:Country.Code2-->" <!--@If(Ecom:Country.Code2==Server:Request.ecomorderdeliverycountry)-->selected="selected"<!--@EndIf-->
+													<!--@If Not Defined(Server:Request.ecomorderdeliverycountry)--><!--@If(Ecom:Country.Code2==Global:Area.Culture.CountryCode)-->selected="selected"<!--@EndIf--><!--@EndIf(Server:Request.ecomorderdeliverycountry)-->
+													>
+										<!--@Ecom:Country.Name-->
+									</option>
+									<!--@LoopEnd(Countries)-->
+								</select>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><!-- / .box-rounded -->
 
-    <div class="actions-group">
-      <a href="#" onclick="copy_address(); $('#ordersubmit').submit();" class="btn dw-button-green">
-        <strong>
-          <!--@Translate(nextpage, "Next page")-->
-        </strong>
-        <i class="icon sprite arr-forward-small-white"></i>
-      </a>
-    </div>
+		<div class="actions-group">
+			<a href="#" onclick="copy_address(); $('#ordersubmit').submit();" class="btn dw-button-green">
+				<strong>
+					<!--@Translate(nextpage, "Next page")-->
+				</strong>
+				<i class="icon sprite arr-forward-small-white"></i>
+			</a>
+		</div>
 
-  </form>
+	</form>
 </div>
 
 <div class="span3">
-  <div class="box-rounded" id="order-container">
-    <div class="box-headline box-headline-dark">
-      <h3>
-        <!--@Translate(yourOrder, "Your order")-->
-        <button type="button" class="btn btn-small visible-phone collapsed" data-toggle="collapse" data-target=".box-minicart.collapse">
-          <i class="icon-collapse"></i>
-        </button>
-      </h3>
-    </div>
-    <div class="box-content box-minicart collapse">
-      <!--@Include(MiniCart.html)-->
-    </div>
-  </div><!-- / .box-rounded -->
-  <div class="checkout-links">
-    <h4><!--@Translate(praticalinfo, "Practical info")-->:</h4>
-    <ul>
-      <li><a href="#" data-toggle="modal" data-target="#checkoutDelivery"><!--@Translate(pracdelivery, "Delivery")--></a></li>
-      <li><a href="#" data-toggle="modal" data-target="#checkoutPayment"><!--@Translate(pracpayment, "Payment")--></a></li>
-      <li><a href="#" data-toggle="modal" data-target="#checkoutReturn"><!--@Translate(pracpolicy, "Return policy")--></a></li>
-      <li><a href="#" data-toggle="modal" data-target="#checkoutSecurity"><!--@Translate(pracsecurity, "Security")--></a></li>
-      <li><a href="#" data-toggle="modal" data-target="#checkoutSupport"><!--@Translate(pracsupport, "Support")--></a></li>
-    </ul>
-    <br>
-    <h4><!--@Translate(mostaskedquestions, "Frequently asked questions")-->:</h4>
-    <ul>
-      <li><a href="#" data-toggle="modal" data-target="#checkoutPayinfo"><!--@Translate(whatcanIpaywith, "What payment methods do you support?")--></a></li>
-      <li><a href="#" data-toggle="modal" data-target="#checkoutCallyou"><!--@Translate(canIcallyou, "Can I call you?")--></a></li>
-      <li><a href="#" data-toggle="modal" data-target="#checkoutRaisemoney"><!--@Translate(whendoyouraisemymoney, "When do you raise my money?")--></a></li>
-      <li><a href="#" data-toggle="modal" data-target="#checkoutTrackorder"><!--@Translate(canItrackmyorder, "Can I track my order?")--></a></li>
-      <li><a href="#" data-toggle="modal" data-target="#checkoutDonotfit"><!--@Translate(clothesdonotfit, "Clothes do not fit, then what?")--></a></li>
-    </ul>
-  </div><!-- / .checkout-links -->
+	<div class="box-rounded" id="order-container">
+		<div class="box-headline box-headline-dark">
+			<h3>
+				<!--@Translate(yourOrder, "Your order")-->
+				<button type="button" class="btn btn-small visible-phone collapsed" data-toggle="collapse" data-target=".box-minicart.collapse">
+					<i class="icon-collapse"></i>
+				</button>
+			</h3>
+		</div>
+		<div class="box-content box-minicart collapse">
+			<!--@Include(MiniCart.html)-->
+		</div>
+	</div><!-- / .box-rounded -->
+	<div class="checkout-links">
+		<h4><!--@Translate(praticalinfo, "Practical info")-->:</h4>
+		<ul>
+			<li><a href="#" data-toggle="modal" data-target="#checkoutDelivery"><!--@Translate(pracdelivery, "Delivery")--></a></li>
+			<li><a href="#" data-toggle="modal" data-target="#checkoutPayment"><!--@Translate(pracpayment, "Payment")--></a></li>
+			<li><a href="#" data-toggle="modal" data-target="#checkoutReturn"><!--@Translate(pracpolicy, "Return policy")--></a></li>
+			<li><a href="#" data-toggle="modal" data-target="#checkoutSecurity"><!--@Translate(pracsecurity, "Security")--></a></li>
+			<li><a href="#" data-toggle="modal" data-target="#checkoutSupport"><!--@Translate(pracsupport, "Support")--></a></li>
+		</ul>
+		<br>
+		<h4><!--@Translate(mostaskedquestions, "Frequently asked questions")-->:</h4>
+		<ul>
+			<li><a href="#" data-toggle="modal" data-target="#checkoutPayinfo"><!--@Translate(whatcanIpaywith, "What payment methods do you support?")--></a></li>
+			<li><a href="#" data-toggle="modal" data-target="#checkoutCallyou"><!--@Translate(canIcallyou, "Can I call you?")--></a></li>
+			<li><a href="#" data-toggle="modal" data-target="#checkoutRaisemoney"><!--@Translate(whendoyouraisemymoney, "When do you raise my money?")--></a></li>
+			<li><a href="#" data-toggle="modal" data-target="#checkoutTrackorder"><!--@Translate(canItrackmyorder, "Can I track my order?")--></a></li>
+			<li><a href="#" data-toggle="modal" data-target="#checkoutDonotfit"><!--@Translate(clothesdonotfit, "Clothes do not fit, then what?")--></a></li>
+		</ul>
+	</div><!-- / .checkout-links -->
 </div>
 
 
 <div class="modal hide fade modal-type-standart" id="checkoutDataProtection" tabindex="-1" role="dialog">
-  <div class="modal-header">
-    <button type="button" class="close sprite blue-close" data-dismiss="modal"></button>
-    <h3><!--@Translate(dataprotection, 'Personal data protection')--></h3>
-  </div><!-- / .modal-header -->
-  <div class="modal-body">
-    <div class="row-fluid no-space">
-      <div class="span12">
-        <!--@If(Global:Area.LongLang='en-US')--><!--@Global:Paragraph.Content(563)--><!--@EndIf-->
-        <!--@If(Global:Area.LongLang='da-DK')--><!--@Global:Paragraph.Content(564)--><!--@EndIf-->
-      </div>
-    </div>
-  </div><!-- / .modal-body -->
+	<div class="modal-header">
+		<button type="button" class="close sprite blue-close" data-dismiss="modal"></button>
+		<h3><!--@Translate(dataprotection, 'Personal data protection')--></h3>
+	</div><!-- / .modal-header -->
+	<div class="modal-body">
+		<div class="row-fluid no-space">
+			<div class="span12">
+				<!--@If(Global:Area.LongLang='en-US')--><!--@Global:Paragraph.Content(563)--><!--@EndIf-->
+				<!--@If(Global:Area.LongLang='da-DK')--><!--@Global:Paragraph.Content(564)--><!--@EndIf-->
+			</div>
+		</div>
+	</div><!-- / .modal-body -->
 </div><!-- / .modal -->
 
 <div class="modal hide fade modal-type-standart" id="checkoutDelivery" tabindex="-1" role="dialog">
-  <div class="modal-header">
-    <button type="button" class="close sprite blue-close" data-dismiss="modal"></button>
-    <h3><!--@Translate(pracdeliverypopup, 'Delivery')--></h3>
-  </div><!-- / .modal-header -->
-  <div class="modal-body">
-    <div class="row-fluid no-space">
-      <!--@Global:Paragraph.Content(416)-->
-    </div>
-  </div><!-- / .modal-body -->
+	<div class="modal-header">
+		<button type="button" class="close sprite blue-close" data-dismiss="modal"></button>
+		<h3><!--@Translate(pracdeliverypopup, 'Delivery')--></h3>
+	</div><!-- / .modal-header -->
+	<div class="modal-body">
+		<div class="row-fluid no-space">
+			<!--@Global:Paragraph.Content(416)-->
+		</div>
+	</div><!-- / .modal-body -->
 </div><!-- / .modal -->
 
 <div class="modal hide fade modal-type-standart" id="checkoutPayment" tabindex="-1" role="dialog">
-  <div class="modal-header">
-    <button type="button" class="close sprite blue-close" data-dismiss="modal"></button>
-    <h3><!--@Translate(pracpaymentpopup, 'Payment')--></h3>
-  </div><!-- / .modal-header -->
-  <div class="modal-body">
-    <div class="row-fluid no-space">
-      <!--@Global:Paragraph.Content(417)-->
-    </div>
-  </div><!-- / .modal-body -->
+	<div class="modal-header">
+		<button type="button" class="close sprite blue-close" data-dismiss="modal"></button>
+		<h3><!--@Translate(pracpaymentpopup, 'Payment')--></h3>
+	</div><!-- / .modal-header -->
+	<div class="modal-body">
+		<div class="row-fluid no-space">
+			<!--@Global:Paragraph.Content(417)-->
+		</div>
+	</div><!-- / .modal-body -->
 </div><!-- / .modal -->
 
 <div class="modal hide fade modal-type-standart" id="checkoutReturn" tabindex="-1" role="dialog">
-  <div class="modal-header">
-    <button type="button" class="close sprite blue-close" data-dismiss="modal"></button>
-    <h3><!--@Translate(pracpolicy, "Return policy")--></h3>
-  </div><!-- / .modal-header -->
-  <div class="modal-body">
-    <div class="row-fluid no-space">
-      <!--@Global:Paragraph.Content(419)-->
-    </div>
-  </div><!-- / .modal-body -->
+	<div class="modal-header">
+		<button type="button" class="close sprite blue-close" data-dismiss="modal"></button>
+		<h3><!--@Translate(pracpolicy, "Return policy")--></h3>
+	</div><!-- / .modal-header -->
+	<div class="modal-body">
+		<div class="row-fluid no-space">
+			<!--@Global:Paragraph.Content(419)-->
+		</div>
+	</div><!-- / .modal-body -->
 </div><!-- / .modal -->
 
 <div class="modal hide fade modal-type-standart" id="checkoutSecurity" tabindex="-1" role="dialog">
-  <div class="modal-header">
-    <button type="button" class="close sprite blue-close" data-dismiss="modal"></button>
-    <h3><!--@Translate(pracsecuritypopup, 'Security')--></h3>
-  </div><!-- / .modal-header -->
-  <div class="modal-body">
-    <div class="row-fluid no-space">
-      <!--@Global:Paragraph.Content(420)-->
-    </div>
-  </div><!-- / .modal-body -->
+	<div class="modal-header">
+		<button type="button" class="close sprite blue-close" data-dismiss="modal"></button>
+		<h3><!--@Translate(pracsecuritypopup, 'Security')--></h3>
+	</div><!-- / .modal-header -->
+	<div class="modal-body">
+		<div class="row-fluid no-space">
+			<!--@Global:Paragraph.Content(420)-->
+		</div>
+	</div><!-- / .modal-body -->
 </div><!-- / .modal -->
 
 <div class="modal hide fade modal-type-standart" id="checkoutSupport" tabindex="-1" role="dialog">
-  <div class="modal-header">
-    <button type="button" class="close sprite blue-close" data-dismiss="modal"></button>
-    <h3><!--@Translate(pracsupportpopup, 'Support')--></h3>
-  </div><!-- / .modal-header -->
-  <div class="modal-body">
-    <div class="row-fluid no-space">
-      <!--@Global:Paragraph.Content(422)-->
-    </div>
-  </div><!-- / .modal-body -->
+	<div class="modal-header">
+		<button type="button" class="close sprite blue-close" data-dismiss="modal"></button>
+		<h3><!--@Translate(pracsupportpopup, 'Support')--></h3>
+	</div><!-- / .modal-header -->
+	<div class="modal-body">
+		<div class="row-fluid no-space">
+			<!--@Global:Paragraph.Content(422)-->
+		</div>
+	</div><!-- / .modal-body -->
 </div><!-- / .modal -->
 
 <div class="modal hide fade modal-type-standart" id="checkoutPayinfo" tabindex="-1" role="dialog">
-  <div class="modal-header">
-    <button type="button" class="close sprite blue-close" data-dismiss="modal"></button>
-    <h3><!--@Translate(whatcanIpaywith, "What payment methods do you support?")--></h3>
-  </div><!-- / .modal-header -->
-  <div class="modal-body">
-    <div class="row-fluid no-space">
-      <!--@Global:Paragraph.Content(339)-->
-    </div>
-  </div><!-- / .modal-body -->
+	<div class="modal-header">
+		<button type="button" class="close sprite blue-close" data-dismiss="modal"></button>
+		<h3><!--@Translate(whatcanIpaywith, "What payment methods do you support?")--></h3>
+	</div><!-- / .modal-header -->
+	<div class="modal-body">
+		<div class="row-fluid no-space">
+			<!--@Global:Paragraph.Content(339)-->
+		</div>
+	</div><!-- / .modal-body -->
 </div><!-- / .modal -->
 
 <div class="modal hide fade modal-type-standart" id="checkoutCallyou" tabindex="-1" role="dialog">
-  <div class="modal-header">
-    <button type="button" class="close sprite blue-close" data-dismiss="modal"></button>
-    <h3><!--@Translate(canIcallyou, "Can I call you?")--></h3>
-  </div><!-- / .modal-header -->
-  <div class="modal-body">
-    <div class="row-fluid no-space">
-      <!--@Global:Paragraph.Content(364)-->
-    </div>
-  </div><!-- / .modal-body -->
+	<div class="modal-header">
+		<button type="button" class="close sprite blue-close" data-dismiss="modal"></button>
+		<h3><!--@Translate(canIcallyou, "Can I call you?")--></h3>
+	</div><!-- / .modal-header -->
+	<div class="modal-body">
+		<div class="row-fluid no-space">
+			<!--@Global:Paragraph.Content(364)-->
+		</div>
+	</div><!-- / .modal-body -->
 </div><!-- / .modal -->
 
 <div class="modal hide fade modal-type-standart" id="checkoutRaisemoney" tabindex="-1" role="dialog">
-  <div class="modal-header">
-    <button type="button" class="close sprite blue-close" data-dismiss="modal"></button>
-    <h3><!--@Translate(whendoyouraisemymoney, "When do you raise my money?")--></h3>
-  </div><!-- / .modal-header -->
-  <div class="modal-body">
-    <div class="row-fluid no-space">
-      <!--@Global:Paragraph.Content(364)-->
-    </div>
-  </div><!-- / .modal-body -->
+	<div class="modal-header">
+		<button type="button" class="close sprite blue-close" data-dismiss="modal"></button>
+		<h3><!--@Translate(whendoyouraisemymoney, "When do you raise my money?")--></h3>
+	</div><!-- / .modal-header -->
+	<div class="modal-body">
+		<div class="row-fluid no-space">
+			<!--@Global:Paragraph.Content(364)-->
+		</div>
+	</div><!-- / .modal-body -->
 </div><!-- / .modal -->
 
 <div class="modal hide fade modal-type-standart" id="checkoutTrackorder" tabindex="-1" role="dialog">
-  <div class="modal-header">
-    <button type="button" class="close sprite blue-close" data-dismiss="modal"></button>
-    <h3><!--@Translate(canItrackmyorder, "Can I track my order?")--></h3>
-  </div><!-- / .modal-header -->
-  <div class="modal-body">
-    <div class="row-fluid no-space">
-      <!--@Global:Paragraph.Content(366)-->
-    </div>
-  </div><!-- / .modal-body -->
+	<div class="modal-header">
+		<button type="button" class="close sprite blue-close" data-dismiss="modal"></button>
+		<h3><!--@Translate(canItrackmyorder, "Can I track my order?")--></h3>
+	</div><!-- / .modal-header -->
+	<div class="modal-body">
+		<div class="row-fluid no-space">
+			<!--@Global:Paragraph.Content(366)-->
+		</div>
+	</div><!-- / .modal-body -->
 </div><!-- / .modal -->
 
 <div class="modal hide fade modal-type-standart" id="checkoutDonotfit" tabindex="-1" role="dialog">
-  <div class="modal-header">
-    <button type="button" class="close sprite blue-close" data-dismiss="modal"></button>
-    <h3><!--@Translate(clothesdonotfit, "Clothes do not fit, then what?")--></h3>
-  </div><!-- / .modal-header -->
-  <div class="modal-body">
-    <div class="row-fluid no-space">
-      <!--@Global:Paragraph.Content(317)-->
-    </div>
-  </div><!-- / .modal-body -->
+	<div class="modal-header">
+		<button type="button" class="close sprite blue-close" data-dismiss="modal"></button>
+		<h3><!--@Translate(clothesdonotfit, "Clothes do not fit, then what?")--></h3>
+	</div><!-- / .modal-header -->
+	<div class="modal-body">
+		<div class="row-fluid no-space">
+			<!--@Global:Paragraph.Content(317)-->
+		</div>
+	</div><!-- / .modal-body -->
 </div><!-- / .modal -->
 
 <div class="modal hide fade modal-type-standart" id="checkoutTerms" tabindex="-1" role="dialog">
-  <div class="modal-header">
-    <button type="button" class="close sprite blue-close" data-dismiss="modal"></button>
-    <h3><!--@Translate(terms, 'Terms and Conditions')--></h3>
-  </div><!-- / .modal-header -->
-  <div class="modal-body">
-    <div class="row-fluid no-space">
-      <!--@Global:Paragraph.Content(316)-->
-    </div>
-  </div><!-- / .modal-body -->
+	<div class="modal-header">
+		<button type="button" class="close sprite blue-close" data-dismiss="modal"></button>
+		<h3><!--@Translate(terms, 'Terms and Conditions')--></h3>
+	</div><!-- / .modal-header -->
+	<div class="modal-body">
+		<div class="row-fluid no-space">
+			<!--@Global:Paragraph.Content(316)-->
+		</div>
+	</div><!-- / .modal-body -->
 </div><!-- / .modal -->
 
 <div class="modal hide fade modal-type-standart" id="checkoutInfoEmail" tabindex="-1" role="dialog">
-  <div class="modal-header">
-    <button type="button" class="close sprite blue-close" data-dismiss="modal"></button>
-    <h3><!--@Translate(emailinfo, 'Email information')--></h3>
-  </div><!-- / .modal-header -->
-  <div class="modal-body">
-    <div class="row-fluid no-space">
-      <!--@Global:Paragraph.Content(341)-->
-    </div>
-  </div><!-- / .modal-body -->
+	<div class="modal-header">
+		<button type="button" class="close sprite blue-close" data-dismiss="modal"></button>
+		<h3><!--@Translate(emailinfo, 'Email information')--></h3>
+	</div><!-- / .modal-header -->
+	<div class="modal-body">
+		<div class="row-fluid no-space">
+			<!--@Global:Paragraph.Content(341)-->
+		</div>
+	</div><!-- / .modal-body -->
 </div><!-- / .modal -->
 
 <div class="modal hide fade modal-type-standart" id="checkoutInfoMobile" tabindex="-1" role="dialog">
-  <div class="modal-header">
-    <button type="button" class="close sprite blue-close" data-dismiss="modal"></button>
-    <h3><!--@Translate(mobileinfo, 'Mobile information')--></h3>
-  </div><!-- / .modal-header -->
-  <div class="modal-body">
-    <div class="row-fluid no-space">
-      <!--@Global:Paragraph.Content(340)-->
-    </div>
-  </div><!-- / .modal-body -->
+	<div class="modal-header">
+		<button type="button" class="close sprite blue-close" data-dismiss="modal"></button>
+		<h3><!--@Translate(mobileinfo, 'Mobile information')--></h3>
+	</div><!-- / .modal-header -->
+	<div class="modal-body">
+		<div class="row-fluid no-space">
+			<!--@Global:Paragraph.Content(340)-->
+		</div>
+	</div><!-- / .modal-body -->
 </div><!-- / .modal -->
 
 <div class="modal hide fade modal-type-standart" id="checkoutInfoPhone" tabindex="-1" role="dialog">
-  <div class="modal-header">
-    <button type="button" class="close sprite blue-close" data-dismiss="modal"></button>
-    <h3><!--@Translate(phoneinfo, 'Phone information')--></h3>
-  </div><!-- / .modal-header -->
-  <div class="modal-body">
-    <div class="row-fluid no-space">
-      <!--@Global:Paragraph.Content(342)-->
-    </div>
-  </div><!-- / .modal-body -->
+	<div class="modal-header">
+		<button type="button" class="close sprite blue-close" data-dismiss="modal"></button>
+		<h3><!--@Translate(phoneinfo, 'Phone information')--></h3>
+	</div><!-- / .modal-header -->
+	<div class="modal-body">
+		<div class="row-fluid no-space">
+			<!--@Global:Paragraph.Content(342)-->
+		</div>
+	</div><!-- / .modal-body -->
 </div><!-- / .modal -->

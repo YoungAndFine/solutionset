@@ -1,31 +1,29 @@
 <div class="box-rounded no-right-round">
-    <div class="box-headline">
-        <h3>
-            <!--@Translate(Customer_Center, "Customer Center")-->
-            <button type="button" class="btn btn-small visible-phone collapsed" data-toggle="collapse" data-target=".customer_menu_wr.collapse">
-              <i class="icon-collapse"></i>
-            </button>
-        </h3>
-    </div>
-    <div class="box-content collapse customer_menu_wr">
-        <ul class="customer_center_menu">
-            <!--@If Defined(Ecom:CustomerCenter.MyOrders)-->
-                <li><!--@Ecom:CustomerCenter.MyOrders--></li>
-            <!--@EndIf(Ecom:CustomerCenter.MyOrders)-->
-            <!--@If Defined(Ecom:CustomerCenter.MyFavorites)-->
-                <li><!--@Ecom:CustomerCenter.MyFavorites--></li>
-            <!--@EndIf(Ecom:CustomerCenter.MyFavorites)-->
-            <!--@If Defined(Ecom:CustomerCenter.Search)-->
-                <li><!--@Ecom:CustomerCenter.Search--></li>
-            <!--@EndIf(Ecom:CustomerCenter.Search)-->
-            <!--@If Defined(Ecom:CustomerCenter.RMA)-->
-                <li><!--@Ecom:CustomerCenter.RMA--></li>
-            <!--@EndIf(Ecom:CustomerCenter.RMA)-->
-            <!--@If Defined(Ecom:CustomerCenter.FrequentlyItems)-->
-                <li><!--@Ecom:CustomerCenter.FrequentlyItems--></li>
-            <!--@EndIf(Ecom:CustomerCenter.FrequentlyItems)-->
-        </ul>
-    </div>
+	<div class="box-headline">
+		<h3>
+			<!--@Translate(Customer_Center, "Customer Center")-->
+			<button type="button" class="btn btn-small visible-phone collapsed" data-toggle="collapse" data-target=".customer_menu_wr.collapse">
+				<i class="icon-collapse"></i>
+			</button>
+		</h3>
+	</div>
+	<div class="box-content collapse customer_menu_wr">
+		<ul class="customer_center_menu">
+			<!--@If Defined(Ecom:CustomerCenter.MyOrders)-->
+			<li><!--@Ecom:CustomerCenter.MyOrders--></li>
+			<!--@EndIf(Ecom:CustomerCenter.MyOrders)-->
+			<!--@If Defined(Ecom:CustomerCenter.MyFavorites)-->
+			<li><!--@Ecom:CustomerCenter.MyFavorites--></li>
+			<!--@EndIf(Ecom:CustomerCenter.MyFavorites)-->
+			<!--@If Defined(Ecom:CustomerCenter.Search)-->
+			<li><!--@Ecom:CustomerCenter.Search--></li>
+			<!--@EndIf(Ecom:CustomerCenter.Search)-->
+			<!--@If Defined(Ecom:CustomerCenter.RMA)-->
+			<li><!--@Ecom:CustomerCenter.RMA--></li>
+			<!--@EndIf(Ecom:CustomerCenter.RMA)-->
+			<!--@If Defined(Ecom:CustomerCenter.FrequentlyItems)-->
+			<li><!--@Ecom:CustomerCenter.FrequentlyItems--></li>
+			<!--@EndIf(Ecom:CustomerCenter.FrequentlyItems)-->
+		</ul>
+	</div>
 </div>
-
-

@@ -7,6 +7,15 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
+    <link href="assets/vendor/bootstrap/bootstrap.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="assets/vendor/smoothness/jquery-ui-1.8.23.custom.css" rel="stylesheet">
+    <link href="assets/stylesheets/screen.css" rel="stylesheet">
+		<!--@Snippet(StyleSheet)-->
+		<!--@If Defined(Item.Area.Custom_CSS_Url)-->
+    <link href="<!--@Item.Area.Custom_CSS_Url-->" rel="stylesheet">
+		<!--@EndIf(Item.Area.Custom_CSS_Url)-->
+
     <!-- We have no correct way of rendering path here in "data-main" attribute -->
     <script src="assets/vendor/require-jquery.js"></script>
 		<script>
@@ -15,15 +24,7 @@
 		var designBaseUrl = '/Files/Templates/Designs/'+designName+'/';
 		</script>
     <script src="assets/vendor/dynamicweb.start.js"></script>
-
-    <link href="assets/vendor/bootstrap/bootstrap.css" rel="stylesheet">
-    <link href="assets/vendor/bootstrap/bootstrap-responsive.min.css" rel="stylesheet">
-    <link href="assets/vendor/smoothness/jquery-ui-1.8.23.custom.css" rel="stylesheet">
-    <link href="assets/stylesheets/screen.css" rel="stylesheet">
-		<!--@If Defined(Item.Area.Custom_CSS_Url)-->
-    <link href="<!--@Item.Area.Custom_CSS_Url-->" rel="stylesheet">
-		<!--@EndIf(Item.Area.Custom_CSS_Url)-->
-		
+		<!--@Snippet(JavaScriptHead)-->
   </head>
   <body class="type-minimal"
 				data-areaid="<!--@Global:Area.ID-->"
@@ -40,11 +41,12 @@
 						<div class="span8 logo-wrapper">
 							<div class="row">
 								<div class="span4 logo">
-									<a href="/Default.aspx?ID=<!--@DwAreaFirstActivePageID-->" class="logo-image"
-										 <!--@If Defined(Item.Area.Logo_Image)-->
-										 style="background-image: url(<!--@Item.Area.Logo_Image)"
-										 <!--@EndIf(Item.Area.Logo_Image)-->
-										 ></a>
+									<!--@If Defined(Item.Area.Logo_Image)-->
+									<a href="/Default.aspx?ID=<!--@DwAreaFirstActivePageID-->" class="logo-image" style="background-image: url('<!--@Item.Area.Logo_Image-->')"></a>
+									<!--@EndIf(Item.Area.Logo_Image)-->
+									<!--@If Not Defined(Item.Area.Logo_Image)-->
+									<a href="/Default.aspx?ID=<!--@DwAreaFirstActivePageID-->" class="logo-image"></a>
+									<!--@EndIf(Item.Area.Logo_Image)-->
 								</div>
 								<div class="span4 payoff dwcontent" id="payoffHeadline" title="Pay-off headline"></div>
 							</div>

@@ -1,7 +1,10 @@
 <!--@MasterPageFile(MasterPages/Main.html)-->
 <!--@Layout.Title(Products)-->
 <!--@Layout.Description()-->
-<script type="text/javascript" src="assets/javascripts/variant.js"></script>
+
+<!--@SnippetStart(JavaScriptHead)-->
+<script type="text/javascript" src="assets/vendor/dynamicweb.variant.js"></script>
+<!--@SnippetEnd(JavaScriptHead)-->
 
 <section class="container content-wrapper productlist <!--@If Defined(Server:Request.productid)-->product-details<!--@EndIf(Server:Request.productid)-->" data-autoloader-pageid="<!--@If(Global:Area.ID==1)-->494<!--@EndIf--><!--@If(Global:Area.ID==17)-->495<!--@EndIf-->">
   <!--@If Not Defined(Server:Request.productid)-->
@@ -260,7 +263,7 @@
       <a class="dw-button dw-button-gray" data-dismiss="modal">
         <!--@Translate(buymore, "Buy More")-->
       </a>
-      <a class="dw-button dw-button-green" href="/Default.aspx?ID=<!--@If(Global:Area.ID==1)-->52<!--@EndIf--><!--@If(Global:Area.ID==17)-->325<!--@EndIf--><!--@If(Global:Area.ID==18)-->377<!--@EndIf--><!--@If(Global:Area.ID==19)-->440<!--@EndIf--><!--@If(Global:Area.ID==22)-->613<!--@EndIf-->">
+      <a class="dw-button dw-button-green" href="/Default.aspx?ID=<!--@Item.Area.Show_Cart_Page_ID-->">
         <!--@Translate(viewcart, "View Cart")-->
         <span class="sprite arr-forward-small-white"></span>
       </a>

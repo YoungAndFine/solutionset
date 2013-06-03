@@ -1,375 +1,375 @@
 <link href="/Files/Templates/Designs/eCommerce01_responsive/assets/css/checkout.css" rel="stylesheet">
 <script type="text/javascript">
-  require(
-    ["jquery", "bootstrap", "jquery-autocomplete", "/Files/Templates/eCom7/CartV2/Step/InfoDirekt.js"],
-    function ($) {
+	require(
+		["jquery", "bootstrap", "jquery-autocomplete", "/Files/Templates/eCom7/CartV2/Step/InfoDirekt.js"],
+		function ($) {
 
-      $(document).ready(function () {
+			$(document).ready(function () {
 
-        // Show default shipping provider template after page loaded
-        // TODO:
-        // Need the code review and rework following implementation
-        // for less coupling JS function with HTML mark up
-        $(':radio', '.pay-and-shipp').on('change', function () {
-          var $this = $(this),
-              $wrapper = $this.parents('#checkout-wrapper'),
-              type = $this.data().type,
-              shippingId = $(this).val();
+				// Show default shipping provider template after page loaded
+				// TODO:
+				// Need the code review and rework following implementation
+				// for less coupling JS function with HTML mark up
+				$(':radio', '.pay-and-shipp').on('change', function () {
+					var $this = $(this),
+					$wrapper = $this.parents('#checkout-wrapper'),
+					type = $this.data().type,
+					shippingId = $(this).val();
 
-          switch (type) {
-            case 'delivery':
-              if ($('.provider.shippingID-' + shippingId).length) {
-                $('.provider-content').toggle(true);
-                $('.provider').toggle(false);
-                $('.provider.shippingID-' + shippingId).toggle(true);
-              } else {
-                $('.provider-content').toggle(false);
-              }
-              break;
-            case 'payment':
-              break;
-          }
-        });
-        $(':checked').trigger('change');
+					switch (type) {
+					case 'delivery':
+						if ($('.provider.shippingID-' + shippingId).length) {
+							$('.provider-content').toggle(true);
+							$('.provider').toggle(false);
+							$('.provider.shippingID-' + shippingId).toggle(true);
+						} else {
+							$('.provider-content').toggle(false);
+						}
+						break;
+					case 'payment':
+						break;
+					}
+				});
+				$(':checked').trigger('change');
 
-        //Recount fees by changing method
-        $("input[name=EcomCartPaymethodID]").change(function () {
-          var item = $(this);
+				//Recount fees by changing method
+				$("input[name=EcomCartPaymethodID]").change(function () {
+					var item = $(this);
 
-          if (item.data('type') == 'payment') {
-            $('.cart_pay_price').html(parseFloat(item.data('cost')).toFixed(2));
-          } else if (item.data('type') == 'delivery') {
-            $('.cart_ship_price').html(parseFloat(item.data('cost')).toFixed(2));
-          }
-          var priceclear = (parseFloat($('.cart_pay_price').html()) + parseFloat($('.cart_ship_price').html()) + parseFloat($('.price_withoutvat').data('goods_price'))).toFixed(2);
-          $('.price_withoutvat span').html(priceclear);
-          var pricevat = (parseFloat(priceclear) + parseFloat($('.goods_vat').data('goodsvat'))).toFixed(2);
-          $('.cart_total').html(pricevat);
-        })
+					if (item.data('type') == 'payment') {
+						$('.cart_pay_price').html(parseFloat(item.data('cost')).toFixed(2));
+					} else if (item.data('type') == 'delivery') {
+						$('.cart_ship_price').html(parseFloat(item.data('cost')).toFixed(2));
+					}
+					var priceclear = (parseFloat($('.cart_pay_price').html()) + parseFloat($('.cart_ship_price').html()) + parseFloat($('.price_withoutvat').data('goods_price'))).toFixed(2);
+					$('.price_withoutvat span').html(priceclear);
+					var pricevat = (parseFloat(priceclear) + parseFloat($('.goods_vat').data('goodsvat'))).toFixed(2);
+					$('.cart_total').html(pricevat);
+				})
 
-        // [!]
-        // Obsolete scripts
-        // Need rework this peace of code
-        var errorFields = new Array;
-        errorFields[0] = "Dummy";
-        <!--@LoopStart(ValidationErrors)-->
-        errorFields[<!--@ValidationErrors.LoopCounter-->] = "<!--@Ecom:Cart.ValidationError.FieldSystemName-->";
-        <!--@LoopEnd(ValidationErrors)-->
+				// [!]
+				// Obsolete scripts
+				// Need rework this peace of code
+				var errorFields = new Array;
+				errorFields[0] = "Dummy";
+					<!--@LoopStart(ValidationErrors)-->
+					errorFields[<!--@ValidationErrors.LoopCounter-->] = "<!--@Ecom:Cart.ValidationError.FieldSystemName-->";
+					<!--@LoopEnd(ValidationErrors)-->
 
-        if (errorFields.length > 0) {
-          for (i = 1; i < errorFields.length; i++) {
-            // $("#" + errorFields[i]).css("border-color", "red");
-            $("#" + errorFields[i]).addClass("error");
-          }
-        }
+				if (errorFields.length > 0) {
+					for (i = 1; i < errorFields.length; i++) {
+						// $("#" + errorFields[i]).css("border-color", "red");
+						$("#" + errorFields[i]).addClass("error");
+					}
+				}
 
-      });
+			});
 
-    }
-  );
+		}
+	);
 </script>
 
 <!--@LoopStart(StepButtons)-->
 <!-- @If(CartV2.CurrentStepButtonName=Step.ButtonName) -->
 <!--@HeaderStart-->
 <div class="checkout-stepmap">
-  <ul>
-    <!--@HeaderEnd-->
-    <li <!--@If(Step.Index==1)-->class="active"<!--@EndIf-->>
-      <span><i><!--@Step.Index--></i></span>
-      <h4><!--@Step.Name--></h4>
-    </li>
-    <!--@FooterStart-->
-  </ul>
+	<ul>
+		<!--@HeaderEnd-->
+		<li <!--@If(Step.Index==1)-->class="active"<!--@EndIf-->>
+			<span><i><!--@Step.Index--></i></span>
+			<h4><!--@Step.Name--></h4>
+		</li>
+		<!--@FooterStart-->
+	</ul>
 </div>
 <script>
-  $(document).ready(function () {
-    $(".cart-step-map ul li").each(function () {
-      var el = $(this).find("span > i");
-      el.html(parseInt(el.html()) + 1);
-    });
-  });
+	$(document).ready(function () {
+		$(".cart-step-map ul li").each(function () {
+			var el = $(this).find("span > i");
+			el.html(parseInt(el.html()) + 1);
+		});
+	});
 </script>
 <!--@FooterEnd-->
 <!--@LoopEnd(StepButtons)-->
 
 <div class="span12 checkout-step checkout-headline-wrapper">
-  <div class="row">
-    <div class="span9">
-      <div class="checkout-headline">
-        <h1><!--@Translate(Payment_and_Shipping, "Payment and Shipping")--></h1>
-        <a href="#" onclick="copy_address(); $('#ordersubmit').submit();" class="btn dw-button-green">
-          <strong>
-            <!--@Translate(nextpage, "Next page")-->
-          </strong>
-          <i class="icon sprite arr-forward-small-white"></i>
-        </a>
-      </div>
-    </div>
-  </div>
+	<div class="row">
+		<div class="span9">
+			<div class="checkout-headline">
+				<h1><!--@Translate(Payment_and_Shipping, "Payment and Shipping")--></h1>
+				<a href="#" onclick="copy_address(); $('#ordersubmit').submit();" class="btn dw-button-green">
+					<strong>
+						<!--@Translate(nextpage, "Next page")-->
+					</strong>
+					<i class="icon sprite arr-forward-small-white"></i>
+				</a>
+			</div>
+		</div>
+	</div>
 </div><!-- / .checkout-headline-wrapper -->
 
 <!--@LoopStart(ValidationErrors)-->
 <!--@HeaderStart-->
 <div class="span12 validation-errors" id="errors">
-  <ul>
-  <!--@HeaderEnd-->
-    <li><!--@Translate(errorininputfield, "Error in the input field")--> "<!--@Ecom:Cart.ValidationError.FieldName-->": <a href="javascript:document.getElementById('<!--@Ecom:Cart.ValidationError.FieldSystemName-->').focus();"><!--@Ecom:Cart.ValidationError.ErrorMessage--></a></li>
-  <!--@FooterStart-->
-    </ul>
+	<ul>
+		<!--@HeaderEnd-->
+		<li><!--@Translate(errorininputfield, "Error in the input field")--> "<!--@Ecom:Cart.ValidationError.FieldName-->": <a href="javascript:document.getElementById('<!--@Ecom:Cart.ValidationError.FieldSystemName-->').focus();"><!--@Ecom:Cart.ValidationError.ErrorMessage--></a></li>
+		<!--@FooterStart-->
+	</ul>
 </div><!-- / .validation-errors -->
 <!--@FooterEnd-->
 <!--@LoopEnd(ValidationErrors)-->
 
 <div class="span9 checkout-step" id="checkout-wrapper">
-  <form name="ordersubmit" id="ordersubmit" method="post">
-    <input type="hidden" name="<!--@CartV2.NextStepButtonName-->" id="<!--@CartV2.NextStepButtonName-->" value="true"/>
-    <div class="box-rounded">
+	<form name="ordersubmit" id="ordersubmit" method="post">
+		<input type="hidden" name="<!--@CartV2.NextStepButtonName-->" id="<!--@CartV2.NextStepButtonName-->" value="true"/>
+		<div class="box-rounded">
 
-      <legend class="box-headline">
-        <h3><!--@Translate(Payment_Method, "Payment Method")--></h3>
-        <a href="#" class="box-headline-info" data-toggle="modal" data-target="#checkoutAboutPayment"><!--@Translate(aboutpayment, "About payment methods")--></a>
-      </legend>
-      <div class="box-content">
-        <div class="form-horizontal pay-and-shipp">
-          <div class="control-group">
-            <!--@LoopStart(Paymethods)-->
-            <div class="controls">
-              <label class="radio">
-                <input type="radio" name="EcomCartPaymethodID" id="EcomCartPaymethodID_<!--@Ecom:Cart.Paymethod.ID-->" value="<!--@Ecom:Cart.Paymethod.ID-->" data-type="payment" data-cost="<!--@Ecom:Cart.Paymethod.Price.PriceWithoutVAT-->" <!--@If Defined(Ecom:Cart.Paymethod.IsSelected)-->checked="checked"<!--@EndIf(Ecom:Cart.Paymethod.IsSelected)-->>
-                <img src="<!--@Ecom:Cart.Paymethod.Icon.Clean-->" alt="payment">
-                <!--@Ecom:Cart.Paymethod.Name--> (<!--@Ecom:Cart.Paymethod.Price.PriceFormatted-->)
-              </label>
-            </div>
-            <!--@LoopEnd(Paymethods)-->
-          </div>
-        </div>
-      </div>
+			<legend class="box-headline">
+				<h3><!--@Translate(Payment_Method, "Payment Method")--></h3>
+				<a href="#" class="box-headline-info" data-toggle="modal" data-target="#checkoutAboutPayment"><!--@Translate(aboutpayment, "About payment methods")--></a>
+			</legend>
+			<div class="box-content">
+				<div class="form-horizontal pay-and-shipp">
+					<div class="control-group">
+						<!--@LoopStart(Paymethods)-->
+						<div class="controls">
+							<label class="radio">
+								<input type="radio" name="EcomCartPaymethodID" id="EcomCartPaymethodID_<!--@Ecom:Cart.Paymethod.ID-->" value="<!--@Ecom:Cart.Paymethod.ID-->" data-type="payment" data-cost="<!--@Ecom:Cart.Paymethod.Price.PriceWithoutVAT-->" <!--@If Defined(Ecom:Cart.Paymethod.IsSelected)-->checked="checked"<!--@EndIf(Ecom:Cart.Paymethod.IsSelected)-->>
+								<img src="<!--@Ecom:Cart.Paymethod.Icon.Clean-->" alt="payment">
+								<!--@Ecom:Cart.Paymethod.Name--> (<!--@Ecom:Cart.Paymethod.Price.PriceFormatted-->)
+							</label>
+						</div>
+						<!--@LoopEnd(Paymethods)-->
+					</div>
+				</div>
+			</div>
 
-      <legend class="box-headline">
-        <h3><!--@Translate(Shipping_Method, "Shipping Method")--></h3>
-        <a href="#" class="box-headline-info" data-toggle="modal" data-target="#checkoutAboutDelivery"><!--@Translate(aboutdelivery, "About delivery methods")--></a>
-      </legend>
-      <div class="box-content checkout-step">
-        <div class="form-horizontal pay-and-shipp">
-          <div class="control-group">
-            <!--@LoopStart(Shippingmethods)-->
-            <div class="controls">
-              <label class="radio">
-                <input type="radio" name="EcomCartShippingmethodID" id="EcomCartShippingID_<!--@Ecom:Cart.Shippingmethod.ID-->" value="<!--@Ecom:Cart.Shippingmethod.ID-->" data-type="delivery" data-cost="<!--@Ecom:Cart.Shippingmethod.PriceOverMaxWeight.PriceWithoutVAT-->" <!--@If Defined(Ecom:Cart.Shippingmethod.IsSelected)-->checked="checked"<!--@EndIf(Ecom:Cart.Shippingmethod.IsSelected)-->>
-                <!--@Ecom:Cart.Shippingmethod.Name--> (<!--@Ecom:Cart.Shippingmethod.PriceOverMaxWeight.PriceWithoutVATFormatted-->)
-              </label>
-            </div>
-            <!--@LoopEnd(Shippingmethods)-->
-          </div>
-        </div>
-      </div>
-      <div class="box-content checkout-step provider-content" style="display: none;">
-        <div class="form-horizontal pay-and-shipp">
-          <div class="control-group">
-            <!--@LoopStart(Shippingmethods)-->
-              <!--@If Defined(Ecom:ShippingProvider.Content)-->
-                <div class="provider shippingID-<!--@Ecom:Cart.Shippingmethod.ID-->" style="display: none;">
-                  <!--@Ecom:ShippingProvider.Content-->
-                </div>
-              <!--@EndIf(Ecom:ShippingProvider.Content)-->
-            <!--@LoopEnd(Shippingmethods)-->
-          </div>
-        </div>
-      </div>
+			<legend class="box-headline">
+				<h3><!--@Translate(Shipping_Method, "Shipping Method")--></h3>
+				<a href="#" class="box-headline-info" data-toggle="modal" data-target="#checkoutAboutDelivery"><!--@Translate(aboutdelivery, "About delivery methods")--></a>
+			</legend>
+			<div class="box-content checkout-step">
+				<div class="form-horizontal pay-and-shipp">
+					<div class="control-group">
+						<!--@LoopStart(Shippingmethods)-->
+						<div class="controls">
+							<label class="radio">
+								<input type="radio" name="EcomCartShippingmethodID" id="EcomCartShippingID_<!--@Ecom:Cart.Shippingmethod.ID-->" value="<!--@Ecom:Cart.Shippingmethod.ID-->" data-type="delivery" data-cost="<!--@Ecom:Cart.Shippingmethod.PriceOverMaxWeight.PriceWithoutVAT-->" <!--@If Defined(Ecom:Cart.Shippingmethod.IsSelected)-->checked="checked"<!--@EndIf(Ecom:Cart.Shippingmethod.IsSelected)-->>
+								<!--@Ecom:Cart.Shippingmethod.Name--> (<!--@Ecom:Cart.Shippingmethod.PriceOverMaxWeight.PriceWithoutVATFormatted-->)
+							</label>
+						</div>
+						<!--@LoopEnd(Shippingmethods)-->
+					</div>
+				</div>
+			</div>
+			<div class="box-content checkout-step provider-content" style="display: none;">
+				<div class="form-horizontal pay-and-shipp">
+					<div class="control-group">
+						<!--@LoopStart(Shippingmethods)-->
+						<!--@If Defined(Ecom:ShippingProvider.Content)-->
+						<div class="provider shippingID-<!--@Ecom:Cart.Shippingmethod.ID-->" style="display: none;">
+							<!--@Ecom:ShippingProvider.Content-->
+						</div>
+						<!--@EndIf(Ecom:ShippingProvider.Content)-->
+						<!--@LoopEnd(Shippingmethods)-->
+					</div>
+				</div>
+			</div>
 
-    </div><!-- / .box-rounded -->
-    <div class="actions-group">
-      <a href="#" onclick="history.back();" style="float: left;" class="btn btn-link">
-        <span class="icon sprite arr-back-small"></span><!--@Translate(back, "Back")-->
-      </a>
-      <a href="#" onclick="copy_address(); $('#ordersubmit').submit();" class="btn dw-button-green">
-        <strong>
-          <!--@Translate(nextpage, "Next page")-->
-        </strong>
-        <i class="icon sprite arr-forward-small-white"></i>
-      </a>
-    </div>
-  </form>
+		</div><!-- / .box-rounded -->
+		<div class="actions-group">
+			<a href="#" onclick="history.back();" style="float: left;" class="btn btn-link">
+				<span class="icon sprite arr-back-small"></span><!--@Translate(back, "Back")-->
+			</a>
+			<a href="#" onclick="copy_address(); $('#ordersubmit').submit();" class="btn dw-button-green">
+				<strong>
+					<!--@Translate(nextpage, "Next page")-->
+				</strong>
+				<i class="icon sprite arr-forward-small-white"></i>
+			</a>
+		</div>
+	</form>
 </div>
 
 <div class="span3">
-  <div class="box-rounded" id="order-container">
-    <div class="box-headline box-headline-dark">
-      <h3>
-        <!--@Translate(yourOrder, "Your order")-->
-        <button type="button" class="btn btn-small visible-phone collapsed" data-toggle="collapse" data-target=".box-minicart.collapse">
-          <i class="icon-collapse"></i>
-        </button>
-      </h3>
-    </div>
-    <div class="box-content box-minicart collapse">
-      <!--@Include(MiniCart.html)-->
-    </div>
-  </div><!-- / .box-rounded -->
-  <div class="checkout-links">
-    <h4><!--@Translate(praticalinfo, "Practical info")-->:</h4>
-    <ul>
-      <li><a href="#" data-toggle="modal" data-target="#checkoutDelivery"><!--@Translate(pracdelivery, "Delivery")--></a></li>
-      <li><a href="#" data-toggle="modal" data-target="#checkoutPayment"><!--@Translate(pracpayment, "Payment")--></a></li>
-      <li><a href="#" data-toggle="modal" data-target="#checkoutReturn"><!--@Translate(pracpolicy, "Return policy")--></a></li>
-      <li><a href="#" data-toggle="modal" data-target="#checkoutSecurity"><!--@Translate(pracsecurity, "Security")--></a></li>
-      <li><a href="#" data-toggle="modal" data-target="#checkoutSupport"><!--@Translate(pracsupport, "Support")--></a></li>
-    </ul>
-    <br>
-    <h4><!--@Translate(mostaskedquestions, "Frequently asked questions")-->:</h4>
-    <ul>
-      <li><a href="#" data-toggle="modal" data-target="#checkoutPayinfo"><!--@Translate(whatcanIpaywith, "What payment methods do you support?")--></a></li>
-      <li><a href="#" data-toggle="modal" data-target="#checkoutCallyou"><!--@Translate(canIcallyou, "Can I call you?")--></a></li>
-      <li><a href="#" data-toggle="modal" data-target="#checkoutRaisemoney"><!--@Translate(whendoyouraisemymoney, "When do you raise my money?")--></a></li>
-      <li><a href="#" data-toggle="modal" data-target="#checkoutTrackorder"><!--@Translate(canItrackmyorder, "Can I track my order?")--></a></li>
-      <li><a href="#" data-toggle="modal" data-target="#checkoutDonotfit"><!--@Translate(clothesdonotfit, "Clothes do not fit, then what?")--></a></li>
-    </ul>
-  </div><!-- / .checkout-links -->
+	<div class="box-rounded" id="order-container">
+		<div class="box-headline box-headline-dark">
+			<h3>
+				<!--@Translate(yourOrder, "Your order")-->
+				<button type="button" class="btn btn-small visible-phone collapsed" data-toggle="collapse" data-target=".box-minicart.collapse">
+					<i class="icon-collapse"></i>
+				</button>
+			</h3>
+		</div>
+		<div class="box-content box-minicart collapse">
+			<!--@Include(MiniCart.html)-->
+		</div>
+	</div><!-- / .box-rounded -->
+	<div class="checkout-links">
+		<h4><!--@Translate(praticalinfo, "Practical info")-->:</h4>
+		<ul>
+			<li><a href="#" data-toggle="modal" data-target="#checkoutDelivery"><!--@Translate(pracdelivery, "Delivery")--></a></li>
+			<li><a href="#" data-toggle="modal" data-target="#checkoutPayment"><!--@Translate(pracpayment, "Payment")--></a></li>
+			<li><a href="#" data-toggle="modal" data-target="#checkoutReturn"><!--@Translate(pracpolicy, "Return policy")--></a></li>
+			<li><a href="#" data-toggle="modal" data-target="#checkoutSecurity"><!--@Translate(pracsecurity, "Security")--></a></li>
+			<li><a href="#" data-toggle="modal" data-target="#checkoutSupport"><!--@Translate(pracsupport, "Support")--></a></li>
+		</ul>
+		<br>
+		<h4><!--@Translate(mostaskedquestions, "Frequently asked questions")-->:</h4>
+		<ul>
+			<li><a href="#" data-toggle="modal" data-target="#checkoutPayinfo"><!--@Translate(whatcanIpaywith, "What payment methods do you support?")--></a></li>
+			<li><a href="#" data-toggle="modal" data-target="#checkoutCallyou"><!--@Translate(canIcallyou, "Can I call you?")--></a></li>
+			<li><a href="#" data-toggle="modal" data-target="#checkoutRaisemoney"><!--@Translate(whendoyouraisemymoney, "When do you raise my money?")--></a></li>
+			<li><a href="#" data-toggle="modal" data-target="#checkoutTrackorder"><!--@Translate(canItrackmyorder, "Can I track my order?")--></a></li>
+			<li><a href="#" data-toggle="modal" data-target="#checkoutDonotfit"><!--@Translate(clothesdonotfit, "Clothes do not fit, then what?")--></a></li>
+		</ul>
+	</div><!-- / .checkout-links -->
 </div>
 
 
 
 <div class="modal hide fade modal-type-standart" id="checkoutDelivery" tabindex="-1" role="dialog">
-  <div class="modal-header">
-    <button type="button" class="close sprite blue-close" data-dismiss="modal"></button>
-    <h3><!--@Translate(pracdeliverypopup, 'Delivery')--></h3>
-  </div><!-- / .modal-header -->
-  <div class="modal-body">
-    <div class="row-fluid no-space">
-      <!--@Global:Paragraph.Content(416)-->
-    </div>
-  </div><!-- / .modal-body -->
+	<div class="modal-header">
+		<button type="button" class="close sprite blue-close" data-dismiss="modal"></button>
+		<h3><!--@Translate(pracdeliverypopup, 'Delivery')--></h3>
+	</div><!-- / .modal-header -->
+	<div class="modal-body">
+		<div class="row-fluid no-space">
+			<!--@Global:Paragraph.Content(416)-->
+		</div>
+	</div><!-- / .modal-body -->
 </div><!-- / .modal -->
 
 <div class="modal hide fade modal-type-standart" id="checkoutPayment" tabindex="-1" role="dialog">
-  <div class="modal-header">
-    <button type="button" class="close sprite blue-close" data-dismiss="modal"></button>
-    <h3><!--@Translate(pracpaymentpopup, 'Payment')--></h3>
-  </div><!-- / .modal-header -->
-  <div class="modal-body">
-    <div class="row-fluid no-space">
-      <!--@Global:Paragraph.Content(417)-->
-    </div>
-  </div><!-- / .modal-body -->
+	<div class="modal-header">
+		<button type="button" class="close sprite blue-close" data-dismiss="modal"></button>
+		<h3><!--@Translate(pracpaymentpopup, 'Payment')--></h3>
+	</div><!-- / .modal-header -->
+	<div class="modal-body">
+		<div class="row-fluid no-space">
+			<!--@Global:Paragraph.Content(417)-->
+		</div>
+	</div><!-- / .modal-body -->
 </div><!-- / .modal -->
 
 <div class="modal hide fade modal-type-standart" id="checkoutReturn" tabindex="-1" role="dialog">
-  <div class="modal-header">
-    <button type="button" class="close sprite blue-close" data-dismiss="modal"></button>
-    <h3><!--@Translate(pracpolicy, "Return policy")--></h3>
-  </div><!-- / .modal-header -->
-  <div class="modal-body">
-    <div class="row-fluid no-space">
-      <!--@Global:Paragraph.Content(419)-->
-    </div>
-  </div><!-- / .modal-body -->
+	<div class="modal-header">
+		<button type="button" class="close sprite blue-close" data-dismiss="modal"></button>
+		<h3><!--@Translate(pracpolicy, "Return policy")--></h3>
+	</div><!-- / .modal-header -->
+	<div class="modal-body">
+		<div class="row-fluid no-space">
+			<!--@Global:Paragraph.Content(419)-->
+		</div>
+	</div><!-- / .modal-body -->
 </div><!-- / .modal -->
 
 <div class="modal hide fade modal-type-standart" id="checkoutSecurity" tabindex="-1" role="dialog">
-  <div class="modal-header">
-    <button type="button" class="close sprite blue-close" data-dismiss="modal"></button>
-    <h3><!--@Translate(pracsecuritypopup, 'Security')--></h3>
-  </div><!-- / .modal-header -->
-  <div class="modal-body">
-    <div class="row-fluid no-space">
-      <!--@Global:Paragraph.Content(420)-->
-    </div>
-  </div><!-- / .modal-body -->
+	<div class="modal-header">
+		<button type="button" class="close sprite blue-close" data-dismiss="modal"></button>
+		<h3><!--@Translate(pracsecuritypopup, 'Security')--></h3>
+	</div><!-- / .modal-header -->
+	<div class="modal-body">
+		<div class="row-fluid no-space">
+			<!--@Global:Paragraph.Content(420)-->
+		</div>
+	</div><!-- / .modal-body -->
 </div><!-- / .modal -->
 
 <div class="modal hide fade modal-type-standart" id="checkoutSupport" tabindex="-1" role="dialog">
-  <div class="modal-header">
-    <button type="button" class="close sprite blue-close" data-dismiss="modal"></button>
-    <h3><!--@Translate(pracsupportpopup, 'Support')--></h3>
-  </div><!-- / .modal-header -->
-  <div class="modal-body">
-    <div class="row-fluid no-space">
-      <!--@Global:Paragraph.Content(422)-->
-    </div>
-  </div><!-- / .modal-body -->
+	<div class="modal-header">
+		<button type="button" class="close sprite blue-close" data-dismiss="modal"></button>
+		<h3><!--@Translate(pracsupportpopup, 'Support')--></h3>
+	</div><!-- / .modal-header -->
+	<div class="modal-body">
+		<div class="row-fluid no-space">
+			<!--@Global:Paragraph.Content(422)-->
+		</div>
+	</div><!-- / .modal-body -->
 </div><!-- / .modal -->
 
 <div class="modal hide fade modal-type-standart" id="checkoutPayinfo" tabindex="-1" role="dialog">
-  <div class="modal-header">
-    <button type="button" class="close sprite blue-close" data-dismiss="modal"></button>
-    <h3><!--@Translate(whatcanIpaywith, "What payment methods do you support?")--></h3>
-  </div><!-- / .modal-header -->
-  <div class="modal-body">
-    <div class="row-fluid no-space">
-      <!--@Global:Paragraph.Content(339)-->
-    </div>
-  </div><!-- / .modal-body -->
+	<div class="modal-header">
+		<button type="button" class="close sprite blue-close" data-dismiss="modal"></button>
+		<h3><!--@Translate(whatcanIpaywith, "What payment methods do you support?")--></h3>
+	</div><!-- / .modal-header -->
+	<div class="modal-body">
+		<div class="row-fluid no-space">
+			<!--@Global:Paragraph.Content(339)-->
+		</div>
+	</div><!-- / .modal-body -->
 </div><!-- / .modal -->
 
 <div class="modal hide fade modal-type-standart" id="checkoutCallyou" tabindex="-1" role="dialog">
-  <div class="modal-header">
-    <button type="button" class="close sprite blue-close" data-dismiss="modal"></button>
-    <h3><!--@Translate(canIcallyou, "Can I call you?")--></h3>
-  </div><!-- / .modal-header -->
-  <div class="modal-body">
-    <div class="row-fluid no-space">
-      <!--@Global:Paragraph.Content(364)-->
-    </div>
-  </div><!-- / .modal-body -->
+	<div class="modal-header">
+		<button type="button" class="close sprite blue-close" data-dismiss="modal"></button>
+		<h3><!--@Translate(canIcallyou, "Can I call you?")--></h3>
+	</div><!-- / .modal-header -->
+	<div class="modal-body">
+		<div class="row-fluid no-space">
+			<!--@Global:Paragraph.Content(364)-->
+		</div>
+	</div><!-- / .modal-body -->
 </div><!-- / .modal -->
 
 <div class="modal hide fade modal-type-standart" id="checkoutRaisemoney" tabindex="-1" role="dialog">
-  <div class="modal-header">
-    <button type="button" class="close sprite blue-close" data-dismiss="modal"></button>
-    <h3><!--@Translate(whendoyouraisemymoney, "When do you raise my money?")--></h3>
-  </div><!-- / .modal-header -->
-  <div class="modal-body">
-    <div class="row-fluid no-space">
-      <!--@Global:Paragraph.Content(364)-->
-    </div>
-  </div><!-- / .modal-body -->
+	<div class="modal-header">
+		<button type="button" class="close sprite blue-close" data-dismiss="modal"></button>
+		<h3><!--@Translate(whendoyouraisemymoney, "When do you raise my money?")--></h3>
+	</div><!-- / .modal-header -->
+	<div class="modal-body">
+		<div class="row-fluid no-space">
+			<!--@Global:Paragraph.Content(364)-->
+		</div>
+	</div><!-- / .modal-body -->
 </div><!-- / .modal -->
 
 <div class="modal hide fade modal-type-standart" id="checkoutTrackorder" tabindex="-1" role="dialog">
-  <div class="modal-header">
-    <button type="button" class="close sprite blue-close" data-dismiss="modal"></button>
-    <h3><!--@Translate(canItrackmyorder, "Can I track my order?")--></h3>
-  </div><!-- / .modal-header -->
-  <div class="modal-body">
-    <div class="row-fluid no-space">
-      <!--@Global:Paragraph.Content(366)-->
-    </div>
-  </div><!-- / .modal-body -->
+	<div class="modal-header">
+		<button type="button" class="close sprite blue-close" data-dismiss="modal"></button>
+		<h3><!--@Translate(canItrackmyorder, "Can I track my order?")--></h3>
+	</div><!-- / .modal-header -->
+	<div class="modal-body">
+		<div class="row-fluid no-space">
+			<!--@Global:Paragraph.Content(366)-->
+		</div>
+	</div><!-- / .modal-body -->
 </div><!-- / .modal -->
 
 <div class="modal hide fade modal-type-standart" id="checkoutDonotfit" tabindex="-1" role="dialog">
-  <div class="modal-header">
-    <button type="button" class="close sprite blue-close" data-dismiss="modal"></button>
-    <h3><!--@Translate(clothesdonotfit, "Clothes do not fit, then what?")--></h3>
-  </div><!-- / .modal-header -->
-  <div class="modal-body">
-    <div class="row-fluid no-space">
-      <!--@Global:Paragraph.Content(317)-->
-    </div>
-  </div><!-- / .modal-body -->
+	<div class="modal-header">
+		<button type="button" class="close sprite blue-close" data-dismiss="modal"></button>
+		<h3><!--@Translate(clothesdonotfit, "Clothes do not fit, then what?")--></h3>
+	</div><!-- / .modal-header -->
+	<div class="modal-body">
+		<div class="row-fluid no-space">
+			<!--@Global:Paragraph.Content(317)-->
+		</div>
+	</div><!-- / .modal-body -->
 </div><!-- / .modal -->
 
 <div class="modal hide fade modal-type-standart" id="checkoutAboutPayment" tabindex="-1" role="dialog">
-  <div class="modal-header">
-    <button type="button" class="close sprite blue-close" data-dismiss="modal"></button>
-    <h3><!--@Translate(payment, 'About payment methods')--></h3>
-  </div><!-- / .modal-header -->
-  <div class="modal-body">
-    <div class="row-fluid no-space">
-      <!--@Global:Paragraph.Content(334)-->
-    </div>
-  </div><!-- / .modal-body -->
+	<div class="modal-header">
+		<button type="button" class="close sprite blue-close" data-dismiss="modal"></button>
+		<h3><!--@Translate(payment, 'About payment methods')--></h3>
+	</div><!-- / .modal-header -->
+	<div class="modal-body">
+		<div class="row-fluid no-space">
+			<!--@Global:Paragraph.Content(334)-->
+		</div>
+	</div><!-- / .modal-body -->
 </div><!-- / .modal -->
 
 <div class="modal hide fade modal-type-standart" id="checkoutAboutDelivery" tabindex="-1" role="dialog">
-  <div class="modal-header">
-    <button type="button" class="close sprite blue-close" data-dismiss="modal"></button>
-    <h3><!--@Translate(about_delivery, 'About delivery methods')--></h3>
-  </div><!-- / .modal-header -->
-  <div class="modal-body">
-    <div class="row-fluid no-space">
-      <!--@Global:Paragraph.Content(338)-->
-    </div>
-  </div><!-- / .modal-body -->
+	<div class="modal-header">
+		<button type="button" class="close sprite blue-close" data-dismiss="modal"></button>
+		<h3><!--@Translate(about_delivery, 'About delivery methods')--></h3>
+	</div><!-- / .modal-header -->
+	<div class="modal-body">
+		<div class="row-fluid no-space">
+			<!--@Global:Paragraph.Content(338)-->
+		</div>
+	</div><!-- / .modal-body -->
 </div><!-- / .modal -->

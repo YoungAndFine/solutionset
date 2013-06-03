@@ -1,90 +1,90 @@
 <div class="row-fluid no-space fill customer_center">
-    
-    <!--Left Menu-->
-    <div class="span3 ">        
-        <!--@Ecom:CustomerCenter.Menu-->        
-    </div>
-    <!--/ Left Menu-->
 
-    <div class="span9 box-rounded no-left-round span9_ex">
-        <div class="box-headline">
-            <h3><!--@Translate(search, "Search")--></h3>
-        </div>
+	<!--Left Menu-->
+	<div class="span3 ">
+		<!--@Ecom:CustomerCenter.Menu-->
+	</div>
+	<!--/ Left Menu-->
 
-        <div class="customer_wr">
-            <!--@Ecom:CustomerCenter.SearchJavascript-->
-            <!--@Ecom:CustomerCenter.SearchForm.Begin-->
-            <table class="search_orders_table">
-                <colgroup>
-                    <col style="width:100px;" />
-                    <col />
-                </colgroup>
-                <tr>
-                    <td><!--@Translate(text, "Text")--></td>
-                    <td>
-                        <input type="text" name="CCFilterFreetext<!--@Ecom:CustomerCenter.PID-->" value="<!--@Ecom:CustomerCenter.Search.Freetext-->" />
-                    </td>
-                </tr>
-                <tr>
-                    <td><strong><!--@Translate(products, "Products")--></strong></td>
-                    <td>
-                        <select name="CCFilterProductID<!--@Ecom:CustomerCenter.PID-->">
-                            <option value=""><!--@Translate(anyproduct, "Any product")--></option>
-                            <!--@Ecom:CustomerCenter.Search.Products-->
-                        </select>
-                    </td>
-                </tr>	
-                <tr><td colspan="2">&nbsp;</td></tr>
-                <tr><td colspan="2"><strong><!--@Translate(dateinterval, "Date interval")--></strong></td></tr>
-                <tr>
-                    <td><!--@Translate(from, "From")--></td>
-                    <td>
-                        <select name="CCFilterFromMonth<!--@Ecom:CustomerCenter.PID-->">
-                            <option value=""><!--@Translate(anymonth, "Any month")--></option>
-                            <!--@Ecom:CustomerCenter.Search.MonthNames.From-->
-                        </select>
-                        &nbsp;
-                        <select name="CCFilterFromYear<!--@Ecom:CustomerCenter.PID-->">
-                            <option value=""><!--@Translate(anyyear, "Any year")--></option>
-                            <!--@Ecom:CustomerCenter.Search.Years.From-->
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td><!--@Translate(to, "To")--></td>
-                    <td>
-                        <select name="CCFilterToMonth<!--@Ecom:CustomerCenter.PID-->">
-                            <option value=""><!--@Translate(anymonth, "Any month")--></option>
-                            <!--@Ecom:CustomerCenter.Search.MonthNames.To-->
-                        </select>
-                        &nbsp;
-                        <select name="CCFilterToYear<!--@Ecom:CustomerCenter.PID-->">
-                            <option value=""><!--@Translate(anyyear, "Any year")--></option>
-                            <!--@Ecom:CustomerCenter.Search.Years.To-->
-                        </select>		
-                    </td>
-                </tr>
+	<div class="span9 box-rounded no-left-round span9_ex">
+		<div class="box-headline">
+			<h3><!--@Translate(search, "Search")--></h3>
+		</div>
 
-                <tr><td colspan="2">&nbsp;</td></tr>
-                <tr><td colspan="2"><strong><!--@Translate(orderamount, "Order amount")--></strong></td></tr>
-                <tr>
-                    <td><!--@Translate(from, "From")--></td>
-                    <td><input type="text" name="CCFilterFromAmount<!--@Ecom:CustomerCenter.PID-->" onkeypress="return numbersOnly(this, event);" value="<!--@Ecom:CustomerCenter.Search.FromAmount-->" /></td>
-                </tr>
-                <tr>
-                    <td><!--@Translate(to, "To")--></td>
-                    <td><input type="text" name="CCFilterToAmount<!--@Ecom:CustomerCenter.PID-->" onkeypress="return numbersOnly(this, event);" value="<!--@Ecom:CustomerCenter.Search.ToAmount-->" /></td>
-                </tr>
-                <tr class="search_sbm">
-                    <td>
-                        <input type="button" class="dw-button dw-button-green dw-button-small" onclick="javascript: CustomerCenterPerformSearch();" value="Search" />
-                    </td>
-                    <td>
-                        <input type="button" class="dw-button dw-button-green dw-button-small" onclick="javascript: CustomerCenterClearSearch();" value="Clear" />
-                    </td>
-                </tr>	
-            </table>
-            <!--@Ecom:CustomerCenter.SearchForm.End-->
-        </div>
-    </div>
+		<div class="customer_wr">
+			<!--@Ecom:CustomerCenter.SearchJavascript-->
+			<!--@Ecom:CustomerCenter.SearchForm.Begin-->
+			<table class="search_orders_table">
+				<colgroup>
+					<col style="width:100px;" />
+					<col />
+				</colgroup>
+				<tr>
+					<td><!--@Translate(text, "Text")--></td>
+					<td>
+						<input type="text" name="CCFilterFreetext<!--@Ecom:CustomerCenter.PID-->" value="<!--@Ecom:CustomerCenter.Search.Freetext-->" />
+					</td>
+				</tr>
+				<tr>
+					<td><strong><!--@Translate(products, "Products")--></strong></td>
+					<td>
+						<select name="CCFilterProductID<!--@Ecom:CustomerCenter.PID-->">
+							<option value=""><!--@Translate(anyproduct, "Any product")--></option>
+							<!--@Ecom:CustomerCenter.Search.Products-->
+						</select>
+					</td>
+				</tr>
+				<tr><td colspan="2">&nbsp;</td></tr>
+				<tr><td colspan="2"><strong><!--@Translate(dateinterval, "Date interval")--></strong></td></tr>
+				<tr>
+					<td><!--@Translate(from, "From")--></td>
+					<td>
+						<select name="CCFilterFromMonth<!--@Ecom:CustomerCenter.PID-->">
+							<option value=""><!--@Translate(anymonth, "Any month")--></option>
+							<!--@Ecom:CustomerCenter.Search.MonthNames.From-->
+						</select>
+						&nbsp;
+						<select name="CCFilterFromYear<!--@Ecom:CustomerCenter.PID-->">
+							<option value=""><!--@Translate(anyyear, "Any year")--></option>
+							<!--@Ecom:CustomerCenter.Search.Years.From-->
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td><!--@Translate(to, "To")--></td>
+					<td>
+						<select name="CCFilterToMonth<!--@Ecom:CustomerCenter.PID-->">
+							<option value=""><!--@Translate(anymonth, "Any month")--></option>
+							<!--@Ecom:CustomerCenter.Search.MonthNames.To-->
+						</select>
+						&nbsp;
+						<select name="CCFilterToYear<!--@Ecom:CustomerCenter.PID-->">
+							<option value=""><!--@Translate(anyyear, "Any year")--></option>
+							<!--@Ecom:CustomerCenter.Search.Years.To-->
+						</select>
+					</td>
+				</tr>
+
+				<tr><td colspan="2">&nbsp;</td></tr>
+				<tr><td colspan="2"><strong><!--@Translate(orderamount, "Order amount")--></strong></td></tr>
+				<tr>
+					<td><!--@Translate(from, "From")--></td>
+					<td><input type="text" name="CCFilterFromAmount<!--@Ecom:CustomerCenter.PID-->" onkeypress="return numbersOnly(this, event);" value="<!--@Ecom:CustomerCenter.Search.FromAmount-->" /></td>
+				</tr>
+				<tr>
+					<td><!--@Translate(to, "To")--></td>
+					<td><input type="text" name="CCFilterToAmount<!--@Ecom:CustomerCenter.PID-->" onkeypress="return numbersOnly(this, event);" value="<!--@Ecom:CustomerCenter.Search.ToAmount-->" /></td>
+				</tr>
+				<tr class="search_sbm">
+					<td>
+						<input type="button" class="dw-button dw-button-green dw-button-small" onclick="javascript: CustomerCenterPerformSearch();" value="Search" />
+					</td>
+					<td>
+						<input type="button" class="dw-button dw-button-green dw-button-small" onclick="javascript: CustomerCenterClearSearch();" value="Clear" />
+					</td>
+				</tr>
+			</table>
+			<!--@Ecom:CustomerCenter.SearchForm.End-->
+		</div>
+	</div>
 </div>
