@@ -288,7 +288,7 @@
   }
   .product-rating-underlay {
     display: inline-block;
-    background-image: $rating-sprite;
+    /*background-image: $rating-sprite;*/
     height: $rating-sprite-tile-height;
     font-size: $rating-sprite-tile-height;
     line-height: 1;
@@ -298,12 +298,81 @@
       line-height: 1;
       height: 100%;
       display: inline-block;
-      background-image: $rating-sprite;
-      background-position: 0 (-$rating-sprite-tile-height);
-      position: aboslute;
+      /*background-image: $rating-sprite;
+      background-position: 0 (-$rating-sprite-tile-height);*/
+      position: relative;
+      z-index: 2;
       text-indent: 100%;
       overflow: hidden;
     }
+  }
+  
+  .signv, .signv-red{
+	  font-size: 1.2em;
+	  color: #009a0b;
+  }
+  
+  .signv-red{
+	  color: #d14747;
+  }
+  
+  .star-showing{
+	  width: 20px;
+	  float: left;
+	  font-size: 1.05em;
+	  color: #fcba29;
+  }
+  
+  .star1{
+	  margin-left: -119px;
+  }
+  
+  .star2{
+	  margin-left: -101px;
+  }
+  
+  .star3{
+	  margin-left: -83px;
+  }
+  
+  .star4{
+	  margin-left: -65px;
+  }
+  
+  .star5{
+	  margin-left: -47px;
+  }
+  
+  .empty-stars-container{
+	  width: 100px;
+	  position: absolute;
+	  margin-top: -23px;
+	  z-index: 1;
+  }
+  
+  .empty-stars-container .star1, .empty-stars-container .star2, .empty-stars-container .star3, .empty-stars-container .star4, .empty-stars-container .star5{
+	  font-size: 1.3em;
+	  color: #bebebe;
+  }
+  
+  .empty-stars-container .star1{
+	  margin-left: 2px;
+  }
+  
+  .empty-stars-container .star2{
+	  margin-left: -2px;
+  }
+  
+  .empty-stars-container .star3{
+	  margin-left: -2px;
+  }
+  
+  .empty-stars-container .star4{
+	  margin-left: -2px;
+  }
+  
+  .empty-stars-container .star5{
+	  margin-left: -2px;
   }
 
   &.product-details {

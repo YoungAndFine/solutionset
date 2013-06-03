@@ -33,6 +33,7 @@
               <span itemprop="average"><!--@Ecom:Product.Rating--></span>
               out of
               <span itemprop="best">5</span>
+              <span class="stars"></span>
             </span>
             <div class="product-comments">
               <div class="sprite commentSmall"></div>
@@ -42,11 +43,11 @@
         </div>
       </div>
       <div class="stock">
-        <span class="sprite signv-red" <!--@If Defined(Ecom:Product:Stock.Image.Clean)-->style="background: url('<!--@Ecom:Product:Stock.Image.Clean-->') no-repeat 0 0 !important;"<!--@EndIf(Ecom:Product:Stock.Image.Clean)-->></span>
+        <span class="icon-ok signv-red"></span>
         <!--@Ecom:Product:Stock.Text-->
       </div>
       <div class="delivery">
-        <span class="sprite signv"></span>
+        <span class="icon-ok signv"></span>
         <!--@Translate(ProductDelivary, "Delivery")--> <!--@Ecom:Product.IsInCart)--> <!--@Ecom:Product:Stock.DeliveryText--> <!--@Ecom:Product:Stock.DeliveryUnit-->
       </div>
       <div class="product-addtocart">
