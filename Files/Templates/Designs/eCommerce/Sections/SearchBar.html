@@ -7,7 +7,7 @@
           <label style="display:none;" for="q">&nbsp;</label>
           <input type="hidden" id="searchstring" value="I want">
           <input type="hidden" value="<!--@Item.Area.Product_Catalog_Page_Id-->" name="ID">
-          <input type="text" tabindex="1" spellcheck="false" autocomplete="off" name="eComQuery" id="q">
+          <input type="text"tabindex="1" spellcheck="false" autocomplete="off" name="eComQuery" id="q" data-provide="typeahead" >
           <input type="submit" onclick="eCommerce.Overlay.show(document.body);" value="Search" class="dw-button dw-button-green">
           <div id="search-box-preloader-top"></div>
         </form>

@@ -7,10 +7,11 @@
     </h3>
   </div><!-- / .modal-header -->
   <div class="modal-body">
-
+  
 <!--@If(Global:Area.Lang=='da')-->
   <div class="loginbox-login-failed alert alert-error"><!--@DW_extranet_error_dk--></div>
 <!--@EndIf-->
+
 <!--@If(Global:Area.Lang!='da')-->
   <div class="loginbox-login-failed alert alert-error"><!--@DW_extranet_error_uk--></div>
 <!--@EndIf-->
@@ -18,9 +19,11 @@
   <div class="alert alert-info">
     <!--@Global:Paragraph.Content(1987)-->
   </div>
+  
+  <div class="loginbox-login-failed alert alert-error"><b>fejl<b></div>
 
   <div class="login-box-mode" data-login-box-mode="login">
-    <form class="form-horizontal" action="<!--@Global:Pageview.Url-->" method="post" onsubmit="return Layout.LoginBox.validate(this);">
+    <form name="LoginForm" class="form-horizontal" action="http://solutionset.local.dynamicweb.dk/Default.aspx?ID=285&layouttemplate=Designs/eCommerce/test.html" method="post" onsubmit="return Layout.LoginBox.validate(this) ? validateForm() ? $('#logged_in').show() : false;">
       <input type="hidden" name="ID" value="<!--@Global:Page.ID-->" />
       <input type="hidden" name="DWExtranetUsernameRemember" value="True" />
       <input type="hidden" name="DWExtranetPasswordRemember" value="True" />
@@ -37,12 +40,15 @@
           <input type="password" id="login-password" class="input-large login-credentials login-password-field" name="password"  />
         </div>
       </div>
+	  
+	   <div id="logged_in" style="display: none;"><b>Login failed</b></div>
+	   
       <div class="control-group">
         <div class="controls">
           <label class="checkbox">
             <input type="checkbox" id="chkRemember" name="AutoLogin" value="True" /> <!--@Translate(RememberMe, "Remember me")-->
           </label>
-          <input type="submit" class="dw-button dw-button-green" value="Login" />
+          <input type="submit" class="dw-button dw-button-green" value="Login"/>
         </div>
       </div>
       <div class="login-form-lostpasswordhint">
@@ -92,3 +98,4 @@
   
   </div><!-- / .modal-body -->
 </div><!-- / .modal.modal-type-loginbox -->
+<!--@DwTemplateTags-->

@@ -24,7 +24,7 @@
     <link href="<!--@Item.Area.Custom_CSS_Url-->" rel="stylesheet">
 		<!--@EndIf(Item.Area.Custom_CSS_Url)-->
 
-    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->	
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -46,9 +46,9 @@
 								<div class="span4 logo">
 									<a href="/Default.aspx?ID=<!--@DwAreaFirstActivePageID-->" class="logo-image"
 										 <!--@If Defined(Item.Area.Logo_Image)-->
-										 style="background-image: url(<!--@Item.Area.Logo_Image)"
+										 style="background-image: url(<!--@Item.Area.Logo_Image)">
 										 <!--@EndIf(Item.Area.Logo_Image)-->
-										 ></a>
+										 </a>
 								</div>
 								<div class="span4 payoff dwcontent" id="payoffHeadline" title="Pay-off headline"></div>
 							</div>
@@ -78,7 +78,6 @@
 
     <footer>
       <!--@ Include(Sections/NavigationMainBottom.html)-->
-      <!--@ Include(Sections/SearchBarBottom.html)-->
       <section class="container footer-wrapper">
         <div class="row dwcontent" id="footerSections" title="Footer sections"></div>
       </section>

@@ -276,6 +276,28 @@ Layout.LoginBox = {
     }
 };
 
+/*validate login-modal box*/
+function validateForm()
+{
+var x=document.forms["LoginForm"]["username"].value;
+if (x==null || x=="")
+  {
+  alert("First name must be filled out");
+  return false;
+  }
+if (x=true)
+{alert('brugernavn');} 
+}
+
+//$.ajax({
+	//type: 'post',
+	//url: "dynamicweb.net\solutions\solutionset.local.dynamicweb.dk\Files\Login.aspx",
+	//context: $(this),
+	//success: function (msg) {
+	//$(".modal-body").html(msg);
+	//}
+//});
+
 
 
 Layout = (function (m) {
@@ -922,7 +944,7 @@ $(document).ready(function () {
     eCommerce.Filters.pageId(eComPageId);
     eCommerce.Filters.selectProductsText('Please choose between two and three products for comparison.');
 
-    // InstantSearch plugin setup
+     // InstantSearch plugin setup
     Dynamicweb.Frontend.InstantSearch.setup({
         pageID: eComPageId,
         paragraphID: eComParagraphId,
@@ -968,11 +990,13 @@ $(document).ready(function () {
         });
     }
 
-    // Bottom Instant Search box - Search
-    if ($("#q-bottom").length) {
-        Dynamicweb.Frontend.InstantSearch.setEnableInstantSearch('q-bottom', true, {
-            contentID: 'product-instant-search-bottom', // An ID of the content template
-            progressID: 'search-box-preloader-bottom',
+ if (false)
+   // Top Instant Search box - Search
+	if ($("#q").length) {
+        $("#q").focus(); // Placing top search field in focus when page load
+        Dynamicweb.Frontend.InstantSearch.setEnableInstantSearch('q', true, {
+            contentID: 'product-instant-search', // An ID of the content template
+            progressID: 'search-box-preloader-top',
             onItemDataBound: function (sender, args) {
                 // Hide product item if product with the same ID already printed
                 var bVisible = $("#" + this.contentID).find(".dw-search-result-prodid:contains('" + args.data.ID.toString() + "')").length <= 0;
@@ -985,25 +1009,16 @@ $(document).ready(function () {
                 args.template.field("detailslink", productLink);
                 args.template.field('img', '/Admin/Public/GetImage.ashx?Image=/Files/Images/Ecom/Products/' + args.data.Number + '.jpg&Width=64&Height=64');
                 args.template.field("name", args.data.Name);
+                // args.template.field("number", "Product number: " + args.data.Number);
                 args.template.field("number", args.data.Number);
                 args.template.field("price", args.data.PriceWithVAT.toFixed(2));
             },
             onBeforeQuery: function (sender, args) {
                 args.set_cancel(args.get_value().length < 2);
-            },
-            onComplete: function () {
-                var box = $('#product-instant-search-bottom');
-                if (!box.is(":visible")) {
-                    if ($("#q-bottom").val().length >= 2) {
-                        box.css({ top: -box.outerHeight() + 10 }).fadeIn();
-                    }
-                }
-                else {
-                    box.css({ top: -box.outerHeight() + 10 });
-                }
             }
         });
     }
+
 
     // Top Instant Search box - Quick Add
     if ($("#quickaddinput").length) {
@@ -1200,25 +1215,6 @@ $(document).ready(function () {
       });
     })
 
-if (false) {
-  var windowWidth = (Layout.isMobile.any()) ? screen.width : window.outerWidth;
-  if (($('body').data('areaid') == 1 || $('body').data('areaid') == 17) && windowWidth > 768 ){
-
-       /* <!--Start of Zopim Live Chat Script-->*/
-        window.$zopim || (function (d, s) {
-            var z = $zopim = function (c) { z._.push(c) }, $ = z.s =
-        d.createElement(s), e = d.getElementsByTagName(s)[0]; z.set = function (o) {
-        z.set.
-        _.push(o)
-        }; z._ = []; z.set._ = []; $.async = !0; $.setAttribute('charset', 'utf-8');
-            $.src = '//cdn.zopim.com/?RjOg47HuHHdRr49ujWrACMR7RSFBj1UC'; z.t = +new Date; $.
-        type = 'text/javascript'; e.parentNode.insertBefore($, e)
-        })(document, 'script');
-
-        /*<!--End of Zopim Live Chat Script-->*/
-    }
-}
-
     // Clicks on B2C first page blocks
     $('.feature-wrapper').on('click', function(){
         location.href = $(this).find('a:first-child').attr('href');
@@ -1248,12 +1244,6 @@ if (false) {
 
 
 });
-
-
-
-
-
-
 
 /* RMA DETAILS */
 
@@ -1364,8 +1354,6 @@ function getCheckBoxes(el) {
 
     return result;
 }
-
-
 
 /* CHECKOUT */
 
