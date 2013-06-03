@@ -27,7 +27,7 @@
       <!--@EndIf(Ecom:Order.IsEmpty)-->
     </div>
     <div class="minicart-view">
-      <a class="dropdown-toggle" id="dLabel" role="button" data-toggle="dropdown" data-target=".minicart-popup" href="/Default.aspx?ID=<!--@If(Global:Area.ID==1)-->52<!--@EndIf--><!--@If(Global:Area.ID==17)-->325<!--@EndIf--><!--@If(Global:Area.ID==22)-->613<!--@EndIf-->">
+      <a class="dropdown-toggle" id="dLabel" role="button" data-toggle="dropdown" data-target=".minicart-popup" href="/Default.aspx?ID=<!--@Item.Area.Show_Cart_Page_ID-->">
         <!--@Translate(showcart, "View cart")-->
       </a>
     </div>
@@ -100,12 +100,12 @@
 
     <div class="minicart-buttons">
       <div class="left-button-container">
-        <a href="/Default.aspx?ID=<!--@If(Global:Area.ID==1)-->52<!--@EndIf--><!--@If(Global:Area.ID==17)-->325<!--@EndIf--><!--@If(Global:Area.ID==22)-->613<!--@EndIf-->" class="dw-button dw-button-gray dw-button-small">
+        <a href="/Default.aspx?ID=<!--@Item.Area.Show_Cart_Page_ID-->" class="dw-button dw-button-gray dw-button-small">
           <!--@Translate(showcart, "View cart")-->
         </a>
       </div>
       <div class="right-button-container">
-        <a href="/Default.aspx?ID=<!--@If(Global:Area.ID==1)-->235<!--@EndIf--><!--@If(Global:Area.ID==17)-->336<!--@EndIf--><!--@If(Global:Area.ID==22)-->625<!--@EndIf-->" class="dw-button dw-button-green dw-button-small">
+        <a href="/Default.aspx?ID=<!--@Item.Area.Checkout_Page_ID-->" class="dw-button dw-button-green dw-button-small">
           <!--@Translate(checkout, "Checkout")-->
           <div class="sprite arr-forward-small-white"></div>
         </a>
@@ -113,3 +113,5 @@
     </div>
   </div>
 </div>
+
+<!--@DwTemplateTags-->
