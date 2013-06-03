@@ -7,6 +7,15 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
+    <link href="assets/vendor/bootstrap/bootstrap.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="assets/vendor/smoothness/jquery-ui-1.8.23.custom.css" rel="stylesheet">
+    <link href="assets/stylesheets/screen.css" rel="stylesheet">
+		<!--@Snippet(StyleSheet)-->
+		<!--@If Defined(Item.Area.Custom_CSS_Url)-->
+    <link href="<!--@Item.Area.Custom_CSS_Url-->" rel="stylesheet">
+		<!--@EndIf(Item.Area.Custom_CSS_Url)-->
+
     <!-- We have no correct way of rendering path here in "data-main" attribute -->
     <script src="assets/vendor/require-jquery.js"></script>
 		<script>
@@ -15,15 +24,7 @@
 		var designBaseUrl = '/Files/Templates/Designs/'+designName+'/';
 		</script>
     <script src="assets/vendor/dynamicweb.start.js"></script>
-
-    <link href="assets/vendor/bootstrap/bootstrap.css" rel="stylesheet">
-    <link href="assets/vendor/bootstrap/bootstrap-responsive.min.css" rel="stylesheet">
-    <link href="assets/vendor/smoothness/jquery-ui-1.8.23.custom.css" rel="stylesheet">
-    <link href="assets/stylesheets/screen.css" rel="stylesheet">
-		<!--@If Defined(Item.Area.Custom_CSS_Url)-->
-    <link href="<!--@Item.Area.Custom_CSS_Url-->" rel="stylesheet">
-		<!--@EndIf(Item.Area.Custom_CSS_Url)-->
-
+		<!--@Snippet(JavaScriptHead)-->
   </head>
   <body class="menu-bottom searchbar-bottom"
 				data-areaid="<!--@Global:Area.ID-->"
@@ -81,5 +82,7 @@
 
     <!--@Include(Sections/Login.html)-->
 		<!--@Include(Sections/GoogleAnalytics.html)-->
+
+		<!--@Snippet(JavaScriptFooter)-->
   </body>
 </html>

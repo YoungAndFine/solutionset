@@ -17,6 +17,9 @@
       <field name="Google Analytics ID" systemName="Google_Analytics_ID" type="System.String, mscorlib">
         <editor type="Dynamicweb.Content.Items.Editors.TextEditor, Dynamicweb" />
       </field>
+      <field name="Checkout Page ID" systemName="Checkout_Page_ID" type="System.Int32, mscorlib">
+        <editor type="Dynamicweb.Content.Items.Editors.IntegerEditor, Dynamicweb" />
+      </field>
       <field name="Show &quot;Product added to cart&quot; Popup" systemName="Show__ProductAddedToCart__Popup" type="System.Boolean, mscorlib">
         <editor type="Dynamicweb.Content.Items.Editors.CheckboxEditor, Dynamicweb" />
       </field>
@@ -61,6 +64,7 @@
             <field systemName="Show_Cart_Page_ID" />
             <field systemName="Show_Price_In_InstantSearch" />
             <field systemName="Google_Analytics_ID" />
+            <field systemName="Checkout_Page_ID" />
           </fields>
         </group>
         <group name="Product Added To Cart" systemName="Product_Added_To_Cart">
