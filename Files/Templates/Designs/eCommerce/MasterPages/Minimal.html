@@ -20,6 +20,10 @@
     <link href="assets/vendor/bootstrap/bootstrap-responsive.min.css" rel="stylesheet">
     <link href="assets/vendor/smoothness/jquery-ui-1.8.23.custom.css" rel="stylesheet">
     <link href="assets/stylesheets/screen.css" rel="stylesheet">
+		<!--@If Defined(Item.Area.Custom_CSS_Url)-->
+    <link href="<!--@Item.Area.Custom_CSS_Url-->" rel="stylesheet">
+		<!--@EndIf(Item.Area.Custom_CSS_Url)-->
+
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -41,7 +45,11 @@
 						<div class="span8 logo-wrapper">
 							<div class="row">
 								<div class="span4 logo">
-									<a href="/Default.aspx?ID=<!--@DwAreaFirstActivePageID-->" class="logo-image"></a>
+									<a href="/Default.aspx?ID=<!--@DwAreaFirstActivePageID-->" class="logo-image"
+										 <!--@If Defined(Item.Area.Logo_Image)-->
+										 style="background-image: url(<!--@Item.Area.Logo_Image)"
+										 <!--@EndIf(Item.Area.Logo_Image)-->
+										 ></a>
 								</div>
 								<div class="span4 payoff dwcontent" id="payoffHeadline" title="Pay-off headline"></div>
 							</div>
@@ -60,5 +68,6 @@
     </footer>
 
     <!--@Include(Sections/Login.html)-->
+		<!--@Include(Sections/GoogleAnalytics.html)-->
   </body>
 </html>

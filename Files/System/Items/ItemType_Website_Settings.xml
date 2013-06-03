@@ -14,6 +14,9 @@
       <field name="Show Price In InstantSearch" systemName="Show_Price_In_InstantSearch" type="System.Boolean, mscorlib">
         <editor type="Dynamicweb.Content.Items.Editors.CheckboxEditor, Dynamicweb" />
       </field>
+      <field name="Google Analytics ID" systemName="Google_Analytics_ID" type="System.String, mscorlib">
+        <editor type="Dynamicweb.Content.Items.Editors.TextEditor, Dynamicweb" />
+      </field>
       <field name="Show &quot;Product added to cart&quot; Popup" systemName="Show__ProductAddedToCart__Popup" type="System.Boolean, mscorlib">
         <editor type="Dynamicweb.Content.Items.Editors.CheckboxEditor, Dynamicweb" />
       </field>
@@ -23,6 +26,32 @@
       <field name="Purchase More Content ID" systemName="Purchase_More_Content_ID" type="System.Int32, mscorlib">
         <editor type="Dynamicweb.Content.Items.Editors.IntegerEditor, Dynamicweb" />
       </field>
+      <field name="Products Autoload Page ID" systemName="Products_Autoload_Page_ID" type="System.Int32, mscorlib">
+        <editor type="Dynamicweb.Content.Items.Editors.IntegerEditor, Dynamicweb" />
+      </field>
+      <field name="BOM Page ID" systemName="BOM_Page_ID" type="System.Int32, mscorlib">
+        <editor type="Dynamicweb.Content.Items.Editors.IntegerEditor, Dynamicweb" />
+      </field>
+      <field name="Products PDF Page ID" systemName="Products_PDF_Page_ID" type="System.Int32, mscorlib">
+        <editor type="Dynamicweb.Content.Items.Editors.IntegerEditor, Dynamicweb" />
+      </field>
+      <field name="Logo Image" systemName="Logo_Image" type="System.String, mscorlib">
+        <editor type="Dynamicweb.Content.Items.Editors.FileEditor, Dynamicweb" />
+      </field>
+      <field name="Skin" systemName="Skin" type="System.String, mscorlib">
+        <editor type="Dynamicweb.Content.Items.Editors.DropDownListEditor`1, Dynamicweb" />
+        <options sourceType="Static">
+          <static>
+            <option name="default" value="" />
+          </static>
+        </options>
+      </field>
+      <field name="Custom CSS Url" systemName="Custom_CSS_Url" type="System.String, mscorlib">
+        <editor type="Dynamicweb.Content.Items.Editors.LinkEditor, Dynamicweb" />
+      </field>
+      <field name="Favicon" systemName="Favicon" type="System.String, mscorlib">
+        <editor type="Dynamicweb.Content.Items.Editors.FileEditor, Dynamicweb" />
+      </field>
     </fields>
     <layout>
       <groups>
@@ -31,6 +60,7 @@
             <field systemName="Show_Quick_Add" />
             <field systemName="Show_Cart_Page_ID" />
             <field systemName="Show_Price_In_InstantSearch" />
+            <field systemName="Google_Analytics_ID" />
           </fields>
         </group>
         <group name="Product Added To Cart" systemName="Product_Added_To_Cart">
@@ -38,6 +68,21 @@
             <field systemName="Show__ProductAddedToCart__Popup" />
             <field systemName="Product_Added_Content_ID" />
             <field systemName="Purchase_More_Content_ID" />
+          </fields>
+        </group>
+        <group name="Products" systemName="Products">
+          <fields>
+            <field systemName="Products_Autoload_Page_ID" />
+            <field systemName="BOM_Page_ID" />
+            <field systemName="Products_PDF_Page_ID" />
+          </fields>
+        </group>
+        <group name="Design" systemName="Design">
+          <fields>
+            <field systemName="Logo_Image" />
+            <field systemName="Skin" />
+            <field systemName="Custom_CSS_Url" />
+            <field systemName="Favicon" />
           </fields>
         </group>
       </groups>

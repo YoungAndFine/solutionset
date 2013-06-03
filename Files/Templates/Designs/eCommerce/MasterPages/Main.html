@@ -20,6 +20,9 @@
     <link href="assets/vendor/bootstrap/bootstrap-responsive.min.css" rel="stylesheet">
     <link href="assets/vendor/smoothness/jquery-ui-1.8.23.custom.css" rel="stylesheet">
     <link href="assets/stylesheets/screen.css" rel="stylesheet">
+		<!--@If Defined(Item.Area.Custom_CSS_Url)-->
+    <link href="<!--@Item.Area.Custom_CSS_Url-->" rel="stylesheet">
+		<!--@EndIf(Item.Area.Custom_CSS_Url)-->
 
   </head>
   <body class="menu-bottom searchbar-bottom"
@@ -37,7 +40,11 @@
 						<div class="span8 logo-wrapper">
 							<div class="row">
 								<div class="span4 logo">
-									<a href="/Default.aspx?ID=<!--@DwAreaFirstActivePageID-->" class="logo-image"></a>
+									<a href="/Default.aspx?ID=<!--@DwAreaFirstActivePageID-->" class="logo-image"
+										 <!--@If Defined(Item.Area.Logo_Image)-->
+										 style="background-image: url(<!--@Item.Area.Logo_Image)">
+										 <!--@EndIf(Item.Area.Logo_Image)-->
+										 </a>
 								</div>
 								<div class="span4 payoff dwcontent" id="payoffHeadline" title="Pay-off headline"></div>
 							</div>
@@ -67,12 +74,12 @@
 
     <footer>
       <!--@ Include(Sections/NavigationMainBottom.html)-->
-      <!--@ Include(Sections/SearchBarBottom.html)-->
       <section class="container footer-wrapper">
         <div class="row dwcontent" id="footerSections" title="Footer sections"></div>
       </section>
     </footer>
 
     <!--@Include(Sections/Login.html)-->
+		<!--@Include(Sections/GoogleAnalytics.html)-->
   </body>
 </html>

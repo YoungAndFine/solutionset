@@ -1,0 +1,48 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<script>
+	function loadXMLDoc()
+	{
+	if (window.XMLHttpRequest)
+	  {// code for IE7+, Firefox, Chrome, Opera, Safari
+	  xmlhttp=new XMLHttpRequest();
+	  }
+	else
+	  {// code for IE6, IE5
+	  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	  }
+	xmlhttp.onreadystatechange=function()
+	  {
+	  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+		{
+		document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+		}
+	  }
+	xmlhttp.open("POST","Login.aspx",true);
+	xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+	xmlhttp.send("fname=Henry&lname=Ford");
+	}
+</script>
+</head>
+<body>
+	<!--@DwTemplateTags-->
+	
+		Error: <!--@DW_extranet_error_uk-->
+		
+	<!--@If Defined(DW_extranet_error_uk)-->
+		Error: <!--@DW_extranet_error_uk-->
+	<!--@EndIf(DW_extranet_error_uk)-->
+	
+		Error: <!--@DW_extranet_error_dk-->
+	<!--@If Defined(DW_extranet_error_dk)-->
+		Error: <!--@DW_extranet_error_dk-->
+	<!--@EndIf(DW_extranet_error_dk)-->
+	
+	<!--@If(Global:Extranet.UserID>0)-->
+		UserID: <!--@Global:Extranet.UserID-->
+	<!--@EndIf-->
+</body>
+</html>
