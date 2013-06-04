@@ -43,13 +43,24 @@
         </div>
       </div>
       <div class="stock">
-        <span class="icon-ok signv-red"></span>
-        <!--@Ecom:Product:Stock.Text-->
+		<!--@If(Ecom:Product.Stock>0)-->
+			<span class="icon-smile in-stock"></span>
+			<!--@Ecom:Product:Stock.Text-->
+		<!--@Else-->
+			<span class="icon-meh out-of-stock"></span>
+			<!--@Ecom:Product:Stock.Text-->	
+		<!--@EndIf-->
+		
       </div>
       <div class="delivery">
-        <span class="icon-ok signv"></span>
-        <!--@Translate(ProductDelivary, "Delivery")--> <!--@Ecom:Product.IsInCart)--> <!--@Ecom:Product:Stock.DeliveryText--> <!--@Ecom:Product:Stock.DeliveryUnit-->
-      </div>
+		<!--@If(Ecom:Product.Stock>0)-->
+			<span class="icon-smile in-stock"></span>
+			<!--@Translate(ProductDelivary, "Delivery")--> <!--@Ecom:Product.IsInCart)--> <!--@Ecom:Product:Stock.DeliveryText--> <!--@Ecom:Product:Stock.DeliveryUnit-->
+		<!--@Else-->
+			<span class="icon-meh out-of-stock"></span>
+			<!--@Translate(ProductDelivary, "Delivery")--> <!--@Ecom:Product.IsInCart)--> <!--@Ecom:Product:Stock.DeliveryText--> <!--@Ecom:Product:Stock.DeliveryUnit-->	
+		<!--@EndIf-->
+	  </div>
       <div class="product-addtocart">
         <button type="button" class="btn dw-button-green" <!--@If(Ecom:Product.VariantCount>0)-->data-toggle="modal" data-target="#productVariantChooser<!--@Ecom:Product.ID-->"<!--@EndIf--><!--@If(Ecom:Product.VariantCount==0)-->onclick="$.addToCart(this)"<!--@EndIf-->>
           <i class="icon sprite cart-tiny-white"></i>
