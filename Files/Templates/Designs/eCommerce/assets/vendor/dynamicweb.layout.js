@@ -1,5 +1,15 @@
 /*
- * Layout - 
+ * Layout
+ 
+ Contains:
+- Layout.params
+- Layout.Translate
+- Layout.ProfileForm
+- Layout.LoginBox
+- Check for device
+- Layout.Cart
+- Layout.Products
+- Add to cart
  *
  * Copyright (c) 2013 Dynamicweb
  *
@@ -12,8 +22,6 @@
  * Version: 0.9.0
  *
  */
-var console = console || {"log": function () {}};
-
 if (typeof (Layout) == 'undefined') {
     var Layout = new Object();
 }
@@ -448,7 +456,6 @@ Layout.Products = (function (m) {
               .html('<div style="width: 100px;" class="full-stars-container"><i class="icon-star star-showing star1"></i><i class="icon-star star-showing star2"></i><i class="icon-star star-showing star3"></i><i class="icon-star star-showing star4"></i><i class="icon-star star-showing star5"></i></div>')
             );
         }
-        console.log("test: " + value);
        /* if(value == 4){
 	        $(this).find('.stars').html('<i class="icon-star-half-empty"></i><i class="icon-star-empty"></i><i class="icon-star-empty"></i><i class="icon-star-empty"></i><i class="icon-star-empty"></i>');
         }*/
@@ -845,7 +852,7 @@ $(document).ready(function () {
             }
             break;
           case 'value':
-            // console.log($this.val());
+
             break;
           default:
             // For some reasone 'case /data-/.test(holderData.dwBomPriceholder):'
@@ -992,7 +999,6 @@ $(document).ready(function () {
             onComplete: function () {
                 var box = $("#" + this.contentID);
                 if (!box.is(":visible")) {
-                    //console.log($("#q").val().length);
                     if ($("#q").val().length >= 2) {
                         /* Show results container */
                         box.fadeIn();
@@ -1394,11 +1400,9 @@ function is_cook_exists() {
         while (c.charAt(0) == ' ') c = c.substring(1, c.length);
         if (c.indexOf(nameEQ) == 0) {
             if (c.substring(nameEQ.length, c.length) == 1) {
-                // console.log('1');
                 return 1;
             }
             else if (c.substring(nameEQ.length, c.length) == 0) {
-                // console.log('0');
                 return 0;
             }
 

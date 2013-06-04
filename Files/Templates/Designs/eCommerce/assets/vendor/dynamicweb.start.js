@@ -5,7 +5,7 @@
  - loading of javascript files via require.js
  - initialize carousel on frontpage
  - removes content from modal box
- - makes the keydown on the keyboard possible on the instant search
+ - 
  
  * Copyright (c) 2013 Dynamicweb
  *
@@ -19,7 +19,7 @@
  *
  */
 if (typeof designBaseUrl === 'undefined') {
-	console.log('designBaseUrl is not defined');
+	alert('designBaseUrl is not defined');
 }
 
 require.config({
@@ -93,15 +93,16 @@ require(
 			$(this).removeData("modal");
 		});
 		
-		/*$('body').on('click.collapse-next.data-api', '[data-toggle=collapse-next]', function (e) {
+		//
+		$('body').on('click.collapse-next.data-api', '[data-toggle=collapse-next]', function (e) {
 		    var $this = $(this)
 		      , $target = $(this).parents(".collapse-container").find(".collapse");
 		    $target.collapse('toggle');
 		    $this[!$target.hasClass('in') ? 'addClass' : 'removeClass']('collapsed');
-		});*/
+		});
 	});
 
-	//Makes the keydown on the keyboard possible on the instant search
+	//Makes the keydown 
     $(document).keydown(function (e) {
       		$("#product-instant-search, #product-instant-search-bottom, #product-quickadd-instant-search").InstantArrows(e);
     });

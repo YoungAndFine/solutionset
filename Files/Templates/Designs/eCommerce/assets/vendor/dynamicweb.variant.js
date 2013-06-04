@@ -1,5 +1,5 @@
 /*
- * Variant - 
+ * Variant - controls the variant selectors on a product
  *
  * Copyright (c) 2013 Dynamicweb
  *
@@ -135,8 +135,6 @@
         }
     };
 
-
-
     $.fn.variantSelector = function () {
         var method = arguments[0];
         if (methods[method]) {
@@ -151,5 +149,13 @@
 
         return method.apply(this, arguments);
     }
+    
+    // colors variations thumbs clicks
+    $('.product-tile ul img').hover(function(){
+        var path = $(this).data('path');
+        $(this).parents('.thumbnail').find('img:eq(0)').attr('src', path);
+    }, function(){
+        $(this).parents('.thumbnail').find('img:eq(0)').attr('src', $(this).parents('.thumbnail').find('img:eq(0)').data('src'));
+    });
 
 } (jQuery));

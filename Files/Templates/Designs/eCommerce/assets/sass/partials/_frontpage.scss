@@ -89,27 +89,24 @@
         top: 75px;  
 
         h1, h2, h3, h4, h5 {
-          background: #333;
-          background: rgba(0, 0, 0, 0.6);
           float: none;
           padding: 0;  
           padding:5px;
           float:left;
-          color: white;
+          color: $colorLink;
         }
         h1 {
-          font: bold 22px/33px arial;
+          font: bold 22px/13px arial;
         }
         p {
-          background: #333;
-          background: rgba(0, 0, 0, 0.6);
+	      color: $colorLink;
           white-space:nowrap;
           padding:5px;
           clear:left;
           float:left;
         }  
         a {
-          color: white;
+          color: $colorLink;
         }
       }
     }

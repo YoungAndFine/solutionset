@@ -5697,123 +5697,120 @@ ul.customer_center_block {
       top: 75px; }
       /* line 91, ../sass/partials/_frontpage.scss */
       .frontpage .feature-wrapper > .feature > .feature-text h1, .frontpage .feature-wrapper > .feature > .feature-text h2, .frontpage .feature-wrapper > .feature > .feature-text h3, .frontpage .feature-wrapper > .feature > .feature-text h4, .frontpage .feature-wrapper > .feature > .feature-text h5 {
-        background: #333;
-        background: rgba(0, 0, 0, 0.6);
         float: none;
         padding: 0;
         padding: 5px;
         float: left;
-        color: white; }
-      /* line 100, ../sass/partials/_frontpage.scss */
+        color: #006699; }
+      /* line 98, ../sass/partials/_frontpage.scss */
       .frontpage .feature-wrapper > .feature > .feature-text h1 {
-        font: bold 22px/33px arial; }
-      /* line 103, ../sass/partials/_frontpage.scss */
+        font: bold 22px/13px arial; }
+      /* line 101, ../sass/partials/_frontpage.scss */
       .frontpage .feature-wrapper > .feature > .feature-text p {
-        background: #333;
-        background: rgba(0, 0, 0, 0.6);
+        color: #006699;
         white-space: nowrap;
         padding: 5px;
         clear: left;
         float: left; }
-      /* line 111, ../sass/partials/_frontpage.scss */
+      /* line 108, ../sass/partials/_frontpage.scss */
       .frontpage .feature-wrapper > .feature > .feature-text a {
-        color: white; }
-  /* line 117, ../sass/partials/_frontpage.scss */
+        color: #006699; }
+  /* line 114, ../sass/partials/_frontpage.scss */
   .frontpage .feature-wrapper.alternative {
     padding-top: 0; }
-    /* line 121, ../sass/partials/_frontpage.scss */
+    /* line 118, ../sass/partials/_frontpage.scss */
     .frontpage .feature-wrapper.alternative > .feature > .feature-image {
       left: auto;
       right: -130px; }
-    /* line 125, ../sass/partials/_frontpage.scss */
+    /* line 122, ../sass/partials/_frontpage.scss */
     .frontpage .feature-wrapper.alternative > .feature > .feature-text {
       left: 20px;
       top: 55px; }
 @media (max-width: 480px) {
-  /* line 134, ../sass/partials/_frontpage.scss */
+  /* line 131, ../sass/partials/_frontpage.scss */
   .frontpage .feature-slider-wrapper .item {
     height: 200px; }
-  /* line 137, ../sass/partials/_frontpage.scss */
+  /* line 134, ../sass/partials/_frontpage.scss */
   .frontpage .feature-slider-wrapper .carousel-inner .carousel-caption {
     position: absolute;
     left: 0;
     bottom: 0;
     border-radius: 0 0 5px 5px; } }
 
-/* line 149, ../sass/partials/_frontpage.scss */
+/* line 146, ../sass/partials/_frontpage.scss */
 .frontpage-catalog .span12, .frontpage-catalog .span6 {
   margin: 0; }
-/* line 152, ../sass/partials/_frontpage.scss */
+/* line 149, ../sass/partials/_frontpage.scss */
 .frontpage-catalog #content-main .half-width:nth-child(odd) {
   margin-right: 2.12766%; }
   @media (max-width: 767px) {
-    /* line 152, ../sass/partials/_frontpage.scss */
+    /* line 149, ../sass/partials/_frontpage.scss */
     .frontpage-catalog #content-main .half-width:nth-child(odd) {
       margin-right: 0; } }
-/* line 163, ../sass/partials/_frontpage.scss */
+/* line 160, ../sass/partials/_frontpage.scss */
 .frontpage-catalog .box-rounded {
   font-size: 14px; }
-  /* line 168, ../sass/partials/_frontpage.scss */
+  /* line 165, ../sass/partials/_frontpage.scss */
   .frontpage-catalog .box-rounded .box-content.collapse.in {
     padding: 5px 20px 10px; }
-  /* line 172, ../sass/partials/_frontpage.scss */
+  /* line 169, ../sass/partials/_frontpage.scss */
   .frontpage-catalog .box-rounded ul {
     color: #006699; }
-  /* line 175, ../sass/partials/_frontpage.scss */
+  /* line 172, ../sass/partials/_frontpage.scss */
   .frontpage-catalog .box-rounded .box-content-image {
     float: left;
     margin: -10px 10px 10px -20px; }
-  /* line 179, ../sass/partials/_frontpage.scss */
+  /* line 176, ../sass/partials/_frontpage.scss */
   .frontpage-catalog .box-rounded .productlist {
     margin: -10px -20px;
     padding-top: 20px; }
-  /* line 184, ../sass/partials/_frontpage.scss */
+  /* line 181, ../sass/partials/_frontpage.scss */
   .frontpage-catalog .box-rounded .product-list-item-wrapper a.btn {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box; }
-    /* line 189, ../sass/partials/_frontpage.scss */
+    /* line 186, ../sass/partials/_frontpage.scss */
     .frontpage-catalog .box-rounded .product-list-item-wrapper a.btn:hover {
       background-image: none; }
   @media (max-width: 767px) {
-    /* line 196, ../sass/partials/_frontpage.scss */
+    /* line 193, ../sass/partials/_frontpage.scss */
     .frontpage-catalog .box-rounded .box-content.collapse {
       padding: 0; } }
-/* line 202, ../sass/partials/_frontpage.scss */
+/* line 199, ../sass/partials/_frontpage.scss */
 .frontpage-catalog .tree-groups > ul {
   margin-left: 0; }
-  /* line 205, ../sass/partials/_frontpage.scss */
+  /* line 202, ../sass/partials/_frontpage.scss */
   .frontpage-catalog .tree-groups > ul > li {
     border-bottom: 1px solid #DFE4E7;
     padding: 10px 0;
     list-style-type: none; }
-    /* line 210, ../sass/partials/_frontpage.scss */
+    /* line 207, ../sass/partials/_frontpage.scss */
     .frontpage-catalog .tree-groups > ul > li:last-child {
       border: none; }
-    /* line 213, ../sass/partials/_frontpage.scss */
+    /* line 210, ../sass/partials/_frontpage.scss */
     .frontpage-catalog .tree-groups > ul > li a {
       font: bold 14px/21px arial; }
-    /* line 216, ../sass/partials/_frontpage.scss */
+    /* line 213, ../sass/partials/_frontpage.scss */
     .frontpage-catalog .tree-groups > ul > li li {
       list-style-type: disc;
       color: #006699; }
-      /* line 220, ../sass/partials/_frontpage.scss */
+      /* line 217, ../sass/partials/_frontpage.scss */
       .frontpage-catalog .tree-groups > ul > li li a {
         font-weight: normal;
         text-decoration: none; }
-        /* line 224, ../sass/partials/_frontpage.scss */
+        /* line 221, ../sass/partials/_frontpage.scss */
         .frontpage-catalog .tree-groups > ul > li li a:hover {
           text-decoration: underline; }
 @media (max-width: 767px) {
-  /* line 234, ../sass/partials/_frontpage.scss */
+  /* line 231, ../sass/partials/_frontpage.scss */
   .frontpage-catalog .tree-groups > ul > li {
     float: left;
     width: 47%;
     border: none; }
-    /* line 240, ../sass/partials/_frontpage.scss */
+    /* line 237, ../sass/partials/_frontpage.scss */
     .frontpage-catalog .tree-groups > ul > li:nth-child(odd) {
       margin-right: 6%; } }
-/* line 249, ../sass/partials/_frontpage.scss */
+/* line 246, ../sass/partials/_frontpage.scss */
 .frontpage-catalog .carousel {
   border: 1px solid #dfe4e7;
   border-radius: 5px;
@@ -5832,55 +5829,55 @@ ul.customer_center_block {
   background-image: linear-gradient(top, #fdfdfd, #ededed);
   margin-bottom: 20px;
   position: relative; }
-  /* line 255, ../sass/partials/_frontpage.scss */
+  /* line 252, ../sass/partials/_frontpage.scss */
   .frontpage-catalog .carousel .item {
     min-height: 250px; }
-  /* line 258, ../sass/partials/_frontpage.scss */
+  /* line 255, ../sass/partials/_frontpage.scss */
   .frontpage-catalog .carousel .carousel-text {
     font: 16px/22px arial;
     margin: 0 65px;
     padding-top: 25px; }
-    /* line 263, ../sass/partials/_frontpage.scss */
+    /* line 260, ../sass/partials/_frontpage.scss */
     .frontpage-catalog .carousel .carousel-text h1, .frontpage-catalog .carousel .carousel-text h2, .frontpage-catalog .carousel .carousel-text h3, .frontpage-catalog .carousel .carousel-text h4 {
       color: #00B3FF; }
-    /* line 266, ../sass/partials/_frontpage.scss */
+    /* line 263, ../sass/partials/_frontpage.scss */
     .frontpage-catalog .carousel .carousel-text h1 {
       float: none;
       padding-left: 0;
       font: bold 40px/40px arial;
       text-shadow: 0 1px 2px #FFFFFF; }
-    /* line 272, ../sass/partials/_frontpage.scss */
+    /* line 269, ../sass/partials/_frontpage.scss */
     .frontpage-catalog .carousel .carousel-text a {
       text-decoration: underline; }
-  /* line 276, ../sass/partials/_frontpage.scss */
+  /* line 273, ../sass/partials/_frontpage.scss */
   .frontpage-catalog .carousel .carousel-image {
     float: right;
     margin-right: 60px; }
   @media (max-width: 767px) {
-    /* line 282, ../sass/partials/_frontpage.scss */
+    /* line 279, ../sass/partials/_frontpage.scss */
     .frontpage-catalog .carousel .item {
       min-height: 200px; }
-    /* line 286, ../sass/partials/_frontpage.scss */
+    /* line 283, ../sass/partials/_frontpage.scss */
     .frontpage-catalog .carousel .carousel-control.left {
       left: 5px; }
-    /* line 289, ../sass/partials/_frontpage.scss */
+    /* line 286, ../sass/partials/_frontpage.scss */
     .frontpage-catalog .carousel .carousel-control.right {
       right: 5px; }
-    /* line 293, ../sass/partials/_frontpage.scss */
+    /* line 290, ../sass/partials/_frontpage.scss */
     .frontpage-catalog .carousel .carousel-text {
       font: 14px/21px arial;
       margin-left: 50px;
       margin-right: 50px; }
-      /* line 298, ../sass/partials/_frontpage.scss */
+      /* line 295, ../sass/partials/_frontpage.scss */
       .frontpage-catalog .carousel .carousel-text h1 {
         font: bold 22px/22px arial; }
-    /* line 302, ../sass/partials/_frontpage.scss */
+    /* line 299, ../sass/partials/_frontpage.scss */
     .frontpage-catalog .carousel .carousel-image {
       max-width: 35%;
       margin-right: 40px; } }
 
 @media (min-width: 480px) and (max-width: 767px) {
-  /* line 313, ../sass/partials/_frontpage.scss */
+  /* line 310, ../sass/partials/_frontpage.scss */
   .frontpage .feature-wrapper,
   .footer-section-wrapper {
     float: left;
@@ -5888,7 +5885,7 @@ ul.customer_center_block {
     width: 48.93617020799999%;
     *width: 48.88297871863829%; }
 
-  /* line 320, ../sass/partials/_frontpage.scss */
+  /* line 317, ../sass/partials/_frontpage.scss */
   .frontpage .feature-wrapper:nth-child(2n),
   .footer-section-wrapper:nth-child(2n) {
     clear: right;
