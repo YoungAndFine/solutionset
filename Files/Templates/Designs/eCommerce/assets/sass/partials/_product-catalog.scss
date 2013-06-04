@@ -277,6 +277,7 @@
   .product-rating-comments {
     padding-top: 0;
     margin-bottom: 5px;
+    margin-left: 8px;
 
     .product-rating, .product-comments {
       display: inline-block;
@@ -373,6 +374,11 @@
   
   .empty-stars-container .star5{
 	  margin-left: -2px;
+  }
+  
+  .cart-small{
+	  font-size: 1.4em;
+	  margin-right: 2px;
   }
 
   &.product-details {
@@ -484,6 +490,10 @@
         position: relative;
         margin: 0 0 10px 20px;
         float: right;
+        
+        .product-rating{
+	        margin-left: 8px;
+        }
       }
       .content {
         overflow: hidden;
@@ -1043,7 +1053,12 @@
   .product-incart-button .btn {
     display: block;
     font-weight: bold;
-    margin: 15px auto;
+    margin: 27px auto 15px;
+    
+    .arr-forward-small-white {
+    	font-size: 1.2em;
+    	margin-left: 2px;
+    }
   }
   .product-incart-links {
     font-size: 12px;
@@ -1052,6 +1067,11 @@
       text-decoration: underline;
       margin-right: 5px;
       font: normal 12px/14px arial;
+    }
+    
+    i{
+	    color: $colorLink;
+	    font-size: 1.2em;
     }
   }
   .product-facts {
