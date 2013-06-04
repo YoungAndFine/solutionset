@@ -12,10 +12,6 @@
  * Version: 0.9.0
  *
  */
-
-
-// [!] TEMPORARY SOLUTION
-// URGENT! Need to rework and fix this extra rules
 td, th {
   &.hide-350 {
     @media (max-width: 479px) {

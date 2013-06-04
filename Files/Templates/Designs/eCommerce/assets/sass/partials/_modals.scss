@@ -56,6 +56,17 @@ $modal-imagesslider-width: 502px;
       background: $loader-image center center no-repeat;
       height: 40px;
     }
+    
+    .icon-ok{
+	    color: $stock-green;
+	    font-size: 1.3em;
+	    margin-right: 5px;
+    }
+    
+    .arr-forward-small-white{
+	    margin-left: 3px;
+	    font-size: 1.1em!important;
+    }
   }
   // Ensure that nested .span* will have margins
   .row [class*="span"]:not(:first-child) {
