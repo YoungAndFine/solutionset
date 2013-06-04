@@ -1,5 +1,9 @@
 /*
- * Filters - Controls the filters in an eCommerce solution
+ * Filters
+ * 
+ * Contains: 
+ * - eCommerce.Overlay: overlay with the wait/loading message
+ * - eCommerce.Filters: controls filters on product list page
  *
  * Copyright (c) 2013 Dynamicweb
  *
@@ -369,7 +373,6 @@ eCommerce.Filters = {
 
     /* Compares the given products */
     compareProducts: function (products) {
-			alert('@TODO: compareProducts uses a special layout template! (filters.js)');
         if (!products || !products.length) {
             products = [];
 
@@ -382,6 +385,7 @@ eCommerce.Filters = {
         location.href = '/Default.aspx' + $.query.empty().set('ID', pageid.toString()).set('Compare', products.join(',')) + layoutPath;
     }
 };
+
 
 $(document).ready(function () {
     eCommerce.Overlay.initialize();

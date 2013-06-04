@@ -1,6 +1,12 @@
 /*
- * Start -
+ * Start
  *
+ Contains:
+ - loading of javascript files via require.js
+ - initialize carousel on frontpage
+ - removes content from modal box
+ - makes the keydown on the keyboard possible on the instant search
+ 
  * Copyright (c) 2013 Dynamicweb
  *
  * Licensed under the MIT license:
@@ -13,7 +19,7 @@
  *
  */
 if (typeof designBaseUrl === 'undefined') {
-	alert('designBaseUrl is not defined');
+	console.log('designBaseUrl is not defined');
 }
 
 require.config({
@@ -78,21 +84,26 @@ require(
   ],
   function ($) {
 
-    $(document).ready(function () {
-      $(".carousel").carousel();
-      $("body").on("hidden", ".modal", function () {
-        $(this).removeData("modal");
-      });
-      $('body').on('click.collapse-next.data-api', '[data-toggle=collapse-next]', function (e) {
-        var $this = $(this)
-          , $target = $(this).parents(".collapse-container").find(".collapse");
-        $target.collapse('toggle');
-        $this[!$target.hasClass('in') ? 'addClass' : 'removeClass']('collapsed');
-      });
-    });
+	$(document).ready(function () {
+		//initialize carousel
+		$(".carousel").carousel();
+		
+		//removes content from modal box
+		$("body").on("hidden", ".modal", function () {
+			$(this).removeData("modal");
+		});
+		
+		/*$('body').on('click.collapse-next.data-api', '[data-toggle=collapse-next]', function (e) {
+		    var $this = $(this)
+		      , $target = $(this).parents(".collapse-container").find(".collapse");
+		    $target.collapse('toggle');
+		    $this[!$target.hasClass('in') ? 'addClass' : 'removeClass']('collapsed');
+		});*/
+	});
 
+	//Makes the keydown on the keyboard possible on the instant search
     $(document).keydown(function (e) {
-      $("#product-instant-search, #product-instant-search-bottom, #product-quickadd-instant-search").InstantArrows(e);
+      		$("#product-instant-search, #product-instant-search-bottom, #product-quickadd-instant-search").InstantArrows(e);
     });
 
   }

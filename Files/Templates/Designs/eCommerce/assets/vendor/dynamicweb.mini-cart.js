@@ -1,5 +1,5 @@
 /*
- * Mini cart - 
+ * Mini cart - controls the little cart that will appear if you click "View cart" at the top of the page
  *
  * Copyright (c) 2013 Dynamicweb
  *

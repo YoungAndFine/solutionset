@@ -1,5 +1,5 @@
 /*
- * Menu - 
+ * Menu - controls the menu should be shown normally or collapsed
  *
  * Copyright (c) 2013 Dynamicweb
  *
@@ -13,13 +13,8 @@
  *
  */
 (function($, undefined) {
-    var debug = function() {
-        if ((typeof(console) != 'undefined') && (typeof(console.debug) == 'function')) {
-            ;;; console.debug.apply(console, arguments);
-        }
-    }
-
-    // @see http://stackoverflow.com/a/4298672
+	// Resize event when browser if finished resizing
+    // http://stackoverflow.com/a/4298672
     var debouncer = function( func , timeout ) {
         var timeoutID , timeout = timeout || 200;
         return function () {
@@ -118,7 +113,7 @@
         });
     }
 
-    // Automagically process select navbars
+    // Automatically process select navbars
     $(document).ready(function() {
         $('.navbar.wrappable').wrapMenu();
     });
