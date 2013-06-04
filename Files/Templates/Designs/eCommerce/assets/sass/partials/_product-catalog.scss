@@ -380,6 +380,28 @@
 	  font-size: 1.4em;
 	  margin-right: 2px;
   }
+  
+  .stock{      
+      .out-of-stock{
+      	color: $stock-red;
+      	font-size: 1.3em;
+      }
+      
+      .in-stock{
+      	color: $stock-green;
+      	font-size: 1.3em;
+      }
+  }
+  .delivery .icon-ok{
+      color: $stock-green;
+      font-size: 1.3em;
+  }
+  
+  .icon-shopping-cart{
+      font-size: 1.2em;
+      margin-right: 4px;
+      margin-left: -4px;
+  }
 
   &.product-details {
     // color: #4B4F5B;
@@ -618,6 +640,7 @@
           margin-right: 5px;
         }
       }
+      
       .tab-content {
         overflow: visible;
       }
@@ -673,6 +696,7 @@
             // border: none;
             // margin-bottom: 0;
           }
+          
           .product-image {
             margin-bottom: 0;
           }

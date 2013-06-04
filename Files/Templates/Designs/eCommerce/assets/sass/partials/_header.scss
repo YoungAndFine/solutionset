@@ -179,8 +179,11 @@
     }
   }
   .minicart-count {
-  	padding: 24px 0 0 50px;
+  	padding: 35px 0 0 50px;
     font-weight: bold;
+  }
+  .not-empty .minicart-count{
+	  padding: 24px 0 0 50px;
   }
   .minicart-view {
     padding-left: 50px;
