@@ -62,4 +62,15 @@
 			<!--@EndIf(Ecom:Search.Filter.HasOptions)-->
 		</div> <!-- / .filter-container -->
 	</div> <!-- / .filter-wrapper -->
+  <!--@EndIf(Ecom:Search.Filter.HasNonEmptyOptions)-->
+  <!--@EndIf(Ecom:Search.Filter.SupportsOptions)-->
+  <!--@EndIf-->
+  <!--@EndIf-->
+  <!--@EndIf-->
+  <!-- @EndIf-->
+
+  <!--@If Not Defined(Ecom:Search.Filter.SupportsOptions)-->
+  <!--@Ecom:Search.Filter.Output-->
+  <!--@EndIf(Ecom:Search.Filter.SupportsOptions)-->
+  <!--@LoopEnd(Ecom:Search.Filters)-->
 </form>

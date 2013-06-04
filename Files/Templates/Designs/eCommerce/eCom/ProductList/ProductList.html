@@ -50,7 +50,7 @@
         <!--@Translate(ProductDelivary, "Delivery")--> <!--@Ecom:Product.IsInCart)--> <!--@Ecom:Product:Stock.DeliveryText--> <!--@Ecom:Product:Stock.DeliveryUnit-->
       </div>
       <div class="product-addtocart">
-        <button type="button" class="btn dw-button-green" <!--@If(Ecom:Product.VariantCount>0)-->data-toggle="modal" data-target="#productVariantChooser<!--@Ecom:Product.ID-->"<!--@EndIf--><!--@If(Ecom:Product.VariantCount==0)-->onclick="$.addToCart(this)"<!--@EndIf-->>>
+        <button type="button" class="btn dw-button-green" <!--@If(Ecom:Product.VariantCount>0)-->data-toggle="modal" data-target="#productVariantChooser<!--@Ecom:Product.ID-->"<!--@EndIf--><!--@If(Ecom:Product.VariantCount==0)-->onclick="$.addToCart(this)"<!--@EndIf-->>
 					<i class="icon sprite cart-tiny-white"></i>
 					<!--@If Defined(Global:OMC.Experiment.Variation.Original)-->
 					<!--@Translate(AddToCart, "Add to cart")-->
@@ -61,7 +61,7 @@
 				</button>
 			</div>
 			<!--@If Defined(Ecom:Product.IsInCart)-->
-			<!--@Include(AddedToCart.html)-->
+			<!--@Include(/eCom/ProductList/AddedToCart.html)-->
 			<!--@EndIf(Ecom:Product.IsInCart)-->
 		</div><!-- / .details -->
 		<div class="content">
@@ -112,7 +112,7 @@
 				<!--@EndIf(Global:OMC.Experiment.Variation.Original)-->
 </button>
 <!--@If Defined(Ecom:Product.IsInCart)-->
-<!-- @Include(AddedToCart.html) -->
+<!-- @Include(/AddedToCart.html) -->
 <button type="button" class="btn dw-button-green">
   <!--@Translate(checkout, "Checkout")-->
   <i class="icon sprite arr-forward-small-white"></i>

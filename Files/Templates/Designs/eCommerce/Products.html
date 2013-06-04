@@ -251,14 +251,11 @@
   });
 </script>
 
-<div class="TODO">Modal added to cart</div>
-
-<!--@If(Global:Area.ID!=22)-->
-<!--Modal added to cart-->
+<!--@If Defined(Item.Area.Show__ProductAddedToCart__Popup)-->
 <div class="modal fade hide added-to-cart" id="addedModal" tabindex="-1" role="dialog">
   <div class="modal-body">
-    <h3><span class="sprite"></span><!--@If(Global:Area.ID==1)--><!--@Global:Paragraph.Content(2009)--><!--@EndIf--><!--@If(Global:Area.ID==17)--><!--@Global:Paragraph.Content(2010)--><!--@EndIf--></h3>
-    <div class="purchase"><!--@If(Global:Area.ID==1)--><!--@Global:Paragraph.Content(2011)--><!--@EndIf--><!--@If(Global:Area.ID==17)--><!--@Global:Paragraph.Content(2012)--><!--@EndIf--></div>
+    <h3><span class="sprite"></span><!--@Global:Paragraph.Content(<!--@Item.Area.Product_Added_Content_ID-->)--></h3>
+    <div class="purchase"><!--@Global:Paragraph.Content(<!--@Item.Area.Purchase_More_Content_ID-->)--></div>
     <div class="added-to-cart-btns">
       <a class="dw-button dw-button-gray" data-dismiss="modal">
         <!--@Translate(buymore, "Buy More")-->
