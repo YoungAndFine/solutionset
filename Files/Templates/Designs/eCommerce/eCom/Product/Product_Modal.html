@@ -63,12 +63,24 @@
         </div>
         <div class="product-facts">
           <ul>
-            <li>
-              <span class="sprite signv-red" <!--@If Defined(Ecom:Product:Stock.Image.Clean)-->style="background: url('<!--@Ecom:Product:Stock.Image.Clean-->') no-repeat 0 0 !important;"<!--@EndIf(Ecom:Product:Stock.Image.Clean)-->></span> <!--@Ecom:Product:Stock.Text-->
-            </li>
-            <li>
-              <span class="sprite signv"></span> <!--@Translate(ProductDelivary, "Delivery")--> <!--@Ecom:Product.IsInCart)--> <!--@Ecom:Product:Stock.DeliveryText--> <!--@Ecom:Product:Stock.DeliveryUnit-->
-            </li>
+			<li>
+				<!--@If(Ecom:Product.Stock>0)-->
+					<span class="icon-smile in-stock"></span>
+					<!--@Ecom:Product:Stock.Text-->
+				<!--@Else-->
+					<span class="icon-meh out-of stock"></span>
+					<!--@Ecom:Product:Stock.Text-->	
+				<!--@EndIf-->	
+			</li>
+			<li>
+				<!--@If(Ecom:Product.Stock>0)-->
+					<span class="icon-ok in-stock"></span>
+					<!--@Translate(ProductDelivary, "Delivery")--> <!--@Ecom:Product.IsInCart)--> <!--@Ecom:Product:Stock.DeliveryText--> <!--@Ecom:Product:Stock.DeliveryUnit-->
+				<!--@Else-->
+					<span class="icon-ok out-of-stock"></span>
+					<!--@Translate(ProductDelivary, "Delivery")--> <!--@Ecom:Product.IsInCart)--> <!--@Ecom:Product:Stock.DeliveryText--> <!--@Ecom:Product:Stock.DeliveryUnit-->	
+				<!--@EndIf-->
+			</li>
           </ul>
         </div>
         <div class="clearfix"></div>

@@ -102,20 +102,5 @@
                         <!--@LoopEnd(BOMConfigurators)-->
 
                     </div>
-                    <br />
-
-
-                 <div class="product-delivery">
-                     <div style="background: url('<!--@Ecom:Product:Stock.Image.Clean-->') no-repeat; padding:0 0 0 20px;">
-                         <span itemprop="availability" content="<!--@If(Ecom:Product.Stock>0)-->in_stock<!--@EndIf--><!--@If(Ecom:Product.Stock<=0)-->out_of_stock<!--@EndIf-->" class="micro_n"><!--@Ecom:Product:Stock.Text--></span>
-                     </div>
-                     <div style="background: url('<!--@Ecom:Product:Stock.Image.Clean-->') no-repeat; padding:0 0 0 20px;">
-                         <!--@Translate(Delivery_in, "Delivery in")-->
-                         <!--@Ecom:Product:Stock.DeliveryText-->
-                         <!--@Ecom:Product:Stock.DeliveryUnit-->
-                     </div>
-                 </div>
-                 <br /><br />
-
             </div>
 </div>

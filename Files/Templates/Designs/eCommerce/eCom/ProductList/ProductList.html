@@ -49,8 +49,7 @@
 		<!--@Else-->
 			<span class="icon-meh out-of stock"></span>
 			<!--@Ecom:Product:Stock.Text-->	
-		<!--@EndIf-->
-		
+		<!--@EndIf-->	
       </div>
       <div class="delivery">
 		<!--@If(Ecom:Product.Stock>0)-->
@@ -63,7 +62,7 @@
 	  </div>
       <div class="product-addtocart">
         <button type="button" class="btn dw-button-green" <!--@If(Ecom:Product.VariantCount>0)-->data-toggle="modal" data-target="#productVariantChooser<!--@Ecom:Product.ID-->"<!--@EndIf--><!--@If(Ecom:Product.VariantCount==0)-->onclick="$.addToCart(this)"<!--@EndIf-->>
-          <i class="icon sprite cart-tiny-white"></i>
+          <i class="icon-shopping-cart"></i>
           <!--@If Defined(Global:OMC.Experiment.Variation.Original)-->
             <!--@Translate(AddToCart, "Add to cart")-->
           <!--@EndIf(Global:OMC.Experiment.Variation.Original)-->
@@ -106,13 +105,23 @@
         </div>
       </div>
       <div class="stock visible-phone">
-        <span class="sprite signv-red" <!--@If Defined(Ecom:Product:Stock.Image.Clean)-->style="background: url('<!--@Ecom:Product:Stock.Image.Clean-->') no-repeat 0 0 !important;"<!--@EndIf(Ecom:Product:Stock.Image.Clean)-->></span>
-        <!--@Ecom:Product:Stock.Text-->
+		<!--@If(Ecom:Product.Stock>0)-->
+			<span class="icon-smile in-stock"></span>
+			<!--@Ecom:Product:Stock.Text-->
+		<!--@Else-->
+			<span class="icon-meh out-of stock"></span>
+			<!--@Ecom:Product:Stock.Text-->	
+		<!--@EndIf-->
       </div>
       <div class="delivery visible-phone">
-        <span class="sprite signv"></span>
-        <!--@Translate(ProductDelivary, "Delivery")--> <!--@Ecom:Product.IsInCart)--> <!--@Ecom:Product:Stock.DeliveryText--> <!--@Ecom:Product:Stock.DeliveryUnit-->
-      </div>
+		<!--@If(Ecom:Product.Stock>0)-->
+			<span class="icon-ok in-stock"></span>
+			<!--@Translate(ProductDelivary, "Delivery")--> <!--@Ecom:Product.IsInCart)--> <!--@Ecom:Product:Stock.DeliveryText--> <!--@Ecom:Product:Stock.DeliveryUnit-->
+		<!--@Else-->
+			<span class="icon-ok out-of-stock"></span>
+			<!--@Translate(ProductDelivary, "Delivery")--> <!--@Ecom:Product.IsInCart)--> <!--@Ecom:Product:Stock.DeliveryText--> <!--@Ecom:Product:Stock.DeliveryUnit-->	
+		<!--@EndIf-->
+	  </div>
       <div class="product-addtocart visible-phone <!--@If Defined(Ecom:Product.IsInCart)-->product-incart<!--@EndIf(Ecom:Product.IsInCart)-->">
         <button type="button" class="btn dw-button-green" <!--@If(Ecom:Product.VariantCount>0)-->data-toggle="modal" data-target="#productVariantChooser<!--@Ecom:Product.ID-->"<!--@EndIf--><!--@If(Ecom:Product.VariantCount==0)-->onclick="$.addToCart(this)"<!--@EndIf-->>
           <i class="icon sprite cart-tiny-white"></i>
@@ -200,12 +209,24 @@
             </div>
             <div class="product-facts">
               <ul>
-                <li>
-                  <span class="sprite signv-red" <!--@If Defined(Ecom:Product:Stock.Image.Clean)-->style="background: url('<!--@Ecom:Product:Stock.Image.Clean-->') no-repeat 0 0 !important;"<!--@EndIf(Ecom:Product:Stock.Image.Clean)-->></span> <!--@Ecom:Product:Stock.Text-->
-                </li>
-                <li>
-                  <span class="sprite signv"></span> <!--@Translate(ProductDelivary, "Delivery")--> <!--@Ecom:Product.IsInCart)--> <!--@Ecom:Product:Stock.DeliveryText--> <!--@Ecom:Product:Stock.DeliveryUnit-->
-                </li>
+				<li>
+					<!--@If(Ecom:Product.Stock>0)-->
+						<span class="icon-smile in-stock"></span>
+						<!--@Ecom:Product:Stock.Text-->
+					<!--@Else-->
+						<span class="icon-meh out-of stock"></span>
+						<!--@Ecom:Product:Stock.Text-->	
+					<!--@EndIf-->	
+				</li>
+				<li>
+					<!--@If(Ecom:Product.Stock>0)-->
+						<span class="icon-ok in-stock"></span>
+						<!--@Translate(ProductDelivary, "Delivery")--> <!--@Ecom:Product.IsInCart)--> <!--@Ecom:Product:Stock.DeliveryText--> <!--@Ecom:Product:Stock.DeliveryUnit-->
+					<!--@Else-->
+						<span class="icon-ok out-of-stock"></span>
+						<!--@Translate(ProductDelivary, "Delivery")--> <!--@Ecom:Product.IsInCart)--> <!--@Ecom:Product:Stock.DeliveryText--> <!--@Ecom:Product:Stock.DeliveryUnit-->	
+					<!--@EndIf-->
+				</li>
               </ul>
             </div>
             <div class="clearfix"></div>
