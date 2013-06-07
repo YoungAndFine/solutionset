@@ -182,11 +182,8 @@
   	padding: 35px 0 0 50px;
     font-weight: bold;
   }
-  .not-empty .minicart-count{
-	  padding: 24px 0 0 50px;
-  }
   .minicart-view {
-    padding-left: 50px;
+    padding-left: 31px;
   }
   .minicart-popup {
     display: none;
@@ -374,4 +371,8 @@
   @media (min-width: 1200px) {
     width: 330px;
   }
+}
+
+.not-empty .minicart-count{
+	  padding: 24px 0 0 50px!important;
 }

@@ -277,16 +277,29 @@
   .product-rating-comments {
     padding-top: 0;
     margin-bottom: 5px;
-    margin-left: 8px;
+    margin-left: 0px;
 
     .product-rating, .product-comments {
       display: inline-block;
       vertical-align: top;
+           
     }
-    .commentSmall {
-      float: left;
+    
+    .product-comments {
+    	margin-left: 14px; 
+	    .icon-comment-alt{
+			color: #000;
+			font-size: 12px;
+			margin-left: -13px;
+			position: absolute;
+	    }
     }
   }
+  
+  .product-rating-comments.item-added {
+    margin-left: 8px;
+  }
+  
   .product-rating-underlay {
     display: inline-block;
     /*background-image: $rating-sprite;*/
@@ -390,6 +403,7 @@
       .in-stock{
       	color: $stock-green;
       	font-size: 1.3em;
+      	margin-right: 8px;
       }
   }
   .delivery .icon-ok{
@@ -540,6 +554,13 @@
             display: inline-block;
             vertical-align: top;
           }
+        }
+        
+        .icon-download{
+	        font-size: 20px;
+	        margin-top: 0px;
+	        position: absolute;
+	        margin-left: -21px;
         }
       }
       .product-pricebox-wrapper {
@@ -1034,6 +1055,7 @@
     .btn {
       font-weight: bold;
       width: 100%;
+      margin-top: 10px;
 
       .icon { margin-right: 5px; }
     }
@@ -1116,6 +1138,17 @@
         }
       }
     }
+    
+    .out-of-stock{
+		color: $stock-red;
+		font-size: 1.3em;
+	}
+	
+	.in-stock{
+		color: $stock-green;
+		font-size: 1.3em;
+		margin-right: 6px;
+	}
   }
 
   &:last-of-type {
