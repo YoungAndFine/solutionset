@@ -15,7 +15,7 @@
 
 .footer-wrapper { 
   height: 120px; 
-  background: $footerBackground;
+  @include background-image(linear-gradient(bottom, $footerGradientColorTop 0%, $footerGradientColorBottom 100%)); // gradient overlay
   
   .footer-section {
     padding: 10px;

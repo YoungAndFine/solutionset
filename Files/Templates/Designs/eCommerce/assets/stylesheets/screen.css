@@ -616,167 +616,132 @@ a[data-rel=tooltip] {
     width: 45px;
     height: 45px; }
   /* line 49, ../sass/partials/_sprites.scss */
-  .sprite.blue-close {
-    background-position: -80px -29px !important;
-    width: 20px;
-    height: 20px; }
-  /* line 54, ../sass/partials/_sprites.scss */
-  .sprite.search {
-    background-position: -51px -169px;
-    width: 30px;
-    height: 30px; }
-  /* line 59, ../sass/partials/_sprites.scss */
-  .sprite.signv {
-    background-position: -49px -39px;
-    width: 20px;
-    height: 20px; }
-  /* line 64, ../sass/partials/_sprites.scss */
-  .sprite.signv-red {
-    background-position: -49px -18px;
-    width: 20px;
-    height: 20px; }
-  /* line 69, ../sass/partials/_sprites.scss */
   .sprite.bg-modal-header {
     background-position: -40px -149px;
     width: 10px;
     height: 50px; }
-  /* line 75, ../sass/partials/_sprites.scss */
-  .sprite.commentSmall {
-    background-position: -81px -1px;
-    width: 10px;
-    height: 10px; }
-  /* line 80, ../sass/partials/_sprites.scss */
-  .sprite.filters-selection-tr {
-    background-position: -49px 0;
-    width: 30px;
-    height: 19px; }
-  /* line 85, ../sass/partials/_sprites.scss */
-  .sprite.footer-gradient {
-    background-position: 0 -100px;
-    width: 40px;
-    height: 100px; }
-  /* line 90, ../sass/partials/_sprites.scss */
+  /* line 55, ../sass/partials/_sprites.scss */
   .sprite.footer-totop {
     background-position: -80px -50px;
     width: 20px;
     height: 20px; }
-  /* line 95, ../sass/partials/_sprites.scss */
+  /* line 60, ../sass/partials/_sprites.scss */
   .sprite.full-star {
     background-position: -50px -60px;
     width: 18px;
     height: 18px; }
-  /* line 100, ../sass/partials/_sprites.scss */
+  /* line 65, ../sass/partials/_sprites.scss */
   .sprite.half-star {
     background-position: -50px -81px;
     width: 18px;
     height: 18px; }
-  /* line 105, ../sass/partials/_sprites.scss */
+  /* line 70, ../sass/partials/_sprites.scss */
   .sprite.empty-star {
     background-position: -50px -100px;
     width: 18px;
     height: 18px; }
-  /* line 110, ../sass/partials/_sprites.scss */
+  /* line 75, ../sass/partials/_sprites.scss */
   .sprite.arr-forward-small {
     background-position: -81px -14px;
     width: 10px;
     height: 10px; }
-  /* line 115, ../sass/partials/_sprites.scss */
+  /* line 80, ../sass/partials/_sprites.scss */
   .sprite.arr-forward-small-white {
     background-position: -85px -151px;
     width: 15px;
     height: 13px; }
-  /* line 120, ../sass/partials/_sprites.scss */
+  /* line 85, ../sass/partials/_sprites.scss */
   .sprite.arr-back-small {
     background-position: -70px -20px;
     width: 10px;
     height: 10px; }
-  /* line 125, ../sass/partials/_sprites.scss */
+  /* line 90, ../sass/partials/_sprites.scss */
   .sprite.cart {
     background-position: -76px -75px;
     width: 24px;
     height: 24px; }
-  /* line 130, ../sass/partials/_sprites.scss */
+  /* line 95, ../sass/partials/_sprites.scss */
   .sprite.cart-small-white {
     background-position: -50px -125px;
     width: 24px;
     height: 24px; }
-  /* line 135, ../sass/partials/_sprites.scss */
+  /* line 100, ../sass/partials/_sprites.scss */
   .sprite.cart-tiny-white {
     background-position: -30px -100px;
     width: 18px;
     height: 18px; }
-  /* line 140, ../sass/partials/_sprites.scss */
+  /* line 105, ../sass/partials/_sprites.scss */
   .sprite.locked {
     background-position: -80px -150px;
     width: 20px;
     height: 20px; }
-  /* line 145, ../sass/partials/_sprites.scss */
+  /* line 110, ../sass/partials/_sprites.scss */
   .sprite.mode-list {
     background-position: -25px -175px;
     width: 24px;
     height: 24px; }
-  /* line 150, ../sass/partials/_sprites.scss */
+  /* line 115, ../sass/partials/_sprites.scss */
   .sprite.mode-tiles {
     background-position: 0 -175px;
     width: 24px;
     height: 24px; }
-  /* line 155, ../sass/partials/_sprites.scss */
+  /* line 120, ../sass/partials/_sprites.scss */
   .sprite.key {
     background-position: 0 -100px;
     width: 32px;
     height: 32px; }
-  /* line 160, ../sass/partials/_sprites.scss */
+  /* line 125, ../sass/partials/_sprites.scss */
   .sprite.info-circle {
     background-position: 0px -150px;
     width: 24px;
     height: 24px; }
-  /* line 165, ../sass/partials/_sprites.scss */
+  /* line 130, ../sass/partials/_sprites.scss */
   .sprite.info-circle-small {
     background-position: -83px -175px;
     width: 16px;
     height: 16px; }
-  /* line 170, ../sass/partials/_sprites.scss */
+  /* line 135, ../sass/partials/_sprites.scss */
   .sprite.cart-small {
     background-position: -25px -148px;
     width: 26px;
     height: 26px; }
-  /* line 175, ../sass/partials/_sprites.scss */
+  /* line 140, ../sass/partials/_sprites.scss */
   .sprite.icon-pdf {
     background-position: -30px -128px;
     width: 20px;
     height: 20px; }
-  /* line 180, ../sass/partials/_sprites.scss */
+  /* line 145, ../sass/partials/_sprites.scss */
   .sprite.arrow-circle-left {
     background-position: -25px -200px;
     width: 25px;
     height: 25px; }
-  /* line 185, ../sass/partials/_sprites.scss */
+  /* line 150, ../sass/partials/_sprites.scss */
   .sprite.arrow-circle-right {
     background-position: 0 -200px;
     width: 25px;
     height: 25px; }
-  /* line 190, ../sass/partials/_sprites.scss */
+  /* line 155, ../sass/partials/_sprites.scss */
   .sprite.support {
     background-position: -50px -150px;
     width: 20px;
     height: 20px; }
-  /* line 195, ../sass/partials/_sprites.scss */
+  /* line 160, ../sass/partials/_sprites.scss */
   .sprite.order-status {
     background-position: -38px -225px;
     width: 18px;
     height: 18px; }
-  /* line 200, ../sass/partials/_sprites.scss */
+  /* line 165, ../sass/partials/_sprites.scss */
   .sprite.print {
     background-position: -18px -225px;
     width: 18px;
     height: 18px; }
-  /* line 205, ../sass/partials/_sprites.scss */
+  /* line 170, ../sass/partials/_sprites.scss */
   .sprite.receipt {
     background-position: 0 -225px;
     width: 18px;
     height: 18px; }
 
-/* line 213, ../sass/partials/_sprites.scss */
+/* line 178, ../sass/partials/_sprites.scss */
 .dw-search-result-item .arr-forward-small-white {
   background-position: -85px -147px;
   width: 15px;
@@ -3195,7 +3160,11 @@ ul.icons {
 /* line 16, ../sass/partials/_footer.scss */
 .footer-wrapper {
   height: 120px;
-  background: url(../images/footer_gradient.png) repeat-x center bottom #484848; }
+  background-image: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(0%, #2b2b2b), color-stop(100%, #484848));
+  background-image: -webkit-linear-gradient(bottom, #2b2b2b 0%, #484848 100%);
+  background-image: -moz-linear-gradient(bottom, #2b2b2b 0%, #484848 100%);
+  background-image: -o-linear-gradient(bottom, #2b2b2b 0%, #484848 100%);
+  background-image: linear-gradient(bottom, #2b2b2b 0%, #484848 100%); }
   /* line 20, ../sass/partials/_footer.scss */
   .footer-wrapper .footer-section {
     padding: 10px;
