@@ -72,6 +72,7 @@
       background-size: contain;
       height: 80px;
       width: auto;
+      margin-top: 6px;
     }
     
     .no-svg .logo-image {
@@ -80,13 +81,11 @@
   }
   .payoff {
     display: table;
-    height: 80px;
-
-    > div {
-      display: table-cell;
-      vertical-align: middle;
-      font: bold 18px/25px arial;
-    }
+    height: auto;
+    margin-top: 34px;
+    display: table-cell;
+    vertical-align: middle;
+    font: bold 18px/25px arial;
   }
 
   @media (max-width: 349px) {

@@ -432,7 +432,7 @@ Layout.Products = (function (m) {
           return $('*[itemprop="'+key+'"]', el).html();
         };
         
-    $('.product-rating').append('<div style="width: 100px;" class="empty-stars-container"><i class="icon-star-empty star-showing star1"></i><i class="icon-star-empty star-showing star2"></i><i class="icon-star-empty star-showing star3"></i><i class="icon-star-empty star-showing star4"></i><i class="icon-star-empty star-showing star5"></i></div>');
+    /*$('.product-rating').append('<div style="width: 100px;" class="empty-stars-container"><i class="icon-star-empty star-showing star1"></i><i class="icon-star-empty star-showing star2"></i><i class="icon-star-empty star-showing star3"></i><i class="icon-star-empty star-showing star4"></i><i class="icon-star-empty star-showing star5"></i></div>');*/
 
     function convertReviewLayout() {
       $('*[itemprop="rating"]').each(function(index, el) {

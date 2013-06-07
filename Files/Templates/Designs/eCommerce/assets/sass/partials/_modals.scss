@@ -49,6 +49,11 @@ $modal-imagesslider-width: 502px;
 
     }
   }
+  
+  input#login-username, input#login-password{
+	  margin-bottom: 10px;
+  }
+  
   .modal-body {
     background: #fff;
 
@@ -77,6 +82,11 @@ $modal-imagesslider-width: 502px;
     margin-left: 2.127659574468085%;
     *margin-left: 2.074468085106383%;
   }
+}
+
+.icon-key{
+	color: #c7883a;
+	font-size: 20px;
 }
 
 .modal-type-loginbox {

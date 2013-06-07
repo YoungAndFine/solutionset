@@ -85,7 +85,6 @@
         &:hover { cursor: pointer; }
         &#quicklinks-login {
           padding-left: 20px;
-          background-size: 16px;
           
           i{
 	          text-decoration: none;
@@ -116,6 +115,18 @@
       }
     }
   }
+  
+  .logout-txt{
+	    color: #9e0b0f!important;
+	    padding-left: 25px!important;
+	    
+	    i{
+	      text-decoration: none;
+	      font-size: 1.3em;
+	      position: absolute;
+	      margin-left: -19px;
+	  }
+	}
 
   @media (max-width: 979px) {
     float: left;
