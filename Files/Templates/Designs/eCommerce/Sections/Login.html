@@ -15,30 +15,11 @@
     <div class="loginbox-login-failed alert alert-error"><!--@DW_extranet_error_uk--></div>
     <!--@EndIf-->
 
-    <div class="social hidden">
-      <div class="row-fluid">
-        <div class="span6">
-          <div class="alert">Facebook</div>
-        </div>
-        <div class="span6">
-          <div class="alert">Twitter</div>
-        </div>
-      </div>
-      <div class="row-fluid">
-        <div class="span6">
-          <div class="alert">LinkedIn</div>
-        </div>
-        <div class="span6">
-          <div class="alert">OpenID</div>
-        </div>
-      </div>
-    </div>
-
-    <p class="centered-text hidden"><!--@Translate(or, "or")--></p>
-
+		<!--@If Defined(Item.Area.Login_Message_Content_ID)-->
     <div class="alert alert-info">
-      <!--@Global:Paragraph.Content(1987)-->
+      <!--@Global:Paragraph.Content(<!--@Item.Area.Login_Message_Content_ID-->)-->
     </div>
+		<!--@EndIf(Item.Area.Login_Message_Content_ID)-->
 
     <div class="login-box-mode" data-login-box-mode="login">
       <form class="form-horizontal" action="<!--@Global:Pageview.Url-->" method="post" onsubmit="return Layout.LoginBox.validate(this);">

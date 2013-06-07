@@ -32,6 +32,11 @@
           <editorConfuguration />
         </editor>
       </field>
+      <field name="Login Message Content ID" systemName="Login_Message_Content_ID" description="" type="System.Int32, mscorlib">
+        <editor type="Dynamicweb.Content.Items.Editors.IntegerEditor, Dynamicweb">
+          <editorConfuguration />
+        </editor>
+      </field>
       <field name="Show &quot;Product added to cart&quot; Popup" systemName="Show__ProductAddedToCart__Popup" description="" type="System.Boolean, mscorlib">
         <editor type="Dynamicweb.Content.Items.Editors.CheckboxEditor, Dynamicweb">
           <editorConfuguration />
@@ -101,6 +106,7 @@
             <field systemName="Google_Analytics_ID" />
             <field systemName="Checkout_Page_ID" />
             <field systemName="Footer_Content_Page_ID" />
+            <field systemName="Login_Message_Content_ID" />
           </fields>
         </group>
         <group name="Product Added To Cart" systemName="Product_Added_To_Cart" collapsibleState="None">
