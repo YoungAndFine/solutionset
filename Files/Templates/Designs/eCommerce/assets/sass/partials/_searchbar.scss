@@ -91,7 +91,8 @@
 
 // Quick add field set
 .quick-add {
-  padding-top: 10px;
+  padding-top: 5px;
+  float: right;
 
   input {
     &[type="text"] {

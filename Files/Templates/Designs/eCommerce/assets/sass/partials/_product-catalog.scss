@@ -193,17 +193,17 @@
           color: white;
           font: 18px/40px arial;
           text-align: center;
-
-          &:after {
-            bottom: -14px;
-            content: "";
-            height: 20px;
-            left: 50%;
-            margin-left: -15px;
-            position: absolute;
-            width: 30px;
-            background: url("../images/filters_selection_tr.png") no-repeat center top;
+          
+          .arrow-down{
+	          width: 0px;
+	          height: 0px;
+	          border-style: solid;
+	          border-width: 13px 13px 0 13px;
+	          border-color: #F8941D transparent transparent transparent;
+	          display: block;
+	          margin: 0 auto;
           }
+          
           .btn {
             float: right;
             margin: 7px 10px 0 0;
@@ -398,12 +398,14 @@
       .out-of-stock{
       	color: $stock-red;
       	font-size: 1.3em;
+      	font-weight: bold;
       }
       
       .in-stock{
       	color: $stock-green;
       	font-size: 1.3em;
       	margin-right: 8px;
+      	font-weight: bold;
       }
   }
   .delivery .icon-ok{
