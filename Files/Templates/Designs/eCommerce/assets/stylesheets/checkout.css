@@ -728,10 +728,11 @@ body > footer {
     margin-bottom: 10px; }
     /* line 904, ../sass/checkout.scss */
     .checkout-receipt .receipt-actions .icon {
-      margin-right: 5px; }
+      margin-right: 5px;
+      text-decoration: none; }
 
 /* Custom dropdown list */
-/* line 911, ../sass/checkout.scss */
+/* line 912, ../sass/checkout.scss */
 .customDropdown {
   position: relative;
   background-color: #FFFFFF;
@@ -742,7 +743,7 @@ body > footer {
   margin: 0;
   padding: 2px 5px 0;
   border-radius: 3px; }
-  /* line 926, ../sass/checkout.scss */
+  /* line 927, ../sass/checkout.scss */
   .customDropdown span {
     padding: 0 20px 0 0;
     font: normal 14px/28px arial;
@@ -750,11 +751,11 @@ body > footer {
     cursor: pointer;
     background: url(../images/tr.png) 100% 3px no-repeat;
     white-space: nowrap; }
-  /* line 936, ../sass/checkout.scss */
+  /* line 937, ../sass/checkout.scss */
   .customDropdown img {
     vertical-align: middle;
     width: 30px; }
-  /* line 940, ../sass/checkout.scss */
+  /* line 941, ../sass/checkout.scss */
   .customDropdown ul {
     display: none;
     position: absolute;
@@ -768,24 +769,24 @@ body > footer {
     margin: 0;
     border-radius: 0 0 3px 3px;
     padding-top: 3px; }
-    /* line 955, ../sass/checkout.scss */
+    /* line 956, ../sass/checkout.scss */
     .customDropdown ul li {
       padding: 2px 5px 1px;
       cursor: pointer;
       display: block; }
-      /* line 961, ../sass/checkout.scss */
+      /* line 962, ../sass/checkout.scss */
       .customDropdown ul li:hover {
         background: #eee; }
-      /* line 964, ../sass/checkout.scss */
+      /* line 965, ../sass/checkout.scss */
       .customDropdown ul li i {
         font-style: normal; }
 
-/* line 971, ../sass/checkout.scss */
+/* line 972, ../sass/checkout.scss */
 input.disabled_class {
   border: 1px solid #ccc;
   color: #ccc; }
 
-/* line 972, ../sass/checkout.scss */
+/* line 973, ../sass/checkout.scss */
 .content-wrapper {
   padding-top: 10px;
   z-index: 2;
