@@ -26,38 +26,44 @@
  * Version: 0.9.0
  *
  */
-/* line 19, ../sass/checkout.scss */
+/* line 18, ../sass/checkout.scss */
+body > footer {
+  margin: -120px 10px 0;
+  z-index: 3;
+  position: relative; }
+
+/* line 24, ../sass/checkout.scss */
 .checkout-stepmap {
   margin-left: 30px;
   position: absolute;
   top: -75px; }
-  /* line 27, ../sass/checkout.scss */
+  /* line 32, ../sass/checkout.scss */
   .checkout-stepmap i {
     font-size: 16px;
     font-style: normal; }
-  /* line 31, ../sass/checkout.scss */
+  /* line 36, ../sass/checkout.scss */
   .checkout-stepmap ul {
     background: #DFE4E7;
     height: 2px;
     margin: 26px 50px 0; }
-    /* line 36, ../sass/checkout.scss */
+    /* line 41, ../sass/checkout.scss */
     .checkout-stepmap ul li {
       float: left;
       left: -35px;
       position: relative;
       width: 150px;
       list-style-type: none; }
-      /* line 43, ../sass/checkout.scss */
+      /* line 48, ../sass/checkout.scss */
       .checkout-stepmap ul li:last-child {
         width: 45px; }
-        /* line 46, ../sass/checkout.scss */
+        /* line 51, ../sass/checkout.scss */
         .checkout-stepmap ul li:last-child h4 {
           width: 150px; }
-      /* line 53, ../sass/checkout.scss */
+      /* line 58, ../sass/checkout.scss */
       .checkout-stepmap ul li.active {
         border-top: 2px solid #20a9e3;
         left: 0; }
-        /* line 57, ../sass/checkout.scss */
+        /* line 62, ../sass/checkout.scss */
         .checkout-stepmap ul li.active:after {
           content: '';
           position: absolute;
@@ -67,16 +73,16 @@
           right: 4px;
           top: -8px;
           background: url("images/checkout-map-arrow.png") no-repeat right center; }
-        /* line 67, ../sass/checkout.scss */
+        /* line 72, ../sass/checkout.scss */
         .checkout-stepmap ul li.active h4 {
           color: #009ddf;
           left: -30px;
           position: relative; }
-        /* line 72, ../sass/checkout.scss */
+        /* line 77, ../sass/checkout.scss */
         .checkout-stepmap ul li.active span {
           background: url("images/circle-blue.png") no-repeat left center;
           left: -2px; }
-      /* line 77, ../sass/checkout.scss */
+      /* line 82, ../sass/checkout.scss */
       .checkout-stepmap ul li h4 {
         margin: 30px 0 0 0;
         max-width: 110px;
@@ -84,7 +90,7 @@
         color: #ddd;
         line-height: 14px;
         font-size: 12px; }
-      /* line 85, ../sass/checkout.scss */
+      /* line 90, ../sass/checkout.scss */
       .checkout-stepmap ul li span {
         position: absolute;
         top: -28px;
@@ -94,7 +100,7 @@
         height: 55px;
         background: no-repeat 0 0;
         background: url("images/circle-grey.png") no-repeat left center; }
-        /* line 95, ../sass/checkout.scss */
+        /* line 100, ../sass/checkout.scss */
         .checkout-stepmap ul li span i {
           color: white;
           display: block;
@@ -105,118 +111,118 @@
           width: 53px;
           color: white; }
   @media (max-width: 979px) {
-    /* line 19, ../sass/checkout.scss */
+    /* line 24, ../sass/checkout.scss */
     .checkout-stepmap {
       display: none; } }
 
-/* line 114, ../sass/checkout.scss */
+/* line 119, ../sass/checkout.scss */
 .checkout-headline-wrapper {
   border-top: 1px solid #dfe4e7;
   padding-top: 20px; }
-  /* line 119, ../sass/checkout.scss */
+  /* line 124, ../sass/checkout.scss */
   .checkout-headline-wrapper .checkout-headline h1 {
     font: bold 30px/35px arial; }
-  /* line 123, ../sass/checkout.scss */
+  /* line 128, ../sass/checkout.scss */
   .checkout-headline-wrapper .chat-support {
     font: bold 14px/35px arial; }
   @media (max-width: 767px) {
-    /* line 128, ../sass/checkout.scss */
+    /* line 133, ../sass/checkout.scss */
     .checkout-headline-wrapper [class*="span"] {
       clear: both; }
-    /* line 131, ../sass/checkout.scss */
+    /* line 136, ../sass/checkout.scss */
     .checkout-headline-wrapper .checkout-headline h1 {
       padding: 0;
       font: bold 22px/22px arial; } }
 
-/* line 138, ../sass/checkout.scss */
+/* line 143, ../sass/checkout.scss */
 .validation-errors {
   color: #F7941D;
   font-size: 14px;
   padding: 0 0 10px 10px; }
-  /* line 143, ../sass/checkout.scss */
+  /* line 148, ../sass/checkout.scss */
   .validation-errors li {
     margin-bottom: 5px; }
 
-/* line 148, ../sass/checkout.scss */
+/* line 153, ../sass/checkout.scss */
 .checkout-links {
   padding: 20px 0; }
-  /* line 151, ../sass/checkout.scss */
+  /* line 156, ../sass/checkout.scss */
   .checkout-links h4 {
     font-size: 12px; }
-  /* line 154, ../sass/checkout.scss */
+  /* line 159, ../sass/checkout.scss */
   .checkout-links ul {
     color: #069; }
-    /* line 157, ../sass/checkout.scss */
+    /* line 162, ../sass/checkout.scss */
     .checkout-links ul li {
       margin-top: 2px; }
-  /* line 161, ../sass/checkout.scss */
+  /* line 166, ../sass/checkout.scss */
   .checkout-links a {
     text-decoration: underline; }
-    /* line 164, ../sass/checkout.scss */
+    /* line 169, ../sass/checkout.scss */
     .checkout-links a:hover {
       text-decoration: none; }
 
-/* line 170, ../sass/checkout.scss */
+/* line 175, ../sass/checkout.scss */
 #checkout-wrapper {
   margin-bottom: 20px; }
-  /* line 173, ../sass/checkout.scss */
+  /* line 178, ../sass/checkout.scss */
   #checkout-wrapper .box-headline {
     width: 100%;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box; }
-    /* line 180, ../sass/checkout.scss */
+    /* line 185, ../sass/checkout.scss */
     #checkout-wrapper .box-headline h3 {
       width: auto; }
-  /* line 184, ../sass/checkout.scss */
+  /* line 189, ../sass/checkout.scss */
   #checkout-wrapper .control-label, #checkout-wrapper .form-horizontal .required-fields-note, .form-horizontal #checkout-wrapper .required-fields-note {
     width: 155px; }
 
-/* line 190, ../sass/checkout.scss */
+/* line 195, ../sass/checkout.scss */
 .form-horizontal.pay-and-shipp, .checkout-step .form-horizontal.billing-address, .checkout-step .form-horizontal.shipping-address {
   padding: 10px 0 !important; }
-  /* line 193, ../sass/checkout.scss */
+  /* line 198, ../sass/checkout.scss */
   .form-horizontal.pay-and-shipp .control-group, .checkout-step .form-horizontal.billing-address .control-group, .checkout-step .form-horizontal.shipping-address .control-group {
     margin: 0; }
-  /* line 196, ../sass/checkout.scss */
+  /* line 201, ../sass/checkout.scss */
   .form-horizontal.pay-and-shipp .payment-section, .checkout-step .form-horizontal.billing-address .payment-section, .checkout-step .form-horizontal.shipping-address .payment-section {
     float: left;
     width: 45%; }
-  /* line 200, ../sass/checkout.scss */
+  /* line 205, ../sass/checkout.scss */
   .form-horizontal.pay-and-shipp .shipping-section, .checkout-step .form-horizontal.billing-address .shipping-section, .checkout-step .form-horizontal.shipping-address .shipping-section {
     float: left;
     width: 45%;
     margin-left: 10%; }
-  /* line 206, ../sass/checkout.scss */
+  /* line 211, ../sass/checkout.scss */
   .form-horizontal.pay-and-shipp .control-section-content, .checkout-step .form-horizontal.billing-address .control-section-content, .checkout-step .form-horizontal.shipping-address .control-section-content {
     font-weight: bold;
     font-size: 14px;
     margin-bottom: 10px; }
-    /* line 211, ../sass/checkout.scss */
+    /* line 216, ../sass/checkout.scss */
     .form-horizontal.pay-and-shipp .control-section-content span, .checkout-step .form-horizontal.billing-address .control-section-content span, .checkout-step .form-horizontal.shipping-address .control-section-content span {
       font-weight: normal; }
-  /* line 215, ../sass/checkout.scss */
+  /* line 220, ../sass/checkout.scss */
   .form-horizontal.pay-and-shipp .provider, .checkout-step .form-horizontal.billing-address .provider, .checkout-step .form-horizontal.shipping-address .provider {
     margin: 10px 0; }
-    /* line 218, ../sass/checkout.scss */
+    /* line 223, ../sass/checkout.scss */
     .form-horizontal.pay-and-shipp .provider .parcel-shops-wrapper, .checkout-step .form-horizontal.billing-address .provider .parcel-shops-wrapper, .checkout-step .form-horizontal.shipping-address .provider .parcel-shops-wrapper {
       clear: both;
       float: none;
       position: relative; }
-    /* line 223, ../sass/checkout.scss */
+    /* line 228, ../sass/checkout.scss */
     .form-horizontal.pay-and-shipp .provider .parcel-shop, .checkout-step .form-horizontal.billing-address .provider .parcel-shop, .checkout-step .form-horizontal.shipping-address .provider .parcel-shop {
       margin-bottom: 5px; }
-      /* line 226, ../sass/checkout.scss */
+      /* line 231, ../sass/checkout.scss */
       .form-horizontal.pay-and-shipp .provider .parcel-shop label, .checkout-step .form-horizontal.billing-address .provider .parcel-shop label, .checkout-step .form-horizontal.shipping-address .provider .parcel-shop label {
         margin-bottom: 0; }
-      /* line 229, ../sass/checkout.scss */
+      /* line 234, ../sass/checkout.scss */
       .form-horizontal.pay-and-shipp .provider .parcel-shop input[type='radio'], .checkout-step .form-horizontal.billing-address .provider .parcel-shop input[type='radio'], .checkout-step .form-horizontal.shipping-address .provider .parcel-shop input[type='radio'] {
         margin: -1px 5px 0 0;
         padding: 0; }
-      /* line 234, ../sass/checkout.scss */
+      /* line 239, ../sass/checkout.scss */
       .form-horizontal.pay-and-shipp .provider .parcel-shop .adr span, .checkout-step .form-horizontal.billing-address .provider .parcel-shop .adr span, .checkout-step .form-horizontal.shipping-address .provider .parcel-shop .adr span {
         padding: 0 5px 0 0; }
-    /* line 239, ../sass/checkout.scss */
+    /* line 244, ../sass/checkout.scss */
     .form-horizontal.pay-and-shipp .provider .parcel-shops-loading, .checkout-step .form-horizontal.billing-address .provider .parcel-shops-loading, .checkout-step .form-horizontal.shipping-address .provider .parcel-shops-loading {
       display: none;
       height: 16px;
@@ -226,68 +232,68 @@
       padding-left: 20px;
       line-height: 16px;
       background: url(../images/ajax-loader.gif) no-repeat left center; }
-    /* line 250, ../sass/checkout.scss */
+    /* line 255, ../sass/checkout.scss */
     .form-horizontal.pay-and-shipp .provider .input-large, .checkout-step .form-horizontal.billing-address .provider .input-large, .checkout-step .form-horizontal.shipping-address .provider .input-large {
       width: 297px; }
-    /* line 253, ../sass/checkout.scss */
+    /* line 258, ../sass/checkout.scss */
     .form-horizontal.pay-and-shipp .provider .input-mini, .checkout-step .form-horizontal.billing-address .provider .input-mini, .checkout-step .form-horizontal.shipping-address .provider .input-mini {
       width: 72px; }
-    /* line 256, ../sass/checkout.scss */
+    /* line 261, ../sass/checkout.scss */
     .form-horizontal.pay-and-shipp .provider input, .checkout-step .form-horizontal.billing-address .provider input, .checkout-step .form-horizontal.shipping-address .provider input {
       min-height: 30px;
       -webkit-box-sizing: border-box;
       -moz-box-sizing: border-box;
       box-sizing: border-box; }
-    /* line 263, ../sass/checkout.scss */
+    /* line 268, ../sass/checkout.scss */
     .form-horizontal.pay-and-shipp .provider button, .checkout-step .form-horizontal.billing-address .provider button, .checkout-step .form-horizontal.shipping-address .provider button {
       float: right;
       margin-top: 5px;
       font-weight: bold; }
-/* line 270, ../sass/checkout.scss */
+/* line 275, ../sass/checkout.scss */
 .form-horizontal hr {
   border-bottom-width: 0;
   border-color: #dfe4e7;
   margin: 30px 0; }
-/* line 275, ../sass/checkout.scss */
+/* line 280, ../sass/checkout.scss */
 .form-horizontal .icon {
   vertical-align: middle; }
-/* line 278, ../sass/checkout.scss */
+/* line 283, ../sass/checkout.scss */
 .form-horizontal .voucher_block {
   display: none; }
-/* line 282, ../sass/checkout.scss */
+/* line 287, ../sass/checkout.scss */
 .form-horizontal .control-group.actions-group {
   margin-bottom: 5px;
   overflow: auto; }
-  /* line 286, ../sass/checkout.scss */
+  /* line 291, ../sass/checkout.scss */
   .form-horizontal .control-group.actions-group .btn {
     float: right; }
-/* line 291, ../sass/checkout.scss */
+/* line 296, ../sass/checkout.scss */
 .form-horizontal .control-action-group {
   background: url("images/arrow-right-big.png") no-repeat left center;
   padding: 5px 0; }
-  /* line 299, ../sass/checkout.scss */
+  /* line 304, ../sass/checkout.scss */
   .form-horizontal .control-action-group .controls {
     margin-left: 50px; }
-  /* line 302, ../sass/checkout.scss */
+  /* line 307, ../sass/checkout.scss */
   .form-horizontal .control-action-group .checkbox {
     float: left; }
-  /* line 305, ../sass/checkout.scss */
+  /* line 310, ../sass/checkout.scss */
   .form-horizontal .control-action-group .btn {
     float: right;
     margin-right: 43px !important; }
-/* line 310, ../sass/checkout.scss */
+/* line 315, ../sass/checkout.scss */
 .form-horizontal .control-label, .form-horizontal .required-fields-note {
   text-align: left;
   padding: 6px 0;
   margin: 0; }
-  /* line 316, ../sass/checkout.scss */
+  /* line 321, ../sass/checkout.scss */
   .form-horizontal .control-label.control-label-wide, .form-horizontal .control-label-wide.required-fields-note {
     width: 330px !important; }
-  /* line 319, ../sass/checkout.scss */
+  /* line 324, ../sass/checkout.scss */
   .form-horizontal .control-label span, .form-horizontal .required-fields-note span {
     background: white;
     padding-right: 10px; }
-  /* line 323, ../sass/checkout.scss */
+  /* line 328, ../sass/checkout.scss */
   .form-horizontal .control-label b, .form-horizontal .required-fields-note b {
     color: #F7941D;
     display: block;
@@ -296,29 +302,29 @@
     padding-left: 10px;
     font: bold 17px/15px arial;
     width: 10px; }
-  /* line 332, ../sass/checkout.scss */
+  /* line 337, ../sass/checkout.scss */
   .form-horizontal .control-label hr, .form-horizontal .required-fields-note hr {
     margin: -10px 0 0; }
-/* line 336, ../sass/checkout.scss */
+/* line 341, ../sass/checkout.scss */
 .form-horizontal .required-fields-note {
   overflow: hidden;
   padding: 0;
   margin: 20px 0;
   float: none;
   width: auto !important; }
-  /* line 344, ../sass/checkout.scss */
+  /* line 349, ../sass/checkout.scss */
   .form-horizontal .required-fields-note b {
     margin: 0;
     padding: 0;
     float: left;
     width: auto !important; }
-    /* line 350, ../sass/checkout.scss */
+    /* line 355, ../sass/checkout.scss */
     .form-horizontal .required-fields-note b small {
       font-size: 14px; }
-/* line 357, ../sass/checkout.scss */
+/* line 362, ../sass/checkout.scss */
 .form-horizontal .controls.with-button input[type="text"], .form-horizontal .controls.with-button input[type="email"], .form-horizontal .controls.with-button input[type="number"], .form-horizontal .controls.with-button select {
   width: 400px; }
-/* line 360, ../sass/checkout.scss */
+/* line 365, ../sass/checkout.scss */
 .form-horizontal .controls.with-button .btn {
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -330,26 +336,26 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
-/* line 371, ../sass/checkout.scss */
+/* line 376, ../sass/checkout.scss */
 .form-horizontal .controls input[type="text"], .form-horizontal .controls input[type="email"], .form-horizontal .controls input[type="number"], .form-horizontal .controls select, .form-horizontal .controls .btn {
   margin-right: 10px; }
-/* line 374, ../sass/checkout.scss */
+/* line 379, ../sass/checkout.scss */
 .form-horizontal .controls input[type="text"], .form-horizontal .controls input[type="email"], .form-horizontal .controls input[type="number"], .form-horizontal .controls select {
   width: 610px; }
-/* line 378, ../sass/checkout.scss */
+/* line 383, ../sass/checkout.scss */
 .form-horizontal .controls input[name="EcomOrderCustomerZip"],
 .form-horizontal .controls input[name="EcomOrderDeliveryZip"] {
   width: 50px; }
-/* line 382, ../sass/checkout.scss */
+/* line 387, ../sass/checkout.scss */
 .form-horizontal .controls input[name="EcomOrderCustomerCity"],
 .form-horizontal .controls input[name="EcomOrderDeliveryCity"] {
   width: 535px; }
-/* line 385, ../sass/checkout.scss */
+/* line 390, ../sass/checkout.scss */
 .form-horizontal .controls select {
   font: bold 14px/28px arial;
   border: 1px solid #9F9F9F;
   width: 622px; }
-/* line 390, ../sass/checkout.scss */
+/* line 395, ../sass/checkout.scss */
 .form-horizontal .controls .control-info {
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -359,160 +365,160 @@
   text-align: right;
   line-height: 32px;
   text-decoration: underline; }
-/* line 398, ../sass/checkout.scss */
+/* line 403, ../sass/checkout.scss */
 .form-horizontal .controls .help-block {
   font-size: 14px;
   font-style: italic;
   margin-top: 5px; }
 @media (min-width: 980px) and (max-width: 1200px) {
-  /* line 408, ../sass/checkout.scss */
+  /* line 413, ../sass/checkout.scss */
   .form-horizontal .controls.with-button input[type="text"], .form-horizontal .controls.with-button input[type="email"], .form-horizontal .controls.with-button input[type="number"], .form-horizontal .controls.with-button select {
     width: 235px; }
-  /* line 412, ../sass/checkout.scss */
+  /* line 417, ../sass/checkout.scss */
   .form-horizontal .controls input[type="text"], .form-horizontal .controls input[type="email"], .form-horizontal .controls input[type="number"], .form-horizontal .controls select {
     width: 445px; }
-  /* line 415, ../sass/checkout.scss */
+  /* line 420, ../sass/checkout.scss */
   .form-horizontal .controls select {
     width: 457px; }
-  /* line 419, ../sass/checkout.scss */
+  /* line 424, ../sass/checkout.scss */
   .form-horizontal .controls input[name="EcomOrderCustomerZip"],
   .form-horizontal .controls input[name="EcomOrderDeliveryZip"] {
     width: 50px; }
-  /* line 423, ../sass/checkout.scss */
+  /* line 428, ../sass/checkout.scss */
   .form-horizontal .controls input[name="EcomOrderCustomerCity"],
   .form-horizontal .controls input[name="EcomOrderDeliveryCity"] {
     width: 370px; }
-  /* line 428, ../sass/checkout.scss */
+  /* line 433, ../sass/checkout.scss */
   .form-horizontal .control-action-group .btn {
     margin-right: 38px !important; }
-  /* line 445, ../sass/checkout.scss */
+  /* line 450, ../sass/checkout.scss */
   .form-horizontal.pay-and-shipp .provider .input-mini, .checkout-step .form-horizontal.billing-address .provider .input-mini, .checkout-step .form-horizontal.shipping-address .provider .input-mini {
     margin-top: 5px; } }
 @media (min-width: 768px) and (max-width: 979px) {
-  /* line 455, ../sass/checkout.scss */
+  /* line 460, ../sass/checkout.scss */
   .form-horizontal .controls.with-button input[type="text"], .form-horizontal .controls.with-button input[type="email"], .form-horizontal .controls.with-button input[type="number"], .form-horizontal .controls.with-button select {
     width: 120px; }
-  /* line 458, ../sass/checkout.scss */
+  /* line 463, ../sass/checkout.scss */
   .form-horizontal .controls.with-button .btn {
     width: 150px; }
-  /* line 462, ../sass/checkout.scss */
+  /* line 467, ../sass/checkout.scss */
   .form-horizontal .controls input[type="text"], .form-horizontal .controls input[type="email"], .form-horizontal .controls input[type="number"], .form-horizontal .controls select {
     width: 285px; }
-  /* line 465, ../sass/checkout.scss */
+  /* line 470, ../sass/checkout.scss */
   .form-horizontal .controls select {
     width: 290px; }
-  /* line 469, ../sass/checkout.scss */
+  /* line 474, ../sass/checkout.scss */
   .form-horizontal .controls input[name="EcomOrderCustomerZip"],
   .form-horizontal .controls input[name="EcomOrderDeliveryZip"] {
     width: 50px; }
-  /* line 473, ../sass/checkout.scss */
+  /* line 478, ../sass/checkout.scss */
   .form-horizontal .controls input[name="EcomOrderCustomerCity"],
   .form-horizontal .controls input[name="EcomOrderDeliveryCity"] {
     width: 210px; } }
 @media (max-width: 767px) {
-  /* line 479, ../sass/checkout.scss */
+  /* line 484, ../sass/checkout.scss */
   .form-horizontal .control-group {
     margin-bottom: 15px; }
-  /* line 482, ../sass/checkout.scss */
+  /* line 487, ../sass/checkout.scss */
   .form-horizontal .control-label, .form-horizontal .required-fields-note {
     float: none;
     width: auto; }
-    /* line 486, ../sass/checkout.scss */
+    /* line 491, ../sass/checkout.scss */
     .form-horizontal .control-label span, .form-horizontal .required-fields-note span {
       padding-right: 5px; }
-    /* line 489, ../sass/checkout.scss */
+    /* line 494, ../sass/checkout.scss */
     .form-horizontal .control-label hr, .form-horizontal .required-fields-note hr {
       display: none; }
-    /* line 492, ../sass/checkout.scss */
+    /* line 497, ../sass/checkout.scss */
     .form-horizontal .control-label b, .form-horizontal .required-fields-note b {
       display: inline;
       padding: 0;
       float: none; }
-  /* line 498, ../sass/checkout.scss */
+  /* line 503, ../sass/checkout.scss */
   .form-horizontal .controls {
     margin-left: 0; }
-    /* line 502, ../sass/checkout.scss */
+    /* line 507, ../sass/checkout.scss */
     .form-horizontal .controls.with-button input[type="text"], .form-horizontal .controls.with-button select {
       width: 40%; }
-    /* line 505, ../sass/checkout.scss */
+    /* line 510, ../sass/checkout.scss */
     .form-horizontal .controls.with-button .btn {
       width: 45%; }
-    /* line 509, ../sass/checkout.scss */
+    /* line 514, ../sass/checkout.scss */
     .form-horizontal .controls input[type="text"], .form-horizontal .controls input[type="email"], .form-horizontal .controls input[type="number"], .form-horizontal .controls select {
       width: 90%;
       -webkit-box-sizing: border-box;
       -moz-box-sizing: border-box;
       box-sizing: border-box; }
-    /* line 516, ../sass/checkout.scss */
+    /* line 521, ../sass/checkout.scss */
     .form-horizontal .controls input[name="EcomOrderCustomerZip"],
     .form-horizontal .controls input[name="EcomOrderDeliveryZip"] {
       width: 25%;
       margin-right: 5%; }
-    /* line 521, ../sass/checkout.scss */
+    /* line 526, ../sass/checkout.scss */
     .form-horizontal .controls input[name="EcomOrderCustomerCity"],
     .form-horizontal .controls input[name="EcomOrderDeliveryCity"] {
       width: 60%; }
-  /* line 525, ../sass/checkout.scss */
+  /* line 530, ../sass/checkout.scss */
   .form-horizontal .control-action-group {
     background-position: left top;
     margin-top: 20px; }
-    /* line 529, ../sass/checkout.scss */
+    /* line 534, ../sass/checkout.scss */
     .form-horizontal .control-action-group .btn {
       float: none;
       width: auto !important; } }
 @media (max-width: 979px) {
-  /* line 543, ../sass/checkout.scss */
+  /* line 548, ../sass/checkout.scss */
   .form-horizontal.pay-and-shipp .payment-section, .checkout-step .form-horizontal.billing-address .payment-section, .checkout-step .form-horizontal.shipping-address .payment-section, .form-horizontal.pay-and-shipp .shipping-section, .checkout-step .form-horizontal.billing-address .shipping-section, .checkout-step .form-horizontal.shipping-address .shipping-section {
     float: none;
     margin-bottom: 15px;
     margin-left: 0;
     width: auto; } }
 @media (min-width: 480px) and (max-width: 979px) {
-  /* line 553, ../sass/checkout.scss */
+  /* line 558, ../sass/checkout.scss */
   .form-horizontal.pay-and-shipp .payment-section, .checkout-step .form-horizontal.billing-address .payment-section, .checkout-step .form-horizontal.shipping-address .payment-section, .form-horizontal.pay-and-shipp .shipping-section, .checkout-step .form-horizontal.billing-address .shipping-section, .checkout-step .form-horizontal.shipping-address .shipping-section {
     float: none;
     margin-bottom: 15px;
     margin-left: 0;
     width: auto; }
-  /* line 570, ../sass/checkout.scss */
+  /* line 575, ../sass/checkout.scss */
   .form-horizontal.pay-and-shipp .provider .input-large, .checkout-step .form-horizontal.billing-address .provider .input-large, .checkout-step .form-horizontal.shipping-address .provider .input-large {
     width: 49%;
     margin-right: 1%; }
-  /* line 574, ../sass/checkout.scss */
+  /* line 579, ../sass/checkout.scss */
   .form-horizontal.pay-and-shipp .provider .input-mini, .checkout-step .form-horizontal.billing-address .provider .input-mini, .checkout-step .form-horizontal.shipping-address .provider .input-mini {
     width: 18%;
     margin-right: 1%; }
-  /* line 578, ../sass/checkout.scss */
+  /* line 583, ../sass/checkout.scss */
   .form-horizontal.pay-and-shipp .provider input, .checkout-step .form-horizontal.billing-address .provider input, .checkout-step .form-horizontal.shipping-address .provider input {
     height: 30px; }
-  /* line 581, ../sass/checkout.scss */
+  /* line 586, ../sass/checkout.scss */
   .form-horizontal.pay-and-shipp .provider button, .checkout-step .form-horizontal.billing-address .provider button, .checkout-step .form-horizontal.shipping-address .provider button {
     margin-top: 0;
     width: 30%;
     min-width: 150px; } }
 @media (max-width: 479px) {
-  /* line 189, ../sass/checkout.scss */
+  /* line 194, ../sass/checkout.scss */
   .form-horizontal {
     padding-top: 10px !important; }
-    /* line 592, ../sass/checkout.scss */
+    /* line 597, ../sass/checkout.scss */
     .form-horizontal hr {
       margin: 10px 0; }
-    /* line 595, ../sass/checkout.scss */
+    /* line 600, ../sass/checkout.scss */
     .form-horizontal .required-fields-note {
       margin: 10px 0; }
-      /* line 598, ../sass/checkout.scss */
+      /* line 603, ../sass/checkout.scss */
       .form-horizontal .required-fields-note b small {
         font-size: 12px; }
-    /* line 602, ../sass/checkout.scss */
+    /* line 607, ../sass/checkout.scss */
     .form-horizontal .control-group {
       margin-bottom: 15px; }
-    /* line 605, ../sass/checkout.scss */
+    /* line 610, ../sass/checkout.scss */
     .form-horizontal .control-label, .form-horizontal .required-fields-note {
       font-size: 12px; }
-      /* line 608, ../sass/checkout.scss */
+      /* line 613, ../sass/checkout.scss */
       .form-horizontal .control-label.control-label-wide, .form-horizontal .control-label-wide.required-fields-note {
         width: auto !important; }
-    /* line 614, ../sass/checkout.scss */
+    /* line 619, ../sass/checkout.scss */
     .form-horizontal .controls.with-button .btn {
       display: block;
       font-size: 12px;
@@ -521,211 +527,211 @@
       padding-bottom: 4px;
       padding-top: 4px;
       width: 100%; }
-    /* line 624, ../sass/checkout.scss */
+    /* line 629, ../sass/checkout.scss */
     .form-horizontal .controls a {
       display: none; }
-    /* line 627, ../sass/checkout.scss */
+    /* line 632, ../sass/checkout.scss */
     .form-horizontal .controls .help-block {
       font-size: 12px; }
-    /* line 630, ../sass/checkout.scss */
+    /* line 635, ../sass/checkout.scss */
     .form-horizontal .controls input[type="text"], .form-horizontal .controls input[type="email"], .form-horizontal .controls input[type="number"], .form-horizontal .controls select {
       width: 100% !important; }
-    /* line 634, ../sass/checkout.scss */
+    /* line 639, ../sass/checkout.scss */
     .form-horizontal .controls input[name="EcomOrderCustomerZip"],
     .form-horizontal .controls input[name="EcomOrderDeliveryZip"] {
       margin-bottom: 5px; }
-    /* line 637, ../sass/checkout.scss */
+    /* line 642, ../sass/checkout.scss */
     .form-horizontal .controls label {
       font-size: 12px; }
-      /* line 640, ../sass/checkout.scss */
+      /* line 645, ../sass/checkout.scss */
       .form-horizontal .controls label a {
         display: inline; }
-    /* line 646, ../sass/checkout.scss */
+    /* line 651, ../sass/checkout.scss */
     .form-horizontal.pay-and-shipp .control-section-content, .checkout-step .form-horizontal.billing-address .control-section-content, .checkout-step .form-horizontal.shipping-address .control-section-content {
       font-size: 12px; }
-    /* line 660, ../sass/checkout.scss */
+    /* line 665, ../sass/checkout.scss */
     .form-horizontal.pay-and-shipp .provider .input-large, .checkout-step .form-horizontal.billing-address .provider .input-large, .checkout-step .form-horizontal.shipping-address .provider .input-large {
       width: 70%; }
-    /* line 663, ../sass/checkout.scss */
+    /* line 668, ../sass/checkout.scss */
     .form-horizontal.pay-and-shipp .provider .input-mini, .checkout-step .form-horizontal.billing-address .provider .input-mini, .checkout-step .form-horizontal.shipping-address .provider .input-mini {
       width: 25%;
       float: right; }
-    /* line 671, ../sass/checkout.scss */
+    /* line 676, ../sass/checkout.scss */
     .form-horizontal .control-action-group .btn {
       width: 100% !important;
       clear: both;
       height: 35px !important;
       font: bold 14px/25px arial !important; } }
 
-/* line 684, ../sass/checkout.scss */
+/* line 689, ../sass/checkout.scss */
 .modal .form-horizontal .controls input[type="text"], .modal .form-horizontal .controls input[type="email"], .modal .form-horizontal .controls input[type="number"], .modal .form-horizontal .controls select {
   width: 420px;
   margin-right: 0; }
-/* line 688, ../sass/checkout.scss */
+/* line 693, ../sass/checkout.scss */
 .modal .form-horizontal .controls select {
   width: 430px; }
-/* line 692, ../sass/checkout.scss */
+/* line 697, ../sass/checkout.scss */
 .modal .form-horizontal .controls input[name="EcomOrderCustomerZip"],
 .modal .form-horizontal .controls input[name="EcomOrderDeliveryZip"] {
   width: 50px;
   margin-right: 10px; }
-/* line 697, ../sass/checkout.scss */
+/* line 702, ../sass/checkout.scss */
 .modal .form-horizontal .controls input[name="EcomOrderCustomerCity"],
 .modal .form-horizontal .controls input[name="EcomOrderDeliveryCity"] {
   width: 345px; }
 
-/* line 708, ../sass/checkout.scss */
+/* line 713, ../sass/checkout.scss */
 .checkout-step.checkout-headline-wrapper .btn {
   float: right; }
-/* line 712, ../sass/checkout.scss */
+/* line 717, ../sass/checkout.scss */
 .checkout-step.provider-content {
   border-top: 1px solid #DFE4E7; }
-  /* line 715, ../sass/checkout.scss */
+  /* line 720, ../sass/checkout.scss */
   .checkout-step.provider-content .pay-and-shipp, .checkout-step.provider-content .billing-address, .checkout-step.provider-content .shipping-address {
     padding: 5px 0 0 0 !important; }
-  /* line 718, ../sass/checkout.scss */
+  /* line 723, ../sass/checkout.scss */
   .checkout-step.provider-content .parcel-shops-loading {
     left: auto;
     overflow: hidden;
     right: 155px;
     top: -23px;
     width: 0; }
-/* line 731, ../sass/checkout.scss */
+/* line 736, ../sass/checkout.scss */
 .checkout-step .checkout-links {
   padding-top: 0; }
-/* line 735, ../sass/checkout.scss */
+/* line 740, ../sass/checkout.scss */
 .checkout-step .box-headline .btn {
   float: right;
   margin: -15px 0 0;
   position: relative;
   top: 50%; }
-/* line 742, ../sass/checkout.scss */
+/* line 747, ../sass/checkout.scss */
 .checkout-step .billing-address, .checkout-step .shipping-address {
   padding-top: 0px !important; }
-  /* line 746, ../sass/checkout.scss */
+  /* line 751, ../sass/checkout.scss */
   .checkout-step .billing-address label, .checkout-step .shipping-address label {
     width: auto !important; }
-  /* line 749, ../sass/checkout.scss */
+  /* line 754, ../sass/checkout.scss */
   .checkout-step .billing-address span, .checkout-step .shipping-address span {
     font-size: 12px;
     display: block; }
-/* line 754, ../sass/checkout.scss */
+/* line 759, ../sass/checkout.scss */
 .checkout-step .order-lines {
   padding-left: 0;
   padding-right: 0; }
-  /* line 761, ../sass/checkout.scss */
+  /* line 766, ../sass/checkout.scss */
   .checkout-step .order-lines .cart-cell-product {
     width: 70%;
     padding-left: 20px; }
-  /* line 765, ../sass/checkout.scss */
+  /* line 770, ../sass/checkout.scss */
   .checkout-step .order-lines .cart-cell-product-text {
     padding-left: 120px; }
-  /* line 768, ../sass/checkout.scss */
+  /* line 773, ../sass/checkout.scss */
   .checkout-step .order-lines .cart-cell-wrapper {
     padding-left: 130px; }
-  /* line 771, ../sass/checkout.scss */
+  /* line 776, ../sass/checkout.scss */
   .checkout-step .order-lines .control-action-group {
     margin-left: 20px;
     margin-top: 10px; }
-    /* line 775, ../sass/checkout.scss */
+    /* line 780, ../sass/checkout.scss */
     .checkout-step .order-lines .control-action-group .btn {
       width: auto;
       margin-right: 20px !important; }
-/* line 781, ../sass/checkout.scss */
+/* line 786, ../sass/checkout.scss */
 .checkout-step .pay-and-shipp, .checkout-step .billing-address, .checkout-step .shipping-address {
   padding-bottom: 0 !important; }
-  /* line 784, ../sass/checkout.scss */
+  /* line 789, ../sass/checkout.scss */
   .checkout-step .pay-and-shipp .controls, .checkout-step .billing-address .controls, .checkout-step .shipping-address .controls {
     margin-left: 0;
     float: left;
     width: 50%;
     overflow: auto; }
-    /* line 791, ../sass/checkout.scss */
+    /* line 796, ../sass/checkout.scss */
     .checkout-step .pay-and-shipp .controls .radio img, .checkout-step .billing-address .controls .radio img, .checkout-step .shipping-address .controls .radio img {
       max-height: 24px;
       vertical-align: middle; }
-/* line 798, ../sass/checkout.scss */
+/* line 803, ../sass/checkout.scss */
 .checkout-step .actions-group {
   margin-top: 15px;
   overflow: auto; }
-  /* line 802, ../sass/checkout.scss */
+  /* line 807, ../sass/checkout.scss */
   .checkout-step .actions-group .btn {
     float: right; }
-    /* line 805, ../sass/checkout.scss */
+    /* line 810, ../sass/checkout.scss */
     .checkout-step .actions-group .btn.btn-link {
       text-decoration: underline;
       padding-left: 0;
       padding-right: 0; }
-      /* line 810, ../sass/checkout.scss */
+      /* line 815, ../sass/checkout.scss */
       .checkout-step .actions-group .btn.btn-link:hover {
         text-decoration: none; }
-      /* line 813, ../sass/checkout.scss */
+      /* line 818, ../sass/checkout.scss */
       .checkout-step .actions-group .btn.btn-link .icon {
         vertical-align: baseline;
         margin-right: 3px; }
-/* line 822, ../sass/checkout.scss */
+/* line 827, ../sass/checkout.scss */
 .checkout-step .product-list-item-wrapper .product-addtocart .btn {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 @media (max-width: 979px) {
-  /* line 831, ../sass/checkout.scss */
+  /* line 836, ../sass/checkout.scss */
   .checkout-step .checkout-links {
     padding-left: 10px; }
-  /* line 836, ../sass/checkout.scss */
+  /* line 841, ../sass/checkout.scss */
   .checkout-step .pay-and-shipp .controls, .checkout-step .billing-address .controls, .checkout-step .shipping-address .controls {
     float: none;
     width: auto; }
-  /* line 843, ../sass/checkout.scss */
+  /* line 848, ../sass/checkout.scss */
   .checkout-step .order-lines .cart-cell-wrapper {
     padding-left: 20px; }
-  /* line 846, ../sass/checkout.scss */
+  /* line 851, ../sass/checkout.scss */
   .checkout-step .order-lines .cart-cell-fee-value {
     padding-right: 20px; }
-  /* line 849, ../sass/checkout.scss */
+  /* line 854, ../sass/checkout.scss */
   .checkout-step .order-lines .cart-cell-product-text {
     padding-left: 60px; }
-  /* line 852, ../sass/checkout.scss */
+  /* line 857, ../sass/checkout.scss */
   .checkout-step .order-lines .control-action-group {
     margin-top: 0; }
-    /* line 855, ../sass/checkout.scss */
+    /* line 860, ../sass/checkout.scss */
     .checkout-step .order-lines .control-action-group .btn {
       float: right; } }
 @media (max-width: 479px) {
-  /* line 863, ../sass/checkout.scss */
+  /* line 868, ../sass/checkout.scss */
   .checkout-step .order-lines .control-action-group {
     background: none;
     margin-top: 0;
     margin-left: 0; }
-    /* line 868, ../sass/checkout.scss */
+    /* line 873, ../sass/checkout.scss */
     .checkout-step .order-lines .control-action-group .controls {
       margin-left: 20px;
       margin-right: 20px; }
-    /* line 872, ../sass/checkout.scss */
+    /* line 877, ../sass/checkout.scss */
     .checkout-step .order-lines .control-action-group .btn {
       float: none;
       margin-right: 0 !important; } }
 
-/* line 881, ../sass/checkout.scss */
+/* line 886, ../sass/checkout.scss */
 .checkout-receipt {
   font-size: 14px; }
-  /* line 884, ../sass/checkout.scss */
+  /* line 889, ../sass/checkout.scss */
   .checkout-receipt .receipt-content {
     margin-bottom: 10px; }
-    /* line 887, ../sass/checkout.scss */
+    /* line 892, ../sass/checkout.scss */
     .checkout-receipt .receipt-content h2 {
       color: #4B4F5B;
       font-size: 22px;
       margin: 5px 0 10px; }
-  /* line 896, ../sass/checkout.scss */
+  /* line 901, ../sass/checkout.scss */
   .checkout-receipt .receipt-actions {
     margin-bottom: 10px; }
-    /* line 899, ../sass/checkout.scss */
+    /* line 904, ../sass/checkout.scss */
     .checkout-receipt .receipt-actions .icon {
       margin-right: 5px; }
 
 /* Custom dropdown list */
-/* line 906, ../sass/checkout.scss */
+/* line 911, ../sass/checkout.scss */
 .customDropdown {
   position: relative;
   background-color: #FFFFFF;
@@ -736,7 +742,7 @@
   margin: 0;
   padding: 2px 5px 0;
   border-radius: 3px; }
-  /* line 921, ../sass/checkout.scss */
+  /* line 926, ../sass/checkout.scss */
   .customDropdown span {
     padding: 0 20px 0 0;
     font: normal 14px/28px arial;
@@ -744,11 +750,11 @@
     cursor: pointer;
     background: url(../images/tr.png) 100% 3px no-repeat;
     white-space: nowrap; }
-  /* line 931, ../sass/checkout.scss */
+  /* line 936, ../sass/checkout.scss */
   .customDropdown img {
     vertical-align: middle;
     width: 30px; }
-  /* line 935, ../sass/checkout.scss */
+  /* line 940, ../sass/checkout.scss */
   .customDropdown ul {
     display: none;
     position: absolute;
@@ -762,24 +768,27 @@
     margin: 0;
     border-radius: 0 0 3px 3px;
     padding-top: 3px; }
-    /* line 950, ../sass/checkout.scss */
+    /* line 955, ../sass/checkout.scss */
     .customDropdown ul li {
       padding: 2px 5px 1px;
       cursor: pointer;
       display: block; }
-      /* line 956, ../sass/checkout.scss */
+      /* line 961, ../sass/checkout.scss */
       .customDropdown ul li:hover {
         background: #eee; }
-      /* line 959, ../sass/checkout.scss */
+      /* line 964, ../sass/checkout.scss */
       .customDropdown ul li i {
         font-style: normal; }
 
-/* line 968, ../sass/checkout.scss */
+/* line 971, ../sass/checkout.scss */
 input.disabled_class {
   border: 1px solid #ccc;
   color: #ccc; }
 
-/* line 969, ../sass/checkout.scss */
+/* line 972, ../sass/checkout.scss */
 .content-wrapper {
   padding-top: 10px;
-  z-index: auto; }
+  z-index: 2;
+  position: relative;
+  margin-top: -5px;
+  background: #fff; }

@@ -15,6 +15,11 @@
 
 @import "__vars";
 
+body > footer {
+	margin: -120px 10px 0;
+	z-index: 3;
+	position: relative;
+}
 
 .checkout-stepmap {
   margin-left: 30px;
@@ -963,10 +968,11 @@
   }
 }
 
-
-// [?]
 input.disabled_class {border:1px solid #ccc; color:#ccc;}
 .content-wrapper {
-  padding-top: 10px;
-  z-index: auto;
+  	padding-top: 10px;
+	z-index: 2;
+	position: relative;
+	margin-top: -5px;
+	background: #fff;
 }
