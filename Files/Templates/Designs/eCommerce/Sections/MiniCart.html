@@ -7,109 +7,109 @@
 <div class="span4 dropdown minicart-wrapper not-empty">
 <!--@EndIf(Ecom:Order.IsEmpty)-->
 
-  <div class="minicart-content">
-    <div class="minicart-icon">
-      <div class="cart-big-normal"><i class="icon-shopping-cart"></i></div>
-    </div>
-    <div class="minicart-count">
-      <!--@If(Ecom:Order.IsEmpty='true')-->
-        0 <!--@Translate(productMultiple, "products")-->
-      <!--@EndIf-->
-      <!--@If Not Defined(Ecom:Order.IsEmpty)-->
-        <!--@Ecom:Order.OrderLines.TotalProductQuantity-->
-        <!--@If(Ecom:Order.OrderLines.TotalProductQuantity='1')-->
-          <!--@Translate(productSingle, "product")-->:
-        <!--@EndIf-->
-        <!--@If(Ecom:Order.OrderLines.TotalProductQuantity<>'1')-->
-          <!--@Translate(productMultiple, "products")-->:
-        <!--@EndIf-->
-        <!--@Ecom:Order.Price.PriceWithVATFormatted-->
+	<div class="minicart-content">
+		<div class="minicart-icon">
+			<div class="cart-big-normal"><i class="icon-shopping-cart"></i></div>
+		</div>
+		<div class="minicart-count">
+			<!--@If(Ecom:Order.IsEmpty='true')-->
+				0 <!--@Translate(productMultiple, "products")-->
+			<!--@EndIf-->
+			<!--@If Not Defined(Ecom:Order.IsEmpty)-->
+				<!--@Ecom:Order.OrderLines.TotalProductQuantity-->
+				<!--@If(Ecom:Order.OrderLines.TotalProductQuantity='1')-->
+					<!--@Translate(productSingle, "product")-->:
+				<!--@EndIf-->
+				<!--@If(Ecom:Order.OrderLines.TotalProductQuantity<>'1')-->
+					<!--@Translate(productMultiple, "products")-->:
+				<!--@EndIf-->
+				<!--@Ecom:Order.Price.PriceWithVATFormatted-->
 		<div class="minicart-view">
 			<a class="dropdown-toggle" id="dLabel" role="button" data-toggle="dropdown" data-target=".minicart-popup" href="/Default.aspx?ID=<!--@Item.Area.Show_Cart_Page_ID-->">
 				<!--@Translate(showcart, "View cart")-->
 			</a>
 		</div>
-      <!--@EndIf(Ecom:Order.IsEmpty)-->
-    </div>
-  </div>
+			<!--@EndIf(Ecom:Order.IsEmpty)-->
+		</div>
+	</div>
 
-  <div class="minicart-popup dropdown-menu" role="menu" aria-labelledby="dLabel">
-    <div class="minicart-header">
-      <div class="product-text">
-        <!--@Translate(multipleProductsWithCapital, "Products")-->
-      </div>
-      <div class="quantity-text">
-        <!--@Translate(quantityAbbreviatedWithCapital, "Qty")-->
-      </div>
-      <div class="price-text">
-        <!--@Translate(priceWithCapital, "Price")-->
-      </div>
-    </div>
+	<div class="minicart-popup dropdown-menu" role="menu" aria-labelledby="dLabel">
+		<div class="minicart-header">
+			<div class="product-text">
+				<!--@Translate(multipleProductsWithCapital, "Products")-->
+			</div>
+			<div class="quantity-text">
+				<!--@Translate(quantityAbbreviatedWithCapital, "Qty")-->
+			</div>
+			<div class="price-text">
+				<!--@Translate(priceWithCapital, "Price")-->
+			</div>
+		</div>
 
-    <!--@LoopStart(OrderLines)-->
-      <div class="product-line">
-        <div class="product-text">
+		<!--@LoopStart(OrderLines)-->
+			<div class="product-line">
+				<div class="product-text">
 
-          <!--@If Not Defined(Ecom:Order:OrderLine.IsProduct)-->
-            <!--@Translate(discount, 'Discount')--> <!--@Ecom:Order:OrderLine.ProductName-->
-          <!--@EndIf(Ecom:Order:OrderLine.IsProduct)-->
+					<!--@If Not Defined(Ecom:Order:OrderLine.IsProduct)-->
+						<!--@Translate(discount, 'Discount')--> <!--@Ecom:Order:OrderLine.ProductName-->
+					<!--@EndIf(Ecom:Order:OrderLine.IsProduct)-->
 
-          <!--@If Defined(Ecom:Order:OrderLine.IsProduct)-->
-            <a href="<!--@Ecom:Order:OrderLine.ProductLink.Fixed-->"><!--@Ecom:Order:OrderLine.ProductName--></a>
-          <!--@EndIf(Ecom:Order:OrderLine.IsProduct)-->
+					<!--@If Defined(Ecom:Order:OrderLine.IsProduct)-->
+						<a href="<!--@Ecom:Order:OrderLine.ProductLink.Fixed-->"><!--@Ecom:Order:OrderLine.ProductName--></a>
+					<!--@EndIf(Ecom:Order:OrderLine.IsProduct)-->
 
-        </div>
-        <div class="quantity-text">
-          <!--@Ecom:Order:OrderLine.Quantity-->
-        </div>
-        <div class="price-text">
-          <!--@Ecom:Order:OrderLine.Price.PriceWithVATFormatted-->
-        </div>
-      </div>
-      <div class="product-line-spacer"></div>
-    <!--@LoopEnd(OrderLines)-->
+				</div>
+				<div class="quantity-text">
+					<!--@Ecom:Order:OrderLine.Quantity-->
+				</div>
+				<div class="price-text">
+					<!--@Ecom:Order:OrderLine.Price.PriceWithVATFormatted-->
+				</div>
+			</div>
+			<div class="product-line-spacer"></div>
+		<!--@LoopEnd(OrderLines)-->
 
-    <div class="minicart-fees">
-      <div class="product-line">
-        <div class="total-price-text">
-          <!--@Translate(paymentfee, "Payment fee")-->
-        </div>
-        <div class="total-price-value">
-          <!--@Ecom:Order.PaymentFee.PriceWithVATFormatted-->
-        </div>
-      </div>
-      <div class="product-line">
-        <div class="total-price-text">
-          <!--@Translate(shippingfee, "Shipping fee")-->
-        </div>
-        <div class="total-price-value">
-          <!--@Ecom:Order.ShippingFee.PriceWithVATFormatted-->
-        </div>
-      </div>
-    </div>
-    <div class="product-line-spacer"></div>
+		<div class="minicart-fees">
+			<div class="product-line">
+				<div class="total-price-text">
+					<!--@Translate(paymentfee, "Payment fee")-->
+				</div>
+				<div class="total-price-value">
+					<!--@Ecom:Order.PaymentFee.PriceWithVATFormatted-->
+				</div>
+			</div>
+			<div class="product-line">
+				<div class="total-price-text">
+					<!--@Translate(shippingfee, "Shipping fee")-->
+				</div>
+				<div class="total-price-value">
+					<!--@Ecom:Order.ShippingFee.PriceWithVATFormatted-->
+				</div>
+			</div>
+		</div>
+		<div class="product-line-spacer"></div>
 
-    <div class="minicart-footer">
-      <div class="total-price-text">
-        <!--@Translate(totalPrice, "Total price")--> (<!--@Translate(withVAT, "incl. VAT")-->)
-      </div>
-      <div class="total-price-value">
-        <!--@Ecom:Order.Price.PriceWithVATFormatted-->
-      </div>
-    </div>
+		<div class="minicart-footer">
+			<div class="total-price-text">
+				<!--@Translate(totalPrice, "Total price")--> (<!--@Translate(withVAT, "incl. VAT")-->)
+			</div>
+			<div class="total-price-value">
+				<!--@Ecom:Order.Price.PriceWithVATFormatted-->
+			</div>
+		</div>
 
-    <div class="minicart-buttons">
-      <div class="left-button-container">
-        <a href="/Default.aspx?ID=<!--@Item.Area.Show_Cart_Page_ID-->" class="dw-button dw-button-gray dw-button-small">
-          <!--@Translate(showcart, "View cart")-->
-        </a>
-      </div>
-      <div class="right-button-container">
-        <a href="/Default.aspx?ID=<!--@Item.Area.Checkout_Page_ID-->" class="dw-button dw-button-green dw-button-small">
-          <!--@Translate(checkout, "Checkout")-->
-          <div class="icon-double-angle-right arr-forward-small-white"></div>
-        </a>
-      </div>
-    </div>
-  </div>
+		<div class="minicart-buttons">
+			<div class="left-button-container">
+				<a href="/Default.aspx?ID=<!--@Item.Area.Show_Cart_Page_ID-->" class="dw-button dw-button-gray dw-button-small">
+					<!--@Translate(showcart, "View cart")-->
+				</a>
+			</div>
+			<div class="right-button-container">
+				<a href="/Default.aspx?ID=<!--@Item.Area.Checkout_Page_ID-->" class="dw-button dw-button-green dw-button-small">
+					<!--@Translate(checkout, "Checkout")-->
+					<div class="icon-double-angle-right arr-forward-small-white"></div>
+				</a>
+			</div>
+		</div>
+	</div>
 </div>

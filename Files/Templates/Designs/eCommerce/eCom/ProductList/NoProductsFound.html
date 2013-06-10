@@ -1,14 +1,14 @@
 <div id="empty-list">
-    <!--@If Defined(Server:Request.ecomquery)-->
-    <!--@Translate(YourSearchFor, "Your search for")--><strong>&nbsp;"<!--@Server:Request.ecomquery-->"&nbsp;</strong><!--@Translate(DidnReturnProducts, "didn't return any products")-->.
-    <!--@EndIf(Server:Request.ecomquery)-->
+		<!--@If Defined(Server:Request.ecomquery)-->
+		<!--@Translate(YourSearchFor, "Your search for")--><strong>&nbsp;"<!--@Server:Request.ecomquery-->"&nbsp;</strong><!--@Translate(DidnReturnProducts, "didn't return any products")-->.
+		<!--@EndIf(Server:Request.ecomquery)-->
 
-    <!--@If Not Defined(Server:Request.ecomquery)-->
-    <!--@Translate(NoProductsFound, "No products found that matches your search criteria.")-->
-    <!--@EndIf(Server:Request.ecomquery)-->
+		<!--@If Not Defined(Server:Request.ecomquery)-->
+		<!--@Translate(NoProductsFound, "No products found that matches your search criteria.")-->
+		<!--@EndIf(Server:Request.ecomquery)-->
 </div>
 <!--@If(Ecom:Search.HasSpellingCorrections='True')-->
 <div id="spelling-correction">
-    <span><!--@Translate(DidYouMean, "Did you mean")-->&nbsp;</span><a href="/Default.aspx?ID=<!--@Global:Page.ID-->&eComQuery=<!--@Ecom:Search.BestSpellingCorrection.CorrectedPhrase-->"><span><!--@LoopStart(Ecom:Search.BestSpellingCorrection.Keywords)--><!--@If Defined(Ecom:Search.BestSpellingCorrection.Keyword.IsCorrected)--><strong><!--@Ecom:Search.BestSpellingCorrection.Keyword.Text--></strong><!--@EndIf(Ecom:Search.BestSpellingCorrection.Keyword.IsCorrected)--><!--@If Not Defined(Ecom:Search.BestSpellingCorrection.Keyword.IsCorrected)--><!--@Ecom:Search.BestSpellingCorrection.Keyword.Text--><!--@EndIf(Ecom:Search.BestSpellingCorrection.Keyword.IsCorrected)--><!--@If Not Defined(Ecom:Search.BestSpellingCorrection.Keyword.IsLast)-->&nbsp;<!--@EndIf(Ecom:Search.BestSpellingCorrection.Keyword.IsLast)--><!--@LoopEnd(Ecom:Search.BestSpellingCorrection.Keywords)--></span></a><span>&nbsp;?</span>
+		<span><!--@Translate(DidYouMean, "Did you mean")-->&nbsp;</span><a href="/Default.aspx?ID=<!--@Global:Page.ID-->&eComQuery=<!--@Ecom:Search.BestSpellingCorrection.CorrectedPhrase-->"><span><!--@LoopStart(Ecom:Search.BestSpellingCorrection.Keywords)--><!--@If Defined(Ecom:Search.BestSpellingCorrection.Keyword.IsCorrected)--><strong><!--@Ecom:Search.BestSpellingCorrection.Keyword.Text--></strong><!--@EndIf(Ecom:Search.BestSpellingCorrection.Keyword.IsCorrected)--><!--@If Not Defined(Ecom:Search.BestSpellingCorrection.Keyword.IsCorrected)--><!--@Ecom:Search.BestSpellingCorrection.Keyword.Text--><!--@EndIf(Ecom:Search.BestSpellingCorrection.Keyword.IsCorrected)--><!--@If Not Defined(Ecom:Search.BestSpellingCorrection.Keyword.IsLast)-->&nbsp;<!--@EndIf(Ecom:Search.BestSpellingCorrection.Keyword.IsLast)--><!--@LoopEnd(Ecom:Search.BestSpellingCorrection.Keywords)--></span></a><span>&nbsp;?</span>
 </div>
 <!--@EndIf-->

@@ -4,57 +4,57 @@
  * Copyright (c) 2013 Dynamicweb
  *
  * Licensed under the MIT license:
- *   http://www.opensource.org/licenses/mit-license.php
+ *	 http://www.opensource.org/licenses/mit-license.php
  *
  * Project home:
- *   https://github.com/dynamicweb/solutionset
+ *	 https://github.com/dynamicweb/solutionset
  *
  * Version: 0.9.0
  *
  */
 
 .footer-wrapper {
-  height: 120px;
-  background: $footerBackground;
+	height: 120px;
+	background: $footerBackground;
 
-  .footer-section {
-    padding: 10px;
-    height: 100px;
-    color: #fff;
+	.footer-section {
+		padding: 10px;
+		height: 100px;
+		color: #fff;
 
-    h1 {
-      color: #fff;
-      font: bold 16px/24px arial;
-    }
-    a {
-      color: #fff;
+		h1 {
+			color: #fff;
+			font: bold 16px/24px arial;
+		}
+		a {
+			color: #fff;
 
-      &:hover {
-        text-decoration: none;
-      }
-    }
-    .vcard {
-      .fn.n {
-        display: none;
-      }
-    }
+			&:hover {
+				text-decoration: none;
+			}
+		}
+		.vcard {
+			.fn.n {
+				display: none;
+			}
+		}
 
-    &.payment-icons {
-      ul {
-        margin: 0;
-        overflow: auto;
-        padding: 0;
+		&.payment-icons {
+			ul {
+				margin: 0;
+				overflow: auto;
+				padding: 0;
 
-        li {
-          float: left;
-          margin: 5px 10px 5px 0;
-          list-style-type: none;
+				li {
+					float: left;
+					margin: 5px 10px 5px 0;
+					list-style-type: none;
 
-          img {
-          	display: block;
-          }
-        }
-      }
-    }
-  }
+					img {
+						display: block;
+					}
+				}
+			}
+		}
+	}
 }

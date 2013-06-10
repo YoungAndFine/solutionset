@@ -1,37 +1,37 @@
 <!-- "Suggested queries" template -->
 <div id="product-suggestions" class="dw-search-suggestions product-suggestions-box" style="display: none">
-  <a class="dw-suggestion-item"></a>
-  <div class="dw-no-suggestions">
-    <!--@Translate(Page:ProductSearch.NoSuggestions, "No suggestions")-->
-  </div>
+	<a class="dw-suggestion-item"></a>
+	<div class="dw-no-suggestions">
+		<!--@Translate(Page:ProductSearch.NoSuggestions, "No suggestions")-->
+	</div>
 </div>
 
 <!-- "Instant search results" template -->
 <div id="product-instant-search" class="dw-search-suggestions product-suggestions-box" style="display: none; position: absolute;">
-  <div class="dw-search-result">
-    <div class="dw-search-result-prodid" style="display:none;"></div>
-    <div class="dw-search-result-item">
-      <div class="dw-search-result-picture">
-        <a class="dw-search-result-url"><img class="dw-search-result-img" alt="" src="" /></a>
-      </div>
-      <div class="dw-search-result-productname">
-        <a class="dw-search-result-productlink"><span class="dw-search-result-name"></span></a>
-      </div>
-      <div class="dw-search-number-wrapper">
-        <!--@Translate(productnumber, "Product no.")-->
-        <div class="dw-search-result-number"></div>
-      </div>
-      <div class="dw-search-result-readmore">
-        <a class="dw-search-result-detailslink dw-button-green dw-button-small">
-          <span class="sprite arr-forward-small-white"></span>
-        </a>
-      </div>
-          <!--@If Defined(Item.Area.Show_Price_In_InstantSearch)-->
+	<div class="dw-search-result">
+		<div class="dw-search-result-prodid" style="display:none;"></div>
+		<div class="dw-search-result-item">
+			<div class="dw-search-result-picture">
+				<a class="dw-search-result-url"><img class="dw-search-result-img" alt="" src="" /></a>
+			</div>
+			<div class="dw-search-result-productname">
+				<a class="dw-search-result-productlink"><span class="dw-search-result-name"></span></a>
+			</div>
+			<div class="dw-search-number-wrapper">
+				<!--@Translate(productnumber, "Product no.")-->
+				<div class="dw-search-result-number"></div>
+			</div>
+			<div class="dw-search-result-readmore">
+				<a class="dw-search-result-detailslink dw-button-green dw-button-small">
+					<span class="sprite arr-forward-small-white"></span>
+				</a>
+			</div>
+					<!--@If Defined(Item.Area.Show_Price_In_InstantSearch)-->
 			<div class="dw-search-result-price"></div>
-		  <!--@EndIf(Item.Area.Show_Price_In_InstantSearch)-->
-    </div>
-  </div>
-  <div class="dw-no-results">
-    <!--@Translate(Page:ProductSearch.NoSuggestions, "No suggestions")-->
-  </div>
+			<!--@EndIf(Item.Area.Show_Price_In_InstantSearch)-->
+		</div>
+	</div>
+	<div class="dw-no-results">
+		<!--@Translate(Page:ProductSearch.NoSuggestions, "No suggestions")-->
+	</div>
 </div>

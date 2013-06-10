@@ -1,44 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Main master</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
+	<head>
+		<meta charset="utf-8">
+		<title>Main master</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
 
-    <link href="assets/vendor/bootstrap/bootstrap.css" rel="stylesheet">
-    <link href="assets/vendor/bootstrap/bootstrap-responsive.min.css" rel="stylesheet">
-    <link href="assets/vendor/smoothness/jquery-ui-1.8.23.custom.css" rel="stylesheet">
-    <link href="assets/stylesheets/screen.css" rel="stylesheet">
+		<link href="assets/vendor/bootstrap/bootstrap.css" rel="stylesheet">
+		<link href="assets/vendor/bootstrap/bootstrap-responsive.min.css" rel="stylesheet">
+		<link href="assets/vendor/smoothness/jquery-ui-1.8.23.custom.css" rel="stylesheet">
+		<link href="assets/stylesheets/screen.css" rel="stylesheet">
 		<!--@Snippet(StyleSheet)-->
 		<!--@If Defined(Item.Area.Custom_CSS_Url)-->
-    <link href="<!--@Item.Area.Custom_CSS_Url-->" rel="stylesheet">
+		<link href="<!--@Item.Area.Custom_CSS_Url-->" rel="stylesheet">
 		<!--@EndIf(Item.Area.Custom_CSS_Url)-->
 	
 	<link rel="icon" type="image/png" href="assets/images/favicon.ico">
 	
-    <script src="assets/vendor/require-jquery.js"></script>
+		<script src="assets/vendor/require-jquery.js"></script>
 		<script>
 		// @TODO: put this into a tag @Template:BaseUrl
 		var designName = 'eCommerce';
 		var designBaseUrl = '/Files/Templates/Designs/'+designName+'/';
 		</script>
-    <script src="assets/vendor/dynamicweb.start.js"></script>
+		<script src="assets/vendor/dynamicweb.start.js"></script>
 		<!--@Snippet(JavaScriptHead)-->
-  </head>
-  <body class="menu-bottom searchbar-bottom"
+	</head>
+	<body class="menu-bottom searchbar-bottom"
 				data-areaid="<!--@Global:Area.ID-->"
 				data-pageid="<!--@Global:Page.ID-->"
 				data-product-page="<!--@If(Global:Area.ID==1)-->48<!--@EndIf--><!--@If(Global:Area.ID==17)-->324<!--@EndIf--><!--@If(Global:Area.ID==22)-->612<!--@EndIf-->"
 				data-product-paragraph="<!--@If(Global:Area.ID==1)-->34<!--@EndIf--><!--@If(Global:Area.ID==17)-->469<!--@EndIf--><!--@If(Global:Area.ID==22)-->1649<!--@EndIf-->" >
 
-    <!--@Include(Sections/NavigationTop.html)-->
+		<!--@Include(Sections/NavigationTop.html)-->
 
-    <section class="page-wrapper">
-      <header class="header-wrapper">
-        <div class="container">
-          <div class="row">
+		<section class="page-wrapper">
+			<header class="header-wrapper">
+				<div class="container">
+					<div class="row">
 						<div class="span8 logo-wrapper">
 							<div class="row">
 								<div class="span4 logo">
@@ -51,41 +51,41 @@
 								<div class="span4 payoff dwcontent" id="payoffHeadline" title="Pay-off headline"></div>
 							</div>
 						</div>
-            <!--@Include(Sections/MiniCart.html)-->
-          </div>
-        </div>
-      </header>
+						<!--@Include(Sections/MiniCart.html)-->
+					</div>
+				</div>
+			</header>
 
-      <!--@Include(Sections/NavigationMain.html)-->
-      <!--@Include(Sections/SearchBar.html)-->
+			<!--@Include(Sections/NavigationMain.html)-->
+			<!--@Include(Sections/SearchBar.html)-->
 
-      <!--@If Defined(DwNavigation(NavBreadcrumb))-->
-      <section class="container breadcrumb-wrapper">
-        <span class="breadcrumb-hint hidden-phone"><!--@Translate(YouAreHere, "You are here")-->: </span>
-        <ul class="breadcrumb">
-          <li id="NavBreadcrumb" class="dwnavigation" data-settings="template:Breadcrumbs.xslt;expandmode:pathonly;"></li>
-          <!--@If Defined(Server:Request.productid)-->
-          <li class="active"><!--@Title--></li>
-          <!--@EndIf(Server:Request.productid)-->
-        </ul>
-      </section>
-      <!--@EndIf(DwNavigation(NavBreadcrumb))-->
+			<!--@If Defined(DwNavigation(NavBreadcrumb))-->
+			<section class="container breadcrumb-wrapper">
+				<span class="breadcrumb-hint hidden-phone"><!--@Translate(YouAreHere, "You are here")-->: </span>
+				<ul class="breadcrumb">
+					<li id="NavBreadcrumb" class="dwnavigation" data-settings="template:Breadcrumbs.xslt;expandmode:pathonly;"></li>
+					<!--@If Defined(Server:Request.productid)-->
+					<li class="active"><!--@Title--></li>
+					<!--@EndIf(Server:Request.productid)-->
+				</ul>
+			</section>
+			<!--@EndIf(DwNavigation(NavBreadcrumb))-->
 
 			<!--@ContentPlaceholder-->
-    </section>
+		</section>
 
-    <footer>
-      <section class="container footer-wrapper">
-        <div class="row" id="footerSections" title="Footer sections">
+		<footer>
+			<section class="container footer-wrapper">
+				<div class="row" id="footerSections" title="Footer sections">
 		<!--@If Defined(Item.Area.Footer_Content_Page_ID)-->
 			<!--@Global:Page.Content(<!--@Item.Area.Footer_Content_Page_ID-->)-->
 		<!--@EndIf(Item.Area.Footer_Content_Page_ID)-->
 		</div>
-      </section>
-    </footer>
+			</section>
+		</footer>
 
-    <!--@Include(Sections/Login.html)-->
+		<!--@Include(Sections/Login.html)-->
 		<!--@Include(Sections/GoogleAnalytics.html)-->
 		<!--@Snippet(JavaScriptBottom)-->
-  </body>
+	</body>
 </html>

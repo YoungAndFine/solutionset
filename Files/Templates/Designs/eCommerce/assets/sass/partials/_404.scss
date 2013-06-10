@@ -4,10 +4,10 @@
  * Copyright (c) 2013 Dynamicweb
  *
  * Licensed under the MIT license:
- *   http://www.opensource.org/licenses/mit-license.php
+ *	 http://www.opensource.org/licenses/mit-license.php
  *
  * Project home:
- *   https://github.com/dynamicweb/solutionset
+ *	 https://github.com/dynamicweb/solutionset
  *
  * Version: 0.9.0
  *
@@ -15,60 +15,60 @@
 
 // 404 page layout styles
 .page_404_wr {
-  .span12 {
-    width:auto;
+	.span12 {
+		width:auto;
 	}
 	.container {
-    width:auto;
+		width:auto;
 	}
 	.page404_text {
-    font-size: 16px;
-    line-height: 1.6;
-    padding: 10px 0;
-    text-align: center;
+		font-size: 16px;
+		line-height: 1.6;
+		padding: 10px 0;
+		text-align: center;
 
 		@media (max-width: 450px) {
-      font-size: 12px;
-    }
+			font-size: 12px;
+		}
 	}
 	.searchbar-wrapper .search-box {
-    .sprite.search {
-      background: url("../images/i_search.png") 0 0 no-repeat !important;
-  		color:#FFF;
-  	}
-  	input[type="text"] {
-      @media (max-width: 370px) {
-        width:150px;
-      }
-    }
-  }
-  .dw-search-suggestions {
-    @media (max-width: 351px) {
-      margin-left: 11%;
-      width: 58%;
+		.sprite.search {
+			background: url("../images/i_search.png") 0 0 no-repeat !important;
+			color:#FFF;
+		}
+		input[type="text"] {
+			@media (max-width: 370px) {
+				width:150px;
+			}
+		}
+	}
+	.dw-search-suggestions {
+		@media (max-width: 351px) {
+			margin-left: 11%;
+			width: 58%;
 
-      .dw-search-result-item {
-        .dw-search-result-number{
-          font-size:10px;
-        }
-        .dw-search-result-productname {
-          width:auto;
-        }
-      }
-    }
-  }
+			.dw-search-result-item {
+				.dw-search-result-number{
+					font-size:10px;
+				}
+				.dw-search-result-productname {
+					width:auto;
+				}
+			}
+		}
+	}
 
-  @media (min-width: 352px) and (max-width:500px){
-    margin-left: 8%;
-    width: 67%;
+	@media (min-width: 352px) and (max-width:500px){
+		margin-left: 8%;
+		width: 67%;
 
-    .dw-search-result-item {
-      .dw-search-result-productname {
-        width:auto;
-      }
-  	  .dw-search-result-number{
-        font-size:10px;
-  	  }
-    }
-  }
+		.dw-search-result-item {
+			.dw-search-result-productname {
+				width:auto;
+			}
+			.dw-search-result-number{
+				font-size:10px;
+			}
+		}
+	}
 }

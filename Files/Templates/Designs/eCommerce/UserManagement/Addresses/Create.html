@@ -1,72 +1,72 @@
 <h2>
 <!--@If Defined(UserManagement:User.ManageAddresses.AddAddress)-->
-    <!--@Translate(addAddress, "Add address")-->
+		<!--@Translate(addAddress, "Add address")-->
 <!--@EndIf(UserManagement:User.ManageAddresses.AddAddress)-->
 <!--@If Defined(UserManagement:User.ManageAddresses.UpdateAddress)-->
-    <!--@Translate(updateAddress, "Update address")-->
+		<!--@Translate(updateAddress, "Update address")-->
 <!--@EndIf(UserManagement:User.ManageAddresses.UpdateAddress)-->
 </h2>
 
 
 <div class="user_edit_fields">
 
-    <!--@UserManagement:User.ManageAddresses.FormStart-->
+		<!--@UserManagement:User.ManageAddresses.FormStart-->
 
-    <div class="row-fluid">
-        <div class="span4"><!--@Translate(Description, "Description")-->:</div>
-        <div class="span8"><!--@UserManagement:User.UserAddress.Description--></div>
-    </div>
+		<div class="row-fluid">
+				<div class="span4"><!--@Translate(Description, "Description")-->:</div>
+				<div class="span8"><!--@UserManagement:User.UserAddress.Description--></div>
+		</div>
 
-    <div class="row-fluid">
-        <div class="span4"><!--@Translate(Address, "Address")-->:</div>
-        <div class="span8"><!--@UserManagement:User.UserAddress.Address--></div>
-    </div>
+		<div class="row-fluid">
+				<div class="span4"><!--@Translate(Address, "Address")-->:</div>
+				<div class="span8"><!--@UserManagement:User.UserAddress.Address--></div>
+		</div>
 
-    <div class="row-fluid">
-        <div class="span4"><!--@Translate(Address2, "Address2")-->:</div>
-        <div class="span8"><!--@UserManagement:User.UserAddress.Address2--></div>
-    </div>
+		<div class="row-fluid">
+				<div class="span4"><!--@Translate(Address2, "Address2")-->:</div>
+				<div class="span8"><!--@UserManagement:User.UserAddress.Address2--></div>
+		</div>
 
-    <div class="row-fluid">
-        <div class="span4"><!--@Translate(ZipCode, "Zip code")-->:</div>
-        <div class="span8"><!--@UserManagement:User.UserAddress.Zip--></div>
-    </div>
+		<div class="row-fluid">
+				<div class="span4"><!--@Translate(ZipCode, "Zip code")-->:</div>
+				<div class="span8"><!--@UserManagement:User.UserAddress.Zip--></div>
+		</div>
 
-    <div class="row-fluid">
-        <div class="span4"><!--@Translate(City, "City")-->:</div>
-        <div class="span8"><!--@UserManagement:User.UserAddress.City--></div>
-    </div>
+		<div class="row-fluid">
+				<div class="span4"><!--@Translate(City, "City")-->:</div>
+				<div class="span8"><!--@UserManagement:User.UserAddress.City--></div>
+		</div>
 
-    <div class="row-fluid">
-        <div class="span4"><!--@Translate(State, "State")-->:</div>
-        <div class="span8"><!--@UserManagement:User.UserAddress.State--></div>
-    </div>
+		<div class="row-fluid">
+				<div class="span4"><!--@Translate(State, "State")-->:</div>
+				<div class="span8"><!--@UserManagement:User.UserAddress.State--></div>
+		</div>
 
-    <div class="row-fluid">
-        <div class="span4"><!--@Translate(Country, "Country")-->:</div>
-        <div class="span8"><!--@UserManagement:User.UserAddress.Country--></div>
-    </div>
+		<div class="row-fluid">
+				<div class="span4"><!--@Translate(Country, "Country")-->:</div>
+				<div class="span8"><!--@UserManagement:User.UserAddress.Country--></div>
+		</div>
 
-    <div class="row-fluid">
-        <div class="span4"><!--@Translate(Default, "Default")-->:</div>
-        <div class="span8"><!--@UserManagement:User.UserAddress.Default--></div>
-    </div>
+		<div class="row-fluid">
+				<div class="span4"><!--@Translate(Default, "Default")-->:</div>
+				<div class="span8"><!--@UserManagement:User.UserAddress.Default--></div>
+		</div>
 
-    <div class="row-fluid">
-        <div class="span3 pad">
-            <!--@If Defined(UserManagement:User.ManageAddresses.AddAddress)-->
-                <input type="submit" class="dw-button dw-button-green dw-button-small cl" id="submitter" value="<!--@Translate(addaddress, "Add address")-->" />
-            <!--@EndIf(UserManagement:User.ManageAddresses.AddAddress)-->
-            <!--@If Defined(UserManagement:User.ManageAddresses.UpdateAddress)-->
-                <input type="submit" class="dw-button dw-button-green dw-button-small cl" id="submit1" value="<!--@Translate(updateaddress, "Update address")-->" />
-            <!--@EndIf(UserManagement:User.ManageAddresses.UpdateAddress)-->
-            <!--@UserManagement:User.ManageAddresses.FormEnd-->
-        </div>
-        <div class="span5">
-            <!--@If Defined(UserManagement:User.ManageAddresses.DetailUrl)-->
-	            <a href="<!--@UserManagement:User.ManageAddresses.DetailUrl-->" class="dw-button dw-button-green dw-button-small cl"><!--@Translate(backtoaddresses, "Back to addresses")--></a>
-            <!--@EndIf(UserManagement:User.ManageAddresses.DetailUrl)-->
-        </div>
-    </div>
+		<div class="row-fluid">
+				<div class="span3 pad">
+						<!--@If Defined(UserManagement:User.ManageAddresses.AddAddress)-->
+								<input type="submit" class="dw-button dw-button-green dw-button-small cl" id="submitter" value="<!--@Translate(addaddress, "Add address")-->" />
+						<!--@EndIf(UserManagement:User.ManageAddresses.AddAddress)-->
+						<!--@If Defined(UserManagement:User.ManageAddresses.UpdateAddress)-->
+								<input type="submit" class="dw-button dw-button-green dw-button-small cl" id="submit1" value="<!--@Translate(updateaddress, "Update address")-->" />
+						<!--@EndIf(UserManagement:User.ManageAddresses.UpdateAddress)-->
+						<!--@UserManagement:User.ManageAddresses.FormEnd-->
+				</div>
+				<div class="span5">
+						<!--@If Defined(UserManagement:User.ManageAddresses.DetailUrl)-->
+							<a href="<!--@UserManagement:User.ManageAddresses.DetailUrl-->" class="dw-button dw-button-green dw-button-small cl"><!--@Translate(backtoaddresses, "Back to addresses")--></a>
+						<!--@EndIf(UserManagement:User.ManageAddresses.DetailUrl)-->
+				</div>
+		</div>
 
 </div>

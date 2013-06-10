@@ -4,10 +4,10 @@
  * Copyright (c) 2013 Dynamicweb
  *
  * Licensed under the MIT license:
- *   http://www.opensource.org/licenses/mit-license.php
+ *	 http://www.opensource.org/licenses/mit-license.php
  *
  * Project home:
- *   https://github.com/dynamicweb/solutionset
+ *	 https://github.com/dynamicweb/solutionset
  *
  * Version: 0.9.0
  *
@@ -55,63 +55,63 @@ $loader-image: url(../images/ajax-loader.gif) !default;
 
 
 @mixin rounded-borders($color: black, $border-weight: 1px, $radius: 5px) {
-  border: $border-weight solid $color;
-  border-radius: $radius;
-  overflow: hidden;
-  -webkit-background-clip: padding-box;
-     -moz-background-clip: padding;
-          background-clip: padding-box;
+	border: $border-weight solid $color;
+	border-radius: $radius;
+	overflow: hidden;
+	-webkit-background-clip: padding-box;
+		 -moz-background-clip: padding;
+					background-clip: padding-box;
 }
 
 @mixin bg-gradient($from: #eee, $to: #ddd) {
-  @include filter-gradient($from, $to, vertical);
-  // Global fallback
-  background: $to;
-  // IE10 Consumer Preview
-  background-image: -ms-linear-gradient(top, $from 0%, $to 100%);
-  @include background-image(linear-gradient(top, $from, $to));
+	@include filter-gradient($from, $to, vertical);
+	// Global fallback
+	background: $to;
+	// IE10 Consumer Preview
+	background-image: -ms-linear-gradient(top, $from 0%, $to 100%);
+	@include background-image(linear-gradient(top, $from, $to));
 }
 
 @mixin bg-remove {
-  background: transparent;
-  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+	background: transparent;
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
 
 @mixin text-cut {
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
 }
 
 @mixin fluid-span12 {
-  width: 100%;
-  // *width: 99.94680851063829%;
-  margin: 0;
+	width: 100%;
+	// *width: 99.94680851063829%;
+	margin: 0;
 }
 
 @mixin fluid-span6 {
-  width: 48.717948717948715%;
-  // *width: 48.664757228587014%;
-  margin: {
-    left: 0.64102564%;
-    right: 0.64102564%;
-  }
+	width: 48.717948717948715%;
+	// *width: 48.664757228587014%;
+	margin: {
+		left: 0.64102564%;
+		right: 0.64102564%;
+	}
 }
 
 @mixin fluid-span4 {
-  width: 31.623931623931625%;
-  // *width: 31.570740134569924%;
-  margin: {
-    left: 0.854700855%;
-    right: 0.854700855%;
-  }
+	width: 31.623931623931625%;
+	// *width: 31.570740134569924%;
+	margin: {
+		left: 0.854700855%;
+		right: 0.854700855%;
+	}
 }
 
 @mixin fluid-span3 {
-  width: 23.076923076923077%;
-  // *width: 23.023731587561375%;
-  margin: {
-    left: 0.961538461%;
-    right: 0.961538461%;
-  }
+	width: 23.076923076923077%;
+	// *width: 23.023731587561375%;
+	margin: {
+		left: 0.961538461%;
+		right: 0.961538461%;
+	}
 }
