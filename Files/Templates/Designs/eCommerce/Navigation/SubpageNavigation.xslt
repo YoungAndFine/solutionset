@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0"  xmlns:xsl="http://www.w3.org/1999/XSL/Transform" >
 
   <!--
@@ -9,7 +9,7 @@
   First level: > 0
   Last level: >= First level
   -->
-  
+
   <xsl:output method="xml" omit-xml-declaration="yes" indent="yes"  encoding="utf-8" />
   <xsl:param name="html-content-type" />
   <xsl:template match="/NavigationTree">

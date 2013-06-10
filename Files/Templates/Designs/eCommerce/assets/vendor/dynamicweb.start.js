@@ -5,8 +5,8 @@
  - loading of javascript files via require.js
  - initialize carousel on frontpage
  - removes content from modal box
- - 
- 
+ -
+
  * Copyright (c) 2013 Dynamicweb
  *
  * Licensed under the MIT license:
@@ -87,12 +87,12 @@ require(
 	$(document).ready(function () {
 		//initialize carousel
 		$(".carousel").carousel();
-		
+
 		//removes content from modal box
 		$("body").on("hidden", ".modal", function () {
 			$(this).removeData("modal");
 		});
-		
+
 		//
 		$('body').on('click.collapse-next.data-api', '[data-toggle=collapse-next]', function (e) {
 		    var $this = $(this)
@@ -102,7 +102,7 @@ require(
 		});
 	});
 
-	//Makes the keydown 
+	//Makes the keydown
     $(document).keydown(function (e) {
       		$("#product-instant-search, #product-instant-search-bottom, #product-quickadd-instant-search").InstantArrows(e);
     });

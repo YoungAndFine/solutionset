@@ -3,7 +3,7 @@
 
   <xsl:output method="xml" omit-xml-declaration="yes" indent="yes"  encoding="utf-8" />
   <xsl:param name="html-content-type" />
-	
+
 	<xsl:template match="/NavigationTree">
     <ul class="nav">
       <xsl:if test="count(//Page) > 0">
@@ -16,7 +16,7 @@
     <xsl:variable name="PageID" select="//GlobalTags/Global.Page.ID" />
     <xsl:variable name="UserID" select="//GlobalTags/Global.Extranet.UserID" />
     <xsl:variable name="UserName" select="//GlobalTags/Global.Extranet.Name" />
-        
+
     <xsl:choose>
       <xsl:when test="(@NavigationTag='login') and ($UserID>0)">
         <li><span>Welcome back, <strong><xsl:value-of select="$UserName" /></strong></span></li>

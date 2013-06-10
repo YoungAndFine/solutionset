@@ -1,6 +1,6 @@
 /*
  * Layout
- 
+
  Contains:
 - Layout.params
 - Layout.Translate
@@ -294,7 +294,7 @@ if (x==null || x=="")
   return false;
   }
 if (x=true)
-{alert('brugernavn');} 
+{alert('brugernavn');}
 }
 
 //$.ajax({
@@ -431,7 +431,7 @@ Layout.Products = (function (m) {
       , get = function (el, key) {
           return $('*[itemprop="'+key+'"]', el).html();
         };
-        
+
     $('.product-rating').append('<div style="width: 100px;" class="empty-stars-container"><i class="icon-star-empty star-showing star1"></i><i class="icon-star-empty star-showing star2"></i><i class="icon-star-empty star-showing star3"></i><i class="icon-star-empty star-showing star4"></i><i class="icon-star-empty star-showing star5"></i></div>');
 
     function convertReviewLayout() {
@@ -439,12 +439,12 @@ Layout.Products = (function (m) {
         var $el = $(el),
         value = get(el, 'average'),
         best = get(el, 'best');
-        
+
         /*var starsShowing = "";
         if(value == 4){
 	        starsShowing = '<i class="icon-star-half-empty"></i><i class="icon-star-empty"></i><i class="icon-star-empty"></i><i class="icon-star-empty"></i><i class="icon-star-empty"></i>';
         }*/
-        
+
         if (value && best) {
           $el.contents().wrapAll('<span class="hidden"/>');
           $el.addClass(Layout.params.productRatingUnderlayClass)

@@ -1,7 +1,7 @@
 /*
  * Filters
- * 
- * Contains: 
+ *
+ * Contains:
  * - eCommerce.Overlay: overlay with the wait/loading message
  * - eCommerce.Filters: controls filters on product list page
  *

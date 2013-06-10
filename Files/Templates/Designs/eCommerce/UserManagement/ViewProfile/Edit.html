@@ -1,189 +1,180 @@
 ﻿<style>
-    .customer-center-menu {
-        display: none;
-    }
+.customer-center-menu {
+	display: none;
+}
 </style>
 
 <div class="grid_12 wrapper-content customer-center" style="overflow:hidden;min-height:450px;">
-    
-    <link rel="stylesheet" type="text/css" href="/Files/Templates/Ecom/CustomerCenter/Navigation.css" />
-<div class="grid_3 customer-center-sidebar left" style="padding-right:1px;">
-    
+  <link rel="stylesheet" type="text/css" href="/Files/Templates/Ecom/CustomerCenter/Navigation.css" />
+	<div class="grid_3 customer-center-sidebar left" style="padding-right:1px;">
     <div class="rounded-box left-menu">
-        <h3><!--@Translate(Account_information, "Account information")--></h3>
-        <a class="edit_user2" href="/Default.aspx?ID=272&ObjectID=<!--@Global:Extranet.UserID-->&Action=Edit"><!--@Translate(edit, "Edit")--></a>
-        <div class="rounded-box-content contact-info">
-            <div>
-                <h4><!--@Global:Extranet.Name--></h4>
-                <ul>
-                    <!--@If Defined(Global:Extranet.Company)-->
-                    <li><span><!--@Translate(Company, "Company")-->:</span> <!--@Global:Extranet.Company--></li>
-                    <!--@EndIf(Global:Extranet.Company)-->
-                    <!--@If Defined(Global:Extranet.Jobtitle)-->
-                    <li><span><!--@Translate(Job_title, "Job title")-->: </span> <!--@Global:Extranet.Jobtitle--></li>
-                    <!--@EndIf(Global:Extranet.Jobtitle)-->                    
-                    <!--@If Defined(Global:Extranet.Address)-->
-                    <li><span><!--@Translate(Address, "Address")-->:</span> <!--@Global:Extranet.Address--> <!--@Global:Extranet.Address2--></li>
-                    <!--@EndIf(Global:Extranet.Address)-->
-                    <!--@If Defined(Global:Extranet.City)-->
-                    <li><span><!--@Translate(City, "City")-->:</span> <!--@Global:Extranet.Zip--> <!--@Global:Extranet.City--></li>
-                    <!--@EndIf(Global:Extranet.City)-->
-                    <!--@If Defined(Global:Extranet.Email)-->
-                    <li><span><!--@Translate(Email, "E-mail")-->:</span> <!--@Global:Extranet.Email--></li>
-                    <!--@EndIf(Global:Extranet.Email)-->
-                    <!--@If Defined(Global:Extranet.Phone)-->
-                    <li><span><!--@Translate(Phone, "Phone")-->:</span> <!--@Global:Extranet.Phone--></li>
-                    <!--@EndIf(Global:Extranet.Phone)-->
-                </ul>
-            </div>
+      <h3><!--@Translate(Account_information, "Account information")--></h3>
+      <a class="edit_user2" href="/Default.aspx?ID=272&ObjectID=<!--@Global:Extranet.UserID-->&Action=Edit"><!--@Translate(edit, "Edit")--></a>
+      <div class="rounded-box-content contact-info">
+        <div>
+          <h4><!--@Global:Extranet.Name--></h4>
+          <ul>
+            <!--@If Defined(Global:Extranet.Company)-->
+            <li><span><!--@Translate(Company, "Company")-->:</span> <!--@Global:Extranet.Company--></li>
+            <!--@EndIf(Global:Extranet.Company)-->
+            <!--@If Defined(Global:Extranet.Jobtitle)-->
+            <li><span><!--@Translate(Job_title, "Job title")-->: </span> <!--@Global:Extranet.Jobtitle--></li>
+            <!--@EndIf(Global:Extranet.Jobtitle)-->
+            <!--@If Defined(Global:Extranet.Address)-->
+            <li><span><!--@Translate(Address, "Address")-->:</span> <!--@Global:Extranet.Address--> <!--@Global:Extranet.Address2--></li>
+            <!--@EndIf(Global:Extranet.Address)-->
+            <!--@If Defined(Global:Extranet.City)-->
+            <li><span><!--@Translate(City, "City")-->:</span> <!--@Global:Extranet.Zip--> <!--@Global:Extranet.City--></li>
+            <!--@EndIf(Global:Extranet.City)-->
+            <!--@If Defined(Global:Extranet.Email)-->
+            <li><span><!--@Translate(Email, "E-mail")-->:</span> <!--@Global:Extranet.Email--></li>
+            <!--@EndIf(Global:Extranet.Email)-->
+            <!--@If Defined(Global:Extranet.Phone)-->
+            <li><span><!--@Translate(Phone, "Phone")-->:</span> <!--@Global:Extranet.Phone--></li>
+            <!--@EndIf(Global:Extranet.Phone)-->
+          </ul>
         </div>
+      </div>
     </div>
+	</div>
 
-</div>
-    
-    <div class="grid_9 customer-center-content main">
-        <div class="rounded-box left-menu">
-            <h3><!--@Translate(editcustomerdetails, "Edit customer details")--></h3>
-            <div class="rounded-box-content">
-            
-                <div style="padding: 0px 0px 25px 20px; color: rgb(247, 148, 29);">
-                    <!--@LoopStart(FormValidationErrors)-->
-                        <!--@HeaderStart-->
-                            <div id="errormessages">
-                                <ul>
-                        <!--@HeaderEnd-->
-                                    <li><!--@Translate(errorininputfield, "Error in the input field")--> "<!--@UserManagement:User.FormValidationError.FieldNiceName-->": <a href="javascript:document.getElementById('<!--@UserManagement:User.FormValidationError.FieldName-->').focus();"><!--@UserManagement:User.FormValidationError.Message--></a></li>
-                        <!--@FooterStart-->
-                                </ul>
-                            </div>
-                        <!--@FooterEnd-->
-                    <!--@LoopEnd(FormValidationErrors)-->
-                </div>
+  <div class="grid_9 customer-center-content main">
+    <div class="rounded-box left-menu">
+      <h3><!--@Translate(editcustomerdetails, "Edit customer details")--></h3>
+      <div class="rounded-box-content">
 
-                <div class="userdetails-form">
-                    
-                    
-                    <!--@UserManagement:User.FormStart-->
-                    
-                    <div class="info-line">
-                        <div class="info-label">
-                            <label><!--@Translate(oldpassword, "Old password")--></label>
-                        </div>
-                        <div class="info-control">
-                            <b></b><input name="UserManagement_Form_OldPassword" type="password" id="UserManagement_Form_OldPassword" value="" autocomplete="off">
-                        </div>
-                    </div>
-                    <div class="info-line">
-                        <div class="info-label">
-                            <label><!--@Translate(newpassword, "New password")--></label>
-                        </div>
-                        <div class="info-control">
-                            <b></b><!--@UserManagement:User.NewPassword.Input-->
-                        </div>
-                    </div>
-                    <div class="info-line">
-                        <div class="info-label">
-                            <label><!--@Translate(confirmpassword, "Confirm password")--></label>
-                        </div>
-                        <div class="info-control">
-                            <b></b><!--@UserManagement:User.NewPasswordConfirm.Input-->
-                        </div>
-                    </div>
-                     <div class="info-line without-label" style="margin-bottom:0px;">
-                        <a href="#" onclick="$('.userdetails-form form')[0].submit();" style="float: left;" class="button button-small button-green"><!--@Translate(edituser, "Submit")--> <img src="/Files/Templates/Designs/eCommerce01/images/i_arr_forward_small_white.png" /></a>
-                    </div>
-                    <!--@UserManagement:User.FormEnd-->
-
-
-
-                    <!--@UserManagement:User.FormStart-->
-                    <div style="padding:10px 0 0 0;"></div>
-                    <div class="info-line">
-                        <div class="info-label">
-                            <label><!--@Translate(Username, "Username")--></label>
-                        </div>
-                        <div class="info-control">
-                            <b></b><!--@UserManagement:User.UserName.Input-->
-                        </div>
-                    </div>
-                    <div class="info-line">
-                        <div class="info-label">
-                            <label><!--@Translate(Name, "Name")--></label>
-                        </div>
-                        <div class="info-control">
-                            <b></b><!--@UserManagement:User.Name.Input-->
-                        </div>
-                    </div>
-                    <div class="info-line">
-                        <div class="info-label">
-                            <label><!--@Translate(Email, "E-mail")--></label>
-                        </div>
-                        <div class="info-control">
-                            <b></b><!--@UserManagement:User.Email.Input-->
-                        </div>
-                    </div>
-                    <div class="info-line">
-                        <div class="info-label">
-                            <label><!--@Translate(Address, "Address")--></label>
-                        </div>
-                        <div class="info-control">
-                            <b></b><!--@UserManagement:User.Address.Input-->
-                        </div>
-                    </div>
-                    <div class="info-line">
-                        <div class="info-label">
-                            <label><!--@Translate(Zip, "Zip")--></label>
-                        </div>
-                        <div class="info-control">
-                            <b></b><!--@UserManagement:User.Zip.Input-->
-                        </div>
-                    </div>
-                    <div class="info-line">
-                        <div class="info-label">
-                            <label><!--@Translate(City, "City")--></label>
-                        </div>
-                        <div class="info-control">
-                            <b></b><!--@UserManagement:User.City.Input-->
-                        </div>
-                    </div>
-                    <div class="info-line">
-                        <div class="info-label">
-                            <label><!--@Translate(Country, "Country")--></label>
-                        </div>
-                        <div class="info-control">
-                            <b></b>
-                            <select name="CustomField.AccessUser_AccessUser_Country2" id="CustomField.AccessUser_AccessUser_Country2">
-                            <!--@LoopStart(UserManagement:User.CustomFields)-->
-                                <!--@If(UserManagement:User.CustomFields.LoopCounter=2)-->
-                                    <option value="1" <!--@If(CustomField.Value=1)-->selected="selected"<!--@EndIf-->><!--@Translate(denmark, "Denmark")--></option>
-                                    <option value="2" <!--@If(CustomField.Value=2)-->selected="selected"<!--@EndIf-->><!--@Translate(finland, "Finland")--></option>
-                                    <option value="3" <!--@If(CustomField.Value=3)-->selected="selected"<!--@EndIf-->><!--@Translate(norway, "Norway")--></option>
-                                    <option value="4" <!--@If(CustomField.Value=4)-->selected="selected"<!--@EndIf-->><!--@Translate(sweden, "Sweden")--></option>
-                                    <option value="5" <!--@If(CustomField.Value=5)-->selected="selected"<!--@EndIf-->><!--@Translate(germany, "Germany")--></option>
-                                    <option value="6" <!--@If(CustomField.Value=6)-->selected="selected"<!--@EndIf-->><!--@Translate(usa, "USA")--></option>
-                                <!--@EndIf-->
-                            <!--@LoopEnd(UserManagement:User.CustomFields)-->
-                            </select>
-                        </div>
-                    </div>
-                    <div class="info-line">
-                        <div class="info-label">
-                            <label><!--@Translate(Phone, "Phone")--></label>
-                        </div>
-                        <div class="info-control">
-                            <b></b><!--@UserManagement:User.Phone.Input-->
-                        </div>
-                    </div>
-      
-                    <div class="info-line without-label" style="margin-bottom:0px;">
-                        <a href="#" onclick="$('.userdetails-form form')[1].submit();" style="float: left;" class="button button-small button-green"><!--@Translate(edituser, "Submit")--> <img src="/Files/Templates/Designs/eCommerce01/images/i_arr_forward_small_white.png" /></a>
-                    </div>
-
-                    <!--@UserManagement:User.FormEnd-->
-                </div>
-    
-
-            </div>
+        <div style="padding: 0px 0px 25px 20px; color: rgb(247, 148, 29);">
+          <!--@LoopStart(FormValidationErrors)-->
+          <!--@HeaderStart-->
+          <div id="errormessages">
+            <ul>
+              <!--@HeaderEnd-->
+              <li><!--@Translate(errorininputfield, "Error in the input field")--> "<!--@UserManagement:User.FormValidationError.FieldNiceName-->": <a href="javascript:document.getElementById('<!--@UserManagement:User.FormValidationError.FieldName-->').focus();"><!--@UserManagement:User.FormValidationError.Message--></a></li>
+              <!--@FooterStart-->
+            </ul>
+          </div>
+          <!--@FooterEnd-->
+          <!--@LoopEnd(FormValidationErrors)-->
         </div>
+
+        <div class="userdetails-form">
+          <!--@UserManagement:User.FormStart-->
+
+          <div class="info-line">
+            <div class="info-label">
+              <label><!--@Translate(oldpassword, "Old password")--></label>
+            </div>
+            <div class="info-control">
+              <b></b><input name="UserManagement_Form_OldPassword" type="password" id="UserManagement_Form_OldPassword" value="" autocomplete="off">
+            </div>
+          </div>
+          <div class="info-line">
+            <div class="info-label">
+              <label><!--@Translate(newpassword, "New password")--></label>
+            </div>
+            <div class="info-control">
+              <b></b><!--@UserManagement:User.NewPassword.Input-->
+            </div>
+          </div>
+          <div class="info-line">
+            <div class="info-label">
+              <label><!--@Translate(confirmpassword, "Confirm password")--></label>
+            </div>
+            <div class="info-control">
+              <b></b><!--@UserManagement:User.NewPasswordConfirm.Input-->
+            </div>
+          </div>
+          <div class="info-line without-label" style="margin-bottom:0px;">
+            <a href="#" onclick="$('.userdetails-form form')[0].submit();" style="float: left;" class="button button-small button-green"><!--@Translate(edituser, "Submit")--> <img src="/Files/Templates/Designs/eCommerce01/images/i_arr_forward_small_white.png" /></a>
+          </div>
+          <!--@UserManagement:User.FormEnd-->
+
+          <!--@UserManagement:User.FormStart-->
+          <div style="padding:10px 0 0 0;"></div>
+          <div class="info-line">
+            <div class="info-label">
+              <label><!--@Translate(Username, "Username")--></label>
+            </div>
+            <div class="info-control">
+              <b></b><!--@UserManagement:User.UserName.Input-->
+            </div>
+          </div>
+          <div class="info-line">
+            <div class="info-label">
+              <label><!--@Translate(Name, "Name")--></label>
+            </div>
+            <div class="info-control">
+              <b></b><!--@UserManagement:User.Name.Input-->
+            </div>
+          </div>
+          <div class="info-line">
+            <div class="info-label">
+              <label><!--@Translate(Email, "E-mail")--></label>
+            </div>
+            <div class="info-control">
+              <b></b><!--@UserManagement:User.Email.Input-->
+            </div>
+          </div>
+          <div class="info-line">
+            <div class="info-label">
+              <label><!--@Translate(Address, "Address")--></label>
+            </div>
+            <div class="info-control">
+              <b></b><!--@UserManagement:User.Address.Input-->
+            </div>
+          </div>
+          <div class="info-line">
+            <div class="info-label">
+              <label><!--@Translate(Zip, "Zip")--></label>
+            </div>
+            <div class="info-control">
+              <b></b><!--@UserManagement:User.Zip.Input-->
+            </div>
+          </div>
+          <div class="info-line">
+            <div class="info-label">
+              <label><!--@Translate(City, "City")--></label>
+            </div>
+            <div class="info-control">
+              <b></b><!--@UserManagement:User.City.Input-->
+            </div>
+          </div>
+          <div class="info-line">
+            <div class="info-label">
+              <label><!--@Translate(Country, "Country")--></label>
+            </div>
+            <div class="info-control">
+              <b></b>
+              <select name="CustomField.AccessUser_AccessUser_Country2" id="CustomField.AccessUser_AccessUser_Country2">
+                <!--@LoopStart(UserManagement:User.CustomFields)-->
+                <!--@If(UserManagement:User.CustomFields.LoopCounter=2)-->
+                <option value="1" <!--@If(CustomField.Value=1)-->selected="selected"<!--@EndIf-->><!--@Translate(denmark, "Denmark")--></option>
+                <option value="2" <!--@If(CustomField.Value=2)-->selected="selected"<!--@EndIf-->><!--@Translate(finland, "Finland")--></option>
+                <option value="3" <!--@If(CustomField.Value=3)-->selected="selected"<!--@EndIf-->><!--@Translate(norway, "Norway")--></option>
+                <option value="4" <!--@If(CustomField.Value=4)-->selected="selected"<!--@EndIf-->><!--@Translate(sweden, "Sweden")--></option>
+                <option value="5" <!--@If(CustomField.Value=5)-->selected="selected"<!--@EndIf-->><!--@Translate(germany, "Germany")--></option>
+                <option value="6" <!--@If(CustomField.Value=6)-->selected="selected"<!--@EndIf-->><!--@Translate(usa, "USA")--></option>
+                <!--@EndIf-->
+                <!--@LoopEnd(UserManagement:User.CustomFields)-->
+              </select>
+            </div>
+          </div>
+          <div class="info-line">
+            <div class="info-label">
+              <label><!--@Translate(Phone, "Phone")--></label>
+            </div>
+            <div class="info-control">
+              <b></b><!--@UserManagement:User.Phone.Input-->
+            </div>
+          </div>
+
+          <div class="info-line without-label" style="margin-bottom:0px;">
+            <a href="#" onclick="$('.userdetails-form form')[1].submit();" style="float: left;" class="button button-small button-green"><!--@Translate(edituser, "Submit")--> <img src="/Files/Templates/Designs/eCommerce01/images/i_arr_forward_small_white.png" /></a>
+          </div>
+
+          <!--@UserManagement:User.FormEnd-->
+        </div>
+      </div>
     </div>
+  </div>
 </div>

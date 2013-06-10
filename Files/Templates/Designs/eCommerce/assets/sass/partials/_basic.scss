@@ -13,8 +13,8 @@
  *
  */
 
-html, body {  
-  height: 100%; 
+html, body {
+  height: 100%;
 }
 
 body {
@@ -24,31 +24,31 @@ body {
   font-size: 12px;
   color: $color-text;
 
-  * { 
-    text-align: left; 
+  * {
+    text-align: left;
   }
-  > footer { 
-    margin: -120px 10px 0; 
+  > footer {
+    margin: -120px 10px 0;
   }
   &.searchbar-bottom {
-    .content-wrapper { 
-      padding-bottom: 180px; 
+    .content-wrapper {
+      padding-bottom: 180px;
     }
-    > footer { 
-      margin-top: -160px; 
+    > footer {
+      margin-top: -160px;
     }
     &.menu-bottom {
-      .content-wrapper { 
-        padding-bottom: 218px; 
+      .content-wrapper {
+        padding-bottom: 218px;
       }
-      > footer { 
-        margin-top: -120px; 
+      > footer {
+        margin-top: -120px;
       }
     }
   }
   &.menu-bottom {
-    > footer { 
-      margin-top: -178px; 
+    > footer {
+      margin-top: -178px;
     }
   }
 	.price_vat {
@@ -67,25 +67,25 @@ body {
 	}
 
   @media (max-width: 767px) {
-    > footer { 
-      margin: -240px 10px 0; 
+    > footer {
+      margin: -240px 10px 0;
     }
-    > footer, .footer-wrapper {  
-      height: auto; 
+    > footer, .footer-wrapper {
+      height: auto;
     }
     &.searchbar-bottom.menu-bottom {
-      > footer { 
-        margin: -317px 10px 0; 
+      > footer {
+        margin: -317px 10px 0;
       }
-      .content-wrapper { 
-        padding-bottom: 318px; 
+      .content-wrapper {
+        padding-bottom: 318px;
       }
     }
   }
 }
 
-form { 
-  margin: 0; 
+form {
+  margin: 0;
 }
 
 input {
@@ -98,7 +98,7 @@ input {
     color: #55564A;
     background-color: #ffffff;
     border: 1px solid #9F9F9F;
-    box-shadow: 0px 1px 0px #e3e3e3 inset; 
+    box-shadow: 0px 1px 0px #e3e3e3 inset;
 
     &.input-small {
       font: bold 12px/22px arial;
@@ -106,7 +106,7 @@ input {
       margin-left: 8px;
       padding-left: 3px;
       padding-right: 3px;
-      padding-top: 1px; 
+      padding-top: 1px;
     }
   }
 }
@@ -150,17 +150,17 @@ ul, ol {
 .icon {
   display: inline-block;
   // margin-top: 1px;
-  vertical-align: text-top; 
+  vertical-align: text-top;
 }
 .btn {
   .icon-collapse {
-    background-position: -313px -119px; 
+    background-position: -313px -119px;
   }
   &.collapsed {
     .icon-collapse {
-      background-position: -432px -72px; 
+      background-position: -432px -72px;
     }
-  } 
+  }
   &.btn-link {
     color: $colorLink;
     text-decoration: underline;
@@ -173,13 +173,13 @@ ul, ol {
 
 .navbar-inner {
   border: none;
-} 
+}
 
-.no-space { 
-  margin-left: 0; 
+.no-space {
+  margin-left: 0;
 
-  [class*="span"]:not([class*="offset"]) { 
-    margin-left: 0; 
+  [class*="span"]:not([class*="offset"]) {
+    margin-left: 0;
   }
 }
 .span-float-right {
@@ -193,13 +193,13 @@ ul, ol {
 // Classes for making two columns with the sema equal heights
 .fill {
   min-height: 100%;
-  position: relative; 
+  position: relative;
 
-  .filler-left, .filler-right { 
+  .filler-left, .filler-right {
 
-    &.collapse { 
-      min-height: 0; 
-      position: inherit; 
+    &.collapse {
+      min-height: 0;
+      position: inherit;
     }
     > * {
       position: relative;
@@ -213,11 +213,11 @@ ul, ol {
       position: absolute;
       top: 0;
       width: inherit;
-      z-index: 0; 
-    }  
+      z-index: 0;
+    }
 
     @media (min-width: 768px) {
-      .collapse { 
+      .collapse {
         height: auto !important;
       }
     }
@@ -231,7 +231,7 @@ ul, ol {
   .filler-right {
     &:after {
       right: 0;
-      left: auto; 
+      left: auto;
     }
   }
 }
@@ -255,7 +255,7 @@ ul, ol {
 
 // Tooltips base classes
 a[data-rel=tooltip] {
-  position: relative; 
+  position: relative;
 }
 #tooltip {
   position:absolute;
@@ -269,7 +269,7 @@ a[data-rel=tooltip] {
   font: normal 12px/18px arial;
   border-radius: 5px;
   text-align: left;
-  box-shadow: 0 0 3px #eee; 
+  box-shadow: 0 0 3px #eee;
   text-decoration: none;
 }
 
@@ -304,7 +304,7 @@ a[data-rel=tooltip] {
     }
     &.box-headline-dark {
       @include bg-gradient(#ECECEC, #CBCBCB);
-    }    
+    }
     &.box-headline-orange {
       @include bg-gradient(#F7AD53, #F79722);
 
@@ -358,7 +358,7 @@ a[data-rel=tooltip] {
       .price-line {
         padding: 5px 10px;
       }
-      .action-line { 
+      .action-line {
         border-bottom: none;
 
         .btn {
@@ -413,19 +413,19 @@ a[data-rel=tooltip] {
   background: $pageBackground;
   margin: -34px auto 0;
   display: inline-block;
-  // shadow dropped below to combine with shadow of 
+  // shadow dropped below to combine with shadow of
   // ".header-wrapper > .container"
   box-shadow: 0px 160px 15px 1px #ccc;
   position:relative;
-  
+
   @media (max-width: 767px) {
     display: block;
     margin: 0px 10px;
   }
   @media (max-width: 979px) {
-    margin-top: -50px; 
+    margin-top: -50px;
   }
-} 
+}
 
 .header-wrapper > .container,
 .content-wrapper,
@@ -434,45 +434,45 @@ a[data-rel=tooltip] {
 .searchbar-wrapper {
   position: relative;
   padding: 0 10px;
-}                    
+}
 
 // Main content section
 .content-wrapper {
   padding-top: 20px;
-  padding-bottom: 120px; 
+  padding-bottom: 120px;
   z-index: auto;
 
   h1 {
     float: left;
-    padding: 0 0 10px 10px;  
+    padding: 0 0 10px 10px;
     color: #F7941D;
     font: bold 30px/35px arial;
   }
 
   @media (max-width: 767px) {
-    padding-bottom: 240px; 
+    padding-bottom: 240px;
   }
 }
 
 // Breadcrumbps list. Top instanse
 .breadcrumb-wrapper {
   padding: 0 10px;
-  
-  .sprite { display: inline-block; } 
+
+  .sprite { display: inline-block; }
   .breadcrumb-goback {
     display: inline-block;
     margin: 10px 20px 0 0;
-    text-decoration: underline; 
+    text-decoration: underline;
   }
   .breadcrumb-hint { color: #555; }
   .breadcrumb {
     display: inline-block;
     margin: 10px 0 0 5px;
-    padding: 0; 
+    padding: 0;
     background: none;
 
     li {
-      &.active:last-child {  
+      &.active:last-child {
         font-weight: bold;
         color: #555;
 
@@ -482,7 +482,7 @@ a[data-rel=tooltip] {
         }
         .divider {
           display: none;
-        } 
+        }
       }
       a { text-decoration: underline; }
       .divider {
@@ -491,25 +491,25 @@ a[data-rel=tooltip] {
         padding: 0;
       }
     }
-  }   
+  }
 }
- 
+
 // Navigation box for subpages on standart page
 .subpages-navbox {
   max-width: 340px;
   min-height: 26px;
-  padding: 8px 0; 
+  padding: 8px 0;
 
   .btn {
-    float: right; 
+    float: right;
     margin: 0 10px;
 
     .icon-filter-collapse {
-      background-position: -313px -119px; 
+      background-position: -313px -119px;
     }
     &.collapsed {
       .icon-filter-collapse {
-        background-position: -432px -72px; 
+        background-position: -432px -72px;
       }
     }
   }
@@ -574,12 +574,12 @@ a[data-rel=tooltip] {
     box-shadow: 0 1px 0 #E3E3E3 inset;
     height:150px;
   }
-} 
+}
 
 
 
-// Chat switcher 
-@media (max-width:768px) { 
+// Chat switcher
+@media (max-width:768px) {
   .zopim, #__zopnetworkswf {
     display: none !important;
   }

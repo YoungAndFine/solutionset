@@ -33,7 +33,7 @@
             expandedClass: 'expanded',
             toggleButtonSelector: '.btn-navbar',
             layoutOnResize: true,
-            resizeTimeout: 200 
+            resizeTimeout: 200
         }, options),
 
         /**
@@ -47,7 +47,7 @@
             data = $this.data(),
             top;
             this.reset({equable: data.equable});
-            
+
             $('.nav > li', $this).each(function(index, el) {
                 if (index == 0) {
                     top = $(el).offset().top;

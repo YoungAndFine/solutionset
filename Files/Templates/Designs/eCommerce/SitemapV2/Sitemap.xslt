@@ -12,8 +12,8 @@
   <xsl:output method="xml" omit-xml-declaration="yes" indent="yes"  encoding="utf-8" />
   <xsl:param name="html-content-type" />
   <xsl:template match="/NavigationTree">
-    
-    
+
+
 
   <div>
     <ul id="sitemap" class="sitemap">

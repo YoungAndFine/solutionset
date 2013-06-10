@@ -42,7 +42,7 @@
     background: #EAF2FF;
     border: 1px solid #C4DAFF;
     cursor: pointer;
-  }  
+  }
   .dw-no-suggestions {
     display: block;
     color: #A0A0A0;
@@ -141,8 +141,8 @@
   .dw-search-result-readmore {
     float: right;
     margin: 5px 10px 0 0;
-    font: bold 14px/18px arial;    
-  
+    font: bold 14px/18px arial;
+
     .dw-search-result-detailslink {
       border-radius: 5px 5px 5px 5px;
       height: 20px !important;
@@ -168,14 +168,14 @@
   @media (max-width: 349px) {
     .dw-search-result-item { height: 50px; }
     .dw-search-result-picture { display: none; }
-    .dw-search-result-productname { 
-      width: auto; 
+    .dw-search-result-productname {
+      width: auto;
 
       a { font-size: 12px; }
     }
-    .dw-search-result-number { 
+    .dw-search-result-number {
       font-size: 10px;
-      margin-top: 0; 
+      margin-top: 0;
     }
     .dw-search-result-readmore { margin: 0; }
   }
@@ -211,7 +211,7 @@
       }
     }
   }
-  .dw-search-suggestions { 
+  .dw-search-suggestions {
     width: 200px !important;
     margin-left: 0 !important;
     border-radius: 0px 5px 5px 5px;
@@ -261,7 +261,7 @@
   top: inherit;
   @media (min-width: 768px) and (max-width: 979px) {
     margin-left: 90px;
-  }  
+  }
 }
 #search-box-preloader-top {
   @media (max-width: 767px) {
@@ -275,20 +275,20 @@
 
 .dw-search-suggestions {
   @media (min-width: 980px) {
-    width: 350px; 
+    width: 350px;
   }
   @media (min-width: 768px) and (max-width: 979px) {
     margin-left: 30px;
-    width: 250px; 
+    width: 250px;
   }
   @media (max-width: 767px) {
     margin-left: 7%;
     width: 71%;
-  }  
+  }
   @media (max-width: 349px) {
     margin-left: 30px;
     padding: 0 5px;
-    width: 60%;  
+    width: 60%;
   }
 }
 

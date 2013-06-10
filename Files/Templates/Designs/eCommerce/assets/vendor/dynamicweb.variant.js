@@ -149,7 +149,7 @@
 
         return method.apply(this, arguments);
     }
-    
+
     // colors variations thumbs clicks
     $('.product-tile ul img').hover(function(){
         var path = $(this).data('path');

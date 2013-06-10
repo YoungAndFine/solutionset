@@ -21,7 +21,7 @@ function expandMiniCart() {
     popup.css("top", (pos.top + 65) + "px");
     popup.css("left", (pos.left - 1) + "px");
 	popup.css("display", "block");
-	
+
 	miniCartPopupIsActive = true;
 
 	$(".minicart-wrapper").addClass("expanded");
@@ -29,7 +29,7 @@ function expandMiniCart() {
 
 function collapseMiniCart() {
 	if (!miniCartPopupIsActive) return;
-	
+
 	var popup = $(".minicart-popup");
 	popup.css("display", "none");
 	miniCartPopupIsActive = false;

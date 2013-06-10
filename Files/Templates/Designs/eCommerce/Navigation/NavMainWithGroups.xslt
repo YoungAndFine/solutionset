@@ -1,9 +1,7 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0"  xmlns:xsl="http://www.w3.org/1999/XSL/Transform" >
-
   <xsl:output method="xml" omit-xml-declaration="yes" indent="yes"  encoding="utf-8" />
   <xsl:param name="html-content-type" />
-
 
   <xsl:template match="/NavigationTree">
     <xsl:if test="count(//Page) > 0">
@@ -16,8 +14,7 @@
       </ul>
     </xsl:if>
   </xsl:template>
-  
-  
+
   <xsl:template match="//Page">
     <xsl:param name="depth"/>
     <xsl:choose>
@@ -41,7 +38,7 @@
               <ul class="dropdown-menu">
                 <xsl:for-each select="Page">
                   <li>
-                    <a> 
+                    <a>
                       <xsl:attribute name="href">
                         <xsl:value-of select="@FriendlyHref" disable-output-escaping="yes"/>
                       </xsl:attribute>
@@ -73,7 +70,7 @@
             <div class="dropdown_1column">
               <xsl:for-each select="Page">
                 <div class="col_1">
-                  <a> 
+                  <a>
                     <xsl:attribute name="href">
                       <xsl:value-of select="@FriendlyHref" disable-output-escaping="yes"/>
                     </xsl:attribute>
@@ -83,10 +80,9 @@
                 </div>
               </xsl:for-each>
             </div>
-          </xsl:if> --> 
+          </xsl:if> -->
         </li>
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
-
 </xsl:stylesheet>
