@@ -218,3 +218,5 @@ pip-log.txt
 *.parsed.*html
 .sass-cache
 _scripts/
+
+fire_app_log.txt
