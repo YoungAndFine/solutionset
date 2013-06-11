@@ -47,7 +47,7 @@
 					<li><!--@Translate(EstimatedDelivaryTime, "Est. delivary time")-->:&nbsp;<span><!--@Ecom:Product:Stock.DeliveryText--> <!--@Ecom:Product:Stock.DeliveryUnit--></span></li>
 					<!--@LoopStart(ProductCategories)-->
 					<!--@LoopStart(ProductCategoryFields)-->
-					<li><!--@Ecom:Product.CategoryField.Label-->:&nbsp;<!--If(Ecom:Product.CategoryField.Value<>'')--><span><!--@Ecom:Product.CategoryField.Value--></span><!--@EndIf--><!--If(Ecom:Product.CategoryField.Value='')--><span class="product-comparison-various-notspecified">(<!--@Translate(NotSpecified, "Not specified")-->)</span><!--@EndIf--></li>
+					<li><!--@Ecom:Product.CategoryField.Label-->:&nbsp;<!--@If(Ecom:Product.CategoryField.Value<>'')--><span><!--@Ecom:Product.CategoryField.Value--></span><!--@EndIf--><!--@If(Ecom:Product.CategoryField.Value='')--><span class="product-comparison-various-notspecified">(<!--@Translate(NotSpecified, "Not specified")-->)</span><!--@EndIf--></li>
 					<!--@LoopEnd(ProductCategoryFields)-->
 					<!--@LoopEnd(ProductCategories)-->
 				</ul>
