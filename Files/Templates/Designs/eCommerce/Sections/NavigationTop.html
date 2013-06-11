@@ -1,8 +1,18 @@
 <section class="topmenu-wrapper">
 	<div class="container">
-		<div class="lang_selector">
-			<div class="TODO">Implement language selector</div>
-		</div>
+		<!-- <div class="TODO">Implement language selector</div> -->
+		<ul class="lang-selector">
+      <!--@If(Global:Area.ID==1)-->
+			<li>
+				<a href="/Default.aspx?ID=321" hreflang="da"><!--@Translate(danish, "Danish")--></a>
+			</li>
+      <!--@EndIf-->
+      <!--@If(Global:Area.ID==17)-->
+			<li>
+				<a href="/Default.aspx?ID=285" hreflang="en"><!--@Translate(english, "English")--></a>
+			</li>
+      <!--@EndIf-->
+		</ul>
 		<div class="row">
 			<div class="span12">
 				<div class="topmenu">
