@@ -181,64 +181,6 @@
 	}
 }
 
-.quick-add {
-	.dw-search-result-item {
-		height: 0;
-		margin: 3px 0;
-		overflow: visible;
-
-		.dw-search-result-number {
-			line-height: 18px;
-			width: 35px;
-			margin-top: 0;
-			text-decoration: underline;
-		}
-		.dw-search-result-productname {
-			white-space: normal;
-			width: auto;
-
-			a {
-				font-size: 12px;
-
-				&.p-title {
-					display: block;
-					float: left;
-					width: 170px;
-					white-space: nowrap;
-					overflow: hidden;
-					text-overflow: ellipsis;
-				}
-			}
-		}
-	}
-	.dw-search-suggestions {
-		width: 200px !important;
-		margin-left: 0 !important;
-		border-radius: 0px 5px 5px 5px;
-		border-top: 1px solid #C3C3C3 !important;
-		margin-top: 3px !important;
-		overflow: visible;
-
-		&:before {
-			background: white;
-			border-left: 1px solid #9F9F9F;
-			border-right: 1px solid #9F9F9F;
-			content: " ";
-			display: block;
-			height: 10px;
-			left: -1px;
-			position: absolute;
-			top: -10px;
-			width: 111px;
-		}
-		.dw-suggestion-item { height: auto; }
-	}
-	.dw-search-result {
-		/*overflow: auto;*/
-		margin: 5px 5px 0;
-	}
-}
-
 #search-box-preloader-top,
 #search-box-preloader-quickadd,
 #search-box-preloader-bottom {
@@ -299,3 +241,164 @@
 }
 #product-quickadd-instant-search {padding-bottom:5px;}
 #product-quickadd-instant-search .dw-search-result {overflow:hidden; cursor:pointer;}
+
+// Search bar under the main menu
+.searchbar-wrapper {
+	background: $searchbarBackground;
+	border-top: 1px solid #CECECE;
+	height: 43px;
+	padding-top: 7px;
+
+	&.searchbar-wrapper-top {
+		border-top: none;
+		box-shadow: 0 5px 10px -10px black;
+
+		@media (min-width: 348px) and (max-width: 767px) {
+			height: auto;
+			padding-bottom: 10px;
+		}
+		@media (max-width: 349px) {
+			height: auto;
+			padding-bottom: 10px;
+		}
+	}
+	&.searchbar-wrapper-bottom {}
+	.search-box {
+		position: relative;
+
+		.sprite {
+			&.search {
+				float: left;
+			}
+		}
+		input {
+			&[type="text"] { width: 340px; }
+			&[type="submit"] {}
+		}
+
+		@media (max-width: 349px) {
+			width: 100%;
+
+			input[type="text"] { width: 60%; }
+			input[type="submit"] { width: 22%; }
+		}
+		@media (max-width: 767px) {
+			input[type="submit"] {
+				padding: 0;
+			}
+		}
+		@media (min-width: 350px) and (max-width: 479px) {
+			input {
+				&[type="text"] {
+					width: 65%;
+				}
+				&[type="submit"] {
+					width: 21%;
+				}
+			}
+		}
+		@media (min-width: 480px) and (max-width: 767px) {
+			width: 100%;
+
+			.sprite.search { width: 7%; background: url("../images/i_search.png") 0 0 no-repeat !important; }
+			input[type="text"] {
+				padding: 1px 1%;
+				width: 69%; }
+			input[type="submit"] { width: 20%; }
+		}
+		@media (min-width: 768px) and (max-width: 979px) {
+			input[type="text"] {
+				width: 240px;
+			}
+		}
+	}
+
+	#search-box-preloader-top {}
+	#search-box-preloader-bottom {}
+}
+
+.quick-add {
+	width: auto;
+	float: right;
+	padding-top: 7px;
+
+	.dw-search-result-item {
+		height: 0;
+		margin: 3px 0;
+		overflow: visible;
+
+		.dw-search-result-number {
+			line-height: 18px;
+			width: 35px;
+			margin-top: 0;
+			text-decoration: underline;
+		}
+		.dw-search-result-productname {
+			white-space: normal;
+			width: auto;
+
+			a {
+				font-size: 12px;
+
+				&.p-title {
+					display: block;
+					float: left;
+					width: 170px;
+					white-space: nowrap;
+					overflow: hidden;
+					text-overflow: ellipsis;
+				}
+			}
+		}
+	}
+	.dw-search-suggestions {
+		width: 200px !important;
+		margin-left: 0 !important;
+		border-radius: 0px 5px 5px 5px;
+		border-top: 1px solid #C3C3C3 !important;
+		margin-top: 3px !important;
+		overflow: visible;
+
+		&:before {
+			background: white;
+			border-left: 1px solid #9F9F9F;
+			border-right: 1px solid #9F9F9F;
+			content: " ";
+			display: block;
+			height: 10px;
+			left: -1px;
+			position: absolute;
+			top: -10px;
+			width: 111px;
+		}
+		.dw-suggestion-item { height: auto; }
+	}
+	.dw-search-result {
+		/*overflow: auto;*/
+		margin: 5px 5px 0;
+	}
+
+	input {
+		&[type="text"] {
+			width: 105px;
+
+			&[name="quantity"] {
+				margin-left: 0;
+				width: 40px;
+			}
+		}
+	}
+
+	@media (min-width: 768px) and (max-width: 979px) {
+		.quick-add-box-label {
+			display: none;
+		}
+	}
+	@media (max-width: 349px) {
+		float: right;
+
+		input[type="text"] {
+			width: 100px;
+		}
+	}
+}

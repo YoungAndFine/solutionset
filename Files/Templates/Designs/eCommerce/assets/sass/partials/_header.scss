@@ -79,14 +79,11 @@
 		}
 	}
 	.payoff {
-		display: table;
-		height: 80px;
-
-		> div {
-			display: table-cell;
-			vertical-align: middle;
-			font: bold 18px/25px arial;
-		}
+		display: table-cell;
+		vertical-align: middle;
+		font: bold 18px/25px arial;
+		margin-top: 31px;
+		height: inherit!important;
 	}
 
 	@media (max-width: 349px) {
@@ -182,11 +179,8 @@
 		padding: 35px 0 0 50px;
 		font-weight: bold;
 	}
-	.not-empty .minicart-count{
-		padding: 24px 0 0 50px;
-	}
 	.minicart-view {
-		padding-left: 50px;
+		padding-left: 30px;
 	}
 	.minicart-popup {
 		display: none;
@@ -374,4 +368,8 @@
 	@media (min-width: 1200px) {
 		width: 330px;
 	}
+}
+
+.not-empty .minicart-count{
+	padding: 24px 0 0 50px;
 }
