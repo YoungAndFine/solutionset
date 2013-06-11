@@ -33,18 +33,18 @@ require.config({
 		"touch-punch" : "../vendor/jquery.ui.touch-punch.min",
 		"jquery-autocomplete" : "jquery.ui.autocompleteAddress",
 		"jquery-query" : "../vendor/jquery.query.min",
-		"jquery-lazyload" : "../vendor/jquery.lazyload",
-		"jquery-wrapmenu" : "jquery.wrapMenu",
-		"jquery-productsload" : "jquery.productsAutoLoad",
-		"jquery-instantarrows": "jquery.instantArrows",
+		"jquery-lazyload" : "../vendor/jquery.lazyload.min",
+		"jquery-wrapmenu" : "jquery.wrapMenu.min",
+		"productsload" : "dynamicweb.productsAutoLoad.min",
+		"jquery-instantarrows": "jquery.instantArrows.min",
 		"jquery-printElement" : "../vendor/jquery.printElement",
 		"jquery-zoom" : "../vendor/jquery.zoom",
 		"jquery-cookie" : "../vendor/jquery.cookie",
 		// Bootstrap JS and its componetns
-		"bootstrap" : "../vendor/bootstrap/bootstrap",
+		"bootstrap" : "../vendor/bootstrap/bootstrap.min",
 		"dw-carousel" : "bootstrap-thumbnailsCarousel",
-		"filters" : "dynamicweb.filters",
-		"layout" : "dynamicweb.layout"
+		"filters" : "dynamicweb.filters.min",
+		"layout" : "dynamicweb.layout.min"
 	},
 	shim: {
 		"layout" : [
@@ -67,7 +67,7 @@ require.config({
 		"jquery-autocomplete" : ["jquery", "jquery-ui"],
 		"jquery-query" : ["jquery"],
 		"jquery-lazyload" : ["jquery"],
-		"query-productsload" : ["jquery"],
+		"productsload" : ["jquery"],
 		"jquery-wrapmenu" : ["jquery"],
 		"bootstrap": ["jquery"],
 		"dw-carousel" : ["bootstrap"]

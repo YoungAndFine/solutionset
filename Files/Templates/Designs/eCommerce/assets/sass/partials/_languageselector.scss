@@ -14,6 +14,11 @@
  */
 @import "flags/*.png";
 
+.lang-selector{
+	top: 13px;
+	position: relative;
+}
+
 .lang-selector a{
 	display: block;
 	width: 16px;

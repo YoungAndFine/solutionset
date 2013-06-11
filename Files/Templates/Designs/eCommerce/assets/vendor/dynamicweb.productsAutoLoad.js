@@ -1,6 +1,16 @@
-/**
- * A jQuery plugin for auto load product from products list
- * (c) Dynamicweb
+ /*
+ * productAutoLoad - A jQuery plugin for auto load product from products list
+ *
+ * Copyright (c) 2013 Dynamicweb
+ *
+ * Licensed under the MIT license:
+ *	 http://www.opensource.org/licenses/mit-license.php
+ *
+ * Project home:
+ *	 https://github.com/dynamicweb/solutionset
+ *
+ * Version: 0.9.0
+ *
  */
 (function ($) {
 

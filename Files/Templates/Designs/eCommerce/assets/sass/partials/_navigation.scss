@@ -17,7 +17,7 @@
 .topmenu-wrapper {
 	background: inherit;
 	position: relative;
-	top: 0;
+	top: 6px;
 	z-index: 3;
 
 	.container {
@@ -36,7 +36,7 @@
 }
 .topmenu {
 	float: right;
-	padding: 15px 0 0px;
+	padding: 0;
 
 	.btn {
 		&.btn-navbar {

@@ -1,7 +1,3 @@
-/*
-	Brug evt. Twitter Bootstraps:
-	http://twitter.github.io/bootstrap/javascript.html#typeahead
-*/
 //use the keyboard arrows to navigate down the suggestion list
 (function ($) {
     $.fn.InstantArrows = function (e) {
