@@ -1,3 +1,6 @@
-﻿<ItemLayouts>
-  <ItemLayout systemname="Website_Settings" template="" />
-</ItemLayouts>
+﻿<WebsiteItemLayouts>
+  <PageItemLayouts />
+  <ParagraphItemLayouts>
+    <ItemLayout systemname="Carousel_Item" template="" />
+  </ParagraphItemLayouts>
+</WebsiteItemLayouts>
