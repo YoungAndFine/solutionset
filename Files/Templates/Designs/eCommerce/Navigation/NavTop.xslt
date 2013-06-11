@@ -25,9 +25,7 @@
 						<xsl:attribute name="href">
 							/Admin/Public/ExtranetLogoff.aspx?ID=<xsl:value-of select="//GlobalTags/Global.Page.ID" />
 						</xsl:attribute>
-						<xsl:if test="(@NavigationTag='login') and ($UserID=1)">
-							<i class="icon-unlock-alt"><xsl:text> </xsl:text></i>
-						</xsl:if>
+						<i class="icon-unlock-alt"><xsl:text> </xsl:text></i>
 						Logout
 					</a>
 				</li>
