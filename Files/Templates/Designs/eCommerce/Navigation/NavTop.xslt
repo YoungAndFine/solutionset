@@ -22,12 +22,12 @@
 				<li><span>Welcome back, <strong><xsl:value-of select="$UserName" /></strong></span></li>
 				<li>
 					<a class="left-spacing right-spacing">
-						<xsl:if test="(@NavigationTag='login') and ($UserID=1)">
-							<i class="icon-unlock-alt"><xsl:text> </xsl:text></i>
-						</xsl:if>
 						<xsl:attribute name="href">
 							/Admin/Public/ExtranetLogoff.aspx?ID=<xsl:value-of select="//GlobalTags/Global.Page.ID" />
 						</xsl:attribute>
+						<xsl:if test="(@NavigationTag='login') and ($UserID=1)">
+							<i class="icon-unlock-alt"><xsl:text> </xsl:text></i>
+						</xsl:if>
 						Logout
 					</a>
 				</li>
