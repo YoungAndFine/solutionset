@@ -12,6 +12,20 @@
  * Version: 0.9.0
  *
  */
-$famfamfam-layout:smart;
-@import "famfamfam/*.png";
-@include all-famfamfam-sprites;
+@import "flags/*.png";
+
+.lang-selector a{
+	display: block;
+	width: 16px;
+	height: 11px;
+	text-indent: -999em;
+	text-align: left;
+}
+
+$list: (de, dk, gb, nl, no, se, us);
+
+@each $language in $list{
+	.flags-#{$language}{ //use the hreflang attr instead: a[hreflang='#{$language}']{
+	  @include flags-sprite($language);
+	}
+}
