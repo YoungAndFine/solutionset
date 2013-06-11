@@ -22,9 +22,9 @@
  * Version: 0.9.0
  *
  */
-	if (typeof (Layout) == 'undefined') {
-		var Layout = new Object();
-	}
+		if (typeof (Layout) == 'undefined') {
+			var Layout = new Object();
+		}
 
 Layout.params = {
 	productListItem: ".product-list-item-wrapper",
@@ -759,256 +759,220 @@ $(document).ready(function () {
 		var $this = $(this)
 		, href = $this.attr('href')
 		, $target = $($this.attr('data-target') || (href && href.replace(/.*(?=#[^\s]+$)/, '')))
-		, isRemote = typeof(href) != "undefined" && !/#/.test(href) && href != 'javascript:void(0);';
+		, isRemote = typeof(href) != "undefined" && !(new RegExp('#')).test(href) && href != 'javascript:void(0);';
 
-$target.data('isRemote', isRemote);
-});
+		$target.data('isRemote', isRemote);
+	});
 
-// Includes preloader to modal-body on modal event 'show'
-$('body').on('show', '.modal', function (e) {
-var modalData = $(this).data()
-, modalBody = $(this).find('.modal-body');
+	// Includes preloader to modal-body on modal event 'show'
+	$('body').on('show', '.modal', function (e) {
+		var modalData = $(this).data()
+		, modalBody = $(this).find('.modal-body');
 
-if (modalData.isRemote) {
-modalBody.html('<div class="loader" />');
-}
-});
+		if (modalData.isRemote) {
+			modalBody.html('<div class="loader" />');
+		}
+	});
 
-// Custom modal loaded event handler used for cutting
-// unnecessary wrapper tags
-$('body').on('loaded', '.modal.modal-type-variants', function (e) {
-var productItem = $(this).find('#content-main .product-list-item-wrapper')
-, modalData = $(this).data()
-, modalBody = $(this).find('.modal-body');
+	// Custom modal loaded event handler used for cutting
+	// unnecessary wrapper tags
+	$('body').on('loaded', '.modal.modal-type-variants', function (e) {
+		var productItem = $(this).find('#content-main .product-list-item-wrapper')
+		, modalData = $(this).data()
+		, modalBody = $(this).find('.modal-body');
 
-if (modalData.isRemote) {
-modalBody.html(productItem.html());
-}
-});
+		if (modalData.isRemote) {
+			modalBody.html(productItem.html());
+		}
+	});
 
-// Custom click handler for modal with BOM configurator
-// element preview
-$('[data-dw-toggle="modal-bom-details"]').on('click', function (e) {
-var $this = $(this)
-, $target = $($this.attr('data-target'))
-, data = $this.data()
-, select = '#' + Layout.params.BOMSelect + data.dwBomConfigurator
-, selectValue = $(select).val()
-, link = $this.attr('href') + '?ProductID=' + selectValue;
+	// Custom click handler for modal with BOM configurator
+	// element preview
+	$('[data-dw-toggle="modal-bom-details"]').on('click', function (e) {
+		var $this = $(this)
+		, $target = $($this.attr('data-target'))
+		, data = $this.data()
+		, select = '#' + Layout.params.BOMSelect + data.dwBomConfigurator
+		, selectValue = $(select).val()
+		, link = $this.attr('href') + '?ProductID=' + selectValue;
 
-if (selectValue != "") {
-$target.data('isRemote', true);
-$target.modal({
-remote: link
-});
-}
+		if (selectValue != "") {
+			$target.data('isRemote', true);
+			$target.modal({
+				remote: link
+			});
+		}
 
-return false;
-});
+		return false;
+	});
 
-// Attach custom 'change' event handler on each DOM select element
-// and fire the event named 'priceChanged', which means
-// that total price need to be recalculated
-$('select[id^=' + Layout.params.BOMSelect + ']').on('change', function (e, params){
-var $this = $(this)
-, $option = $this.find('option:selected')
-, priceBox = $this.parents('.product-pricebox')
-, selectData = $this.data()
-, optionData = $option.data()
-, price = optionData.actualPrice.match(/[0-9.,]+/g)[0];
+	// Attach custom 'change' event handler on each DOM select element
+	// and fire the event named 'priceChanged', which means
+	// that total price need to be recalculated
+	$('select[id^=' + Layout.params.BOMSelect + ']').on('change', function (e, params){
+		var $this = $(this)
+		, $option = $this.find('option:selected')
+		, priceBox = $this.parents('.product-pricebox')
+		, selectData = $this.data()
+		, optionData = $option.data()
+		, price = optionData.actualPrice.match(/[0-9.,]+/g)[0];
 
-if (price.indexOf(',') === 1) {
-price = price.replace(/,/g, '');
-}
+		if (price.indexOf(',') === 1) {
+			price = price.replace(/,/g, '');
+		}
 
-if (/data-/.test(selectData.dwBomPriceholder)) {
-var priceholder = selectData.dwBomPriceholder.replace(/data-/, '');
-$this.data(priceholder, price);
-}
+		if (/data-/.test(selectData.dwBomPriceholder)) {
+			var priceholder = selectData.dwBomPriceholder.replace(/data-/, '');
+			$this.data(priceholder, price);
+		}
 
-if (!params || (params && !params.init)) {
-priceBox.trigger('priceChanged');
-}
-});
+		if (!params || (params && !params.init)) {
+			priceBox.trigger('priceChanged');
+		}
+	});
 
-// Listen the event 'priceChanged' and if it was fired,
-// run recalculation of the total product price
-$('.product-pricebox').on('priceChanged', function (e) {
-var $this = $(this)
-, $priceHolders = $this.find('[data-dw-bom-priceholder]')
-, totalPrice = 0;
+	// Listen the event 'priceChanged' and if it was fired,
+	// run recalculation of the total product price
+	$('.product-pricebox').on('priceChanged', function (e) {
+		var $this = $(this)
+		, $priceHolders = $this.find('[data-dw-bom-priceholder]')
+		, totalPrice = 0;
 
-$priceHolders.each(function (index) {
-var $that = $this
-, $this = $(this)
-, holderData = $this.data()
-, price = 0;
+		$priceHolders.each(function (index) {
+			var $that = $this
+			, $this = $(this)
+			, holderData = $this.data()
+			, price = 0;
 
-switch (holderData.dwBomPriceholder) {
-case 'text':
-price = $this.text().match(/[0-9.,]+/g)[0];
-if (price.indexOf(',') === 1) {
-price = price.replace(/,/g, '');
-}
-break;
-case 'value':
+			switch (holderData.dwBomPriceholder) {
+			case 'text':
+				price = $this.text().match(/[0-9.,]+/g)[0];
+				if (price.indexOf(',') === 1) {
+					price = price.replace(/,/g, '');
+				}
+				break;
+			case 'value':
 
-break;
-default:
-// For some reasone 'case /data-/.test(holderData.dwBomPriceholder):'
-// not working, so I use addition if statement on default case
-if (/data-/.test(holderData.dwBomPriceholder)) {
-var dataAttribute = holderData.dwBomPriceholder.replace(/data-/, '');
-price = holderData[dataAttribute];
-}
-}
+				break;
+			default:
+				// For some reasone 'case /data-/.test(holderData.dwBomPriceholder):'
+				// not working, so I use addition if statement on default case
+				if (/data-/.test(holderData.dwBomPriceholder)) {
+					var dataAttribute = holderData.dwBomPriceholder.replace(/data-/, '');
+					price = holderData[dataAttribute];
+				}
+			}
 
-totalPrice += parseFloat(price);
-});
+			totalPrice += parseFloat(price);
+		});
 
-$(Layout.params.productDetails).find('.product-price-total').html(
-Layout.params.currency.symbol
-+ totalPrice.formatMoney(2, '.', ',')
-);
-});
+		$(Layout.params.productDetails).find('.product-price-total').html(
+			Layout.params.currency.symbol
+				+ totalPrice.formatMoney(2, '.', ',')
+		);
+	});
 
-// Event 'change' need to be fired after page loading
-// to fill all data to each select DOM node.
-// Data will be used on price recalculation function
-$('.product-pricebox select').trigger('change', {
-'init' : true
-});
+	// Event 'change' need to be fired after page loading
+	// to fill all data to each select DOM node.
+	// Data will be used on price recalculation function
+	$('.product-pricebox select').trigger('change', {
+		'init' : true
+	});
 
-// Focus on username input when login form is shown
-$('#LoginBox').on('shown', function(e){
-$(this).find('input[name=username]').focus();
-});
-$('#LoginBox').on('hidden', function(e){
-$(this).find('.loginbox-login-failed').hide();
-});
+	// Focus on username input when login form is shown
+	$('#LoginBox').on('shown', function(e){
+		$(this).find('input[name=username]').focus();
+	});
+	$('#LoginBox').on('hidden', function(e){
+		$(this).find('.loginbox-login-failed').hide();
+	});
 
-// loginbox-login-failed
-if ($('#LoginBox').data().loginFailed) {
-var $message = $('#LoginBox').find('.loginbox-login-failed');
-$('#LoginBox').modal('show');
-$message.show();
-}
-
-
-
-
-Layout.LoginBox.initialize();
-Layout.ProfileForm.initialize();
-
-
-// Check browser support
-$.browserFeatures.checkSupport();
-
-$.equalHeight(".filter-wrapper h3");
-
-// IE input placeholder fix
-if (!$.support.placeholder) {
-var active = document.activeElement;
-$(':text').focus(function () {
-if ($(this).attr('placeholder') && $(this).attr('placeholder') != '' && $(this).val() == $(this).attr('placeholder')) {
-$(this).val('').removeClass('hasPlaceholder');
-}
-}).blur(function () {
-if ($(this).attr('placeholder') && $(this).attr('placeholder') != '' && ($(this).val() == '' || $(this).val() == $(this).attr('placeholder'))) {
-$(this).val($(this).attr('placeholder')).addClass('hasPlaceholder');
-}
-});
-$(':text').blur();
-$(active).focus();
-$('form').submit(function () {
-$(this).find('.hasPlaceholder').each(function () { $(this).val(''); });
-});
-}
-
-// obsolete
-$(".addedtocart-links .buymore").live("click", function () {
-$(this).parents(".addedtocart").fadeOut("fast");
-});
-$(".product-incart-overlay .buymore").live("click", function () {
-$(this).parents(".product-incart-overlay").fadeOut("fast");
-});
-
-// Upadate product list counter (string on sidebar, ie. "1-10 of 20 products")
-$.updateProductsListCounter({
-productList: ".productlist-wrapper[data-productlist-mode='list']",
-productListItem: ".product-list-item-wrapper",
-productTilesList: "",
-productTilesListItem: "",
-itemsDisplayed: "#ProductsDisplayCount",
-productsPerPage: parseInt($("#productsPageSize").html())
-});
-
-// Remember a user setting of view type
-if ($.getUrlParam("View") && $(".nav-with-ecom-groups").length) {
-var navigation = $(".nav-with-ecom-groups"), view = $.getUrlParam("View");
-navigation.find("a").each(function () {
-var href = $(this).attr("href");
-var sign = href.indexOf("?") == -1 ? "?" : "&";
-$(this).attr("href", href + sign + "View=" + view);
-});
-}
-
-// Search initialization
-var eComPageId = $('body').data('product-page');
-var eComParagraphId = $('body').data('product-paragraph');
-var eComProductsSearchResult = [];
-
-// Setting overlay text (overlay is displayed when search filters are submitted)
-eCommerce.Overlay.text('One moment please...');
-eCommerce.Filters.pageId(eComPageId);
-eCommerce.Filters.selectProductsText('Please choose between two and three products for comparison.');
-
-// InstantSearch plugin setup
-Dynamicweb.Frontend.InstantSearch.setup({
-pageID: eComPageId,
-paragraphID: eComParagraphId,
-url: '/Admin/Public/eCom/InstantSearch.ashx',
-delay: 350
-});
-
-// Top Instant Search box - Search
-if ($("#q").length) {
-$("#q").focus(); // Placing top search field in focus when page load
-Dynamicweb.Frontend.InstantSearch.setEnableInstantSearch('q', true, {
-contentID: 'product-instant-search', // An ID of the content template
-progressID: 'search-box-preloader-top',
-onItemDataBound: function (sender, args) {
-// Hide product item if product with the same ID already printed
-var bVisible = $("#" + this.contentID).find(".dw-search-result-prodid:contains('" + args.data.ID.toString() + "')").length <= 0;
-args.template.set_isVisible(bVisible);
-// Rander search result template
-var productLink = "/Default.aspx?ID=" + eComPageId + "&ProductID=" + args.data.ID;
-args.template.field("prodid", args.data.ID);
-args.template.field("url", productLink);
-args.template.field("productlink", productLink);
-args.template.field("detailslink", productLink);
-args.template.field('img', '/Admin/Public/GetImage.ashx?Image=/Files/Images/Ecom/Products/' + args.data.Number + '.jpg&Width=64&Height=64');
-args.template.field("name", args.data.Name);
-// args.template.field("number", "Product number: " + args.data.Number);
-args.template.field("number", args.data.Number);
-args.template.field("price", args.data.PriceWithVAT.toFixed(2));
-},
-onBeforeQuery: function (sender, args) {
-args.set_cancel(args.get_value().length < 2);
-},
-onComplete: function () {
-var box = $("#" + this.contentID);
-if (!box.is(":visible")) {
-if ($("#q").val().length >= 2) {
-/* Show results container */
-		box.fadeIn();
+/*
+	// loginbox-login-failed
+	if ($('#LoginBox').data().loginFailed) {
+		var $message = $('#LoginBox').find('.loginbox-login-failed');
+		$('#LoginBox').modal('show');
+		$message.show();
 	}
-							}
-}
-								 });
-}
+//*/
+	if ($('#LoginBox').find('.loginbox-login-failed').length > 0) {
+		$('#LoginBox').modal('show');
+	}
 
-if (false)
+	Layout.LoginBox.initialize();
+	Layout.ProfileForm.initialize();
+
+
+	// Check browser support
+	$.browserFeatures.checkSupport();
+
+	$.equalHeight(".filter-wrapper h3");
+
+	// IE input placeholder fix
+	if (!$.support.placeholder) {
+		var active = document.activeElement;
+		$(':text').focus(function () {
+			if ($(this).attr('placeholder') && $(this).attr('placeholder') != '' && $(this).val() == $(this).attr('placeholder')) {
+				$(this).val('').removeClass('hasPlaceholder');
+			}
+		}).blur(function () {
+			if ($(this).attr('placeholder') && $(this).attr('placeholder') != '' && ($(this).val() == '' || $(this).val() == $(this).attr('placeholder'))) {
+				$(this).val($(this).attr('placeholder')).addClass('hasPlaceholder');
+			}
+		});
+		$(':text').blur();
+		$(active).focus();
+		$('form').submit(function () {
+			$(this).find('.hasPlaceholder').each(function () { $(this).val(''); });
+		});
+	}
+
+	// obsolete
+	$(".addedtocart-links .buymore").live("click", function () {
+		$(this).parents(".addedtocart").fadeOut("fast");
+	});
+	$(".product-incart-overlay .buymore").live("click", function () {
+		$(this).parents(".product-incart-overlay").fadeOut("fast");
+	});
+
+	// Upadate product list counter (string on sidebar, ie. "1-10 of 20 products")
+	$.updateProductsListCounter({
+		productList: ".productlist-wrapper[data-productlist-mode='list']",
+		productListItem: ".product-list-item-wrapper",
+		productTilesList: "",
+		productTilesListItem: "",
+		itemsDisplayed: "#ProductsDisplayCount",
+		productsPerPage: parseInt($("#productsPageSize").html())
+	});
+
+	// Remember a user setting of view type
+	if ($.getUrlParam("View") && $(".nav-with-ecom-groups").length) {
+		var navigation = $(".nav-with-ecom-groups"), view = $.getUrlParam("View");
+		navigation.find("a").each(function () {
+			var href = $(this).attr("href");
+			var sign = href.indexOf("?") == -1 ? "?" : "&";
+			$(this).attr("href", href + sign + "View=" + view);
+		});
+	}
+
+	// Search initialization
+	var eComPageId = $('body').data('product-page');
+	var eComParagraphId = $('body').data('product-paragraph');
+	var eComProductsSearchResult = [];
+
+	// Setting overlay text (overlay is displayed when search filters are submitted)
+	eCommerce.Overlay.text('One moment please...');
+	eCommerce.Filters.pageId(eComPageId);
+	eCommerce.Filters.selectProductsText('Please choose between two and three products for comparison.');
+
+	// InstantSearch plugin setup
+	Dynamicweb.Frontend.InstantSearch.setup({
+		pageID: eComPageId,
+		paragraphID: eComParagraphId,
+		url: '/Admin/Public/eCom/InstantSearch.ashx',
+		delay: 350
+	});
+
 	// Top Instant Search box - Search
 	if ($("#q").length) {
 		$("#q").focus(); // Placing top search field in focus when page load
@@ -1033,232 +997,270 @@ if (false)
 			},
 			onBeforeQuery: function (sender, args) {
 				args.set_cancel(args.get_value().length < 2);
+			},
+			onComplete: function () {
+				var box = $("#" + this.contentID);
+				if (!box.is(":visible")) {
+					if ($("#q").val().length >= 2) {
+						/* Show results container */
+						box.fadeIn();
+					}
+				}
 			}
 		});
 	}
 
-
-// Top Instant Search box - Quick Add
-if ($("#quickaddinput").length) {
-	// disabling "cartcmd" input
-	$("#quickaddinput").parents("form").find("input[name='cartcmd']").prop('disabled', true);
-
-	Dynamicweb.Frontend.InstantSearch.setEnableInstantSearch('quickaddinput', true, {
-		contentID: 'product-quickadd-instant-search', // An ID of the content template
-		progressID: 'search-box-preloader-quickadd',
-		onItemDataBound: function (sender, args) {
-			// Hide product item if product with the same ID already printed
-			var bVisible = $("#" + this.contentID).find(".dw-search-result-prodid:contains('" + args.data.ID.toString() + "')").length <= 0;
-			args.template.set_isVisible(bVisible);
-			// Rander search result template
-			var productLink = "/Default.aspx?ID=" + eComPageId + "&ProductID=" + args.data.ID;
-			args.template.field("prodid", args.data.ID);
-			args.template.field("url", productLink);
-			args.template.field("productlink", productLink);
-			args.template.field("name", args.data.Name);
-			args.template.field("number", args.data.Number);
-		},
-		onComplete: function () {
-			var box = $('#product-quickadd-instant-search');
-			var input = $("#quickaddinput");
-			if (!box.is(":visible")) {
-				box.css({ left: input.position().left + 8 }).fadeIn();
-			}
+	if (false)
+		// Top Instant Search box - Search
+		if ($("#q").length) {
+			$("#q").focus(); // Placing top search field in focus when page load
+			Dynamicweb.Frontend.InstantSearch.setEnableInstantSearch('q', true, {
+				contentID: 'product-instant-search', // An ID of the content template
+				progressID: 'search-box-preloader-top',
+				onItemDataBound: function (sender, args) {
+					// Hide product item if product with the same ID already printed
+					var bVisible = $("#" + this.contentID).find(".dw-search-result-prodid:contains('" + args.data.ID.toString() + "')").length <= 0;
+					args.template.set_isVisible(bVisible);
+					// Rander search result template
+					var productLink = "/Default.aspx?ID=" + eComPageId + "&ProductID=" + args.data.ID;
+					args.template.field("prodid", args.data.ID);
+					args.template.field("url", productLink);
+					args.template.field("productlink", productLink);
+					args.template.field("detailslink", productLink);
+					args.template.field('img', '/Admin/Public/GetImage.ashx?Image=/Files/Images/Ecom/Products/' + args.data.Number + '.jpg&Width=64&Height=64');
+					args.template.field("name", args.data.Name);
+					// args.template.field("number", "Product number: " + args.data.Number);
+					args.template.field("number", args.data.Number);
+					args.template.field("price", args.data.PriceWithVAT.toFixed(2));
+				},
+				onBeforeQuery: function (sender, args) {
+					args.set_cancel(args.get_value().length < 2);
+				}
+			});
 		}
-	});
-	$("#product-quickadd-instant-search .dw-search-result-item a").live("click", function (e) {
-		e.preventDefault();
-		var prodNumber = $(this).parents(".dw-search-result").find(".dw-search-result-number").html();
-		$("#quickaddinput").val(prodNumber);
-	});
-}
 
-// Close instant search box when click outside
-instantSearchMouseOver = false;
-$('.product-suggestions-box').live("hover", function () {
-	instantSearchMouseOver = true;
-}, function () {
+
+	// Top Instant Search box - Quick Add
+	if ($("#quickaddinput").length) {
+		// disabling "cartcmd" input
+		$("#quickaddinput").parents("form").find("input[name='cartcmd']").prop('disabled', true);
+
+		Dynamicweb.Frontend.InstantSearch.setEnableInstantSearch('quickaddinput', true, {
+			contentID: 'product-quickadd-instant-search', // An ID of the content template
+			progressID: 'search-box-preloader-quickadd',
+			onItemDataBound: function (sender, args) {
+				// Hide product item if product with the same ID already printed
+				var bVisible = $("#" + this.contentID).find(".dw-search-result-prodid:contains('" + args.data.ID.toString() + "')").length <= 0;
+				args.template.set_isVisible(bVisible);
+				// Rander search result template
+				var productLink = "/Default.aspx?ID=" + eComPageId + "&ProductID=" + args.data.ID;
+				args.template.field("prodid", args.data.ID);
+				args.template.field("url", productLink);
+				args.template.field("productlink", productLink);
+				args.template.field("name", args.data.Name);
+				args.template.field("number", args.data.Number);
+			},
+			onComplete: function () {
+				var box = $('#product-quickadd-instant-search');
+				var input = $("#quickaddinput");
+				if (!box.is(":visible")) {
+					box.css({ left: input.position().left + 8 }).fadeIn();
+				}
+			}
+		});
+		$("#product-quickadd-instant-search .dw-search-result-item a").live("click", function (e) {
+			e.preventDefault();
+			var prodNumber = $(this).parents(".dw-search-result").find(".dw-search-result-number").html();
+			$("#quickaddinput").val(prodNumber);
+		});
+	}
+
+	// Close instant search box when click outside
 	instantSearchMouseOver = false;
-});
-$(document).mouseup(function () {
-	if (!instantSearchMouseOver) $(".product-suggestions-box").fadeOut();
-});
-
-$(".quick-add form").live("submit", function () {
-	//$(this).attr("method", "post");
-	$(this).find("input[name='cartcmd']").prop('disabled', false);
-	$("input[name='eComQuery']").attr("name", "ProductNumber");
-	return true;
-});
-
-// Select all anchor tag with rel set to tooltip
-var tooltipPositions = {
-	top: {
-		x: { key: "left", value: -60 },
-		y: { key: "bottom", value: 15 }
-	},
-	bottom: {
-		x: { key: "left", value: -55 },
-		y: { key: "top", value: 15 }
-	},
-	left: {
-		x: { key: "left", value: -200 },
-		y: { key: "top", value: -20 }
-	},
-	right: {
-		x: { key: "right", value: -200 },
-		y: { key: "top", value: -20 }
-	}
-};
-$('a[data-rel=tooltip]').live("mouseover", function (e) {
-	var posX = e.pageX - this.offsetLeft,
-	posY = e.pageY - this.offsetTop,
-	container = $(this).data("container"),
-	position = $(this).data("position"),
-	tip;
-
-	if (container) {
-		tip = $(container).html();
-	} else {
-		tip = $(this).attr('title');
-		$(this).attr('title', '');
-	}
-
-	$(this).append('<div id="tooltip">' + tip + '</div>');
-
-	if (position in tooltipPositions) {
-		$('#tooltip').css(tooltipPositions[position].y.key, tooltipPositions[position].y.value);
-		$('#tooltip').css(tooltipPositions[position].x.key, tooltipPositions[position].x.value);
-	} else {
-		$('#tooltip').css('top', e.pageY - $(this).offset().top + 10);
-		$('#tooltip').css('left', e.pageX - $(this).offset().left + 10);
-	}
-
-	$('#tooltip').fadeIn('500');
-	$('#tooltip').fadeTo('10', 1);
-}).live("mousemove", function (e) {
-	var prop = $(this).data();
-	if (!tooltipPositions.hasOwnProperty(prop.position)) {
-		$('#tooltip').css('top', e.pageY - $(this).offset().top + 10);
-		$('#tooltip').css('left', e.pageX - $(this).offset().left + 10);
-	}
-}).live("mouseout", function () {
-	var prop = $(this).data();
-	if (!prop.container) {
-		$(this).attr('title', $('.tipBody').html());
-	}
-	$(this).children('div#tooltip').remove();
-});
-
-//Check Voucher
-$('.check_voucher').click(function () {
-	var voucher = $('#EcomOrderVoucherCode').val();
-	var item = $(this);
-	$.ajax({
-		url: '/Admin/Module/eCom_Catalog/dw7/Vouchers/VouchersActions.ashx?cmd=CheckVoucher&code=' + voucher,
-		success: function (data) {
-			if (data == 'true') {
-				alert(item.data('ok'));
-				$('.check_voucher').hide().next().show();
-			}
-			else {
-				alert(item.data('error'));
-			}
-		}
+	$('.product-suggestions-box').live("hover", function () {
+		instantSearchMouseOver = true;
+	}, function () {
+		instantSearchMouseOver = false;
 	});
-	return false;
-})
+	$(document).mouseup(function () {
+		if (!instantSearchMouseOver) $(".product-suggestions-box").fadeOut();
+	});
 
-$(".product-list-item-wrapper.version-b2b input[name='quantity']").live("keypress", function (e) {
-	var code = (e.keyCode ? e.keyCode : e.which), listItem;
-	if (code == 9) {
-		listItem = $(this).parents(".product-list-item");
-		listItem.next().find("input[name='quantity']").focus();
-	}
-});
+	$(".quick-add form").live("submit", function () {
+		//$(this).attr("method", "post");
+		$(this).find("input[name='cartcmd']").prop('disabled', false);
+		$("input[name='eComQuery']").attr("name", "ProductNumber");
+		return true;
+	});
 
-// $(document).keydown(function (e) {
-//		 $('#product-instant-search, #product-instant-search-bottom, #product-quickadd-instant-search').InstantArrows(e);
-// });
+	// Select all anchor tag with rel set to tooltip
+	var tooltipPositions = {
+		top: {
+			x: { key: "left", value: -60 },
+			y: { key: "bottom", value: 15 }
+		},
+		bottom: {
+			x: { key: "left", value: -55 },
+			y: { key: "top", value: 15 }
+		},
+		left: {
+			x: { key: "left", value: -200 },
+			y: { key: "top", value: -20 }
+		},
+		right: {
+			x: { key: "right", value: -200 },
+			y: { key: "top", value: -20 }
+		}
+	};
+	$('a[data-rel=tooltip]').live("mouseover", function (e) {
+		var posX = e.pageX - this.offsetLeft,
+		posY = e.pageY - this.offsetTop,
+		container = $(this).data("container"),
+		position = $(this).data("position"),
+		tip;
 
-// Show prices with VAT checkbox
-/*
-	.wr_vat - class told you that you are in showVAT mode
-*/
-$('.vat_check').click(function () {
+		if (container) {
+			tip = $(container).html();
+		} else {
+			tip = $(this).attr('title');
+			$(this).attr('title', '');
+		}
 
-	if ($(this).find('input').attr('checked') == 'checked') {
-		$('body').addClass('wr_vat');
-		//set coockie
-		document.cookie = 'pricevat' + "=" + '1' + "; path=/";
+		$(this).append('<div id="tooltip">' + tip + '</div>');
 
-	}
-	else {
-		$('body').removeClass('wr_vat');
-		//remove coockie
-		document.cookie = 'pricevat' + "=0" + "; expires=-1" + "; path=/";
+		if (position in tooltipPositions) {
+			$('#tooltip').css(tooltipPositions[position].y.key, tooltipPositions[position].y.value);
+			$('#tooltip').css(tooltipPositions[position].x.key, tooltipPositions[position].x.value);
+		} else {
+			$('#tooltip').css('top', e.pageY - $(this).offset().top + 10);
+			$('#tooltip').css('left', e.pageX - $(this).offset().left + 10);
+		}
 
-	}
-})
+		$('#tooltip').fadeIn('500');
+		$('#tooltip').fadeTo('10', 1);
+	}).live("mousemove", function (e) {
+		var prop = $(this).data();
+		if (!tooltipPositions.hasOwnProperty(prop.position)) {
+			$('#tooltip').css('top', e.pageY - $(this).offset().top + 10);
+			$('#tooltip').css('left', e.pageX - $(this).offset().left + 10);
+		}
+	}).live("mouseout", function () {
+		var prop = $(this).data();
+		if (!prop.container) {
+			$(this).attr('title', $('.tipBody').html());
+		}
+		$(this).children('div#tooltip').remove();
+	});
 
-
-if (is_cook_exists() == 1) {
-	$('.vat_check input').attr('checked', 'checked');
-	$('body').addClass('wr_vat');
-}
-else if (is_cook_exists() == 2) {
-	// $('.vat_check input').attr('checked', 'checked');
-}
-else if (is_cook_exists() == 0) {
-	$('body').removeClass('wr_vat');
-}
-
-/* Product related hide/unhide */
-$('.product-details .products-related .product-list-related:lt(3)').each(function () {
-	$(this).show();
-})
-
-	// Print order in modal
-	$('.print_win').click(function(){
-		$(this).parents('.modal').find('.modal-body').printElement({
-			overrideElementCSS:[
-				designBaseUrl+'/assets/stylesheets/bootstrap.css',
-				designBaseUrl+'/assets/stylesheets/bootstrap-responsive.css',
-				designBaseUrl+'/assets/stylesheets/layout.css'
-			],
-			leaveOpen: true,
-			"printBodyOptions": {
-				"styleToAdd": 'width:auto; height:auto', //style attributes to add to the body of print document
+	//Check Voucher
+	$('.check_voucher').click(function () {
+		var voucher = $('#EcomOrderVoucherCode').val();
+		var item = $(this);
+		$.ajax({
+			url: '/Admin/Module/eCom_Catalog/dw7/Vouchers/VouchersActions.ashx?cmd=CheckVoucher&code=' + voucher,
+			success: function (data) {
+				if (data == 'true') {
+					alert(item.data('ok'));
+					$('.check_voucher').hide().next().show();
+				}
+				else {
+					alert(item.data('error'));
+				}
 			}
 		});
+		return false;
 	})
 
-// Clicks on B2C first page blocks
-$('.feature-wrapper').on('click', function(){
-	location.href = $(this).find('a:first-child').attr('href');
-	return false;
-})
+	$(".product-list-item-wrapper.version-b2b input[name='quantity']").live("keypress", function (e) {
+		var code = (e.keyCode ? e.keyCode : e.which), listItem;
+		if (code == 9) {
+			listItem = $(this).parents(".product-list-item");
+			listItem.next().find("input[name='quantity']").focus();
+		}
+	});
 
-// colors variations thumbs cllicks
-$('.product-tile ul img').hover(function(){
-	var path = $(this).data('path');
-	$(this).parents('.thumbnail').find('img:eq(0)').attr('src', path);
-}, function(){
-	$(this).parents('.thumbnail').find('img:eq(0)').attr('src', $(this).parents('.thumbnail').find('img:eq(0)').data('src'));
-})
+	// $(document).keydown(function (e) {
+	//		 $('#product-instant-search, #product-instant-search-bottom, #product-quickadd-instant-search').InstantArrows(e);
+	// });
+
+	// Show prices with VAT checkbox
+	/*
+		.wr_vat - class told you that you are in showVAT mode
+	*/
+	$('.vat_check').click(function () {
+
+		if ($(this).find('input').attr('checked') == 'checked') {
+			$('body').addClass('wr_vat');
+			//set coockie
+			document.cookie = 'pricevat' + "=" + '1' + "; path=/";
+
+		}
+		else {
+			$('body').removeClass('wr_vat');
+			//remove coockie
+			document.cookie = 'pricevat' + "=0" + "; expires=-1" + "; path=/";
+
+		}
+	})
 
 
-// Don't show this message next time
-$('.added-to-cart a').live('click', function(){
-	if($('.dont').is(':checked')){
-		$.cookie("donotdisturb", 1, { expires: 10 });
+	if (is_cook_exists() == 1) {
+		$('.vat_check input').attr('checked', 'checked');
+		$('body').addClass('wr_vat');
 	}
-})
-$('#addedModal').on('hidden', function () {
-	if($('.dont').is(':checked')){
-		$.cookie("donotdisturb", 1, { expires: 10 });
+	else if (is_cook_exists() == 2) {
+		// $('.vat_check input').attr('checked', 'checked');
 	}
-})
+	else if (is_cook_exists() == 0) {
+		$('body').removeClass('wr_vat');
+	}
+
+	/* Product related hide/unhide */
+	$('.product-details .products-related .product-list-related:lt(3)').each(function () {
+		$(this).show();
+	})
+
+		// Print order in modal
+		$('.print_win').click(function(){
+			$(this).parents('.modal').find('.modal-body').printElement({
+				overrideElementCSS:[
+					designBaseUrl+'/assets/stylesheets/bootstrap.css',
+					designBaseUrl+'/assets/stylesheets/bootstrap-responsive.css',
+					designBaseUrl+'/assets/stylesheets/layout.css'
+				],
+				leaveOpen: true,
+				"printBodyOptions": {
+					"styleToAdd": 'width:auto; height:auto', //style attributes to add to the body of print document
+				}
+			});
+		})
+
+	// Clicks on B2C first page blocks
+	$('.feature-wrapper').on('click', function(){
+		location.href = $(this).find('a:first-child').attr('href');
+		return false;
+	})
+
+	// colors variations thumbs cllicks
+	$('.product-tile ul img').hover(function(){
+		var path = $(this).data('path');
+		$(this).parents('.thumbnail').find('img:eq(0)').attr('src', path);
+	}, function(){
+		$(this).parents('.thumbnail').find('img:eq(0)').attr('src', $(this).parents('.thumbnail').find('img:eq(0)').data('src'));
+	})
+
+
+	// Don't show this message next time
+	$('.added-to-cart a').live('click', function(){
+		if($('.dont').is(':checked')){
+			$.cookie("donotdisturb", 1, { expires: 10 });
+		}
+	})
+	$('#addedModal').on('hidden', function () {
+		if($('.dont').is(':checked')){
+			$.cookie("donotdisturb", 1, { expires: 10 });
+		}
+	})
 
 
 });

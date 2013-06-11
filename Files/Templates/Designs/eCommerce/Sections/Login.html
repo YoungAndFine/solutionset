@@ -1,33 +1,31 @@
-<div class="modal hide fade modal-type-loginbox" id="LoginBox" tabindex="-1" role="dialog" data-login-failed="<!--@If Defined(DW_extranet_error_uk)-->true<!--@EndIf(DW_extranet_error_uk)-->">
+<div class="modal hide fade modal-type-loginbox" id="LoginBox" tabindex="-1" role="dialog">
 	<div class="modal-header">
     <button type="button" class="close blue-close icon-remove" data-dismiss="modal"></button>
 		<h3>
       <span class="icon-key"></span>
 			<!--@Translate(CustomerLogin, "Customer login")-->
 		</h3>
-	</div><!-- / .modal-header -->
+	</div>
 	<div class="modal-body">
-
-		<!--@If(Global:Area.Lang=='da')-->
-		<div class="loginbox-login-failed alert alert-error"><!--@DW_extranet_error_dk--></div>
-		<!--@EndIf-->
-		<!--@If(Global:Area.Lang!='da')-->
-		<div class="loginbox-login-failed alert alert-error"><!--@DW_extranet_error_uk--></div>
-		<!--@EndIf-->
-
-		<!--@If Defined(Item.Area.Login_Message_Content_ID)-->
+		<!--@If(Item.Area.Login_Message_Content_ID>0)-->
 		<div class="alert alert-info">
 			<!--@Global:Paragraph.Content(<!--@Item.Area.Login_Message_Content_ID-->)-->
 		</div>
 		<!--@EndIf(Item.Area.Login_Message_Content_ID)-->
 
 		<div class="login-box-mode" data-login-box-mode="login">
+			<!--@If(Global:Extranet.UserID==0)-->
+			<!--@If(Server:Request.username<defined> || Server:Request.password<defined>)-->
+			<div class="loginbox-login-failed alert alert-error"><!--@Translate(Invalid_username_or_password, "Invalid username or password")--></div>
+			<!--@EndIf-->
+			<!--@EndIf-->
+
 			<form class="form-horizontal" action="<!--@Global:Pageview.Url-->" method="post" onsubmit="return Layout.LoginBox.validate(this);">
 				<input type="hidden" name="ID" value="<!--@Global:Page.ID-->" />
 				<input type="hidden" name="DWExtranetUsernameRemember" value="True" />
 				<input type="hidden" name="DWExtranetPasswordRemember" value="True" />
-				<input type="text" id="login-username" class="input-block-level login-credentials login-username-field" name="username" spellcheck="false" placeholder='<!--@Translate(Username, "Username")-->'>
-				<input type="password" id="login-password" class="input-block-level login-credentials login-password-field" name="password" placeholder='<!--@Translate(Password, "Password")-->'>
+				<input type="text" id="login-username" class="input-block-level login-credentials login-username-field" name="username" spellcheck="false" placeholder="<!--@Translate(Username, 'Username')-->" value="<!--@If(Server:Request.username<defined>)--><!--@Server:Request.username--><!--@EndIf-->"/>
+				<input type="password" id="login-password" class="input-block-level login-credentials login-password-field" name="password" placeholder="<!--@Translate(Password, 'Password')-->" value="<!--@If(Server:Request.password<defined>)--><!--@Server:Request.password--><!--@EndIf-->"/>
 
 				<div class="row-fluid">
 					<div class="span6">
@@ -61,7 +59,7 @@
 							<a href="javascript:void(0);" onclick="Layout.LoginBox.mode('login', $(this).parents('form'));" class="login-form-lostpasswordhint">
 								<!--@Translate(GoBack, "Go back")-->
 							</a>
-				</div>
+						</div>
 						<div class="span8">
 					<input type="submit" class="dw-button dw-button-green" value='<!--@Translate(sendpassword, "Send password")-->' />
 						</div>
@@ -69,23 +67,26 @@
 			</form>
 		</div>
 
-	</div><!-- / .modal-body -->
+	</div>
+
+	<!--@If Defined(Item.Area.Create_Account_Page_ID)-->
 	<div class="modal-footer">
 		<!--@Translate(donthaveaccount, "Don't have an account?")-->
-		<a href="/Default.aspx?ID=<!--@If(Global:Area.ID==1)-->700<!--@EndIf--><!--@If(Global:Area.ID==17)-->701<!--@EndIf--><!--@If(Global:Area.ID==18)-->702<!--@EndIf--><!--@If(Global:Area.ID==19)-->703<!--@EndIf--><!--@If(Global:Area.ID==22)-->708<!--@EndIf-->" class="btn dw-button-gray" data-toggle="modal" data-target="#signUpModal" onclick="$(this).parents('.modal').modal('hide')">
+		<a href="/Default.aspx?ID=<!--@Item.Area.Create_Account_Page_ID-->" class="btn dw-button-gray" data-toggle="modal" data-target="#signUpModal" onclick="$(this).parents('.modal').modal('hide')">
 			<!--@Translate(signupforaccount, "Sign up for an account")-->
 		</a>
 	</div>
-</div><!-- / .modal-type-loginbox -->
+	<!--@EndIf-->
+</div>
 
 <div class="modal hide fade modal-type-loginbox" id="signUpModal" tabindex="-1" role="dialog">
 	<div class="modal-header">
     <button type="button" class="close blue-close icon-remove" data-dismiss="modal"></button>
 		<h3><!--@Translate(signup, "Signup")--></h3>
-	</div><!-- / .modal-header -->
+	</div>
 	<div class="modal-body">
 		<div class="row-fluid no-space">
 			<div class="loader"></div>
 		</div>
-	</div><!-- / .modal-body -->
-</div><!-- / .modal -->
+	</div>
+</div>
