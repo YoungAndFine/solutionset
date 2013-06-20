@@ -1,14 +1,14 @@
 <h2>Edit user '<!--@UserManagement:User.Name-->'</h2>
 <!--@LoopStart(FormValidationErrors)-->
-	<!--@HeaderStart-->
-		<div id="errormessages">
-			<ul>
-	<!--@HeaderEnd-->
-				<li>Error in the input field "<!--@UserManagement:User.FormValidationError.FieldNiceName-->": <a href="javascript:document.getElementById('<!--@UserManagement:User.FormValidationError.FieldName-->').focus();"><!--@UserManagement:User.FormValidationError.Message--></a></li>
-	<!--@FooterStart-->
-			</ul>
-		</div>
-	<!--@FooterEnd-->
+<!--@HeaderStart-->
+<div id="errormessages" class="alert alert-error">
+	<ul>
+		<!--@HeaderEnd-->
+		<li>Error in the input field "<!--@UserManagement:User.FormValidationError.FieldNiceName-->": <a href="javascript:document.getElementById('<!--@UserManagement:User.FormValidationError.FieldName-->').focus();"><!--@UserManagement:User.FormValidationError.Message--></a></li>
+		<!--@FooterStart-->
+	</ul>
+</div>
+<!--@FooterEnd-->
 <!--@LoopEnd(FormValidationErrors)-->
 
 
