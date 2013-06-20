@@ -1109,7 +1109,7 @@ a.dw-button {
 .modal .modal-header {
   background: whitesmoke url("../images/bg_modal_header.png");
   border-bottom: 1px solid #DDDDDD;
-  box-shadow: 0 -1px 0 whitesmoke inset;
+  box-shadow: 0 -1px 0 #F5F5F5 inset;
 }
 /* line 26, ../sass/partials/_modals.scss */
 .modal .modal-header h3 {
@@ -1156,7 +1156,7 @@ a.dw-button {
 /* line 66, ../sass/partials/_modals.scss */
 .modal .modal-body .arr-forward-small-white {
   margin-left: 3px;
-  font-size: 1.1em!important;
+  font-size: 1.1em !important;
 }
 /* line 72, ../sass/partials/_modals.scss */
 .modal .row [class*="span"]:not(:first-child) {
@@ -1715,7 +1715,7 @@ li [class*=" icon-"].icon-large, .nav li [class^="icon-"].icon-large,
 /* line 131, ../sass/partials/_font-awesome.scss */
 ul.icons {
   list-style-type: none;
-  text-indent: -0.75em;
+  text-indent: -.75em;
 }
 /* line 137, ../sass/partials/_font-awesome.scss */
 ul.icons li [class^="icon-"],
@@ -3479,7 +3479,7 @@ ul.icons li [class*=" icon-"] {
 }
 /* line 35, ../sass/partials/_header.scss */
 .header-wrapper.type-minimal > .container {
-  box-shadow: 15px -5px 15px -15px #cccccc, -15px -5px 15px -15px #cccccc, 0px -10px 15px -10px #cccccc;
+  box-shadow: 15px -5px 15px -15px #CCCCCC, -15px -5px 15px -15px #CCCCCC, 0px -10px 15px -10px #CCCCCC;
 }
 /* line 41, ../sass/partials/_header.scss */
 .header-wrapper.type-minimal .logo-wrapper {
@@ -3531,7 +3531,7 @@ ul.icons li [class*=" icon-"] {
   vertical-align: middle;
   font: bold 18px/25px arial;
   margin-top: 31px;
-  height: inherit!important;
+  height: inherit !important;
 }
 @media (max-width: 349px) {
   /* line 90, ../sass/partials/_header.scss */
@@ -3590,7 +3590,7 @@ ul.icons li [class*=" icon-"] {
 .minicart-wrapper {
   height: 80px;
   margin: 5px 0;
-  box-shadow: -15px 0px 10px -15px #cccccc;
+  box-shadow: -15px 0px 10px -15px #ccc;
 }
 /* line 141, ../sass/partials/_header.scss */
 .minicart-wrapper.login-required {
@@ -3884,7 +3884,7 @@ ul.icons li [class*=" icon-"] {
 /* line 16, ../sass/partials/_footer.scss */
 .footer-wrapper {
   height: 120px;
-  background: #484848;
+  background: url(../images/footer_gradient.png) repeat-x center bottom #484848;
 }
 /* line 20, ../sass/partials/_footer.scss */
 .footer-wrapper .footer-section {
@@ -4763,7 +4763,7 @@ ul.icons li [class*=" icon-"] {
   border: 1px solid #4B4F5B;
   border-top: none;
   border-radius: 0 0 5px 5px;
-  box-shadow: 1px 0px 5px -1px #666666;
+  box-shadow: 1px 0px 5px -1px #666;
   margin: 0;
   padding: 0 10px 5px;
   left: -1px;
@@ -5561,7 +5561,7 @@ ul.icons li [class*=" icon-"] {
   width: 40px;
   border: 1px solid #4AA400;
   border-radius: 3px 3px 3px 3px;
-  box-shadow: 0 2px 4px -4px black inset;
+  box-shadow: 0 2px 4px -4px #000000 inset;
   float: left;
   height: 26px;
   line-height: 26px;
