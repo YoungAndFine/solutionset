@@ -43,8 +43,8 @@ require.config({
 		// Bootstrap JS and its componetns
 		"bootstrap" : "../vendor/bootstrap/bootstrap.min",
 		"dw-carousel" : "bootstrap-thumbnailsCarousel",
-		"filters" : "dynamicweb.filters.min",
-		"layout" : "dynamicweb.layout.min"
+		"filters" : "dynamicweb.filters", //.min",
+		"layout" : "dynamicweb.layout" //.min"
 	},
 	shim: {
 		"layout" : [
