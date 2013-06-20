@@ -40,6 +40,11 @@
 										<xsl:attribute name="id">quicklinks-<xsl:value-of select="@NavigationTag" /></xsl:attribute>
 										<xsl:attribute name="data-target">#LoginBox</xsl:attribute>
 										<xsl:attribute name="data-toggle">modal</xsl:attribute>
+										<xsl:if test="@NavigationTag = 'myaccount'">
+											<xsl:attribute name="data-href">
+												<xsl:value-of select="@FriendlyHref" disable-output-escaping="yes" />
+											</xsl:attribute>
+										</xsl:if>
 									</xsl:when>
 									<xsl:otherwise>
 										<xsl:attribute name="href">

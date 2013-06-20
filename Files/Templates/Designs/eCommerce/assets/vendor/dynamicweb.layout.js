@@ -715,7 +715,6 @@ function changeDropdownPosition(dropdownMenu) {
 }
 
 $(document).ready(function () {
-
 	// Fix for Bootstrap dropdown tooltip.
 	// Avoid the close of dropdown box after the click on it
 	$('body').on(
@@ -898,6 +897,12 @@ $(document).ready(function () {
 	if ($('#LoginBox').find('.loginbox-login-failed').length > 0) {
 		$('#LoginBox').modal('show');
 	}
+
+	$('*[data-toggle=modal][data-target=#LoginBox]').each(function(i, el) {
+		$(el).on('click', function() {
+			$('#LoginBox').find('input[name=redirect]').val($(this).data('href'));
+		});
+	});
 
 	Layout.LoginBox.initialize();
 	Layout.ProfileForm.initialize();
