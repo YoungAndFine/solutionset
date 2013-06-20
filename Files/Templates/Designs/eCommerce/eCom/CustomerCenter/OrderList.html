@@ -21,7 +21,11 @@
 		<!--@If Not Defined(Server:Request.addr)-->
 
 		<div class="customer_wr">
-			<a class="edit_user" href="<!--@Global:Pageview.Url-->?addr=1&ID=272&amp;ObjectID=<!--@Global:Extranet.UserID-->&amp;Action=Edit"><!--@Translate(edit, "Edit")--></a>
+			<!--@If Defined(Item.Area.Edit_Account_Page_ID)-->
+			<a class="edit_user" href="/Default.aspx?ID=<!--@Item.Area.Edit_Account_Page_ID-->&amp;addr=1&amp;ObjectID=<!--@Global:Extranet.UserID-->&amp;Action=Edit"><!--@Translate(edit, "Edit")--></a>
+			<!--@Else-->
+			<a class="edit_user" href="/Default.aspx?ID=<!--@Global:Page.ID-->&amp;addr=1&amp;ObjectID=<!--@Global:Extranet.UserID-->&amp;Action=Edit"><!--@Translate(edit, "Edit")--></a>
+			<!--@EndIf-->
 			<h4><!--@Global:Extranet.Name--></h4>
 
 			<div class="row-fluid">

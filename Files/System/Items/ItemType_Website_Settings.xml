@@ -37,11 +37,6 @@
           <editorConfuguration />
         </editor>
       </field>
-      <field name="Create Account Page ID" systemName="Create_Account_Page_ID" description="" type="System.Int32, mscorlib">
-        <editor type="Dynamicweb.Content.Items.Editors.IntegerEditor, Dynamicweb">
-          <editorConfuguration />
-        </editor>
-      </field>
       <field name="Show &quot;Product added to cart&quot; Popup" systemName="Show__ProductAddedToCart__Popup" description="" type="System.Boolean, mscorlib">
         <editor type="Dynamicweb.Content.Items.Editors.CheckboxEditor, Dynamicweb">
           <editorConfuguration />
@@ -97,6 +92,16 @@
           <editorConfuguration />
         </editor>
       </field>
+      <field name="Create Account Page ID" systemName="Create_Account_Page_ID" description="" type="System.Int32, mscorlib">
+        <editor type="Dynamicweb.Content.Items.Editors.IntegerEditor, Dynamicweb">
+          <editorConfuguration />
+        </editor>
+      </field>
+      <field name="Edit Account Page ID" systemName="Edit_Account_Page_ID" description="" type="System.Int32, mscorlib">
+        <editor type="Dynamicweb.Content.Items.Editors.IntegerEditor, Dynamicweb">
+          <editorConfuguration />
+        </editor>
+      </field>
     </fields>
     <rules>
       <rule name="Limit item type to" type="Dynamicweb.Content.Items.Activation.StructureRestrictionRule, Dynamicweb" value="Websites" />
@@ -112,7 +117,6 @@
             <field systemName="Checkout_Page_ID" />
             <field systemName="Footer_Content_Page_ID" />
             <field systemName="Login_Message_Content_ID" />
-            <field systemName="Create_Account_Page_ID" />
           </fields>
         </group>
         <group name="Product Added To Cart" systemName="Product_Added_To_Cart" collapsibleState="None">
@@ -135,6 +139,12 @@
             <field systemName="Skin" />
             <field systemName="Custom_CSS_Url" />
             <field systemName="Favicon" />
+          </fields>
+        </group>
+        <group name="Account" systemName="Account" collapsibleState="None">
+          <fields>
+            <field systemName="Create_Account_Page_ID" />
+            <field systemName="Edit_Account_Page_ID" />
           </fields>
         </group>
       </groups>
