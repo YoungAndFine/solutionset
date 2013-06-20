@@ -102,7 +102,7 @@
 						</th>
 						<th>
 							<a href="/Admin/Public/CustomerCenter/ExcelExport.aspx" title="Excel" class="export_excel">
-								<img alt="excel" title="Export to Excel" src="/Files/Templates/Designs/eCommerce01/images/export.png" />
+								<i class="icon-save"></i>
 								<span class="long_text"><!--@Translate(toexcel, "export to Excel")--></span>
 								<span class="short_text"><!--@Translate(excel, "Excel")--></span>
 							</a>
@@ -126,15 +126,17 @@
 						<td class="to-hide"><!--@Ecom:Order:Orderstate.Name--></td>
 						<td class="to-hide col-delivery"><!--@Ecom:Order.ShippingMethod--></td>
 						<td class="nowr">
-							<a href="<!--@Ecom:CustomerCenter.Orders.OrderDetailsURL-->&reorder=1">
-								<img alt="" src="/Files/Templates/Designs/eCommerce01/images/cart.png" title="Reorder" />
-								<span class="long_text">reorder</span>
+							<a href="<!--@Ecom:CustomerCenter.Orders.OrderDetailsURL-->&amp;reorder=1">
+								<i class="icon-shopping-cart"></i>
+								<span class="long_text"><!--@Translate(Reorder, "Reorder")--></span>
 							</a>
 							<a target="_blank" href="<!--@Ecom:CustomerCenter.Orders.PrintOrderURL-->">
-								<img src="/Files/Templates/Designs/eCommerce01/images/i_print.png" alt="Print" title="Print" />
+								<i class="icon-print"></i>
+								<span class="long_text"><!--@Translate(Print, "Print")--></span>
 							</a>
 							<a href="<!--@Ecom:CustomerCenter.Orders.MailOrderURL-->">
-								<img src="/Files/Templates/Designs/eCommerce01/images/mail.png" alt="Email" title="Email" />
+								<i class="icon-envelope"></i>
+								<span class="long_text"><!--@Translate(Mail, "Mail")--></span>
 							</a>
 						</td>
 					</tr>
