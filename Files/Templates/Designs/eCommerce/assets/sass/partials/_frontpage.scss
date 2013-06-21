@@ -96,10 +96,10 @@
 					color: $colorLink;
 				}
 				h1 {
-					font: bold 22px/13px arial;
+					font: bold 22px/33px arial;
 				}
 				p {
-				color: $colorLink;
+					color: $colorLink;
 					white-space:nowrap;
 					padding:5px;
 					clear:left;
@@ -318,5 +318,529 @@
 		clear: right;
 		margin-left: 2.127659574%;
 		*margin-left: 2.0744680846382977%;
+	}
+}
+
+
+
+.nospacing {
+	&.span12 {
+		padding: 0 10px;
+		margin-left: 10px;
+
+		@media (max-width: 1199px) {
+			// margin-left: 10px;
+			margin-left: 0;
+		}
+	}
+	&.row {
+		margin-left: -20px;
+
+		@media (max-width: 767px) {
+			// margin-left: -10px;
+			margin-left: 0;
+		}
+	}
+}
+
+
+
+
+.frontpage-redesign {
+	overflow-x: hidden;
+	padding-top: 0;
+
+	.frontpage-content-main {
+		> .span6 {
+			margin-left: 20px;
+			// width: 575px;
+		}
+		> .span3 {
+			// margin-left: 20px;
+			// width: 575px;
+		}
+
+		@media (min-width: 768px) and (max-width: 979px) {
+			> .span6 {
+				// width: 352px;
+			}
+			> .span3 {
+				width: 166px;
+			}
+		}
+		@media (max-width: 767px) {
+			> .span3, > .span6 {
+				width: 100%;
+				float: none;
+				margin: 0;
+				padding-left: 10px;
+				padding-right: 10px;
+				-webkit-box-sizing: padding-box;
+				-moz-box-sizing: padding-box;
+				box-sizing: padding-box;
+			}
+		}
+	}
+	.carousel-control {
+		border: none;
+		border-radius: 0 5px 5px 0;
+		left: 0;
+		padding: 12px 8px;
+		top: 50%;
+		margin-top: -32px;
+
+		&.right {
+			left: auto;
+			right: 0;
+			border-radius: 5px 0 0 5px;
+		}
+		&:hover {
+			text-decoration: none !important;
+		}
+	}
+	.frontpage-slider {
+		height: 405px;
+		width: 100%;
+		margin-left: 0;
+		// background: red;
+		overflow: hidden;
+
+		.item {
+			height: 405px;
+			overflow: hidden;
+
+			img {
+				min-width: 100%;
+			}
+		}
+		.carousel-caption {
+			width: 350px;
+			min-height: 200px;
+			left: auto;
+			right: 100px;
+			bottom: auto;
+			top: 0;
+			border-radius: 0 0 5px 5px;
+			padding: 50px 20px 20px;
+			font: bold 18px/23px arial;
+			color: white;
+			text-shadow: 1px 0 4px #333;
+			background: rgba(0, 0, 0, 0.6);
+
+			h4 {
+				color: #ffffe3;
+				font: bold 58px/58px arial;
+				text-transform: uppercase;
+			}
+		}
+		.carousel-control {
+			top: 200px;
+		}
+
+		// @media (min-width: 768px) and (max-width: 1199px) {
+		//	 margin-left: 10px;
+		// }
+		@media (max-width: 979px) {
+			height: 305px;
+			padding: 0;
+
+			.carousel-control {
+				top: 150px;
+			}
+			.carousel-caption {
+				width: 250px;
+				min-height: 170px;
+				padding: 20px 10px 10px;
+				font: bold 18px/23px arial;
+
+				h4 {
+					font: bold 32px/32px arial;
+				}
+			}
+		}
+		@media (max-width: 479px){
+			height: auto;
+
+			.item {
+				height: 200px;
+			}
+			.carousel {
+				margin-bottom: 0;
+			}
+			.carousel-caption {
+				bottom: 0;
+				font: 14px/21px arial;
+				left: 0;
+				min-height: auto;
+				padding: 15px;
+				position: absolute;
+				right: 0;
+				top: auto;
+				width: auto;
+			}
+			.carousel-control {
+				top: 50%;
+			}
+		}
+	}
+	.frontpage-slider-map { // extending ".row" class
+													background: grey;
+													margin-left: -15px;
+													margin-right: -15px;
+													box-shadow: 0 0 5px #111111;
+													position: relative;
+
+													> .map-item {
+														background: #333;
+														margin-left: 0;
+														padding: 0 15px 0 14px;
+														height: 100px;
+														line-height: 100px;
+														text-align: center;
+														color: #9e9fa0;
+														font-weight: bold;
+														font-size: 30px;
+														border-right: 1px solid #7a7b7c;
+
+														display: block;
+														float: left;
+														width: 100%;
+														-webkit-box-sizing: border-box;
+														-moz-box-sizing: border-box;
+														box-sizing: border-box;
+
+														@for $i from 1 through 12 {
+															&.span#{$i} {
+																width: (100%/12) * $i;
+															}
+														}
+
+														&.active, &:hover {
+															color: white;
+															box-shadow: 0 0 32px #111 inset;
+															cursor: pointer;
+														}
+														&:last-child {
+															border-right: none;
+															padding: 0 15px;
+														}
+
+														@media (max-width: 979px) {
+															font-size: 22px;
+															height: 60px;
+															line-height: 60px;
+														}
+														@media (max-width: 479px) {
+															font-size: 16px;
+														}
+													}
+
+													@media (max-width: 767px) {
+														margin: 0;
+													}
+												}
+	.frontpage-landing {
+		min-height: 60px;
+		background: #ededed;
+		margin-bottom: 10px;
+		margin-left: 20px;
+
+		h1 {
+			background-color: #a0a0a0;
+			color: white;
+			padding: 0 20px;
+			margin: 0 30px 0 -10px;
+			font: bold 18px/60px arial;
+			position: relative;
+			text-shadow: 0 1px 0 #333333;
+
+			&:after {
+				position: absolute;
+				top: 0;
+				right: -15px;
+				content: '';
+				width: 20px;
+				height: 60px;
+				background: url(../img/frontpage-right-angle.png) no-repeat right center;
+			}
+		}
+		ul {
+			li {
+				display: inline-block;
+				font: bold 18px/60px arial;
+				padding: 0 10px 0 30px;
+				margin-left: 20px;
+				text-shadow: 0 1px 0 #fff;
+				background: url(../img/signv-big.png) no-repeat left center;
+			}
+		}
+
+
+		@media (max-width: 1199px) {
+			margin-left: 10px;
+
+			h1 {
+				margin-right: 10px;
+
+				&:after {
+					top: 1px;
+				}
+			}
+			ul {
+				li {
+					font: bold 14px/60px arial;
+				}
+			}
+		}
+		@media (max-width: 979px) {
+			ul {
+				li {
+					font: bold 14px/24px arial;
+					margin-left: 10px;
+					padding-top: 3px;
+					padding-bottom: 3px;
+				}
+			}
+		}
+		@media (max-width: 767px) {
+			margin-left: 0;
+
+			h1 {
+				margin-right: 10px;
+				padding: 0 10px;
+				font: bold 14px/60px arial;
+			}
+		}
+	}
+	.products-carousel {
+		position: relative;
+		overflow: hidden;
+		background: #ededed;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		margin-bottom: 10px;
+
+		a {
+			color: white;
+			text-decoration: none;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+		// .carousel-inner {
+		//	 overflow: hidden;
+		// }
+		.item {
+			position: relative;
+		}
+		.box-rounded {
+			margin: 0;
+
+			&.product-list-item-wrapper {
+				// height: 230px;
+				position: relative;
+				background: white;
+				overflow: hidden;
+				background-clip: padding-box;
+
+				img {
+					display: block;
+					margin: 0 auto;
+				}
+				button {
+					font-weight: bold;
+					border-color: rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25);
+					padding-right: 10px;
+
+					.icon {
+						margin: 3px 0 0 3px;
+					}
+				}
+				.box-content {
+					padding: 0 0 30px;
+				}
+				.box-overlay {
+					position: absolute;
+					bottom: 0;;
+					left: 0;
+					right: 0;
+					padding: 10px;
+					background: #333;
+					background: rgba(0, 0, 0, .6);
+					color: white;
+					text-shadow: 0 1px 0 #333333;
+				}
+				.product-name {
+					color: inherit;
+					padding-bottom: 5px;
+					font: bold 14px/21px arial;
+
+					.product-link {
+						color: white;
+						font: inherit;
+					}
+				}
+				.product-price {
+					float: left;
+					font: bold 20px/30px arial;
+				}
+				.product-action {
+					float: right;
+				}
+			}
+		}
+
+		@media (min-width: 768px) and (max-width: 1199px) {
+			margin-left: 10px;
+		}
+		@media (max-width: 767px) {
+			.row {
+				margin-left: -20px;
+			}
+			.span3 {
+				width: 166px;
+				float: left;
+				margin-left: 20px;
+			}
+		}
+	}
+	.products-carousel-small {
+		margin-bottom: 0;
+
+		.carousel-map {
+			position: absolute;
+			right: 0;
+			top: -40px;
+		}
+		.product-image {
+			display: block;
+			margin: 0 auto;
+		}
+		.product-name {
+			font-size: 18px;
+			padding-bottom: 10px;
+		}
+		.product-price-save {
+			font: bold 14px/21px arial;
+			color: #f8941d;
+			text-transform: uppercase;
+		}
+		.product-price {
+			float: left;
+			font: bold 20px/30px arial;
+			color: #333;
+		}
+		.product-action {
+			float: right;
+
+			button {
+				font-weight: bold;
+				padding-right: 10px;
+
+				.icon {
+					margin: 3px 0 0 3px;
+				}
+			}
+		}
+		.product-rating {
+			margin: 10px 0 5px;
+		}
+		.product-rating-underlay {
+			display: inline-block;
+			background-image: $rating-sprite;
+			height: $rating-sprite-tile-height;
+			font-size: $rating-sprite-tile-height;
+			line-height: 1;
+
+			.product-rating-stars {
+				font-size: 1;
+				line-height: 1;
+				height: 100%;
+				display: inline-block;
+				background-image: $rating-sprite;
+				background-position: 0 (-$rating-sprite-tile-height);
+				position: aboslute;
+				text-indent: 100%;
+				overflow: hidden;
+			}
+		}
+
+		.map-item {
+			width: 6px;
+			height: 6px;
+			margin: 2px;
+			border-radius: 7px;
+			border: 2px solid #333;
+			background: #333;
+			float: left;
+
+			&:hover {
+				cursor: pointer;
+			}
+			&.active {
+				background-color: white;
+			}
+		}
+	}
+
+	@media (max-width: 767px) {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+
+.carousel-box {
+	padding: 0 !important;
+
+	.carousel {
+		margin: 0;
+	}
+	.item {
+		max-height: 250px;
+		color: white;
+		text-shadow: 0 1px 0 #333;
+		font: normal 14px/21px arial;
+
+		h4 {
+			font: bold 20px/30px arial;
+		}
+		a {
+			color: inherit;
+		}
+		img {
+			display: block;
+			margin: 0 auto;
+		}
+	}
+	.carousel-control {
+		text-decoration: none;
+	}
+	.carousel-map {
+		position: absolute;
+		right: 20px;
+		top: 20px;
+	}
+	.map-item {
+		width: 6px;
+		height: 6px;
+		margin: 2px;
+		border-radius: 7px;
+		border: 2px solid #333;
+		background: #333;
+		float: left;
+
+		&:hover {
+			cursor: pointer;
+		}
+		&.active {
+			background-color: white;
+		}
+	}
+	@media (max-width: 479px){
+		.carousel-caption {
+			position: absolute;
+		}
 	}
 }

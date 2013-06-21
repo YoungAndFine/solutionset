@@ -1,0 +1,152 @@
+<div class="span12 nospacing products-carousel">
+
+  <div class="row" id="productCarousel">
+    <div class="carousel-inner">
+      <div class="item">
+        <!--@LoopStart(Products)-->
+        <!--@If Defined(Ecom:Product.ImageSmall.Clean)-->
+        <div class="span3">
+          <div class="box-rounded product-list-item-wrapper">
+            <div class="box-content">
+              <img src="/Admin/Public/getimage.ashx?Image=<!--@Ecom:Product.ImageSmall.Clean-->&amp;Height=230" alt="" />
+
+              <div class="box-overlay">
+                <h3 class="product-name">
+                  <a href="<!--@Ecom:Product.LinkGroup.Clean-->" class="product-link"><!--@Ecom:Product.Name--></a>
+                </h3>
+
+                <div class="product-price">
+                  <!--@Ecom:Product.Price.PriceWithVATFormatted-->
+                </div>
+
+                <div class="product-action">
+                  <!--@If(Ecom:Product.VariantCount>0)-->
+                  <button type="button" class="btn dw-button-green" data-toggle="modal" data-target="#productVariantChooser<!--@Ecom:Product.ID-->">
+                    <!--@Translate(Buy, "Buy")-->
+                    <i class="icon sprite arr-forward-small-white"></i>
+                  </button>
+                  <!--@EndIf-->
+                  <!--@If(Ecom:Product.VariantCount==0)-->
+                  <button type="button" class="btn dw-button-green" onclick="$.addToCart(this, undefined, '.box-content')">
+                    <!--@Translate(Buy, "Buy")-->
+                    <i class="icon sprite arr-forward-small-white"></i>
+                  </button>
+                  <!--@EndIf-->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--@EndIf(Ecom:Product.ImageSmall.Clean)-->
+        <!--@LoopEnd(Products)-->
+      </div>
+    </div>
+    <a class="carousel-control left" href="#productCarousel" data-slide="prev">&lsaquo;</a>
+    <a class="carousel-control right" href="#productCarousel" data-slide="next">&rsaquo;</a>
+  </div>
+
+  <!--@LoopStart(Products)-->
+  <!--@If Defined(Ecom:Product.ImageSmall.Clean)-->
+  <!--@If(Ecom:Product.VariantCount>0)-->
+  <div class="modal hide fade modal-type-variants" id="productVariantChooser<!--@Ecom:Product.ID-->" tabindex="-1" role="dialog" data-id="<!--@Ecom:Product.ID-->">
+    <div class="modal-header">
+      <button type="button" class="close sprite blue-close" data-dismiss="modal"></button>
+      <h3><!--@Ecom:Product.Name--></h3>
+    </div><!-- / .modal-header -->
+    <div class="modal-body">
+      <div class="product-list-item-wrapper">
+        <div class="row-fluid">
+          <div class="span7">
+            <div class="popup-variants-partleft">
+              <img src="/Admin/Public/getimage.ashx?Image=<!--@Ecom:Product.ImageSmall.Default.Clean-->&amp;Width=350" class="product-image">
+              <div class="product-allinfolink">
+                <a href="<!--@Ecom:Product.LinkGroup.Clean-->"><!--@Translate(allproductinformation, "All product informations - Click here")--></a>
+              </div>
+            </div><!-- / .popup-variants-partleft -->
+          </div>
+          <div class="span5">
+            <div class="popup-variants-partright">
+              <div class="product-rating-comments">
+                <div class="product-rating">
+                  <!--@Ecom:Product.RatingStars-->
+                </div>
+                <div class="product-pricelabel"><!--@Translate(ProductNumberShort, "no.")-->:&nbsp;<!--@Ecom:Product.Number--></div>
+                <div class="clearfix"></div>
+              </div>
+              <div class="product-description">
+                <!--@Ecom:Product.ShortDescription-->
+              </div>
+              <div class="product-pricebox-wrapper">
+                <div class="product-pricebox-title"><!--@Translate(shoosevariant, "Choose your variant:")--></div>
+
+                 <!-- VARIANTS -->
+                 <div class="fashion_variant"></div>
+                 <input type="hidden" id="Hidden1" value="<!--@Ecom:Product.ActualPrice-->">
+                 <div class="preloader"></div>
+                 <!-- VARIANTS -->
+
+                <div class="product-pricebox">
+                  <div>
+                    <div>&nbsp;</div>
+                    <div><!--@Ecom:Product.Price.PriceWithVATFormatted--> / <!--@Translate(unit, "unit")--></div>
+                  </div>
+                </div>
+                <div class="product-addtocart">
+                  <input name="quantity" class="input-mini" onclick="this.value='';" value="1" type="number"><span class="help-inline"><!--@Translate(unit, "unit")--></span>
+                  <button class="btn dw-button-green" data-dw-cmd="addtocart" onclick="Layout.Cart.AddToCart(this)">
+                    <span><!--@Translate(AddToCart, "Add to cart")--></span>
+                  </button>
+                </div>
+              </div>
+              <div class="product-facts">
+                <ul>
+                  <li>
+                    <span class="sprite signv-red" <!--@If Defined(Ecom:Product:Stock.Image.Clean)-->style="background: url('<!--@Ecom:Product:Stock.Image.Clean-->') no-repeat 0 0 !important;"<!--@EndIf(Ecom:Product:Stock.Image.Clean)-->></span> <!--@Ecom:Product:Stock.Text-->
+                  </li>
+                  <li>
+                    <span class="sprite signv"></span> <!--@Translate(ProductDelivary, "Delivery")--> <!--@Ecom:Product.IsInCart)--> <!--@Ecom:Product:Stock.DeliveryText--> <!--@Ecom:Product:Stock.DeliveryUnit-->
+                  </li>
+                </ul>
+              </div>
+              <div class="clearfix"></div>
+            </div><!-- / .popup-variants-partright -->
+          </div>
+        </div>
+      </div>
+    </div><!-- / .modal-body -->
+  </div><!-- / .modal.popup-variants -->
+  <!--@EndIf-->
+  <!--@EndIf(Ecom:Product.ImageSmall.Clean)-->
+  <!--@LoopEnd(Products)-->
+
+</div>
+
+<script type="text/javascript">
+require(['jquery', 'variant'], function ($) {
+  $('.modal-type-variants').on('shown', function () {
+    var link = 'Default.aspx?ID=669&ProductID=' + $(this).data('id')
+      , div = $(this);
+
+    $('.preloader').show();
+
+    div
+      .find('.fashion_variant')
+      .append('<div class="variant_array hidden" />')
+      .append('<input class="variants-selector" type="hidden" name="variantid" >');
+
+    $.ajax({
+      url: link,
+      success: function (data) {
+        $('.preloader').hide();
+        data = data.split('//VARIANT SELECTOR');
+        eval(data[1]);
+        div.find('.fashion_variant').variantSelector();
+      }
+    });
+  })
+  $('.modal-type-variants').on('hidden', function () {
+    $(this).find('.fashion_variant').variantSelector('destroy');
+    $(this).find('.fashion_variant').html('');
+  });
+});
+</script>

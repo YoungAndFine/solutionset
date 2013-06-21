@@ -1,0 +1,125 @@
+﻿<!--@MasterPageFile(MasterPages/Main.html)-->
+<!--@Layout.Title(Frontpage Tiles Redesigned)-->
+<!--@Layout.Description(Page layout with three sliders, inc. feature slider and two types of products sliders)-->
+<section class="container content-wrapper frontpage frontpage-redesign">
+  <div class="row nospacing">
+    <div class="span12 nospacing frontpage-slider">
+      <div id="fetureCarousel" class="carousel slide" data-carousel-map="#frontpageSliderMap">
+        <div class="carousel-inner dwcontent" id="sliderInnerWrapper" title="Slider wrapper">
+          <!-- DW generated content area -->
+        </div>
+        <a class="carousel-control left" href="#fetureCarousel" data-slide="prev">&lsaquo;</a>
+        <a class="carousel-control right" href="#fetureCarousel" data-slide="next">&rsaquo;</a>
+      </div>
+    </div>
+  </div>
+  <div class="row nospacing frontpage-slider-map" id="frontpageSliderMap">
+    <!-- Slider items map -->
+  </div>
+  <div class="row">
+    <div class="span12 nospacing frontpage-landing">
+      <!--@If(Global:Area.ID==1)-->
+        <!--@Global:Paragraph.Content(2055)-->
+      <!--@EndIf-->
+      <!--@If(Global:Area.ID==22)-->
+        <!--@Global:Paragraph.Content(2069)-->
+      <!--@EndIf-->
+    </div>
+  </div>
+  <div class="dwcontent row nospacing frontpage-content-main" id="content-main" title="Main content"></div>
+</section><!-- / .container.content-wrapper -->
+
+<script type="text/javascript">
+  require(
+    ['jquery', 'layout', 'dw-carousel'],
+    function ($) {
+      $(document).ready(function () {
+
+        $('#productCarousel').dwThumbnailsCarousel({
+          enlargeHolder: null
+        });
+
+        var carouselMapFiller = function ($target, $holder, data) {
+          var spanNum = Math.floor(12 / data.length);
+          $.each(data, function (i, item) {
+            $holder.append($('<div class="span'+spanNum+' map-item" />').html(item.title));
+          });
+          $('.map-item', $holder).on('click', function (e) {
+            $target.carousel($(this).index());
+          });
+        }
+
+        $('.carousel[data-carousel-map]').each(function (i, el) {
+          var $this = $(this),
+              $el = $(el),
+              $slides = $el.find('.item'),
+              containerMap = $el.data().carouselMap,
+              $carouselMap = $(containerMap),
+              mapData = [];
+
+          $slides.each(function (i, el) {
+            mapData.push({
+              title: $.trim($(el).find('.buttonName').html())
+            });
+          });
+
+          carouselMapFiller($this, $carouselMap, mapData);
+          $this.on('slid', function(e) {
+            var slideIndex = $('.item.active', this).index(),
+                $mapItems = $('.map-item', $carouselMap);
+
+            $mapItems.removeClass('active');
+            $mapItems.eq(slideIndex).addClass('active');
+          });
+        });
+
+
+        // Image sizes pattern stored as JSON obnject
+        // in data attribute on 'img' tag
+        // Example: {'w480':[200,100],'w768':[575]}
+        $('img[data-src]').each(function(index, el) {
+          var $el = $(el),
+              src = $el.data('src'),
+              srcParsed = $.parseParams(src.split('?')[1] || ''),
+              // srcPath = src.split('?')[0],
+              srcPath,
+              sizes = JSON.parse($el.data('sizes').replace(/'/g, '"')),
+              windowWidth = Layout.params.windowWidth;
+
+          var diff = windowWidth,
+              nearest, _diff;
+
+          if (src.indexOf('?') != -1) {
+            srcPath = srcPath = src.split('?')[0];
+          } else {
+            srcPath = Layout.params.getImagePath;
+            srcParsed['Image'] = src;
+          }
+
+          for (var key in sizes) {
+            _diff = Math.abs(windowWidth - key.substr(1));
+            if (diff > _diff) {
+              diff = _diff;
+              nearest = key;
+            }
+          }
+
+          if (typeof sizes[nearest] === 'string') {
+            $el.attr('src', src);
+            return;
+          }
+
+          if (sizes[nearest][0]) {
+            srcParsed['Width'] = sizes[nearest][0];
+          }
+          if (sizes[nearest][1]) {
+            srcParsed['Height'] = sizes[nearest][1];
+          }
+
+          $el.attr('src', srcPath+'?'+decodeURIComponent($.param(srcParsed, true)));
+        });
+
+      });
+    }
+  );
+</script>
