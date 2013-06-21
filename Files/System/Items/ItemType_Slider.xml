@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<items>
+  <item name="Slider" systemName="Slider" description="">
+    <fields>
+      <field name="Image" systemName="Image" type="System.String, mscorlib">
+        <editor type="Dynamicweb.Content.Items.Editors.LongTextEditor, Dynamicweb" />
+      </field>
+      <field name="Link" systemName="Link" type="System.String, mscorlib">
+        <editor type="Dynamicweb.Content.Items.Editors.LongTextEditor, Dynamicweb" />
+      </field>
+      <field name="Button name" systemName="ButtonName" type="System.String, mscorlib">
+        <editor type="Dynamicweb.Content.Items.Editors.TextEditor, Dynamicweb" />
+      </field>
+      <field name="Headline" systemName="Headline" type="System.String, mscorlib">
+        <editor type="Dynamicweb.Content.Items.Editors.TextEditor, Dynamicweb" />
+      </field>
+      <field name="Text slide content" systemName="TextSlideContent" type="System.String, mscorlib">
+        <editor type="Dynamicweb.Content.Items.Editors.LongTextEditor, Dynamicweb" />
+      </field>
+    </fields>
+  </item>
+</items>
