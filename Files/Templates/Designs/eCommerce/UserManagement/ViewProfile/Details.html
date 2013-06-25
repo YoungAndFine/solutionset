@@ -1,117 +1,82 @@
-<style>
-.customer-center-menu {
-	display: none;
-}
-.userdetailstable {
-	line-height: 24px;
-	margin-bottom: 20px;
-}
-.userdetailstable td,
-.userdetailstable th {
-	border-bottom: 1px solid #eee;
-	padding: 5px 0;
-}
-.userdetailstable tr:last-child td,
-.userdetailstable tr:last-child th {
-	border-bottom: none;
-}
-.userdetailstable th {
-	font-size: 12px;
-}
-</style>
-
-<div class="grid_12 wrapper-content customer-center" style="overflow:hidden;min-height:450px;">
-
-	<link rel="stylesheet" type="text/css" href="/Files/Templates/Ecom/CustomerCenter/Navigation.css" />
-	<div class="grid_3 customer-center-sidebar left" style="padding-right:1px;">
-		<div class="rounded-box left-menu">
-			<h3><!--@Translate(Account_information, "Account information")--></h3>
-			<a class="edit_user2" href="/Default.aspx?ID=272&ObjectID=<!--@Global:Extranet.UserID-->&Action=Edit"><!--@Translate(edit, "Edit")--></a>
-			<div class="rounded-box-content contact-info">
-				<div>
-					<h4><!--@Global:Extranet.Name--></h4>
-					<ul>
-						<!--@If Defined(Global:Extranet.Company)-->
-						<li><span><!--@Translate(Company, "Company")-->:</span> <!--@Global:Extranet.Company--></li>
-						<!--@EndIf(Global:Extranet.Company)-->
-						<!--@If Defined(Global:Extranet.Jobtitle)-->
-						<li><span><!--@Translate(Job_title, "Job title")-->: </span> <!--@Global:Extranet.Jobtitle--></li>
-						<!--@EndIf(Global:Extranet.Jobtitle)-->
-						<!--@If Defined(Global:Extranet.Address)-->
-						<li><span><!--@Translate(Address, "Address")-->:</span> <!--@Global:Extranet.Address--> <!--@Global:Extranet.Address2--></li>
-						<!--@EndIf(Global:Extranet.Address)-->
-						<!--@If Defined(Global:Extranet.City)-->
-						<li><span><!--@Translate(City, "City")-->:</span> <!--@Global:Extranet.Zip--> <!--@Global:Extranet.City--></li>
-						<!--@EndIf(Global:Extranet.City)-->
-						<!--@If Defined(Global:Extranet.Email)-->
-						<li><span><!--@Translate(Email, "E-mail")-->:</span> <!--@Global:Extranet.Email--></li>
-						<!--@EndIf(Global:Extranet.Email)-->
-						<!--@If Defined(Global:Extranet.Phone)-->
-						<li><span><!--@Translate(Phone, "Phone")-->:</span> <!--@Global:Extranet.Phone--></li>
-						<!--@EndIf(Global:Extranet.Phone)-->
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div class="grid_9 customer-center-content main">
-		<div class="rounded-box left-menu">
-			<h3><!--@Translate(detailsfor, "Detail for")--> <!--@UserManagement:User.Name--></h3>
-			<div class="rounded-box-content">
-
-				<table class="userdetailstable" width="100%">
-					<tr>
-						<th align="left"><!--@Translate(Username, "Username")-->: </th>
-						<td><!--@UserManagement:User.UserName--></td>
-					</tr>
-					<tr>
-						<th align="left" width="200"><!--@Translate(Name, "Name")-->: </th>
-						<td><!--@UserManagement:User.Name--></td>
-					</tr>
-					<tr>
-						<th align="left"><!--@Translate(Email, "Email")-->: </th>
-						<td><!--@UserManagement:User.Email--></td>
-					</tr>
-					<tr>
-						<th align="left"><!--@Translate(Address, "Address")-->: </th>
-						<td><!--@UserManagement:User.Address--></td>
-					</tr>
-					<tr>
-						<th align="left"><!--@Translate(Zip, "Zip")-->: </th>
-						<td><!--@UserManagement:User.Zip--></td>
-					</tr>
-					<tr>
-						<th align="left"><!--@Translate(City, "City")-->: </th>
-						<td><!--@UserManagement:User.City--></td>
-					</tr>
-					<tr>
-						<th align="left"><!--@Translate(Country, "Country")-->: </th>
-						<td>
-							<!-- UserManagement:User.Country -->
-							<!--@LoopStart(UserManagement:User.CustomFields)-->
-							<!--@If(UserManagement:User.CustomFields.LoopCounter=2)-->
-							<!--@If(CustomField.Value=1)--><!--@Translate(denmark, "Denmark")--><!--@EndIf-->
-							<!--@If(CustomField.Value=2)--><!--@Translate(finland, "Finland")--><!--@EndIf-->
-							<!--@If(CustomField.Value=3)--><!--@Translate(norway, "Norway")--><!--@EndIf-->
-							<!--@If(CustomField.Value=4)--><!--@Translate(sweden, "Sweden")--><!--@EndIf-->
-							<!--@If(CustomField.Value=5)--><!--@Translate(germany, "Germany")--><!--@EndIf-->
-							<!--@If(CustomField.Value=6)--><!--@Translate(usa, "USA")--><!--@EndIf-->
-							<!--@EndIf-->
-							<!--@LoopEnd(UserManagement:User.CustomFields)-->
-						</td>
-					</tr>
-					<tr>
-						<th align="left"><!--@Translate(Phone, "Phone")-->: </th>
-						<td><!--@UserManagement:User.Phone--></td>
-					</tr>
-				</table>
-
-				<!--@If Defined(UserManagement:User.EditUrl)-->
-				<a href="<!--@UserManagement:User.EditUrl-->"><!--@Translate(edityourprofile, "Edit your profile")--></a>
-				<!--@EndIf(UserManagement:User.EditUrl)-->
-
-			</div>
-		</div>
-	</div>
-</div>
+<h2>Detail for '<!--@UserManagement:User.Name-->'</h2>
+<table>
+	<tr>
+		<th align="left"><!--@Translate(Name, "Name")-->: </th>
+		<td><!--@UserManagement:User.Name--></td>
+	</tr>
+	<tr>
+		<th align="left"><!--@Translate(Email, "Email")-->: </th>
+		<td><!--@UserManagement:User.Email--></td>
+	</tr>
+	<tr>
+		<th align="left"><!--@Translate(Username, "Username")-->: </th>
+		<td><!--@UserManagement:User.UserName--></td>
+	</tr>
+	<tr>
+		<th align="left"><!--@Translate(Department, "Department")-->: </th>
+		<td><!--@UserManagement:User.Department--></td>
+	</tr>
+	<tr>
+		<th align="left"><!--@Translate(Phone, "Phone")-->: </th>
+		<td><!--@UserManagement:User.Phone--></td>
+	</tr>
+	<tr>
+		<th align="left"><!--@Translate(PhonePrivate, "Private phone")-->: </th>
+		<td><!--@UserManagement:User.PhonePrivate--></td>
+	</tr>
+	<tr>
+		<th align="left"><!--@Translate(PhoneBusiness, "Business phone")-->: </th>
+		<td><!--@UserManagement:User.PhoneBusiness--></td>
+	</tr>
+	<tr>
+		<th align="left"><!--@Translate(PhoneMobile, "Mobile phone")-->: </th>
+		<td><!--@UserManagement:User.PhoneMobile--></td>
+	</tr>
+	<tr>
+		<th align="left"><!--@Translate(Fax, "Fax")-->: </th>
+		<td><!--@UserManagement:User.Fax--></td>
+	</tr>
+	<tr>
+		<th align="left"><!--@Translate(Address, "Address")-->: </th>
+		<td><!--@UserManagement:User.Address--></td>
+	</tr>
+	<tr>
+		<th align="left"><!--@Translate(Address2, "Address 2")-->: </th>
+		<td><!--@UserManagement:User.Address2--></td>
+	</tr>
+	<tr>
+		<th align="left"><!--@Translate(Zip, "Zip")-->: </th>
+		<td><!--@UserManagement:User.Zip--></td>
+	</tr>
+	<tr>
+		<th align="left"><!--@Translate(City, "City")-->: </th>
+		<td><!--@UserManagement:User.City--></td>
+	</tr>
+	<tr>
+		<th align="left"><!--@Translate(Country, "Country")-->: </th>
+		<td><!--@UserManagement:User.Country--></td>
+	</tr>
+	<tr>
+		<th align="left"><!--@Translate(JobTitle, "Jobtitle")-->: </th>
+		<td><!--@UserManagement:User.JobTitle--></td>
+	</tr>
+	<tr>
+		<th align="left"><!--@Translate(Company, "Company")-->: </th>
+		<td><!--@UserManagement:User.Company--></td>
+	</tr>
+	<!--@If Defined(UserManagement:User.Image.Clean)-->
+	<tr>
+		<th align="left"><!--@Translate(profilepicture, "Profile picture")-->: </th>
+		<td><img src="/admin/public/getimage.ashx?image=<!--@UserManagement:User.Image.Clean-->&amp;width=80" alt="<!--@UserManagement:User.Name-->" border="0" /></td>
+	</tr>
+	<!--@EndIf(UserManagement:User.Image.Clean)-->
+	<!--@LoopStart(UserManagement:User.CustomFields)-->
+	<tr>
+		<th align="left"><!--@CustomField.Name-->: </th>
+		<td><!--@CustomField.Value--></td>
+	</tr>
+	<!--@LoopEnd(UserManagement:User.CustomFields)-->
+</table>
+<!--@If Defined(UserManagement:User.EditUrl)-->
+<a href="<!--@UserManagement:User.EditUrl-->"><!--@Translate(edityourprofile, "Edit your profile")--></a>
+<!--@EndIf(UserManagement:User.EditUrl)-->
