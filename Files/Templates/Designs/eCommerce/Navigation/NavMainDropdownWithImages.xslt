@@ -5,7 +5,7 @@
 	<xsl:param name="html-content-type" />
 
 	<xsl:template match="/NavigationTree">
-		<xsl:if test="//Page">
+		<xsl:if test="Page">
 			<ul>
 				<xsl:attribute name="class">nav with-images</xsl:attribute>
 				<xsl:apply-templates select="Page">
@@ -18,10 +18,14 @@
 	<xsl:variable name="imageWidth" select="40"/>
 	<xsl:variable name="imageHeight" select="40"/>
 
-	<xsl:template match="//Page">
+	<xsl:template match="Page">
 		<xsl:param name="depth"/>
 		<xsl:variable name="eComPageShow" select="//NavigationTree/Settings/LayoutNavigationSettings/@eComPageShow"/>
-		<xsl:variable name="dropdown-target" select="concat('dropdown-', @ID)"/>
+		<!-- <xsl:variable name="dropdown-target" select="concat('dropdown-', generate-id())"/> -->
+		<xsl:variable name="dropdown-target">
+			<xsl:text>dropdown-</xsl:text>
+			<xsl:number level="any"/>
+		</xsl:variable>
 
 		<xsl:choose>
 			<xsl:when test="Page[@SmallImage]">

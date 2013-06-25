@@ -1,6 +1,9 @@
 ﻿<WebsiteItemLayouts>
-  <PageItemLayouts />
+  <PageItemLayouts>
+    <ItemLayout systemname="Slider" template="" />
+  </PageItemLayouts>
   <ParagraphItemLayouts>
     <ItemLayout systemname="Carousel_Item" template="" />
+    <ItemLayout systemname="Slider" template="" />
   </ParagraphItemLayouts>
 </WebsiteItemLayouts>

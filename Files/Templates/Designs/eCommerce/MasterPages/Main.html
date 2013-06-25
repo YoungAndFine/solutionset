@@ -15,9 +15,9 @@
 		<!--@If Defined(Item.Area.Custom_CSS_Url)-->
 		<link href="<!--@Item.Area.Custom_CSS_Url-->" rel="stylesheet">
 		<!--@EndIf(Item.Area.Custom_CSS_Url)-->
-	
+
 	<link rel="icon" type="image/png" href="assets/images/favicon.ico">
-	
+
 		<script src="assets/vendor/require-jquery.js"></script>
 		<script>
 		// @TODO: put this into a tag @Template:BaseUrl
@@ -75,12 +75,15 @@
 		</section>
 
 		<footer>
+      <!--@Include(Sections/NavigationMainBottom.html)-->
+      <!--@Include(Sections/SearchBarBottom.html)-->
+
 			<section class="container footer-wrapper">
 				<div class="row" id="footerSections" title="Footer sections">
-		<!--@If Defined(Item.Area.Footer_Content_Page_ID)-->
-			<!--@Global:Page.Content(<!--@Item.Area.Footer_Content_Page_ID-->)-->
-		<!--@EndIf(Item.Area.Footer_Content_Page_ID)-->
-		</div>
+					<!--@If Defined(Item.Area.Footer_Content_Page_ID)-->
+					<!--@Global:Page.Content(<!--@Item.Area.Footer_Content_Page_ID-->)-->
+					<!--@EndIf(Item.Area.Footer_Content_Page_ID)-->
+				</div>
 			</section>
 		</footer>
 

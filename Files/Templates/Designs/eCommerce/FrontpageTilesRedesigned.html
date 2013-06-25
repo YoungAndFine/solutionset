@@ -16,16 +16,15 @@
   <div class="row nospacing frontpage-slider-map" id="frontpageSliderMap">
     <!-- Slider items map -->
   </div>
+
+	<!--@IF Defined((Item.Area.Frontpage_Content_ID)-->
+asdfasdfsd
   <div class="row">
     <div class="span12 nospacing frontpage-landing">
-      <!--@If(Global:Area.ID==1)-->
-        <!--@Global:Paragraph.Content(2055)-->
-      <!--@EndIf-->
-      <!--@If(Global:Area.ID==22)-->
-        <!--@Global:Paragraph.Content(2069)-->
-      <!--@EndIf-->
+      <!--@Global:Paragraph.Content(Item.Area.Frontpage_Content_ID)-->
     </div>
   </div>
+  <!--@EndIf-->
   <div class="dwcontent row nospacing frontpage-content-main" id="content-main" title="Main content"></div>
 </section><!-- / .container.content-wrapper -->
 
