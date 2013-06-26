@@ -250,14 +250,8 @@
 </section><!-- / .product-list-item-wrapper -->
 <!--@LoopEnd(Products)-->
 
+<!--@If Defined(Item.Area.Products_Fee_Info_Paragraph_ID)-->
 <div class="paymentshippingfee hidden">
-	<!--@If(Global:Area.ID==1)-->
-	<!--@Global:Paragraph.Content(1449)-->
-	<!--@EndIf-->
-	<!--@If(Global:Area.ID==17)-->
-	<!--@Global:Paragraph.Content(1450)-->
-	<!--@EndIf-->
-	<!--@If(Global:Area.ID==22)-->
-	<!--@Global:Paragraph.Content(1449)-->
-	<!--@EndIf-->
+	<!--@Global:Paragraph.Content(<!--@Item.Area.Products_Fee_Info_Paragraph_ID-->)-->
 </div>
+<!--@EndIf-->

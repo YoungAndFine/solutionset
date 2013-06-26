@@ -8,11 +8,11 @@
 		</h3>
 	</div>
 	<div class="modal-body">
-		<!--@If(Item.Area.Login_Message_Content_ID>0)-->
+		<!--@If(Item.Area.Login_Message_Paragraph_ID>0)-->
 		<div class="alert alert-info">
-			<!--@Global:Paragraph.Content(<!--@Item.Area.Login_Message_Content_ID-->)-->
+			<!--@Global:Paragraph.Content(<!--@Item.Area.Login_Message_Paragraph_ID-->)-->
 		</div>
-		<!--@EndIf(Item.Area.Login_Message_Content_ID)-->
+		<!--@EndIf-->
 
 		<div class="login-box-mode" data-login-box-mode="login">
 			<!--@If(Global:Extranet.UserID==0)-->
