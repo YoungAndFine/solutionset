@@ -17,14 +17,12 @@
     <!-- Slider items map -->
   </div>
 
-	<!--@IF Defined((Item.Area.Frontpage_Content_ID)-->
-asdfasdfsd
+	<!--@If Defined(DwContent(landing))-->
   <div class="row">
-    <div class="span12 nospacing frontpage-landing">
-      <!--@Global:Paragraph.Content(Item.Area.Frontpage_Content_ID)-->
-    </div>
+    <div class="span12 nospacing frontpage-landing dwcontent" id="landing" title="Landing"></div>
   </div>
   <!--@EndIf-->
+
   <div class="dwcontent row nospacing frontpage-content-main" id="content-main" title="Main content"></div>
 </section><!-- / .container.content-wrapper -->
 
