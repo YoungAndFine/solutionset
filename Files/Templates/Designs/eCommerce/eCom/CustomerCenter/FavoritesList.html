@@ -1,18 +1,14 @@
 ﻿<div class="row-fluid no-space fill customer_center">
-	<!--Left Menu-->
 	<div class="span3">
 		<!--@Ecom:CustomerCenter.Menu-->
 	</div>
-	<!--/ Left Menu-->
 
 	<div class="span9 box-rounded no-left-round span9_ex">
-
 		<div class="box-headline">
 			<h3><!--@Translate(favoritelist, "Favorite list")--></h3>
 		</div>
 
 		<div class="orderlist-wr">
-
 			<!--@LoopStart(FavoriteList)-->
 
 			<!--@EmptyLoopStart-->
@@ -45,18 +41,7 @@
 					<tr>
 						<td class="to-hide"><!--@Ecom:Product.ID--></td>
 						<td class="to-cut">
-							<!--@If(Global:Area.ID==1)-->
-							<a href="/Default.aspx?ID=489&ProductID=<!--@Ecom:Product.ID-->" data-cache="false" data-target="#productPreview" data-toggle="modal" title="<!--@Ecom:Product.Name-->"><!--@Ecom:Product.Name--></a>
-							<!--@EndIf-->
-							<!--@If(Global:Area.ID==17)-->
-							<a href="/Default.aspx?ID=527&ProductID=<!--@Ecom:Product.ID-->" data-cache="false" data-target="#productPreview" data-toggle="modal" title="<!--@Ecom:Product.Name-->"><!--@Ecom:Product.Name--></a>
-							<!--@EndIf-->
-							<!--@If(Global:Area.ID==18)-->
-							<a href="/Default.aspx?ID=503&ProductID=<!--@Ecom:Product.ID-->" data-cache="false" data-target="#productPreview" data-toggle="modal" title="<!--@Ecom:Product.Name-->"><!--@Ecom:Product.Name--></a>
-							<!--@EndIf-->
-							<!--@If(Global:Area.ID==19)-->
-							<a href="/Default.aspx?ID=528&ProductID=<!--@Ecom:Product.ID-->" data-cache="false" data-target="#productPreview" data-toggle="modal" title="<!--@Ecom:Product.Name-->"><!--@Ecom:Product.Name--></a>
-							<!--@EndIf-->
+							<a href="/Default.aspx?ID=<!--@Item.Area.Products_Modal_Page_ID-->&amp;ProductID=<!--@Ecom:Product.ID-->" data-cache="false" data-target="#productPreview" data-toggle="modal" title="<!--@Ecom:Product.Name-->"><!--@Ecom:Product.Name--></a>
 						</td>
 						<td>
 							<div class="product-addtocart">
@@ -91,10 +76,10 @@
 	<div class="modal-header">
 		<button type="button" class="close sprite blue-close" data-dismiss="modal"></button>
 		<h3><!--@Translate(productpreview, "Product preview")--></h3>
-	</div><!-- / .modal-header -->
+	</div>
 	<div class="modal-body">
 		<div class="row-fluid no-space">
 			<div class="loader"></div>
 		</div>
-	</div><!-- / .modal-body -->
-</div><!-- / .modal -->
+	</div>
+</div>
