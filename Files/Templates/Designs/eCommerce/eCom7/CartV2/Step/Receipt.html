@@ -2,7 +2,6 @@
 	require(["jquery-printElement"]);
 </script>
 <div class="row checkout-receipt">
-
 	<div class="span9 checkout-step" id="checkout-wrapper">
 		<div class="box-rounded">
 
@@ -10,7 +9,7 @@
 				<div class="receipt-content">
 					<h2><!--@Translate(thankyoufororder, "Thank you for your order")--></h2>
 					<strong><!--@Translate(ordernumber, "Order number")-->: <!--@Ecom:Order.ID--></strong>
-					<br><br>
+					<br/><br/>
 					<!--@Translate(justemailed, "We have just e-mailed your order confirmation to")-->:
 					<br>
 					<strong><!--@Ecom:Order.Customer.Email--></strong>
@@ -21,7 +20,7 @@
 					&nbsp;&nbsp;&nbsp;
 
 					<!--@If(Global:Extranet.UserID>0)-->
-					<a href="/Default.aspx?ID=<!--@If(Global:Area.ID==1)-->55<!--@EndIf--><!--@If(Global:Area.ID==17)-->342<!--@EndIf-->&amp;CC42=Order&OrderID=<!--@Ecom:Order.ID-->">
+					<a href="/Default.aspx?ID=<!--@Item.Area.Customer_Center_Page_ID-->&amp;CC42=Order&amp;OrderID=<!--@Ecom:Order.ID-->">
 						<i class="icon-truck icon-flip-horizontal"></i> <!--@Translate(orderstatus, "Order status")-->
 					</a>
 					<!--@EndIf-->
@@ -45,7 +44,7 @@
 								<a href="<!--@Ecom:Product.LinkGroup.Clean-->" title="<!--@Ecom:Product.Name-->" class="thumbnail">
 									<img src="/Admin/Public/getimage.ashx?Image=<!--@Ecom:Product.ImageSmall.Default.Clean-->&amp;Width=160" alt="" />
 								</a>
-							</div><!-- / .product-image -->
+							</div>
 							<!--@EndIf(Ecom:Product.ImageSmall.Default.Clean)-->
 							<div class="details hidden-phone">
 								<div class="product-price">
@@ -73,7 +72,7 @@
 										<!--@Translate(ReadMore, "Read more")-->
 									</a>
 								</div>
-							</div><!-- / .details -->
+							</div>
 							<div class="content">
 								<div class="product-name">
 									<a href="<!--@Ecom:Product.LinkGroup.Clean-->" class="product-link" title="<!--@Ecom:Product.Name-->">
@@ -109,15 +108,15 @@
 										<!--@Translate(ReadMore, "Read more")-->
 									</a>
 								</div>
-							</div><!-- / .content -->
+							</div>
 						</div>
-					</section><!-- / .product-list-item-wrapper -->
+					</section>
 					<!--@LoopEnd(eCom:Related.MostPopularProducts)-->
 				</div>
 			</div>
 
-		</div><!-- / .box-rounded -->
-	</div><!-- / #checkout-wrapper -->
+		</div>
+	</div>
 
 	<div class="span3 checkout-step">
 		<div class="checkout-links">
@@ -138,7 +137,7 @@
 				<li><a href="#" data-toggle="modal" data-target="#checkoutTrackorder"><!--@Translate(canItrackmyorder, "Can I track my order?")--></a></li>
 				<li><a href="#" data-toggle="modal" data-target="#checkoutDonotfit"><!--@Translate(clothesdonotfit, "Clothes do not fit, then what?")--></a></li>
 			</ul>
-		</div><!-- / .checkout-links -->
+		</div>
 	</div>
 
 </div>
@@ -150,7 +149,7 @@
 		<button type="button" class="close blue-close icon-remove" data-dismiss="modal"></button>
 		<a href="#" class="icon-print"></a>
 		<h3><!--@Translate(pracdeliverypopup, 'Delivery')--></h3>
-	</div><!-- / .modal-header -->
+	</div>
 	<div class="modal-body">
 		<img src="/Files/Templates/Designs/eCommerce01/images/Logo.png" />
 
@@ -202,7 +201,7 @@
 
 						<div class="cart-cell-product-text">
 							<!--@If Defined(Ecom:Product.ID)-->
-							<a href="/Default.aspx?ID=<!--@If(Global:Area.ID==1)-->489<!--@EndIf--><!--@If(Global:Area.ID==17)-->527<!--@EndIf-->&ProductID=<!--@Ecom:Order:OrderLine.ProductID-->" data-toggle="modal" data-target="#productPreview" data-cache="false">
+							<a href="/Default.aspx?ID=<!--@Item.Area.Products_Catalog_Page_ID-->&amp;ProductID=<!--@Ecom:Order:OrderLine.ProductID-->" data-toggle="modal" data-target="#productPreview" data-cache="false">
 								<!--@Ecom:Order:OrderLine.ProductName-->
 								<!--@If Defined(Ecom:Order:OrderLine.ProductVariantText)-->
 								(<!--@Ecom:Order:OrderLine.ProductVariantText-->)
@@ -277,8 +276,8 @@
 				</tr>
 			</tbody>
 		</table>
-	</div><!-- / .modal-body -->
-</div><!-- / .modal -->
+	</div>
+</div>
 
 
 
@@ -288,166 +287,166 @@
 	<div class="modal-header">
 		<button type="button" class="close blue-close icon-remove" data-dismiss="modal"></button>
 		<h3><!--@Translate(pracdeliverypopup, 'Delivery')--></h3>
-	</div><!-- / .modal-header -->
+	</div>
 	<div class="modal-body">
 		<div class="row-fluid no-space">
 			<!--@Global:Paragraph.Content(416)-->
 		</div>
-	</div><!-- / .modal-body -->
-</div><!-- / .modal -->
+	</div>
+</div>
 
 <div class="modal hide fade modal-type-standart" id="checkoutPayment" tabindex="-1" role="dialog">
 	<div class="modal-header">
 		<button type="button" class="close blue-close icon-remove" data-dismiss="modal"></button>
 		<h3><!--@Translate(pracpaymentpopup, 'Payment')--></h3>
-	</div><!-- / .modal-header -->
+	</div>
 	<div class="modal-body">
 		<div class="row-fluid no-space">
 			<!--@Global:Paragraph.Content(417)-->
 		</div>
-	</div><!-- / .modal-body -->
-</div><!-- / .modal -->
+	</div>
+</div>
 
 <div class="modal hide fade modal-type-standart" id="checkoutReturn" tabindex="-1" role="dialog">
 	<div class="modal-header">
 		<button type="button" class="close blue-close icon-remove" data-dismiss="modal"></button>
 		<h3><!--@Translate(pracpolicy, "Return policy")--></h3>
-	</div><!-- / .modal-header -->
+	</div>
 	<div class="modal-body">
 		<div class="row-fluid no-space">
 			<!--@Global:Paragraph.Content(419)-->
 		</div>
-	</div><!-- / .modal-body -->
-</div><!-- / .modal -->
+	</div>
+</div>
 
 <div class="modal hide fade modal-type-standart" id="checkoutSecurity" tabindex="-1" role="dialog">
 	<div class="modal-header">
 		<button type="button" class="close blue-close icon-remove" data-dismiss="modal"></button>
 		<h3><!--@Translate(pracsecuritypopup, 'Security')--></h3>
-	</div><!-- / .modal-header -->
+	</div>
 	<div class="modal-body">
 		<div class="row-fluid no-space">
 			<!--@Global:Paragraph.Content(420)-->
 		</div>
-	</div><!-- / .modal-body -->
-</div><!-- / .modal -->
+	</div>
+</div>
 
 <div class="modal hide fade modal-type-standart" id="checkoutSupport" tabindex="-1" role="dialog">
 	<div class="modal-header">
 		<button type="button" class="close blue-close icon-remove" data-dismiss="modal"></button>
 		<h3><!--@Translate(pracsupportpopup, 'Support')--></h3>
-	</div><!-- / .modal-header -->
+	</div>
 	<div class="modal-body">
 		<div class="row-fluid no-space">
 			<!--@Global:Paragraph.Content(422)-->
 		</div>
-	</div><!-- / .modal-body -->
-</div><!-- / .modal -->
+	</div>
+</div>
 
 <div class="modal hide fade modal-type-standart" id="checkoutPayinfo" tabindex="-1" role="dialog">
 	<div class="modal-header">
 		<button type="button" class="close blue-close icon-remove" data-dismiss="modal"></button>
 		<h3><!--@Translate(whatcanIpaywith, "What payment methods do you support?")--></h3>
-	</div><!-- / .modal-header -->
+	</div>
 	<div class="modal-body">
 		<div class="row-fluid no-space">
 			<!--@Global:Paragraph.Content(339)-->
 		</div>
-	</div><!-- / .modal-body -->
-</div><!-- / .modal -->
+	</div>
+</div>
 
 <div class="modal hide fade modal-type-standart" id="checkoutCallyou" tabindex="-1" role="dialog">
 	<div class="modal-header">
 		<button type="button" class="close blue-close icon-remove" data-dismiss="modal"></button>
 		<h3><!--@Translate(canIcallyou, "Can I call you?")--></h3>
-	</div><!-- / .modal-header -->
+	</div>
 	<div class="modal-body">
 		<div class="row-fluid no-space">
 			<!--@Global:Paragraph.Content(364)-->
 		</div>
-	</div><!-- / .modal-body -->
-</div><!-- / .modal -->
+	</div>
+</div>
 
 <div class="modal hide fade modal-type-standart" id="checkoutRaisemoney" tabindex="-1" role="dialog">
 	<div class="modal-header">
 		<button type="button" class="close blue-close icon-remove" data-dismiss="modal"></button>
 		<h3><!--@Translate(whendoyouraisemymoney, "When do you raise my money?")--></h3>
-	</div><!-- / .modal-header -->
+	</div>
 	<div class="modal-body">
 		<div class="row-fluid no-space">
 			<!--@Global:Paragraph.Content(364)-->
 		</div>
-	</div><!-- / .modal-body -->
-</div><!-- / .modal -->
+	</div>
+</div>
 
 <div class="modal hide fade modal-type-standart" id="checkoutTrackorder" tabindex="-1" role="dialog">
 	<div class="modal-header">
 		<button type="button" class="close blue-close icon-remove" data-dismiss="modal"></button>
 		<h3><!--@Translate(canItrackmyorder, "Can I track my order?")--></h3>
-	</div><!-- / .modal-header -->
+	</div>
 	<div class="modal-body">
 		<div class="row-fluid no-space">
 			<!--@Global:Paragraph.Content(366)-->
 		</div>
-	</div><!-- / .modal-body -->
-</div><!-- / .modal -->
+	</div>
+</div>
 
 <div class="modal hide fade modal-type-standart" id="checkoutDonotfit" tabindex="-1" role="dialog">
 	<div class="modal-header">
 		<button type="button" class="close blue-close icon-remove" data-dismiss="modal"></button>
 		<h3><!--@Translate(clothesdonotfit, "Clothes do not fit, then what?")--></h3>
-	</div><!-- / .modal-header -->
+	</div>
 	<div class="modal-body">
 		<div class="row-fluid no-space">
 			<!--@Global:Paragraph.Content(317)-->
 		</div>
-	</div><!-- / .modal-body -->
-</div><!-- / .modal -->
+	</div>
+</div>
 
 <div class="modal hide fade modal-type-standart" id="checkoutTerms" tabindex="-1" role="dialog">
 	<div class="modal-header">
 		<button type="button" class="close blue-close icon-remove" data-dismiss="modal"></button>
 		<h3><!--@Translate(terms, 'Terms and Conditions')--></h3>
-	</div><!-- / .modal-header -->
+	</div>
 	<div class="modal-body">
 		<div class="row-fluid no-space">
 			<!--@Global:Paragraph.Content(316)-->
 		</div>
-	</div><!-- / .modal-body -->
-</div><!-- / .modal -->
+	</div>
+</div>
 
 <div class="modal hide fade modal-type-standart" id="checkoutInfoEmail" tabindex="-1" role="dialog">
 	<div class="modal-header">
 		<button type="button" class="close blue-close icon-remove" data-dismiss="modal"></button>
 		<h3><!--@Translate(emailinfo, 'Email information')--></h3>
-	</div><!-- / .modal-header -->
+	</div>
 	<div class="modal-body">
 		<div class="row-fluid no-space">
 			<!--@Global:Paragraph.Content(341)-->
 		</div>
-	</div><!-- / .modal-body -->
-</div><!-- / .modal -->
+	</div>
+</div>
 
 <div class="modal hide fade modal-type-standart" id="checkoutInfoMobile" tabindex="-1" role="dialog">
 	<div class="modal-header">
 		<button type="button" class="close blue-close icon-remove" data-dismiss="modal"></button>
 		<h3><!--@Translate(mobileinfo, 'Mobile information')--></h3>
-	</div><!-- / .modal-header -->
+	</div>
 	<div class="modal-body">
 		<div class="row-fluid no-space">
 			<!--@Global:Paragraph.Content(340)-->
 		</div>
-	</div><!-- / .modal-body -->
-</div><!-- / .modal -->
+	</div>
+</div>
 
 <div class="modal hide fade modal-type-standart" id="checkoutInfoPhone" tabindex="-1" role="dialog">
 	<div class="modal-header">
 		<button type="button" class="close blue-close icon-remove" data-dismiss="modal"></button>
 		<h3><!--@Translate(phoneinfo, 'Phone information')--></h3>
-	</div><!-- / .modal-header -->
+	</div>
 	<div class="modal-body">
 		<div class="row-fluid no-space">
 			<!--@Global:Paragraph.Content(342)-->
 		</div>
-	</div><!-- / .modal-body -->
-</div><!-- / .modal -->
+	</div>
+</div>

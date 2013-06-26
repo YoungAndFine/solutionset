@@ -117,6 +117,11 @@
           <editorConfuguration />
         </editor>
       </field>
+      <field name="Customer Center Page ID" systemName="Customer_Center_Page_ID" description="" type="System.Int32, mscorlib">
+        <editor type="Dynamicweb.Content.Items.Editors.IntegerEditor, Dynamicweb">
+          <editorConfuguration />
+        </editor>
+      </field>
     </fields>
     <rules>
       <rule name="Limit item type to" type="Dynamicweb.Content.Items.Activation.StructureRestrictionRule, Dynamicweb" value="Websites" />
@@ -163,6 +168,7 @@
           <fields>
             <field systemName="Create_Account_Page_ID" />
             <field systemName="Edit_Account_Page_ID" />
+            <field systemName="Customer_Center_Page_ID" />
           </fields>
         </group>
       </groups>
