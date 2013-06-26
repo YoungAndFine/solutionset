@@ -3,15 +3,10 @@
 		<h3>
 			<!--@Translate(translateShoppingCart, "Shopping Cart")-->
 
-			<!--@If(Global:Area.ID==1)-->
-			<a href="/Default.aspx?ID=235" class="btn dw-button-green">
-				<!--@EndIf-->
-				<!--@If(Global:Area.ID==17)-->
-				<a href="/Default.aspx?ID=336" class="btn dw-button-green">
-					<!--@EndIf-->
-					<!--@Translate(checkout, "Checkout")-->
-					<i class="icon-double-angle-right arr-forward-small-white"></i>
-				</a>
+			<a href="/Default.aspx?ID=<!--@Item.Area.Checkout_Page_ID-->" class="btn dw-button-green">
+				<!--@Translate(checkout, "Checkout")-->
+				<i class="icon-double-angle-right arr-forward-small-white"></i>
+			</a>
 		</h3>
 	</legend>
 	<div class="box-content">
@@ -173,22 +168,17 @@
 						</a>
 					</td>
 					<td class="cart-foot-actions right">
-						<!--@If(Global:Area.ID==1)-->
-						<a href="/Default.aspx?ID=235" class="btn dw-button-green">
-							<!--@EndIf-->
-							<!--@If(Global:Area.ID==17)-->
-							<a href="/Default.aspx?ID=336" class="btn dw-button-green">
-								<!--@EndIf-->
-								<!--@Translate(checkout, "Checkout")-->
-								<i class="icon-double-angle-right arr-forward-small-white hide-350"></i>
-							</a>
+						<a href="/Default.aspx?ID=<!--@Item.Area.Checkout_Page_ID-->" class="btn dw-button-green">
+							<!--@Translate(checkout, "Checkout")-->
+							<i class="icon-double-angle-right arr-forward-small-white"></i>
+						</a>
 					</td>
 				</tr>
 			</tfoot>
 		</table>
 		<!--@EndIf-->
 
-		<!--@If(Ecom:Order.IsEmpty='true')-->
+		<!--@If Defined(Ecom:Order.IsEmpty)-->
 		<strong>
 			<!--@Translate(translateEmptyCart, "Your cart is empty")-->
 		</strong>
