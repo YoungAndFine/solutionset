@@ -1,6 +1,11 @@
 ﻿<WebsiteItemLayouts>
-  <PageItemLayouts />
+  <PageItemLayouts>
+    <ItemLayout systemname="Ref" template="" />
+    <ItemLayout systemname="Slider" template="" />
+  </PageItemLayouts>
   <ParagraphItemLayouts>
     <ItemLayout systemname="Carousel_Item" template="" />
+    <ItemLayout systemname="Ref" template="" />
+    <ItemLayout systemname="Slider" template="" />
   </ParagraphItemLayouts>
 </WebsiteItemLayouts>
