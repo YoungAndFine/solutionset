@@ -72,6 +72,16 @@
           <editorConfuguration />
         </editor>
       </field>
+      <field name="Products Catalog Page ID" systemName="Products_Catalog_Page_ID" description="" type="System.Int32, mscorlib">
+        <editor type="Dynamicweb.Content.Items.Editors.IntegerEditor, Dynamicweb">
+          <editorConfuguration />
+        </editor>
+      </field>
+      <field name="Products Modal Page ID" systemName="Products_Modal_Page_ID" description="Page to use for showing product details in modal windows (dialogs)." type="System.Int32, mscorlib">
+        <editor type="Dynamicweb.Content.Items.Editors.IntegerEditor, Dynamicweb">
+          <editorConfuguration />
+        </editor>
+      </field>
       <field name="Logo Image" systemName="Logo_Image" description="" type="System.String, mscorlib">
         <editor type="Dynamicweb.Content.Items.Editors.FileEditor, Dynamicweb">
           <editorConfuguration />
@@ -137,6 +147,8 @@
             <field systemName="Products_Autoload_Page_ID" />
             <field systemName="BOM_Page_ID" />
             <field systemName="Products_PDF_Page_ID" />
+            <field systemName="Products_Catalog_Page_ID" />
+            <field systemName="Products_Modal_Page_ID" />
           </fields>
         </group>
         <group name="Design" systemName="Design" collapsibleState="None">

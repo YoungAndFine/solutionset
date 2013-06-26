@@ -1,33 +1,18 @@
 <section class="container searchbar-wrapper searchbar-wrapper-bottom">
-  <div class="row">
-    <div class="span8 instant-search">
-      <div class="search-box">
-        <form action="/Default.aspx">
-          <div class="sprite search"></div>
-          <label style="display:none;" for="q-bottom">&nbsp;</label>
-          <input type="hidden" id="searchstring" value="I want">
-          <!--@If(Global:Area.ID==1)-->
-          <input type="hidden" value="48" name="ID" autocomplete="off">
-          <!--@EndIf-->
-          <!--@If(Global:Area.ID==17)-->
-          <input type="hidden" value="324" name="ID" autocomplete="off">
-          <!--@EndIf-->
-          <!--@If(Global:Area.ID==18)-->
-          <input type="hidden" value="376" name="ID" autocomplete="off">
-          <!--@EndIf-->
-          <!--@If(Global:Area.ID==19)-->
-          <input type="hidden" value="439" name="ID" autocomplete="off">
-          <!--@EndIf-->
-          <!--@If(Global:Area.ID==22)-->
-          <input type="hidden" value="612" name="ID" autocomplete="off">
-          <!--@EndIf-->
-          <input type="text" tabindex="1" spellcheck="false" autocomplete="off" name="eComQuery" id="q-bottom">
-          <input type="submit" onclick="eCommerce.Overlay.show(document.body);" value="Search" class="dw-button dw-button-green">
-          <div id="search-box-preloader-bottom"></div>
-        </form>
+	<div class="row">
+		<div class="span8 instant-search">
+			<div class="search-box">
+				<form action="/Default.aspx">
+					<label style="display:none;" for="q-bottom">&nbsp;</label>
+					<input type="hidden" id="searchstring" value="I want">
+					<input type="hidden" value="<!--@Item.Area.Products_Catalog_Page_ID-->" name="ID">
+					<input type="text" spellcheck="false" autocomplete="off" name="eComQuery" id="q-bottom">
+					<input type="submit" onclick="eCommerce.Overlay.show(document.body);" value="Search" class="dw-button dw-button-green">
+					<div id="search-box-preloader-bottom"></div>
+				</form>
 
-        <!-- "Instant search results" template -->
-        <!--@Include(Sections/InstantSearchBottom.html)-->
+				<!-- "Instant search results" template -->
+				<!--@Include(Sections/InstantSearchBottom.html)-->
 			</div>
 		</div>
 	</div>

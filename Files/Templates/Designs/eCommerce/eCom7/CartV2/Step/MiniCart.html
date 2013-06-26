@@ -1,32 +1,28 @@
 <!--@LoopStart(OrderLines)-->
 <div class="product-line">
-
 	<!--@If Not Defined(Ecom:Order:OrderLine.IsProduct)-->
 	<div class="product-name">
 		<!--@Translate(discount, 'Discount')--> <!--@Ecom:Order:OrderLine.ProductName-->
 		<i class="discount-price"><!--@Ecom:Order:OrderLine.Price.PriceWithoutVATFormatted--></i>
 	</div>
-	<!--@EndIf(Ecom:Order:OrderLine.IsProduct)-->
-
-	<!--@If Defined(Ecom:Order:OrderLine.IsProduct)-->
+	<!--@Else-->
 	<div class="product-name">
 		<div>
-			<a href="/Default.aspx?ID=<!--@If(Global:Area.ID==1)-->489<!--@EndIf--><!--@If(Global:Area.ID==17)-->527<!--@EndIf--><!--@If(Global:Area.ID==18)-->503<!--@EndIf--><!--@If(Global:Area.ID==19)-->528<!--@EndIf-->&ProductID=<!--@Ecom:Order:OrderLine.ProductID-->" data-toggle="modal" data-target="#productPreview"><!--@Ecom:Order:OrderLine.ProductName--></a>
+			<a href="/Default.aspx?ID=<!--@Item.Area.Products_Modal_Page_ID-->&amp;ProductID=<!--@Ecom:Order:OrderLine.ProductID-->" data-toggle="modal" data-target="#productPreview"><!--@Ecom:Order:OrderLine.ProductName--></a>
 		</div>
 		<div>
 			<i><!--@Translate(Product_number, "Product no.")-->: <!--@Ecom:Product.Number--></i>
 		</div>
 	</div>
 	<div class="product-image">
-		<a href="/Default.aspx?ID=<!--@If(Global:Area.ID==1)-->489<!--@EndIf--><!--@If(Global:Area.ID==17)-->527<!--@EndIf--><!--@If(Global:Area.ID==18)-->503<!--@EndIf--><!--@If(Global:Area.ID==19)-->528<!--@EndIf-->&ProductID=<!--@Ecom:Order:OrderLine.ProductID-->" data-toggle="modal" data-target="#productPreview" data-cache="false">
+		<a href="/Default.aspx?ID=<!--@Item.Area.Products_Modal_Page_ID-->&amp;ProductID=<!--@Ecom:Order:OrderLine.ProductID-->" data-toggle="modal" data-target="#productPreview" data-cache="false">
 			<img src='/Admin/Public/getimage.ashx?fmImage_path=<!--@Ecom:Product.ImageLarge.Clean-->&amp;Width=250' width="250" height="250" />
 		</a>
 	</div>
 	<div class="quantity-text">
 		<!--@Ecom:Order:OrderLine.Quantity--> <!--@Translate(pcs, "pcs")-->.
 	</div>
-	<!--@EndIf(Ecom:Order:OrderLine.IsProduct)-->
-
+	<!--@EndIf-->
 </div>
 <!--@LoopEnd(OrderLines)-->
 
