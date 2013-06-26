@@ -1,0 +1,30 @@
+﻿<div class="span6">
+  <div class="box-rounded">
+    <div class="box-content carousel-box">
+      <!--@If(ItemPublisher:Items.Any=True)-->
+      <div id="itemBasedCarousel" class="carousel slide" data-carousel-map="#itemsSliderMap">
+        <div class="carousel-inner">
+          <!--@LoopStart(ItemPublisher:Items.List)-->
+          <div class="item <!--@If(ItemPublisher:Items.List.LoopCounter==1)-->active<!--@EndIf-->">
+            <!--@If Defined(ItemPublisher:Item.Link)-->
+            <a href="<!--@ItemPublisher:Item.Link-->">
+            <!--@EndIf(ItemPublisher:Item.Link)-->
+              <img data-src="<!--@ItemPublisher:Item.Image-->" data-sizes="{'w480':[355],'w768':[575]}" alt="" />
+              <div class="carousel-caption">
+                <h4><!--@ItemPublisher:Item.Headline--></h4>
+                <!--@ItemPublisher:Item.TextSlideContent-->
+              </div>
+            <!--@If Defined(ItemPublisher:Item.Link)-->
+            </a>
+            <!--@EndIf(ItemPublisher:Item.Link)-->
+          </div>
+          <!--@LoopEnd(ItemPublisher:Items.List)-->
+        </div>
+        <a class="carousel-control left" href="#itemBasedCarousel" data-slide="prev">&lsaquo;</a>
+        <a class="carousel-control right" href="#itemBasedCarousel" data-slide="next">&rsaquo;</a>
+        <div class="carousel-map" id="itemsSliderMap"></div>
+      </div>
+      <!--@EndIf-->
+    </div>
+  </div>
+</div>
