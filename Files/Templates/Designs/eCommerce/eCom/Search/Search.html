@@ -3,10 +3,11 @@
 	<input type="hidden" name="GroupID" value="<!--@Server:Request.groupid-->" />
 	<input type="submit" style="display:none;">
 
-	<input type="hidden" name="SortBy" value="<!--@If Defined(Server:Request.sortby)--><!--@Server:Request.sortby--><!--@EndIf(Server:Request.sortby)-->" />
-	<input type="hidden" name="SortOrder" value="<!--@If Defined(Server:Request.sortorder)--><!--@Server:Request.sortorder--><!--@EndIf(Server:Request.sortorder)-->" />
+    <!--@LoopStart(Ecom:Search.Filters)-->
 
-	<!--@LoopStart(Ecom:Search.Filters)-->
+    <!--@If(Ecom:Search.Filter.TagName='Groups')-->
+    <!--@Ecom:Search.Filter.Output-->
+    <!--@EndIf-->
 
 	<!--@If(Ecom:Search.Filter.TagName='Price')-->
 	<!--@Ecom:Search.Filter.Output-->
@@ -20,38 +21,59 @@
 	<!--@Ecom:Search.Filter.Output-->
 	<!--@EndIf-->
 
+    <!--@If(Ecom:Search.Filter.TagName!='Groups')-->
 	<!--@If(Ecom:Search.Filter.TagName!='Price')-->
 	<!--@If(Ecom:Search.Filter.TagName!='RatingSlider')-->
 	<!--@If(Ecom:Search.Filter.TagName!='StockPresence')-->
 	<!--@If Defined(Ecom:Search.Filter.SupportsOptions)-->
 	<!--@If Defined(Ecom:Search.Filter.HasNonEmptyOptions)-->
-	<div class="filter-wrapper <!--@Ecom:Search.Filter.CssClass-->">
-		<h3><!--@Ecom:Search.Filter.Name--></h3>
-		<div class="filter-content">
+    <div class="rounded-box filter-container <!--@Ecom:Search.Filter.CssClass-->">
+        <h3>
+            <!--@Ecom:Search.Filter.Name-->
+        </h3>
+
+        <div class="rounded-box-content">
+
 			<ul>
 				<li class="filter-option-all">
+                <div class="rounded-box-field">
+                    <input type="checkbox" class="filter-option-all-value" id="chk<!--@Ecom:Search.Filter.TagName-->All" name="<!--@Ecom:Search.Filter.TagName-->" value="" />
+
 					<label for="chk<!--@Ecom:Search.Filter.TagName-->All">
-						<input type="checkbox" class="filter-option-all-value" id="chk<!--@Ecom:Search.Filter.TagName-->All" name="<!--@Ecom:Search.Filter.TagName-->" value="" />
-						<!--@Translate(ResetFilterValue, "All")-->
+                        <span class="icon-placeholder-left">&nbsp;</span>
+                        <span class="icon-placeholder-right">&nbsp;</span>
+                        <span class="text-placeholder placeholder-required"><!--@Translate(ResetFilterValue, "All")--></span>
 					</label>
+                </div>
 				</li>
 				<!--@LoopStart(Ecom:Search.Filter.Options)-->
 				<!--@If(Ecom:Search.Filter.Option.ResultsCount>0)-->
-				<!--@If(Ecom:Search.Filter.Option.Label!='false')-->
 				<li>
+                <div class="rounded-box-field <!--@Ecom:Search.Filter.Option.CssClass-->">
+                    <!--autocomplete="off"-->
+                    <input type="checkbox" class="filter-option-value" id="chk<!--@Ecom:Search.Filter.TagName--><!--@Ecom:Search.Filter.Options.LoopCounter-->" name="<!--@Ecom:Search.Filter.TagName-->"
+                        value="<!--@Ecom:Search.Filter.Option.Value-->" <!--@If Defined(Ecom:Search.Filter.Option.Selected)--> checked="checked"<!--@EndIf(Ecom:Search.Filter.Option.Selected)--> />
+
 					<label for="chk<!--@Ecom:Search.Filter.TagName--><!--@Ecom:Search.Filter.Options.LoopCounter-->">
-						<input type="checkbox" class="filter-option-value" id="chk<!--@Ecom:Search.Filter.TagName--><!--@Ecom:Search.Filter.Options.LoopCounter-->" name="<!--@Ecom:Search.Filter.TagName-->" value="<!--@Ecom:Search.Filter.Option.Value-->" <!--@If Defined(Ecom:Search.Filter.Option.Selected)--> checked="checked"<!--@EndIf(Ecom:Search.Filter.Option.Selected)--> />
-						<!--@Ecom:Search.Filter.Option.Label-->
-						<span class="badge"><!--@Ecom:Search.Filter.Option.ResultsCountFormatted--></span>
+                        <span class="icon-placeholder-left">&nbsp;</span>
+                        <span class="icon-placeholder-right">&nbsp;</span>
+                        <span class="text-placeholder"><!--@Ecom:Search.Filter.Option.Label--></span>
+                        <span class="amount-placeholder">(<!--@Ecom:Search.Filter.Option.ResultsCountFormatted-->)</span>
 					</label>
+
+                    <div class="clearfix"></div>
+                </div>
 				</li>
-				<!--@EndIf-->
 				<!--@EndIf-->
 				<!--@LoopEnd(Ecom:Search.Filter.Options)-->
 			</ul>
+        <!--@EndIf(Ecom:Search.Filter.HasOptions)-->
 			<!--@If Not Defined(Ecom:Search.Filter.HasOptions)-->
-			<i><!--@Translate(NoFilterOptions, "No options")--></i>
+        <i>
+            <!--@Translate(NoFilterOptions, "No options")-->
+        </i>
 			<!--@EndIf(Ecom:Search.Filter.HasOptions)-->
+			
 		</div> <!-- / .filter-container -->
 	</div> <!-- / .filter-wrapper -->
 	<!--@EndIf(Ecom:Search.Filter.HasNonEmptyOptions)-->
@@ -59,6 +81,14 @@
 	<!--@EndIf-->
 	<!--@EndIf-->
 	<!--@EndIf-->
+=======
+        </div>
+    </div>
+  <!--@EndIf(Ecom:Search.Filter.HasNonEmptyOptions)-->
+  <!--@EndIf(Ecom:Search.Filter.SupportsOptions)-->
+  <!--@EndIf-->
+  <!--@EndIf-->
+  <!--@EndIf-->
 
 	<!--@If Not Defined(Ecom:Search.Filter.SupportsOptions)-->
 	<!--@Ecom:Search.Filter.Output-->
