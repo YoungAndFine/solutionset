@@ -1,5 +1,6 @@
 ﻿<WebsiteItemLayouts>
   <PageItemLayouts>
+    <ItemLayout systemname="Ref" template="" />
     <ItemLayout systemname="Slider" template="" />
   </PageItemLayouts>
   <ParagraphItemLayouts>

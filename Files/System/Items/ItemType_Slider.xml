@@ -28,5 +28,21 @@
         </editor>
       </field>
     </fields>
+    <rules>
+      <rule name="Limit item type to" type="Dynamicweb.Content.Items.Activation.StructureRestrictionRule, Dynamicweb" value="Pages,Paragraphs" />
+    </rules>
+    <layout>
+      <groups>
+        <group name="General" systemName="General" collapsibleState="None">
+          <fields>
+            <field systemName="Image" />
+            <field systemName="Link" />
+            <field systemName="ButtonName" />
+            <field systemName="Headline" />
+            <field systemName="TextSlideContent" />
+          </fields>
+        </group>
+      </groups>
+    </layout>
   </item>
 </items>
