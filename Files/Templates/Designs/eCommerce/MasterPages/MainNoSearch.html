@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<title>Main master</title>
+		<title>Master with menu and no search</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="description" content="">
 		<meta name="author" content="">
@@ -27,7 +27,7 @@
 		<script src="assets/vendor/dynamicweb.start.js"></script>
 		<!--@Snippet(JavaScriptHead)-->
 	</head>
-	<body class="menu-bottom searchbar-bottom"
+	<body class="searchbar-bottom"
 				data-areaid="<!--@Global:Area.ID-->"
 				data-pageid="<!--@Global:Page.ID-->"
 				data-product-page="<!--@If(Global:Area.ID==1)-->48<!--@EndIf--><!--@If(Global:Area.ID==17)-->324<!--@EndIf--><!--@If(Global:Area.ID==22)-->612<!--@EndIf-->"
@@ -57,7 +57,6 @@
 			</header>
 
 			<!--@Include(Sections/NavigationMain.html)-->
-			<!--@Include(Sections/SearchBar.html)-->
 
 			<!--@If Defined(DwNavigation(NavBreadcrumb))-->
 			<section class="container breadcrumb-wrapper">
@@ -75,8 +74,7 @@
 		</section>
 
 		<footer>
-      <!--@Include(Sections/NavigationMainBottom.html)-->
-      <!--@Include(Sections/SearchBarBottom.html)-->
+			<!--@Include(Sections/NavigationMainBottom.html)-->
 
 			<section class="container footer-wrapper">
 				<div class="row" id="footerSections" title="Footer sections">

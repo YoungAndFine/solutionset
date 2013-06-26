@@ -1,0 +1,33 @@
+<!--@Layout.Title(Mail Basic)-->
+<!--@Layout.Description(Basic layout for e-mail messages)-->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>E-mail Basic Template</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+</head>
+<body>
+  <table width="100%" style="padding: 10px; margin: 0; text-align: left; font-wight: normal; font-size: 14px; line-height: 21px; font-family: arial; color: #454545;">
+    <tr>
+      <td>
+        <a href="/Default.aspx?ID=<!--@DwAreaFirstActivePageID-->">
+          <img align="right" src="assets/img/logo.png">
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td class="dwcontent" id="MainContent" title="E-mail content area">
+        
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align: center; padding: 10px 0 0;">
+        <!--@CampaignManager:Email.UnsubscribeEmail-->
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

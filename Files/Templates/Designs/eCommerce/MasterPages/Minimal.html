@@ -15,7 +15,7 @@
 		<!--@If Defined(Item.Area.Custom_CSS_Url)-->
 		<link href="<!--@Item.Area.Custom_CSS_Url-->" rel="stylesheet">
 		<!--@EndIf(Item.Area.Custom_CSS_Url)-->
-		
+
 	<link rel="icon" type="image/png" href="assets/images/favicon.ico">
 
 		<script src="assets/vendor/require-jquery.js"></script>
@@ -43,11 +43,10 @@
 							<div class="row">
 								<div class="span4 logo">
 									<!--@If Defined(Item.Area.Logo_Image)-->
-									<a href="/Default.aspx?ID=<!--@DwAreaFirstActivePageID-->" class="logo-image" style="background-image: url('<!--@Item.Area.Logo_Image-->')"></a>
-									<!--@EndIf(Item.Area.Logo_Image)-->
-									<!--@If Not Defined(Item.Area.Logo_Image)-->
+									<a href="/Default.aspx?ID=<!--@DwAreaFirstActivePageID-->" class="logo-image" style="background-image: url(<!--@Item.Area.Logo_Image)-->)"></a>
+									<!--@Else-->
 									<a href="/Default.aspx?ID=<!--@DwAreaFirstActivePageID-->" class="logo-image"></a>
-									<!--@EndIf(Item.Area.Logo_Image)-->
+									<!--@EndIf-->
 								</div>
 								<div class="span4 payoff dwcontent" id="payoffHeadline" title="Pay-off headline"></div>
 							</div>
