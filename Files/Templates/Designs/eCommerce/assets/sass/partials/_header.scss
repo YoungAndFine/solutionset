@@ -17,26 +17,43 @@
 .lang_selector {
 	position: absolute;
 	top: 8px;
-	left: 3px;
+  // left: 3px;
+  right: 3px;
 	z-index: 5;
+  line-height: 21px;
+
+  a {
+    text-decoration: underline;
+	}
+
+  img {
+    margin-right: 4px;
+  }
+  @media (min-width: 768px) {
+    top: 11px;
+
+    a {
+      padding-left: 7px;
+      border-left: 1px solid #999;
+    }
+  }
 }
 
-//
+
 .header-wrapper {
 	background: $documentBackground;
-	padding-top: 50px;
+  padding-top: 55px;
 
 	> .container {
-		box-shadow: 0px 0px 15px 1px #ccc;
+		@include box-shadow(0px 0px 15px 1px #ccc);
 		background: $pageBackground;
-		border-radius: 5px 5px 0 0;
+		@include border-radius(5px 5px 0 0);
 	}
 	&.type-minimal {
 		> .container {
-			box-shadow:
-				15px -5px 15px -15px #CCCCCC,
-				-15px -5px 15px -15px #CCCCCC,
-				0px -10px 15px -10px #CCCCCC;
+			@include box-shadow(15px -5px 15px -15px #CCCCCC,
+													-15px -5px 15px -15px #CCCCCC,
+													0px -10px 15px -10px #CCCCCC);
 		}
 		.logo-wrapper {
 			margin-top: 10px;
@@ -68,22 +85,21 @@
 
 		.logo-image {
 			display: block;
-			background: url("../images/global-logo.svg") left center no-repeat;
+			background: url('../images/global-logo.png') left center no-repeat;
 			background-size: contain;
 			height: 80px;
 			width: auto;
 		}
-
-		.no-svg .logo-image {
-			background: url("../images/global-logo.png") left center no-repeat;
-		}
 	}
 	.payoff {
+    display: table;
+    height: 80px;
+
+    > div {
 		display: table-cell;
 		vertical-align: middle;
 		font: bold 18px/25px arial;
-		margin-top: 31px;
-		height: inherit!important;
+    }
 	}
 
 	@media (max-width: 349px) {
@@ -136,10 +152,10 @@
 .minicart-wrapper {
 	height: 80px;
 	margin: 5px 0;
-	box-shadow: -15px 0px 10px -15px #ccc;
+	@include box-shadow(-15px 0px 10px -15px #ccc);
 
 	&.login-required {
-		box-shadow: none;
+		@include box-shadow(none);
 		line-height: 80px;
 
 		a {
@@ -361,6 +377,7 @@
 	}
 	@media (min-width: 768px) {
 		width: 248px;
+    margin-left: 0;
 	}
 	@media (min-width: 980px) {
 		width: 320px;

@@ -12,9 +12,9 @@
  * Version: 0.9.0
  *
  */
+@import 'compass';
 
-@import "__vars";
-
+@import 'vars';
 
 .checkout-stepmap {
 	margin-left: 30px;
@@ -62,7 +62,7 @@
 					height: 14px;
 					right: 4px;
 					top: -8px;
-					background: url("images/checkout-map-arrow.png") no-repeat right center;
+					background: url('../images/checkout-map-arrow.png') no-repeat right center;
 				}
 				h4 {
 					color: #009ddf;
@@ -70,7 +70,7 @@
 					position: relative;
 				}
 				span {
-					background: url("images/circle-blue.png") no-repeat left center;
+					background: url('../images/circle-blue.png') no-repeat left center;
 					left: -2px;
 				}
 			}
@@ -90,7 +90,7 @@
 				width: 55px;
 				height:55px;
 				background: no-repeat 0 0;
-				background: url("images/circle-grey.png") no-repeat left center;
+				background: url('../images/circle-grey.png') no-repeat left center;
 
 				i {
 					color: white;
@@ -125,7 +125,7 @@
 	}
 
 	@media (max-width: 767px) {
-		[class*="span"] {
+		[class*=span] {
 			clear: both;
 		}
 		.checkout-headline h1 {
@@ -172,10 +172,7 @@
 
 	.box-headline {
 		width: 100%;
-		-webkit-box-sizing: border-box;
-		-moz-box-sizing: border-box;
-		box-sizing: border-box;
-
+		@include box-sizing(border-box);
 
 		h3 {
 			width: auto;
@@ -226,7 +223,7 @@
 				label {
 					margin-bottom: 0;
 				}
-				input[type='radio'] {
+				input[type=radio] {
 					margin: -1px 5px 0 0;
 					padding: 0;
 				}
@@ -256,9 +253,7 @@
 			input {
 				// height: 30px;
 				min-height: 30px;
-				-webkit-box-sizing: border-box;
-					 -moz-box-sizing: border-box;
-								box-sizing: border-box;
+				@include box-sizing(border-box);
 			}
 			button {
 				float: right;
@@ -290,7 +285,7 @@
 	}
 	.control-action-group {
 		background:
-			url("images/arrow-right-big.png")
+			url('../images/arrow-right-big.png')
 			no-repeat
 			left
 			center;
@@ -354,7 +349,7 @@
 	}
 	.controls {
 		&.with-button {
-			input[type="text"], input[type="email"], input[type="number"], select {
+			input[type=text], input[type=email], input[type=number], select {
 				width: 400px;
 			}
 			.btn {
@@ -363,23 +358,21 @@
 				padding-top: 6px;
 				padding-bottom: 6px;
 				font-weight: bold;
-				-webkit-box-sizing: border-box;
-					 -moz-box-sizing: border-box;
-								box-sizing: border-box;
+				@include box-sizing(border-box);
 			}
 		}
-		input[type="text"], input[type="email"], input[type="number"], select, .btn {
+		input[type=text], input[type=email], input[type=number], select, .btn {
 			margin-right: 10px;
 		}
-		input[type="text"], input[type="email"], input[type="number"], select {
+		input[type=text], input[type=email], input[type=number], select {
 			width: 610px;
 		}
-		input[name="EcomOrderCustomerZip"],
-		input[name="EcomOrderDeliveryZip"] {
+		input[name=EcomOrderCustomerZip],
+		input[name=EcomOrderDeliveryZip] {
 			width: 50px;
 		}
-		input[name="EcomOrderCustomerCity"],
-		input[name="EcomOrderDeliveryCity"] {
+		input[name=EcomOrderCustomerCity],
+		input[name=EcomOrderDeliveryCity] {
 			width: 535px;
 		}
 		select {
@@ -405,22 +398,22 @@
 	@media (min-width: 980px) and (max-width: 1200px) {
 		.controls {
 			&.with-button {
-				input[type="text"], input[type="email"], input[type="number"], select {
+				input[type=text], input[type=email], input[type=number], select {
 					width: 235px;
 				}
 			}
-			input[type="text"], input[type="email"], input[type="number"], select {
+			input[type=text], input[type=email], input[type=number], select {
 				width: 445px;
 			}
 			select {
 				width: 457px;
 			}
-			input[name="EcomOrderCustomerZip"],
-			input[name="EcomOrderDeliveryZip"] {
+			input[name=EcomOrderCustomerZip],
+			input[name=EcomOrderDeliveryZip] {
 				width: 50px;
 			}
-			input[name="EcomOrderCustomerCity"],
-			input[name="EcomOrderDeliveryCity"] {
+			input[name=EcomOrderCustomerCity],
+			input[name=EcomOrderDeliveryCity] {
 				width: 370px;
 			}
 		}
@@ -434,7 +427,7 @@
 				.parcel-shops-wrapper {}
 				.parcel-shop {
 					label {}
-					input[type='radio'] {}
+					input[type=radio] {}
 					.adr {
 						span {}
 					}
@@ -452,25 +445,25 @@
 	@media (min-width: 768px) and (max-width: 979px) {
 		.controls {
 			&.with-button {
-				input[type="text"], input[type="email"], input[type="number"], select {
+				input[type=text], input[type=email], input[type=number], select {
 					width: 120px;
 				}
 				.btn {
 					width: 150px;
 				}
 			}
-			input[type="text"], input[type="email"], input[type="number"], select {
+			input[type=text], input[type=email], input[type=number], select {
 				width: 285px;
 			}
 			select {
 				width: 290px;
 			}
-			input[name="EcomOrderCustomerZip"],
-			input[name="EcomOrderDeliveryZip"] {
+			input[name=EcomOrderCustomerZip],
+			input[name=EcomOrderDeliveryZip] {
 				width: 50px;
 			}
-			input[name="EcomOrderCustomerCity"],
-			input[name="EcomOrderDeliveryCity"] {
+			input[name=EcomOrderCustomerCity],
+			input[name=EcomOrderDeliveryCity] {
 				width: 210px;
 			}
 		}
@@ -499,26 +492,24 @@
 			margin-left: 0;
 
 			&.with-button {
-				input[type="text"], select {
+				input[type=text], select {
 					width: 40%;
 				}
 				.btn {
 					width: 45%;
 				}
 			}
-			input[type="text"], input[type="email"], input[type="number"], select {
+			input[type=text], input[type=email], input[type=number], select {
 				width: 90%;
-				-webkit-box-sizing: border-box;
-				-moz-box-sizing: border-box;
-				box-sizing: border-box;
+				@include box-sizing(border-box);
 			}
-			input[name="EcomOrderCustomerZip"],
-			input[name="EcomOrderDeliveryZip"] {
+			input[name=EcomOrderCustomerZip],
+			input[name=EcomOrderDeliveryZip] {
 				width: 25%;
 				margin-right: 5%;
 			}
-			input[name="EcomOrderCustomerCity"],
-			input[name="EcomOrderDeliveryCity"] {
+			input[name=EcomOrderCustomerCity],
+			input[name=EcomOrderDeliveryCity] {
 				width: 60%;
 			}
 		}
@@ -560,7 +551,7 @@
 				.parcel-shops-wrapper {}
 				.parcel-shop {
 					label {}
-					input[type='radio'] {}
+					input[type=radio] {}
 					.adr {
 						span {}
 					}
@@ -627,11 +618,11 @@
 			.help-block {
 				font-size: 12px;
 			}
-			input[type="text"], input[type="email"], input[type="number"], select {
+			input[type=text], input[type=email], input[type=number], select {
 				width: 100% !important;
 			}
-			input[name="EcomOrderCustomerZip"],
-			input[name="EcomOrderDeliveryZip"] {
+			input[name=EcomOrderCustomerZip],
+			input[name=EcomOrderDeliveryZip] {
 				margin-bottom: 5px;
 			}
 			label {
@@ -650,7 +641,7 @@
 				.parcel-shops-wrapper {}
 				.parcel-shop {
 					label {}
-					input[type='radio'] {}
+					input[type=radio] {}
 					.adr {
 						span {}
 					}
@@ -681,20 +672,20 @@
 .modal {
 	.form-horizontal {
 		.controls {
-			input[type="text"], input[type="email"], input[type="number"], select {
+			input[type=text], input[type=email], input[type=number], select {
 				width: 420px;
 				margin-right: 0;
 			}
 			select {
 				width: 430px;
 			}
-			input[name="EcomOrderCustomerZip"],
-			input[name="EcomOrderDeliveryZip"] {
+			input[name=EcomOrderCustomerZip],
+			input[name=EcomOrderDeliveryZip] {
 				width: 50px;
 				margin-right: 10px;
 			}
-			input[name="EcomOrderCustomerCity"],
-			input[name="EcomOrderDeliveryCity"] {
+			input[name=EcomOrderCustomerCity],
+			input[name=EcomOrderDeliveryCity] {
 				width: 345px;
 			}
 
@@ -820,9 +811,7 @@
 	.product-list-item-wrapper {
 		.product-addtocart {
 			.btn {
-				-webkit-box-sizing: border-box;
-					 -moz-box-sizing: border-box;
-								box-sizing: border-box;
+				@include box-sizing(border-box);
 			}
 		}
 	}
@@ -910,13 +899,14 @@
 
 	background-color: #FFFFFF;
 	border: 1px solid #9F9F9F;
-	box-shadow: 0 1px 0 #E3E3E3 inset;
+	@include box-shadow(0 1px 0 #E3E3E3 inset);
+
 	color: #55564A;
 	// font: bold 14px/28px arial;
 	height: 28px;
 	margin: 0;
 	padding: 2px 5px 0;
-	border-radius: 3px;
+	@include border-radius(3px);
 
 	span {
 		// border: 1px solid #ccc;
@@ -944,7 +934,7 @@
 		border: 1px solid #9F9F9F;
 		border-top-color: #DDD;
 		margin: 0;
-		border-radius: 0 0 3px 3px;
+		@include border-radius(0 0 3px 3px);
 		padding-top: 3px;
 
 		li {

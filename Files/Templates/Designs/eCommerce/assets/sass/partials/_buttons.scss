@@ -15,9 +15,8 @@
 
 // General button styles
 .dw-button {
-	@include rounded-borders(#FF0000);
-	// border-radius: 5px;
-	box-shadow: 1px 1px 2px #c3c3c3;
+  @include rounded-borders(#CCC);
+	@include box-shadow(1px 1px 2px #c3c3c3);
 	color: #fff;
 	cursor: pointer;
 	display: inline-block;
@@ -63,11 +62,12 @@ a.dw-button {
 		background: #e7e9eb;
 	}
 }
+
 .dw-button-orange {
 	@include bg-gradient(#FB9E25, #FF8500);
 	border-color: #FF8500;
 	text-shadow: 1px 1px 0 #cc9f52;
-	box-shadow: 1px 1px 2px #fcbf70 !important;
+	@include box-shadow(1px 1px 2px #fcbf70);
 	color: #fff !important;
 
 	&:active, &:hover {

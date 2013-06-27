@@ -18,7 +18,7 @@
 .box-rounded a.export_excel, .box-rounded .customer_center_block a {text-decoration:none;}
 
 .no-right-round {
-	border-radius: 5px 0 0 5px;
+	@include border-radius(5px 0 0 5px);
 	border-right:none;
 }
 
@@ -52,9 +52,7 @@
 		@include rounded-borders(#DFE4E7);
 
 		.span3, .span9 {
-			-webkit-box-sizing: border-box;
-			-moz-box-sizing: border-box;
-			box-sizing: border-box;
+			@include box-sizing(border-box);
 		}
 		.span3 {
 			width: 30%;
@@ -67,8 +65,8 @@
 
 			&.no-left-round {
 				border-left: 1px solid #DFE4E7;
-				border-radius:0 5px 5px 0;
-		margin-bottom:0;
+				@include border-radius(0 5px 5px 0);
+				margin-bottom:0;
 			}
 		}
 	}
@@ -245,7 +243,7 @@ ul.customer_center_block{
 .product_name {width:150px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; display:block;}
 .short_text {display:none;}
 .search_orders_table select {width:184px;}
-.search_orders_table input[type="text"] {width: 172px;}
+.search_orders_table input[type=text] {width: 172px;}
 .search_sbm td{padding-top:10px;}
 .search_sbm input {margin:0 10px 0 0;}
 .order_head td {padding:5px; font-size:12px;}
@@ -268,9 +266,7 @@ ul.customer_center_block{
 .user_edit_fields .span8 {margin:0 0 7px 0;}
 .user_edit_fields .span8 input {
 		width:100%;
-		-webkit-box-sizing: border-box;
-			 -moz-box-sizing: border-box;
-						box-sizing: border-box;
+		@include box-sizing(border-box);
 }
 .user_edit_fields #submitter {height:28px; margin:0 0 5px 0;}
 .span3.pad {padding:0 0 5px 0; margin:0;}
@@ -297,9 +293,7 @@ ul.customer_center_block{
 
 		input[type=text], input[type=password] {
 			width: 100%;
-			-webkit-box-sizing: border-box;
-				 -moz-box-sizing: border-box;
-							box-sizing: border-box;
+			@include box-sizing(border-box);
 		}
 		select {
 			margin:0;

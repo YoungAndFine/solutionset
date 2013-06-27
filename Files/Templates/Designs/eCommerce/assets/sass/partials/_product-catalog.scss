@@ -16,30 +16,25 @@
 // Page type: Product list
 .productlist {
 	.catalog-header, .catalog-content {
-		-webkit-box-sizing: inherit;
-			 -moz-box-sizing: inherit;
-						box-sizing: inherit;
+		@include box-sizing(inherit);
 	}
 	.catalog-header {
 		@include bg-gradient($boxHeadlineBgFrom, $boxHeadlineBgTo);
-		// background: -webkit-gradient(linear, center top, center bottom, from(#f8f8f8), to(#ededed));
-		// background: -moz-linear-gradient(top, #f8f8f8, #ededed);
-		// filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f8f8f8', endColorstr='#ededed', GradientType=0);
 		min-height: 50px;
 		margin-top: 0;
-		border-radius: 5px 5px 0 0;
+		@include border-radius(5px 5px 0 0);
 		border: 1px solid #DFE4E7;
 		border-bottom: none;
 		font: normal 14px/16px arial;
 
-		[class*="span"] > div, .list-mode {
+		[class*=span] > div, .list-mode {
 			display: block;
 			float: left;
 			font: 12px/30px arial;
 			margin-top: 10px;
 			padding: 0 0 0 10px;
 		}
-		[class*="span"] {
+		[class*=span] {
 			&:last-child {
 				float: right;
 			}
@@ -75,12 +70,12 @@
 		}
 
 		@media (max-width: 349px) {
-			[class*="span"] {
+			[class*=span] {
 				width: 100% !important;
 			}
 		}
 		@media (min-width: 350px) and (max-width: 479px) {
-			[class*="span"] {
+			[class*=span] {
 				width: auto;
 
 				&:first-child {
@@ -94,7 +89,7 @@
 		@media (max-width: 479px) {
 			padding-bottom: 10px;
 
-			[class*="span"] > div, .list-mode {
+			[class*=span] > div, .list-mode {
 				font-size: 14px;
 			}
 			.list-mode {
@@ -106,9 +101,9 @@
 		}
 	}
 	.catalog-content {
-		overflow: hidden;
+    // overflow: hidden;
 		margin-bottom: 10px;
-		border-radius: 0 0 5px 5px;
+		@include border-radius(0 0 5px 5px);
 		border: 1px solid #DFE4E7;
 
 		> .fill {
@@ -157,15 +152,15 @@
 					}
 				}
 				input {
-					&[type="checkbox"] {
+					&[type=checkbox] {
 						margin-top: -1px;
 					}
-					&[type="radio"] {
+					&[type=radio] {
 						margin-top: 3px;
 					}
 				}
 				.badge {
-					border-radius: 10px;
+					@include border-radius(10px);
 					padding: 1px 7px;
 					background: #aaa;
 				}
@@ -196,13 +191,13 @@
 
 					&:after {
 						bottom: -14px;
-						content: "";
+						content: '';
 						height: 20px;
 						left: 50%;
 						margin-left: -15px;
 						position: absolute;
 						width: 30px;
-						background: url("../images/filters_selection_tr.png") no-repeat center top;
+						background: url('../images/filters_selection_tr.png') no-repeat center top;
 					}
 					.btn {
 						float: right;
@@ -245,7 +240,7 @@
 			}
 		}
 		@media (max-width: 349px) {
-			[class*="span"] {
+			[class*=span] {
 				width: 100% !important;
 			}
 			.filter-wrapper {
@@ -299,8 +294,8 @@
 			line-height: 1;
 			height: 100%;
 			display: inline-block;
-			/*background-image: $rating-sprite;
-			background-position: 0 (-$rating-sprite-tile-height);*/
+			// background-image: $rating-sprite;
+			// background-position: 0 (-$rating-sprite-tile-height);
 			position: relative;
 			z-index: 2;
 			text-indent: 100%;
@@ -430,16 +425,14 @@
 							font: bold 14px/20px arial;
 							text-shadow: 0px 1px 1px #FFFFFF;
 							background: #ececec;
-							background: -webkit-gradient(linear, left top, left bottom, from(#ececec), to(#cacaca));
-							background: -moz-linear-gradient(top,	 #ececec,	 #cacaca);
-							filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ececec', endColorstr='#cacaca');
+							@include background(linear-gradient(top, #ececec,	 #cacaca));
 						}
 					}
 				}
 			}
 		}
 		section {
-			border-radius: 4px;
+			@include border-radius(4px);
 			border: 1px solid #ddd;
 			padding: 10px;
 
@@ -506,7 +499,7 @@
 			}
 			.thumbnail, .thumbnail:hover {
 				border: none;
-				box-shadow: none;
+				@include box-shadow(none);
 			}
 			.details {
 				position: relative;
@@ -548,9 +541,7 @@
 				margin: 0 0 10px;
 				border: 1px solid #dfe4e7;
 				background: #ededed;
-				background: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#ededed));
-				background: -moz-linear-gradient(top,	 #f9f9f9,	 #ededed);
-				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9f9f9', endColorstr='#ededed');
+				@include background(linear-gradient(top, #f9f9f9, #ededed));
 				position: relative;
 
 				h3 {
@@ -617,8 +608,8 @@
 					.product-quantity {
 						width: 40px;
 						border: 1px solid #4AA400;
-						border-radius: 3px 3px 3px 3px;
-						box-shadow: 0 2px 4px -4px #000000 inset;
+						@include border-radius(3px 3px 3px 3px);
+						@include box-shadow(0 2px 4px -4px #000000 inset);
 						float: left;
 						height: 26px;
 						line-height: 26px;
@@ -643,6 +634,11 @@
 
 			.tab-content {
 				overflow: visible;
+
+				.btn {
+					float: none;
+					margin: 0 0 10px;
+				}
 			}
 
 			&.products-related {
@@ -652,7 +648,7 @@
 
 				.product-list-related {
 					border: 1px solid #dfe4e7;
-					border-radius: 4px;
+					@include border-radius(4px);
 					overflow: hidden;
 					display:none;
 
@@ -661,13 +657,8 @@
 						height: 50px;
 						font: bold 14px/50px arial;
 						text-shadow: 0px 1px 1px #FFFFFF;
-						// margin-bottom: 10px;
 						padding-left: 20px;
 						border-bottom: 1px solid #DFE4E7;
-						// background: #ededed;
-						// background: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#ededed));
-						// background: -moz-linear-gradient(top,	#f9f9f9,	#ededed);
-						// filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9f9f9', endColorstr='#ededed');
 
 						.btn {
 							float: right;
@@ -682,7 +673,7 @@
 					}
 				}
 				.product-list-item-wrapper {
-					border-radius: 0;
+					@include border-radius(0);
 					border: none;
 					border-top: 1px solid #DFE4E7;
 					margin: 0;
@@ -883,7 +874,7 @@
 					}
 				}
 				.product-pricebox-wrapper {
-					border-radius: 4px;
+					@include border-radius(4px);
 					clear: both;
 					float: none;
 					margin: 10px 0 0;
@@ -974,7 +965,7 @@
 	}
 	.thumbnail, .thumbnail:hover {
 		border: none;
-		box-shadow: none;
+		@include box-shadow(none);
 	}
 	.details {
 		position: relative;
@@ -1065,9 +1056,7 @@
 		padding: 10px;
 		font: normal 12px/16px arial;
 		background: #f9f9f9;
-		background: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#ededed));
-		background: -moz-linear-gradient(top,	 #f9f9f9,	 #ededed);
-		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9f9f9', endColorstr='#ededed');
+		@include background(linear-gradient(top, #f9f9f9, #ededed));
 		border: 1px solid #229706;
 	}
 	.product-incart-headline .icon {
@@ -1151,8 +1140,8 @@
 			}
 			.product-quantity {
 				border: 1px solid #9F9F9F;
-				border-radius: 3px 3px 3px 3px;
-				box-shadow: 0 1px 0 #E3E3E3 inset;
+				@include border-radius(3px 3px 3px 3px);
+				@include box-shadow(0 1px 0 #E3E3E3 inset);
 				color: #55564A;
 				font-size: 14px;
 				font-weight: bold;
@@ -1162,9 +1151,7 @@
 				text-align: center;
 				width: 50px;
 				margin-right: 5px;
-				-webkit-box-sizing: content-box;
-					 -moz-box-sizing: content-box;
-								box-sizing: content-box;
+				@include box-sizing(content-box);
 			}
 		}
 		.product-price { text-align: right; }
@@ -1474,8 +1461,7 @@
 		padding: 0 20px 10px 0;
 		margin-bottom: 0;
 		border-bottom: none;
-		-webkit-box-sizing: border-box;
-			 -moz-box-sizing: border-box;
+		@include box-sizing(border-box);
 
 		> div {
 			float: none;
@@ -1523,9 +1509,7 @@
 // plugin attached to it
 .product-image-zoomed {
 	border: 1px solid transparent !important;
-	-webkit-box-sizing: border-box;
-		 -moz-box-sizing: border-box;
-					box-sizing: border-box;
+	@include box-sizing(border-box);
 
 	&:hover {
 		border: 1px solid #DFE4E7 !important;
@@ -1554,7 +1538,7 @@
 @media (max-width: 767px) {
 	/* Page type: Product list */
 	.productlist .catalog-header {}
-	.productlist .catalog-header [class*="span"] {
+	.productlist .catalog-header [class*=span] {
 		float: left;
 		min-height: 28px;
 	}
@@ -1565,7 +1549,7 @@
 	}
 	.productlist .catalog-content {}
 	/* fixing dividing filters and content sections
-	removing left border from ".fill" section and add top border */
+	removing left border from '.fill' section and add top border */
 	.productlist .catalog-content > .fill .filler-left:after,
 	.productlist .catalog-content > .fill .filler-right:after { border: 0; }
 	.productlist .catalog-content .filter-wrapper {
@@ -1575,7 +1559,7 @@
 		padding: 0 2%;
 	}
 	.productlist .catalog-content .filter-wrapper label { font-size: 12px; }
-	.productlist .catalog-content .filter-wrapper input[type="checkbox"] { margin: 0; }
+	.productlist .catalog-content .filter-wrapper input[type=checkbox] { margin: 0; }
 	.productlist .catalog-content .filter-wrapper.filter-reset {
 		float: none;
 		width: auto;
@@ -1587,29 +1571,29 @@
 	}
 	/* changing the layout of product list item */
 	/*	*/
-	.product-list-item-wrapper:not(.version-b2b) .product-details [class*="span"] {
+	.product-list-item-wrapper:not(.version-b2b) .product-details [class*=span] {
 		float: none;
 		width: auto;
 		margin-left: 0 !important;
 	}
-	/* expanding this block to width of ".span6" */
+	/* expanding this block to width of '.span6' */
 	.product-list-item-wrapper .row-fluid.bottom-line .span5 {
 		width: 48.93617020799999%;
 		*width: 48.88297871863829%;
 	}
-	/* recovering default laft margins after proccessing class ".no-space" */
-	.product-list-item-wrapper .row-fluid [class*="span"] {
+	/* recovering default laft margins after proccessing class '.no-space' */
+	.product-list-item-wrapper .row-fluid [class*=span] {
 		margin-left: 2.127659574%;
 		*margin-left: 2.0744680846382977%;
 	}
-	/* removing laft margins in first or last ".span*" depending of line */
-	.product-list-item-wrapper .row-fluid [class*="span"]:first-child,
+	/* removing laft margins in first or last '.span*' depending of line */
+	.product-list-item-wrapper .row-fluid [class*=span]:first-child,
 	.product-list-item-wrapper .row-fluid .span3,
 	.product-list-item-wrapper.version-b2b .row-fluid .span2,
-	/*.product-list-item-wrapper .row-fluid.bottom-line [class*="span"]:last-child,*/
+	/*.product-list-item-wrapper .row-fluid.bottom-line [class*=span]:last-child,*/
 	.product-list-item-wrapper .row-fluid.bottom-line > .span4,
-	.product-list-item-wrapper .row-fluid.product-headline [class*="span"]:last-child,
-	.product-list-item-wrapper.version-b2b .row-fluid.product-details [class*="span"]:last-child {
+	.product-list-item-wrapper .row-fluid.product-headline [class*=span]:last-child,
+	.product-list-item-wrapper.version-b2b .row-fluid.product-details [class*=span]:last-child {
 		margin-left: 0;
 		*margin-left: 0;
 		float: left;
@@ -1620,7 +1604,7 @@
 	.product-list-item-wrapper .product-addtocart .dw-button > span {
 		text-align: center;
 	}
-	/* reverting fluid widthes of ".span*" blocks in the product list item */
+	/* reverting fluid widthes of '.span*' blocks in the product list item */
 	.product-list-item-wrapper .span10 {
 		float: left;
 		width: 82.97872339599999%;

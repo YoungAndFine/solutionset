@@ -12,14 +12,14 @@
  * Version: 0.9.0
  *
  */
-@import "flags/*.png";
+@import 'flags/*.png';
 
-.lang-selector{
+.lang-selector {
 	top: 13px;
 	position: relative;
 }
 
-.lang-selector a{
+.lang-selector a {
 	display: block;
 	width: 16px;
 	height: 11px;
@@ -30,7 +30,7 @@
 $list: (de, dk, gb, nl, no, se, us);
 
 @each $language in $list{
-	.flags-#{$language}{ //use the hreflang attr instead: a[hreflang='#{$language}']{
+	.flags-#{$language}{ //use the hreflang attr instead: a[hreflang=#{$language}] {
 	  @include flags-sprite($language);
 	}
 }

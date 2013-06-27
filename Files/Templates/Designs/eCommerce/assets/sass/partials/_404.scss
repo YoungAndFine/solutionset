@@ -33,10 +33,10 @@
 	}
 	.searchbar-wrapper .search-box {
 		.sprite.search {
-			background: url("../images/i_search.png") 0 0 no-repeat !important;
+			background: url('../images/i_search.png') 0 0 no-repeat !important;
 			color:#FFF;
 		}
-		input[type="text"] {
+		input[type=text] {
 			@media (max-width: 370px) {
 				width:150px;
 			}

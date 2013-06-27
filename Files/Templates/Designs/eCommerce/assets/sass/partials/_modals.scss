@@ -19,9 +19,9 @@ $modal-imagesslider-width: 502px;
 // Modal window override Bottsrap to DW styles
 .modal {
 	.modal-header {
-		background: #F5F5F5 url("../images/bg_modal_header.png");
+		background: #F5F5F5 url('../images/bg_modal_header.png');
 		border-bottom: 1px solid #DDDDDD;
-		box-shadow: 0 -1px 0 #F5F5F5 inset;
+		@include box-shadow(0 -1px 0 #F5F5F5 inset);
 
 		h3 {
 			padding-right: 35px;
@@ -39,7 +39,7 @@ $modal-imagesslider-width: 502px;
 			float:right;
 		}
 		.print_win {
-				display:block;
+			display:block;
 			float:right;
 			background-position: -217px -224px;
 			margin:5px 5px 0 0;
@@ -69,30 +69,60 @@ $modal-imagesslider-width: 502px;
 		}
 	}
 	// Ensure that nested .span* will have margins
-	.row [class*="span"]:not(:first-child) {
+	.row [class*=span]:not(:first-child) {
 		margin-left: 20px;
 		*margin-left: 20px;
 	}
-	.row-fluid [class*="span"]:not(:first-child) {
+	.row-fluid [class*=span]:not(:first-child) {
 		margin-left: 2.127659574468085%;
 		*margin-left: 2.074468085106383%;
 	}
 }
 
 .modal-type-loginbox {
-	width: 400px;
-	margin-left: -200px;
+  width: 300px;
+  margin-left: -150px;
+  margin-top: -300px;
 
 	.modal-body {
 		padding-top: 25px;
+		max-height: 500px;
 	}
 	.modal-header h3 .key {
 		display: block;
 		float: left;
 		margin-right: 10px;
 	}
-	input.input-large {
-		width: 210px !important;
+  .modal-footer {
+    background-color: #fff;
+    text-align: center;
+    font: bold 14px/21px arial;
+
+    .btn {
+      margin-top: 5px;
+      width: 85%;
+    }
+  }
+  // input.input-large {
+  //   width: 210px !important;
+  // }
+  .required-hint {
+    color: $color-headline;
+    margin-bottom: 10px;
+  }
+  .alert {
+    margin-bottom: 10px;
+  }
+  input[type=text], input[type=password], select {
+    font-weight: normal;
+    height: 33px;
+    margin-bottom: 10px;
+  }
+  input:required {
+    background: url(../img/star-text.png) no-repeat right 3px;
+  }
+  .checkbox {
+    float: left;
 	}
 	.control-group {
 		margin-bottom: 10px;
@@ -105,18 +135,16 @@ $modal-imagesslider-width: 502px;
 			padding-top: 0;
 		}
 	}
-	.control-label {
-		text-align: left;
-	}
 	.dw-button {
 		float: right;
 	}
-	.login-form-lostpasswordhint,
-	.login-form-signuphint {
-		width: 50%;
+  .login-form-lostpasswordhint, .login-form-signuphint {
+    // width: 50%;
 		margin-top: 10px;
 	}
-	.login-form-lostpasswordhint { float: left; }
+  .login-form-lostpasswordhint {
+    float: left;
+  }
 	.login-form-signuphint {
 		text-align: right;
 		float: right;
@@ -124,19 +152,27 @@ $modal-imagesslider-width: 502px;
 		&.hint-goback > a {
 			line-height: 33px;
 		}
+  }
+  .loginbox-login-failed {
+    display: none;
+  }
+  .centered-text {
+    text-align: center;
+    font: bold 14px/21px arial;
+  }
+  .social {
+
 	}
 
 	@media (max-width: 479px) {
 		.controls {
 			margin-left: 0;
 
-			input[type="text"],
-			input[type="password"],
-			input[type="submit"] {
+			input[type=text],
+			input[type=password],
+			input[type=submit] {
 				width: 100% !important;
-				-webkit-box-sizing: border-box;
-				-moz-box-sizing: border-box;
-				box-sizing: border-box;
+				@include box-sizing(border-box);
 			}
 		}
 	}
@@ -167,7 +203,13 @@ $modal-imagesslider-width: 502px;
 		width: 100%;
 	}
 	.product-description { margin-bottom: 15px; }
-	.product-rating-comments { margin-bottom: 10px; }
+  .product-rating-comments {
+    margin-bottom: 10px;
+
+    img {
+      float: left;
+    }
+  }
 	.product-pricebox-title {
 		padding: 0 5px;
 		margin: 5px 0;
@@ -185,9 +227,7 @@ $modal-imagesslider-width: 502px;
 		border: 1px solid black;
 		border-color: #dfe4e7;
 		background: #ededed;
-		background: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#ededed));
-		background: -moz-linear-gradient(top,	 #f9f9f9,	 #ededed);
-		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9f9f9', endColorstr='#ededed');
+		@include background(linear-gradient(top, #f9f9f9, #ededed));
 
 		.input-large {
 			@media (max-width: 479px) {
@@ -235,21 +275,21 @@ $modal-imagesslider-width: 502px;
 		overflow: auto;
 		margin: 7px 0 2px;
 
-		input[type="text"], input[type="number"] {
+		input[type=text], input[type=number] {
 			border: 1px solid black;
 			/* [!] move to styles.css */
 			border-color: #4AA400;
 			text-align: center;
-			box-shadow: 0 2px 4px -4px black inset;
+			@include box-shadow(0 2px 4px -4px black inset);
 		}
 		.btn {
-			width: auto;
+      width: auto !important;
 			float: right;
 		}
 	}
 
 	@media (max-width: 479px) {
-		[class*="row"] > [class*="span"] {
+		[class*=row] > [class*=span] {
 			width: 100%;
 			margin-left: 0 !important;
 		}
@@ -286,14 +326,14 @@ $modal-imagesslider-width: 502px;
 	margin-left: -($modal-commentadd-width/2);
 
 	.modal-body {
-		.row-fluid [class*="span"] {
+		.row-fluid [class*=span] {
 			margin: 10px 0 0;
 
 			&:first-child {
 				margin: 0;
 			}
 		}
-		input[type="text"], textarea, select {
+		input[type=text], textarea, select {
 			color: #666;
 			font-weight: normal;
 		}
@@ -313,8 +353,7 @@ $modal-imagesslider-width: 502px;
 	.modal-body {
 		.thumbnail {
 			border: none;
-			-webkit-box-shadow: none;
-			box-shadow: none;
+			@include box-shadow(none);
 		}
 		.thumbnails-carousel {
 			position: relative;
@@ -337,7 +376,7 @@ $modal-imagesslider-width: 502px;
 			}
 			.carousel-control {
 				background-color: transparent;
-				border-radius: 25px;
+				@include border-radius(25px);
 				height: 25px;
 				width: 25px;
 				top: 50%;
@@ -358,26 +397,26 @@ $modal-imagesslider-width: 502px;
 }
 
 .added-to-cart {
-		padding:0;
+	padding:0;
 
-		.modal-body {
-			background: #F9F9F9;
-			padding:0;
+	.modal-body {
+		background: #F9F9F9;
+		padding:0;
+	}
+	h3 {
+		text-align: center;
+		font-size: 18px;
+		padding: 20px;
+		span.sprite {
+			display: inline-block;
+			width: 20px;
+			height: 20px;
+			margin: 0 10px 0 0;
+			background-position: -50px -38px;
 		}
-		h3 {
-			 text-align: center;
-			 font-size: 18px;
-			 padding: 20px;
-		 span.sprite {
-				 display: inline-block;
-			 width: 20px;
-			 height: 20px;
-			 margin: 0 10px 0 0;
-			 background-position: -50px -38px;
-		 }
-		}
+	}
 	.purchase {
-			background: #FFFEDD;
+		background: #FFFEDD;
 		border-top: 1px solid #FDDFBB;
 		border-bottom: 1px solid #FDDFBB;
 		text-align: center;
@@ -385,34 +424,34 @@ $modal-imagesslider-width: 502px;
 		font-size: 14px;
 	}
 	.added-to-cart-btns {
-			padding: 50px 0;
+		padding: 50px 0;
 		overflow:hidden;
 		width:90%;
 		margin: 0 auto;
 		.dw-button {
-				margin: 0 0 0 6%;
-				width: 40%;
+			margin: 0 0 0 6%;
+			width: 40%;
 			height: 35px;
 			font-size: 18px;
 			padding: 5px 0 0 0;
 			.sprite {
-					display: inline-block;
+				display: inline-block;
 				position: relative;
 				top: 3px;
 			}
 		}
 	}
 	.dont {
-			border-top: 1px solid #DFE4E7;
+		border-top: 1px solid #DFE4E7;
 		padding: 20px 0;
 		text-align: center;
 		label {
-				text-align: center;
+			text-align: center;
 			vertical-align: middle;
 			display: inline;
 			font-size: 13px;
 			input {
-					text-align: center;
+				text-align: center;
 				vertical-align: middle;
 				margin: 0;
 				position: relative;

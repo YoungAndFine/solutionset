@@ -2,31 +2,30 @@
 // $documentBackground: red;
 
 // Compass libraries import
-@import "compass/css3";
-@import "compass/utilities/general/hacks";	//filter-gradient needs this
+@import 'compass';
 
-@import "__vars";
+@import 'vars';
 
 // Basic reusable page components import
 @import
-	"partials/basic",
-	"partials/sprites",
-	"partials/languageselector",
-	"partials/buttons",
-	"partials/modals";
+	'partials/basic',
+	'partials/sprites',
+	'partials/languageselector',
+	'partials/buttons',
+	'partials/modals';
 
 // Page sections specific styles
 @import
-	"partials/font-face",
-	"partials/header",
-	"partials/footer",
-	"partials/instant-search",
-	"partials/navigation";
+	'partials/font-face',
+	'partials/header',
+	'partials/footer',
+	'partials/instant-search',
+	'partials/navigation';
 
 // Special pages types styles
 @import
-	"partials/product-catalog",
-	"partials/customer-center",
-	"partials/frontpage",
-	"partials/cart",
-	"partials/404";
+	'partials/product-catalog',
+	'partials/customer-center',
+	'partials/frontpage',
+	'partials/cart',
+	'partials/404';

@@ -1,5 +1,5 @@
 /*
- * __vars - Contains the overall variables and mixins for use later on
+ * _vars - Contains the overall variables and mixins for use later on
  *
  * Copyright (c) 2013 Dynamicweb
  *
@@ -29,6 +29,7 @@ $boxHeadlineBgTo: #EDEDED !default;
 
 // Global color of the text
 $color-text: #454545 !default;
+$color-headline: #f7941d !default;
 // Global link color
 $colorLink: #006699 !default;
 // Product name link color (used on product lists)
@@ -45,7 +46,7 @@ $border-radius-box: 5px !default;
 
 
 // Path to sprites image
-$spriteImgSrc: "../images/sprites.png" !default;
+$spriteImgSrc: '../images/sprites.png' !default;
 // Path to additional sprite with rating stars
 $rating-sprite: url(../images/sprites-rating.png) !default;
 // Product rating sprite width and height
@@ -58,11 +59,9 @@ $star-color: #fcba29;
 
 @mixin rounded-borders($color: black, $border-weight: 1px, $radius: 5px) {
 	border: $border-weight solid $color;
-	border-radius: $radius;
+	@include border-radius($radius);
 	overflow: hidden;
-	-webkit-background-clip: padding-box;
-		 -moz-background-clip: padding;
-					background-clip: padding-box;
+	@include background-clip(padding-box);
 }
 
 @mixin bg-gradient($from: #eee, $to: #ddd) {
