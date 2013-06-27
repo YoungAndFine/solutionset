@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Frontpage master</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+
+		<link href="assets/vendor/bootstrap/bootstrap.css" rel="stylesheet">
+		<link href="assets/vendor/bootstrap/bootstrap-responsive.min.css" rel="stylesheet">
+		<link href="assets/vendor/smoothness/jquery-ui-1.8.23.custom.css" rel="stylesheet">
+		<link href="assets/stylesheets/screen.css" rel="stylesheet">
+		<!--@Snippet(StyleSheet)-->
+		<!--@If Defined(Item.Area.Custom_CSS_Url)-->
+		<link href="<!--@Item.Area.Custom_CSS_Url-->" rel="stylesheet">
+		<!--@EndIf(Item.Area.Custom_CSS_Url)-->
+
+		<link rel="icon" type="image/png" href="assets/images/favicon.ico">
+
+		<script src="assets/vendor/require-jquery.js"></script>
+		<script>
+		// @TODO: put this into a tag @Template:BaseUrl
+		var designName = 'eCommerce';
+		var designBaseUrl = '/Files/Templates/Designs/'+designName+'/';
+		</script>
+		<script src="assets/vendor/dynamicweb.start.js"></script>
+		<!--@Snippet(JavaScriptHead)-->
+	</head>
+	<body>
+		<!--@Include(Sections/NavigationTop.html)-->
+
+		<section class="page-wrapper">
+			<header class="header-wrapper">
+				<div class="container">
+					<div class="row">
+						<div class="span8 logo-wrapper">
+							<div class="row">
+								<div class="span4 logo">
+									<!--@If Defined(Item.Area.Logo_Image)-->
+									<a href="/Default.aspx?ID=<!--@DwAreaFirstActivePageID-->" class="logo-image" style="background-image: url(<!--@Item.Area.Logo_Image)-->)"></a>
+									<!--@Else-->
+									<a href="/Default.aspx?ID=<!--@DwAreaFirstActivePageID-->" class="logo-image"></a>
+									<!--@EndIf-->
+								</div>
+								<div class="span4 payoff dwcontent" id="payoffHeadline" title="Pay-off headline"></div>
+							</div>
+						</div>
+						<!--@Include(Sections/MiniCart.html)-->
+					</div>
+				</div>
+			</header>
+
+			<!--@Include(Sections/NavigationMain.html)-->
+			<!--@Include(Sections/SearchBar.html)-->
+
+			<!--@ContentPlaceholder-->
+		</section>
+
+		<footer>
+			<section class="container footer-wrapper">
+				<div class="row" id="footerSections" title="Footer sections">
+					<!--@If Defined(Item.Area.Footer_Content_Page_ID)-->
+					<!--@Global:Page.Content(<!--@Item.Area.Footer_Content_Page_ID-->)-->
+					<!--@EndIf(Item.Area.Footer_Content_Page_ID)-->
+				</div>
+			</section>
+		</footer>
+
+		<!--@Include(Sections/Login.html)-->
+		<!--@Include(Sections/GoogleAnalytics.html)-->
+		<!--@Snippet(JavaScriptBottom)-->
+	</body>
+</html>
