@@ -660,7 +660,7 @@ function comment_validate() {
 		document.getElementById("Comment.Text").focus();
 		return false;
 	}
-	
+
 	document.getElementById("commentform").action = "/Default.aspx"
 	document.getElementById("Comment.Command").value = "create";
 
@@ -711,11 +711,11 @@ function previous() {
 //         window.open("/default.aspx?id=<!--@Ecom:Product:Page.ID-->&productid=" + gotoValue, "details", "left=1,top=1,width=1100,height=700,scrollbars=yes,resizable=yes");
 //     }
 // }
-// 
+//
 // var symbol = "<!--@Ecom:Product.Currency.Symbol-->"
 // var intSep = "<!--@Ecom:Product.Currency.IntegerSeparator-->"
 // var decSep = "<!--@Ecom:Product.Currency.DecimalSeparator-->"
-// 
+//
 // function formatCurrency(num) {
 //     num = num.toString().replace(/\$|\,/g, '');
 //     if (isNaN(num))
@@ -734,7 +734,7 @@ function previous() {
 //     num.substring(num.length - (4 * i + 3));
 //     return (((sign) ? '' : '-') + symbol + num + decSep + cents);
 // }
-// 
+//
 // var startPrice = "<!--@Ecom:Product.Price.PriceFormatted-->"
 // var oldPrice = 0;
 // function setOldPrice(selector) {
@@ -742,7 +742,7 @@ function previous() {
 //     oldPrice = $("#" + value).val();
 //     startPrice = document.getElementById('configPrice').innerHTML;
 // }
-// 
+//
 // function changePrice(selector) {
 //     // no changes if fixedprice
 //     if (pricetype == 1)
@@ -790,12 +790,12 @@ function previous() {
 //         });
 //     }
 // }
-// 
+//
 // function setProductPrice(price) {
 //     //alert("setPrice " + price);
 //     document.getElementById('configPrice').innerHTML = formatCurrency(price);
 // }
-// 
+//
 // var pricetype = '<!--@Ecom:Product.PriceType-->';
 // var stockID = "<!--@Ecom:Product:Stock.ID-->"
 // if (stockID == "") {
@@ -1192,7 +1192,7 @@ $(document).ready(function () {
 		});
 	}
 
-	// Bottom Instant Search box - Search 
+	// Bottom Instant Search box - Search
 	if ($("#q-bottom").length) {
 		Dynamicweb.Frontend.InstantSearch.setEnableInstantSearch('q-bottom', true, {
 			contentID: 'product-instant-search-bottom', // An ID of the content template
@@ -1424,21 +1424,6 @@ $(document).ready(function () {
 			});
 		})
 
-	var widownWidth = (Layout.isMobile.any()) ? screen.width : window.outerWidth;
-	if (($('body').data('areaid') == 1 || $('body').data('areaid') == 17) && widownWidth > 768 ){
-		/* <!--Start of Zopim Live Chat Script-->*/
-		window.$zopim || (function (d, s) {
-			var z = $zopim = function (c) { z._.push(c) }, $ = z.s =
-		d.createElement(s), e = d.getElementsByTagName(s)[0]; z.set = function (o) {
-		z.set.
-		_.push(o)
-		}; z._ = []; z.set._ = []; $.async = !0; $.setAttribute('charset', 'utf-8');
-			$.src = '//cdn.zopim.com/?RjOg47HuHHdRr49ujWrACMR7RSFBj1UC'; z.t = +new Date; $.
-		type = 'text/javascript'; e.parentNode.insertBefore($, e)
-		})(document, 'script');
-		/*<!--End of Zopim Live Chat Script-->*/
-	}
-
 	// Clicks on B2C first page blocks
 	$('.feature-wrapper').on('click', function(){
 		location.href = $(this).find('a:first-child').attr('href');
@@ -1628,7 +1613,7 @@ var decodeRE = /\+/g;  // Regex for replacing addition symbol with a space
 var decode = function (str) {return decodeURIComponent( str.replace(decodeRE, " ") );};
 $.parseParams = function(query) {
 	var params = {}, e;
-	while ( e = re.exec(query) ) { 
+	while ( e = re.exec(query) ) {
 		var k = decode( e[1] ), v = decode( e[2] );
 		if (k.substring(k.length - 2) === '[]') {
 			k = k.substring(0, k.length - 2);
