@@ -42,7 +42,7 @@ require.config({
 		'jquery-cookie' : '../vendor/jquery.cookie',
 		// Bootstrap JS and its componetns
 		'bootstrap' : '../vendor/bootstrap/bootstrap.min',
-		'dw-carousel' : 'bootstrap-thumbnailsCarousel',
+		'dw-carousel' : 'dynamicweb.thumbnailsCarousel',
 		'filters' : 'dynamicweb.filters', //.min',
 		'layout' : 'dynamicweb.layout' //.min'
 	},
