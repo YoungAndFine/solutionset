@@ -22,17 +22,62 @@
  * Version: 0.9.0
  *
  */
-		if (typeof (Layout) == 'undefined') {
-			var Layout = new Object();
-		}
+if (typeof (Layout) == 'undefined') {
+	var Layout = new Object();
+}
 
-Layout.params = {
-	productListItem: ".product-list-item-wrapper",
-	productDetails: '.product-details-content',
-	productRatingUnderlayClass : "product-rating-underlay",
-	productRatingStarClass: "product-rating-stars",
-	BOMSelect: "BomConfigurator"
-};
+Layout = (function (m) {
+
+	m.isMobile = (function () {
+
+	return {
+		Android: function() {
+			return navigator.userAgent.match(/Android/i);
+		},
+		BlackBerry: function() {
+			return navigator.userAgent.match(/BlackBerry/i);
+		},
+		iOS: function() {
+			return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+		},
+		Opera: function() {
+			return navigator.userAgent.match(/Opera Mini/i);
+		},
+		Windows: function() {
+			return navigator.userAgent.match(/IEMobile/i);
+		},
+		any: function() {
+			return (this.Android() || this.BlackBerry() || this.iOS() || this.Opera() || this.Windows());
+		}
+	};
+
+	}());
+
+	m.params = {
+		productListItem: ".product-list-item-wrapper",
+		productDetails: '.product-details-content',
+		productRatingUnderlayClass : "product-rating-underlay",
+		productRatingStarClass: "product-rating-stars",
+		BOMSelect: "BomConfigurator",
+		getImagePath: '/Admin/Public/getimage.ashx',
+		windowWidth: (function () {
+			if (Layout.isMobile.any()) {
+				return screen.width;
+			} else {
+				if (window.outerWidth) {
+					return window.outerWidth;
+				} else {
+					$(document).ready(function() {
+						m.params.windowWidth = document.body.clientWidth;
+					});
+				}
+			}
+		})()
+	};
+
+	return m;
+
+}(Layout || {}));
 
 Layout.Translate = {};
 
@@ -284,61 +329,6 @@ Layout.LoginBox = {
 	}
 };
 
-/*validate login-modal box*/
-function validateForm()
-{
-	var x=document.forms["LoginForm"]["username"].value;
-	if (x==null || x=="")
-	{
-		alert("First name must be filled out");
-		return false;
-	}
-	if (x=true)
-	{alert('brugernavn');}
-}
-
-//$.ajax({
-//type: 'post',
-//url: "dynamicweb.net\solutions\solutionset.local.dynamicweb.dk\Files\Login.aspx",
-//context: $(this),
-//success: function (msg) {
-//$(".modal-body").html(msg);
-//}
-//});
-
-
-
-Layout = (function (m) {
-
-	m.isMobile = (function () {
-
-		return {
-			Android: function() {
-				return navigator.userAgent.match(/Android/i);
-			},
-			BlackBerry: function() {
-				return navigator.userAgent.match(/BlackBerry/i);
-			},
-			iOS: function() {
-				return navigator.userAgent.match(/iPhone|iPad|iPod/i);
-			},
-			Opera: function() {
-				return navigator.userAgent.match(/Opera Mini/i);
-			},
-			Windows: function() {
-				return navigator.userAgent.match(/IEMobile/i);
-			},
-			any: function() {
-				return (this.Android() || this.BlackBerry() || this.iOS() || this.Opera() || this.Windows());
-			}
-		};
-
-	}());
-
-	return m;
-
-}(Layout || {}));
-
 
 
 Layout.Cart = (function (m) {
@@ -373,13 +363,13 @@ Layout.Cart = (function (m) {
 
 		return function (obj, extendQuery, wrapperSelector) {
 			var $obj = $(obj)
-			, $productItem = $obj.parents(wrapperSelector || '.product-list-item-wrapper')
-			, productLink = $productItem.find('.product-link').attr('href') || location.href
-			, productQuantity = parseInt($productItem.find("input[name=quantity]").val())
-			, $variantSelector = $productItem.find(".variants-selector")
-			, productVariant = $variantSelector.val()
-			, redirectLink
-			, query = [{ name: 'cartcmd', value: 'add'}];
+				, $productItem = $obj.parents(wrapperSelector || '.product-list-item-wrapper')
+				, productLink = $productItem.find('.product-link').attr('href') || location.href
+				, productQuantity = parseInt($productItem.find("input[name=quantity]").val())
+				, $variantSelector = $productItem.find(".variants-selector")
+				, productVariant = $variantSelector.val()
+				, redirectLink
+				, query = [{ name: 'cartcmd', value: 'add'}];
 
 
 			if ($variantSelector && productVariant == "") {
@@ -393,20 +383,20 @@ Layout.Cart = (function (m) {
 			}
 
 			if (typeof extendQuery == Array) {
-				$.extend(query, extendQuery);
+			$.extend(query, extendQuery);
 			}
 
 			var redirectLink = productLink
-				+ (productLink.indexOf('?') > 0 ? "&" : "?")
-				+ $.param(query)
-				+ '&' + $productItem.find('select, textarea, input').serialize()
-				+ (typeof extendQuery == String ? "&" + extendQuery : "");
+					+ (productLink.indexOf('?') > 0 ? "&" : "?")
+					+ $.param(query)
+					+ '&' + $productItem.find('select, textarea, input').serialize()
+					+ (typeof extendQuery == String ? "&" + extendQuery : "");
 
 			// Set coockie for showing box after add2cart function
-			if(!$.cookie('donotdisturb')){
+			if($.cookie && !$.cookie('donotdisturb')){
 				$.cookie("addedtocart", 1, { expires: 10 });
 			}
-
+			// debugger;
 			eCommerce.Overlay.show(document.body);
 			location.href = redirectLink;
 		}
@@ -422,53 +412,44 @@ Layout.Cart = (function (m) {
 Layout.Products = (function (m) {
 
 	/**
-	 * Converting regular microformat review layout for stars rating
-	 * Self invoked module
-	 */
+	* Converting regular microformat review layout for stars rating
+	* Self invoked module
+	*/
 	m.MicroformatReviewConvert = (function () {
 
-		var selfinvoke = true
+	var selfinvoke = true
 		, get = function (el, key) {
-			return $('*[itemprop="'+key+'"]', el).html();
+			return $('*[itemprop="'+key+'"]', el).html().replace(',', '.');
 		};
 
-		$('.product-rating').append('<div style="width: 100px;" class="empty-stars-container"><i class="icon-star-empty star-showing star1"></i><i class="icon-star-empty star-showing star2"></i><i class="icon-star-empty star-showing star3"></i><i class="icon-star-empty star-showing star4"></i><i class="icon-star-empty star-showing star5"></i></div>');
-
-		function convertReviewLayout() {
-			$('*[itemprop="rating"]').each(function(index, el) {
-				var $el = $(el),
-				value = get(el, 'average'),
-				best = get(el, 'best');
-
-				/*var starsShowing = "";
-					if(value == 4){
-					starsShowing = '<i class="icon-star-half-empty"></i><i class="icon-star-empty"></i><i class="icon-star-empty"></i><i class="icon-star-empty"></i><i class="icon-star-empty"></i>';
-					}*/
-
-				if (value && best) {
-					$el.contents().wrapAll('<span class="hidden"/>');
-					$el.addClass(Layout.params.productRatingUnderlayClass)
-						.css('width', best+'em')
-						.append(
-							$('<span class="' + Layout.params.productRatingStarClass + '"/>')
-							// .css('width', value+'em')
-								.css('width', (100*value/best).toFixed(4)+'%')
-								.html('<div style="width: 100px;" class="full-stars-container"><i class="icon-star star-showing star1"></i><i class="icon-star star-showing star2"></i><i class="icon-star star-showing star3"></i><i class="icon-star star-showing star4"></i><i class="icon-star star-showing star5"></i></div>')
-						);
-				}
-				/* if(value == 4){
-					 $(this).find('.stars').html('<i class="icon-star-half-empty"></i><i class="icon-star-empty"></i><i class="icon-star-empty"></i><i class="icon-star-empty"></i><i class="icon-star-empty"></i>');
-					 }*/
-			});
-		};
-
-		if (selfinvoke) {
-			convertReviewLayout();
+	function convertReviewLayout() {
+		$('*[itemprop="rating"]').each(function(index, el) {
+		var $el = $(el),
+			value = get(el, 'average'),
+			best = get(el, 'best');
+		// debugger;
+		if (value && best) {
+			var percent = (100*value/best).toFixed(4);
+			$el.contents().wrapAll('<span class="hidden"/>');
+			$el.addClass(Layout.params.productRatingUnderlayClass)
+			.css('width', best+'em')
+			.append(
+				$('<span class="' + Layout.params.productRatingStarClass + '"/>')
+				// .css('width', value+'em')
+				.css('width', percent+'%')
+				.html(value)
+			);
 		}
+		});
+	};
 
-		return function () {
-			convertReviewLayout();
-		}
+	if (selfinvoke) {
+		convertReviewLayout();
+	}
+
+	return function () {
+		convertReviewLayout();
+	}
 
 	})();
 
@@ -509,6 +490,27 @@ $.extend({
 		}
 	},
 
+	// addToCart: function (obj, extendQuery, wrapperSelector) {
+	//     var productItem = $(obj).parents(wrapperSelector || '.product-list-item-wrapper');
+	//     var productLink = productItem.find('.product-link').attr('href') || location.href,
+	//         productQuantity = parseInt(productItem.find("input[name=quantity]").val()),
+	//         productVariant = productItem.find(".variants-selector").val();
+
+	//     if (productItem.find(".variants-selector") && productVariant != "" || extendQuery) {
+	//         var url = productLink +
+	//                   (productLink.indexOf('?') > 0 ? "&" : "?") + "cartcmd=add" +
+	//                   (!productQuantity || productQuantity <= 1 ? "" : "&quantity=" + productQuantity) +
+	//                   (!productVariant ? "" : "&variantid=" + productVariant) +
+	//                   (extendQuery ? "&" + extendQuery : "");
+
+	//         // console.log(url);
+
+	//          eCommerce.Overlay.show(document.body);
+	//          location.href = url;
+	//     } else {
+	//       alert($(obj).data('dw-needvariant'));
+	//     }
+	// },
 	addToCart: function (obj, extendQuery, wrapperSelector) {
 		Layout.Cart.AddToCart(obj, extendQuery, wrapperSelector);
 	},
@@ -540,29 +542,29 @@ $.extend({
 	},
 
 	/**
-	 * Recalculating and updating string in product catalog header
-	 * In ex. string like this "1 of 5 products"
-	 *
-	 * @method updateProductsListCounter
-	 * @param {Object} params A config object
-	 * @param {String} params.productList The selector of product list section wrapper
-	 * @param {String} params.productListItem The selectior of item in list mode
-	 * @param {String} params.productTilesList The selector of product list section. Tiles mode
-	 * @param {String} params.productTilesListItem The selectior of item in list mode. Tiles mode
-	 * @param {String} params.itemsDisplayed The selector for current products counter statement
-	 * @param {Integer} params.productsPerPage The number of product per page
-	 * @return {Void}
-	 */
+	* Recalculating and updating string in product catalog header
+	* In ex. string like this "1 of 5 products"
+	*
+	* @method updateProductsListCounter
+	* @param {Object} params A config object
+	* @param {String} params.productList The selector of product list section wrapper
+	* @param {String} params.productListItem The selectior of item in list mode
+	* @param {String} params.productTilesList The selector of product list section. Tiles mode
+	* @param {String} params.productTilesListItem The selectior of item in list mode. Tiles mode
+	* @param {String} params.itemsDisplayed The selector for current products counter statement
+	* @param {Integer} params.productsPerPage The number of product per page
+	* @return {Void}
+	*/
 	updateProductsListCounter: function (params) {
 		var productDisplayedCount,
-		currentPage,
-		pageSize,
-		countFrom;
+			currentPage,
+			pageSize,
+			countFrom;
 
 		params = params || {};
 
 		if ($(params.productList).length > 0) {
-			productDisplayedCount = $(params.productList).find(params.productListItem).length;
+		productDisplayedCount = $(params.productList).find(params.productListItem).not('.b2b-addall').length;
 		} else if ($(params.productTilesList).length > 0) {
 			productDisplayedCount = $(params.productTilesList).find(params.productTilesListItem).length;
 		}
@@ -658,8 +660,14 @@ function comment_validate() {
 		document.getElementById("Comment.Text").focus();
 		return false;
 	}
-	document.getElementById("commentform").action = "/Default.aspx?ID=<!--@Global:Page.ID-->"
+	
+	document.getElementById("commentform").action = "/Default.aspx"
 	document.getElementById("Comment.Command").value = "create";
+
+	if (!$.getUrlParam('TabReviews')) {
+		document.getElementById("Comment.Continue").value = location.href + '?TabReviews=true';
+	}
+
 	return true;
 }
 
@@ -696,6 +704,175 @@ function previous() {
 	}
 	$("#nextCommentsButton").removeClass("disabledLink");
 }
+
+// function showDetails(selectID) {
+//     gotoValue = $("#configSelect" + selectID).val();
+//     if (gotoValue != "") {
+//         window.open("/default.aspx?id=<!--@Ecom:Product:Page.ID-->&productid=" + gotoValue, "details", "left=1,top=1,width=1100,height=700,scrollbars=yes,resizable=yes");
+//     }
+// }
+// 
+// var symbol = "<!--@Ecom:Product.Currency.Symbol-->"
+// var intSep = "<!--@Ecom:Product.Currency.IntegerSeparator-->"
+// var decSep = "<!--@Ecom:Product.Currency.DecimalSeparator-->"
+// 
+// function formatCurrency(num) {
+//     num = num.toString().replace(/\$|\,/g, '');
+//     if (isNaN(num))
+//         num = "0";
+
+//     sign = (num == (num = Math.abs(num)));
+//     num = Math.floor(num * 100 + 0.50000000001);
+//     cents = num % 100;
+//     num = Math.floor(num / 100).toString();
+//     if (cents < 10)
+//         cents = "0" + cents;
+
+//     for (var i = 0; i < Math.floor((num.length - (1 + i)) / 3); i++)
+//         num = num.substring(0, num.length - (4 * i + 3)) + intSep +
+
+//     num.substring(num.length - (4 * i + 3));
+//     return (((sign) ? '' : '-') + symbol + num + decSep + cents);
+// }
+// 
+// var startPrice = "<!--@Ecom:Product.Price.PriceFormatted-->"
+// var oldPrice = 0;
+// function setOldPrice(selector) {
+//     var value = selector.options[selector.selectedIndex].value;
+//     oldPrice = $("#" + value).val();
+//     startPrice = document.getElementById('configPrice').innerHTML;
+// }
+// 
+// function changePrice(selector) {
+//     // no changes if fixedprice
+//     if (pricetype == 1)
+//         return;
+//     var value = selector.options[selector.selectedIndex].value;
+//     var newprice = $("#" + value).val();
+
+//     // fix !!! :)
+//     newprice = replaceSubstring(newprice, symbol, "");
+//     newprice = replaceSubstring(newprice, intSep, "");
+//     newprice = replaceSubstring(newprice, decSep, ".");
+
+//     oldPrice = replaceSubstring(oldPrice, symbol, "");
+//     oldPrice = replaceSubstring(oldPrice, intSep, "");
+//     oldPrice = replaceSubstring(oldPrice, decSep, ".");
+
+//     startPrice = replaceSubstring(startPrice, symbol, "");
+//     startPrice = replaceSubstring(startPrice, intSep, "");
+//     startPrice = replaceSubstring(startPrice, decSep, ".");
+
+//     /*    alert("startPrice " + startPrice);
+//     alert("oldPrice " + parseFloat(oldPrice));
+//     alert("newprice " + parseFloat(newprice));
+//     */
+
+//     var setPrice = (parseFloat(startPrice) - parseFloat(oldPrice)) + parseFloat(newprice);
+//     setProductPrice(setPrice);
+
+//     /* Add variants parameters */
+//     var bomQueryString = $(selector).parents(".product-pricebox").find("select").serialize();
+//     var addtocart = $(selector).parents(".product-pricebox-wrapper").find(".addtocart");
+//     if (addtocart.is("a")) {
+//         addtocart.attr("href", function (i, href) {
+//             var bomSplitted = bomQueryString.split("&"), _index;
+//             for (var i = 0; i < bomSplitted.length; i++) {
+//                 bomValue = bomSplitted[i].split("=");
+//                 _index = href.indexOf(bomValue[0]);
+//                 if (_index !== -1) {
+//                     href = href.replace(new RegExp("(" + bomValue[0] + "=)[a-zA-Z0-9]+", "g"), "$1" + bomValue[1]);
+//                 } else {
+//                     href += "&" + bomValue[0] + "=" + bomValue[1];
+//                 }
+//             }
+//             return href;
+//         });
+//     }
+// }
+// 
+// function setProductPrice(price) {
+//     //alert("setPrice " + price);
+//     document.getElementById('configPrice').innerHTML = formatCurrency(price);
+// }
+// 
+// var pricetype = '<!--@Ecom:Product.PriceType-->';
+// var stockID = "<!--@Ecom:Product:Stock.ID-->"
+// if (stockID == "") {
+//     document.getElementById("ShowStock").style.display = 'none';
+// }
+
+// function replaceSubstring(inputString, fromString, toString) {
+//     var temp = inputString;
+//     if (fromString == "") {
+//         return inputString;
+//     }
+
+//     fromString = "" + fromString;
+//     toString = "" + toString;
+
+//     if (toString.indexOf(fromString) == -1) {
+//         while (temp.indexOf(fromString) != -1) {
+//             var toTheLeft = temp.substring(0, temp.indexOf(fromString));
+//             var toTheRight = temp.substring(temp.indexOf(fromString) + fromString.length, temp.length);
+//             temp = toTheLeft + toString + toTheRight;
+//         }
+//     } else {
+//         var midStrings = new Array("~", "`", "_", "^", "#");
+//         var midStringLen = 1;
+//         var midString = "";
+
+//         while (midString == "") {
+//             for (var i = 0; i < midStrings.length; i++) {
+//                 var tempMidString = "";
+//                 for (var j = 0; j < midStringLen; j++) { tempMidString += midStrings[i]; }
+//                 if (fromString.indexOf(tempMidString) == -1) {
+//                     midString = tempMidString;
+//                     i = midStrings.length + 1;
+//                 }
+//             }
+//         }
+
+//         while (temp.indexOf(fromString) != -1) {
+//             var toTheLeft = temp.substring(0, temp.indexOf(fromString));
+//             var toTheRight = temp.substring(temp.indexOf(fromString) + fromString.length, temp.length);
+//             temp = toTheLeft + midString + toTheRight;
+//         }
+
+//         while (temp.indexOf(midString) != -1) {
+//             var toTheLeft = temp.substring(0, temp.indexOf(midString));
+//             var toTheRight = temp.substring(temp.indexOf(midString) + midString.length, temp.length);
+//             temp = toTheLeft + toString + toTheRight;
+//         }
+//     }
+//     return temp;
+// }
+
+// function updateCartLineQuantity(orderlineID) {
+//   if (!orderlineID) return;
+
+//   // Find input box containing quantity
+//   var orderlineCode = "QuantityOrderLine" + orderlineID;
+//   var box = $("input#" + orderlineCode);
+
+//   // Verify box
+//   if (!box) return;
+
+//   // Do the update
+//   var val = parseInt(box.val());
+
+//   var url;
+//   if (val <= 0) {
+//     url = "CartCmd=delorderline&key=" + orderlineID;
+//   } else {
+//     url = "CartCmd=updateorderlines&" + orderlineCode + "=" + val;
+//   }
+
+//   location.href = "/Default.aspx?" + url;
+// }
+
+
+
 
 function changeDropdownPosition(dropdownMenu) {
 	var dropdownRight
@@ -1015,13 +1192,11 @@ $(document).ready(function () {
 		});
 	}
 
-	if (false)
-		// Top Instant Search box - Search
-		if ($("#q").length) {
-			$("#q").focus(); // Placing top search field in focus when page load
-			Dynamicweb.Frontend.InstantSearch.setEnableInstantSearch('q', true, {
-				contentID: 'product-instant-search', // An ID of the content template
-				progressID: 'search-box-preloader-top',
+	// Bottom Instant Search box - Search 
+	if ($("#q-bottom").length) {
+		Dynamicweb.Frontend.InstantSearch.setEnableInstantSearch('q-bottom', true, {
+			contentID: 'product-instant-search-bottom', // An ID of the content template
+			progressID: 'search-box-preloader-bottom',
 				onItemDataBound: function (sender, args) {
 					// Hide product item if product with the same ID already printed
 					var bVisible = $("#" + this.contentID).find(".dw-search-result-prodid:contains('" + args.data.ID.toString() + "')").length <= 0;
@@ -1034,16 +1209,25 @@ $(document).ready(function () {
 					args.template.field("detailslink", productLink);
 					args.template.field('img', '/Admin/Public/GetImage.ashx?Image=/Files/Images/Ecom/Products/' + args.data.Number + '.jpg&Width=64&Height=64');
 					args.template.field("name", args.data.Name);
-					// args.template.field("number", "Product number: " + args.data.Number);
 					args.template.field("number", args.data.Number);
 					args.template.field("price", args.data.PriceWithVAT.toFixed(2));
 				},
 				onBeforeQuery: function (sender, args) {
 					args.set_cancel(args.get_value().length < 2);
+			},
+			onComplete: function () {
+				var box = $('#product-instant-search-bottom');
+				if (!box.is(":visible")) {
+					if ($("#q-bottom").val().length >= 2) {
+						box.css({ top: -box.outerHeight() + 10 }).fadeIn();
+					}
+				}
+				else {
+					box.css({ top: -box.outerHeight() + 10 });
+				}
 				}
 			});
 		}
-
 
 	// Top Instant Search box - Quick Add
 	if ($("#quickaddinput").length) {
@@ -1240,6 +1424,21 @@ $(document).ready(function () {
 			});
 		})
 
+	var widownWidth = (Layout.isMobile.any()) ? screen.width : window.outerWidth;
+	if (($('body').data('areaid') == 1 || $('body').data('areaid') == 17) && widownWidth > 768 ){
+		/* <!--Start of Zopim Live Chat Script-->*/
+		window.$zopim || (function (d, s) {
+			var z = $zopim = function (c) { z._.push(c) }, $ = z.s =
+		d.createElement(s), e = d.getElementsByTagName(s)[0]; z.set = function (o) {
+		z.set.
+		_.push(o)
+		}; z._ = []; z.set._ = []; $.async = !0; $.setAttribute('charset', 'utf-8');
+			$.src = '//cdn.zopim.com/?RjOg47HuHHdRr49ujWrACMR7RSFBj1UC'; z.t = +new Date; $.
+		type = 'text/javascript'; e.parentNode.insertBefore($, e)
+		})(document, 'script');
+		/*<!--End of Zopim Live Chat Script-->*/
+	}
+
 	// Clicks on B2C first page blocks
 	$('.feature-wrapper').on('click', function(){
 		location.href = $(this).find('a:first-child').attr('href');
@@ -1420,6 +1619,28 @@ function is_cook_exists() {
 
 
 
+/**
+ * $.parseParams - parse query string paramaters into an object.
+ */
+(function($) {
+var re = /([^&=]+)=?([^&]*)/g;
+var decodeRE = /\+/g;  // Regex for replacing addition symbol with a space
+var decode = function (str) {return decodeURIComponent( str.replace(decodeRE, " ") );};
+$.parseParams = function(query) {
+	var params = {}, e;
+	while ( e = re.exec(query) ) { 
+		var k = decode( e[1] ), v = decode( e[2] );
+		if (k.substring(k.length - 2) === '[]') {
+			k = k.substring(0, k.length - 2);
+			(params[k] || (params[k] = [])).push(v);
+		}
+		else params[k] = v;
+	}
+	return params;
+};
+})(jQuery);
+
+
 Number.prototype.formatMoney = function(c, d, t) {
 	var n = this
 	, c = isNaN(c = Math.abs(c)) ? 2 : c
@@ -1433,4 +1654,4 @@ Number.prototype.formatMoney = function(c, d, t) {
 		+ (j ? i.substr(0, j) + t : "")
 		+ i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t)
 		+ (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
-}
+};

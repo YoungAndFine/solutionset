@@ -164,7 +164,7 @@ eCommerce.Filters = {
 			valueField = slider.next('.filter-slider-value-container');
 			requestValue = $.query.get(valueField.attr('name'));
 
-			/*Clearing the postback value of a slider if it wasn't submitted before (making bounds context sensitive)*/
+            // Clearing the postback value of a slider if it wasn't submitted before (making bounds context sensitive)
 			if (requestValue == null || (typeof (requestValue) == 'string' && !requestValue.length) || requestValue == true) {
 				valueField.val('');
 			} else {
@@ -176,7 +176,8 @@ eCommerce.Filters = {
 				min: from,
 				max: to,
 				values: [fromValue, toValue],
-
+                // callback on event "change" was switched to event "stop"
+                // due to youch device compatibility 
 				stop: function () {
 					var e = $(this);
 					var field = e.next('.filter-slider-value-container');
@@ -248,6 +249,16 @@ eCommerce.Filters = {
 		form.find(':input[value=""]').attr("disabled", "disabled");
 
 		if (form && form.length) {
+            // form[0].submit();
+
+            // Item #10243
+            // It was problem with generated query string after 
+            // changing filter values. Parameters with same name was duplicated
+            // and this behavior brokes the 'Query' plugin and after 
+            // this it returns not correct query string
+            // Solution:
+            // Regular form submit has been changed for JS redirection
+            // after filtering input values from the filters
 			var checkboxValues = {},
 			queryString = '';
 
@@ -385,7 +396,6 @@ eCommerce.Filters = {
 		location.href = '/Default.aspx' + $.query.empty().set('ID', pageid.toString()).set('Compare', products.join(',')) + layoutPath;
 	}
 };
-
 
 $(document).ready(function () {
 	eCommerce.Overlay.initialize();
