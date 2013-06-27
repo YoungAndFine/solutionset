@@ -54,6 +54,7 @@ $rating-sprite-tile-height: 18px !default;
 // Path to animated loader image
 $loader-image: url(../images/ajax-loader.gif) !default;
 
+$star-color: #fcba29;
 
 @mixin rounded-borders($color: black, $border-weight: 1px, $radius: 5px) {
 	border: $border-weight solid $color;

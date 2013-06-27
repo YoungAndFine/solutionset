@@ -7869,7 +7869,7 @@ ul.customer_center_block {
   content: '';
   width: 20px;
   height: 60px;
-  background: url(../img/frontpage-right-angle.png) no-repeat right center;
+  background: url(../images/frontpage/right-angle.png) no-repeat right center;
 }
 /* line 568, ../sass/partials/_frontpage.scss */
 .frontpage-redesign .frontpage-landing ul li {
@@ -7878,28 +7878,32 @@ ul.customer_center_block {
   padding: 0 10px 0 30px;
   margin-left: 20px;
   text-shadow: 0 1px 0 #fff;
-  background: url(../img/signv-big.png) no-repeat left center;
+  background: url(../images/frontpage/signv-big.png) no-repeat left center;
+}
+/* line 576, ../sass/partials/_frontpage.scss */
+.frontpage-redesign .frontpage-landing ul li .icon-star {
+  color: #fcba29;
 }
 @media (max-width: 1199px) {
   /* line 542, ../sass/partials/_frontpage.scss */
   .frontpage-redesign .frontpage-landing {
     margin-left: 10px;
   }
-  /* line 582, ../sass/partials/_frontpage.scss */
+  /* line 586, ../sass/partials/_frontpage.scss */
   .frontpage-redesign .frontpage-landing h1 {
     margin-right: 10px;
   }
-  /* line 585, ../sass/partials/_frontpage.scss */
+  /* line 589, ../sass/partials/_frontpage.scss */
   .frontpage-redesign .frontpage-landing h1:after {
     top: 1px;
   }
-  /* line 590, ../sass/partials/_frontpage.scss */
+  /* line 594, ../sass/partials/_frontpage.scss */
   .frontpage-redesign .frontpage-landing ul li {
     font: bold 14px/60px arial;
   }
 }
 @media (max-width: 979px) {
-  /* line 597, ../sass/partials/_frontpage.scss */
+  /* line 601, ../sass/partials/_frontpage.scss */
   .frontpage-redesign .frontpage-landing ul li {
     font: bold 14px/24px arial;
     margin-left: 10px;
@@ -7912,14 +7916,14 @@ ul.customer_center_block {
   .frontpage-redesign .frontpage-landing {
     margin-left: 0;
   }
-  /* line 608, ../sass/partials/_frontpage.scss */
+  /* line 612, ../sass/partials/_frontpage.scss */
   .frontpage-redesign .frontpage-landing h1 {
     margin-right: 10px;
     padding: 0 10px;
     font: bold 14px/60px arial;
   }
 }
-/* line 615, ../sass/partials/_frontpage.scss */
+/* line 619, ../sass/partials/_frontpage.scss */
 .frontpage-redesign .products-carousel {
   position: relative;
   overflow: hidden;
@@ -7928,50 +7932,50 @@ ul.customer_center_block {
   padding-bottom: 10px;
   margin-bottom: 10px;
 }
-/* line 623, ../sass/partials/_frontpage.scss */
+/* line 627, ../sass/partials/_frontpage.scss */
 .frontpage-redesign .products-carousel a {
   color: white;
   text-decoration: none;
 }
-/* line 627, ../sass/partials/_frontpage.scss */
+/* line 631, ../sass/partials/_frontpage.scss */
 .frontpage-redesign .products-carousel a:hover {
   text-decoration: underline;
 }
-/* line 634, ../sass/partials/_frontpage.scss */
+/* line 638, ../sass/partials/_frontpage.scss */
 .frontpage-redesign .products-carousel .item {
   position: relative;
 }
-/* line 637, ../sass/partials/_frontpage.scss */
+/* line 641, ../sass/partials/_frontpage.scss */
 .frontpage-redesign .products-carousel .box-rounded {
   margin: 0;
 }
-/* line 640, ../sass/partials/_frontpage.scss */
+/* line 644, ../sass/partials/_frontpage.scss */
 .frontpage-redesign .products-carousel .box-rounded.product-list-item-wrapper {
   position: relative;
   background: white;
   overflow: hidden;
   background-clip: padding-box;
 }
-/* line 647, ../sass/partials/_frontpage.scss */
+/* line 651, ../sass/partials/_frontpage.scss */
 .frontpage-redesign .products-carousel .box-rounded.product-list-item-wrapper img {
   display: block;
   margin: 0 auto;
 }
-/* line 651, ../sass/partials/_frontpage.scss */
+/* line 655, ../sass/partials/_frontpage.scss */
 .frontpage-redesign .products-carousel .box-rounded.product-list-item-wrapper button {
   font-weight: bold;
   border-color: rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25);
   padding-right: 10px;
 }
-/* line 656, ../sass/partials/_frontpage.scss */
+/* line 660, ../sass/partials/_frontpage.scss */
 .frontpage-redesign .products-carousel .box-rounded.product-list-item-wrapper button .icon {
   margin: 3px 0 0 3px;
 }
-/* line 660, ../sass/partials/_frontpage.scss */
+/* line 664, ../sass/partials/_frontpage.scss */
 .frontpage-redesign .products-carousel .box-rounded.product-list-item-wrapper .box-content {
   padding: 0 0 30px;
 }
-/* line 663, ../sass/partials/_frontpage.scss */
+/* line 667, ../sass/partials/_frontpage.scss */
 .frontpage-redesign .products-carousel .box-rounded.product-list-item-wrapper .box-overlay {
   position: absolute;
   bottom: 0;
@@ -7983,94 +7987,94 @@ ul.customer_center_block {
   color: white;
   text-shadow: 0 1px 0 #333333;
 }
-/* line 674, ../sass/partials/_frontpage.scss */
+/* line 678, ../sass/partials/_frontpage.scss */
 .frontpage-redesign .products-carousel .box-rounded.product-list-item-wrapper .product-name {
   color: inherit;
   padding-bottom: 5px;
   font: bold 14px/21px arial;
 }
-/* line 679, ../sass/partials/_frontpage.scss */
+/* line 683, ../sass/partials/_frontpage.scss */
 .frontpage-redesign .products-carousel .box-rounded.product-list-item-wrapper .product-name .product-link {
   color: white;
   font: inherit;
 }
-/* line 684, ../sass/partials/_frontpage.scss */
+/* line 688, ../sass/partials/_frontpage.scss */
 .frontpage-redesign .products-carousel .box-rounded.product-list-item-wrapper .product-price {
   float: left;
   font: bold 20px/30px arial;
 }
-/* line 688, ../sass/partials/_frontpage.scss */
+/* line 692, ../sass/partials/_frontpage.scss */
 .frontpage-redesign .products-carousel .box-rounded.product-list-item-wrapper .product-action {
   float: right;
 }
 @media (min-width: 768px) and (max-width: 1199px) {
-  /* line 615, ../sass/partials/_frontpage.scss */
+  /* line 619, ../sass/partials/_frontpage.scss */
   .frontpage-redesign .products-carousel {
     margin-left: 10px;
   }
 }
 @media (max-width: 767px) {
-  /* line 698, ../sass/partials/_frontpage.scss */
+  /* line 702, ../sass/partials/_frontpage.scss */
   .frontpage-redesign .products-carousel .row {
     margin-left: -20px;
   }
-  /* line 701, ../sass/partials/_frontpage.scss */
+  /* line 705, ../sass/partials/_frontpage.scss */
   .frontpage-redesign .products-carousel .span3 {
     width: 166px;
     float: left;
     margin-left: 20px;
   }
 }
-/* line 708, ../sass/partials/_frontpage.scss */
+/* line 712, ../sass/partials/_frontpage.scss */
 .frontpage-redesign .products-carousel-small {
   margin-bottom: 0;
 }
-/* line 711, ../sass/partials/_frontpage.scss */
+/* line 715, ../sass/partials/_frontpage.scss */
 .frontpage-redesign .products-carousel-small .carousel-map {
   position: absolute;
   right: 0;
   top: -40px;
 }
-/* line 716, ../sass/partials/_frontpage.scss */
+/* line 720, ../sass/partials/_frontpage.scss */
 .frontpage-redesign .products-carousel-small .product-image {
   display: block;
   margin: 0 auto;
 }
-/* line 720, ../sass/partials/_frontpage.scss */
+/* line 724, ../sass/partials/_frontpage.scss */
 .frontpage-redesign .products-carousel-small .product-name {
   font-size: 18px;
   padding-bottom: 10px;
 }
-/* line 724, ../sass/partials/_frontpage.scss */
+/* line 728, ../sass/partials/_frontpage.scss */
 .frontpage-redesign .products-carousel-small .product-price-save {
   font: bold 14px/21px arial;
   color: #f8941d;
   text-transform: uppercase;
 }
-/* line 729, ../sass/partials/_frontpage.scss */
+/* line 733, ../sass/partials/_frontpage.scss */
 .frontpage-redesign .products-carousel-small .product-price {
   float: left;
   font: bold 20px/30px arial;
   color: #333;
 }
-/* line 734, ../sass/partials/_frontpage.scss */
+/* line 738, ../sass/partials/_frontpage.scss */
 .frontpage-redesign .products-carousel-small .product-action {
   float: right;
 }
-/* line 737, ../sass/partials/_frontpage.scss */
+/* line 741, ../sass/partials/_frontpage.scss */
 .frontpage-redesign .products-carousel-small .product-action button {
   font-weight: bold;
   padding-right: 10px;
 }
-/* line 741, ../sass/partials/_frontpage.scss */
+/* line 745, ../sass/partials/_frontpage.scss */
 .frontpage-redesign .products-carousel-small .product-action button .icon {
   margin: 3px 0 0 3px;
 }
-/* line 746, ../sass/partials/_frontpage.scss */
+/* line 750, ../sass/partials/_frontpage.scss */
 .frontpage-redesign .products-carousel-small .product-rating {
   margin: 10px 0 5px;
 }
-/* line 749, ../sass/partials/_frontpage.scss */
+/* line 753, ../sass/partials/_frontpage.scss */
 .frontpage-redesign .products-carousel-small .product-rating-underlay {
   display: inline-block;
   background-image: url(../images/sprites-rating.png);
@@ -8078,7 +8082,7 @@ ul.customer_center_block {
   font-size: 18px;
   line-height: 1;
 }
-/* line 756, ../sass/partials/_frontpage.scss */
+/* line 760, ../sass/partials/_frontpage.scss */
 .frontpage-redesign .products-carousel-small .product-rating-underlay .product-rating-stars {
   font-size: 1;
   line-height: 1;
@@ -8090,7 +8094,7 @@ ul.customer_center_block {
   text-indent: 100%;
   overflow: hidden;
 }
-/* line 769, ../sass/partials/_frontpage.scss */
+/* line 773, ../sass/partials/_frontpage.scss */
 .frontpage-redesign .products-carousel-small .map-item {
   width: 6px;
   height: 6px;
@@ -8100,11 +8104,11 @@ ul.customer_center_block {
   background: #333;
   float: left;
 }
-/* line 778, ../sass/partials/_frontpage.scss */
+/* line 782, ../sass/partials/_frontpage.scss */
 .frontpage-redesign .products-carousel-small .map-item:hover {
   cursor: pointer;
 }
-/* line 781, ../sass/partials/_frontpage.scss */
+/* line 785, ../sass/partials/_frontpage.scss */
 .frontpage-redesign .products-carousel-small .map-item.active {
   background-color: white;
 }
@@ -8116,45 +8120,45 @@ ul.customer_center_block {
   }
 }
 
-/* line 794, ../sass/partials/_frontpage.scss */
+/* line 798, ../sass/partials/_frontpage.scss */
 .carousel-box {
   padding: 0 !important;
 }
-/* line 797, ../sass/partials/_frontpage.scss */
+/* line 801, ../sass/partials/_frontpage.scss */
 .carousel-box .carousel {
   margin: 0;
 }
-/* line 800, ../sass/partials/_frontpage.scss */
+/* line 804, ../sass/partials/_frontpage.scss */
 .carousel-box .item {
   max-height: 250px;
   color: white;
   text-shadow: 0 1px 0 #333;
   font: normal 14px/21px arial;
 }
-/* line 806, ../sass/partials/_frontpage.scss */
+/* line 810, ../sass/partials/_frontpage.scss */
 .carousel-box .item h4 {
   font: bold 20px/30px arial;
 }
-/* line 809, ../sass/partials/_frontpage.scss */
+/* line 813, ../sass/partials/_frontpage.scss */
 .carousel-box .item a {
   color: inherit;
 }
-/* line 812, ../sass/partials/_frontpage.scss */
+/* line 816, ../sass/partials/_frontpage.scss */
 .carousel-box .item img {
   display: block;
   margin: 0 auto;
 }
-/* line 817, ../sass/partials/_frontpage.scss */
+/* line 821, ../sass/partials/_frontpage.scss */
 .carousel-box .carousel-control {
   text-decoration: none;
 }
-/* line 820, ../sass/partials/_frontpage.scss */
+/* line 824, ../sass/partials/_frontpage.scss */
 .carousel-box .carousel-map {
   position: absolute;
   right: 20px;
   top: 20px;
 }
-/* line 825, ../sass/partials/_frontpage.scss */
+/* line 829, ../sass/partials/_frontpage.scss */
 .carousel-box .map-item {
   width: 6px;
   height: 6px;
@@ -8164,16 +8168,16 @@ ul.customer_center_block {
   background: #333;
   float: left;
 }
-/* line 834, ../sass/partials/_frontpage.scss */
+/* line 838, ../sass/partials/_frontpage.scss */
 .carousel-box .map-item:hover {
   cursor: pointer;
 }
-/* line 837, ../sass/partials/_frontpage.scss */
+/* line 841, ../sass/partials/_frontpage.scss */
 .carousel-box .map-item.active {
   background-color: white;
 }
 @media (max-width: 479px) {
-  /* line 842, ../sass/partials/_frontpage.scss */
+  /* line 846, ../sass/partials/_frontpage.scss */
   .carousel-box .carousel-caption {
     position: absolute;
   }

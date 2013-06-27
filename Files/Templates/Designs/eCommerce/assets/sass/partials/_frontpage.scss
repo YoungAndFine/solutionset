@@ -561,7 +561,7 @@
 				content: '';
 				width: 20px;
 				height: 60px;
-				background: url(../img/frontpage-right-angle.png) no-repeat right center;
+				background: url(../images/frontpage/right-angle.png) no-repeat right center;
 			}
 		}
 		ul {
@@ -571,7 +571,11 @@
 				padding: 0 10px 0 30px;
 				margin-left: 20px;
 				text-shadow: 0 1px 0 #fff;
-				background: url(../img/signv-big.png) no-repeat left center;
+				background: url(../images/frontpage/signv-big.png) no-repeat left center;
+
+				.icon-star {
+					color: $star-color;
+				}
 			}
 		}
 
