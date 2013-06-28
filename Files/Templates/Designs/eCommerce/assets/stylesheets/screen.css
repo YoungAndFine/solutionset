@@ -1325,10 +1325,6 @@ a.dw-button {
 .modal-type-loginbox .login-form-signuphint.hint-goback > a {
   line-height: 33px;
 }
-/* line 156, ../sass/partials/_modals.scss */
-.modal-type-loginbox .loginbox-login-failed {
-  display: none;
-}
 /* line 159, ../sass/partials/_modals.scss */
 .modal-type-loginbox .centered-text {
   text-align: center;
