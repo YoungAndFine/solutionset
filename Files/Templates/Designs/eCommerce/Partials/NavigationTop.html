@@ -1,15 +1,17 @@
 <section class="topmenu-wrapper">
 	<div class="container">
-		<div class="lang_selector">
-      <!--@If(Global:Area.ID==1)--> <!--@TODO: Implement language selector-->
-			<a href="/Default.aspx?ID=685" hreflang="da" class="flags-dk"><!--@Translate(danish, "Danish")--></a>
-      <!--@EndIf-->
-      <!--@If(Global:Area.ID==17)-->
-			<a href="/Default.aspx?ID=684" hreflang="en" class="flags-us"><!--@Translate(english, "English")--></a>
-      <!--@EndIf-->
-		</div>
 		<div class="row">
 			<div class="span12">
+				<div class="lang-selector">
+					<ul>
+					<!--@If(Global:Area.ID==1)--> <!--@TODO: Implement language selector-->
+					<li><a href="/Default.aspx?ID=698" hreflang="da" class="flags-dk"><!--@Translate(danish, "Danish")--></a></li>
+					<!--@EndIf-->
+					<!--@If(Global:Area.ID==17)-->
+					<li><a href="/Default.aspx?ID=680" hreflang="en" class="flags-us"><!--@Translate(english, "English")--></a></li>
+					<!--@EndIf-->
+					</ul>
+				</div>
 				<div class="topmenu">
 					<div class="navbar wrappable">
 						<div class="navbar-inner">

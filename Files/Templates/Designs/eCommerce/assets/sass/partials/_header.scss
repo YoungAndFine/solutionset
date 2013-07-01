@@ -14,30 +14,30 @@
  */
 
 // Language selector on top of the page
-.lang_selector {
-	position: absolute;
-	top: 8px;
-  // left: 3px;
-  right: 3px;
-	z-index: 5;
-  line-height: 21px;
+// .lang_selector {
+// 	position: absolute;
+// 	top: 8px;
+//   // left: 3px;
+//   right: 3px;
+// 	z-index: 5;
+//   line-height: 21px;
 
-  a {
-    text-decoration: underline;
-	}
+//   a {
+//     text-decoration: underline;
+// 	}
 
-  img {
-    margin-right: 4px;
-  }
-  @media (min-width: 768px) {
-    top: 11px;
+//   img {
+//     margin-right: 4px;
+//   }
+//   @media (min-width: 768px) {
+//     top: 11px;
 
-    a {
-      padding-left: 7px;
-      border-left: 1px solid #999;
-    }
-  }
-}
+//     a {
+//       padding-left: 7px;
+//       border-left: 1px solid #999;
+//     }
+//   }
+// }
 
 
 .header-wrapper {

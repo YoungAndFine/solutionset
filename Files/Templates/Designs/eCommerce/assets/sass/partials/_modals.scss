@@ -19,7 +19,7 @@ $modal-imagesslider-width: 502px;
 // Modal window override Bottsrap to DW styles
 .modal {
 	.modal-header {
-		background: #F5F5F5 url('../images/bg_modal_header.png');
+		background: #F5F5F5; // url('../images/bg_modal_header.png');
 		border-bottom: 1px solid #DDDDDD;
 		@include box-shadow(0 -1px 0 #F5F5F5 inset);
 

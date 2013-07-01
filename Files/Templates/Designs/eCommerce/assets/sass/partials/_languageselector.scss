@@ -12,25 +12,60 @@
  * Version: 0.9.0
  *
  */
+$languages: (de, dk, gb, nl, no, se, us);
+
 @import 'flags/*.png';
 
 .lang-selector {
-	top: 13px;
-	position: relative;
-}
+	// top: 13px;
+	// position: relative;
+	float: right;
 
-.lang-selector a {
-	display: block;
-	width: 16px;
-	height: 11px;
-	text-indent: -999em;
-	text-align: left;
-}
-
-$list: (de, dk, gb, nl, no, se, us);
-
-@each $language in $list{
-	.flags-#{$language}{ //use the hreflang attr instead: a[hreflang=#{$language}] {
-	  @include flags-sprite($language);
+	ul, li {
+		list-style: none;
+		margin: 0;
+		float: left;
 	}
+
+	a {
+		border-left: 1px solid #999;
+		padding-left: 10px;
+
+		// font-size: 12px;
+		// line-height: 14px;
+		margin-left: 4px;
+		text-decoration: underline;
+	}
+
+	@each $language in $languages {
+		.flags-#{$language}::before {
+	  	@include flags-sprite($language);
+			width: flags-sprite-width($language);
+			height: flags-sprite-height($language);
+			display: inline-block;
+			content: '';
+			vertical-align: middle;
+			margin-right: 4px;
+		}
+	}
+
+// .lang-selector {
+// 	top: 13px;
+// 	position: relative;
+// }
+
+// .lang-selector a {
+// 	display: block;
+// 	width: 16px;
+// 	height: 11px;
+// 	text-indent: -999em;
+// 	text-align: left;
+// }
+
+
+// @each $language in $list{
+// 	.flags-#{$language}{ //use the hreflang attr instead: a[hreflang=#{$language}] {
+// 	  @include flags-sprite($language);
+// 	}
+// }
 }
