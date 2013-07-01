@@ -2,6 +2,7 @@
 <div class="modal hide fade modal-type-loginbox" id="LoginBox" tabindex="-1" role="dialog">
 	<div class="modal-header">
     <button type="button" class="close blue-close icon-remove" data-dismiss="modal"></button>
+
 		<h3>
       <span class="icon-key"></span>
 			<!--@Translate(CustomerLogin, "Customer login")-->
@@ -43,6 +44,7 @@
 						<input type="submit" class="btn dw-button dw-button-green" value="Login" />
 					</div>
 				</div>
+
 				<div class="login-form-lostpasswordhint">
 					<!--@Translate(ForgotYourLogin, "Forgot your password?")-->&nbsp;<a href="#" onclick="Layout.LoginBox.mode('lostpassword', $(this).parents('form'))"><!--@Translate(ClickHere, "Click here")--></a>
 				</div>
@@ -76,14 +78,30 @@
 		</div>
 	</div>
 
-	<!--@If Defined(Item.Area.Create_Account_Page_ID)-->
 	<div class="modal-footer">
 		<!--@Translate(donthaveaccount, "Don't have an account?")-->
+		<!--@If(Item.Area.Create_Account_Page_ID__modal_>0)-->
+		<a href="/Default.aspx?ID=<!--@Item.Area.Create_Account_Page_ID__modal_-->" class="btn dw-button-gray" data-toggle="modal" data-target="#signUpModal" onclick="$(this).parents('.modal').modal('hide')">
+			<!--@Translate(signupforaccount, "Sign up for an account")-->
+		</a>
+		<!--@Else-->
 		<a href="/Default.aspx?ID=<!--@Item.Area.Create_Account_Page_ID-->" class="btn dw-button-gray">
 			<!--@Translate(signupforaccount, "Sign up for an account")-->
 		</a>
+		<!--@EndIf-->
 	</div>
-	<!--@EndIf-->
+</div>
+
+<div class="modal hide fade modal-type-loginbox" id="signUpModal" tabindex="-1" role="dialog">
+  <div class="modal-header">
+    <button type="button" class="close blue-close icon-remove" data-dismiss="modal"></button>
+    <h3><!--@Translate(signup, "Signup")--></h3>
+  </div>
+  <div class="modal-body">
+    <div class="row-fluid no-space">
+      <div class="loader"></div>
+    </div>
+  </div>
 </div>
 
 <!--@Else-->

@@ -1,4 +1,4 @@
-<script type="text/javascript">
+﻿<script type="text/javascript">
   $(document).ready(function () {
   	var form =  $('form[name="<!--@UserManagement:User.Email.InputName-->"]')
   		, inputEmail = $('input[name="<!--@UserManagement:User.Email.InputName-->"]')
@@ -24,7 +24,7 @@
 <h4 class="required-hint"><!--@Translate(fieldsisrequired, "* fields is required")--></h4>
 
 <!--UserManagement:User.FormStart-->
-<form method="post" action="/Default.aspx?ID=<!--@If(Global:Area.ID==1)-->237<!--@EndIf--><!--@If(Global:Area.ID==17)-->328<!--@EndIf--><!--@If(Global:Area.ID==18)-->380<!--@EndIf--><!--@If(Global:Area.ID==19)-->443<!--@EndIf--><!--@If(Global:Area.ID==22)-->616<!--@EndIf-->">
+<form method="post" action="/Default.aspx?ID=<!--@Item.Area.Create_Account_Page_ID-->">
 	<input type="hidden" value="1" name="UserManagementForm">
 	<input id="UserManagementForm.DeleteImage" type="hidden" name="UserManagementForm.DeleteImage">
 
