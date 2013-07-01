@@ -1,6 +1,8 @@
 <form name="EcomSearch" class="form-filters" method="get" action="/Default.aspx">
+<!--@If(0=1)-->
 	<input type="hidden" name="ID" value="<!--@Global:Page.ID-->" />
 	<input type="hidden" name="GroupID" value="<!--@Server:Request.groupid-->" />
+<!--@EndIf-->
 	<input type="submit" style="display:none;">
 
 	<input type="hidden" name="SortBy" value="<!--@If Defined(Server:Request.sortby)--><!--@Server:Request.sortby--><!--@EndIf(Server:Request.sortby)-->" />
@@ -60,8 +62,8 @@
 			<!--@If Not Defined(Ecom:Search.Filter.HasOptions)-->
 			<i><!--@Translate(NoFilterOptions, "No options")--></i>
 			<!--@EndIf(Ecom:Search.Filter.HasOptions)-->
-		</div> <!-- / .filter-container -->
-	</div> <!-- / .filter-wrapper -->
+		</div>
+	</div>
 	<!--@EndIf(Ecom:Search.Filter.HasNonEmptyOptions)-->
 	<!--@EndIf(Ecom:Search.Filter.SupportsOptions)-->
 	<!--@EndIf-->

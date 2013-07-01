@@ -177,7 +177,7 @@ eCommerce.Filters = {
 				max: to,
 				values: [fromValue, toValue],
                 // callback on event "change" was switched to event "stop"
-                // due to youch device compatibility 
+                // due to youch device compatibility
 				stop: function () {
 					var e = $(this);
 					var field = e.next('.filter-slider-value-container');
@@ -223,7 +223,10 @@ eCommerce.Filters = {
 
 		/* Initializing view mode for list */
 		$('.list-mode [data-list-mode]').click(function (e) {
-			location.search = $.query.set('View', $(e.target).attr('data-list-mode')).toString();
+			var view = $(this).attr('data-list-mode');
+			if (view) {
+				location.search = $.query.set('View', view).toString();
+			}
 		});
 	},
 
@@ -246,29 +249,53 @@ eCommerce.Filters = {
 	/* Submits the form containing filters */
 	submit: function () {
 		var form = $('form.form-filters');
+
+		var urlParams = (function() {
+			var match,
+      pl     = /\+/g,  // Regex for replacing addition symbol with a space
+      search = /([^&=]+)=?([^&]*)/g,
+      decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); },
+      query  = window.location.search.substring(1),
+			params = {};
+
+			if (pageUrl.indexOf('?') > -1) {
+				query = pageUrl.substring(pageUrl.indexOf('?')+1);
+			}
+			while (match = search.exec(query)) {
+				params[decode(match[1])] = decode(match[2]);
+			}
+			return params;
+		}());
+
 		form.find(':input[value=""]').attr("disabled", "disabled");
 
 		if (form && form.length) {
             // form[0].submit();
 
             // Item #10243
-            // It was problem with generated query string after 
+            // It was problem with generated query string after
             // changing filter values. Parameters with same name was duplicated
-            // and this behavior brokes the 'Query' plugin and after 
+            // and this behavior brokes the 'Query' plugin and after
             // this it returns not correct query string
             // Solution:
             // Regular form submit has been changed for JS redirection
             // after filtering input values from the filters
 			var checkboxValues = {},
+			i, name, field, fields, pairs,
 			queryString = '';
 
-			queryString = $(':input', 'form.form-filters').filter(function(){
+			fields = $(':input', 'form.form-filters').filter(function(){
 				var $this = $(this),
 				key = $this.attr('name'),
 				val = $this.val();
 
-				if (key == 'ID' || key == 'GroupID') {
+ 				if (key == 'ID' || key == 'GroupID') {
 					return false;
+				}
+
+				if (($this.is(':checkbox') || $this.is(':radio')) && !$this.val()) {
+					// Remove unset checkbox and radio buttons
+					delete urlParams[key];
 				}
 
 				if ($this.is(':checkbox') && $this.val()) {
@@ -289,7 +316,21 @@ eCommerce.Filters = {
 				}
 
 				return !$this.is(':checkbox') && $this.val();
-			}).serialize();
+ 			});
+
+			for (i = 0; field = fields[i]; i++) {
+				if ($(field).is(':checkbox')) {
+					if ($(field).is(':checked')) {
+						urlParams[$(field).attr('name')] = $(field).val();
+					}
+				} else if ($(field).is(':radio')) {
+					if ($(field).is(':checked')) {
+						urlParams[$(field).attr('name')] = $(field).val();
+					}
+				} else {
+					urlParams[$(field).attr('name')] = $(field).val();
+				}
+			}
 
 			$.map(checkboxValues, function (val, i) {
 				var separator = queryString.length ? '&' : '',
@@ -297,14 +338,22 @@ eCommerce.Filters = {
 
 				if (typeof val === 'array') {
 					parameter = i + '=' + val.join(',');
+					urlParams[i] = val.join(',');
 				} else {
 					parameter = i + '=' + val;
+					urlParams[i] = val;
 				}
 
 				queryString += separator + parameter;
 			});
 
-			location.href = location.pathname + (queryString.length ? '?' + queryString : '');
+			pairs = [];
+			for (name in urlParams) {
+				pairs.push(encodeURIComponent(name)+'='+encodeURIComponent(urlParams[name]));
+			}
+
+			location.href = '/Default.aspx?'+pairs.join('&');
+			// location.href = location.pathname + (queryString.length ? '?' + queryString : '');
 		}
 	},
 
