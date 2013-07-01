@@ -64,7 +64,9 @@
         if (context.options.currentPage >= context.options.pageCount) return;
 
         context.options.currentPage++;
-        url += ((context.options.requestPath.indexOf('?') === -1) ? '?' : '&') + (windowQuery.length ? windowQuery + "&" : "") + 'PageNum=' + context.options.currentPage;
+        url += ((context.options.requestPath.indexOf('?') === -1) ? '?' : '&')
+			// + (windowQuery.length ? windowQuery + "&" : "")
+				+ 'PageNum=' + context.options.currentPage;
 
         jqXHR = $.ajax({
             url: url,
@@ -97,7 +99,9 @@
 
             if (options.requestPath === null) {
                 throw "productsAutoLoad ==> Plugin option 'requestPath' must be specified";
-            };
+            } else {
+
+						}
             if (options.productsContainer === null) {
                 throw "productsAutoLoad ==> Plugin option 'productsContainer' must be specified";
             };

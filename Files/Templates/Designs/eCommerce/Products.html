@@ -153,33 +153,12 @@
 <!--@EndIf-->
 
 <script type="text/javascript">
-		require([ 'jquery', 'jquery-productsload', 'jquery-cookie' ], function($) {
+		require([ 'jquery', 'dw-productsload', 'jquery-cookie' ], function($) {
 
 				$(document).ready(function () {
 
-						var requestPageID = $(".container.productlist").data("autoloader-pageid");
-
-						/*
-						//Free shipping
-						var need = 50;
-						need = '<!--@If(Global:Area.ID==1)--><!--@Global:Paragraph.Content(1985)--><!--@EndIf--><!--@If(Global:Area.ID==17)--><!--@Global:Paragraph.Content(1986)--><!--@EndIf-->';
-
-						var basket = 0;
-						basket = '<!--@Ecom:Order.OrderLines.TotalPriceWithoutSymbol-->';
-						basket = parseInt(basket.replace(',', ''));
-						var free_shipping = parseInt(need) - basket;
-						if(free_shipping > 0){
-								$('.purchase').show();
-								$('.need_more').html(free_shipping);
-						}
-						else{
-								$('.purchase').hide();
-						}*/
-
-
-						//$('.purchase').hide();
-
-
+					var requestPageID = $(".container.productlist").data("autoloader-pageid");
+					var requestPath = '<!--@Global:Pageview.Url.Raw.JSEncoded()-->'.replace(/([?&]ID=)[0-9]+/i, '$1'+requestPageID);
 						<!--@If(Global:Area.ID!=22)-->
 						// Show added2Cart dialog
 						if ($.cookie("addedtocart") == '1') {
@@ -191,7 +170,8 @@
 						$(".productlist").productsAutoLoad({
 								productsContainer: ".productlist-wrapper",
 								pagingSelector: ".productlist-paging",
-								requestPath: "/Default.aspx?ID=" + requestPageID + "<!--@If Defined(Server:Request.groupid)-->&groupid=<!--@Server:Request.groupid--><!--@EndIf(Server:Request.groupid)-->",
+								// requestPath: "/Default.aspx?ID=" + requestPageID + "<!--@If Defined(Server:Request.groupid)-->&groupid=<!--@Server:Request.groupid--><!--@EndIf(Server:Request.groupid)-->",
+							requestPath: requestPath,
 								onProductsLoaded: function () {
 									// Update product list counter
 									$.updateProductsListCounter({

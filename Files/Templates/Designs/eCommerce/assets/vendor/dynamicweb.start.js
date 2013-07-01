@@ -35,7 +35,7 @@ require.config({
 		'jquery-query' : '../vendor/jquery.query.min',
 		'jquery-lazyload' : '../vendor/jquery.lazyload.min',
 		'jquery-wrapmenu' : 'jquery.wrapMenu.min',
-		'productsload' : 'dynamicweb.productsAutoLoad.min',
+		'dw-productsload' : 'dynamicweb.productsAutoLoad',
 		'jquery-instantarrows': 'jquery.instantArrows.min',
 		'jquery-printElement' : '../vendor/jquery.printElement',
 		'jquery-zoom' : '../vendor/jquery.zoom',
