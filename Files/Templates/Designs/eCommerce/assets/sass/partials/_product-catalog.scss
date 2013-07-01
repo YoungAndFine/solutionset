@@ -189,16 +189,23 @@
 					font: 18px/40px arial;
 					text-align: center;
 
+					$arrow-width: 8px;
+
 					&:after {
-						bottom: -14px;
 						content: '';
-						height: 20px;
+						width: 0;
+						height: 0;
 						left: 50%;
-						margin-left: -15px;
+						bottom: -2 * $arrow-width;
+						margin-left: -$arrow-width;;
 						position: absolute;
-						width: 30px;
-						background: url('../images/filters_selection_tr.png') no-repeat center top;
+						border: {
+							width: $arrow-width;
+							color: #F8941D transparent transparent transparent;
+							style: solid;
+						}
 					}
+
 					.btn {
 						float: right;
 						margin: 7px 10px 0 0;
