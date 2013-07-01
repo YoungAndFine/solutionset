@@ -1,104 +1,101 @@
 ﻿<style>
 	input[type=text]				{width:300px;height:30px;font-size:18px;}
 	input[type=password]			{width:300px;height:30px;font-size:18px;}
-	select          				{width:304px;height:30px;font-size:18px;}
+	select									{width:304px;height:30px;font-size:18px;}
 	.EditUser						{width:450px;float:left;padding:10px;}
-	label	                 	    {clear:both;float:left;}
-    label span 	                	{width:120px;float:left;padding-top:5px;}
+	label												{clear:both;float:left;}
+	label span										{width:120px;float:left;padding-top:5px;}
 </style>
 
 <div class="EditUser">
-
 	<!--@UserManagement:User.FormStart-->
-        <label>
-		    <span><b><!--@Translate(Username, "Username")--></b></span>
-		    <span><!--@UserManagement:User.UserName.Input--></span>
-        </label>
+	<label>
+		<span><b><!--@Translate(Username, "Username")--></b></span>
+		<span><!--@UserManagement:User.UserName.Input--></span>
+	</label>
 
-        <label>
-		    <span><b><!--@Translate(oldpassword, "Old password")-->:</b></span>
-		    <span><input name="UserManagement_Form_OldPassword" type="password" id="UserManagement_Form_OldPassword" value="<!--@Global:Extranet.Password-->"></span>
-        </label>
+	<label>
+		<span><b><!--@Translate(oldpassword, "Old password")-->:</b></span>
+		<span><input name="UserManagement_Form_OldPassword" type="password" id="UserManagement_Form_OldPassword" value="<!--@Global:Extranet.Password-->"></span>
+	</label>
 
-        <label>
-	    	<span><b><!--@Translate(newpassword, "New password")--></b></span>
-    		<span><!--@UserManagement:User.NewPassword.Input--></span>
-        </label>
+	<label>
+		<span><b><!--@Translate(newpassword, "New password")--></b></span>
+		<span><!--@UserManagement:User.NewPassword.Input--></span>
+	</label>
 
-        <label>
-		    <span><b><!--@Translate(confirmpassword, "Confirm password")--></b></span>
-		    <span><!--@UserManagement:User.NewPasswordConfirm.Input--></span>
-        </label>
+	<label>
+		<span><b><!--@Translate(confirmpassword, "Confirm password")--></b></span>
+		<span><!--@UserManagement:User.NewPasswordConfirm.Input--></span>
+	</label>
 
-        <label>
-		    <span><b><!--@Translate(Name, "Name")--></b></span>
-		    <span><!--@UserManagement:User.Name.Input--></span>
-        </label>
-		
-        <label>
-		    <span><b><!--@Translate(Email, "E-mail")--></b></span>
-		    <span><!--@UserManagement:User.Email.Input--></span>
-        </label>
+	<label>
+		<span><b><!--@Translate(Name, "Name")--></b></span>
+		<span><!--@UserManagement:User.Name.Input--></span>
+	</label>
 
-        <label>
-		    <span><b><!--@Translate(Address, "Address")--></b></span>
-		    <span><!--@UserManagement:User.Address.Input--></span>
-        </label>
+	<label>
+		<span><b><!--@Translate(Email, "E-mail")--></b></span>
+		<span><!--@UserManagement:User.Email.Input--></span>
+	</label>
 
-        <label>
-		    <span><b><!--@Translate(Zip, "Zip")--></b></span>
-		    <span><!--@UserManagement:User.Zip.Input--></span>
-        </label>
-        
-        <label>
-		    <span><b><!--@Translate(City, "City")--></b></span>
-		    <span><!--@UserManagement:User.City.Input--></span>
-        </label>
+	<label>
+		<span><b><!--@Translate(Address, "Address")--></b></span>
+		<span><!--@UserManagement:User.Address.Input--></span>
+	</label>
 
-        <label>
-		    <span><b><!--@Translate(Country, "Country")--></b></span>
-		    <span>
-							<select name="CustomField.AccessUser_AccessUser_Country2" id="CustomField.AccessUser_AccessUser_Country2">
-								<!--@LoopStart(UserManagement:User.CustomFields)-->
-								<!--@If(UserManagement:User.CustomFields.LoopCounter=2)-->
-                        <option value="1" <!--@If(CustomField.Value=1)-->selected="selected"<!--@EndIf-->>Danmark</option>
-                        <option value="2" <!--@If(CustomField.Value=2)-->selected="selected"<!--@EndIf-->>Finland</option>
-                        <option value="3" <!--@If(CustomField.Value=3)-->selected="selected"<!--@EndIf-->>Norge</option>
-                        <option value="4" <!--@If(CustomField.Value=4)-->selected="selected"<!--@EndIf-->>Sverige</option>
-                        <option value="5" <!--@If(CustomField.Value=5)-->selected="selected"<!--@EndIf-->>Tyskland</option>
-                        <option value="6" <!--@If(CustomField.Value=6)-->selected="selected"<!--@EndIf-->>USA</option>
-								<!--@EndIf-->
-								<!--@LoopEnd(UserManagement:User.CustomFields)-->
-							</select>
-            </span>
-        </label>
+	<label>
+		<span><b><!--@Translate(Zip, "Zip")--></b></span>
+		<span><!--@UserManagement:User.Zip.Input--></span>
+	</label>
 
-        <label>
-	        <span><b><!--@Translate(Phone, "Phone")--></b></span>
-	        <span><!--@UserManagement:User.Phone.Input--></span>
-		</label>
+	<label>
+		<span><b><!--@Translate(City, "City")--></b></span>
+		<span><!--@UserManagement:User.City.Input--></span>
+	</label>
 
-        <label>
-            <span>&nbsp;</span>
-		    <span><input type="submit" id="submitter" style="width:150px;height:30px;" value="<!--@Translate(edituser, "Submit")-->" /></span>
-        </label>
-					<!--@UserManagement:User.FormEnd-->
-				</div>
-	
+	<label>
+		<span><b><!--@Translate(Country, "Country")--></b></span>
+		<span>
+			<select name="CustomField.AccessUser_AccessUser_Country2" id="CustomField.AccessUser_AccessUser_Country2">
+				<!--@LoopStart(UserManagement:User.CustomFields)-->
+				<!--@If(UserManagement:User.CustomFields.LoopCounter=2)-->
+				<option value="1" <!--@If(CustomField.Value=1)-->selected="selected"<!--@EndIf-->>Danmark</option>
+				<option value="2" <!--@If(CustomField.Value=2)-->selected="selected"<!--@EndIf-->>Finland</option>
+				<option value="3" <!--@If(CustomField.Value=3)-->selected="selected"<!--@EndIf-->>Norge</option>
+				<option value="4" <!--@If(CustomField.Value=4)-->selected="selected"<!--@EndIf-->>Sverige</option>
+				<option value="5" <!--@If(CustomField.Value=5)-->selected="selected"<!--@EndIf-->>Tyskland</option>
+				<option value="6" <!--@If(CustomField.Value=6)-->selected="selected"<!--@EndIf-->>USA</option>
+				<!--@EndIf-->
+				<!--@LoopEnd(UserManagement:User.CustomFields)-->
+			</select>
+		</span>
+	</label>
+
+	<label>
+		<span><b><!--@Translate(Phone, "Phone")--></b></span>
+		<span><!--@UserManagement:User.Phone.Input--></span>
+	</label>
+
+	<label>
+		<span>&nbsp;</span>
+		<span><input type="submit" id="submitter" style="width:150px;height:30px;" value="<!--@Translate(edituser, "Submit")-->" /></span>
+	</label>
+	<!--@UserManagement:User.FormEnd-->
+</div>
+
 <input type="submit" onClick="history.go(-1);return true;" value="<!--@Translate(cancel, "Cancel")-->" style="width:70px;height:30px;position:absolute;margin:460px 0 0 -105px;" />
 
 <div style="float:left">
-    <!--@LoopStart(FormValidationErrors)-->
-	    <!--@HeaderStart-->
-		    <div id="errormessages">
-			    <ul>
-	    <!--@HeaderEnd-->
-				    <li>Error in the input field "<!--@UserManagement:User.FormValidationError.FieldNiceName-->": <a href="javascript:document.getElementById('<!--@UserManagement:User.FormValidationError.FieldName-->').focus();"><!--@UserManagement:User.FormValidationError.Message--></a></li>
-	    <!--@FooterStart-->
-			    </ul>
-			</div>
-	    <!--@FooterEnd-->
-    <!--@LoopEnd(FormValidationErrors)-->
-		</div>
+	<!--@LoopStart(FormValidationErrors)-->
+	<!--@HeaderStart-->
+	<div id="errormessages">
+		<ul>
+			<!--@HeaderEnd-->
+			<li>Error in the input field "<!--@UserManagement:User.FormValidationError.FieldNiceName-->": <a href="javascript:document.getElementById('<!--@UserManagement:User.FormValidationError.FieldName-->').focus();"><!--@UserManagement:User.FormValidationError.Message--></a></li>
+			<!--@FooterStart-->
+		</ul>
 	</div>
+	<!--@FooterEnd-->
+	<!--@LoopEnd(FormValidationErrors)-->
 </div>

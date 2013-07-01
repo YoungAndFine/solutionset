@@ -1,17 +1,17 @@
 <!--@Layout.Title(Slide Active)-->
 <!--@Layout.Description(Active by the default slide section template for carousel)-->
 <div class="item active">
-   <a href="<!--@Item.Link-->">
-    <span class="hidden buttonName"><!--@Item.ButtonName--></span>
-    <!--@If Defined(Item.Image)-->
-    <img alt="" data-src="<!--@Item.Image-->" data-sizes="{'w1200':'original','w768':[750],'w480':[480]}">
-    <!--@EndIf(Item.Image)-->
-    <!--@If Not Defined(Item.Image)-->
-    <img src="<!--@ParagraphImageClean-->" alt="">
-    <!--@EndIf(Item.Image)-->
-    <div class="carousel-caption">
-      <h4><!--@Item.Headline--></h4>
-      <!--@Item.TextSlideContent-->
-    </div>
-  </a>
+	 <a href="<!--@Item.Link-->">
+		<span class="hidden buttonName"><!--@Item.ButtonName--></span>
+		<!--@If Defined(Item.Image)-->
+		<img alt="" data-src="<!--@Item.Image-->" data-sizes="{'w1200':'original','w768':[750],'w480':[480]}">
+		<!--@EndIf(Item.Image)-->
+		<!--@If Not Defined(Item.Image)-->
+		<img src="<!--@ParagraphImageClean-->" alt="">
+		<!--@EndIf(Item.Image)-->
+		<div class="carousel-caption">
+			<h4><!--@Item.Headline--></h4>
+			<!--@Item.TextSlideContent-->
+		</div>
+	</a>
 </div>

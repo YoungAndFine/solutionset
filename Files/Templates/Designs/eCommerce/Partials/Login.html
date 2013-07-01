@@ -1,10 +1,10 @@
 <!--@If(Global:Extranet.UserID==0)-->
 <div class="modal hide fade modal-type-loginbox" id="LoginBox" tabindex="-1" role="dialog">
 	<div class="modal-header">
-    <button type="button" class="close blue-close icon-remove" data-dismiss="modal"></button>
+		<button type="button" class="close blue-close icon-remove" data-dismiss="modal"></button>
 
 		<h3>
-      <span class="icon-key"></span>
+			<span class="icon-key"></span>
 			<!--@Translate(CustomerLogin, "Customer login")-->
 		</h3>
 	</div>
@@ -93,22 +93,22 @@
 </div>
 
 <div class="modal hide fade modal-type-loginbox" id="signUpModal" tabindex="-1" role="dialog">
-  <div class="modal-header">
-    <button type="button" class="close blue-close icon-remove" data-dismiss="modal"></button>
-    <h3><!--@Translate(signup, "Signup")--></h3>
-  </div>
-  <div class="modal-body">
-    <div class="row-fluid no-space">
-      <div class="loader"></div>
-    </div>
-  </div>
+	<div class="modal-header">
+		<button type="button" class="close blue-close icon-remove" data-dismiss="modal"></button>
+		<h3><!--@Translate(signup, "Signup")--></h3>
+	</div>
+	<div class="modal-body">
+		<div class="row-fluid no-space">
+			<div class="loader"></div>
+		</div>
+	</div>
 </div>
 
 <!--@Else-->
 <script>(function() {
-var redirectUrl = '<!--@Server:Request.redirect.JSEncoded()-->';
-if (redirectUrl) {
-document.location.href = redirectUrl;
-}
+	var redirectUrl = '<!--@Server:Request.redirect.JSEncoded()-->';
+	if (redirectUrl) {
+		document.location.href = redirectUrl;
+	}
 }())</script>
 <!--@EndIf-->

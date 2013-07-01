@@ -1,9 +1,9 @@
 <div class="grid_12 wrapper-content customer-center" style="overflow:hidden;min-height:450px;">
 	<!--@Ecom:CustomerCenter.Menu-->
-  <div class="grid_9 customer-center-content main">
-    <div class="rounded-box left-menu">
+	<div class="grid_9 customer-center-content main">
+		<div class="rounded-box left-menu">
 			<h3><!--@Translate(search, "Search")--></h3>
-      <div class="rounded-box-content">
+			<div class="rounded-box-content">
 				<!--@Ecom:CustomerCenter.SearchJavascript-->
 				<!--@Ecom:CustomerCenter.SearchForm.Begin-->
 				<table class="search_orders_table">
@@ -14,13 +14,13 @@
 					<tr>
 						<td><!--@Translate(text, "Text")--></td>
 						<td>
-              <input type="text" style="width: 100%" name="CCFilterFreetext<!--@Ecom:CustomerCenter.PID-->" value="<!--@Ecom:CustomerCenter.Search.Freetext-->" />
+							<input type="text" style="width: 100%" name="CCFilterFreetext<!--@Ecom:CustomerCenter.PID-->" value="<!--@Ecom:CustomerCenter.Search.Freetext-->" />
 						</td>
 					</tr>
 					<tr>
 						<td><strong><!--@Translate(products, "Products")--></strong></td>
 						<td>
-              <select name="CCFilterProductID<!--@Ecom:CustomerCenter.PID-->" style="width: 100%;">
+							<select name="CCFilterProductID<!--@Ecom:CustomerCenter.PID-->" style="width: 100%;">
 								<option value=""><!--@Translate(anyproduct, "Any product")--></option>
 								<!--@Ecom:CustomerCenter.Search.Products-->
 							</select>
@@ -68,10 +68,10 @@
 						<td><input type="text" name="CCFilterToAmount<!--@Ecom:CustomerCenter.PID-->" onkeypress="return numbersOnly(this, event);" value="<!--@Ecom:CustomerCenter.Search.ToAmount-->" /></td>
 					</tr>
 
-          <tr>
-            <td colspan="2">
-              <input type="button" onclick="javascript: CustomerCenterPerformSearch();" value="Search" />
-              <input type="button" onclick="javascript: CustomerCenterClearSearch();" value="Clear" />
+					<tr>
+						<td colspan="2">
+							<input type="button" onclick="javascript: CustomerCenterPerformSearch();" value="Search" />
+							<input type="button" onclick="javascript: CustomerCenterClearSearch();" value="Clear" />
 						</td>
 					</tr>
 				</table>

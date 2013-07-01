@@ -1,24 +1,24 @@
 ﻿<script type="text/javascript">
-  $(document).ready(function () {
-  	var form =  $('form[name="<!--@UserManagement:User.Email.InputName-->"]')
-  		, inputEmail = $('input[name="<!--@UserManagement:User.Email.InputName-->"]')
-  		, inputPass = $('input[name="<!--@UserManagement:User.NewPassword.InputName-->"]')
-  		, inputPassConf = $('input[name="<!--@UserManagement:User.NewPasswordConfirm.InputName-->"]')
-  		, inputName = $('input[name="<!--@UserManagement:User.Name.InputName-->"]')
-  		;
+	$(document).ready(function () {
+		var form =	$('form[name="<!--@UserManagement:User.Email.InputName-->"]')
+			, inputEmail = $('input[name="<!--@UserManagement:User.Email.InputName-->"]')
+			, inputPass = $('input[name="<!--@UserManagement:User.NewPassword.InputName-->"]')
+			, inputPassConf = $('input[name="<!--@UserManagement:User.NewPasswordConfirm.InputName-->"]')
+			, inputName = $('input[name="<!--@UserManagement:User.Name.InputName-->"]')
+			;
 
-   form.submit(function () {
-      if (
-      	inputName.val() == '' ||
-      	inputPass.val() == '' ||
-      	inputPassConf.val() == '' ||
-      	inputName.val() == ''
-    	) {
-        alert('<!--@Translate(pleasefill, "Please fills all requirred fields")-->');
-        return false;
-      }
-    });
-  });
+	 form.submit(function () {
+			if (
+				inputName.val() == '' ||
+				inputPass.val() == '' ||
+				inputPassConf.val() == '' ||
+				inputName.val() == ''
+			) {
+				alert('<!--@Translate(pleasefill, "Please fills all requirred fields")-->');
+				return false;
+			}
+		});
+	});
 </script>
 
 <h4 class="required-hint"><!--@Translate(fieldsisrequired, "* fields is required")--></h4>
@@ -37,24 +37,24 @@
 	<input type="text" class="input-block-level" name="<!--@UserManagement:User.Address.InputName-->" spellcheck="false" placeholder='<!--@Translate(Address, "Address")-->' required="true">
 	<input type="text" class="input-block-level" name="<!--@UserManagement:User.Address2.InputName-->" spellcheck="false" placeholder='<!--@Translate(Address2, "Address 2")-->'>
 
-  <div class="row-fluid">
-    <div class="span4">
-      <input type="text" class="input-block-level" name="<!--@UserManagement:User.Zip.InputName-->" spellcheck="false" placeholder='<!--@Translate(Zip, "Zip")-->' required="true">
-    </div>
-    <div class="span8">
-      <input type="text" class="input-block-level" name="<!--@UserManagement:User.City.InputName-->" spellcheck="false" placeholder='<!--@Translate(City, "City")-->' required="true">
-    </div>
-  </div>
+	<div class="row-fluid">
+		<div class="span4">
+			<input type="text" class="input-block-level" name="<!--@UserManagement:User.Zip.InputName-->" spellcheck="false" placeholder='<!--@Translate(Zip, "Zip")-->' required="true">
+		</div>
+		<div class="span8">
+			<input type="text" class="input-block-level" name="<!--@UserManagement:User.City.InputName-->" spellcheck="false" placeholder='<!--@Translate(City, "City")-->' required="true">
+		</div>
+	</div>
 
-  <select class="input-block-level" name="CustomField.AccessUser_AccessUser_Country2" id="CustomField.AccessUser_AccessUser_Country2">
-    <option value="1" selected="selected"><!--@Translate(denmark, "Denmark")--></option>
-    <option value="2"><!--@Translate(finland, "Finland")--></option>
-    <option value="3"><!--@Translate(norway, "Norway")--></option>
-    <option value="4"><!--@Translate(sweden, "Sweden")--></option>
-    <option value="5"><!--@Translate(germany, "Germany")--></option>
-    <option value="6"><!--@Translate(usa, "USA")--></option>
-  </select>
+	<select class="input-block-level" name="CustomField.AccessUser_AccessUser_Country2" id="CustomField.AccessUser_AccessUser_Country2">
+		<option value="1" selected="selected"><!--@Translate(denmark, "Denmark")--></option>
+		<option value="2"><!--@Translate(finland, "Finland")--></option>
+		<option value="3"><!--@Translate(norway, "Norway")--></option>
+		<option value="4"><!--@Translate(sweden, "Sweden")--></option>
+		<option value="5"><!--@Translate(germany, "Germany")--></option>
+		<option value="6"><!--@Translate(usa, "USA")--></option>
+	</select>
 
-	<input type="submit" class="btn dw-button dw-button-green" value='<!--@Translate(signup, "Signup")-->'>
+	<input type="submit" class="btn dw-button dw-button-green" value='<!--@Translate(signup, "Signup")-->'/>
 </form>
 <!--@UserManagement:User.FormEnd-->
