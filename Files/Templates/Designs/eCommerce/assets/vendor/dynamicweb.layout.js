@@ -424,22 +424,23 @@ Layout.Products = (function (m) {
 
 	function convertReviewLayout() {
 		$('*[itemprop="rating"]').each(function(index, el) {
-		var $el = $(el),
+			var $el = $(el),
 			value = get(el, 'average'),
 			best = get(el, 'best');
-		// debugger;
-		if (value && best) {
-			var percent = (100*value/best).toFixed(4);
-			$el.contents().wrapAll('<span class="hidden"/>');
-			$el.addClass(Layout.params.productRatingUnderlayClass)
-			.css('width', best+'em')
-			.append(
-				$('<span class="' + Layout.params.productRatingStarClass + '"/>')
-				// .css('width', value+'em')
-				.css('width', percent+'%')
-				.html(value)
-			);
-		}
+			// debugger;
+			if (value && best) {
+				var percent = (100*value/best).toFixed(4);
+				$el.parent().addClass('hidden')
+					.next('.stars-container')
+					// .removeClass('hidden')
+					.prepend('<div class="rating" style="width: '+percent+'%">'
+									 +'<i class="icon-star"></i>'
+									 +'<i class="icon-star"></i>'
+									 +'<i class="icon-star"></i>'
+									 +'<i class="icon-star"></i>'
+									 +'<i class="icon-star"></i>'
+									 +'</div>');
+			}
 		});
 	};
 
