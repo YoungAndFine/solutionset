@@ -42,7 +42,7 @@
 							<!--@If Defined(Ecom:Product.ImageSmall.Default.Clean)-->
 							<div class="product-image span3">
 								<a href="<!--@Ecom:Product.LinkGroup.Clean-->" title="<!--@Ecom:Product.Name-->" class="thumbnail">
-									<img src="/Admin/Public/getimage.ashx?Image=<!--@Ecom:Product.ImageSmall.Default.Clean-->&amp;Width=160" alt="" />
+									<img src="/Admin/Public/GetImage.ashx?Image=<!--@Ecom:Product.ImageSmall.Default.Clean-->&amp;Width=160" alt="" />
 								</a>
 							</div>
 							<!--@EndIf(Ecom:Product.ImageSmall.Default.Clean)-->
@@ -52,19 +52,15 @@
 								</div>
 								<div class="product-rating-comments">
 									<div class="product-rating">
-										<span itemscope itemtype="http://data-vocabulary.org/Review-aggregate">
+										<span itemscope="" itemtype="http://data-vocabulary.org/Review-aggregate">
 											<span itemprop="itemreviewed" class="hidden"><!--@Ecom:Product.Name--></span>
 											<span itemprop="rating" itemscope itemtype="http://data-vocabulary.org/Rating">
-												<span itemprop="average"><!--@Ecom:Product.Rating--></span>
-												out of
-												<span itemprop="best">5</span>
+												<span itemprop="average"><!--@Ecom:Product.Rating--></span> out of <span itemprop="best">5</span>
 											</span>
-											<div class="product-comments">
-												<div class="icon-comment-alt icon-flip-horizontal"></div>
-												(<a href="<!--@Ecom:Product.LinkGroup.Clean-->&TabReviews=true"><span itemprop="count"><!--@Ecom:Product.CommentCount--></span></a>)
-											</div>
 										</span>
-										<div style="width: 100px;" class="empty-stars-container"><i class="icon-star-empty star-showing star1"></i><i class="icon-star-empty star-showing star2"></i><i class="icon-star-empty star-showing star3"></i><i class="icon-star-empty star-showing star4"></i><i class="icon-star-empty star-showing star5"></i></div>
+										<div class="stars-container">
+											<i class="icon-star-empty"></i><i class="icon-star-empty"></i><i class="icon-star-empty"></i><i class="icon-star-empty"></i><i class="icon-star-empty"></i>
+										</div>
 									</div>
 								</div>
 								<div class="product-addtocart">
@@ -88,19 +84,15 @@
 								</div>
 								<div class="product-rating-comments visible-phone">
 									<div class="product-rating">
-										<span itemscope itemtype="http://data-vocabulary.org/Review-aggregate">
+										<span itemscope="" itemtype="http://data-vocabulary.org/Review-aggregate">
 											<span itemprop="itemreviewed" class="hidden"><!--@Ecom:Product.Name--></span>
 											<span itemprop="rating" itemscope itemtype="http://data-vocabulary.org/Rating">
-												<span itemprop="average"><!--@Ecom:Product.Rating--></span>
-												out of
-												<span itemprop="best">5</span>
+												<span itemprop="average"><!--@Ecom:Product.Rating--></span> out of <span itemprop="best">5</span>
 											</span>
-											<div class="product-comments">
-												<div class="icon-comment-alt icon-flip-horizontal"></div>
-												(<a href="<!--@Ecom:Product.LinkGroup.Clean-->&TabReviews=true"><span itemprop="count"><!--@Ecom:Product.CommentCount--></span></a>)
-											</div>
 										</span>
-										<div style="width: 100px;" class="empty-stars-container"><i class="icon-star-empty star-showing star1"></i><i class="icon-star-empty star-showing star2"></i><i class="icon-star-empty star-showing star3"></i><i class="icon-star-empty star-showing star4"></i><i class="icon-star-empty star-showing star5"></i></div>
+										<div class="stars-container">
+											<i class="icon-star-empty"></i><i class="icon-star-empty"></i><i class="icon-star-empty"></i><i class="icon-star-empty"></i><i class="icon-star-empty"></i>
+										</div>
 									</div>
 								</div>
 								<div class="product-addtocart visible-phone">
@@ -183,16 +175,16 @@
 					<td class="cart-cell-product">
 						<!--@If Defined(Ecom:Product.ID)-->
 						<!--@If Defined(Ecom:Product.ImageSmall.Default.Clean)-->
-						<img src="/Admin/Public/getimage.ashx?Image=<!--@Ecom:Product.ImageSmall.Default.Clean-->&Width=100" alt="" title="<!--@Ecom:Product.Name-->" />
+						<img src="/Admin/Public/GetImage.ashx?Image=<!--@Ecom:Product.ImageSmall.Default.Clean-->&Width=100" alt="" title="<!--@Ecom:Product.Name-->" />
 						<!--@EndIf(Ecom:Product.ImageSmall.Default.Clean)-->
 
 						<!--@If Not Defined(Ecom:Product.ImageSmall.Default.Clean)-->
-						<img src="/Admin/Public/getimage.ashx?Image=<!--@Ecom:Product.ImageLarge.Default.Clean-->&Width=100" alt="" title="<!--@Ecom:Product.Name-->" />
+						<img src="/Admin/Public/GetImage.ashx?Image=<!--@Ecom:Product.ImageLarge.Default.Clean-->&Width=100" alt="" title="<!--@Ecom:Product.Name-->" />
 						<!--@EndIf(Ecom:Product.ImageSmall.Default.Clean)-->
 						<!--@EndIf(Ecom:Product.ID)-->
 
 						<!--@If Not Defined(Ecom:Product.ID)-->
-						<img src="http://<!--@Global:Request.Host-->/Admin/Public/getimage.ashx?Image=/Files/Images/discount_pic.jpg&Width=100"/>
+						<img src="http://<!--@Global:Request.Host-->/Admin/Public/GetImage.ashx?Image=/Files/Images/discount_pic.jpg&Width=100"/>
 						<!--@EndIf(Ecom:Product.ID)-->
 
 						<!--@If Not Defined(Ecom:Product.ID)-->
