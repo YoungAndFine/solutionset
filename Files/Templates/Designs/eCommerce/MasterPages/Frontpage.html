@@ -60,9 +60,9 @@
 		<footer>
 			<section class="container footer-wrapper">
 				<div class="row" id="footerSections" title="Footer sections">
-					<!--@If Defined(Item.Area.Footer_Content_Page_ID)-->
+					<!--@If(Item.Area.Footer_Content_Page_ID>0)-->
 					<!--@Global:Page.Content(<!--@Item.Area.Footer_Content_Page_ID-->)-->
-					<!--@EndIf(Item.Area.Footer_Content_Page_ID)-->
+					<!--@EndIf-->
 				</div>
 			</section>
 		</footer>
