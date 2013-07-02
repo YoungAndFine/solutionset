@@ -1,18 +1,18 @@
 <!--@If Defined(Ecom:Filters.HasGroups)-->
 <!--@If Defined(Ecom:Filters.HasNonEmptyGroups)-->
 <div class="filter-wrapper">
-  <h3><!--@Ecom:CurrentGroup.Name--></h3>
-  <div class="filter-content">
-    <ul>
-    <!--@LoopStart(Ecom:Filters.Groups)-->
-      <!--@If(Ecom:Group.Total>0)-->
-      <li>
-        <a href="/Default.aspx?ID=<!--@Global:Page.ID-->&GroupID=<!--@Ecom:Group.ID-->"><!--@Ecom:Group.Name-->&nbsp;(<!--@Ecom:Group.TotalFormatted-->)</a>
-      </li>
-      <!--@EndIf-->
-    <!--@LoopEnd(Ecom:Filters.Groups)-->
-    </ul>
-  </div>
+	<h3><!--@Ecom:CurrentGroup.Name--></h3>
+	<div class="filter-content">
+		<ul>
+			<!--@LoopStart(Ecom:Filters.Groups)-->
+			<!--@If(Ecom:Group.Total>0)-->
+			<li>
+				<a href="/Default.aspx?ID=<!--@Global:Page.ID-->&GroupID=<!--@Ecom:Group.ID-->"><!--@Ecom:Group.Name-->&nbsp;(<!--@Ecom:Group.TotalFormatted-->)</a>
+			</li>
+			<!--@EndIf-->
+			<!--@LoopEnd(Ecom:Filters.Groups)-->
+		</ul>
+	</div>
 </div>
 <!--@EndIf(Ecom:Filters.HasNonEmptyGroups)-->
 <!--@EndIf(Ecom:Filters.HasGroups)-->

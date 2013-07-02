@@ -1,21 +1,21 @@
-<div class="filter-wrapper filter-price <!--@If(Global:Area.ID!=1)--><!--@If(Global:Area.ID!=17)--><!--@If(Global:Area.ID!=22)--><!--@If(Global:Extranet.UserID==0)-->hidden<!--@EndIf--><!--@EndIf--><!--@EndIf--><!--@EndIf-->">
-  <h3><!--@Filters:Current.Name--></h3>
-  <div class="filter-content">
-    <div class="filter-slider-container-wrapper">
-      <div id="filter-price-slider" class="filter-slider-container"
-        data-slider-range="true" 
-        data-slider-from="<!--@Ecom:Filters.Price.ContextFrom-->" 
-        data-slider-to="<!--@Ecom:Filters.Price.ContextTo-->"
-        data-slider-value-from="<!--@Ecom:Filters.Price.CurrentFrom-->"
-        data-slider-value-to="<!--@Ecom:Filters.Price.CurrentTo-->"></div>
-				
-      <input type="hidden" name="<!--@Filters:Current.TagName-->" 
-          value="<!--@Ecom:Filters.Price.CurrentFrom-->-<!--@Ecom:Filters.Price.CurrentTo-->"
-          class="filter-slider-value-container" />
+<div class="filter-wrapper filter-price">
+	<h3><!--@Filters:Current.Name--></h3>
+	<div class="filter-content">
+		<div class="filter-slider-container-wrapper">
+			<div id="filter-price-slider" class="filter-slider-container"
+					 data-slider-range="true"
+					 data-slider-from="<!--@Ecom:Filters.Price.ContextFrom-->"
+					 data-slider-to="<!--@Ecom:Filters.Price.ContextTo-->"
+					 data-slider-value-from="<!--@Ecom:Filters.Price.CurrentFrom-->"
+					 data-slider-value-to="<!--@Ecom:Filters.Price.CurrentTo-->"></div>
+
+			<input type="hidden" name="<!--@Filters:Current.TagName-->"
+						 value="<!--@Ecom:Filters.Price.CurrentFrom-->-<!--@Ecom:Filters.Price.CurrentTo-->"
+						 class="filter-slider-value-container" />
+		</div>
+		<div class="clearfix"></div>
+		<span class="filter-slider-from"><span class="filter-slider-from-value"><!--@Ecom:Filters.Price.ContextFrom--></span></span>
+		<span class="filter-slider-to"><span class="filter-slider-to-value"><!--@Ecom:Filters.Price.ContextTo--></span></span>
+		<div class="clearfix"></div>
+	</div>
 </div>
-    <div class="clearfix"></div>
-    <span class="filter-slider-from"><span class="filter-slider-from-value"><!--@Ecom:Filters.Price.ContextFrom--></span></span>
-    <span class="filter-slider-to"><span class="filter-slider-to-value"><!--@Ecom:Filters.Price.ContextTo--></span></span>
-    <div class="clearfix"></div>
-  </div> <!-- / .filter-container -->
-</div> <!-- / .filter-wrapper -->
