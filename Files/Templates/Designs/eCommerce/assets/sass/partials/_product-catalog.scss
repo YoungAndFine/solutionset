@@ -34,6 +34,7 @@
 			margin-top: 10px;
 			padding: 0 0 0 10px;
 		}
+
 		[class*=span] {
 			&:last-child {
 				float: right;
@@ -42,7 +43,8 @@
 				font-size: 14px;
 			}
 		}
-		.list-mode {
+
+		div.list-mode {
 			padding: 0 10px;
 			float: right;
 
