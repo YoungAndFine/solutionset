@@ -6,7 +6,11 @@
 					<label style="display:none;" for="q-bottom">&nbsp;</label>
 					<input type="hidden" id="searchstring" value="I want">
 					<input type="hidden" value="<!--@Item.Area.Products_Catalog_Page_ID-->" name="ID">
-					<input type="text" spellcheck="false" autocomplete="off" name="eComQuery" id="q-bottom">
+					<!--@If Defined(Server:Request.ecomquery)-->
+					<input type="text" spellcheck="false" autocomplete="off" name="eComQuery" id="q-bottom" value="<!--@Server:Request.ecomquery-->"/>
+					<!--@Else-->
+					<input type="text" spellcheck="false" autocomplete="off" name="eComQuery" id="q-bottom"/>
+					<!--@EndIf-->
 					<input type="submit" onclick="eCommerce.Overlay.show(document.body);" value="Search" class="dw-button dw-button-green">
 					<div id="search-box-preloader-bottom"></div>
 				</form>
