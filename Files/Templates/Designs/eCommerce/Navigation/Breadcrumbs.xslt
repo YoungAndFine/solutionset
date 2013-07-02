@@ -29,7 +29,9 @@
 				</xsl:attribute>
 				<xsl:value-of select="@MenuText" disable-output-escaping="yes"/>
 			</a>
-			<span class="divider sprite arr-forward-small"></span>
+
+			<xsl:variable name="arrow"><![CDATA[<span class="divider sprite arr-forward-small"></span>]]></xsl:variable>
+			<xsl:value-of select="$arrow" disable-output-escaping="yes"/>
 		</li>
 	</xsl:template>
 </xsl:stylesheet>
