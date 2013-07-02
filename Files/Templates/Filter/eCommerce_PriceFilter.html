@@ -1,0 +1,28 @@
+<div id="price-filter">
+	<h3><!--@Translate(PriceFilterTitle, "Price")--></h3>
+	<ul>
+		<li>
+			<input type="radio" id="priceNotSpecified" name="<!--@Filters:Current.TagName-->" value="" />
+			<label for="priceNotSpecified">
+				<!--@Translate(PriceFilterNotSpecified, "Not specified")-->
+			</label>
+		</li>
+		<!--@LoopStart(Ecom:Filters.Price.Rows)-->
+		<li>
+			<input type="radio" id="price<!--@Ecom:Filters.Price.Rows.LoopCounter-->" name="<!--@Filters:Current.TagName-->" value="<!--@Ecom:Filters.Price.Row.Lower.PriceWithoutVAT-->-<!--@Ecom:Filters.Price.Row.Upper.PriceWithoutVAT-->" <!--@Ecom:Filters.Price.Row.CheckedState--> />
+			<label for="price<!--@Ecom:Filters.Price.Rows.LoopCounter-->">
+				<!--@Ecom:Filters.Price.Row.Lower.PriceWithoutVAT-->&nbsp;-&nbsp;
+				<!--@If Defined(Ecom:Filters.Price.Row.IsUnlimited)-->
+				<!--@Translate(PriceFilterUnlimited, "[unlimited]")-->
+				<!--@EndIf(Ecom:Filters.Price.Row.IsUnlimited)-->
+				
+				<!--@If Not Defined(Ecom:Filters.Price.Row.IsUnlimited)-->
+				<!--@Ecom:Filters.Price.Row.Upper.PriceWithoutVAT-->
+				<!--@EndIf(Ecom:Filters.Price.Row.IsUnlimited)-->
+				&nbsp;<span>(<!--@Ecom:Filters.Price.Row.TotalFormatted-->)</span>
+			</label>
+		</li>
+		<!--@LoopEnd(Ecom:Filters.Price.Rows)-->
+	</ul>
+</div>
+

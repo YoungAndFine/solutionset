@@ -1,0 +1,21 @@
+<div class="filter-wrapper filter-rating">
+  <h3><!--@Filters:Current.Name--></h3>
+  <div class="filter-content ">
+    <div class="filter-slider-container-wrapper">
+      <div id="filter-price-slider" class="filter-slider-container"
+        data-slider-range="true" 
+        data-slider-from="<!--@Ecom:Filters.Range.From-->" 
+        data-slider-to="<!--@Ecom:Filters.Range.To-->"
+        data-slider-value-from="<!--@Ecom:Filters.Range.CurrentFrom-->"
+        data-slider-value-to="<!--@Ecom:Filters.Range.CurrentTo-->"></div>
+    
+      <input type="hidden" name="<!--@Filters:Current.TagName-->" 
+        value="<!--@Ecom:Filters.Range.CurrentFrom-->-<!--@Ecom:Filters.Range.CurrentTo-->"
+        class="filter-slider-value-container" />
+    </div>
+    <div class="clearfix"></div>
+    <span class="filter-slider-from"><span class="filter-slider-from-value"><!--@Ecom:Filters.Range.CurrentFrom--></span></span>
+    <span class="filter-slider-to"><span class="filter-slider-to-value"><!--@Ecom:Filters.Range.CurrentTo--></span></span>
+    <div class="clearfix"></div>
+  </div> <!-- / .filter-container -->
+</div> <!-- / .filter-wrapper -->
