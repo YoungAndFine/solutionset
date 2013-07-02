@@ -430,7 +430,7 @@ Layout.Products = (function (m) {
 			// debugger;
 			if (value && best) {
 				var percent = (100*value/best).toFixed(4);
-				$el.parent().addClass('hidden')
+				$el.addClass('hidden')
 					.next('.stars-container')
 					// .removeClass('hidden')
 					.prepend('<div class="rating" style="width: '+percent+'%">'
