@@ -22,7 +22,7 @@
 			<!--@EndIf-->
 			<!--@EndIf-->
 
-			<form class="form-horizontal" action="<!--@Global:Pageview.Url-->" method="post" onsubmit="return Layout.LoginBox.validate(this);">
+			<form class="form-horizontal" method="post" onsubmit="return Layout.LoginBox.validate(this);">
 				<input type="hidden" name="ID" value="<!--@Global:Page.ID-->" />
 				<input type="hidden" name="redirect" value="" />
 				<input type="hidden" name="DWExtranetUsernameRemember" value="True" />
@@ -52,7 +52,7 @@
 		</div>
 
 		<div class="login-box-mode" data-login-box-mode="lostpassword" style="display: none">
-			<form class="form-horizontal" action="/Default.aspx" method="post" onsubmit="return Layout.LoginBox.validate(this) ? $('#emailsent').show() : false;">
+			<form class="form-horizontal" method="post" onsubmit="return Layout.LoginBox.validate(this) ? $('#emailsent').show() : false;">
 				<input type="hidden" name="ID" value="<!--@Global:Page.ID-->" />
 				<input type="hidden" name="ForgotPassword" value="True" />
 				<input type="hidden" name="ForgotPasswordConfirm" value='<!--@Translate(PasswordSent, "The password has been sent to your email.")-->' />

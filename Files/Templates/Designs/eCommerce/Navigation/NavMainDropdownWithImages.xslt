@@ -20,17 +20,16 @@
 
 	<xsl:template match="Page">
 		<xsl:param name="depth"/>
-		<xsl:variable name="eComPageShow" select="//NavigationTree/Settings/LayoutNavigationSettings/@eComPageShow"/>
-		<!-- <xsl:variable name="dropdown-target" select="concat('dropdown-', generate-id())"/> -->
-		<xsl:variable name="dropdown-target">
-			<xsl:text>dropdown-</xsl:text>
-			<xsl:number level="any"/>
-		</xsl:variable>
+		<xsl:variable name="eComPageShow" select="//NavigationTree/Settings/LayoutNavigationSettings/@eComPageShow = 'true'"/>
 
 		<xsl:choose>
 			<xsl:when test="Page[@SmallImage]">
 				<xsl:choose>
-					<xsl:when test="$eComPageShow = 'true'">
+					<xsl:when test="$eComPageShow">
+						<xsl:variable name="dropdown-target">
+							<xsl:text>dropdown-</xsl:text>
+							<xsl:number level="any"/>
+						</xsl:variable>
 						<li>
 							<xsl:attribute name="class">
 								<xsl:if test="@Active='True' or @InPath='True'">active </xsl:if>
@@ -56,7 +55,7 @@
 													<xsl:value-of select="@FriendlyHref" disable-output-escaping="yes"/>
 												</xsl:attribute>
 												<xsl:if test="string-length(normalize-space(@SmallImage)) > 1">
-													<img class="nav-item-img" width="{$imageWidth}" height="{$imageWidth}">
+													<img class="nav-item-img" width="{$imageWidth}" height="{$imageWidth}" alt="">
 														<xsl:attribute name="src">
 															/Admin/Public/GetImage.ashx?Image=/Files<xsl:value-of select="@SmallImage" />&amp;Width=<xsl:value-of select="$imageWidth"/>&amp;Height=<xsl:value-of select="$imageHeight"/>
 														</xsl:attribute>
@@ -72,6 +71,10 @@
 					</xsl:when>
 					<xsl:otherwise>
 						<xsl:for-each select="Page">
+							<xsl:variable name="dropdown-target">
+								<xsl:text>dropdown-</xsl:text>
+								<xsl:number level="any"/>
+							</xsl:variable>
 							<li>
 								<xsl:attribute name="class">
 									<xsl:if test="@Active='True' or @InPath='True'">active </xsl:if>
@@ -97,8 +100,10 @@
 														<xsl:value-of select="@FriendlyHref" disable-output-escaping="yes"/>
 													</xsl:attribute>
 													<xsl:if test="string-length(normalize-space(@SmallImage)) > 1">
-													<img class="nav-item-img" width="{$imageWidth}" height="{$imageWidth}">
-															<xsl:attribute name="src">/Admin/Public/GetImage.ashx?Image=/Files<xsl:value-of select="@SmallImage" />&amp;Width=<xsl:value-of select="$imageWidth"/>&amp;Height=<xsl:value-of select="$imageHeight"/></xsl:attribute>
+														<img class="nav-item-img" width="{$imageWidth}" height="{$imageWidth}" alt="">
+															<xsl:attribute name="src">
+																/Admin/Public/GetImage.ashx?Image=/Files<xsl:value-of select="@SmallImage" />&amp;Width=<xsl:value-of select="$imageWidth"/>&amp;Height=<xsl:value-of select="$imageHeight"/>
+															</xsl:attribute>
 														</img>
 													</xsl:if>
 													<xsl:value-of select="@MenuText" disable-output-escaping="yes"/>
@@ -113,6 +118,10 @@
 				</xsl:choose>
 			</xsl:when>
 			<xsl:otherwise>
+				<xsl:variable name="dropdown-target">
+					<xsl:text>dropdown-</xsl:text>
+					<xsl:number level="any"/>
+				</xsl:variable>
 				<li>
 					<xsl:attribute name="class">
 						<xsl:if test="@Active='True' or @InPath='True'">active </xsl:if>
