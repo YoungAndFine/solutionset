@@ -42,6 +42,11 @@
           <editorConfuguration />
         </editor>
       </field>
+      <field name="Payoff Content Page ID" systemName="Payoff_Content_Page_ID" description="" type="System.Int32, mscorlib">
+        <editor type="Dynamicweb.Content.Items.Editors.IntegerEditor, Dynamicweb">
+          <editorConfuguration />
+        </editor>
+      </field>
       <field name="Show &quot;Product added to cart&quot; Popup" systemName="Show_ProductAddedToCart_Popup" description="" type="System.Boolean, mscorlib">
         <editor type="Dynamicweb.Content.Items.Editors.CheckboxEditor, Dynamicweb">
           <editorConfuguration />
@@ -143,6 +148,7 @@
             <field systemName="Footer_Content_Page_ID" />
             <field systemName="Login_Message_Paragraph_ID" />
             <field systemName="Products_Fee_Info_Paragraph_ID" />
+            <field systemName="Payoff_Content_Page_ID" />
           </fields>
         </group>
         <group name="Product Added To Cart" systemName="Product_Added_To_Cart" collapsibleState="None">
