@@ -71,7 +71,7 @@
 </button>
 </div>
 <!--@If Defined(Ecom:Product.IsInCart)-->
-<!--@Include(/eCom/ProductList/AddedToCart.html)-->
+<!--@Include(\eCom\ProductList\AddedToCart.html)-->
 <!--@EndIf(Ecom:Product.IsInCart)-->
 </div>
 <div class="content">
@@ -133,7 +133,6 @@
 		<!--@EndIf(Global:OMC.Experiment.Variation.Original)-->
 </button>
 <!--@If Defined(Ecom:Product.IsInCart)-->
-<!-- @Include(/eCom/ProductList/AddedToCart.html) -->
 <button type="button" class="btn dw-button-green">
 	<!--@Translate(checkout, "Checkout")-->
 	<i class="icon sprite arr-forward-small-white"></i>

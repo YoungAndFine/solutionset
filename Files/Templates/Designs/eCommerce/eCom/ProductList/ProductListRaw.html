@@ -50,7 +50,7 @@
 					<!--@Ecom:Product:Stock.Text-->
 				<!--@Else-->
 					<span class="icon-meh out-of-stock"></span>
-					<!--@Ecom:Product:Stock.Text--> 
+					<!--@Ecom:Product:Stock.Text-->
 				<!--@EndIf-->
 			</div>
 			<div class="delivery">
@@ -59,7 +59,7 @@
 					<!--@Translate(ProductDelivary, "Delivery")--> <!--@Ecom:Product.IsInCart)--> <!--@Ecom:Product:Stock.DeliveryText--> <!--@Ecom:Product:Stock.DeliveryUnit-->
 				<!--@Else-->
 					<span class="icon-ok"></span>
-					<!--@Translate(ProductDelivary, "Delivery")--> <!--@Ecom:Product.IsInCart)--> <!--@Ecom:Product:Stock.DeliveryText--> <!--@Ecom:Product:Stock.DeliveryUnit--> 
+					<!--@Translate(ProductDelivary, "Delivery")--> <!--@Ecom:Product.IsInCart)--> <!--@Ecom:Product:Stock.DeliveryText--> <!--@Ecom:Product:Stock.DeliveryUnit-->
 				<!--@EndIf-->
 			</div>
 			<div class="product-addtocart">
@@ -69,7 +69,7 @@
 </button>
 </div>
 <!--@If Defined(Ecom:Product.IsInCart)-->
-<!--@Include(/AddedToCart.html)-->
+<!--@Include(\eCom\ProductList\AddedToCart.html)-->
 <!--@EndIf(Ecom:Product.IsInCart)-->
 </div><!-- / .details -->
 <div class="content">
@@ -108,7 +108,7 @@
 			<!--@Ecom:Product:Stock.Text-->
 		<!--@Else-->
 			<span class="icon-meh out-of-stock"></span>
-			<!--@Ecom:Product:Stock.Text--> 
+			<!--@Ecom:Product:Stock.Text-->
 		<!--@EndIf-->
 	</div>
 	<div class="delivery visible-phone">
@@ -117,7 +117,7 @@
 			<!--@Translate(ProductDelivary, "Delivery")--> <!--@Ecom:Product.IsInCart)--> <!--@Ecom:Product:Stock.DeliveryText--> <!--@Ecom:Product:Stock.DeliveryUnit-->
 		<!--@Else-->
 			<span class="icon-ok"></span>
-			<!--@Translate(ProductDelivary, "Delivery")--> <!--@Ecom:Product.IsInCart)--> <!--@Ecom:Product:Stock.DeliveryText--> <!--@Ecom:Product:Stock.DeliveryUnit--> 
+			<!--@Translate(ProductDelivary, "Delivery")--> <!--@Ecom:Product.IsInCart)--> <!--@Ecom:Product:Stock.DeliveryText--> <!--@Ecom:Product:Stock.DeliveryUnit-->
 		<!--@EndIf-->
 	</div>
 	<div class="product-addtocart visible-phone <!--@If Defined(Ecom:Product.IsInCart)-->product-incart<!--@EndIf(Ecom:Product.IsInCart)-->">
@@ -126,7 +126,6 @@
 		<!--@Translate(AddToCart, "Add to cart")-->
 </button>
 <!--@If Defined(Ecom:Product.IsInCart)-->
-<!-- @Include(/AddedToCart.html) -->
 <button type="button" class="btn dw-button-green">
 	<!--@Translate(checkout, "Checkout")-->
 	<i class="icon sprite arr-forward-small-white"></i>
