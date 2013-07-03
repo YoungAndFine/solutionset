@@ -1,102 +1,981 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <translations>
+  <key name="productMultiple">
+    <translation culture="en-US"><![CDATA[products]]></translation>
+    <translation culture="da-DK"><![CDATA[produkter]]></translation>
+  </key>
+  <key name="productSingle">
+    <translation culture="en-US"><![CDATA[product]]></translation>
+    <translation culture="da-DK"><![CDATA[produkt]]></translation>
+  </key>
+  <key name="showcart">
+    <translation culture="en-US"><![CDATA[Show cart]]></translation>
+    <translation culture="da-DK"><![CDATA[Vis kurv]]></translation>
+  </key>
+  <key name="multipleProductsWithCapital">
+    <translation culture="en-US"><![CDATA[Products]]></translation>
+    <translation culture="da-DK"><![CDATA[Produkter]]></translation>
+  </key>
+  <key name="quantityAbbreviatedWithCapital">
+    <translation culture="en-US"><![CDATA[Product]]></translation>
+    <translation culture="da-DK"><![CDATA[Antal]]></translation>
+  </key>
+  <key name="priceWithCapital">
+    <translation culture="en-US"><![CDATA[Price]]></translation>
+    <translation culture="da-DK"><![CDATA[Pris]]></translation>
+  </key>
+  <key name="discount">
+    <translation culture="en-US"><![CDATA[Discount]]></translation>
+    <translation culture="da-DK"><![CDATA[Rabat]]></translation>
+  </key>
+  <key name="paymentfee">
+    <translation culture="en-US"><![CDATA[Payment fee]]></translation>
+    <translation culture="da-DK"><![CDATA[Betalingsomkostninger]]></translation>
+  </key>
+  <key name="shippingfee">
+    <translation culture="en-US"><![CDATA[Shipping fee]]></translation>
+    <translation culture="da-DK"><![CDATA[Leveringsomkostninger]]></translation>
+  </key>
+  <key name="totalPrice">
+    <translation culture="en-US"><![CDATA[Total price]]></translation>
+    <translation culture="da-DK"><![CDATA[I alt]]></translation>
+  </key>
+  <key name="withVAT">
+    <translation culture="en-US"><![CDATA[Incl. VAT]]></translation>
+    <translation culture="da-DK"><![CDATA[Inkl. moms]]></translation>
+  </key>
+  <key name="checkout">
+    <translation culture="en-US"><![CDATA[Check out]]></translation>
+    <translation culture="da-DK"><![CDATA[Gå til kassen]]></translation>
+  </key>
+  <key name="CartIsEmpty">
+    <translation culture="en-US"><![CDATA[Cart is empty]]></translation>
+    <translation culture="da-DK"><![CDATA[Kurven er tom]]></translation>
+  </key>
+  <key name="CompareProduct">
+    <translation culture="en-US"><![CDATA[Compare]]></translation>
+    <translation culture="da-DK"><![CDATA[Sammenlign]]></translation>
+  </key>
+  <key name="expaymentshippingfee">
+    <translation culture="en-US"><![CDATA[Excl. shipping and payment fees]]></translation>
+    <translation culture="da-DK"><![CDATA[Ekskl. leverings- og betalingsomkostninger]]></translation>
+  </key>
+  <key name="ProductDelivary">
+    <translation culture="en-US"><![CDATA[Delivery]]></translation>
+    <translation culture="da-DK"><![CDATA[Levering]]></translation>
+  </key>
+  <key name="AddToCart">
+    <translation culture="en-US"><![CDATA[Add to cart]]></translation>
+    <translation culture="da-DK"><![CDATA[Læg i kurv]]></translation>
+  </key>
+  <key name="BuyNow">
+    <translation culture="en-US"><![CDATA[Buy now]]></translation>
+    <translation culture="da-DK"><![CDATA[Køb nu]]></translation>
+  </key>
+  <key name="ProductNumber">
+    <translation culture="en-US"><![CDATA[Product no.]]></translation>
+    <translation culture="da-DK"><![CDATA[Produktnr.]]></translation>
+  </key>
+  <key name="allproductinformation">
+    <translation culture="en-US"><![CDATA[Show all product information]]></translation>
+    <translation culture="da-DK"><![CDATA[Vis alle produktinformationer]]></translation>
+  </key>
+  <key name="ProductNumberShort">
+    <translation culture="en-US"><![CDATA[no.]]></translation>
+    <translation culture="da-DK"><![CDATA[nr.]]></translation>
+  </key>
+  <key name="shoosevariant">
+    <translation culture="en-US"><![CDATA[Choose variant]]></translation>
+    <translation culture="da-DK"><![CDATA[Vælg variant]]></translation>
+  </key>
+  <key name="selectyourvariant">
+    <translation culture="en-US"><![CDATA[Choose option]]></translation>
+    <translation culture="da-DK"><![CDATA[Vælg mulighed]]></translation>
+  </key>
+  <key name="unit">
+    <translation culture="en-US"><![CDATA[unit]]></translation>
+    <translation culture="da-DK"><![CDATA[styk]]></translation>
+  </key>
+  <key name="addedtocartheadline">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[Produktet er lagt i kurven]]></translation>
+  </key>
+  <key name="viewcart">
+    <translation culture="en-US"><![CDATA[Show cart]]></translation>
+    <translation culture="da-DK"><![CDATA[Vis kurv]]></translation>
+  </key>
+  <key name="buymore">
+    <translation culture="en-US"><![CDATA[Buy more]]></translation>
+    <translation culture="da-DK"><![CDATA[Køb mere]]></translation>
+  </key>
+  <key name="SelectedProducts">
+    <translation culture="en-US"><![CDATA[Selected products]]></translation>
+    <translation culture="da-DK"><![CDATA[Valgte produkter]]></translation>
+  </key>
+  <key name="StockState">
+    <translation culture="en-US"><![CDATA[Stock level]]></translation>
+    <translation culture="da-DK"><![CDATA[Antal på lager]]></translation>
+  </key>
+  <key name="EstimatedDelivaryTime">
+    <translation culture="en-US"><![CDATA[Est. delivery time]]></translation>
+    <translation culture="da-DK"><![CDATA[Forv. leveringstid]]></translation>
+  </key>
+  <key name="NotSpecified">
+    <translation culture="en-US"><![CDATA[Not specified]]></translation>
+    <translation culture="da-DK"><![CDATA[Ikke angivet]]></translation>
+  </key>
+  <key name="YourSearchFor">
+    <translation culture="en-US"><![CDATA[Your search for]]></translation>
+    <translation culture="da-DK"><![CDATA[Din søgning efter]]></translation>
+  </key>
+  <key name="DidnReturnProducts">
+    <translation culture="en-US"><![CDATA[didn't find any products]]></translation>
+    <translation culture="da-DK"><![CDATA[fandt ingen produkter]]></translation>
+  </key>
+  <key name="NoProductsFound">
+    <translation culture="en-US"><![CDATA[No prodcts match your search]]></translation>
+    <translation culture="da-DK"><![CDATA[Ingen produkter matcher din søgning]]></translation>
+  </key>
+  <key name="DidYouMean">
+    <translation culture="en-US"><![CDATA[Did you mean]]></translation>
+    <translation culture="da-DK"><![CDATA[Mente du]]></translation>
+  </key>
+  <key name="ResetFilterValue">
+    <translation culture="en-US"><![CDATA[All]]></translation>
+    <translation culture="da-DK"><![CDATA[Alle]]></translation>
+  </key>
+  <key name="NoFilterOptions">
+    <translation culture="en-US"><![CDATA[No options]]></translation>
+    <translation culture="da-DK"><![CDATA[Ingen muligheder]]></translation>
+  </key>
+  <key name="description">
+    <translation culture="en-US"><![CDATA[Description]]></translation>
+    <translation culture="da-DK"><![CDATA[Beskrivelse]]></translation>
+  </key>
+  <key name="Details">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[]]></translation>
+  </key>
+  <key name="Reviews">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[]]></translation>
+  </key>
+  <key name="Product_number">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[]]></translation>
+  </key>
+  <key name="Choose_variant">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[]]></translation>
+  </key>
+  <key name="reviews">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[]]></translation>
+  </key>
+  <key name="writeacomment">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[]]></translation>
+  </key>
+  <key name="download_pdf">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[]]></translation>
+  </key>
+  <key name="addtofavorites">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[]]></translation>
+  </key>
+  <key name="removetofavorites">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[]]></translation>
+  </key>
+  <key name="details">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[]]></translation>
+  </key>
+  <key name="addnewcomment">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[]]></translation>
+  </key>
+  <key name="noreviews">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[]]></translation>
+  </key>
+  <key name="yourlatestviewed">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[]]></translation>
+  </key>
+  <key name="customersalsobought">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[]]></translation>
+  </key>
+  <key name="customersalsosaw">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[]]></translation>
+  </key>
+  <key name="whatabout">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[]]></translation>
+  </key>
+  <key name="relateproductlist">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[]]></translation>
+  </key>
+  <key name="productsmart">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[]]></translation>
+  </key>
+  <key name="writereview">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[]]></translation>
+  </key>
+  <key name="rateproduct">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[]]></translation>
+  </key>
+  <key name="1poor">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[]]></translation>
+  </key>
+  <key name="2below">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[]]></translation>
+  </key>
+  <key name="3averange">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[]]></translation>
+  </key>
+  <key name="4good">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[]]></translation>
+  </key>
+  <key name="5great">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[]]></translation>
+  </key>
+  <key name="name">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[Navn]]></translation>
+  </key>
+  <key name="leaveyourcomment">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[]]></translation>
+  </key>
+  <key name="addyourcomment">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[]]></translation>
+  </key>
+  <key name="preview">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[]]></translation>
+  </key>
+  <key name="productpreview">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[]]></translation>
+  </key>
+  <key name="favoritelist">
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="noproductinfavoritelist">
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="addalltobasket">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[]]></translation>
+  </key>
+  <key name="addall">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[]]></translation>
+  </key>
+  <key name="addtobasket">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[]]></translation>
+  </key>
+  <key name="add">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[]]></translation>
+  </key>
+  <key name="removefromfave">
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="remove">
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="yourmostboughtitems">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[]]></translation>
+  </key>
+  <key name="productname">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[]]></translation>
+  </key>
+  <key name="quantity">
+    <translation culture="en-US"><![CDATA[Quantity]]></translation>
+    <translation culture="da-DK"><![CDATA[Antal]]></translation>
+  </key>
+  <key name="Customer_Center">
+    <translation culture="en-US"><![CDATA[Customer center]]></translation>
+    <translation culture="da-DK"><![CDATA[Kundecenter]]></translation>
+  </key>
+  <key name="orderid">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[]]></translation>
+  </key>
+  <key name="orderdate">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[]]></translation>
+  </key>
+  <key name="trackandtracenumber">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[]]></translation>
+  </key>
+  <key name="customercompany">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[]]></translation>
+  </key>
+  <key name="att">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[]]></translation>
+  </key>
+  <key name="customeraddress">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[]]></translation>
+  </key>
+  <key name="postalcity">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[]]></translation>
+  </key>
+  <key name="country">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[Land]]></translation>
+  </key>
+  <key name="email">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[E-mailadresse]]></translation>
+  </key>
+  <key name="phone">
+    <translation culture="en-US"><![CDATA[Phone]]></translation>
+    <translation culture="da-DK"><![CDATA[Telefonnummer]]></translation>
+  </key>
+  <key name="quan">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[]]></translation>
+  </key>
+  <key name="productnr">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[]]></translation>
+  </key>
+  <key name="descr">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[]]></translation>
+  </key>
+  <key name="unitprice">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[]]></translation>
+  </key>
+  <key name="totalprice">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[]]></translation>
+  </key>
+  <key name="totalVat">
+    <translation culture="en-US"><![CDATA[Total (with VAT)]]></translation>
+    <translation culture="da-DK"><![CDATA[I alt (inkl. moms)]]></translation>
+  </key>
+  <key name="vat">
+    <translation culture="en-US"><![CDATA[VAT]]></translation>
+    <translation culture="da-DK"><![CDATA[Moms]]></translation>
+  </key>
+  <key name="totalwithoutovat">
+    <translation culture="en-US"><![CDATA[Total (without VAT)]]></translation>
+    <translation culture="da-DK"><![CDATA[I alt (ekskl. moms)]]></translation>
+  </key>
+  <key name="payment">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[]]></translation>
+  </key>
+  <key name="shipping">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[Levering]]></translation>
+  </key>
+  <key name="total">
+    <translation culture="en-US"><![CDATA[Total]]></translation>
+    <translation culture="da-DK"><![CDATA[I alt]]></translation>
+  </key>
+  <key name="withVat">
+    <translation culture="en-US"><![CDATA[witn VAT]]></translation>
+    <translation culture="da-DK"><![CDATA[inkl. moms]]></translation>
+  </key>
   <key name="ProductComparison">
     <translation culture="en-US"><![CDATA[]]></translation>
     <translation culture="da-DK"><![CDATA[]]></translation>
   </key>
   <key name="productssearch">
-    <translation culture="en-US"><![CDATA[]]></translation>
-    <translation culture="da-DK"><![CDATA[]]></translation>
+    <translation culture="en-US"><![CDATA[Search results]]></translation>
+    <translation culture="da-DK"><![CDATA[Søgeresultater]]></translation>
   </key>
   <key name="Products">
-    <translation culture="en-US"><![CDATA[]]></translation>
-    <translation culture="da-DK"><![CDATA[]]></translation>
+    <translation culture="en-US"><![CDATA[products]]></translation>
+    <translation culture="da-DK"><![CDATA[produkter]]></translation>
   </key>
   <key name="of">
-    <translation culture="en-US"><![CDATA[]]></translation>
-    <translation culture="da-DK"><![CDATA[]]></translation>
+    <translation culture="en-US"><![CDATA[of]]></translation>
+    <translation culture="da-DK"><![CDATA[af]]></translation>
   </key>
   <key name="products">
     <translation culture="en-US"><![CDATA[]]></translation>
     <translation culture="da-DK"><![CDATA[]]></translation>
   </key>
   <key name="sortby">
-    <translation culture="en-US"><![CDATA[]]></translation>
-    <translation culture="da-DK"><![CDATA[]]></translation>
+    <translation culture="en-US"><![CDATA[Sort by]]></translation>
+    <translation culture="da-DK"><![CDATA[Sorter på]]></translation>
   </key>
   <key name="Rating">
-    <translation culture="en-US"><![CDATA[]]></translation>
-    <translation culture="da-DK"><![CDATA[]]></translation>
+    <translation culture="en-US"><![CDATA[Rating]]></translation>
+    <translation culture="da-DK"><![CDATA[Bedømmelse]]></translation>
   </key>
   <key name="Name">
-    <translation culture="en-US"><![CDATA[]]></translation>
-    <translation culture="da-DK"><![CDATA[]]></translation>
+    <translation culture="en-US"><![CDATA[Name]]></translation>
+    <translation culture="da-DK"><![CDATA[Navn]]></translation>
   </key>
   <key name="Number">
-    <translation culture="en-US"><![CDATA[]]></translation>
-    <translation culture="da-DK"><![CDATA[]]></translation>
+    <translation culture="en-US"><![CDATA[Number]]></translation>
+    <translation culture="da-DK"><![CDATA[Nummer]]></translation>
   </key>
   <key name="PriceAscending">
-    <translation culture="en-US"><![CDATA[]]></translation>
-    <translation culture="da-DK"><![CDATA[]]></translation>
+    <translation culture="en-US"><![CDATA[Price, lowest first]]></translation>
+    <translation culture="da-DK"><![CDATA[Pris, laveste først]]></translation>
   </key>
   <key name="PriceDescending">
-    <translation culture="en-US"><![CDATA[]]></translation>
-    <translation culture="da-DK"><![CDATA[]]></translation>
+    <translation culture="en-US"><![CDATA[Price, highest first]]></translation>
+    <translation culture="da-DK"><![CDATA[Pris, højeste først]]></translation>
   </key>
   <key name="MostSold">
-    <translation culture="en-US"><![CDATA[]]></translation>
-    <translation culture="da-DK"><![CDATA[]]></translation>
+    <translation culture="en-US"><![CDATA[Most sold]]></translation>
+    <translation culture="da-DK"><![CDATA[Mest solgte]]></translation>
   </key>
   <key name="refineselection">
-    <translation culture="en-US"><![CDATA[]]></translation>
-    <translation culture="da-DK"><![CDATA[]]></translation>
+    <translation culture="en-US"><![CDATA[Refine selection]]></translation>
+    <translation culture="da-DK"><![CDATA[Tilpas valg]]></translation>
   </key>
   <key name="resetall">
-    <translation culture="en-US"><![CDATA[]]></translation>
-    <translation culture="da-DK"><![CDATA[]]></translation>
+    <translation culture="en-US"><![CDATA[Reset all]]></translation>
+    <translation culture="da-DK"><![CDATA[Nulstil alle]]></translation>
   </key>
   <key name="page">
-    <translation culture="en-US"><![CDATA[]]></translation>
-    <translation culture="da-DK"><![CDATA[]]></translation>
+    <translation culture="en-US"><![CDATA[Page]]></translation>
+    <translation culture="da-DK"><![CDATA[Side]]></translation>
   </key>
   <key name="PreviousPage">
-    <translation culture="en-US"><![CDATA[]]></translation>
-    <translation culture="da-DK"><![CDATA[]]></translation>
+    <translation culture="en-US"><![CDATA[Previous]]></translation>
+    <translation culture="da-DK"><![CDATA[Forrige]]></translation>
   </key>
   <key name="PagingOf">
-    <translation culture="en-US"><![CDATA[]]></translation>
-    <translation culture="da-DK"><![CDATA[]]></translation>
+    <translation culture="en-US"><![CDATA[of]]></translation>
+    <translation culture="da-DK"><![CDATA[af]]></translation>
   </key>
   <key name="PagingPages">
-    <translation culture="en-US"><![CDATA[]]></translation>
-    <translation culture="da-DK"><![CDATA[]]></translation>
+    <translation culture="en-US"><![CDATA[pages]]></translation>
+    <translation culture="da-DK"><![CDATA[sider]]></translation>
   </key>
   <key name="NextPage">
-    <translation culture="en-US"><![CDATA[]]></translation>
-    <translation culture="da-DK"><![CDATA[]]></translation>
+    <translation culture="en-US"><![CDATA[Next]]></translation>
+    <translation culture="da-DK"><![CDATA[Næste]]></translation>
   </key>
   <key name="viewall">
-    <translation culture="en-US"><![CDATA[]]></translation>
-    <translation culture="da-DK"><![CDATA[]]></translation>
+    <translation culture="en-US"><![CDATA[Show all]]></translation>
+    <translation culture="da-DK"><![CDATA[Vis alle]]></translation>
   </key>
   <key name="ProductVariantIsEmpty">
-    <translation culture="en-US"><![CDATA[]]></translation>
-    <translation culture="da-DK"><![CDATA[]]></translation>
-  </key>
-  <key name="buymore">
-    <translation culture="en-US"><![CDATA[]]></translation>
-    <translation culture="da-DK"><![CDATA[]]></translation>
-  </key>
-  <key name="viewcart">
-    <translation culture="en-US"><![CDATA[]]></translation>
-    <translation culture="da-DK"><![CDATA[]]></translation>
+    <translation culture="en-US"><![CDATA[Please specify variant]]></translation>
+    <translation culture="da-DK"><![CDATA[Vælg venligst variant]]></translation>
   </key>
   <key name="dontshow">
-    <translation culture="en-US"><![CDATA[Vis ikke næste gang]]></translation>
-    <translation culture="da-DK"><![CDATA[]]></translation>
+    <translation culture="en-US"><![CDATA[Don't show this message next time]]></translation>
+    <translation culture="da-DK"><![CDATA[Vis ikke denne besked mere]]></translation>
   </key>
-  <key name="ShowingProductsMOfN">
-    <translation culture="en-US"><![CDATA[Hest]]></translation>
+  <key name="translateShoppingCart">
+    <translation culture="da-DK"><![CDATA[Kurv]]></translation>
+    <translation culture="en-US"><![CDATA[Cart]]></translation>
+  </key>
+  <key name="translateProduct">
+    <translation culture="da-DK"><![CDATA[Produkt]]></translation>
+    <translation culture="en-US"><![CDATA[Product]]></translation>
+  </key>
+  <key name="expecteddelivery">
+    <translation culture="da-DK"><![CDATA[Forventet levering]]></translation>
+    <translation culture="en-US"><![CDATA[Expected delivery]]></translation>
+  </key>
+  <key name="translateQuantity">
+    <translation culture="da-DK"><![CDATA[Antal]]></translation>
+    <translation culture="en-US"><![CDATA[Quantity]]></translation>
+  </key>
+  <key name="translatePrice">
+    <translation culture="da-DK"><![CDATA[Pris]]></translation>
+    <translation culture="en-US"><![CDATA[Price]]></translation>
+  </key>
+  <key name="productnumber">
+    <translation culture="da-DK"><![CDATA[Produktnr.]]></translation>
+    <translation culture="en-US"><![CDATA[Product no.]]></translation>
+  </key>
+  <key name="expecteddeliveryshort">
+    <translation culture="da-DK"><![CDATA[Levering]]></translation>
+    <translation culture="en-US"><![CDATA[Delivery]]></translation>
+  </key>
+  <key name="update">
+    <translation culture="da-DK"><![CDATA[Opdater]]></translation>
+    <translation culture="en-US"><![CDATA[Update]]></translation>
+  </key>
+  <key name="delete">
+    <translation culture="da-DK"><![CDATA[Fjern]]></translation>
+    <translation culture="en-US"><![CDATA[Remove]]></translation>
+  </key>
+  <key name="emptycart">
+    <translation culture="da-DK"><![CDATA[Tøm kurv]]></translation>
+    <translation culture="en-US"><![CDATA[Empty cart]]></translation>
+  </key>
+  <key name="translateEmptyCart">
+    <translation culture="da-DK"><![CDATA[Din kurv er tom]]></translation>
+    <translation culture="en-US"><![CDATA[Your cart is empty]]></translation>
+  </key>
+  <key name="contactdetails">
+    <translation culture="da-DK"><![CDATA[Kontaktoplysninger]]></translation>
+    <translation culture="en-US"><![CDATA[Contant details]]></translation>
+  </key>
+  <key name="errorininputfield">
+    <translation culture="da-DK"><![CDATA[Fejl i feltet]]></translation>
+    <translation culture="en-US"><![CDATA[Error in field]]></translation>
+  </key>
+  <key name="youradress">
+    <translation culture="da-DK"><![CDATA[Adresse]]></translation>
+    <translation culture="en-US"><![CDATA[Address]]></translation>
+  </key>
+  <key name="aboutinfo">
+    <translation culture="da-DK"><![CDATA[Om persondatabeskyttelse]]></translation>
+    <translation culture="en-US"><![CDATA[About personal data protection]]></translation>
+  </key>
+  <key name="alreadymember">
+    <translation culture="da-DK"><![CDATA[Er du allerede kunde? Log ind her]]></translation>
+    <translation culture="en-US"><![CDATA[Already a customer - login here]]></translation>
+  </key>
+  <key name="emptyinformationinput">
+    <translation culture="da-DK"><![CDATA[Angiv venligst telefonnummer]]></translation>
+    <translation culture="en-US"><![CDATA[Please, first fill out the "Phone" field ]]></translation>
+  </key>
+  <key name="getmyinfo">
+    <translation culture="da-DK"><![CDATA[Hent mine oplysninger]]></translation>
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="info">
+    <translation culture="da-DK"><![CDATA[Info]]></translation>
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="requiredFields">
+    <translation culture="da-DK"><![CDATA[Disse felter skal udfyldes]]></translation>
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="company">
+    <translation culture="da-DK"><![CDATA[Firma]]></translation>
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="addressList">
+    <translation culture="da-DK"><![CDATA[Adresseliste]]></translation>
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="address">
+    <translation culture="da-DK"><![CDATA[Adresse]]></translation>
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="zipandcity">
+    <translation culture="da-DK"><![CDATA[Postnummer og by]]></translation>
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="sendreceiptto">
+    <translation culture="da-DK"><![CDATA[Vi sender kvitteringen til denne e-mail-adresse]]></translation>
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="mobile">
+    <translation culture="da-DK"><![CDATA[Mobiltelefonnummer]]></translation>
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="mobileinfo">
+    <translation culture="da-DK"><![CDATA[]]></translation>
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="newsletter">
+    <translation culture="da-DK"><![CDATA[Nyhedsbrev]]></translation>
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="subscribetonews">
+    <translation culture="da-DK"><![CDATA[Abonner på vores nyhedsbrev]]></translation>
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="shippingInfo">
+    <translation culture="da-DK"><![CDATA[Leveringsoplysninger]]></translation>
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="sameAsAbove">
+    <translation culture="da-DK"><![CDATA[Er leveringsadressen den samme som betalingsadressen?]]></translation>
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="yes">
+    <translation culture="da-DK"><![CDATA[Ja]]></translation>
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="no">
+    <translation culture="da-DK"><![CDATA[Nej]]></translation>
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="zipcity">
+    <translation culture="da-DK"><![CDATA[Postnummer og by]]></translation>
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="Payment_and_Shipping_Method">
+    <translation culture="da-DK"><![CDATA[Leverings- og betalingsmetode]]></translation>
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="Payment">
+    <translation culture="da-DK"><![CDATA[Betalingsmetode]]></translation>
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="aboutpayment">
+    <translation culture="da-DK"><![CDATA[Om betalingsmetoder]]></translation>
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="aboutdelivery">
+    <translation culture="da-DK"><![CDATA[Om leveringsmetoder]]></translation>
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="vouchercode">
+    <translation culture="da-DK"><![CDATA[Rabatkode]]></translation>
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="yourcode">
+    <translation culture="da-DK"><![CDATA[Kode]]></translation>
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="accept">
+    <translation culture="da-DK"><![CDATA[Rabatkoden er accepteret]]></translation>
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="error">
+    <translation culture="da-DK"><![CDATA[Rabatkoden er ikke accepteret]]></translation>
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="add2order">
+    <translation culture="da-DK"><![CDATA[Tilføj til ordren]]></translation>
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="Iaccept">
+    <translation culture="da-DK"><![CDATA[Jeg accepterer]]></translation>
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="termsandconditions">
+    <translation culture="da-DK"><![CDATA[købsbetingelserne]]></translation>
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="pleasetermsandconditions">
+    <translation culture="da-DK"><![CDATA[Accepter venligst købsbetingelserne]]></translation>
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="confirmandpay">
+    <translation culture="da-DK"><![CDATA[Bekræft og betal]]></translation>
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="yourOrder">
+    <translation culture="da-DK"><![CDATA[]]></translation>
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="praticalinfo">
+    <translation culture="da-DK"><![CDATA[]]></translation>
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="pracdelivery">
+    <translation culture="da-DK"><![CDATA[]]></translation>
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="pracpayment">
+    <translation culture="da-DK"><![CDATA[]]></translation>
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="pracpolicy">
+    <translation culture="da-DK"><![CDATA[]]></translation>
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="pracsecurity">
+    <translation culture="da-DK"><![CDATA[]]></translation>
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="pracsupport">
+    <translation culture="da-DK"><![CDATA[]]></translation>
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="mostaskedquestions">
+    <translation culture="da-DK"><![CDATA[]]></translation>
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="whatcanIpaywith">
+    <translation culture="da-DK"><![CDATA[]]></translation>
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="canIcallyou">
+    <translation culture="da-DK"><![CDATA[]]></translation>
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="whendoyouraisemymoney">
+    <translation culture="da-DK"><![CDATA[]]></translation>
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="canItrackmyorder">
+    <translation culture="da-DK"><![CDATA[]]></translation>
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="clothesdonotfit">
+    <translation culture="da-DK"><![CDATA[]]></translation>
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="dataprotection">
+    <translation culture="da-DK"><![CDATA[]]></translation>
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="pracdeliverypopup">
+    <translation culture="da-DK"><![CDATA[]]></translation>
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="pracpaymentpopup">
+    <translation culture="da-DK"><![CDATA[]]></translation>
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="pracsecuritypopup">
+    <translation culture="da-DK"><![CDATA[]]></translation>
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="pracsupportpopup">
+    <translation culture="da-DK"><![CDATA[]]></translation>
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="about_delivery">
+    <translation culture="da-DK"><![CDATA[]]></translation>
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="terms">
+    <translation culture="da-DK"><![CDATA[]]></translation>
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="emailinfo">
+    <translation culture="da-DK"><![CDATA[]]></translation>
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="phoneinfo">
+    <translation culture="da-DK"><![CDATA[]]></translation>
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="Account_information">
+    <translation culture="da-DK"><![CDATA[Kontooplysninger]]></translation>
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="edit">
+    <translation culture="da-DK"><![CDATA[Rediger]]></translation>
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="Company">
+    <translation culture="da-DK"><![CDATA[Firma]]></translation>
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="Job_title">
+    <translation culture="da-DK"><![CDATA[Jobtitel]]></translation>
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="Address">
+    <translation culture="da-DK"><![CDATA[Adresse]]></translation>
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="City">
+    <translation culture="da-DK"><![CDATA[By]]></translation>
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="Email">
+    <translation culture="da-DK"><![CDATA[E-mailadresse]]></translation>
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="Phone">
+    <translation culture="da-DK"><![CDATA[Telefon]]></translation>
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="in_info">
+    <translation culture="da-DK"><![CDATA[Betalingsoplysninger]]></translation>
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="boughtfromgivendate">
+    <translation culture="da-DK"><![CDATA[]]></translation>
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="boughtfor12months">
+    <translation culture="da-DK"><![CDATA[]]></translation>
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="myaddresses">
+    <translation culture="da-DK"><![CDATA[Adresser]]></translation>
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="latestorders">
+    <translation culture="da-DK"><![CDATA[Seneste ordrer]]></translation>
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="date">
+    <translation culture="da-DK"><![CDATA[Dato]]></translation>
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="orderif">
+    <translation culture="da-DK"><![CDATA[Ordernr.]]></translation>
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="price">
+    <translation culture="da-DK"><![CDATA[Pris]]></translation>
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="state">
+    <translation culture="da-DK"><![CDATA[Status]]></translation>
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="delivery">
+    <translation culture="da-DK"><![CDATA[Levering]]></translation>
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="toexcel">
+    <translation culture="da-DK"><![CDATA[Eksporter til Excel]]></translation>
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="excel">
+    <translation culture="da-DK"><![CDATA[Excel]]></translation>
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="noordefound">
+    <translation culture="da-DK"><![CDATA[Ingen ordrer fundet]]></translation>
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="Reorder">
+    <translation culture="da-DK"><![CDATA[Genbestil]]></translation>
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="Print">
+    <translation culture="da-DK"><![CDATA[Udskriv]]></translation>
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="Mail">
+    <translation culture="da-DK"><![CDATA[Send]]></translation>
+    <translation culture="en-US"><![CDATA[]]></translation>
+  </key>
+  <key name="Username">
+    <translation culture="da-DK"><![CDATA[Brugernavn]]></translation>
+  </key>
+  <key name="oldpassword">
+    <translation culture="da-DK"><![CDATA[Nuværende password]]></translation>
+  </key>
+  <key name="newpassword">
+    <translation culture="da-DK"><![CDATA[Nyt password]]></translation>
+  </key>
+  <key name="confirmpassword">
+    <translation culture="da-DK"><![CDATA[Bekræft password]]></translation>
+  </key>
+  <key name="Zip">
+    <translation culture="da-DK"><![CDATA[Postnr.]]></translation>
+  </key>
+  <key name="Country">
+    <translation culture="da-DK"><![CDATA[Land]]></translation>
+  </key>
+  <key name="edituser">
+    <translation culture="da-DK"><![CDATA[Gem]]></translation>
+  </key>
+  <key name="cancel">
+    <translation culture="da-DK"><![CDATA[Annuller]]></translation>
+  </key>
+  <key name="Department">
+    <translation culture="da-DK"><![CDATA[Afdeling]]></translation>
+  </key>
+  <key name="PhonePrivate">
+    <translation culture="da-DK"><![CDATA[Privattelefon]]></translation>
+  </key>
+  <key name="PhoneBusiness">
+    <translation culture="da-DK"><![CDATA[Arbejdstelefon]]></translation>
+  </key>
+  <key name="PhoneMobile">
+    <translation culture="da-DK"><![CDATA[Mobiltelefon]]></translation>
+  </key>
+  <key name="Fax">
+    <translation culture="da-DK"><![CDATA[Fax]]></translation>
+  </key>
+  <key name="Address2">
+    <translation culture="da-DK"><![CDATA[Adresse 2]]></translation>
+  </key>
+  <key name="JobTitle">
+    <translation culture="da-DK"><![CDATA[Jobtitel]]></translation>
+  </key>
+  <key name="profilepicture">
+    <translation culture="da-DK"><![CDATA[Profilbillede]]></translation>
+  </key>
+  <key name="edityourprofile">
+    <translation culture="da-DK"><![CDATA[Rediger profil]]></translation>
+  </key>
+  <key name="manageaddresses">
+    <translation culture="da-DK"><![CDATA[Rediger adresser]]></translation>
+  </key>
+  <key name="updateuser">
+    <translation culture="da-DK"><![CDATA[Gem]]></translation>
+  </key>
+  <key name="UserManagement:Search.Label">
+    <translation culture="da-DK"><![CDATA[Søg]]></translation>
+  </key>
+  <key name="UserManagement:Search.Button">
+    <translation culture="da-DK"><![CDATA[Søg]]></translation>
+  </key>
+  <key name="Groupname">
+    <translation culture="da-DK"><![CDATA[Gruppenavn]]></translation>
+  </key>
+  <key name="Subgroups">
+    <translation culture="da-DK"><![CDATA[Undergrupper]]></translation>
+  </key>
+  <key name="Users">
+    <translation culture="da-DK"><![CDATA[Brugere]]></translation>
+  </key>
+  <key name="listgroupheader">
+    <translation culture="da-DK"><![CDATA[Grupper]]></translation>
+  </key>
+  <key name="listuserheader">
+    <translation culture="da-DK"><![CDATA[Brugere]]></translation>
+  </key>
+  <key name="pleasefill">
+    <translation culture="da-DK"><![CDATA[Udfyld venligst alle krævede felter]]></translation>
+  </key>
+  <key name="password">
+    <translation culture="da-DK"><![CDATA[Password]]></translation>
+  </key>
+  <key name="denmark">
+    <translation culture="da-DK"><![CDATA[Danmark]]></translation>
+  </key>
+  <key name="finland">
+    <translation culture="da-DK"><![CDATA[Finland]]></translation>
+  </key>
+  <key name="norway">
+    <translation culture="da-DK"><![CDATA[Norge]]></translation>
+  </key>
+  <key name="sweden">
+    <translation culture="da-DK"><![CDATA[Sverige]]></translation>
+  </key>
+  <key name="germany">
+    <translation culture="da-DK"><![CDATA[Tyskland]]></translation>
+  </key>
+  <key name="usa">
+    <translation culture="da-DK"><![CDATA[USA]]></translation>
+  </key>
+  <key name="createnewuser">
+    <translation culture="da-DK"><![CDATA[Opret]]></translation>
+  </key>
+  <key name="fieldsisrequired">
+    <translation culture="da-DK"><![CDATA[Skal udfyldes]]></translation>
+  </key>
+  <key name="UserName">
+    <translation culture="da-DK"><![CDATA[Brugernavn]]></translation>
+  </key>
+  <key name="signup">
+    <translation culture="da-DK"><![CDATA[Opret]]></translation>
   </key>
 </translations>
