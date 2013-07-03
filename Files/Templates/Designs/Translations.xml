@@ -978,4 +978,44 @@
   <key name="signup">
     <translation culture="da-DK"><![CDATA[Opret]]></translation>
   </key>
+  <key name="thankYou">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[Tak for din ordre]]></translation>
+  </key>
+  <key name="orderinbrowser">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[Vis ordre i en browser]]></translation>
+  </key>
+  <key name="translateProductName">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[Produktnavn]]></translation>
+  </key>
+  <key name="vatPercent">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[moms]]></translation>
+  </key>
+  <key name="noVat">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[ekskl. moms]]></translation>
+  </key>
+  <key name="Distance">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[Afstand]]></translation>
+  </key>
+  <key name="Search">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[Søg]]></translation>
+  </key>
+  <key name="Reset_search">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[Nulstil søgning]]></translation>
+  </key>
+  <key name="Show_all_locations">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[Vis alle lokationer]]></translation>
+  </key>
+  <key name="No_locations_found">
+    <translation culture="en-US"><![CDATA[]]></translation>
+    <translation culture="da-DK"><![CDATA[Ingen lokationer fundet]]></translation>
+  </key>
 </translations>
