@@ -161,6 +161,8 @@
 			<!--@Translate(ProductDelivary, "Delivery")--> <!--@Ecom:Product.IsInCart)--> <!--@Ecom:Product:Stock.DeliveryText--> <!--@Ecom:Product:Stock.DeliveryUnit-->
 		<!--@EndIf-->
 		</div>
+		
+		<!--@If Defined(Item.Area.Show_SocialMedia_Icons)-->
 			<div class="product-addthis">
 				<div class="addthis_toolbox addthis_default_style ">
 				<a class="addthis_button_facebook"></a>
@@ -172,7 +174,8 @@
 				</div>
 				<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=xa-4ffa83b21df57f59"></script>
 			</div>
-		</div><!-- / .details -->
+		<!--@EndIf(Item.Area.Show_SocialMedia_Icons)-->
+		</div><!-- / .details -->		
 		<div class="content">
 			<div class="tab-content">
 				<div class="tab-pane <!--@If Not Defined(Server:Request.tabreviews)-->active<!--@EndIf(Server:Request.tabreviews)-->" id="tab-description">
