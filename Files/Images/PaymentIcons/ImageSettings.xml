@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ImageSettings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Active>true</Active>
+  <Width>36</Width>
+  <Height>0</Height>
+  <CropOffset>KeepAspectRatio</CropOffset>
+  <Quality>100</Quality>
+  <OverwriteOriginal>false</OverwriteOriginal>
+  <ImagePostfix>_36</ImagePostfix>
+  <EnforceOutputFormat>false</EnforceOutputFormat>
+  <LimitToTheseExtensions>false</LimitToTheseExtensions>
+  <ProcessedExtensions />
+  <LastApply>2013-07-09T13:39:08.8026637+02:00</LastApply>
+  <ThumbSettings />
+</ImageSettings>
