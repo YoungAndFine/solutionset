@@ -47,6 +47,21 @@
           <editorConfuguration />
         </editor>
       </field>
+      <field name="Show Voucher" systemName="Show_Voucher" description="" type="System.Boolean, mscorlib">
+        <editor type="Dynamicweb.Content.Items.Editors.CheckboxEditor, Dynamicweb">
+          <editorConfuguration />
+        </editor>
+      </field>
+      <field name="Show SocialMedia Icons" systemName="Show_SocialMedia_Icons" description="Social Media icons in product list" type="System.Boolean, mscorlib">
+        <editor type="Dynamicweb.Content.Items.Editors.CheckboxEditor, Dynamicweb">
+          <editorConfuguration />
+        </editor>
+      </field>
+      <field name="Show Product price NOT LoggedIN" systemName="Show_ProductPrice_NOT_LoggedIN" description="" type="System.Boolean, mscorlib">
+        <editor type="Dynamicweb.Content.Items.Editors.CheckboxEditor, Dynamicweb">
+          <editorConfuguration />
+        </editor>
+      </field>
       <field name="Show &quot;Product added to cart&quot; Popup" systemName="Show_ProductAddedToCart_Popup" description="" type="System.Boolean, mscorlib">
         <editor type="Dynamicweb.Content.Items.Editors.CheckboxEditor, Dynamicweb">
           <editorConfuguration />
@@ -149,6 +164,9 @@
             <field systemName="Login_Message_Paragraph_ID" />
             <field systemName="Products_Fee_Info_Paragraph_ID" />
             <field systemName="Payoff_Content_Page_ID" />
+            <field systemName="Show_Voucher" />
+            <field systemName="Show_SocialMedia_Icons" />
+            <field systemName="Show_ProductPrice_NOT_LoggedIN" />
           </fields>
         </group>
         <group name="Product Added To Cart" systemName="Product_Added_To_Cart" collapsibleState="None">

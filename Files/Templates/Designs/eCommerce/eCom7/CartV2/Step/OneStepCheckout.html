@@ -544,6 +544,8 @@
 
 				</div>
 			</div>
+			
+			<!--@If Defined(Item.Area.Show_Voucher)-->
 			<legend class="box-headline">
 				<h3><!--@Translate(vouchercode, "Voucher code")--></h3>
 			</legend>
@@ -578,6 +580,8 @@
 					</div>
 				</div>
 			</div>
+			<!--@EndIf(Item.Area.Show_Voucher)-->
+			
 		</div><!-- / .box-rounded -->
 	</form>
 </div>

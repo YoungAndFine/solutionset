@@ -1,10 +1,14 @@
 ﻿<WebsiteItemLayouts>
   <PageItemLayouts>
+    <ItemLayout systemname="Carousel_Item" template="" />
+    <ItemLayout systemname="News_Menu" template="" />
     <ItemLayout systemname="Ref" template="" />
     <ItemLayout systemname="Slider" template="" />
   </PageItemLayouts>
   <ParagraphItemLayouts>
     <ItemLayout systemname="Carousel_Item" template="" />
+    <ItemLayout systemname="News_Menu" template="" />
+    <ItemLayout systemname="Ref" template="" />
     <ItemLayout systemname="Slider" template="" />
   </ParagraphItemLayouts>
 </WebsiteItemLayouts>

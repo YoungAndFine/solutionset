@@ -60,6 +60,8 @@
 		<!--@EndIf(Ecom:Product.ImageLarge.Default.Clean)-->
 		<div class="details" itemprop="offerDetails" itemscope itemtype="http://data-vocabulary.org/Offer">
 			<!--@If(Ecom:Product.IsInCart=="True")--><!--@EndIf-->
+			
+			<!--@If Defined(Global:Extranet.UserID>0||Item.Area.Show_ProductPrice_NOT_LoggedIN)-->
 			<div class="product-pricebox-wrapper hidden-phone">
 				<!--@If(Ecom:Product.VariantCount>0)-->
 				<h3><!--@Translate(Choose_variant, "Choose your variant")-->:</h3>
@@ -161,6 +163,11 @@
 			<!--@Translate(ProductDelivary, "Delivery")--> <!--@Ecom:Product.IsInCart)--> <!--@Ecom:Product:Stock.DeliveryText--> <!--@Ecom:Product:Stock.DeliveryUnit-->
 		<!--@EndIf-->
 		</div>
+		<!--@Else-->
+			<!--@Translate(PleaseLoginToSeePrice, "Please login to see price")-->
+		<!--@EndIf-->
+		
+		<!--@If Defined(Item.Area.Show_SocialMedia_Icons)-->
 			<div class="product-addthis">
 				<div class="addthis_toolbox addthis_default_style ">
 				<a class="addthis_button_facebook"></a>
@@ -172,7 +179,8 @@
 				</div>
 				<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=xa-4ffa83b21df57f59"></script>
 			</div>
-		</div><!-- / .details -->
+		<!--@EndIf(Item.Area.Show_SocialMedia_Icons)-->
+		</div><!-- / .details -->		
 		<div class="content">
 			<div class="tab-content">
 				<div class="tab-pane <!--@If Not Defined(Server:Request.tabreviews)-->active<!--@EndIf(Server:Request.tabreviews)-->" id="tab-description">
@@ -290,6 +298,7 @@
 				</div>
 			</div>
 		</div><!-- / .content -->
+		<!--@If Defined(Global:Extranet.UserID>0||Item.Area.Show_ProductPrice_NOT_LoggedIN)-->
 		<div class="product-pricebox-wrapper visible-phone">
 			<!--@If(Ecom:Product.VariantCount>0)-->
 			<h3><!--@Translate(Choose_variant, "Choose your variant")-->:</h3>
@@ -356,6 +365,9 @@
 				</button>
 			</div>
 		</div><!-- / .product-pricebox-wrapper -->
+		<!--@Else-->
+			<!--@Translate(PleaseLoginToSeePrice, "Please login to see price")-->
+		<!--@EndIf-->
 	</div>
 </section>
 
@@ -432,6 +444,7 @@
 											<div class="product-description">
 												<!--@Ecom:Product.ShortDescription-->
 											</div>
+											<!--@If Defined(Global:Extranet.UserID>0||Item.Area.Show_ProductPrice_NOT_LoggedIN)-->
 											<div class="product-pricebox-wrapper">
 												<div class="product-pricebox-title"><!--@Translate(shoosevariant, "Choose your variant:")--></div>
 												<div class="product-variants">
@@ -464,26 +477,29 @@
 											</div>
 											<div class="product-facts">
 												<ul>
-							<li>
-								<!--@If(Ecom:Product.Stock>0)-->
-									<span class="icon-smile in-stock"></span>
-									<!--@Ecom:Product:Stock.Text-->
-								<!--@Else-->
-									<span class="icon-meh out-of-stock"></span>
-									<!--@Ecom:Product:Stock.Text-->
-								<!--@EndIf-->
-							</li>
-							<li>
-								<!--@If(Ecom:Product.Stock>0)-->
-									<span class="icon-ok"></span>
-									<!--@Translate(ProductDelivary, "Delivery")--> <!--@Ecom:Product.IsInCart)--> <!--@Ecom:Product:Stock.DeliveryText--> <!--@Ecom:Product:Stock.DeliveryUnit-->
-								<!--@Else-->
-									<span class="icon-ok"></span>
-									<!--@Translate(ProductDelivary, "Delivery")--> <!--@Ecom:Product.IsInCart)--> <!--@Ecom:Product:Stock.DeliveryText--> <!--@Ecom:Product:Stock.DeliveryUnit-->
-								<!--@EndIf-->
-							</li>
+													<li>
+														<!--@If(Ecom:Product.Stock>0)-->
+															<span class="icon-smile in-stock"></span>
+															<!--@Ecom:Product:Stock.Text-->
+														<!--@Else-->
+															<span class="icon-meh out-of-stock"></span>
+															<!--@Ecom:Product:Stock.Text-->
+														<!--@EndIf-->
+													</li>
+													<li>
+														<!--@If(Ecom:Product.Stock>0)-->
+															<span class="icon-ok"></span>
+															<!--@Translate(ProductDelivary, "Delivery")--> <!--@Ecom:Product.IsInCart)--> <!--@Ecom:Product:Stock.DeliveryText--> <!--@Ecom:Product:Stock.DeliveryUnit-->
+														<!--@Else-->
+															<span class="icon-ok"></span>
+															<!--@Translate(ProductDelivary, "Delivery")--> <!--@Ecom:Product.IsInCart)--> <!--@Ecom:Product:Stock.DeliveryText--> <!--@Ecom:Product:Stock.DeliveryUnit-->
+														<!--@EndIf-->
+													</li>
 												</ul>
 											</div>
+											<!--@Else-->
+												<!--@Translate(PleaseLoginToSeePrice, "Please login to see price")-->
+											<!--@EndIf-->
 											<div class="clearfix"></div>
 										</div><!-- / .popup-variants-partright -->
 									</div>
@@ -569,6 +585,7 @@
 											<div class="product-description">
 												<!--@Ecom:Product.ShortDescription-->
 											</div>
+											<!--@If Defined(Global:Extranet.UserID>0||Item.Area.Show_ProductPrice_NOT_LoggedIN)-->
 											<div class="product-pricebox-wrapper">
 												<div class="product-pricebox-title"><!--@Translate(shoosevariant, "Choose your variant:")--></div>
 												<div class="product-variants">
@@ -601,26 +618,29 @@
 											</div>
 											<div class="product-facts">
 												<ul>
-							<li>
-								<!--@If(Ecom:Product.Stock>0)-->
-									<span class="icon-smile in-stock"></span>
-									<!--@Ecom:Product:Stock.Text-->
-								<!--@Else-->
-									<span class="icon-meh out-of-stock"></span>
-									<!--@Ecom:Product:Stock.Text-->
-								<!--@EndIf-->
-							</li>
-							<li>
-								<!--@If(Ecom:Product.Stock>0)-->
-									<span class="icon-ok"></span>
-									<!--@Translate(ProductDelivary, "Delivery")--> <!--@Ecom:Product.IsInCart)--> <!--@Ecom:Product:Stock.DeliveryText--> <!--@Ecom:Product:Stock.DeliveryUnit-->
-								<!--@Else-->
-									<span class="icon-ok"></span>
-									<!--@Translate(ProductDelivary, "Delivery")--> <!--@Ecom:Product.IsInCart)--> <!--@Ecom:Product:Stock.DeliveryText--> <!--@Ecom:Product:Stock.DeliveryUnit-->
-								<!--@EndIf-->
-							</li>
+													<li>
+														<!--@If(Ecom:Product.Stock>0)-->
+															<span class="icon-smile in-stock"></span>
+															<!--@Ecom:Product:Stock.Text-->
+														<!--@Else-->
+															<span class="icon-meh out-of-stock"></span>
+															<!--@Ecom:Product:Stock.Text-->
+														<!--@EndIf-->
+													</li>
+													<li>
+														<!--@If(Ecom:Product.Stock>0)-->
+															<span class="icon-ok"></span>
+															<!--@Translate(ProductDelivary, "Delivery")--> <!--@Ecom:Product.IsInCart)--> <!--@Ecom:Product:Stock.DeliveryText--> <!--@Ecom:Product:Stock.DeliveryUnit-->
+														<!--@Else-->
+															<span class="icon-ok"></span>
+															<!--@Translate(ProductDelivary, "Delivery")--> <!--@Ecom:Product.IsInCart)--> <!--@Ecom:Product:Stock.DeliveryText--> <!--@Ecom:Product:Stock.DeliveryUnit-->
+														<!--@EndIf-->
+													</li>
 												</ul>
 											</div>
+											<!--@Else-->
+												<!--@Translate(PleaseLoginToSeePrice, "Please login to see price")-->
+											<!--@EndIf-->
 											<div class="clearfix"></div>
 										</div><!-- / .popup-variants-partright -->
 									</div>
@@ -708,6 +728,7 @@
 											<div class="product-description">
 												<!--@Ecom:Product.ShortDescription-->
 											</div>
+											<!--@If Defined(Global:Extranet.UserID>0||Item.Area.Show_ProductPrice_NOT_LoggedIN)-->
 											<div class="product-pricebox-wrapper">
 												<div class="product-pricebox-title"><!--@Translate(shoosevariant, "Choose your variant:")--></div>
 												<div class="product-variants">
@@ -740,26 +761,29 @@
 											</div>
 											<div class="product-facts">
 												<ul>
-							<li>
-								<!--@If(Ecom:Product.Stock>0)-->
-									<span class="icon-smile in-stock"></span>
-									<!--@Ecom:Product:Stock.Text-->
-								<!--@Else-->
-									<span class="icon-meh out-of-stock"></span>
-									<!--@Ecom:Product:Stock.Text-->
-								<!--@EndIf-->
-							</li>
-							<li>
-								<!--@If(Ecom:Product.Stock>0)-->
-									<span class="icon-ok"></span>
-									<!--@Translate(ProductDelivary, "Delivery")--> <!--@Ecom:Product.IsInCart)--> <!--@Ecom:Product:Stock.DeliveryText--> <!--@Ecom:Product:Stock.DeliveryUnit-->
-								<!--@Else-->
-									<span class="icon-ok"></span>
-									<!--@Translate(ProductDelivary, "Delivery")--> <!--@Ecom:Product.IsInCart)--> <!--@Ecom:Product:Stock.DeliveryText--> <!--@Ecom:Product:Stock.DeliveryUnit-->
-								<!--@EndIf-->
-							</li>
+													<li>
+														<!--@If(Ecom:Product.Stock>0)-->
+															<span class="icon-smile in-stock"></span>
+															<!--@Ecom:Product:Stock.Text-->
+														<!--@Else-->
+															<span class="icon-meh out-of-stock"></span>
+															<!--@Ecom:Product:Stock.Text-->
+														<!--@EndIf-->
+													</li>
+													<li>
+														<!--@If(Ecom:Product.Stock>0)-->
+															<span class="icon-ok"></span>
+															<!--@Translate(ProductDelivary, "Delivery")--> <!--@Ecom:Product.IsInCart)--> <!--@Ecom:Product:Stock.DeliveryText--> <!--@Ecom:Product:Stock.DeliveryUnit-->
+														<!--@Else-->
+															<span class="icon-ok"></span>
+															<!--@Translate(ProductDelivary, "Delivery")--> <!--@Ecom:Product.IsInCart)--> <!--@Ecom:Product:Stock.DeliveryText--> <!--@Ecom:Product:Stock.DeliveryUnit-->
+														<!--@EndIf-->
+													</li>
 												</ul>
 											</div>
+											<!--@Else-->
+												<!--@Translate(PleaseLoginToSeePrice, "Please login to see price")-->
+											<!--@EndIf-->
 											<div class="clearfix"></div>
 										</div><!-- / .popup-variants-partright -->
 									</div>
@@ -849,6 +873,7 @@
 											<div class="product-description">
 												<!--@Ecom:Product.ShortDescription-->
 											</div>
+											<!--@If Defined(Global:Extranet.UserID>0||Item.Area.Show_ProductPrice_NOT_LoggedIN)-->
 											<div class="product-pricebox-wrapper">
 												<div class="product-pricebox-title"><!--@Translate(shoosevariant, "Choose your variant:")--></div>
 												<div class="product-variants">
@@ -882,25 +907,28 @@
 											<div class="product-facts">
 												<ul>
 													<li>
-								<!--@If(Ecom:Product.Stock>0)-->
-									<span class="icon-smile in-stock"></span>
-									<!--@Ecom:Product:Stock.Text-->
-								<!--@Else-->
-									<span class="icon-meh out-of-stock"></span>
-									<!--@Ecom:Product:Stock.Text-->
-								<!--@EndIf-->
-							</li>
-							<li>
-								<!--@If(Ecom:Product.Stock>0)-->
-									<span class="icon-ok"></span>
-									<!--@Translate(ProductDelivary, "Delivery")--> <!--@Ecom:Product.IsInCart)--> <!--@Ecom:Product:Stock.DeliveryText--> <!--@Ecom:Product:Stock.DeliveryUnit-->
-								<!--@Else-->
-									<span class="icon-ok"></span>
-									<!--@Translate(ProductDelivary, "Delivery")--> <!--@Ecom:Product.IsInCart)--> <!--@Ecom:Product:Stock.DeliveryText--> <!--@Ecom:Product:Stock.DeliveryUnit-->
-								<!--@EndIf-->
-							</li>
+														<!--@If(Ecom:Product.Stock>0)-->
+															<span class="icon-smile in-stock"></span>
+															<!--@Ecom:Product:Stock.Text-->
+														<!--@Else-->
+															<span class="icon-meh out-of-stock"></span>
+															<!--@Ecom:Product:Stock.Text-->
+														<!--@EndIf-->
+													</li>
+													<li>
+														<!--@If(Ecom:Product.Stock>0)-->
+															<span class="icon-ok"></span>
+															<!--@Translate(ProductDelivary, "Delivery")--> <!--@Ecom:Product.IsInCart)--> <!--@Ecom:Product:Stock.DeliveryText--> <!--@Ecom:Product:Stock.DeliveryUnit-->
+														<!--@Else-->
+															<span class="icon-ok"></span>
+															<!--@Translate(ProductDelivary, "Delivery")--> <!--@Ecom:Product.IsInCart)--> <!--@Ecom:Product:Stock.DeliveryText--> <!--@Ecom:Product:Stock.DeliveryUnit-->
+														<!--@EndIf-->
+													</li>
 												</ul>
 											</div>
+											<!--@Else-->
+												<!--@Translate(PleaseLoginToSeePrice, "Please login to see price")-->
+											<!--@EndIf-->
 											<div class="clearfix"></div>
 										</div><!-- / .popup-variants-partright -->
 									</div>
@@ -989,6 +1017,7 @@
 											<div class="product-description">
 												<!--@Ecom:Product.ShortDescription-->
 											</div>
+											<!--@If Defined(Global:Extranet.UserID>0||Item.Area.Show_ProductPrice_NOT_LoggedIN)-->
 											<div class="product-pricebox-wrapper">
 												<div class="product-pricebox-title"><!--@Translate(shoosevariant, "Choose your variant:")--></div>
 												<div class="product-variants">
@@ -1021,27 +1050,31 @@
 											</div>
 											<div class="product-facts">
 												<ul>
-							<li>
-								<!--@If(Ecom:Product.Stock>0)-->
-									<span class="icon-smile in-stock"></span>
-									<!--@Ecom:Product:Stock.Text-->
-								<!--@Else-->
-									<span class="icon-meh out-of-stock"></span>
-									<!--@Ecom:Product:Stock.Text-->
-								<!--@EndIf-->
-							</li>
-							<li>
-								<!--@If(Ecom:Product.Stock>0)-->
-									<span class="icon-ok"></span>
-									<!--@Translate(ProductDelivary, "Delivery")--> <!--@Ecom:Product.IsInCart)--> <!--@Ecom:Product:Stock.DeliveryText--> <!--@Ecom:Product:Stock.DeliveryUnit-->
-								<!--@Else-->
-									<span class="icon-ok"></span>
-									<!--@Translate(ProductDelivary, "Delivery")--> <!--@Ecom:Product.IsInCart)--> <!--@Ecom:Product:Stock.DeliveryText--> <!--@Ecom:Product:Stock.DeliveryUnit-->
-								<!--@EndIf-->
-							</li>
+													<li>
+														<!--@If(Ecom:Product.Stock>0)-->
+															<span class="icon-smile in-stock"></span>
+															<!--@Ecom:Product:Stock.Text-->
+														<!--@Else-->
+															<span class="icon-meh out-of-stock"></span>
+															<!--@Ecom:Product:Stock.Text-->
+														<!--@EndIf-->
+													</li>
+													<li>
+														<!--@If(Ecom:Product.Stock>0)-->
+															<span class="icon-ok"></span>
+															<!--@Translate(ProductDelivary, "Delivery")--> <!--@Ecom:Product.IsInCart)--> <!--@Ecom:Product:Stock.DeliveryText--> <!--@Ecom:Product:Stock.DeliveryUnit-->
+														<!--@Else-->
+															<span class="icon-ok"></span>
+															<!--@Translate(ProductDelivary, "Delivery")--> <!--@Ecom:Product.IsInCart)--> <!--@Ecom:Product:Stock.DeliveryText--> <!--@Ecom:Product:Stock.DeliveryUnit-->
+														<!--@EndIf-->
+													</li>
 												</ul>
 											</div>
+											<!--@Else-->
+												<!--@Translate(PleaseLoginToSeePrice, "Please login to see price")-->
+											<!--@EndIf-->
 											<div class="clearfix"></div>
+										
 										</div><!-- / .popup-variants-partright -->
 									</div>
 
@@ -1129,6 +1162,7 @@
 											<div class="product-description">
 												<!--@Ecom:Product.ShortDescription-->
 											</div>
+											<!--@If Defined(Global:Extranet.UserID>0||Item.Area.Show_ProductPrice_NOT_LoggedIN)-->
 											<div class="product-pricebox-wrapper">
 												<div class="product-pricebox-title"><!--@Translate(shoosevariant, "Choose your variant:")--></div>
 												<div class="product-variants">
@@ -1161,26 +1195,30 @@
 											</div>
 											<div class="product-facts">
 												<ul>
-							<li>
-								<!--@If(Ecom:Product.Stock>0)-->
-									<span class="icon-smile in-stock"></span>
-									<!--@Ecom:Product:Stock.Text-->
-								<!--@Else-->
-									<span class="icon-meh out-of-stock"></span>
-									<!--@Ecom:Product:Stock.Text-->
-								<!--@EndIf-->
-							</li>
-							<li>
-								<!--@If(Ecom:Product.Stock>0)-->
-									<span class="icon-ok"></span>
-									<!--@Translate(ProductDelivary, "Delivery")--> <!--@Ecom:Product.IsInCart)--> <!--@Ecom:Product:Stock.DeliveryText--> <!--@Ecom:Product:Stock.DeliveryUnit-->
-								<!--@Else-->
-									<span class="icon-ok"></span>
-									<!--@Translate(ProductDelivary, "Delivery")--> <!--@Ecom:Product.IsInCart)--> <!--@Ecom:Product:Stock.DeliveryText--> <!--@Ecom:Product:Stock.DeliveryUnit-->
-								<!--@EndIf-->
-							</li>
+													<li>
+														<!--@If(Ecom:Product.Stock>0)-->
+															<span class="icon-smile in-stock"></span>
+															<!--@Ecom:Product:Stock.Text-->
+														<!--@Else-->
+															<span class="icon-meh out-of-stock"></span>
+															<!--@Ecom:Product:Stock.Text-->
+														<!--@EndIf-->
+													</li>
+													<li>
+														<!--@If(Ecom:Product.Stock>0)-->
+															<span class="icon-ok"></span>
+															<!--@Translate(ProductDelivary, "Delivery")--> <!--@Ecom:Product.IsInCart)--> <!--@Ecom:Product:Stock.DeliveryText--> <!--@Ecom:Product:Stock.DeliveryUnit-->
+														<!--@Else-->
+															<span class="icon-ok"></span>
+															<!--@Translate(ProductDelivary, "Delivery")--> <!--@Ecom:Product.IsInCart)--> <!--@Ecom:Product:Stock.DeliveryText--> <!--@Ecom:Product:Stock.DeliveryUnit-->
+														<!--@EndIf-->
+													</li>
 												</ul>
 											</div>
+											<!--@Else-->
+												<!--@Translate(PleaseLoginToSeePrice, "Please login to see price")-->
+											<!--@EndIf-->
+
 											<div class="clearfix"></div>
 										</div><!-- / .popup-variants-partright -->
 									</div>
