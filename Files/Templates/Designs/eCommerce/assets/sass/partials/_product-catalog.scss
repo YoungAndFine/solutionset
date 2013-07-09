@@ -355,6 +355,7 @@
 	 	font-size: 1.3em;
 	  color: $star-color-empty;
 		white-space: nowrap;
+		display: inline-block;
 
 		.rating {
 			overflow: hidden;
