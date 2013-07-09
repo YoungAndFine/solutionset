@@ -57,7 +57,7 @@
           <editorConfuguration />
         </editor>
       </field>
-      <field name="Show Product price If LoggedIN" systemName="Show_ProductPrice_If_LoggedIN" description="Show proudct price and sotck level if logged in" type="System.Boolean, mscorlib">
+      <field name="Show Product price NOT LoggedIN" systemName="Show_ProductPrice_NOT_LoggedIN" description="" type="System.Boolean, mscorlib">
         <editor type="Dynamicweb.Content.Items.Editors.CheckboxEditor, Dynamicweb">
           <editorConfuguration />
         </editor>
@@ -166,7 +166,7 @@
             <field systemName="Payoff_Content_Page_ID" />
             <field systemName="Show_Voucher" />
             <field systemName="Show_SocialMedia_Icons" />
-            <field systemName="Show_ProductPrice_If_LoggedIN" />
+            <field systemName="Show_ProductPrice_NOT_LoggedIN" />
           </fields>
         </group>
         <group name="Product Added To Cart" systemName="Product_Added_To_Cart" collapsibleState="None">
