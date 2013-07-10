@@ -253,7 +253,7 @@
 <!--@LoopEnd(ValidationErrors)-->
 
 
-<div class="span9" id="checkout-wrapper">
+<div style="width:50%;" class="span9" id="checkout-wrapper">
 	<form name="ordersubmit" id="ordersubmit" method="post">
 		<input type="hidden" name="<!--@CartV2.NextStepButtonName-->" id="<!--@CartV2.NextStepButtonName-->" value="true"/>
 		<div class="box-rounded">
@@ -261,7 +261,7 @@
 				<h3>1. <!--@Translate(youradress, "Your address")--></h3>
 				<a href="#" class="box-headline-info" data-toggle="modal" data-target="#checkoutDataProtection"><!--@Translate(aboutinfo, "About personal data protection")--></a>
 			</legend>
-			<div class="box-content">
+			<div style="width:550px;" class="box-content">
 				<!--@If(Global:Extranet.UserID==0)-->
 				<a href="#" class="btn dw-button-orange" data-toggle="modal" data-target="#LoginBox"><strong><!--@Translate(alreadymember, 'Already a customer - login here')--></strong></a>
 				<!--@EndIf-->
@@ -418,6 +418,97 @@
 					<!--@EndIf(Ecom:Cart.UseNewsletterSubscription)-->
 				</div>
 			</div>
+
+			<legend class="box-headline">
+				<h3>3. <!--@Translate(Payment_and_Shipping_Method, "Payment and Shipping Method")--></h3>
+			</legend>
+			<div class="box-content">
+				<div class="form-horizontal pay-and-shipp">
+
+					<!-- <div id="payment-content" class="payment_select"> -->
+					<div class="control-group">
+						<div class="payment-section">
+							<div class="control-section-content">
+								<!--@Translate(Payment, "Payment")-->
+								<span>(<a href="#" data-toggle="modal" data-target="#checkoutAboutPayment"><!--@Translate(aboutpayment, "About payment methods")--></a>)</span>
+							</div>
+							<!--@LoopStart(Paymethods)-->
+							<!--@HeaderStart--><select name="EcomCartPaymethodID"><!--@HeaderEnd-->
+								<option value="<!--@Ecom:Cart.Paymethod.ID-->" <!--@If Defined(Ecom:Cart.Paymethod.IsSelected)-->selected="selected" <!--@EndIf(Ecom:Cart.Paymethod.IsSelected)-->	data-type="payment" for="EcomCartPaymethodID_<!--@Ecom:Cart.Paymethod.ID-->" data-cost="<!--@Ecom:Cart.Paymethod.Price.PriceWithoutVAT-->" data-icon="<!--@Ecom:Cart.Paymethod.Icon.Clean-->">
+									<!--@Ecom:Cart.Paymethod.Name--> (<!--@Ecom:Cart.Paymethod.Price.PriceFormatted-->)
+								</option>
+								<!--@FooterStart--></select><!--@FooterEnd-->
+							<!--@LoopEnd(Paymethods)-->
+						</div>
+						<div class="shipping-section">
+							<div class="control-section-content">
+								<!--@Translate(shipping, "Shipping")-->
+								<span>(<a href="#" data-toggle="modal" data-target="#checkoutAboutDelivery"><!--@Translate(aboutdelivery, "About delivery methods")--></a>)</span>
+							</div>
+							<!--@LoopStart(Shippingmethods)-->
+							<!--@HeaderStart--><select name="EcomCartShippingmethodID"><!--@HeaderEnd-->
+								<option value="<!--@Ecom:Cart.Shippingmethod.ID-->" <!--@If Defined(Ecom:Cart.Shippingmethod.IsSelected)-->selected="selected" <!--@EndIf(Ecom:Cart.Shippingmethod.IsSelected)--> data-type="delivery" data-cost="<!--@Ecom:Cart.ShippingMethod.Price.Price-->">
+									<!--@Ecom:Cart.Shippingmethod.Name--> (<!--@Ecom:Cart.ShippingMethod.Price.PriceFormatted-->)
+								</option>
+								<!--@FooterStart--></select><!--@FooterEnd-->
+							<!--@LoopEnd(Shippingmethods)-->
+
+							<!--@LoopStart(Shippingmethods)-->
+							<!--@If Defined(Ecom:ShippingProvider.Content)-->
+							<div class="provider shippingID-<!--@Ecom:Cart.Shippingmethod.ID-->" style="display: none;">
+								<!--@Ecom:ShippingProvider.Content-->
+							</div>
+							<!--@EndIf(Ecom:ShippingProvider.Content)-->
+							<!--@LoopEnd(Shippingmethods)-->
+
+						</div>
+						<div class="clearfix"></div>
+					</div>
+
+				</div>
+			</div>
+			<!--@If Defined(Item.Area.Enable_Voucher)-->
+			<legend class="box-headline">
+				<h3><!--@Translate(vouchercode, "Voucher code")--></h3>
+			</legend>
+			<div class="box-content">
+				<div class="form-horizontal">
+					<div class="control-group">
+						<label class="control-label" for="EcomOrderVoucherCode">
+							<span><!--@Translate(yourcode, "Your code")--></span>
+							<hr>
+						</label>
+						<div class="controls with-button">
+							<input type="text" name="EcomOrderVoucherCode" id="EcomOrderVoucherCode" value="<!--@Ecom:Order.Customer.VoucherCode-->" />
+							<a href="<!--@Global:Request.Url-->" class="btn dw-button-green check_voucher" data-ok="<!--@Translate(accept, "Your voucher is accepted")-->" data-error="<!--@Translate(error, "Your voucher is not accepted")-->">
+								<!--@Translate(add2order, "Add to order")-->
+								<i class="icon-double-angle-right arr-forward-small-white"></i>
+							</a>
+							<i class="icon-ok voucher_block"></i>
+						</div>
+					</div>
+			<!--@EndIf-->
+			<div class="box-content">
+					<div class="control-action-group">
+						<div class="controls with-button">
+							<label class="checkbox">
+								<input type="checkbox" id="EcomOrderCustomerAccepted2" name="EcomOrderCustomerAccepted" value="1" />
+								<!--@Translate(Iaccept, "I accept")-->&nbsp;<a href="#" data-toggle="modal" data-target="#checkoutTerms"><!--@Translate(termsandconditions, "Terms and Conditions")--></a>
+							</label>
+							<a href="#" onclick="copy_address(); if($('#EcomOrderCustomerAccepted2').attr('checked')) $('#ordersubmit').submit();else alert('<!--@Translate(pleasetermsandconditions, "Please accept Terms and Conditions")-->')" class="btn dw-button-green">
+								<!--@Translate(confirmandpay, "Confirm and pay")-->
+								<i class="icon-double-angle-right arr-forward-small-white"></i>
+							</a>
+							<div class="clearfix"></div>_
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><!-- / .box-rounded -->
+	</form>
+</div>
+<div style="width:540px;" class="span3">
+	<div class="box-rounded" id="order-container">
 			<legend class="box-headline">
 				<h3>2. <!--@Translate(shippingInfo, "Shipping information")--></h3>
 			</legend>
@@ -496,128 +587,7 @@
 					</div>
 				</div>
 			</div>
-			<legend class="box-headline">
-				<h3>3. <!--@Translate(Payment_and_Shipping_Method, "Payment and Shipping Method")--></h3>
-			</legend>
-			<div class="box-content">
-				<div class="form-horizontal pay-and-shipp">
-
-					<!-- <div id="payment-content" class="payment_select"> -->
-					<div class="control-group">
-						<div class="payment-section">
-							<div class="control-section-content">
-								<!--@Translate(Payment, "Payment")-->
-								<span>(<a href="#" data-toggle="modal" data-target="#checkoutAboutPayment"><!--@Translate(aboutpayment, "About payment methods")--></a>)</span>
-							</div>
-							<!--@LoopStart(Paymethods)-->
-							<!--@HeaderStart--><select name="EcomCartPaymethodID"><!--@HeaderEnd-->
-								<option value="<!--@Ecom:Cart.Paymethod.ID-->" <!--@If Defined(Ecom:Cart.Paymethod.IsSelected)-->selected="selected" <!--@EndIf(Ecom:Cart.Paymethod.IsSelected)-->	data-type="payment" for="EcomCartPaymethodID_<!--@Ecom:Cart.Paymethod.ID-->" data-cost="<!--@Ecom:Cart.Paymethod.Price.PriceWithoutVAT-->" data-icon="<!--@Ecom:Cart.Paymethod.Icon.Clean-->">
-									<!--@Ecom:Cart.Paymethod.Name--> (<!--@Ecom:Cart.Paymethod.Price.PriceFormatted-->)
-								</option>
-								<!--@FooterStart--></select><!--@FooterEnd-->
-							<!--@LoopEnd(Paymethods)-->
-						</div>
-						<div class="shipping-section">
-							<div class="control-section-content">
-								<!--@Translate(shipping, "Shipping")-->
-								<span>(<a href="#" data-toggle="modal" data-target="#checkoutAboutDelivery"><!--@Translate(aboutdelivery, "About delivery methods")--></a>)</span>
-							</div>
-							<!--@LoopStart(Shippingmethods)-->
-							<!--@HeaderStart--><select name="EcomCartShippingmethodID"><!--@HeaderEnd-->
-								<option value="<!--@Ecom:Cart.Shippingmethod.ID-->" <!--@If Defined(Ecom:Cart.Shippingmethod.IsSelected)-->selected="selected" <!--@EndIf(Ecom:Cart.Shippingmethod.IsSelected)--> data-type="delivery" data-cost="<!--@Ecom:Cart.ShippingMethod.Price.Price-->">
-									<!--@Ecom:Cart.Shippingmethod.Name--> (<!--@Ecom:Cart.ShippingMethod.Price.PriceFormatted-->)
-								</option>
-								<!--@FooterStart--></select><!--@FooterEnd-->
-							<!--@LoopEnd(Shippingmethods)-->
-
-							<!--@LoopStart(Shippingmethods)-->
-							<!--@If Defined(Ecom:ShippingProvider.Content)-->
-							<div class="provider shippingID-<!--@Ecom:Cart.Shippingmethod.ID-->" style="display: none;">
-								<!--@Ecom:ShippingProvider.Content-->
-							</div>
-							<!--@EndIf(Ecom:ShippingProvider.Content)-->
-							<!--@LoopEnd(Shippingmethods)-->
-
-						</div>
-						<div class="clearfix"></div>
-					</div>
-
-				</div>
-			</div>
-			
-			<!--@If Defined(Item.Area.Enable_Voucher)-->
-			<legend class="box-headline">
-				<h3><!--@Translate(vouchercode, "Voucher code")--></h3>
-			</legend>
-			<div class="box-content">
-				<div class="form-horizontal">
-					<div class="control-group">
-						<label class="control-label" for="EcomOrderVoucherCode">
-							<span><!--@Translate(yourcode, "Your code")--></span>
-							<hr>
-						</label>
-						<div class="controls with-button">
-							<input type="text" name="EcomOrderVoucherCode" id="EcomOrderVoucherCode" value="<!--@Ecom:Order.Customer.VoucherCode-->" />
-							<a href="<!--@Global:Request.Url-->" class="btn dw-button-green check_voucher" data-ok="<!--@Translate(accept, "Your voucher is accepted")-->" data-error="<!--@Translate(error, "Your voucher is not accepted")-->">
-								<!--@Translate(add2order, "Add to order")-->
-								<i class="icon-double-angle-right arr-forward-small-white"></i>
-							</a>
-							<i class="icon-ok voucher_block"></i>
-						</div>
-					</div>
-					<div class="control-action-group">
-						<div class="controls with-button">
-							<label class="checkbox">
-								<input type="checkbox" id="EcomOrderCustomerAccepted2" name="EcomOrderCustomerAccepted" value="1" />
-								<!--@Translate(Iaccept, "I accept")-->&nbsp;<a href="#" data-toggle="modal" data-target="#checkoutTerms"><!--@Translate(termsandconditions, "Terms and Conditions")--></a>
-							</label>
-							<a href="#" onclick="copy_address(); if($('#EcomOrderCustomerAccepted2').attr('checked')) $('#ordersubmit').submit();else alert('<!--@Translate(pleasetermsandconditions, "Please accept Terms and Conditions")-->')" class="btn dw-button-green">
-								<!--@Translate(confirmandpay, "Confirm and pay")-->
-								<i class="icon-double-angle-right arr-forward-small-white"></i>
-							</a>
-							<div class="clearfix"></div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!--@EndIf(Item.Area.Enable_Voucher)-->
-			
-		</div><!-- / .box-rounded -->
-	</form>
-</div>
-<div class="span3">
-	<div class="box-rounded" id="order-container">
-		<div class="box-headline box-headline-dark">
-			<h3>
-				<!--@Translate(yourOrder, "Your order")-->
-				<button type="button" class="btn btn-small visible-phone collapsed" data-toggle="collapse" data-target=".box-minicart.collapse">
-					<i class="icon-collapse"></i>
-				</button>
-			</h3>
-		</div>
-		<div class="box-content box-minicart collapse">
-			<!--@Include(MiniCart.html)-->
-		</div>
-	</div><!-- / .box-rounded -->
-	<div class="checkout-links">
-		<h4><!--@Translate(praticalinfo, "Practical info")-->:</h4>
-		<ul>
-			<li><a href="#" data-toggle="modal" data-target="#checkoutDelivery"><!--@Translate(pracdelivery, "Delivery")--></a></li>
-			<li><a href="#" data-toggle="modal" data-target="#checkoutPayment"><!--@Translate(pracpayment, "Payment")--></a></li>
-			<li><a href="#" data-toggle="modal" data-target="#checkoutReturn"><!--@Translate(pracpolicy, "Return policy")--></a></li>
-			<li><a href="#" data-toggle="modal" data-target="#checkoutSecurity"><!--@Translate(pracsecurity, "Security")--></a></li>
-			<li><a href="#" data-toggle="modal" data-target="#checkoutSupport"><!--@Translate(pracsupport, "Support")--></a></li>
-		</ul>
-		<br>
-		<h4><!--@Translate(mostaskedquestions, "Frequently asked questions")-->:</h4>
-		<ul>
-			<li><a href="#" data-toggle="modal" data-target="#checkoutPayinfo"><!--@Translate(whatcanIpaywith, "What payment methods do you support?")--></a></li>
-			<li><a href="#" data-toggle="modal" data-target="#checkoutCallyou"><!--@Translate(canIcallyou, "Can I call you?")--></a></li>
-			<li><a href="#" data-toggle="modal" data-target="#checkoutRaisemoney"><!--@Translate(whendoyouraisemymoney, "When do you raise my money?")--></a></li>
-			<li><a href="#" data-toggle="modal" data-target="#checkoutTrackorder"><!--@Translate(canItrackmyorder, "Can I track my order?")--></a></li>
-			<li><a href="#" data-toggle="modal" data-target="#checkoutDonotfit"><!--@Translate(clothesdonotfit, "Clothes do not fit, then what?")--></a></li>
-		</ul>
-	</div><!-- / .checkout-links -->
+	</div>
 </div>
 
 <div class="modal hide fade modal-type-standart" id="checkoutDataProtection" tabindex="-1" role="dialog">
