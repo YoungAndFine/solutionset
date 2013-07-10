@@ -27,21 +27,7 @@
 				</a>
 			</div>
 			<div class="product-rating-comments <!--@If Defined(Ecom:Product.IsInCart)-->item-added<!--@EndIf(Ecom:Product.IsInCart)-->">
-				<div class="product-rating">
-					<div itemscope="" itemtype="http://data-vocabulary.org/Review-aggregate">
-						<span itemprop="itemreviewed" class="hidden"><!--@Ecom:Product.Name--></span>
-						<span itemprop="rating" itemscope itemtype="http://data-vocabulary.org/Rating">
-							<span itemprop="average"><!--@Ecom:Product.Rating--></span> out of <span itemprop="best">5</span>
-						</span>
-						<div class="stars-container">
-							<i class="icon-star-empty"></i><i class="icon-star-empty"></i><i class="icon-star-empty"></i><i class="icon-star-empty"></i><i class="icon-star-empty"></i>
-						</div>
-						<div class="product-comments">
-							<div class="icon-comment-alt icon-flip-horizontal"></div>
-							(<a href="<!--@Ecom:Product.LinkGroup.Clean-->&TabReviews=true"><span itemprop="count"><!--@Ecom:Product.CommentCount--></span></a>)
-						</div>
-					</div>
-				</div>
+				<!--@Include(/eCom/ProductList/partials/rating.html)-->
 			</div>
 			<div class="stock">
 				<!--@If(Ecom:Product.Stock>0)-->
@@ -73,7 +59,7 @@
 </button>
 </div>
 <!--@If Defined(Ecom:Product.IsInCart)-->
-<!--@Include(AddedToCart.html)-->
+<!--@Include(/eCom/ProductList/partials/AddedToCart.html)-->
 <!--@EndIf(Ecom:Product.IsInCart)-->
 </div>
 <!--@Else-->
@@ -96,21 +82,7 @@
 		&nbsp;<!--@Ecom:Product.Number-->
 	</div>
 	<div class="product-rating-comments visible-phone">
-		<div class="product-rating">
-			<div itemscope="" itemtype="http://data-vocabulary.org/Review-aggregate">
-				<span itemprop="itemreviewed" class="hidden"><!--@Ecom:Product.Name--></span>
-				<span itemprop="rating" itemscope itemtype="http://data-vocabulary.org/Rating">
-					<span itemprop="average"><!--@Ecom:Product.Rating--></span> out of <span itemprop="best">5</span>
-				</span>
-				<div class="stars-container">
-				<i class="icon-star-empty"></i><i class="icon-star-empty"></i><i class="icon-star-empty"></i><i class="icon-star-empty"></i><i class="icon-star-empty"></i>
-				</div>
-				<div class="product-comments">
-					<div class="icon-comment-alt icon-flip-horizontal"></div>
-					(<a href="<!--@Ecom:Product.LinkGroup.Clean-->&TabReviews=true"><span itemprop="count"><!--@Ecom:Product.CommentCount--></span></a>)
-				</div>
-			</div>
-		</div>
+		<!--@Include(/eCom/ProductList/partials/rating.html)-->
 	</div>
 	<div class="stock visible-phone">
 		<!--@If(Ecom:Product.Stock>0)-->
@@ -168,17 +140,7 @@
 			<div class="span5">
 				<div class="popup-variants-partright">
 					<div class="product-rating-comments">
-						<div class="product-rating">
-							<div itemscope="" itemtype="http://data-vocabulary.org/Review-aggregate">
-								<span itemprop="itemreviewed" class="hidden"><!--@Ecom:Product.Name--></span>
-								<span itemprop="rating" itemscope itemtype="http://data-vocabulary.org/Rating">
-									<span itemprop="average"><!--@Ecom:Product.Rating--></span> out of <span itemprop="best">5</span>
-								</span>
-								<div class="stars-container">
-									<i class="icon-star-empty"></i><i class="icon-star-empty"></i><i class="icon-star-empty"></i><i class="icon-star-empty"></i><i class="icon-star-empty"></i>
-								</div>
-							</div>
-						</div>
+						<!--@Include(/eCom/ProductList/partials/rating.html)-->
 					</div>
 					<div class="product-pricelabel"><!--@Translate(ProductNumberShort, "no.")-->:&nbsp;<!--@Ecom:Product.Number--></div>
 					<div class="clearfix"></div>
