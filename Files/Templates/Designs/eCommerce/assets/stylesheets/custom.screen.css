@@ -2,3 +2,155 @@
  * custom.screen - Use this file for your own styles to overwrite the screen.css
  *
  */
+	
+/*	
+.mainmenu-wrapper {
+	filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF009BDC', endColorstr='#FF004F71');
+	background: #004f71;
+	background-image: -ms-linear-gradient(top, #009bdc 0%, #004f71 100%);
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #009bdc), color-stop(100%, #004f71));
+	background-image: -webkit-linear-gradient(top, #009bdc,#004f71);
+	background-image: -moz-linear-gradient(top, #009bdc,#004f71);
+	background-image: -o-linear-gradient(top, #009bdc,#004f71);
+	background-image: linear-gradient(top, #009bdc,#004f71);
+	border: 1px solid #004f71;
+	border-left: 0;
+	border-right: 0;}
+
+.mainmenu .nav>li:hover,.mainmenu .nav>li.active{
+	*zoom:1;filter:progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#CCCCC1', endColorstr='#1CCCCC');
+	background:#CCCCCC;
+	background-image:-ms-linear-gradient(top, #CCCCCCC 0%, #00aff9 100%);
+	background-image:-webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #009ee0), color-stop(100%, #00aff9));
+	background-image:-webkit-linear-gradient(top, #009ee0,#00aff9);
+	background-image:-moz-linear-gradient(top, #009ee0,#00aff9);
+	background-image:-o-linear-gradient(top, #009ee0,#00aff9);
+	background-image:linear-gradient(top, #009ee0,#00aff9);
+	border-left-color:transparent;
+	-webkit-transition:background-color 0.1s ease-in;
+	-moz-transition:background-color 0.1s ease-in;-o-transition:background-color 0.1s ease-in;
+	transition:background-color 0.1s ease-in}
+*/
+
+.mainmenu-wrapper {
+	filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF009BDC', endColorstr='#FF004F71');
+	background: #CCCCC1;
+	background-image: -ms-linear-gradient(top, #1CCCC 0%, #CCCCC1 100%);
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #1CCCC), color-stop(100%, #CCCCC1));
+	background-image: -webkit-linear-gradient(top, #1CCCC,#CCCCC1);
+	background-image: -moz-linear-gradient(top, #1CCCC,#CCCCC1);
+	background-image: -o-linear-gradient(top, #1CCCC,#CCCCC1);
+	background-image: linear-gradient(top, #1CCCC,#CCCCC1);
+	border: 1px solid #CCCCC1;
+	border-left: 0;
+	border-right: 0;}
+
+.mainmenu .nav>li:hover,.mainmenu .nav>li.active{
+	*zoom:1;filter:progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#CCCCC1', endColorstr='#1CCCCC');
+	background:#CCCCCC;
+	background-image: -ms-linear-gradient(top, #1CCCC 0%, #CCCCC1 100%);
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #1CCCC), color-stop(100%, #CCCCC1));
+	background-image: -webkit-linear-gradient(top, #1CCCC,#CCCCC1);
+	background-image: -moz-linear-gradient(top, #1CCCC,#CCCCC1);
+	background-image: -o-linear-gradient(top, #1CCCC,#CCCCC1);
+	background-image: linear-gradient(top, #1CCCC,#CCCCC1);
+	border-left-color:transparent;
+	-webkit-transition:background-color 0.1s ease-in;
+	-moz-transition:background-color 0.1s ease-in;-o-transition:background-color 0.1s ease-in;
+	transition:background-color 0.1s ease-in}
+
+/*ALL HEADERS*/
+.content-wrapper h1 {
+	float: left;
+	padding: 0 0 10px 10px;
+	color: #666666;
+	font: bold 30px/35px arial;
+	}
+	
+/*ALL PRODUCT HEADERS*/	
+.product-list-item-wrapper .product-link {
+	color: #666666;
+	font: bold 18px/24px arial;
+	text-decoration: underline;
+	}
+
+/*ALL FILTER SECTION HEADER CONTENT ECT.*/	
+.productlist .catalog-content .filter-wrapper.filter-reset .colored-section {
+	height: 40px;
+	margin: 0 -1px 20px;
+	position: relative;
+	background: #666666;
+	color: white;
+	font: 18px/40px arial;
+	text-align: center;}
+
+/*ALL FILTERSECTION CONTENT, ARROW ECT*/	
+.productlist .catalog-content .filter-wrapper.filter-reset .colored-section:after {
+	content: '';
+	width: 0;
+	height: 0;
+	left: 50%;
+	bottom: -16px;
+	margin-left: -8px;
+	position: absolute;
+	border-width: 8px;
+	border-color: #666666 transparent transparent transparent;
+	border-style: solid;}
+
+/*BUTTON COLLORS*/
+
+/*GREEY BUTTONS*/
+.dw-button-green{
+	*zoom:1;filter:progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFF9F9F9', endColorstr='#FFE7E9EB');
+	background:#e7e9eb;
+	background-image:-ms-linear-gradient(top, #f9f9f9 0%, #e7e9eb 100%);
+	background-image:-webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f9f9f9), color-stop(100%, #e7e9eb));
+	background-image:-webkit-linear-gradient(top, #f9f9f9,#e7e9eb);
+	background-image:-moz-linear-gradient(top, #f9f9f9,#e7e9eb);
+	background-image:-o-linear-gradient(top, #f9f9f9,#e7e9eb);
+	background-image:linear-gradient(top, #f9f9f9,#e7e9eb);
+	border-color:rgba(0,0,0,0.15) rgba(0,0,0,0.15) rgba(0,0,0,0.25);
+	text-shadow:0 1px 1px #ffffff;
+	color:#545649 !important}
+	
+.dw-button-green:active,.dw-button-green:hover{
+	background:#e7e9eb}
+
+/*GREEN BUTTONS*/
+/*.dw-button-green{
+	*zoom:1;filter:progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF00DD11', endColorstr='#FF009209');
+	background:#009209;
+	background-image:-ms-linear-gradient(top, #0d1 0%, #009209 100%);
+	background-image:-webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #00dd11), color-stop(100%, #009209));
+	background-image:-webkit-linear-gradient(top, #00dd11,#009209);
+	background-image:-moz-linear-gradient(top, #00dd11,#009209);
+	background-image:-o-linear-gradient(top, #00dd11,#009209);
+	background-image:linear-gradient(top, #00dd11,#009209);
+	border-color:#56a201;
+	text-shadow:0 -1px 2px #299630;
+	color:white}
+	
+.dw-button-green:active,.dw-button-green:hover{
+	background:#14ac1f;color:white}*/
+
+
+/*ORANGE BUTTONS*/
+/*.dw-button-green{*
+	
+	zoom:1;filter:progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFFB9E25', endColorstr='#FFFF8500');
+	background:#ff8500;
+	background-image:-ms-linear-gradient(top, #fb9e25 0%, #ff8500 100%);
+	background-image:-webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #fb9e25), color-stop(100%, #ff8500));
+	background-image:-webkit-linear-gradient(top, #fb9e25,#ff8500);
+	background-image:-moz-linear-gradient(top, #fb9e25,#ff8500);
+	background-image:-o-linear-gradient(top, #fb9e25,#ff8500);
+	background-image:linear-gradient(top, #fb9e25,#ff8500);
+	border-color:#FF8500;
+	text-shadow:1px 1px 0 #cc9f52;
+	-webkit-box-shadow:1px 1px 2px #fcbf70;
+	-moz-box-shadow:1px 1px 2px #fcbf70;
+	box-shadow:1px 1px 2px #fcbf70;
+	color:#fff !important}
+
+.dw-button-green:active,.dw-button-green:hover{
+	background:#FF8500}*/
