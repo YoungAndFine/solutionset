@@ -38,21 +38,6 @@
 				<!--@LoopStart(OrderLines)-->
 				<tr>
 					<td class="cart-cell-product">
-						<!--@If Defined(Ecom:Product.ID)-->
-						<!--@If Defined(Ecom:Product.ImageSmall.Default.Clean)-->
-						<img src="/Admin/Public/getimage.ashx?Image=<!--@Ecom:Product.ImageSmall.Default.Clean-->&Width=100" alt="" title="<!--@Ecom:Product.Name-->" />
-						<!--@EndIf(Ecom:Product.ImageSmall.Default.Clean)-->
-
-						<!--@If Not Defined(Ecom:Product.ImageSmall.Default.Clean)-->
-						<img src="/Admin/Public/getimage.ashx?Image=<!--@Ecom:Product.ImageLarge.Default.Clean-->&Width=100" alt="" title="<!--@Ecom:Product.Name-->" />
-						<!--@EndIf(Ecom:Product.ImageSmall.Default.Clean)-->
-						<!--@EndIf(Ecom:Product.ID)-->
-
-						<!--@If Not Defined(Ecom:Product.ID)-->
-						<img src="http://<!--@Global:Request.Host-->/Admin/Public/getimage.ashx?Image=/Files/Images/discount_pic.jpg&Width=100"/>
-						<!--@EndIf(Ecom:Product.ID)-->
-
-						<div class="cart-cell-product-content">
 							<!--@If Not Defined(Ecom:Product.ID)-->
 							<!--@Translate(discount, 'Discount')--> <!--@Ecom:Order:OrderLine.ProductName-->
 							<!--@EndIf(Ecom:Product.ID)-->
@@ -70,14 +55,6 @@
 								<li><!--@Ecom:Order:OrderLine.ProductName--> (<!--@Ecom:Order:OrderLine.Price.PriceWithoutVATFormatted-->)</li>
 								<!--@LoopEnd(BOMItems)-->
 							</ul>
-
-							<!--@If Defined(Ecom:Product.ID)-->
-							<br>
-							<i><!--@Translate(productnumber, "Product number")-->:
-								<!--@Ecom:Product.Number--></i>
-							<!--@EndIf(Ecom:Product.ID)-->
-
-						</div>
 
 						<i class="visible-phone">
 							<!--@Translate(expecteddeliveryshort, "Delivery")-->
@@ -137,7 +114,7 @@
 							</ul>
 						</div>
 					</td>
-					<td style="width:18.9%;" class="cart-cell-fee-value">
+					<td class="cart-cell-fee-value" style="width:18.9%">
 						<ul>
 							<li><!--@Ecom:Order.PriceWithoutFees.PriceWithVATFormatted--></li>
 							<li><!--@Ecom:Order.Price.VATFormatted--></li>
