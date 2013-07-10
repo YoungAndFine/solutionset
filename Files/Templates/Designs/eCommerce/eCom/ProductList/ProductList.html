@@ -15,8 +15,8 @@
 			</div>
 		</div><!-- / .product-image -->
 		<!--@EndIf(Ecom:Product.ImageSmall.Default.Clean)-->
-		
-		<!--@If Defined(Global:Extranet.UserID>0||Item.Area.Show_ProductPrice_NOT_LoggedIN)-->
+
+		<!--@If(Item.Area.Require_Login_To_Show_Prices!='True' || Global:Extranet.UserID>0)-->
 		<div class="details hidden-phone">
 			<div class="product-price">
 				<!--@Ecom:Product.Price.PriceWithVATFormatted-->

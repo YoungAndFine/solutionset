@@ -61,7 +61,7 @@
 		<div class="details" itemprop="offerDetails" itemscope itemtype="http://data-vocabulary.org/Offer">
 			<!--@If(Ecom:Product.IsInCart=="True")--><!--@EndIf-->
 			
-			<!--@If Defined(Global:Extranet.UserID>0||Item.Area.Show_ProductPrice_NOT_LoggedIN)-->
+			<!--@If(Item.Area.Require_Login_To_Show_Prices!='True' || Global:Extranet.UserID>0)-->
 			<div class="product-pricebox-wrapper hidden-phone">
 				<!--@If(Ecom:Product.VariantCount>0)-->
 				<h3><!--@Translate(Choose_variant, "Choose your variant")-->:</h3>
@@ -167,7 +167,7 @@
 			<!--@Translate(PleaseLoginToSeePrice, "Please login to see price")-->
 		<!--@EndIf-->
 		
-		<!--@If Defined(Item.Area.Show_SocialMedia_Icons)-->
+		<!--@If Defined(Item.Area.Enable_Social_Media)-->
 			<div class="product-addthis">
 				<div class="addthis_toolbox addthis_default_style ">
 				<a class="addthis_button_facebook"></a>
@@ -179,7 +179,7 @@
 				</div>
 				<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=xa-4ffa83b21df57f59"></script>
 			</div>
-		<!--@EndIf(Item.Area.Show_SocialMedia_Icons)-->
+		<!--@EndIf(Item.Area.Enable_Social_Media)-->
 		</div><!-- / .details -->		
 		<div class="content">
 			<div class="tab-content">
@@ -298,7 +298,7 @@
 				</div>
 			</div>
 		</div><!-- / .content -->
-		<!--@If Defined(Global:Extranet.UserID>0||Item.Area.Show_ProductPrice_NOT_LoggedIN)-->
+		<!--@If(Item.Area.Require_Login_To_Show_Prices!='True' || Global:Extranet.UserID>0)-->
 		<div class="product-pricebox-wrapper visible-phone">
 			<!--@If(Ecom:Product.VariantCount>0)-->
 			<h3><!--@Translate(Choose_variant, "Choose your variant")-->:</h3>
@@ -444,7 +444,7 @@
 											<div class="product-description">
 												<!--@Ecom:Product.ShortDescription-->
 											</div>
-											<!--@If Defined(Global:Extranet.UserID>0||Item.Area.Show_ProductPrice_NOT_LoggedIN)-->
+											<!--@If(Item.Area.Require_Login_To_Show_Prices!='True' || Global:Extranet.UserID>0)-->
 											<div class="product-pricebox-wrapper">
 												<div class="product-pricebox-title"><!--@Translate(shoosevariant, "Choose your variant:")--></div>
 												<div class="product-variants">
@@ -585,7 +585,7 @@
 											<div class="product-description">
 												<!--@Ecom:Product.ShortDescription-->
 											</div>
-											<!--@If Defined(Global:Extranet.UserID>0||Item.Area.Show_ProductPrice_NOT_LoggedIN)-->
+											<!--@If(Item.Area.Require_Login_To_Show_Prices!='True' || Global:Extranet.UserID>0)-->
 											<div class="product-pricebox-wrapper">
 												<div class="product-pricebox-title"><!--@Translate(shoosevariant, "Choose your variant:")--></div>
 												<div class="product-variants">
@@ -728,7 +728,7 @@
 											<div class="product-description">
 												<!--@Ecom:Product.ShortDescription-->
 											</div>
-											<!--@If Defined(Global:Extranet.UserID>0||Item.Area.Show_ProductPrice_NOT_LoggedIN)-->
+											<!--@If(Item.Area.Require_Login_To_Show_Prices!='True' || Global:Extranet.UserID>0)-->
 											<div class="product-pricebox-wrapper">
 												<div class="product-pricebox-title"><!--@Translate(shoosevariant, "Choose your variant:")--></div>
 												<div class="product-variants">
@@ -873,7 +873,7 @@
 											<div class="product-description">
 												<!--@Ecom:Product.ShortDescription-->
 											</div>
-											<!--@If Defined(Global:Extranet.UserID>0||Item.Area.Show_ProductPrice_NOT_LoggedIN)-->
+											<!--@If(Item.Area.Require_Login_To_Show_Prices!='True' || Global:Extranet.UserID>0)-->
 											<div class="product-pricebox-wrapper">
 												<div class="product-pricebox-title"><!--@Translate(shoosevariant, "Choose your variant:")--></div>
 												<div class="product-variants">
@@ -1017,7 +1017,7 @@
 											<div class="product-description">
 												<!--@Ecom:Product.ShortDescription-->
 											</div>
-											<!--@If Defined(Global:Extranet.UserID>0||Item.Area.Show_ProductPrice_NOT_LoggedIN)-->
+											<!--@If(Item.Area.Require_Login_To_Show_Prices!='True' || Global:Extranet.UserID>0)-->
 											<div class="product-pricebox-wrapper">
 												<div class="product-pricebox-title"><!--@Translate(shoosevariant, "Choose your variant:")--></div>
 												<div class="product-variants">
@@ -1162,7 +1162,7 @@
 											<div class="product-description">
 												<!--@Ecom:Product.ShortDescription-->
 											</div>
-											<!--@If Defined(Global:Extranet.UserID>0||Item.Area.Show_ProductPrice_NOT_LoggedIN)-->
+											<!--@If(Item.Area.Require_Login_To_Show_Prices!='True' || Global:Extranet.UserID>0)-->
 											<div class="product-pricebox-wrapper">
 												<div class="product-pricebox-title"><!--@Translate(shoosevariant, "Choose your variant:")--></div>
 												<div class="product-variants">
