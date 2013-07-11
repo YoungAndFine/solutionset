@@ -1,1 +1,981 @@
-.checkout-stepmap{margin-left:30px;position:absolute;top:-75px}.checkout-stepmap i{font-size:16px;font-style:normal}.checkout-stepmap ul{background:#DFE4E7;height:2px;margin:26px 50px 0}.checkout-stepmap ul li{float:left;left:-35px;position:relative;width:150px;list-style-type:none}.checkout-stepmap ul li:last-child{width:45px}.checkout-stepmap ul li:last-child h4{width:150px}.checkout-stepmap ul li.active{border-top:2px solid #20a9e3;left:0}.checkout-stepmap ul li.active:after{content:'';position:absolute;display:block;width:8px;height:14px;right:4px;top:-8px;background:url("../images/checkout-map-arrow.png") no-repeat right center}.checkout-stepmap ul li.active h4{color:#009ddf;left:-30px;position:relative}.checkout-stepmap ul li.active span{background:url("../images/circle-blue.png") no-repeat left center;left:-2px}.checkout-stepmap ul li h4{margin:30px 0 0 0;max-width:110px;text-align:center;color:#ddd;line-height:14px;font-size:12px}.checkout-stepmap ul li span{position:absolute;top:-28px;left:28px;display:block;width:55px;height:55px;background:no-repeat 0 0;background:url("../images/circle-grey.png") no-repeat left center}.checkout-stepmap ul li span i{color:white;display:block;font-size:24px;font-weight:bold;line-height:55px;text-align:center;width:53px;color:white}@media (max-width: 979px){.checkout-stepmap{display:none}}.checkout-headline-wrapper{border-top:1px solid #dfe4e7;padding-top:20px}.checkout-headline-wrapper .checkout-headline h1{font:bold 30px/35px arial}.checkout-headline-wrapper .chat-support{font:bold 14px/35px arial}@media (max-width: 767px){.checkout-headline-wrapper [class*=span]{clear:both}.checkout-headline-wrapper .checkout-headline h1{padding:0;font:bold 22px/22px arial}}.validation-errors{color:#F7941D;font-size:14px;padding:0 0 10px 10px}.validation-errors li{margin-bottom:5px}.checkout-links{padding:20px 0}.checkout-links h4{font-size:12px}.checkout-links ul{color:#069}.checkout-links ul li{margin-top:2px}.checkout-links a{text-decoration:underline}.checkout-links a:hover{text-decoration:none}#checkout-wrapper{margin-bottom:20px}#checkout-wrapper .box-headline{width:100%;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}#checkout-wrapper .box-headline h3{width:auto}#checkout-wrapper .control-label,#checkout-wrapper .form-horizontal .required-fields-note,.form-horizontal #checkout-wrapper .required-fields-note{width:155px}.form-horizontal.pay-and-shipp,.checkout-step .form-horizontal.billing-address,.checkout-step .form-horizontal.shipping-address{padding:10px 0 !important}.form-horizontal.pay-and-shipp .control-group,.checkout-step .form-horizontal.billing-address .control-group,.checkout-step .form-horizontal.shipping-address .control-group{margin:0}.form-horizontal.pay-and-shipp .payment-section,.checkout-step .form-horizontal.billing-address .payment-section,.checkout-step .form-horizontal.shipping-address .payment-section{float:left;width:45%}.form-horizontal.pay-and-shipp .shipping-section,.checkout-step .form-horizontal.billing-address .shipping-section,.checkout-step .form-horizontal.shipping-address .shipping-section{float:left;width:45%;margin-left:10%}.form-horizontal.pay-and-shipp .control-section-content,.checkout-step .form-horizontal.billing-address .control-section-content,.checkout-step .form-horizontal.shipping-address .control-section-content{font-weight:bold;font-size:14px;margin-bottom:10px}.form-horizontal.pay-and-shipp .control-section-content span,.checkout-step .form-horizontal.billing-address .control-section-content span,.checkout-step .form-horizontal.shipping-address .control-section-content span{font-weight:normal}.form-horizontal.pay-and-shipp .provider,.checkout-step .form-horizontal.billing-address .provider,.checkout-step .form-horizontal.shipping-address .provider{margin:10px 0}.form-horizontal.pay-and-shipp .provider .parcel-shops-wrapper,.checkout-step .form-horizontal.billing-address .provider .parcel-shops-wrapper,.checkout-step .form-horizontal.shipping-address .provider .parcel-shops-wrapper{clear:both;float:none;position:relative}.form-horizontal.pay-and-shipp .provider .parcel-shop,.checkout-step .form-horizontal.billing-address .provider .parcel-shop,.checkout-step .form-horizontal.shipping-address .provider .parcel-shop{margin-bottom:5px}.form-horizontal.pay-and-shipp .provider .parcel-shop label,.checkout-step .form-horizontal.billing-address .provider .parcel-shop label,.checkout-step .form-horizontal.shipping-address .provider .parcel-shop label{margin-bottom:0}.form-horizontal.pay-and-shipp .provider .parcel-shop input[type=radio],.checkout-step .form-horizontal.billing-address .provider .parcel-shop input[type=radio],.checkout-step .form-horizontal.shipping-address .provider .parcel-shop input[type=radio]{margin:-1px 5px 0 0;padding:0}.form-horizontal.pay-and-shipp .provider .parcel-shop .adr span,.checkout-step .form-horizontal.billing-address .provider .parcel-shop .adr span,.checkout-step .form-horizontal.shipping-address .provider .parcel-shop .adr span{padding:0 5px 0 0}.form-horizontal.pay-and-shipp .provider .parcel-shops-loading,.checkout-step .form-horizontal.billing-address .provider .parcel-shops-loading,.checkout-step .form-horizontal.shipping-address .provider .parcel-shops-loading{display:none;height:16px;left:0;position:absolute;top:-25px;padding-left:20px;line-height:16px;background:url(../images/ajax-loader.gif) no-repeat left center}.form-horizontal.pay-and-shipp .provider .input-large,.checkout-step .form-horizontal.billing-address .provider .input-large,.checkout-step .form-horizontal.shipping-address .provider .input-large{width:297px}.form-horizontal.pay-and-shipp .provider .input-mini,.checkout-step .form-horizontal.billing-address .provider .input-mini,.checkout-step .form-horizontal.shipping-address .provider .input-mini{width:72px}.form-horizontal.pay-and-shipp .provider input,.checkout-step .form-horizontal.billing-address .provider input,.checkout-step .form-horizontal.shipping-address .provider input{min-height:30px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}.form-horizontal.pay-and-shipp .provider button,.checkout-step .form-horizontal.billing-address .provider button,.checkout-step .form-horizontal.shipping-address .provider button{float:right;margin-top:5px;font-weight:bold}.form-horizontal hr{border-bottom-width:0;border-color:#dfe4e7;margin:30px 0}.form-horizontal .icon{vertical-align:middle}.form-horizontal .voucher_block{display:none}.form-horizontal .control-group.actions-group{margin-bottom:5px;overflow:auto}.form-horizontal .control-group.actions-group .btn{float:right}.form-horizontal .control-action-group{background:url("../images/arrow-right-big.png") no-repeat left center;padding:5px 0}.form-horizontal .control-action-group .controls{margin-left:50px}.form-horizontal .control-action-group .checkbox{float:left}.form-horizontal .control-action-group .btn{float:right;margin-right:43px !important}.form-horizontal .control-label,.form-horizontal .required-fields-note{text-align:left;padding:6px 0;margin:0}.form-horizontal .control-label.control-label-wide,.form-horizontal .control-label-wide.required-fields-note{width:330px !important}.form-horizontal .control-label span,.form-horizontal .required-fields-note span{background:white;padding-right:10px}.form-horizontal .control-label b,.form-horizontal .required-fields-note b{color:#F7941D;display:block;float:right;margin-top:5px;padding-left:10px;font:bold 17px/15px arial;width:10px}.form-horizontal .control-label hr,.form-horizontal .required-fields-note hr{margin:-10px 0 0}.form-horizontal .required-fields-note{overflow:hidden;padding:0;margin:20px 0;float:none;width:auto !important}.form-horizontal .required-fields-note b{margin:0;padding:0;float:left;width:auto !important}.form-horizontal .required-fields-note b small{font-size:14px}.form-horizontal .controls.with-button input[type=text],.form-horizontal .controls.with-button input[type=email],.form-horizontal .controls.with-button input[type=number],.form-horizontal .controls.with-button select{width:400px}.form-horizontal .controls.with-button .btn{white-space:nowrap;text-overflow:ellipsis;overflow:hidden;width:200px;padding-top:6px;padding-bottom:6px;font-weight:bold;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}.form-horizontal .controls input[type=text],.form-horizontal .controls input[type=email],.form-horizontal .controls input[type=number],.form-horizontal .controls select,.form-horizontal .controls .btn{margin-right:10px}.form-horizontal .controls input[type=text],.form-horizontal .controls input[type=email],.form-horizontal .controls input[type=number],.form-horizontal .controls select{width:610px}.form-horizontal .controls input[name=EcomOrderCustomerZip],.form-horizontal .controls input[name=EcomOrderDeliveryZip]{width:50px}.form-horizontal .controls input[name=EcomOrderCustomerCity],.form-horizontal .controls input[name=EcomOrderDeliveryCity]{width:535px}.form-horizontal .controls select{font:bold 14px/28px arial;border:1px solid #9F9F9F;width:622px}.form-horizontal .controls .control-info{white-space:nowrap;text-overflow:ellipsis;overflow:hidden;width:30px;float:right;text-align:right;line-height:32px;text-decoration:underline}.form-horizontal .controls .help-block{font-size:14px;font-style:italic;margin-top:5px}@media (min-width: 980px) and (max-width: 1200px){.form-horizontal .controls.with-button input[type=text],.form-horizontal .controls.with-button input[type=email],.form-horizontal .controls.with-button input[type=number],.form-horizontal .controls.with-button select{width:235px}.form-horizontal .controls input[type=text],.form-horizontal .controls input[type=email],.form-horizontal .controls input[type=number],.form-horizontal .controls select{width:445px}.form-horizontal .controls select{width:457px}.form-horizontal .controls input[name=EcomOrderCustomerZip],.form-horizontal .controls input[name=EcomOrderDeliveryZip]{width:50px}.form-horizontal .controls input[name=EcomOrderCustomerCity],.form-horizontal .controls input[name=EcomOrderDeliveryCity]{width:370px}.form-horizontal .control-action-group .btn{margin-right:38px !important}.form-horizontal.pay-and-shipp .provider .input-mini,.checkout-step .form-horizontal.billing-address .provider .input-mini,.checkout-step .form-horizontal.shipping-address .provider .input-mini{margin-top:5px}}@media (min-width: 768px) and (max-width: 979px){.form-horizontal .controls.with-button input[type=text],.form-horizontal .controls.with-button input[type=email],.form-horizontal .controls.with-button input[type=number],.form-horizontal .controls.with-button select{width:120px}.form-horizontal .controls.with-button .btn{width:150px}.form-horizontal .controls input[type=text],.form-horizontal .controls input[type=email],.form-horizontal .controls input[type=number],.form-horizontal .controls select{width:285px}.form-horizontal .controls select{width:290px}.form-horizontal .controls input[name=EcomOrderCustomerZip],.form-horizontal .controls input[name=EcomOrderDeliveryZip]{width:50px}.form-horizontal .controls input[name=EcomOrderCustomerCity],.form-horizontal .controls input[name=EcomOrderDeliveryCity]{width:210px}}@media (max-width: 767px){.form-horizontal .control-group{margin-bottom:15px}.form-horizontal .control-label,.form-horizontal .required-fields-note{float:none;width:auto}.form-horizontal .control-label span,.form-horizontal .required-fields-note span{padding-right:5px}.form-horizontal .control-label hr,.form-horizontal .required-fields-note hr{display:none}.form-horizontal .control-label b,.form-horizontal .required-fields-note b{display:inline;padding:0;float:none}.form-horizontal .controls{margin-left:0}.form-horizontal .controls.with-button input[type=text],.form-horizontal .controls.with-button select{width:40%}.form-horizontal .controls.with-button .btn{width:45%}.form-horizontal .controls input[type=text],.form-horizontal .controls input[type=email],.form-horizontal .controls input[type=number],.form-horizontal .controls select{width:90%;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}.form-horizontal .controls input[name=EcomOrderCustomerZip],.form-horizontal .controls input[name=EcomOrderDeliveryZip]{width:25%;margin-right:5%}.form-horizontal .controls input[name=EcomOrderCustomerCity],.form-horizontal .controls input[name=EcomOrderDeliveryCity]{width:60%}.form-horizontal .control-action-group{background-position:left top;margin-top:20px}.form-horizontal .control-action-group .btn{float:none;width:auto !important}}@media (max-width: 979px){.form-horizontal.pay-and-shipp .payment-section,.checkout-step .form-horizontal.billing-address .payment-section,.checkout-step .form-horizontal.shipping-address .payment-section,.form-horizontal.pay-and-shipp .shipping-section,.checkout-step .form-horizontal.billing-address .shipping-section,.checkout-step .form-horizontal.shipping-address .shipping-section{float:none;margin-bottom:15px;margin-left:0;width:auto}}@media (min-width: 480px) and (max-width: 979px){.form-horizontal.pay-and-shipp .payment-section,.checkout-step .form-horizontal.billing-address .payment-section,.checkout-step .form-horizontal.shipping-address .payment-section,.form-horizontal.pay-and-shipp .shipping-section,.checkout-step .form-horizontal.billing-address .shipping-section,.checkout-step .form-horizontal.shipping-address .shipping-section{float:none;margin-bottom:15px;margin-left:0;width:auto}.form-horizontal.pay-and-shipp .provider .input-large,.checkout-step .form-horizontal.billing-address .provider .input-large,.checkout-step .form-horizontal.shipping-address .provider .input-large{width:49%;margin-right:1%}.form-horizontal.pay-and-shipp .provider .input-mini,.checkout-step .form-horizontal.billing-address .provider .input-mini,.checkout-step .form-horizontal.shipping-address .provider .input-mini{width:18%;margin-right:1%}.form-horizontal.pay-and-shipp .provider input,.checkout-step .form-horizontal.billing-address .provider input,.checkout-step .form-horizontal.shipping-address .provider input{height:30px}.form-horizontal.pay-and-shipp .provider button,.checkout-step .form-horizontal.billing-address .provider button,.checkout-step .form-horizontal.shipping-address .provider button{margin-top:0;width:30%;min-width:150px}}@media (max-width: 479px){.form-horizontal{padding-top:10px !important}.form-horizontal hr{margin:10px 0}.form-horizontal .required-fields-note{margin:10px 0}.form-horizontal .required-fields-note b small{font-size:12px}.form-horizontal .control-group{margin-bottom:15px}.form-horizontal .control-label,.form-horizontal .required-fields-note{font-size:12px}.form-horizontal .control-label.control-label-wide,.form-horizontal .control-label-wide.required-fields-note{width:auto !important}.form-horizontal .controls.with-button .btn{display:block;font-size:12px;height:28px;margin:5px 0;padding-bottom:4px;padding-top:4px;width:100%}.form-horizontal .controls a{display:none}.form-horizontal .controls .help-block{font-size:12px}.form-horizontal .controls input[type=text],.form-horizontal .controls input[type=email],.form-horizontal .controls input[type=number],.form-horizontal .controls select{width:100% !important}.form-horizontal .controls input[name=EcomOrderCustomerZip],.form-horizontal .controls input[name=EcomOrderDeliveryZip]{margin-bottom:5px}.form-horizontal .controls label{font-size:12px}.form-horizontal .controls label a{display:inline}.form-horizontal.pay-and-shipp .control-section-content,.checkout-step .form-horizontal.billing-address .control-section-content,.checkout-step .form-horizontal.shipping-address .control-section-content{font-size:12px}.form-horizontal.pay-and-shipp .provider .input-large,.checkout-step .form-horizontal.billing-address .provider .input-large,.checkout-step .form-horizontal.shipping-address .provider .input-large{width:70%}.form-horizontal.pay-and-shipp .provider .input-mini,.checkout-step .form-horizontal.billing-address .provider .input-mini,.checkout-step .form-horizontal.shipping-address .provider .input-mini{width:25%;float:right}.form-horizontal .control-action-group .btn{width:100% !important;clear:both;height:35px !important;font:bold 14px/25px arial !important}}.modal .form-horizontal .controls input[type=text],.modal .form-horizontal .controls input[type=email],.modal .form-horizontal .controls input[type=number],.modal .form-horizontal .controls select{width:420px;margin-right:0}.modal .form-horizontal .controls select{width:430px}.modal .form-horizontal .controls input[name=EcomOrderCustomerZip],.modal .form-horizontal .controls input[name=EcomOrderDeliveryZip]{width:50px;margin-right:10px}.modal .form-horizontal .controls input[name=EcomOrderCustomerCity],.modal .form-horizontal .controls input[name=EcomOrderDeliveryCity]{width:345px}.checkout-step.checkout-headline-wrapper .btn{float:right}.checkout-step.provider-content{border-top:1px solid #DFE4E7}.checkout-step.provider-content .pay-and-shipp,.checkout-step.provider-content .billing-address,.checkout-step.provider-content .shipping-address{padding:5px 0 0 0 !important}.checkout-step.provider-content .parcel-shops-loading{left:auto;overflow:hidden;right:155px;top:-23px;width:0}.checkout-step .checkout-links{padding-top:0}.checkout-step .box-headline .btn{float:right;margin:-15px 0 0;position:relative;top:50%}.checkout-step .billing-address,.checkout-step .shipping-address{padding-top:0px !important}.checkout-step .billing-address label,.checkout-step .shipping-address label{width:auto !important}.checkout-step .billing-address span,.checkout-step .shipping-address span{font-size:12px;display:block}.checkout-step .order-lines{padding-left:0;padding-right:0}.checkout-step .order-lines .cart-cell-product{width:70%;padding-left:20px}.checkout-step .order-lines .cart-cell-product-text{padding-left:120px}.checkout-step .order-lines .cart-cell-wrapper{padding-left:130px}.checkout-step .order-lines .control-action-group{margin-left:20px;margin-top:10px}.checkout-step .order-lines .control-action-group .btn{width:auto;margin-right:20px !important}.checkout-step .pay-and-shipp,.checkout-step .billing-address,.checkout-step .shipping-address{padding-bottom:0 !important}.checkout-step .pay-and-shipp .controls,.checkout-step .billing-address .controls,.checkout-step .shipping-address .controls{margin-left:0;float:left;width:50%;overflow:auto}.checkout-step .pay-and-shipp .controls .radio img,.checkout-step .billing-address .controls .radio img,.checkout-step .shipping-address .controls .radio img{max-height:24px;vertical-align:middle}.checkout-step .actions-group{margin-top:15px;overflow:auto}.checkout-step .actions-group .btn{float:right}.checkout-step .actions-group .btn.btn-link{text-decoration:underline;padding-left:0;padding-right:0}.checkout-step .actions-group .btn.btn-link:hover{text-decoration:none}.checkout-step .actions-group .btn.btn-link .icon{vertical-align:baseline;margin-right:3px}.checkout-step .product-list-item-wrapper .product-addtocart .btn{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}@media (max-width: 979px){.checkout-step .checkout-links{padding-left:10px}.checkout-step .pay-and-shipp .controls,.checkout-step .billing-address .controls,.checkout-step .shipping-address .controls{float:none;width:auto}.checkout-step .order-lines .cart-cell-wrapper{padding-left:20px}.checkout-step .order-lines .cart-cell-fee-value{padding-right:20px}.checkout-step .order-lines .cart-cell-product-text{padding-left:60px}.checkout-step .order-lines .control-action-group{margin-top:0}.checkout-step .order-lines .control-action-group .btn{float:right}}@media (max-width: 479px){.checkout-step .order-lines .control-action-group{background:none;margin-top:0;margin-left:0}.checkout-step .order-lines .control-action-group .controls{margin-left:20px;margin-right:20px}.checkout-step .order-lines .control-action-group .btn{float:none;margin-right:0 !important}}.checkout-receipt{font-size:14px}.checkout-receipt .receipt-content{margin-bottom:10px}.checkout-receipt .receipt-content h2{color:#4B4F5B;font-size:22px;margin:5px 0 10px}.checkout-receipt .receipt-actions{margin-bottom:10px}.checkout-receipt .receipt-actions .icon{margin-right:5px}.customDropdown{position:relative;background-color:#FFFFFF;border:1px solid #9F9F9F;-webkit-box-shadow:0 1px 0 #e3e3e3 inset;-moz-box-shadow:0 1px 0 #e3e3e3 inset;box-shadow:0 1px 0 #e3e3e3 inset;color:#55564A;height:28px;margin:0;padding:2px 5px 0;-webkit-border-radius:3px;-moz-border-radius:3px;-ms-border-radius:3px;-o-border-radius:3px;border-radius:3px}.customDropdown span{padding:0 20px 0 0;font:normal 14px/28px arial;display:block;cursor:pointer;background:url(../images/tr.png) 100% 3px no-repeat;white-space:nowrap}.customDropdown img{vertical-align:middle;width:30px}.customDropdown ul{display:none;position:absolute;top:28px;left:-1px;width:100%;z-index:10;background:#fff;border:1px solid #9F9F9F;border-top-color:#DDD;margin:0;-webkit-border-radius:0 0 3px 3px;-moz-border-radius:0 0 3px 3px;-ms-border-radius:0 0 3px 3px;-o-border-radius:0 0 3px 3px;border-radius:0 0 3px 3px;padding-top:3px}.customDropdown ul li{padding:2px 5px 1px;cursor:pointer;display:block}.customDropdown ul li:hover{background:#eee}.customDropdown ul li i{font-style:normal}input.disabled_class{border:1px solid #ccc;color:#ccc}.content-wrapper{padding-top:10px;z-index:auto}
+/*
+ * checkout - Styles only for the checkout process
+ *
+ * Copyright (c) 2013 Dynamicweb
+ *
+ * Licensed under the MIT license:
+ *	 http://www.opensource.org/licenses/mit-license.php
+ *
+ * Project home:
+ *	 https://github.com/dynamicweb/solutionset
+ *
+ * Version: 0.9.0
+ *
+ */
+/*
+ * _vars - Contains the overall variables and mixins for use later on
+ *
+ * Copyright (c) 2013 Dynamicweb
+ *
+ * Licensed under the MIT license:
+ *	 http://www.opensource.org/licenses/mit-license.php
+ *
+ * Project home:
+ *	 https://github.com/dynamicweb/solutionset
+ *
+ * Version: 0.9.0
+ *
+ */
+/* line 19, ../sass/checkout.scss */
+.checkout-stepmap {
+  margin-left: 30px;
+  position: absolute;
+  top: -75px;
+}
+/* line 27, ../sass/checkout.scss */
+.checkout-stepmap i {
+  font-size: 16px;
+  font-style: normal;
+}
+/* line 31, ../sass/checkout.scss */
+.checkout-stepmap ul {
+  background: #DFE4E7;
+  height: 2px;
+  margin: 26px 50px 0;
+}
+/* line 36, ../sass/checkout.scss */
+.checkout-stepmap ul li {
+  float: left;
+  left: -35px;
+  position: relative;
+  width: 150px;
+  list-style-type: none;
+}
+/* line 43, ../sass/checkout.scss */
+.checkout-stepmap ul li:last-child {
+  width: 45px;
+}
+/* line 46, ../sass/checkout.scss */
+.checkout-stepmap ul li:last-child h4 {
+  width: 150px;
+}
+/* line 53, ../sass/checkout.scss */
+.checkout-stepmap ul li.active {
+  border-top: 2px solid #20a9e3;
+  left: 0;
+}
+/* line 57, ../sass/checkout.scss */
+.checkout-stepmap ul li.active:after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 8px;
+  height: 14px;
+  right: 4px;
+  top: -8px;
+  background: url("../images/checkout-map-arrow.png") no-repeat right center;
+}
+/* line 67, ../sass/checkout.scss */
+.checkout-stepmap ul li.active h4 {
+  color: #009ddf;
+  left: -30px;
+  position: relative;
+}
+/* line 72, ../sass/checkout.scss */
+.checkout-stepmap ul li.active span {
+  background: url("../images/circle-blue.png") no-repeat left center;
+  left: -2px;
+}
+/* line 77, ../sass/checkout.scss */
+.checkout-stepmap ul li h4 {
+  margin: 30px 0 0 0;
+  max-width: 110px;
+  text-align: center;
+  color: #ddd;
+  line-height: 14px;
+  font-size: 12px;
+}
+/* line 85, ../sass/checkout.scss */
+.checkout-stepmap ul li span {
+  position: absolute;
+  top: -28px;
+  left: 28px;
+  display: block;
+  width: 55px;
+  height: 55px;
+  background: no-repeat 0 0;
+  background: url("../images/circle-grey.png") no-repeat left center;
+}
+/* line 95, ../sass/checkout.scss */
+.checkout-stepmap ul li span i {
+  color: white;
+  display: block;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 55px;
+  text-align: center;
+  width: 53px;
+  color: white;
+}
+@media (max-width: 979px) {
+  /* line 19, ../sass/checkout.scss */
+  .checkout-stepmap {
+    display: none;
+  }
+}
+
+/* line 114, ../sass/checkout.scss */
+.checkout-headline-wrapper {
+  border-top: 1px solid #dfe4e7;
+  padding-top: 20px;
+}
+/* line 119, ../sass/checkout.scss */
+.checkout-headline-wrapper .checkout-headline h1 {
+  font: bold 30px/35px arial;
+}
+/* line 123, ../sass/checkout.scss */
+.checkout-headline-wrapper .chat-support {
+  font: bold 14px/35px arial;
+}
+@media (max-width: 767px) {
+  /* line 128, ../sass/checkout.scss */
+  .checkout-headline-wrapper [class*=span] {
+    clear: both;
+  }
+  /* line 131, ../sass/checkout.scss */
+  .checkout-headline-wrapper .checkout-headline h1 {
+    padding: 0;
+    font: bold 22px/22px arial;
+  }
+}
+
+/* line 138, ../sass/checkout.scss */
+.validation-errors {
+  color: #F7941D;
+  font-size: 14px;
+  padding: 0 0 10px 10px;
+}
+/* line 143, ../sass/checkout.scss */
+.validation-errors li {
+  margin-bottom: 5px;
+}
+
+/* line 148, ../sass/checkout.scss */
+.checkout-links {
+  padding: 20px 0;
+}
+/* line 151, ../sass/checkout.scss */
+.checkout-links h4 {
+  font-size: 12px;
+}
+/* line 154, ../sass/checkout.scss */
+.checkout-links ul {
+  color: #069;
+}
+/* line 157, ../sass/checkout.scss */
+.checkout-links ul li {
+  margin-top: 2px;
+}
+/* line 161, ../sass/checkout.scss */
+.checkout-links a {
+  text-decoration: underline;
+}
+/* line 164, ../sass/checkout.scss */
+.checkout-links a:hover {
+  text-decoration: none;
+}
+
+/* line 170, ../sass/checkout.scss */
+#checkout-wrapper {
+  margin-bottom: 20px;
+}
+/* line 173, ../sass/checkout.scss */
+#checkout-wrapper .box-headline {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* line 177, ../sass/checkout.scss */
+#checkout-wrapper .box-headline h3 {
+  width: auto;
+}
+/* line 181, ../sass/checkout.scss */
+#checkout-wrapper .control-label, #checkout-wrapper .form-horizontal .required-fields-note, .form-horizontal #checkout-wrapper .required-fields-note {
+  width: 155px;
+}
+
+/* line 187, ../sass/checkout.scss */
+.form-horizontal.pay-and-shipp, .checkout-step .form-horizontal.billing-address, .checkout-step .form-horizontal.shipping-address {
+  padding: 10px 0 !important;
+}
+/* line 190, ../sass/checkout.scss */
+.form-horizontal.pay-and-shipp .control-group, .checkout-step .form-horizontal.billing-address .control-group, .checkout-step .form-horizontal.shipping-address .control-group {
+  margin: 0;
+}
+/* line 193, ../sass/checkout.scss */
+.form-horizontal.pay-and-shipp .payment-section, .checkout-step .form-horizontal.billing-address .payment-section, .checkout-step .form-horizontal.shipping-address .payment-section {
+  float: left;
+  width: 45%;
+}
+/* line 197, ../sass/checkout.scss */
+.form-horizontal.pay-and-shipp .shipping-section, .checkout-step .form-horizontal.billing-address .shipping-section, .checkout-step .form-horizontal.shipping-address .shipping-section {
+  float: left;
+  width: 45%;
+  margin-left: 10%;
+}
+/* line 203, ../sass/checkout.scss */
+.form-horizontal.pay-and-shipp .control-section-content, .checkout-step .form-horizontal.billing-address .control-section-content, .checkout-step .form-horizontal.shipping-address .control-section-content {
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+/* line 208, ../sass/checkout.scss */
+.form-horizontal.pay-and-shipp .control-section-content span, .checkout-step .form-horizontal.billing-address .control-section-content span, .checkout-step .form-horizontal.shipping-address .control-section-content span {
+  font-weight: normal;
+}
+/* line 212, ../sass/checkout.scss */
+.form-horizontal.pay-and-shipp .provider, .checkout-step .form-horizontal.billing-address .provider, .checkout-step .form-horizontal.shipping-address .provider {
+  margin: 10px 0;
+}
+/* line 215, ../sass/checkout.scss */
+.form-horizontal.pay-and-shipp .provider .parcel-shops-wrapper, .checkout-step .form-horizontal.billing-address .provider .parcel-shops-wrapper, .checkout-step .form-horizontal.shipping-address .provider .parcel-shops-wrapper {
+  clear: both;
+  float: none;
+  position: relative;
+}
+/* line 220, ../sass/checkout.scss */
+.form-horizontal.pay-and-shipp .provider .parcel-shop, .checkout-step .form-horizontal.billing-address .provider .parcel-shop, .checkout-step .form-horizontal.shipping-address .provider .parcel-shop {
+  margin-bottom: 5px;
+}
+/* line 223, ../sass/checkout.scss */
+.form-horizontal.pay-and-shipp .provider .parcel-shop label, .checkout-step .form-horizontal.billing-address .provider .parcel-shop label, .checkout-step .form-horizontal.shipping-address .provider .parcel-shop label {
+  margin-bottom: 0;
+}
+/* line 226, ../sass/checkout.scss */
+.form-horizontal.pay-and-shipp .provider .parcel-shop input[type=radio], .checkout-step .form-horizontal.billing-address .provider .parcel-shop input[type=radio], .checkout-step .form-horizontal.shipping-address .provider .parcel-shop input[type=radio] {
+  margin: -1px 5px 0 0;
+  padding: 0;
+}
+/* line 231, ../sass/checkout.scss */
+.form-horizontal.pay-and-shipp .provider .parcel-shop .adr span, .checkout-step .form-horizontal.billing-address .provider .parcel-shop .adr span, .checkout-step .form-horizontal.shipping-address .provider .parcel-shop .adr span {
+  padding: 0 5px 0 0;
+}
+/* line 236, ../sass/checkout.scss */
+.form-horizontal.pay-and-shipp .provider .parcel-shops-loading, .checkout-step .form-horizontal.billing-address .provider .parcel-shops-loading, .checkout-step .form-horizontal.shipping-address .provider .parcel-shops-loading {
+  display: none;
+  height: 16px;
+  left: 0;
+  position: absolute;
+  top: -25px;
+  padding-left: 20px;
+  line-height: 16px;
+  background: url(../images/ajax-loader.gif) no-repeat left center;
+}
+/* line 247, ../sass/checkout.scss */
+.form-horizontal.pay-and-shipp .provider .input-large, .checkout-step .form-horizontal.billing-address .provider .input-large, .checkout-step .form-horizontal.shipping-address .provider .input-large {
+  width: 297px;
+}
+/* line 250, ../sass/checkout.scss */
+.form-horizontal.pay-and-shipp .provider .input-mini, .checkout-step .form-horizontal.billing-address .provider .input-mini, .checkout-step .form-horizontal.shipping-address .provider .input-mini {
+  width: 72px;
+}
+/* line 253, ../sass/checkout.scss */
+.form-horizontal.pay-and-shipp .provider input, .checkout-step .form-horizontal.billing-address .provider input, .checkout-step .form-horizontal.shipping-address .provider input {
+  min-height: 30px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* line 258, ../sass/checkout.scss */
+.form-horizontal.pay-and-shipp .provider button, .checkout-step .form-horizontal.billing-address .provider button, .checkout-step .form-horizontal.shipping-address .provider button {
+  float: right;
+  margin-top: 5px;
+  font-weight: bold;
+}
+/* line 265, ../sass/checkout.scss */
+.form-horizontal hr {
+  border-bottom-width: 0;
+  border-color: #dfe4e7;
+  margin: 30px 0;
+}
+/* line 270, ../sass/checkout.scss */
+.form-horizontal .icon {
+  vertical-align: middle;
+}
+/* line 273, ../sass/checkout.scss */
+.form-horizontal .voucher_block {
+  display: none;
+}
+/* line 277, ../sass/checkout.scss */
+.form-horizontal .control-group.actions-group {
+  margin-bottom: 5px;
+  overflow: auto;
+}
+/* line 281, ../sass/checkout.scss */
+.form-horizontal .control-group.actions-group .btn {
+  float: right;
+}
+/* line 286, ../sass/checkout.scss */
+.form-horizontal .control-action-group {
+  background: url("../images/arrow-right-big.png") no-repeat left center;
+  padding: 5px 0;
+}
+/* line 294, ../sass/checkout.scss */
+.form-horizontal .control-action-group .controls {
+  margin-left: 50px;
+}
+/* line 297, ../sass/checkout.scss */
+.form-horizontal .control-action-group .checkbox {
+  float: left;
+}
+/* line 300, ../sass/checkout.scss */
+.form-horizontal .control-action-group .btn {
+  float: right;
+  margin-right: 43px !important;
+}
+/* line 305, ../sass/checkout.scss */
+.form-horizontal .control-label, .form-horizontal .required-fields-note {
+  text-align: left;
+  padding: 6px 0;
+  margin: 0;
+}
+/* line 311, ../sass/checkout.scss */
+.form-horizontal .control-label.control-label-wide, .form-horizontal .control-label-wide.required-fields-note {
+  width: 330px !important;
+}
+/* line 314, ../sass/checkout.scss */
+.form-horizontal .control-label span, .form-horizontal .required-fields-note span {
+  background: white;
+  padding-right: 10px;
+}
+/* line 318, ../sass/checkout.scss */
+.form-horizontal .control-label b, .form-horizontal .required-fields-note b {
+  color: #F7941D;
+  display: block;
+  float: right;
+  margin-top: 5px;
+  padding-left: 10px;
+  font: bold 17px/15px arial;
+  width: 10px;
+}
+/* line 327, ../sass/checkout.scss */
+.form-horizontal .control-label hr, .form-horizontal .required-fields-note hr {
+  margin: -10px 0 0;
+}
+/* line 331, ../sass/checkout.scss */
+.form-horizontal .required-fields-note {
+  overflow: hidden;
+  padding: 0;
+  margin: 20px 0;
+  float: none;
+  width: auto !important;
+}
+/* line 339, ../sass/checkout.scss */
+.form-horizontal .required-fields-note b {
+  margin: 0;
+  padding: 0;
+  float: left;
+  width: auto !important;
+}
+/* line 345, ../sass/checkout.scss */
+.form-horizontal .required-fields-note b small {
+  font-size: 14px;
+}
+/* line 352, ../sass/checkout.scss */
+.form-horizontal .controls.with-button input[type=text], .form-horizontal .controls.with-button input[type=email], .form-horizontal .controls.with-button input[type=number], .form-horizontal .controls.with-button select {
+  width: 400px;
+}
+/* line 355, ../sass/checkout.scss */
+.form-horizontal .controls.with-button .btn {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 200px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  font-weight: bold;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* line 364, ../sass/checkout.scss */
+.form-horizontal .controls input[type=text], .form-horizontal .controls input[type=email], .form-horizontal .controls input[type=number], .form-horizontal .controls select, .form-horizontal .controls .btn {
+  margin-right: 10px;
+}
+/* line 367, ../sass/checkout.scss */
+.form-horizontal .controls input[type=text], .form-horizontal .controls input[type=email], .form-horizontal .controls input[type=number], .form-horizontal .controls select {
+  width: 345px;
+}
+/* line 371, ../sass/checkout.scss */
+.form-horizontal .controls input[name=EcomOrderCustomerZip],
+.form-horizontal .controls input[name=EcomOrderDeliveryZip] {
+  width: 50px;
+}
+/* line 375, ../sass/checkout.scss */
+.form-horizontal .controls input[name=EcomOrderCustomerCity],
+.form-horizontal .controls input[name=EcomOrderDeliveryCity] {
+  width: 270px;
+}
+/* line 378, ../sass/checkout.scss */
+.form-horizontal .controls select {
+  font: bold 14px/28px arial;
+  border: 1px solid #9F9F9F;
+  width: 357px;
+}
+/* line 383, ../sass/checkout.scss */
+.form-horizontal .controls .control-info {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 30px;
+  float: right;
+  text-align: right;
+  line-height: 32px;
+  text-decoration: underline;
+}
+/* line 391, ../sass/checkout.scss */
+.form-horizontal .controls .help-block {
+  font-size: 14px;
+  font-style: italic;
+  margin-top: 5px;
+}
+@media (min-width: 980px) and (max-width: 1200px) {
+  /* line 401, ../sass/checkout.scss */
+  .form-horizontal .controls.with-button input[type=text], .form-horizontal .controls.with-button input[type=email], .form-horizontal .controls.with-button input[type=number], .form-horizontal .controls.with-button select {
+    width: 235px;
+  }
+  /* line 405, ../sass/checkout.scss */
+  .form-horizontal .controls input[type=text], .form-horizontal .controls input[type=email], .form-horizontal .controls input[type=number], .form-horizontal .controls select {
+    width: 445px;
+  }
+  /* line 408, ../sass/checkout.scss */
+  .form-horizontal .controls select {
+    width: 457px;
+  }
+  /* line 412, ../sass/checkout.scss */
+  .form-horizontal .controls input[name=EcomOrderCustomerZip],
+  .form-horizontal .controls input[name=EcomOrderDeliveryZip] {
+    width: 50px;
+  }
+  /* line 416, ../sass/checkout.scss */
+  .form-horizontal .controls input[name=EcomOrderCustomerCity],
+  .form-horizontal .controls input[name=EcomOrderDeliveryCity] {
+    width: 370px;
+  }
+  /* line 421, ../sass/checkout.scss */
+  .form-horizontal .control-action-group .btn {
+    margin-right: 38px !important;
+  }
+  /* line 438, ../sass/checkout.scss */
+  .form-horizontal.pay-and-shipp .provider .input-mini, .checkout-step .form-horizontal.billing-address .provider .input-mini, .checkout-step .form-horizontal.shipping-address .provider .input-mini {
+    margin-top: 5px;
+  }
+}
+@media (min-width: 768px) and (max-width: 979px) {
+  /* line 448, ../sass/checkout.scss */
+  .form-horizontal .controls.with-button input[type=text], .form-horizontal .controls.with-button input[type=email], .form-horizontal .controls.with-button input[type=number], .form-horizontal .controls.with-button select {
+    width: 120px;
+  }
+  /* line 451, ../sass/checkout.scss */
+  .form-horizontal .controls.with-button .btn {
+    width: 150px;
+  }
+  /* line 455, ../sass/checkout.scss */
+  .form-horizontal .controls input[type=text], .form-horizontal .controls input[type=email], .form-horizontal .controls input[type=number], .form-horizontal .controls select {
+    width: 285px;
+  }
+  /* line 458, ../sass/checkout.scss */
+  .form-horizontal .controls select {
+    width: 290px;
+  }
+  /* line 462, ../sass/checkout.scss */
+  .form-horizontal .controls input[name=EcomOrderCustomerZip],
+  .form-horizontal .controls input[name=EcomOrderDeliveryZip] {
+    width: 50px;
+  }
+  /* line 466, ../sass/checkout.scss */
+  .form-horizontal .controls input[name=EcomOrderCustomerCity],
+  .form-horizontal .controls input[name=EcomOrderDeliveryCity] {
+    width: 210px;
+  }
+}
+@media (max-width: 767px) {
+  /* line 472, ../sass/checkout.scss */
+  .form-horizontal .control-group {
+    margin-bottom: 15px;
+  }
+  /* line 475, ../sass/checkout.scss */
+  .form-horizontal .control-label, .form-horizontal .required-fields-note {
+    float: none;
+    width: auto;
+  }
+  /* line 479, ../sass/checkout.scss */
+  .form-horizontal .control-label span, .form-horizontal .required-fields-note span {
+    padding-right: 5px;
+  }
+  /* line 482, ../sass/checkout.scss */
+  .form-horizontal .control-label hr, .form-horizontal .required-fields-note hr {
+    display: none;
+  }
+  /* line 485, ../sass/checkout.scss */
+  .form-horizontal .control-label b, .form-horizontal .required-fields-note b {
+    display: inline;
+    padding: 0;
+    float: none;
+  }
+  /* line 491, ../sass/checkout.scss */
+  .form-horizontal .controls {
+    margin-left: 0;
+  }
+  /* line 495, ../sass/checkout.scss */
+  .form-horizontal .controls.with-button input[type=text], .form-horizontal .controls.with-button select {
+    width: 40%;
+  }
+  /* line 498, ../sass/checkout.scss */
+  .form-horizontal .controls.with-button .btn {
+    width: 45%;
+  }
+  /* line 502, ../sass/checkout.scss */
+  .form-horizontal .controls input[type=text], .form-horizontal .controls input[type=email], .form-horizontal .controls input[type=number], .form-horizontal .controls select {
+    width: 90%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  /* line 507, ../sass/checkout.scss */
+  .form-horizontal .controls input[name=EcomOrderCustomerZip],
+  .form-horizontal .controls input[name=EcomOrderDeliveryZip] {
+    width: 25%;
+    margin-right: 5%;
+  }
+  /* line 512, ../sass/checkout.scss */
+  .form-horizontal .controls input[name=EcomOrderCustomerCity],
+  .form-horizontal .controls input[name=EcomOrderDeliveryCity] {
+    width: 60%;
+  }
+  /* line 516, ../sass/checkout.scss */
+  .form-horizontal .control-action-group {
+    background-position: left top;
+    margin-top: 20px;
+  }
+  /* line 520, ../sass/checkout.scss */
+  .form-horizontal .control-action-group .btn {
+    float: none;
+    width: auto !important;
+  }
+}
+@media (max-width: 979px) {
+  /* line 534, ../sass/checkout.scss */
+  .form-horizontal.pay-and-shipp .payment-section, .checkout-step .form-horizontal.billing-address .payment-section, .checkout-step .form-horizontal.shipping-address .payment-section, .form-horizontal.pay-and-shipp .shipping-section, .checkout-step .form-horizontal.billing-address .shipping-section, .checkout-step .form-horizontal.shipping-address .shipping-section {
+    float: none;
+    margin-bottom: 15px;
+    margin-left: 0;
+    width: auto;
+  }
+}
+@media (min-width: 480px) and (max-width: 979px) {
+  /* line 544, ../sass/checkout.scss */
+  .form-horizontal.pay-and-shipp .payment-section, .checkout-step .form-horizontal.billing-address .payment-section, .checkout-step .form-horizontal.shipping-address .payment-section, .form-horizontal.pay-and-shipp .shipping-section, .checkout-step .form-horizontal.billing-address .shipping-section, .checkout-step .form-horizontal.shipping-address .shipping-section {
+    float: none;
+    margin-bottom: 15px;
+    margin-left: 0;
+    width: auto;
+  }
+  /* line 561, ../sass/checkout.scss */
+  .form-horizontal.pay-and-shipp .provider .input-large, .checkout-step .form-horizontal.billing-address .provider .input-large, .checkout-step .form-horizontal.shipping-address .provider .input-large {
+    width: 49%;
+    margin-right: 1%;
+  }
+  /* line 565, ../sass/checkout.scss */
+  .form-horizontal.pay-and-shipp .provider .input-mini, .checkout-step .form-horizontal.billing-address .provider .input-mini, .checkout-step .form-horizontal.shipping-address .provider .input-mini {
+    width: 18%;
+    margin-right: 1%;
+  }
+  /* line 569, ../sass/checkout.scss */
+  .form-horizontal.pay-and-shipp .provider input, .checkout-step .form-horizontal.billing-address .provider input, .checkout-step .form-horizontal.shipping-address .provider input {
+    height: 30px;
+  }
+  /* line 572, ../sass/checkout.scss */
+  .form-horizontal.pay-and-shipp .provider button, .checkout-step .form-horizontal.billing-address .provider button, .checkout-step .form-horizontal.shipping-address .provider button {
+    margin-top: 0;
+    width: 30%;
+    min-width: 150px;
+  }
+}
+@media (max-width: 479px) {
+  /* line 186, ../sass/checkout.scss */
+  .form-horizontal {
+    padding-top: 10px !important;
+  }
+  /* line 583, ../sass/checkout.scss */
+  .form-horizontal hr {
+    margin: 10px 0;
+  }
+  /* line 586, ../sass/checkout.scss */
+  .form-horizontal .required-fields-note {
+    margin: 10px 0;
+  }
+  /* line 589, ../sass/checkout.scss */
+  .form-horizontal .required-fields-note b small {
+    font-size: 12px;
+  }
+  /* line 593, ../sass/checkout.scss */
+  .form-horizontal .control-group {
+    margin-bottom: 15px;
+  }
+  /* line 596, ../sass/checkout.scss */
+  .form-horizontal .control-label, .form-horizontal .required-fields-note {
+    font-size: 12px;
+  }
+  /* line 599, ../sass/checkout.scss */
+  .form-horizontal .control-label.control-label-wide, .form-horizontal .control-label-wide.required-fields-note {
+    width: auto !important;
+  }
+  /* line 605, ../sass/checkout.scss */
+  .form-horizontal .controls.with-button .btn {
+    display: block;
+    font-size: 12px;
+    height: 28px;
+    margin: 5px 0;
+    padding-bottom: 4px;
+    padding-top: 4px;
+    width: 100%;
+  }
+  /* line 615, ../sass/checkout.scss */
+  .form-horizontal .controls a {
+    display: none;
+  }
+  /* line 618, ../sass/checkout.scss */
+  .form-horizontal .controls .help-block {
+    font-size: 12px;
+  }
+  /* line 621, ../sass/checkout.scss */
+  .form-horizontal .controls input[type=text], .form-horizontal .controls input[type=email], .form-horizontal .controls input[type=number], .form-horizontal .controls select {
+    width: 100% !important;
+  }
+  /* line 625, ../sass/checkout.scss */
+  .form-horizontal .controls input[name=EcomOrderCustomerZip],
+  .form-horizontal .controls input[name=EcomOrderDeliveryZip] {
+    margin-bottom: 5px;
+  }
+  /* line 628, ../sass/checkout.scss */
+  .form-horizontal .controls label {
+    font-size: 12px;
+  }
+  /* line 631, ../sass/checkout.scss */
+  .form-horizontal .controls label a {
+    display: inline;
+  }
+  /* line 637, ../sass/checkout.scss */
+  .form-horizontal.pay-and-shipp .control-section-content, .checkout-step .form-horizontal.billing-address .control-section-content, .checkout-step .form-horizontal.shipping-address .control-section-content {
+    font-size: 12px;
+  }
+  /* line 651, ../sass/checkout.scss */
+  .form-horizontal.pay-and-shipp .provider .input-large, .checkout-step .form-horizontal.billing-address .provider .input-large, .checkout-step .form-horizontal.shipping-address .provider .input-large {
+    width: 70%;
+  }
+  /* line 654, ../sass/checkout.scss */
+  .form-horizontal.pay-and-shipp .provider .input-mini, .checkout-step .form-horizontal.billing-address .provider .input-mini, .checkout-step .form-horizontal.shipping-address .provider .input-mini {
+    width: 25%;
+    float: right;
+  }
+  /* line 662, ../sass/checkout.scss */
+  .form-horizontal .control-action-group .btn {
+    width: 100% !important;
+    clear: both;
+    height: 35px !important;
+    font: bold 14px/25px arial !important;
+  }
+}
+
+/* line 675, ../sass/checkout.scss */
+.modal .form-horizontal .controls input[type=text], .modal .form-horizontal .controls input[type=email], .modal .form-horizontal .controls input[type=number], .modal .form-horizontal .controls select {
+  width: 420px;
+  margin-right: 0;
+}
+/* line 679, ../sass/checkout.scss */
+.modal .form-horizontal .controls select {
+  width: 430px;
+}
+/* line 683, ../sass/checkout.scss */
+.modal .form-horizontal .controls input[name=EcomOrderCustomerZip],
+.modal .form-horizontal .controls input[name=EcomOrderDeliveryZip] {
+  width: 50px;
+  margin-right: 10px;
+}
+/* line 688, ../sass/checkout.scss */
+.modal .form-horizontal .controls input[name=EcomOrderCustomerCity],
+.modal .form-horizontal .controls input[name=EcomOrderDeliveryCity] {
+  width: 345px;
+}
+
+/* line 699, ../sass/checkout.scss */
+.checkout-step.checkout-headline-wrapper .btn {
+  float: right;
+}
+/* line 703, ../sass/checkout.scss */
+.checkout-step.provider-content {
+  border-top: 1px solid #DFE4E7;
+}
+/* line 706, ../sass/checkout.scss */
+.checkout-step.provider-content .pay-and-shipp, .checkout-step.provider-content .billing-address, .checkout-step.provider-content .shipping-address {
+  padding: 5px 0 0 0 !important;
+}
+/* line 709, ../sass/checkout.scss */
+.checkout-step.provider-content .parcel-shops-loading {
+  left: auto;
+  overflow: hidden;
+  right: 155px;
+  top: -23px;
+  width: 0;
+}
+/* line 722, ../sass/checkout.scss */
+.checkout-step .checkout-links {
+  padding-top: 0;
+}
+/* line 726, ../sass/checkout.scss */
+.checkout-step .box-headline .btn {
+  float: right;
+  margin: -15px 0 0;
+  position: relative;
+  top: 50%;
+}
+/* line 733, ../sass/checkout.scss */
+.checkout-step .billing-address, .checkout-step .shipping-address {
+  padding-top: 0px !important;
+}
+/* line 737, ../sass/checkout.scss */
+.checkout-step .billing-address label, .checkout-step .shipping-address label {
+  width: auto !important;
+}
+/* line 740, ../sass/checkout.scss */
+.checkout-step .billing-address span, .checkout-step .shipping-address span {
+  font-size: 12px;
+  display: block;
+}
+/* line 745, ../sass/checkout.scss */
+.checkout-step .order-lines {
+  padding-left: 0;
+  padding-right: 0;
+}
+/* line 752, ../sass/checkout.scss */
+.checkout-step .order-lines .cart-cell-product {
+  width: 70%;
+  padding-left: 20px;
+}
+/* line 756, ../sass/checkout.scss */
+.checkout-step .order-lines .cart-cell-product-text {
+  padding-left: 120px;
+}
+/* line 759, ../sass/checkout.scss */
+.checkout-step .order-lines .cart-cell-wrapper {
+  padding-left: 130px;
+}
+/* line 762, ../sass/checkout.scss */
+.checkout-step .order-lines .control-action-group {
+  margin-left: 20px;
+  margin-top: 10px;
+}
+/* line 766, ../sass/checkout.scss */
+.checkout-step .order-lines .control-action-group .btn {
+  width: auto;
+  margin-right: 20px !important;
+}
+/* line 772, ../sass/checkout.scss */
+.checkout-step .pay-and-shipp, .checkout-step .billing-address, .checkout-step .shipping-address {
+  padding-bottom: 0 !important;
+}
+/* line 775, ../sass/checkout.scss */
+.checkout-step .pay-and-shipp .controls, .checkout-step .billing-address .controls, .checkout-step .shipping-address .controls {
+  margin-left: 0;
+  float: left;
+  width: 50%;
+  overflow: auto;
+}
+/* line 782, ../sass/checkout.scss */
+.checkout-step .pay-and-shipp .controls .radio img, .checkout-step .billing-address .controls .radio img, .checkout-step .shipping-address .controls .radio img {
+  max-height: 24px;
+  vertical-align: middle;
+}
+/* line 789, ../sass/checkout.scss */
+.checkout-step .actions-group {
+  margin-top: 15px;
+  overflow: auto;
+}
+/* line 793, ../sass/checkout.scss */
+.checkout-step .actions-group .btn {
+  float: right;
+}
+/* line 796, ../sass/checkout.scss */
+.checkout-step .actions-group .btn.btn-link {
+  text-decoration: underline;
+  padding-left: 0;
+  padding-right: 0;
+}
+/* line 801, ../sass/checkout.scss */
+.checkout-step .actions-group .btn.btn-link:hover {
+  text-decoration: none;
+}
+/* line 804, ../sass/checkout.scss */
+.checkout-step .actions-group .btn.btn-link .icon {
+  vertical-align: baseline;
+  margin-right: 3px;
+}
+/* line 813, ../sass/checkout.scss */
+.checkout-step .product-list-item-wrapper .product-addtocart .btn {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+@media (max-width: 979px) {
+  /* line 820, ../sass/checkout.scss */
+  .checkout-step .checkout-links {
+    padding-left: 10px;
+  }
+  /* line 825, ../sass/checkout.scss */
+  .checkout-step .pay-and-shipp .controls, .checkout-step .billing-address .controls, .checkout-step .shipping-address .controls {
+    float: none;
+    width: auto;
+  }
+  /* line 832, ../sass/checkout.scss */
+  .checkout-step .order-lines .cart-cell-wrapper {
+    padding-left: 20px;
+  }
+  /* line 835, ../sass/checkout.scss */
+  .checkout-step .order-lines .cart-cell-fee-value {
+    padding-right: 20px;
+  }
+  /* line 838, ../sass/checkout.scss */
+  .checkout-step .order-lines .cart-cell-product-text {
+    padding-left: 60px;
+  }
+  /* line 841, ../sass/checkout.scss */
+  .checkout-step .order-lines .control-action-group {
+    margin-top: 0;
+  }
+  /* line 844, ../sass/checkout.scss */
+  .checkout-step .order-lines .control-action-group .btn {
+    float: right;
+  }
+}
+@media (max-width: 479px) {
+  /* line 852, ../sass/checkout.scss */
+  .checkout-step .order-lines .control-action-group {
+    background: none;
+    margin-top: 0;
+    margin-left: 0;
+  }
+  /* line 857, ../sass/checkout.scss */
+  .checkout-step .order-lines .control-action-group .controls {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  /* line 861, ../sass/checkout.scss */
+  .checkout-step .order-lines .control-action-group .btn {
+    float: none;
+    margin-right: 0 !important;
+  }
+}
+
+/* line 870, ../sass/checkout.scss */
+.checkout-receipt {
+  font-size: 14px;
+}
+/* line 873, ../sass/checkout.scss */
+.checkout-receipt .receipt-content {
+  margin-bottom: 10px;
+}
+/* line 876, ../sass/checkout.scss */
+.checkout-receipt .receipt-content h2 {
+  color: #4B4F5B;
+  font-size: 22px;
+  margin: 5px 0 10px;
+}
+/* line 885, ../sass/checkout.scss */
+.checkout-receipt .receipt-actions {
+  margin-bottom: 10px;
+}
+/* line 888, ../sass/checkout.scss */
+.checkout-receipt .receipt-actions .icon {
+  margin-right: 5px;
+}
+
+/* Custom dropdown list */
+/* line 895, ../sass/checkout.scss */
+.customDropdown {
+  position: relative;
+  background-color: #FFFFFF;
+  border: 1px solid #9F9F9F;
+  -webkit-box-shadow: 0 1px 0 #e3e3e3 inset;
+  -moz-box-shadow: 0 1px 0 #e3e3e3 inset;
+  box-shadow: 0 1px 0 #e3e3e3 inset;
+  color: #55564A;
+  height: 28px;
+  margin: 0;
+  padding: 2px 5px 0;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+}
+/* line 911, ../sass/checkout.scss */
+.customDropdown span {
+  padding: 0 20px 0 0;
+  font: normal 14px/28px arial;
+  display: block;
+  cursor: pointer;
+  background: url(../images/tr.png) 100% 3px no-repeat;
+  white-space: nowrap;
+}
+/* line 921, ../sass/checkout.scss */
+.customDropdown img {
+  vertical-align: middle;
+  width: 30px;
+}
+/* line 925, ../sass/checkout.scss */
+.customDropdown ul {
+  display: none;
+  position: absolute;
+  top: 28px;
+  left: -1px;
+  width: 100%;
+  z-index: 10;
+  background: #fff;
+  border: 1px solid #9F9F9F;
+  border-top-color: #DDD;
+  margin: 0;
+  -webkit-border-radius: 0 0 3px 3px;
+  -moz-border-radius: 0 0 3px 3px;
+  -ms-border-radius: 0 0 3px 3px;
+  -o-border-radius: 0 0 3px 3px;
+  border-radius: 0 0 3px 3px;
+  padding-top: 3px;
+}
+/* line 940, ../sass/checkout.scss */
+.customDropdown ul li {
+  padding: 2px 5px 1px;
+  cursor: pointer;
+  display: block;
+}
+/* line 946, ../sass/checkout.scss */
+.customDropdown ul li:hover {
+  background: #eee;
+}
+/* line 949, ../sass/checkout.scss */
+.customDropdown ul li i {
+  font-style: normal;
+}
+
+/* line 958, ../sass/checkout.scss */
+input.disabled_class {
+  border: 1px solid #ccc;
+  color: #ccc;
+}
+
+/* line 959, ../sass/checkout.scss */
+.content-wrapper {
+  padding-top: 10px;
+  z-index: auto;
+}

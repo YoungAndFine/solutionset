@@ -35,12 +35,12 @@
 .mainmenu-wrapper {
 	filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF009BDC', endColorstr='#FF004F71');
 	background: #CCCCC1;
-	background-image: -ms-linear-gradient(top, #1CCCC 0%, #CCCCC1 100%);
-	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #1CCCC), color-stop(100%, #CCCCC1));
-	background-image: -webkit-linear-gradient(top, #1CCCC,#CCCCC1);
-	background-image: -moz-linear-gradient(top, #1CCCC,#CCCCC1);
-	background-image: -o-linear-gradient(top, #1CCCC,#CCCCC1);
-	background-image: linear-gradient(top, #1CCCC,#CCCCC1);
+	background-image: -ms-linear-gradient(top, #1CCCCC 0%, #CCCCC1 100%);
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #1CCCCC), color-stop(100%, #CCCCC1));
+	background-image: -webkit-linear-gradient(top, #1CCCCC,#CCCCC1);
+	background-image: -moz-linear-gradient(top, #1CCCCC,#CCCCC1);
+	background-image: -o-linear-gradient(top, #1CCCCC,#CCCCC1);
+	background-image: linear-gradient(top, #1CCCCC,#CCCCC1);
 	border: 1px solid #CCCCC1;
 	border-left: 0;
 	border-right: 0;}

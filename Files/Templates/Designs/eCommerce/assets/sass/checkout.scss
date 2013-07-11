@@ -365,7 +365,7 @@
 			margin-right: 10px;
 		}
 		input[type=text], input[type=email], input[type=number], select {
-			width: 610px;
+			width: 345px;
 		}
 		input[name=EcomOrderCustomerZip],
 		input[name=EcomOrderDeliveryZip] {
@@ -373,12 +373,12 @@
 		}
 		input[name=EcomOrderCustomerCity],
 		input[name=EcomOrderDeliveryCity] {
-			width: 535px;
+			width: 270px;
 		}
 		select {
 			font: bold 14px/28px arial;
 			border: 1px solid #9F9F9F;
-			width: 622px; // need to check this value
+			width: 357px; // need to check this value
 		}
 		.control-info {
 			@include text-cut;
