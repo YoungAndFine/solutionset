@@ -1,0 +1,15 @@
+<div class="product-rating">
+	<span itemscope="" itemtype="http://data-vocabulary.org/Review-aggregate">
+		<span itemprop="itemreviewed" class="hidden"><!--@Ecom:Product.Name--></span>
+		<span itemprop="rating" itemscope="" itemtype="http://data-vocabulary.org/Rating">
+			<span itemprop="average"><!--@Ecom:Product.Rating--></span> out of <span itemprop="best">5</span>
+		</span>
+		<span class="empty-stars-container">
+			<i class="icon-star-empty star-showing"></i><i class="icon-star-empty star-showing"></i><i class="icon-star-empty star-showing"></i><i class="icon-star-empty star-showing"></i><i class="icon-star-empty star-showing"></i>
+		</span>
+	</span>
+	<div class="product-comments">
+		<div class="icon-comment-alt icon-flip-horizontal"></div>
+		(<a href="<!--@Ecom:Product.LinkGroup.Clean-->&amp;TabReviews=true"><span itemprop="count"><!--@Ecom:Product.CommentCount--></span> <!--@Translate(reviews, "Reviews")--></a> - <a href="#" data-toggle="modal" data-target="#productCommentAdd"><!--@Translate(writeacomment, "write a comment")--></a>)
+	</div>
+</div>

@@ -60,7 +60,7 @@
 		<!--@EndIf(Ecom:Product.ImageLarge.Default.Clean)-->
 		<div class="details" itemprop="offerDetails" itemscope itemtype="http://data-vocabulary.org/Offer">
 			<!--@If(Ecom:Product.IsInCart=="True")--><!--@EndIf-->
-			
+
 			<!--@If(Item.Area.Require_Login_To_Show_Prices!='True' || Global:Extranet.UserID>0)-->
 			<div class="product-pricebox-wrapper hidden-phone">
 				<!--@If(Ecom:Product.VariantCount>0)-->
@@ -166,7 +166,7 @@
 		<!--@Else-->
 			<!--@Translate(PleaseLoginToSeePrice, "Please login to see price")-->
 		<!--@EndIf-->
-		
+
 		<!--@If Defined(Item.Area.Enable_Social_Media)-->
 			<div class="product-addthis">
 				<div class="addthis_toolbox addthis_default_style ">
@@ -180,7 +180,7 @@
 				<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=xa-4ffa83b21df57f59"></script>
 			</div>
 		<!--@EndIf(Item.Area.Enable_Social_Media)-->
-		</div><!-- / .details -->		
+		</div><!-- / .details -->
 		<div class="content">
 			<div class="tab-content">
 				<div class="tab-pane <!--@If Not Defined(Server:Request.tabreviews)-->active<!--@EndIf(Server:Request.tabreviews)-->" id="tab-description">
@@ -191,7 +191,7 @@
 					</h2>
 					<div class="collapse in">
 						<div class="product-rating-comments hidden-phone">
-							<!--@Include(partials\rating.html)-->
+							<!--@Include(eCom/Product/Partials/Rating.html)-->
 						</div>
 						<div class="product-description">
 							<!--@Ecom:Product.ShortDescription.Raw-->
@@ -1074,7 +1074,7 @@
 												<!--@Translate(PleaseLoginToSeePrice, "Please login to see price")-->
 											<!--@EndIf-->
 											<div class="clearfix"></div>
-										
+
 										</div><!-- / .popup-variants-partright -->
 									</div>
 
