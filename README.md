@@ -3,6 +3,8 @@ Solution Set
 
 This repository contains the Dynamicweb Solution Set templates.
 
+_Note_: Requires Dynamicweb 8.2.3.4 (or later)
+
 Main design: [eCommerce](Files/Templates/Designs/eCommerce/README.md)
 
 Installing the design (eCommerce) on a Dynamicweb solution
