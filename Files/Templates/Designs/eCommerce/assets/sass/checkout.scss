@@ -16,6 +16,8 @@
 
 @import 'vars';
 
+.align-right{ text-align:right;}
+
 .checkout-stepmap {
 	margin-left: 30px;
 	position: absolute;
@@ -394,7 +396,7 @@
 			margin-top: 5px;
 		}
 	}
-
+	
 	@media (min-width: 980px) and (max-width: 1200px) {
 		.controls {
 			&.with-button {
