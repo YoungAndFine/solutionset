@@ -21,13 +21,13 @@
 								<div class="product-action">
 									<!--@If(Ecom:Product.VariantCount>0)-->
 									<button type="button" class="btn dw-button-green" data-toggle="modal" data-target="#productVariantChooser<!--@Ecom:Product.ID-->">
-										<!--@Translate(Buy, "Buy")-->
+										<!--@Translate(Add_To_Cart, "Add to cart")-->
 										<i class="icon sprite arr-forward-small-white"></i>
 									</button>
 									<!--@EndIf-->
 									<!--@If(Ecom:Product.VariantCount==0)-->
-									<button type="button" class="btn dw-button-green" onclick="$.addToCart(this, undefined, '.box-content')">
-										<!--@Translate(Buy, "Buy")-->
+									<button type="button" class="btn dw-button-green" onclick="$.addToCart(this, undefined, '.box-content'), alert('<!--@Translate(Frontpage_Alert, "Added to Cart!")-->')">
+										<!--@Translate(Add_To_Cart, "Add to cart")-->
 										<i class="icon sprite arr-forward-small-white"></i>
 									</button>
 									<!--@EndIf-->
