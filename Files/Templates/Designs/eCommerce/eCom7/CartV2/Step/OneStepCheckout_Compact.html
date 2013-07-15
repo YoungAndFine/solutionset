@@ -174,11 +174,17 @@
 	);
 </script>
 
+
 <div class="span12 checkout-headline-wrapper">
 	<div class="row">
 		<div class="span9">
 			<div class="checkout-headline">
 				<h1><!--@Translate(contactdetails, "Contact details")--></h1>
+				<div class="span5">
+					<!--@If(Global:Extranet.UserID==0)-->
+					<a href="#" class="btn dw-button-green" data-toggle="modal" data-target="#LoginBox"><strong><!--@Translate(alreadymember, 'Already a customer - login here')--></strong></a>
+					<!--@EndIf-->
+				</div>
 			</div>
 		</div>
 	</div>
@@ -205,9 +211,6 @@
 				<h3>1. <!--@Translate(youradress, "Your address")--></h3>
 			</legend>
 			<div class="box-content">
-				<!--@If(Global:Extranet.UserID==0)-->
-				<a href="#" class="btn dw-button-green" data-toggle="modal" data-target="#LoginBox"><strong><!--@Translate(alreadymember, 'Already a customer - login here')--></strong></a>
-				<!--@EndIf-->
 				<div class="form-horizontal">
 					<!--@If(Global:Area.ID!=1)-->
 					<!--@If(Global:Area.ID!=18)-->
@@ -226,9 +229,6 @@
 					<hr>
 					<!--@EndIf-->
 					<!--@EndIf-->
-					<div class="required-fields-note" <!--@If(Global:Area.ID!=17)--><!--@If(Global:Area.ID!=19)-->style="margin-top:0;"<!--@EndIf--><!--@EndIf-->>
-						<b>* <small><!--@Translate(requiredFields, "these fields are required")--></small></b>
-					</div>
 					<div class="control-group">
 						<label class="control-label" for="EcomOrderCustomerCompany">
 							<span><!--@Translate(company, "Company")--></span>
@@ -456,12 +456,12 @@
 				</button>
 			</h3>
 		</div>
-		<div class="box-content box-minicart collapse">
+		<div class="box-content collapse">
 			<!--@Include(/eCom7/CartV2/Step/Partials/OrderDetails.html)-->
 		</div>
 		
-		<div class="controls with-button">
-			<label class="checkbox">
+		<div class="controls with-button">	
+			<label class="span10 checkbox">
 				<input type="checkbox" id="EcomOrderCustomerAccepted2" name="EcomOrderCustomerAccepted" value="1" />
 				<!--@Translate(Iaccept, "I accept")-->&nbsp;<a href="#" data-toggle="modal" data-target="#checkoutTerms"><!--@Translate(termsandconditions, "Terms and Conditions")--></a>
 			</label>
@@ -471,7 +471,6 @@
 			</a>
 			<div class="clearfix"></div>
 		</div>
-	</div>
 </div>
 </form>
 
