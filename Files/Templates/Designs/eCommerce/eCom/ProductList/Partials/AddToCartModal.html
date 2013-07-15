@@ -1,0 +1,87 @@
+<div class="modal hide fade modal-type-variants" id="productVariantChooser<!--@Ecom:Product.ID-->" tabindex="-1" role="dialog">
+	<div class="modal-header">
+		<button type="button" class="close blue-close icon-remove" data-dismiss="modal"></button>
+		<h3><!--@Ecom:Product.Name--></h3>
+	</div><!-- / .modal-header -->
+	<div class="modal-body">
+		<div class="row-fluid">
+			<div class="span7">
+				<div class="popup-variants-partleft">
+					<img src="/Admin/Public/getimage.ashx?Image=<!--@Ecom:Product.ImageSmall.Default.Clean-->&amp;Width=350" class="product-image">
+					<div class="product-allinfolink">
+						<a href="<!--@Ecom:Product.LinkGroup.Clean-->"><!--@Translate(allproductinformation, "All product informations - Click here")--></a>
+					</div>
+				</div><!-- / .popup-variants-partleft -->
+			</div>
+			<div class="span5">
+				<div class="popup-variants-partright">
+					<div class="product-pricelabel"><!--@Translate(ProductNumberShort, "no.")-->:&nbsp;<!--@Ecom:Product.Number--></div>
+					<div class="clearfix"></div>
+					<div class="product-description">
+						<!--@Ecom:Product.ShortDescription-->
+					</div>
+					<div class="product-pricebox-wrapper">
+						<div class="product-pricebox-title"><!--@Translate(shoosevariant, "Choose your variant:")--></div>
+						<div class="product-variants">
+							<select class="variants-selector input-large" name="variantid">
+								<option value=""><!--@Translate(selectyourvariant, 'Select your option')--></option>
+								<!--@LoopStart(VariantCombinations)-->
+								<option id="vOpt<!--@Ecom:VariantCombination.VariantID-->" value="<!--@Ecom:VariantCombination.VariantID-->">
+									<!--@Ecom:VariantCombination.VariantText-->
+								</option>
+								<!--@LoopEnd(VariantCombinations)-->
+							</select>
+							<!--@LoopStart(BOMConfigurators)-->
+							<!--@LoopStart(ConfiguratorProducts)-->
+							<input type="hidden" id="<!--@Ecom:Product.ID-->" value="<!--@Ecom:Product.ActualPrice-->" />
+							<!--@LoopEnd(ConfiguratorProducts)-->
+							<!--@LoopEnd(BOMConfigurators)-->
+						</div>
+						<div class="product-pricebox">
+							<div>
+								<div>&nbsp;</div>
+								<div><!--@Ecom:Product.Price.PriceWithVATFormatted--> / <!--@Translate(unit, "unit")--></div>
+							</div>
+						</div>
+						<div class="product-addtocart">
+							<input name="quantity" class="input-mini" onclick="this.value='';" value="1" type="text"><span class="help-inline"><!--@Translate(unit, "unit")--></span>
+							<button class="btn dw-button-green" data-dw-cmd="addtocart" onclick="Layout.Cart.AddToCart(this)">
+								<span>
+									<!--@If Defined(Global:OMC.Experiment.Variation.Original)-->
+									<!--@Translate(AddToCart, "Add to cart")-->
+									<!--@EndIf(Global:OMC.Experiment.Variation.Original)-->
+									<!--@If Not Defined(Global:OMC.Experiment.Variation.Original)-->
+									<!--@Translate(BuyNow, "Buy now")-->
+									<!--@EndIf(Global:OMC.Experiment.Variation.Original)-->
+								</span>
+							</button>
+						</div>
+					</div>
+					<div class="product-facts">
+						<ul>
+							<li>
+								<!--@If(Ecom:Product.Stock>0)-->
+								<span class="icon-smile in-stock"></span>
+								<!--@Ecom:Product:Stock.Text-->
+								<!--@Else-->
+								<span class="icon-meh out-of-stock"></span>
+								<!--@Ecom:Product:Stock.Text-->
+								<!--@EndIf-->
+							</li>
+							<li>
+								<!--@If(Ecom:Product.Stock>0)-->
+								<span class="icon-ok"></span>
+								<!--@Translate(ProductDelivary, "Delivery")--> <!--@Ecom:Product.IsInCart)--> <!--@Ecom:Product:Stock.DeliveryText--> <!--@Ecom:Product:Stock.DeliveryUnit-->
+								<!--@Else-->
+								<span class="icon-ok"></span>
+								<!--@Translate(ProductDelivary, "Delivery")--> <!--@Ecom:Product.IsInCart)--> <!--@Ecom:Product:Stock.DeliveryText--> <!--@Ecom:Product:Stock.DeliveryUnit-->
+								<!--@EndIf-->
+							</li>
+						</ul>
+					</div>
+					<div class="clearfix"></div>
+				</div><!-- / .popup-variants-partright -->
+			</div>
+		</div>
+	</div><!-- / .modal-body -->
+</div>

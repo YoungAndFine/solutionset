@@ -1,34 +1,36 @@
 <!--@LoopStart(OrderLines)-->
-<div class="product-line">
-	<!--@If Not Defined(Ecom:Order:OrderLine.IsProduct)-->
-	<div class="product-name">
-		<!--@Translate(discount, 'Discount')--> <!--@Ecom:Order:OrderLine.ProductName-->
-		<i class="discount-price"><!--@Ecom:Order:OrderLine.Price.PriceWithoutVATFormatted--></i>
+	<div class="product-line">
+		<!--@If Not Defined(Ecom:Order:OrderLine.IsProduct)-->
+		<div class="product-name">
+			<!--@Translate(discount, 'Discount')--> <!--@Ecom:Order:OrderLine.ProductName-->
+			<i class="discount-price"><!--@Ecom:Order:OrderLine.Price.PriceWithoutVATFormatted--></i>
+		</div>
+		<!--@Else-->
+		<div class="product-name">
+			<div class="row">
+				<div class="span8">
+					<a href="/Default.aspx?ID=<!--@Item.Area.Products_Modal_Page_ID-->&amp;ProductID=<!--@Ecom:Order:OrderLine.ProductID-->" data-toggle="modal" data-target="#productPreview"><!--@Ecom:Order:OrderLine.ProductName--></a><br/>
+					<i><!--@Translate(Product_number, "Product no.")-->: <!--@Ecom:Product.Number--></i>
+				</div>
+				<div class="span1 Quantity align-right">
+				<!--@Translate(Product_Quantity, "Quantity:")--><br/>
+					<!--@Ecom:Order:OrderLine.Quantity--> <!--@Translate(pcs, "pcs")-->
+				</div>
+				
+				<div class="span1 Price align-right">
+				<!--@Translate(Product_Price, "Price:")--><br/>
+					<!--@Ecom:Product.Price-->
+				</div>
+					
+				<div class="span1 TotalPrice align-right">
+				<!--@Translate(Product_Total_Price, "Total Price:")--><br/>
+					<!--@Ecom:Order:olPrice-->
+				</div>
+			</div>
+		</div>
+		<!--@EndIf-->
 	</div>
-	<!--@Else-->
-	<div class="product-name">
-		<div>
-			<a href="/Default.aspx?ID=<!--@Item.Area.Products_Modal_Page_ID-->&amp;ProductID=<!--@Ecom:Order:OrderLine.ProductID-->" data-toggle="modal" data-target="#productPreview"><!--@Ecom:Order:OrderLine.ProductName--></a>
-		</div>
-		<div>
-			<i><!--@Translate(Product_number, "Product no.")-->: <!--@Ecom:Product.Number--></i>
-		</div>
-	</div>
-	<div style="float:right;" class="PriceQuantityInfo">
-		<div class="span1 Quantity">
-			<!--@Ecom:Order:OrderLine.Quantity--> <!--@Translate(pcs, "pcs")-->
-		</div>
-		
-		<div class="span1 Price">
-			<!--@Ecom:Product.Price-->
-		</div>
-			
-		<div class="span1 TotalPrice">
-			<!--@Ecom:Order:olPrice-->
-		</div>
-	</div><br />
-	<!--@EndIf-->
-</div>
+<hr/>
 <!--@LoopEnd(OrderLines)-->
 
 <div class="price-line">
@@ -64,19 +66,22 @@
 	</div>
 	<div class="clearfix"></div>
 </div>
+<hr/>
 
-<div class="price-line">
-	<div class="price-label">
-		<strong><!--@Translate(totalPrice, "Total price")--> (<!--@Translate(withVAT, "incl. VAT")-->)</strong>
+<div class="row">
+	<div class="span10 action-line">
+		<a href="/Default.aspx?ID=<!--@Item.Area.Show_Cart_Page_ID-->" class="btn dw-button-gray"><!--@Translate(showcart, "edit order")--></a>
 	</div>
-	<div class="price-value">
-		<strong><!--@Ecom:Order.ShippingFee.Currency.Symbol--> <span class="cart_total"><!--@Ecom:Order.OrderLines.TotalPriceWithoutSymbol--></span></strong>
+	
+	<div class="span1 price-line">
+		<div class="price-label align-right">
+			<strong><!--@Translate(totalPrice, "Total price")--> (<!--@Translate(withVAT, "incl. VAT")-->)</strong>
+		</div>
+		<div class="price-value align-right">
+			<strong><u><!--@Ecom:Order.ShippingFee.Currency.Symbol--> <span class="cart_total"><!--@Ecom:Order.OrderLines.TotalPriceWithoutSymbol--></u></span></strong>
+		</div>
+		<div class="clearfix"></div>
 	</div>
-	<div class="clearfix"></div>
-</div>
-
-<div class="action-line">
-	<a href="/Default.aspx?ID=<!--@Item.Area.Show_Cart_Page_ID-->" class="btn dw-button-gray"><!--@Translate(showcart, "edit order")--></a>
 </div>
 
 <div class="modal hide fade modal-type-variants" id="productPreview" tabindex="-1" role="dialog">
