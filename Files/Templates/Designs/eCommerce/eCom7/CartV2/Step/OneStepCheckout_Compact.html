@@ -134,6 +134,10 @@
 					FillAddress(this);
 				});
 
+				$('#AddressList2').change(function(){
+					FillAddress2(this);
+				});
+
 			});
 
 
@@ -170,11 +174,30 @@
 				});
 			}
 
+			function FillAddress2(list) {
+				var addressId = list.options[list.selectedIndex].value;
+				$.ajax({
+					url: 'Admin/Module/Usermanagement/UserAddresses.ashx?cmd=GetAddress&AddressID=' + addressId,
+					beforeSend: function(){
+
+					},
+					success: function (data) {
+						var address = data;
+						if (address) {
+							$('#EcomOrderDeliveryAddress, #EcomOrderDeliveryAddress2, #EcomOrderDeliveryZip, #EcomOrderDeliveryCity').prop('disabled',false);
+							$('#EcomOrderDeliveryAddress').val(address.Address);
+							$('#EcomOrderDeliveryAddress2').val(address.Address2);
+							$('#EcomOrderDeliveryZip').val(address.Zip);
+							$('#EcomOrderDeliveryCity').val(address.City);
+						}
+					}
+				});
+			}
 		}
 	);
 </script>
 
-
+<!--@DwTemplateTags-->
 <div class="span12 checkout-headline-wrapper">
 	<div class="row">
 		<div class="span9">
@@ -229,21 +252,13 @@
 					<hr>
 					<!--@EndIf-->
 					<!--@EndIf-->
+										
 					<div class="control-group">
 						<label class="control-label" for="EcomOrderCustomerCompany">
 							<span><!--@Translate(company, "Company")--></span>
 						</label>
 						<div class="controls">
 							<input type="text" size="10" name="EcomOrderCustomerCompany" id="EcomOrderCustomerCompany" value="<!--@Ecom:Order.Customer.Company-->" tabindex="2" />
-						</div>
-					</div>
-					<div class="control-group">
-						<label class="control-label" for="EcomOrderCustomerName">
-							<span><!--@Translate(name, "Name")--></span>
-							<b>*</b>
-						</label>
-						<div class="controls">
-							<input type="text" name="EcomOrderCustomerName" id="EcomOrderCustomerName" value="<!--@Ecom:Order.Customer.Name-->"	 tabindex="3" />
 						</div>
 					</div>
 					<!--@If Not Defined(UserManagement:User.UserAddresses.EmptyList)-->
@@ -269,6 +284,15 @@
 						</div>
 					</div>
 					<!--@EndIf(UserManagement:User.UserAddresses.EmptyList)-->
+					<div class="control-group">
+						<label class="control-label" for="EcomOrderCustomerName">
+							<span><!--@Translate(name, "Name")--></span>
+							<b>*</b>
+						</label>
+						<div class="controls">
+							<input type="text" name="EcomOrderCustomerName" id="EcomOrderCustomerName" value="<!--@Ecom:Order.Customer.Name-->"	 tabindex="3" />
+						</div>
+					</div>
 
 					<div class="control-group address_drop">
 						<label class="control-label" for="EcomOrderCustomerAddress">
@@ -395,6 +419,29 @@
 								<input type="text" name="EcomOrderDeliveryCompany" id="EcomOrderDeliveryCompany" value="<!--@Ecom:Order.Delivery.Company-->" />
 							</div>
 						</div>
+						<!--@If Not Defined(UserManagement:User.UserAddresses.EmptyList)-->
+					<div class="control-group address_drop">
+						<label class="control-label" for="EcomOrderCustomerAddress">
+							<span><!--@Translate(addressList, "Address List")--></span>
+						</label>
+						<div class="controls">
+							<select name="AddressList2" id="AddressList2">
+								<!--@LoopStart(UserManagement:User.UserAddresses)-->
+								<!--@If Defined(UserManagement:User.UserAddress.Default)-->
+								<option value="<!--@UserManagement:User.UserAddress.ID-->" selected="selected">
+									<!--@UserManagement:User.UserAddress.Description-->
+								</option>
+								<!--@EndIf(UserManagement:User.UserAddress.Default)-->
+								<!--@If Not Defined(UserManagement:User.UserAddress.Default)-->
+								<option value="<!--@UserManagement:User.UserAddress.ID-->">
+									<!--@UserManagement:User.UserAddress.Description-->
+								</option>
+								<!--@EndIf(UserManagement:User.UserAddress.Default)-->
+								<!--@LoopEnd(UserManagement:User.UserAddresses)-->
+							</select>
+						</div>
+					</div>
+					<!--@EndIf(UserManagement:User.UserAddresses.EmptyList)-->
 						<div class="control-group">
 							<label class="control-label" for="EcomOrderDeliveryName">
 								<span><!--@Translate(name, "Name")--></span>
