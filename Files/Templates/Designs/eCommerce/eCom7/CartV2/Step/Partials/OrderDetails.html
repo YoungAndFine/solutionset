@@ -7,26 +7,26 @@
 		</div>
 		<!--@Else-->
 		<div class="product-name">
-		<div class="row">
-			<div class="span8 test">
-				<a href="/Default.aspx?ID=<!--@Item.Area.Products_Modal_Page_ID-->&amp;ProductID=<!--@Ecom:Order:OrderLine.ProductID-->" data-toggle="modal" data-target="#productPreview"><!--@Ecom:Order:OrderLine.ProductName--></a><br/>
-				<i><!--@Translate(Product_number, "Product no.")-->: <!--@Ecom:Product.Number--></i>
-			</div>
-			<div class="span1 Quantity align-right">
-			<!--@Translate(Product_Quantity, "Quantity:")--><br/>
-				<!--@Ecom:Order:OrderLine.Quantity--> <!--@Translate(pcs, "pcs")-->
-			</div>
-			
-			<div class="span1 Price align-right">
-			<!--@Translate(Product_Price, "Price:")--><br/>
-				<!--@Ecom:Product.Price-->
-			</div>
+			<div class="row">
+				<div class="span8">
+					<a href="/Default.aspx?ID=<!--@Item.Area.Products_Modal_Page_ID-->&amp;ProductID=<!--@Ecom:Order:OrderLine.ProductID-->" data-toggle="modal" data-target="#productPreview"><!--@Ecom:Order:OrderLine.ProductName--></a><br/>
+					<i><!--@Translate(Product_number, "Product no.")-->: <!--@Ecom:Product.Number--></i>
+				</div>
+				<div class="span1 Quantity align-right">
+				<!--@Translate(Product_Quantity, "Quantity:")--><br/>
+					<!--@Ecom:Order:OrderLine.Quantity--> <!--@Translate(pcs, "pcs")-->
+				</div>
 				
-			<div class="span1 TotalPrice align-right">
-			<!--@Translate(Product_Total_Price, "Total Price:")--><br/>
-				<!--@Ecom:Order:olPrice-->
+				<div class="span1 Price align-right">
+				<!--@Translate(Product_Price, "Price:")--><br/>
+					<!--@Ecom:Product.Price-->
+				</div>
+					
+				<div class="span1 TotalPrice align-right">
+				<!--@Translate(Product_Total_Price, "Total Price:")--><br/>
+					<!--@Ecom:Order:olPrice-->
+				</div>
 			</div>
-		</div>
 		</div>
 		<!--@EndIf-->
 	</div>
@@ -67,19 +67,20 @@
 	<div class="clearfix"></div>
 </div>
 <hr/>
-<div class="test">
-	<div class="price-line">
-		<div class="price-label">
+
+<div class="row">
+	<div class="span10 action-line">
+		<a href="/Default.aspx?ID=<!--@Item.Area.Show_Cart_Page_ID-->" class="btn dw-button-gray"><!--@Translate(showcart, "edit order")--></a>
+	</div>
+	
+	<div class="span1 price-line">
+		<div class="price-label align-right">
 			<strong><!--@Translate(totalPrice, "Total price")--> (<!--@Translate(withVAT, "incl. VAT")-->)</strong>
 		</div>
-		<div class="price-value">
-			<strong><!--@Ecom:Order.ShippingFee.Currency.Symbol--> <span class="cart_total"><!--@Ecom:Order.OrderLines.TotalPriceWithoutSymbol--></span></strong>
+		<div class="price-value align-right">
+			<strong><u><!--@Ecom:Order.ShippingFee.Currency.Symbol--> <span class="cart_total"><!--@Ecom:Order.OrderLines.TotalPriceWithoutSymbol--></u></span></strong>
 		</div>
 		<div class="clearfix"></div>
-	</div>
-
-	<div class="action-line">
-		<a href="/Default.aspx?ID=<!--@Item.Area.Show_Cart_Page_ID-->" class="btn dw-button-gray"><!--@Translate(showcart, "edit order")--></a>
 	</div>
 </div>
 
