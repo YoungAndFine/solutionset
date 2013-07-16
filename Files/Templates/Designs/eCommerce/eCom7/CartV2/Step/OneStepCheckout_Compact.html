@@ -132,27 +132,16 @@
 
 				$('#AddressList').change(function(){
 					FillAddress(this);
+					$('.AdressCustomer').find('input').val('');
 				});
 
-				$('#AddressList2').change(function(){
-					FillAddress2(this);
+				$('#AddressListDelivery').change(function(){
+					FillAddressDelivery(this);
+					$('.AdressDelivery').find('input').val('');
 				});
+
 
 			});
-
-
-			function checkoutDeliveryDetailsShow(sId) {
-				var container = $(sId);
-				container.find("input").removeAttr("disabled");
-				container.find("input").val('');
-				container.show();
-			}
-
-			function checkoutDeliveryDetailsHide(sId) {
-				var container = $(sId);
-				//container.find("input").attr("disabled", "disabled");
-				container.hide();
-			}
 
 			function FillAddress(list) {
 				var addressId = list.options[list.selectedIndex].value;
@@ -174,7 +163,7 @@
 				});
 			}
 
-			function FillAddress2(list) {
+			function FillAddressDelivery(list) {
 				var addressId = list.options[list.selectedIndex].value;
 				$.ajax({
 					url: 'Admin/Module/Usermanagement/UserAddresses.ashx?cmd=GetAddress&AddressID=' + addressId,
@@ -233,7 +222,7 @@
 			<legend class="box-headline">
 				<h3>1. <!--@Translate(youradress, "Your address")--></h3>
 			</legend>
-			<div class="box-content">
+			<div class="AdressCustomer box-content">
 				<div class="form-horizontal">
 					<!--@If(Global:Area.ID!=1)-->
 					<!--@If(Global:Area.ID!=18)-->
@@ -261,13 +250,23 @@
 							<input type="text" size="10" name="EcomOrderCustomerCompany" id="EcomOrderCustomerCompany" value="<!--@Ecom:Order.Customer.Company-->" tabindex="2" />
 						</div>
 					</div>
+					<div class="control-group">
+						<label class="control-label" for="EcomOrderCustomerName">
+							<span><!--@Translate(name, "Name")--></span>
+							<b>*</b>
+						</label>
+						<div class="controls">
+							<input type="text" name="EcomOrderCustomerName" id="EcomOrderCustomerName" value="<!--@Ecom:Order.Customer.Name-->"	 tabindex="3" />
+						</div>
+					</div>
 					<!--@If Not Defined(UserManagement:User.UserAddresses.EmptyList)-->
 					<div class="control-group address_drop">
 						<label class="control-label" for="EcomOrderCustomerAddress">
 							<span><!--@Translate(addressList, "Address List")--></span>
 						</label>
 						<div class="controls">
-							<select name="AddressList" id="AddressList">
+							<select name="AddressList" id="AddressList" onchange="changeFunc();">
+								<option><!--@Translate(TypeAdress, "Type adress")--></option>
 								<!--@LoopStart(UserManagement:User.UserAddresses)-->
 								<!--@If Defined(UserManagement:User.UserAddress.Default)-->
 								<option value="<!--@UserManagement:User.UserAddress.ID-->" selected="selected">
@@ -284,15 +283,6 @@
 						</div>
 					</div>
 					<!--@EndIf(UserManagement:User.UserAddresses.EmptyList)-->
-					<div class="control-group">
-						<label class="control-label" for="EcomOrderCustomerName">
-							<span><!--@Translate(name, "Name")--></span>
-							<b>*</b>
-						</label>
-						<div class="controls">
-							<input type="text" name="EcomOrderCustomerName" id="EcomOrderCustomerName" value="<!--@Ecom:Order.Customer.Name-->"	 tabindex="3" />
-						</div>
-					</div>
 
 					<div class="control-group address_drop">
 						<label class="control-label" for="EcomOrderCustomerAddress">
@@ -309,7 +299,7 @@
 							<b>*</b>
 						</label>
 						<div class="controls">
-							<input type="text" name="EcomOrderCustomerZip" id="EcomOrderCustomerZip" value="<!--@Ecom:Order.Customer.Zip-->" tabindex="5" />
+							<input type="number" name="EcomOrderCustomerZip" id="EcomOrderCustomerZip" value="<!--@Ecom:Order.Customer.Zip-->" tabindex="5" />
 							<input type="text" name="EcomOrderCustomerCity" id="EcomOrderCustomerCity" value="<!--@Ecom:Order.Customer.City-->"	 tabindex="6" />
 						</div>
 					</div>
@@ -407,16 +397,16 @@
 			<legend class="box-headline">
 				<h3>2. <!--@Translate(shippingInfo, "Shipping information")--></h3>
 			</legend>
-			<div class="box-content">
+			<div class="AdressDelivery box-content">
 				<div class="form-horizontal">
 					<div id="delivery-fields">
 						<div class="control-group">
-							<label class="control-label" for="EcomOrderDeliveryCompany">
-								<span><!--@Translate(company, "Company")--></span>
-								<b></b>
+							<label class="control-label" for="EcomOrderDeliveryName">
+								<span><!--@Translate(name, "Name")--></span>
+								<b>*</b>
 							</label>
 							<div class="controls">
-								<input type="text" name="EcomOrderDeliveryCompany" id="EcomOrderDeliveryCompany" value="<!--@Ecom:Order.Delivery.Company-->" />
+								<input type="text" name="EcomOrderDeliveryName" id="EcomOrderDeliveryName" value="<!--@Ecom:Order.Delivery.Name-->" />
 							</div>
 						</div>
 						<!--@If Not Defined(UserManagement:User.UserAddresses.EmptyList)-->
@@ -425,10 +415,11 @@
 							<span><!--@Translate(addressList, "Address List")--></span>
 						</label>
 						<div class="controls">
-							<select name="AddressList2" id="AddressList2">
+							<select name="AddressListDelivery" id="AddressListDelivery">
+								<option selected="selected">Choose adress or type in</option>
 								<!--@LoopStart(UserManagement:User.UserAddresses)-->
 								<!--@If Defined(UserManagement:User.UserAddress.Default)-->
-								<option value="<!--@UserManagement:User.UserAddress.ID-->" selected="selected">
+								<option value="<!--@UserManagement:User.UserAddress.ID-->">
 									<!--@UserManagement:User.UserAddress.Description-->
 								</option>
 								<!--@EndIf(UserManagement:User.UserAddress.Default)-->
@@ -442,15 +433,6 @@
 						</div>
 					</div>
 					<!--@EndIf(UserManagement:User.UserAddresses.EmptyList)-->
-						<div class="control-group">
-							<label class="control-label" for="EcomOrderDeliveryName">
-								<span><!--@Translate(name, "Name")--></span>
-								<b>*</b>
-							</label>
-							<div class="controls">
-								<input type="text" name="EcomOrderDeliveryName" id="EcomOrderDeliveryName" value="<!--@Ecom:Order.Delivery.Name-->" />
-							</div>
-						</div>
 						<div class="control-group">
 							<label class="control-label" for="EcomOrderDeliveryAddress">
 								<span><!--@Translate(address, "Address")--></span>
