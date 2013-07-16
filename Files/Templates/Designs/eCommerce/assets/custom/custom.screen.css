@@ -1,0 +1,10 @@
+/*
+Change the green buttons to be orange!
+*/
+.btn-green {
+  background: -webkit-gradient(linear, 0% 0%, 100% 100%, color-stop(0%, #333333), color-stop(100%, #00cc00));
+  background: -webkit-linear-gradient(top left, #333333, #00cc00);
+  background: -moz-linear-gradient(top left, #333333, #00cc00);
+  background: -o-linear-gradient(top left, #333333, #00cc00);
+  background: linear-gradient(top left, #333333, #00cc00);
+}

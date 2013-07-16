@@ -1,0 +1,8 @@
+@import 'compass';
+
+/*
+	Change the green buttons to be orange!
+*/
+.btn-green {
+	@include background(linear-gradient(top left, #333, #0c0));
+}
