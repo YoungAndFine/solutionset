@@ -31,21 +31,21 @@ Green buttons: 	$buttoncolors:#009209; $buttongradient:#00dd11; $filter:progid:D
 /*Product and header colors*/
 /* line 32, custom.screen.scss */
 .content-wrapper h1 {
-  color: #cccccc;
+  color: #666666;
 }
 
 /* line 36, custom.screen.scss */
 .product-list-item-wrapper .product-link {
-  color: #cccccc;
+  color: #666666;
 }
 
 /* line 40, custom.screen.scss */
 .productlist .catalog-content .filter-wrapper.filter-reset .colored-section {
-  background: #cccccc;
+  background: #666666;
   color: white;
 }
 
 /* line 45, custom.screen.scss */
 .productlist .catalog-content .filter-wrapper.filter-reset .colored-section:after {
-  border-color: #cccccc transparent transparent transparent;
+  border-color: #666666 transparent transparent transparent;
 }
