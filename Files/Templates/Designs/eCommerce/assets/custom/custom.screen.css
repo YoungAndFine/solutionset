@@ -1,10 +1,51 @@
-/*
-Change the green buttons to be orange!
+/*Product and header colors
+change this color to change h1 colors, and product header color in productlist
 */
-.btn-green {
-  background: -webkit-gradient(linear, 0% 0%, 100% 100%, color-stop(0%, #333333), color-stop(100%, #00cc00));
-  background: -webkit-linear-gradient(top left, #333333, #00cc00);
-  background: -moz-linear-gradient(top left, #333333, #00cc00);
-  background: -o-linear-gradient(top left, #333333, #00cc00);
-  background: linear-gradient(top left, #333333, #00cc00);
+/*Change the buttons colors!
+Replace the 2 colors below with these or your own colors: 
+Grey buttons: 	$buttoncolors:#E7E9EB; $buttongradient:#F9F9F9; $filter:progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFF9F9F9', endColorstr='#FFE7E9EB');
+Orange buttons: $buttoncolors:#FF8500; $buttongradient:#FB9E25; $filter:progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFFB9E25', endColorstr='#FFFF8500'); 
+Green buttons: 	$buttoncolors:#009209; $buttongradient:#00dd11; $filter:progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF00DD11', endColorstr='#FF009209');
+*/
+/*GREY BUTTONS*/
+/* line 18, custom.screen.scss */
+.dw-button-green {
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFF9F9F9', endColorstr='#FFE7E9EB');
+  background: #e7e9eb;
+  background: -webkit-gradient(linear, 0% 0%, 100% 100%, color-stop(0%, #f9f9f9), color-stop(100%, #e7e9eb));
+  background: -webkit-linear-gradient(top left, #f9f9f9, #e7e9eb);
+  background: -moz-linear-gradient(top left, #f9f9f9, #e7e9eb);
+  background: -o-linear-gradient(top left, #f9f9f9, #e7e9eb);
+  background: linear-gradient(top left, #f9f9f9, #e7e9eb);
+  border-color: #e7e9eb;
+  text-shadow: 0 1px 1px #ffffff;
+  color: #545649 !important;
+}
+
+/* line 27, custom.screen.scss */
+.dw-button-green:active, .dw-button-green:hover {
+  background: #e7e9eb;
+}
+
+/*Product and header colors*/
+/* line 32, custom.screen.scss */
+.content-wrapper h1 {
+  color: #cccccc;
+}
+
+/* line 36, custom.screen.scss */
+.product-list-item-wrapper .product-link {
+  color: #cccccc;
+}
+
+/* line 40, custom.screen.scss */
+.productlist .catalog-content .filter-wrapper.filter-reset .colored-section {
+  background: #cccccc;
+  color: white;
+}
+
+/* line 45, custom.screen.scss */
+.productlist .catalog-content .filter-wrapper.filter-reset .colored-section:after {
+  border-color: #cccccc transparent transparent transparent;
 }

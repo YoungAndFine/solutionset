@@ -1,8 +1,49 @@
 @import 'compass';
 
-/*
-	Change the green buttons to be orange!
+/*Product and header colors
+change this color to change h1 colors, and product header color in productlist
 */
-.btn-green {
-	@include background(linear-gradient(top left, #333, #0c0));
-}
+$headercolors:#CCCCCC;
+
+/*Change the buttons colors!
+Replace the 2 colors below with these or your own colors: 
+Grey buttons: 	$buttoncolors:#E7E9EB; $buttongradient:#F9F9F9; $filter:progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFF9F9F9', endColorstr='#FFE7E9EB');
+Orange buttons: $buttoncolors:#FF8500; $buttongradient:#FB9E25; $filter:progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFFB9E25', endColorstr='#FFFF8500'); 
+Green buttons: 	$buttoncolors:#009209; $buttongradient:#00dd11; $filter:progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF00DD11', endColorstr='#FF009209');
+*/
+
+/*GREY BUTTONS*/
+	$buttoncolors:#E7E9EB; $buttongradient:#F9F9F9; $filter:progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFF9F9F9', endColorstr='#FFE7E9EB');
+
+.dw-button-green{
+	*zoom:1;
+	filter:$filter;
+	background:$buttoncolors;
+	@include background(linear-gradient(top left, $buttongradient, $buttoncolors));
+	border-color:$buttoncolors;
+	text-shadow:0 1px 1px #ffffff;color:#545649 !important
+	}
+	
+.dw-button-green:active,.dw-button-green:hover{
+	background:$buttoncolors;
+	}
+
+/*Product and header colors*/ 
+.content-wrapper h1 {
+	color: $headercolors;
+	}
+	
+.product-list-item-wrapper .product-link {
+	color: $headercolors;
+	}
+
+.productlist .catalog-content .filter-wrapper.filter-reset .colored-section {
+	background: $headercolors;
+	color: white;
+	}
+
+.productlist .catalog-content .filter-wrapper.filter-reset .colored-section:after {
+	border-color: $headercolors transparent transparent transparent;
+	}
+
+	
