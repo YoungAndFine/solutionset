@@ -44,7 +44,9 @@
 									<!--@EndIf-->
 								</div>
 								<div class="span4 payoff">
-									<div class="dwcontent" id="payoffHeadline" title="Pay-off headline"></div>
+									<!--@If Defined(Item.Area.Payoff_Content_Page_ID)-->
+									<!--@Global:Page.Content(<!--@Item.Area.Payoff_Content_Page_ID-->)-->
+									<!--@EndIf-->
 								</div>
 							</div>
 						</div>

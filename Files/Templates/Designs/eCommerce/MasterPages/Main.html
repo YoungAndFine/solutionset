@@ -50,7 +50,9 @@
 									<!--@EndIf-->
 								</div>
 								<div class="span4 payoff">
-									<div class="dwcontent" id="payoffHeadline" title="Pay-off headline"></div>
+									<!--@If Defined(Item.Area.Payoff_Content_Page_ID)-->
+									<!--@Global:Page.Content(<!--@Item.Area.Payoff_Content_Page_ID-->)-->
+									<!--@EndIf-->
 								</div>
 							</div>
 						</div>
@@ -83,7 +85,7 @@
 
 			<section class="container footer-wrapper">
 				<div class="row" id="footerSections" title="Footer sections">
-					<!--@If(Item.Area.Footer_Content_Page_ID>0)-->
+					<!--@If Defined(Item.Area.Footer_Content_Page_ID)-->
 					<!--@Global:Page.Content(<!--@Item.Area.Footer_Content_Page_ID-->)-->
 					<!--@EndIf-->
 				</div>
