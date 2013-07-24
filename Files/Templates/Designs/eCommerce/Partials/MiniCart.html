@@ -11,7 +11,6 @@
 </div>
 
 <!--@Else-->
-
 <!-- onmouseout="collapseMiniCart();" onmouseover="expandMiniCart();" -->
 <div class="span4 dropdown minicart-wrapper not-empty">
 	<div class="minicart-content">
@@ -54,11 +53,11 @@
 
 				<!--@If Not Defined(Ecom:Order:OrderLine.IsProduct)-->
 				<!--@Translate(discount, 'Discount')--> <!--@Ecom:Order:OrderLine.ProductName-->
-				<!--@EndIf(Ecom:Order:OrderLine.IsProduct)-->
 
-				<!--@If Defined(Ecom:Order:OrderLine.IsProduct)-->
-				<a href="<!--@Ecom:Order:OrderLine.ProductLink.Fixed-->"><!--@Ecom:Order:OrderLine.ProductName--></a>
-				<!--@EndIf(Ecom:Order:OrderLine.IsProduct)-->
+				<!--@Else-->
+				<a href="/Default.aspx?ID=<!--@Item.Area.Products_Catalog_Page_ID-->&amp;ProductID=<!--@Ecom:Product.ID--><!--@If Defined(Ecom:Order:OrderLine.ProductVariantID)-->&amp;VariantID=<!--@Ecom:Order:OrderLine.ProductVariantID--><!--@EndIf-->"><!--@Ecom:Order:OrderLine.ProductName--></a>
+				<!--@EndIf-->
+				
 
 			</div>
 			<div class="quantity-text">
@@ -115,5 +114,4 @@
 		</div>
 	</div>
 </div>
-
 <!--@EndIf-->
