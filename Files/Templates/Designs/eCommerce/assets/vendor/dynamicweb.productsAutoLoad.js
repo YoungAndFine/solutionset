@@ -76,13 +76,13 @@
                 eCommerce.Overlay.show(document.body);
             },
             success: function (data) {
-                eCommerce.Overlay.hide();
-                // console.log(data);
-                //.find("table tbody")
-                var productItems = $(data).filter("div#content-main");
-                //container.append(productItems[0].outerHTML);
-                container.append(productItems.html());
-                context.options.onProductsLoaded();
+              eCommerce.Overlay.hide();
+              // console.log(data);
+              //.find("table tbody")
+              $(data).find("#product-list").children().each(function() {
+                container.append($(this));
+							});
+							context.options.onProductsLoaded();
             },
             complete: function () {
                 eCommerce.Overlay.hide();
