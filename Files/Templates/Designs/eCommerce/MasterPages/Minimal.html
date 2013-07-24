@@ -45,7 +45,7 @@
 									<!--@EndIf-->
 								</div>
 								<div class="span4 payoff">
-									<!--@If Defined(Item.Area.Payoff_Content_Page_ID)-->
+									<!--@If(Item.Area.Payoff_Content_Page_ID>0)-->
 									<div>
 									<!--@Global:Page.Content(<!--@Item.Area.Payoff_Content_Page_ID-->)-->
 									</div>
