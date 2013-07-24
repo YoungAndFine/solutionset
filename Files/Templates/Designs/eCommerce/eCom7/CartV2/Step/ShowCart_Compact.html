@@ -36,20 +36,20 @@
 			<tbody>
 
 				<!--@LoopStart(OrderLines)-->
+				<!--@DwTemplateTags-->
 				<tr>
 					<td class="cart-cell-product">
 							<!--@If Not Defined(Ecom:Product.ID)-->
 							<!--@Translate(discount, 'Discount')--> <!--@Ecom:Order:OrderLine.ProductName-->
-							<!--@EndIf(Ecom:Product.ID)-->
 
-							<!--@If Defined(Ecom:Product.ID)-->
-							<a href="<!--@Ecom:Order:OrderLine.ProductLink-->">
+							<!--@Else-->
+							<a href="/Default.aspx?ID=<!--@Item.Area.Products_Catalog_Page_ID-->&amp;ProductID=<!--@Ecom:Product.ID--><!--@If Defined(Ecom:Order:OrderLine.ProductVariantID)-->&amp;VariantID=<!--@Ecom:Order:OrderLine.ProductVariantID--><!--@EndIf-->">
 								<!--@Ecom:Order:OrderLine.ProductName-->
 								<!--@If Defined(Ecom:Order:OrderLine.ProductVariantText)-->
-								(<!--@Ecom:Order:OrderLine.ProductVariantText-->)
+								(<!--@Ecom:Order:OrderLine.ProductVariantText-->) 
 								<!--@EndIf(Ecom:Order:OrderLine.ProductVariantText)-->
 							</a>
-							<!--@EndIf(Ecom:Product.ID)-->
+							<!--@EndIf-->
 							<ul>
 								<!--@LoopStart(BOMItems)-->
 								<li><!--@Ecom:Order:OrderLine.ProductName--> (<!--@Ecom:Order:OrderLine.Price.PriceWithoutVATFormatted-->)</li>
