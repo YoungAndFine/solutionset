@@ -142,6 +142,7 @@ eCommerce.Filters = {
 			var valueField = null;
 			var requestValue = null;
 			var fromValue = 0, toValue = 0;
+			var formatValue = function(value) { return value; }
 
 			var onSlide = function (event, ui) {
 				var e = $(this);
@@ -149,11 +150,30 @@ eCommerce.Filters = {
 				var sliderValueTo = wrapper.siblings('.filter-slider-to').find('.filter-slider-to-value');
 				var sliderValueFrom = wrapper.siblings('.filter-slider-from').find('.filter-slider-from-value');
 
-				sliderValueTo.html(ui.values[1]);
-				sliderValueFrom.html(ui.values[0]);
+				sliderValueTo.html(formatValue(ui.values[1]));
+				sliderValueFrom.html(formatValue(ui.values[0]));
 			}
 
 			slider = $(slider);
+
+			if (slider.data('currencyRate')) {
+				var rate = parseInt(slider.data('currencyRate'), 10);
+				var rounding = parseInt(slider.data('currencyRounding') || 0);
+				if (!isNaN(rate)) {
+					rate /= 100;
+				}
+
+				formatValue = function(value) {
+					if (!isNaN(parseInt(value, 10))) {
+						value = parseInt(value, 10);
+						value = Math.round(value/rate);
+						if (rounding > 0) {
+							value = Math.round(value/rounding)*rounding;
+						}
+					}
+					return value;
+				}
+			}
 
 			isRange = slider.attr('data-slider-range') == 'true';
 			from = parseInt(slider.attr('data-slider-from')) || 0;
@@ -164,9 +184,11 @@ eCommerce.Filters = {
 			valueField = slider.next('.filter-slider-value-container');
 			requestValue = $.query.get(valueField.attr('name'));
 
-            // Clearing the postback value of a slider if it wasn't submitted before (making bounds context sensitive)
+			// Clearing the postback value of a slider if it wasn't submitted before (making bounds context sensitive)
 			if (requestValue == null || (typeof (requestValue) == 'string' && !requestValue.length) || requestValue == true) {
 				valueField.val('');
+				// Initialize formatted slider values
+				onSlide.call(slider, null, { values: [ from, to ] });
 			} else {
 				onSlide.call(slider, null, { values: [fromValue, toValue] });
 			}
@@ -177,7 +199,7 @@ eCommerce.Filters = {
 				max: to,
 				values: [fromValue, toValue],
                 // callback on event "change" was switched to event "stop"
-                // due to youch device compatibility
+                // due to touch device compatibility
 				stop: function () {
 					var e = $(this);
 					var field = e.next('.filter-slider-value-container');
