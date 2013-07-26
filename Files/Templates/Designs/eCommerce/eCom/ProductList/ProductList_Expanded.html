@@ -1,0 +1,104 @@
+<form method="post">
+	<div id="product-list">
+		<!--@LoopStart(Products)-->
+
+		<!--@If(Ecom:Product.VariantCount==0)-->
+		<section class="product-list-item-wrapper">
+			<div class="row-fluid">
+				<div class="product-image span1">
+					<!--@If Defined(Ecom:Product.ImageSmall.Default.Clean)-->
+					<div class="product-price visible-phone">
+						<!--@Ecom:Product.Price.PriceWithVATFormatted-->
+					</div>
+          <a href="<!--@Ecom:Product.LinkGroup.Clean-->" title="<!--@Ecom:Product.Name-->" class="thumbnail">
+						<img src="/Admin/Public/GetImage.ashx?Image=<!--@Ecom:Product.ImageSmall.Default.Clean-->&amp;Width=50" alt="" />
+					</a>
+					<!--@EndIf(Ecom:Product.ImageSmall.Default.Clean)-->
+				</div>
+
+				<div class="details hidden-phone">
+					<div class="product-price">
+            <!--@Ecom:Product.Price.PriceFormatted-->
+
+					</div>
+					<div class="product-addtocart">
+						<input type="hidden" name="ProductLoopCounter0" value="" />
+						<input type="hidden" name="ProductID0" value="<!--@Ecom:Product.ID-->" />
+						<input type="hidden" name="VariantID0" value="" />
+						<input type="hidden" name="UnitID0" value="<!--@Ecom:Product.DefaultUnitID-->" />
+						<input type="number" name="Quantity0" placeholder="<!--@Translate(Quantity, 'Quantity')-->" size="4" style="width: 4em"/>
+					</div>
+				</div>
+				<div class="content">
+					<div class="product-name">
+						<a href="<!--@Ecom:Product.LinkGroup.Clean-->" class="product-link" title="<!--@Ecom:Product.Name-->">
+							<!--@Ecom:Product.Name-->
+						</a>
+					</div>
+					<div class="product-description">
+						<!--@Ecom:Product.ShortDescription-->
+					</div>
+  				<div class="product-description">
+						<!--@Ecom:Manufacturor.Name-->
+					</div>
+				</div>
+			</div>
+		</section>
+		<!--@Else-->
+		<!--@LoopStart(VariantCombinations)-->
+		<section class="product-list-item-wrapper">
+			<div class="row-fluid">
+				<div class="product-image span1">
+					<!--@If Defined(Ecom:Product.ImageSmall.Default.Clean)-->
+					<div class="product-price visible-phone">
+						<!--@Ecom:Product.Price.PriceWithVATFormatted-->
+					</div>
+          <a href="<!--@Ecom:Product.LinkGroup.Clean-->" title="<!--@Ecom:Product.Name-->" class="thumbnail">
+						<img src="/Admin/Public/GetImage.ashx?Image=<!--@Ecom:Product.ImageSmall.Default.Clean-->&amp;Width=50" alt="" />
+					</a>
+					<!--@EndIf(Ecom:Product.ImageSmall.Default.Clean)-->
+				</div>
+
+				<div class="details hidden-phone">
+					<div class="product-price">
+            <!--@Ecom:Product.Price.PriceFormatted-->
+					</div>
+					<div class="product-addtocart">
+						<input type="hidden" name="ProductLoopCounter0" value="" />
+						<input type="hidden" name="ProductID0" value="<!--@Ecom:VariantCombination.Product.ID-->" />
+						<input type="hidden" name="VariantID0" value="<!--@Ecom:VariantCombination.VariantID-->" />
+						<input type="hidden" name="UnitID0" value="<!--@Ecom:Product.DefaultUnitID-->" />
+						<input type="number" name="Quantity0" placeholder="<!--@Translate(Quantity, 'Quantity')-->" size="4" style="width: 4em"/>
+					</div>
+				</div>
+				<div class="content">
+					<div class="product-name">
+						<a href="<!--@Ecom:Product.LinkGroup.Clean-->" class="product-link" title="<!--@Ecom:Product.Name-->">
+							<!--@Ecom:Product.Name-->
+							(<!--@Ecom:VariantCombination.VariantText-->)
+						</a>
+					</div>
+					<div class="product-description">
+						<!--@Ecom:Product.ShortDescription-->
+					</div>
+  				<div class="product-description">
+						<!--@Ecom:Manufacturor.Name-->
+					</div>
+				</div>
+			</div>
+		</section>
+		<!--@LoopEnd(VariantCombinations)-->
+		<!--@EndIf-->
+
+		<!--@LoopEnd(Products)-->
+	</div>
+	<div style="text-align: right; padding: 1em">
+		<button class="btn dw-button-green" name="CartCmd" value="addmulti"><!--@Translate(Add_all_to_order, "Add all to order")--></button>
+	</div>
+</form>
+
+<!--@If Defined(Item.Area.Products_Fee_Info_Paragraph_ID)-->
+<div class="paymentshippingfee hidden">
+	<!--@Global:Paragraph.Content(<!--@Item.Area.Products_Fee_Info_Paragraph_ID-->)-->
+</div>
+<!--@EndIf-->

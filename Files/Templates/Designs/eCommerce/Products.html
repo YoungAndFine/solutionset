@@ -152,47 +152,55 @@
 <div class="clearfix"></div>
 <!--@EndIf-->
 
-<script type="text/javascript">
-		require([ 'jquery', 'dw-productsload', 'jquery-cookie' ], function($) {
+<script>require([ 'jquery', 'dw-productsload', 'jquery-cookie' ], function($) {
+	$(document).ready(function () {
+		var requestPageID = $(".container.productlist").data("autoloader-pageid");
+		var requestPath = '<!--@Global:Pageview.Url.Raw.JSEncoded()-->'.replace(/([?&]ID=)[0-9]+/i, '$1'+requestPageID);
+		var fixAddMulti = function() {
+			var setId = function(s, id) {
+				return s.replace(/[0-9]+$/, id);
+			}
 
-				$(document).ready(function () {
+			$('[name^=ProductLoopCounter]').each(function(index, el) {
+				var id = index;
+				$(el).attr('value', id);
+				$(el).attr('name', setId($(el).attr('name'), id));
+				$(el).siblings('input[name]').each(function(i, el) {
+					$(el).attr('name', setId($(el).attr('name'), id));
+				});
+			});
+		};
 
-					var requestPageID = $(".container.productlist").data("autoloader-pageid");
-					var requestPath = '<!--@Global:Pageview.Url.Raw.JSEncoded()-->'.replace(/([?&]ID=)[0-9]+/i, '$1'+requestPageID);
-						<!--@If(Global:Area.ID!=22)-->
-						// Show added2Cart dialog
-						if ($.cookie("addedtocart") == '1') {
-								$("#addedModal").modal('show');
-								$.cookie("addedtocart", null);
-						}
-						<!--@EndIf-->
+		fixAddMulti();
+		// Show added2Cart dialog
+		if ($.cookie("addedtocart") == '1') {
+			$("#addedModal").modal('show');
+			$.cookie("addedtocart", null);
+		}
 
-						$(".productlist").productsAutoLoad({
-								productsContainer: "#product-list",
-								pagingSelector: ".productlist-paging",
-								// requestPath: "/Default.aspx?ID=" + requestPageID + "<!--@If Defined(Server:Request.groupid)-->&groupid=<!--@Server:Request.groupid--><!--@EndIf(Server:Request.groupid)-->",
-							requestPath: requestPath,
-								onProductsLoaded: function () {
-									// Update product list counter
-									$.updateProductsListCounter({
-										productList: ".productlist-wrapper[data-productlist-mode='list']",
-										productListItem: ".product-list-item-wrapper",
-										productTilesList: ".productlist-wrapper[data-productlist-mode='tiles']",
-										productTilesListItem: ".product-list-item-wrapper",
-										itemsDisplayed: "#ProductsDisplayCount",
-										productsPerPage: parseInt($("#productsPageSize").html())
-									});
-
-									Layout.Products.MicroformatReviewConvert();
-								}
-						});
-
-
-
+		$(".productlist").productsAutoLoad({
+			productsContainer: "#product-list",
+			pagingSelector: ".productlist-paging",
+			// requestPath: "/Default.aspx?ID=" + requestPageID + "<!--@If Defined(Server:Request.groupid)-->&groupid=<!--@Server:Request.groupid--><!--@EndIf(Server:Request.groupid)-->",
+			requestPath: requestPath,
+			onProductsLoaded: function () {
+				// Update product list counter
+				$.updateProductsListCounter({
+					productList: ".productlist-wrapper[data-productlist-mode='list']",
+					productListItem: ".product-list-item-wrapper",
+					productTilesList: ".productlist-wrapper[data-productlist-mode='tiles']",
+					productTilesListItem: ".product-list-item-wrapper",
+					itemsDisplayed: "#ProductsDisplayCount",
+					productsPerPage: parseInt($("#productsPageSize").html())
 				});
 
-		}
-	);
+				fixAddMulti();
+
+				Layout.Products.MicroformatReviewConvert();
+			}
+		});
+	});
+});
 </script>
 <!--@EndIf(Server:Request.productid)-->
 
