@@ -1,49 +1,69 @@
 @import 'compass';
 
-/*Product and header colors
-change this color to change h1 colors, and product header color in productlist
-*/
-$headercolors:#666666;
+// https://gist.github.com/larspind/1408585#file-mixins-css-scss
+@mixin gradient($first, $second) {
+  background-color: $second;
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='#{ie-hex-str($first)}', endColorstr='#{ie-hex-str($second)}');";
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='#{ie-hex-str($first)}', endColorstr='#{ie-hex-str($second)}');;
+  zoom: 1;
+  @include background(linear-gradient(top, $first, $second));
+}
 
-/*Change the buttons colors!
-Replace the 2 colors below with these or your own colors: 
-Grey buttons: 	$buttoncolors:#E7E9EB; $buttongradient:#F9F9F9; $filter:progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFF9F9F9', endColorstr='#FFE7E9EB');
-Orange buttons: $buttoncolors:#FF8500; $buttongradient:#FB9E25; $filter:progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFFB9E25', endColorstr='#FFFF8500'); 
-Green buttons: 	$buttoncolors:#009209; $buttongradient:#00dd11; $filter:progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF00DD11', endColorstr='#FF009209');
-*/
-
-/*GREY BUTTONS*/
-	$buttoncolors:#E7E9EB; $buttongradient:#F9F9F9; $filter:progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFF9F9F9', endColorstr='#FFE7E9EB');
-
-.dw-button-green{
-	*zoom:1;
-	filter:$filter;
-	background:$buttoncolors;
-	@include background(linear-gradient(top left, $buttongradient, $buttoncolors));
-	border-color:$buttoncolors;
-	text-shadow:0 1px 1px #ffffff;color:#545649 !important
+@mixin button($background-color, $text-color, $gradient-color-start: false, $gradient-color-end: false) {
+	background: $background-color;
+	@if ($gradient-color-start) {
+	@include gradient($gradient-color-start, $gradient-color-end);
 	}
+	border-color: $background-color;
+	text-shadow: 0 1px 1px #ffffff;
+	color: $text-color;
+}
+
+// Primary colors
+// Used to change this color to change e.g. h1 colors, and product header color in productlist
+$primary-color: #666666;
+$primary-color-inverted: white;
+
+// Gray buttons
+$button-gradient-color-top: #FF8500;
+$button-gradient-color-bottom: #FB9E25;
+$button-background-color: $button-gradient-color-top;
+$button-text-color: #545649;
+
+
+/*
+//Orange buttons: 	$button-background-color-top:#FF8500; $button-gradient-color-bottom:#FB9E25;
+//Green buttons: 	$button-background-color-top:#009209; $button-gradient-color-bottom:#00dd11;*/
+
+
+/* Gray buttons */
+.dw-button-green {
+	@include button($button-background-color, $button-text-color, $button-gradient-color-top, $button-gradient-color-bottom);
+	border:1px solid #DFE4E7
+}
 	
 .dw-button-green:active,.dw-button-green:hover{
-	background:$buttoncolors;
-	}
+	background: $button-background-color;
+	color: $button-text-color;
+	border:1px solid #DFE4E7;
+}
 
-/*Product and header colors*/ 
+/* Product and header colors */ 
 .content-wrapper h1 {
-	color: $headercolors;
-	}
+	color: $primary-color;
+}
 	
 .product-list-item-wrapper .product-link {
-	color: $headercolors;
-	}
+	color: $primary-color;
+}
 
 .productlist .catalog-content .filter-wrapper.filter-reset .colored-section {
-	background: $headercolors;
-	color: white;
-	}
+	background: $primary-color;
+	color: $primary-color-inverted;
+}
 
 .productlist .catalog-content .filter-wrapper.filter-reset .colored-section:after {
-	border-color: $headercolors transparent transparent transparent;
-	}
+	border-color: $primary-color transparent transparent transparent;
+}
 
 	
