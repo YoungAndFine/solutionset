@@ -11,8 +11,30 @@
  *
  * Version: 0.9.0
  *
- *
- * Import this file using the following HTML or equivalent:
- * <link href="/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
- *
  */
+@import 'compass';
+ 
+@include global-reset; 
+
+.visible-print {
+	display: inherit !important;
+}
+
+.hidden-print {
+	display: none !important;
+}
+
+#customercenter-content{
+	font-size:0.750em;
+	font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+	margin-left:3.125em;
+	margin-top:3.125em;
+	line-height:1.250em;
+}
+
+.order_detail_list > tbody > tr { padding:0.313em;}
+
+.span4 > b {font-weight:bold;}
+
+
+
