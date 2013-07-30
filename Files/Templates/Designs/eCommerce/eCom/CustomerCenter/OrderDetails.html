@@ -1,10 +1,10 @@
 <div class="row-fluid no-space fill customer_center">
-	<div class="span3 ">
+	<div class="span3 hidden-print">
 		<!--@Ecom:CustomerCenter.Menu-->
 	</div>
 
-	<div class="span9 box-rounded no-left-round span9_ex">
-		<div class="box-headline">
+	<div id="customercenter-content" class="span9 box-rounded no-left-round span9_ex">
+		<div class="box-headline hidden-print">
 			<h3><!--@Ecom:Order.ID--></h3>
 		</div>
 
@@ -73,46 +73,75 @@
 		<!--@If Not Defined(Server:Request.reorder)-->
 		<div class="customer_wr">
 			<div class="user_edit_fields">
+				<!--@If Defined(Ecom:Order.ID)-->
 				<div class="row-fluid">
-					<div class="span4"><!--@Translate(orderid, "Order ID")-->:</div>
+					<div class="span4"><b><!--@Translate(orderid, "Order ID")-->:</b></div>
 					<div class="span8"><!--@Ecom:Order.ID--></div>
 				</div>
+				<!--@EndIf(Ecom:Order.ID)-->
+				
+				<!--@If Defined(Ecom:Order.Date)-->
 				<div class="row-fluid">
-					<div class="span4"><!--@Translate(orderdate, "Order date")-->:</div>
+					<div class="span4"><b><!--@Translate(orderdate, "Order date")-->:</b></div>
 					<div class="span8"><!--@Ecom:Order.Date--></div>
 				</div>
+				<!--@EndIf(Ecom:Order.Date)-->
+				
+				<!--@If Defined(Ecom:Order.TrackTraceNumber)-->
 				<div class="row-fluid">
-					<div class="span4"><!--@Translate(trackandtracenumber, "Track and trace number")-->:</div>
+					<div class="span4"><b><!--@Translate(trackandtracenumber, "Track and trace number")-->:</b></div>
 					<div class="span8"><!--@Ecom:Order.TrackTraceNumber--></div>
 				</div>
+				<!--@EndIf(Ecom:Order.TrackTraceNumber)-->
+				
+				<!--@If Defined(Ecom:Order.Customer.Company)-->
 				<div class="row-fluid">
-					<div class="span4"><!--@Translate(customercompany, "Customer company")-->:</div>
+					<div class="span4"><b><!--@Translate(customercompany, "Customer company")-->:</b></div>
 					<div class="span8"><!--@Ecom:Order.Customer.Company--></div>
 				</div>
+				<!--@EndIf(Ecom:Order.Customer.Company)-->
+				
+				<!--@If Defined(Ecom:Order.Customer.Company)-->
 				<div class="row-fluid">
-					<div class="span4"><!--@Translate(att, "Att.")-->:</div>
+					<div class="span4"><b><!--@Translate(att, "Att.")-->:</b></div>
 					<div class="span8"><!--@Ecom:Order.Customer.Company--></div>
 				</div>
+				<!--@EndIf(Ecom:Order.Customer.Company)-->
+				
+				<!--@If Defined(Ecom:Order.Customer.Address)-->
 				<div class="row-fluid">
-					<div class="span4"><!--@Translate(customeraddress, "Customer address")-->:</div>
+					<div class="span4"><b><!--@Translate(customeraddress, "Customer address")-->:</b></div>
 					<div class="span8"><!--@Ecom:Order.Customer.Address--></div>
 				</div>
+				<!--@EndIf(Ecom:Order.Customer.Address)-->
+				
+				<!--@If Defined(Ecom:Order.Customer.City)-->
 				<div class="row-fluid">
-					<div class="span4"><!--@Translate(postalcity, "Postal code / City")-->:</div>
+					<div class="span4"><b><!--@Translate(postalcity, "Postal code / City")-->:</b></div>
 					<div class="span8"><!--@Ecom:Order.Customer.Zip-->&nbsp;<!--@Ecom:Order.Customer.City--></div>
 				</div>
+				<!--@EndIf(Ecom:Order.Customer.City)-->
+				
+				<!--@If Defined(Ecom:Order.Customer.Country)-->
 				<div class="row-fluid">
-					<div class="span4"><!--@Translate(country, "Country")-->:</div>
+					<div class="span4"><b><!--@Translate(country, "Country")-->:</b></div>
 					<div class="span8"><!--@Ecom:Order.Customer.Country--></div>
 				</div>
+				<!--@EndIf(Ecom:Order.Customer.Country)-->
+				
+				<!--@If Defined(Ecom:Order.Customer.Email)-->
 				<div class="row-fluid">
-					<div class="span4"><!--@Translate(email, "Email")-->:</div>
+					<div class="span4"><b><!--@Translate(email, "Email")-->:</b></div>
 					<div class="span8"><!--@Ecom:Order.Customer.Email--></div>
 				</div>
+				<!--@EndIf(Ecom:Order.Customer.Email)-->
+				
+				<!--@If Defined(Ecom:Order.Customer.Phone)-->
 				<div class="row-fluid">
-					<div class="span4"><!--@Translate(phone, "Phone")-->:</div>
+					<div class="span4"><b><!--@Translate(phone, "Phone")-->:</b></div>
 					<div class="span8"><!--@Ecom:Order.Customer.Phone--></div>
 				</div>
+				<!--@EndIf(Ecom:Order.Customer.Phone)-->
 			</div>
 			<table class="order_detail_list">
 				<tr>

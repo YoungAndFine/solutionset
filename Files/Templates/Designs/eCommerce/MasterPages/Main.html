@@ -10,7 +10,9 @@
 		<link href="assets/vendor/bootstrap/bootstrap.css" rel="stylesheet"/>
 		<link href="assets/vendor/bootstrap/bootstrap-responsive.min.css" rel="stylesheet"/>
 		<link href="assets/vendor/smoothness/jquery-ui-1.8.23.custom.css" rel="stylesheet"/>
-		<link href="assets/stylesheets/screen.css" rel="stylesheet"/>
+		<link href="assets/stylesheets/screen.css" media="screen" rel="stylesheet"/>
+		<link href="assets/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
+		
 		<!--@Snippet(StyleSheet)-->
 		<!--@If Defined(Item.Area.Custom_CSS_Url)-->
 		<link href="<!--@Item.Area.Custom_CSS_Url-->" rel="stylesheet"/>
@@ -33,7 +35,7 @@
 
 		<section class="page-wrapper">
 			<header class="header-wrapper">
-				<div class="container">
+				<div class="container hidden-print">
 					<div class="row">
 						<div class="span8 logo-wrapper">
 							<div class="row">
@@ -62,7 +64,7 @@
 			<!--@Include(/Partials/SearchBar.html)-->
 
 			<!--@If Defined(DwNavigation(NavBreadcrumb))-->
-			<section class="container breadcrumb-wrapper">
+			<section class="container breadcrumb-wrapper hidden-print">
 				<span class="breadcrumb-hint hidden-phone"><!--@Translate(YouAreHere, "You are here")-->: </span>
 				<ul class="breadcrumb">
 					<li id="NavBreadcrumb" class="dwnavigation" data-settings="template:Breadcrumbs.xslt;expandmode:pathonly;"></li>
@@ -76,12 +78,12 @@
 			<!--@ContentPlaceholder-->
 		</section>
 
-		<footer>
+		<footer class="hidden-print">
 			<!--@Include(/Partials/NavigationMainBottom.html)-->
 			<!--@Include(/Partials/SearchBarBottom.html)-->
 
 			<section class="container footer-wrapper">
-				<div class="row" id="footerSections" title="Footer sections">
+				<div class="row " id="footerSections" title="Footer sections">
 					<!--@If Defined(Item.Area.Footer_Content_Page_ID)-->
 					<!--@Global:Page.Content(<!--@Item.Area.Footer_Content_Page_ID-->)-->
 					<!--@EndIf-->
