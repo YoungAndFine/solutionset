@@ -1,25 +1,25 @@
 <!--@Form.Start-->
-		<!--@Form.Hidden-->
+    <!--@Form.Hidden-->
 	<div class="container-form EditUser">
 		<!--@LoopStart(Form.Fields)-->
 			<div class="listitem<!--@Form.Fields.LoopMod2--> row-fluid">
-								<div class="span2">
-						<!--@Field.Label-->
-										<!--@LoopStart(Form.Fields)-->
-							<!--@If Defined(Field.Required)-->
-														<b class="star">*</b>
-							<!--@EndIf(Field.Required)-->
-						<!--@LoopEnd(Form.Fields)-->
-								</div>
-								<div class="span10">
-						<!--@Field.Control-->
-										<!--@Field.Description-->
-					</div>
+                <div class="span2">
+				    <!--@Field.Label-->
+                    <!--@LoopStart(Form.Fields)-->
+					    <!--@If Defined(Field.Required)-->
+                            <b class="star">*</b>
+					    <!--@EndIf(Field.Required)-->
+				    <!--@LoopEnd(Form.Fields)-->
+                </div>
+                <div class="span4">
+				    <!--@Field.Control-->
+                    <!--@Field.Description-->
+    			</div>
 			</div>
 		<!--@LoopEnd(Form.Fields)-->
-		
-		<input type="submit" class="dw-button dw-button-green"	value="Submit">
-				<input type="reset" value="Reset" class="dw-button dw-button-green" >
+      	<p> * field is required</p>
+		<input type="submit" class="dw-button dw-button-green"  value="Submit">
+        <input type="reset" value="Reset" class="dw-button dw-button-green" >
 
 	</div>
 <!--@Form.End-->
