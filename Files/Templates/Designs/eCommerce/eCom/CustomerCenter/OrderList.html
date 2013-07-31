@@ -79,27 +79,27 @@
 				</colgroup>
 				<thead>
 					<tr>
-						<th class="to-hide">
+						<th class="span2">
 							<!--@Translate(date, "Date")-->
 							<!--@Ecom:CustomerCenter.SortByDate.Desc-->
 							<span class="tr_img"><!--@Ecom:CustomerCenter.SortByDate.Asc--></span>
 						</th>
-						<th class="to-cut">
+						<th class="span2">
 							<!--@Translate(orderif, "Order ID")-->
 							<!--@Ecom:CustomerCenter.SortByID.Desc-->
 							<span class="tr_img"><!--@Ecom:CustomerCenter.SortByID.Asc--></span>
 						</th>
-						<th>
+						<th class="span2">
 							<!--@Translate(price, "Price")-->
 							<!--@Ecom:CustomerCenter.SortByPrice.Desc-->
 							<span class="tr_img"><!--@Ecom:CustomerCenter.SortByPrice.Asc--></span>
 						</th>
-						<th class="to-hide">
+						<th class="span2">
 							<!--@Translate(state, "State")-->
 							<!--@Ecom:CustomerCenter.SortByStateName.Desc-->
 							<span class="tr_img"><!--@Ecom:CustomerCenter.SortByStateName.Asc--></span>
 						</th>
-						<th class="to-hide col-delivery">
+						<th class="span2">
 							<!--@Translate(delivery, "Delivery")-->
 							<!--@Ecom:CustomerCenter.SortByShippingMethod.Desc-->
 							<span class="tr_img"><!--@Ecom:CustomerCenter.SortByShippingMethod.Asc--></span>
@@ -124,17 +124,17 @@
 
 					<!--@LoopStart(Orders)-->
 					<tr>
-						<td class="to-hide"><a href="<!--@Ecom:CustomerCenter.Orders.OrderDetailsURL-->"><!--@Ecom:Order.Date--></a></td>
+						<td class="to-hide"><!--@Ecom:Order.Date--></td>
 						<td class="to-cut"><a href="<!--@Ecom:CustomerCenter.Orders.OrderDetailsURL-->"><!--@Ecom:Order.ID--></a></td>
 						<td><!--@Ecom:Order.OrderLines.Total.Price--></td>
 						<td class="to-hide"><!--@Ecom:Order:Orderstate.Name--></td>
 						<td class="to-hide col-delivery"><!--@Ecom:Order.ShippingMethod--></td>
-						<td class="nowr"><!--@DwTemplateTags-->
-							<a href="<!--@Ecom:CustomerCenter.Orders.OrderDetailsURL-->">
+						<td class="nowr">
+							<a href="<!--@Ecom:CustomerCenter.Orders.OrderDetailsURL-->&reorder=1">
 								<i class="icon-shopping-cart"></i>
 								<span class="long_text"><!--@Translate(Reorder, "Reorder")--></span>
 							</a>
-							<a target="_blank" href="<!--@Ecom:CustomerCenter.Orders.PrintOrderURL-->">
+							<a target="_blank" href="<!--@Ecom:CustomerCenter.Orders.OrderDetailsURL-->">
 								<i class="icon-print"></i>
 								<span class="long_text"><!--@Translate(Print, "Print")--></span>
 							</a>

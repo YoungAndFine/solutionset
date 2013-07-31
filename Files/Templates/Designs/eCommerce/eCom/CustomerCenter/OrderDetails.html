@@ -7,8 +7,7 @@
 		<div class="box-headline hidden-print">
 			<h3><!--@Ecom:Order.ID--></h3>
 		</div>
-
-		<div class="orderlist-wr">
+		<div class="orderlist-wr span11">
 			<!--@If Defined(Server:Request.reorder)-->
 			<!--@LoopStart(OrderLines)-->
 			<!--@HeaderStart-->
@@ -263,6 +262,10 @@
 		</div>
 		<!--@EndIf(Server:Request.reorder)-->
 	</div>
+	<div class="span1 hidden-print">
+		<br />
+		<input type="button" onClick="window.print()" value="Print" class="dw-button dw-button-green"/>
+	</div>
 </div>
 
 <div class="modal hide fade modal-type-variants" id="productPreview" tabindex="-1" role="dialog">
@@ -276,3 +279,5 @@
 		</div>
 	</div>
 </div>
+
+
