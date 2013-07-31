@@ -1,0 +1,88 @@
+<div class="grid_5 alpha">
+	<div class="rounded-box">
+		<div class="rounded-box-content login-form clearfix">
+			<div class="login-box-mode" data-login-box-mode="login">
+				<h2 class="login-form-title"><!--@Translate(CustomerLogin, "Customer login")--></h2>
+
+				<form action="/Default.aspx" method="post" onsubmit="return Layout.LoginBox.validate(this);">
+					<input type="hidden" name="ID" value="<!--@Global:Page.ID-->" />
+					<input type="hidden" name="DWExtranetUsernameRemember" value="True" />
+					<input type="hidden" name="DWExtranetPasswordRemember" value="True" />
+
+					<div class="login-form-field">
+						<label for="login-username"><!--@Translate(Username, "Username")--></label>
+						<input type="text" id="login-username" class="login-credentials login-username-field" name="username" spellcheck="off" />
+					</div>
+
+					<div class="clear"></div>
+
+					<div class="login-form-field">
+						<label for="login-password"><!--@Translate(Password, "Password")--></label>
+						<input type="password" id="login-password" class="login-credentials login-password-field" name="password"	 />
+					</div>
+
+					<div class="clear"></div>
+
+					<div class="login-form-field login-form-field-right">
+						<input type="checkbox" id="chkRemember" name="AutoLogin" value="True" />
+						<label for="chkRemember"><!--@Translate(RememberMe, "Remember me")--></label>
+					</div>
+
+					<div class="clear"></div>
+
+					<div class="login-form-field login-form-field-buttons">
+						<input type="submit" class="button button-green" value="Login" />
+					</div>
+
+					<div class="clear"></div>
+
+					<div class="login-form-field">
+						<p>
+							<span class="login-form-lostpasswordhint">
+								<!--@Translate(ForgotYourLogin, "Forgot your password?")-->&nbsp;<a href="javascript:void(0);" onclick="Layout.LoginBox.mode('lostpassword', $(this).parents('form'));"><!--@Translate(ClickHere, "Click here")--></a>
+							</span>
+
+							<span class="login-form-signuphint">
+								<a href="/Default.aspx?ID=237"><!--@Translate(BecomeCustomer, "Become a customer")--></a>
+							</span>
+
+							<span class="clear"></span>
+						</p>
+					</div>
+				</form>
+			</div>
+
+			<div class="login-box-mode" data-login-box-mode="lostpassword" style="display: none">
+				<h2 class="login-form-title"><!--@Translate(LostPasswordRecovery, "Password recovery")--></h2>
+
+				<form action="/Default.aspx" method="post" onsubmit="return Layout.LoginBox.validate(this);">
+					<input type="hidden" name="ID" value="<!--@Global:Page.ID-->" />
+					<input type="hidden" name="ForgotPassword" value="True" />
+					<input type="hidden" name="ForgotPasswordConfirm" value='<!--@Translate(PasswordSent, "The password has been sent to your email.")-->' />
+
+					<div class="login-form-field">
+						<label for="login-email"><!--@Translate(EmailAddress, "Email address")--></label>
+						<input type="text" id="login-email" class="login-credentials login-email-field" name="username" spellcheck="off" />
+					</div>
+
+					<div class="clear"></div>
+
+					<div class="login-form-field login-form-field-buttons">
+						<input type="submit" class="button button-green" value="Send password" />
+					</div>
+
+					<div class="clear"></div>
+
+					<div class="login-form-field">
+						<p>
+							<span>
+								<a href="javascript:void(0);" onclick="Layout.LoginBox.mode('login', $(this).parents('form'));"><!--@Translate(GoBack, "Go back")--></a>
+							</span>
+						</p>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="grid_4"></div>

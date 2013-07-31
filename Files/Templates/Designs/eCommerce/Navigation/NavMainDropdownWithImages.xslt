@@ -56,9 +56,7 @@
 												</xsl:attribute>
 												<xsl:if test="string-length(normalize-space(@SmallImage)) > 1">
 													<img class="nav-item-img" width="{$imageWidth}" height="{$imageWidth}" alt="">
-														<xsl:attribute name="src">
-															/Admin/Public/GetImage.ashx?Image=/Files<xsl:value-of select="@SmallImage" />&amp;Width=<xsl:value-of select="$imageWidth"/>&amp;Height=<xsl:value-of select="$imageHeight"/>
-														</xsl:attribute>
+														<xsl:attribute name="src">/Admin/Public/GetImage.ashx?Image=/Files<xsl:value-of select="@SmallImage" />&amp;Width=<xsl:value-of select="$imageWidth"/>&amp;Height=<xsl:value-of select="$imageHeight"/></xsl:attribute>
 													</img>
 												</xsl:if>
 												<xsl:value-of select="@MenuText" disable-output-escaping="yes"/>
@@ -101,9 +99,7 @@
 													</xsl:attribute>
 													<xsl:if test="string-length(normalize-space(@SmallImage)) > 1">
 														<img class="nav-item-img" width="{$imageWidth}" height="{$imageWidth}" alt="">
-															<xsl:attribute name="src">
-																/Admin/Public/GetImage.ashx?Image=/Files<xsl:value-of select="@SmallImage" />&amp;Width=<xsl:value-of select="$imageWidth"/>&amp;Height=<xsl:value-of select="$imageHeight"/>
-															</xsl:attribute>
+															<xsl:attribute name="src">/Admin/Public/GetImage.ashx?Image=/Files<xsl:value-of select="@SmallImage" />&amp;Width=<xsl:value-of select="$imageWidth"/>&amp;Height=<xsl:value-of select="$imageHeight"/></xsl:attribute>
 														</img>
 													</xsl:if>
 													<xsl:value-of select="@MenuText" disable-output-escaping="yes"/>
