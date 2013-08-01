@@ -545,12 +545,14 @@
 				</div>
 			</div>
 
-			<!--@If Defined(Item.Area.Enable_Voucher)-->
+			<!--@If Defined(Item.Area.Enable_Vouchers)-->
 			<legend class="box-headline">
 				<h3><!--@Translate(vouchercode, "Voucher code")--></h3>
 			</legend>
+			<!--@EndIf(Item.Area.Enable_Vouchers)-->
 			<div class="box-content">
 				<div class="form-horizontal">
+					<!--@If Defined(Item.Area.Enable_Vouchers)-->
 					<div class="control-group">
 						<label class="control-label" for="EcomOrderVoucherCode">
 							<span><!--@Translate(yourcode, "Your code")--></span>
@@ -565,6 +567,11 @@
 							<i class="icon-ok voucher_block"></i>
 						</div>
 					</div>
+					<!--HACK!! SHOULD BE FIXED!!-->
+					<!--@Else-->
+						<div style="height:80px;">
+						</div>
+					<!--@EndIf-->
 					<div class="control-action-group">
 						<div class="controls with-button">
 							<label class="checkbox">
@@ -580,7 +587,6 @@
 					</div>
 				</div>
 			</div>
-			<!--@EndIf(Item.Area.Enable_Voucher)-->
 
 		</div><!-- / .box-rounded -->
 	</form>
