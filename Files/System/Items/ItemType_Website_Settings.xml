@@ -123,7 +123,7 @@
         </options>
       </field>
       <field name="Custom CSS Url" systemName="Custom_CSS_Url" description="" type="System.String, mscorlib">
-        <editor type="Dynamicweb.Content.Items.Editors.LinkEditor, Dynamicweb">
+        <editor type="Dynamicweb.Content.Items.Editors.TextEditor, Dynamicweb">
           <editorConfuguration />
         </editor>
       </field>
