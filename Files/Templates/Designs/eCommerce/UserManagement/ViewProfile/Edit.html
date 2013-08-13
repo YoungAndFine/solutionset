@@ -1,10 +1,10 @@
 ﻿<style>
 	input[type=text]				{width:300px;height:30px;font-size:18px;}
 	input[type=password]			{width:300px;height:30px;font-size:18px;}
-	select									{width:304px;height:30px;font-size:18px;}
+	select							{width:304px;height:30px;font-size:18px;}
 	.EditUser						{width:450px;float:left;padding:10px;}
-	label												{clear:both;float:left;}
-	label span										{width:120px;float:left;padding-top:5px;}
+	label							{clear:both;float:left;}
+	label span						{width:120px;float:left;padding-top:5px;}
 </style>
 
 <div class="EditUser">
@@ -79,12 +79,10 @@
 
 	<label>
 		<span>&nbsp;</span>
-		<span><input type="submit" id="submitter" style="width:150px;height:30px;" value="<!--@Translate(edituser, "Submit")-->" /></span>
+		<span><input type="submit" id="submitter" value="<!--@Translate(edituser, "Submit")-->" /></span>
 	</label>
 	<!--@UserManagement:User.FormEnd-->
 </div>
-
-<input type="submit" onClick="history.go(-1);return true;" value="<!--@Translate(cancel, "Cancel")-->" style="width:70px;height:30px;position:absolute;margin:460px 0 0 -105px;" />
 
 <div style="float:left">
 	<!--@LoopStart(FormValidationErrors)-->
