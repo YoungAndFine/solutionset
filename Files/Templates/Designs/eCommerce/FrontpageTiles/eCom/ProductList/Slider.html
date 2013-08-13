@@ -1,4 +1,4 @@
-<div class="span12 nospacing products-carousel">
+﻿<div class="span12 nospacing products-carousel">
 	<div class="row" id="productCarousel">
 		<div class="carousel-inner">
 			<div class="item">
@@ -13,24 +13,35 @@
 								<h3 class="product-name">
 									<a href="<!--@Ecom:Product.LinkGroup.Clean-->" class="product-link"><!--@Ecom:Product.Name--></a>
 								</h3>
-
+								
+								<!--@If(Item.Area.Require_Login_To_Show_Prices!='True' || Global:Extranet.UserID>0)-->
 								<div class="product-price">
 									<!--@Ecom:Product.Price.PriceWithVATFormatted-->
 								</div>
 
 								<div class="product-action">
 									<button type="button" class="btn dw-button-green" <!--@If(Ecom:Product.VariantCount>0)-->data-toggle="modal" data-target="#productVariantChooser<!--@Ecom:Product.ID-->"<!--@EndIf--><!--@If(Ecom:Product.VariantCount==0)-->onclick="$.addToCart(this)"<!--@EndIf-->>
-									<i class="icon sprite cart-tiny-white"></i>
 									<!--@If Defined(Global:OMC.Experiment.Variation.Original)-->
-									<!--@Translate(AddToCart, "Add to cart")-->
+									<!--@Translate(AddToCart, "Add to order")-->
 									<!--@EndIf(Global:OMC.Experiment.Variation.Original)-->
 									<!--@If Not Defined(Global:OMC.Experiment.Variation.Original)-->
 									<!--@Translate(BuyNow, "Buy now")-->
 									<!--@EndIf(Global:OMC.Experiment.Variation.Original)-->
 									</button>
 								</div>
+								<!--@Else-->
+									<!--@Translate(PleaseLoginToSeePrice, "Please login to see price")-->
+								<!--@EndIf-->
 							</div>
 						</div>
+                      		<!--@LoopStart(Products)-->
+							<!--@If Defined(Ecom:Product.ImageSmall.Clean)-->
+							<!--@If(Ecom:Product.VariantCount>0)-->
+								<!--@Include(../eCom/ProductList/Partials/AddToCartModal.html)-->
+							<!-- / .modal.popup-variants -->
+							<!--@EndIf-->
+							<!--@EndIf-->
+							<!--@LoopEnd(Products)-->
 					</div>
 				</div>
 				<!--@EndIf-->
@@ -40,15 +51,6 @@
 		<a class="carousel-control left" href="#productCarousel" data-slide="prev">&lsaquo;</a>
 		<a class="carousel-control right" href="#productCarousel" data-slide="next">&rsaquo;</a>
 	</div>
-
-	<!--@LoopStart(Products)-->
-	<!--@If Defined(Ecom:Product.ImageSmall.Clean)-->
-	<!--@If(Ecom:Product.VariantCount>0)-->
-		<!--@Include(../eCom/ProductList/Partials/AddToCartModal.html)-->
-	<!-- / .modal.popup-variants -->
-	<!--@EndIf-->
-	<!--@EndIf-->
-	<!--@LoopEnd(Products)-->
 </div>
 
 <script type="text/javascript">(function() {
