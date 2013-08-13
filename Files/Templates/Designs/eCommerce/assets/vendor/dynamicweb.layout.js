@@ -365,7 +365,7 @@ Layout.Cart = (function (m) {
 			var $obj = $(obj)
 				, $productItem = $obj.parents(wrapperSelector || '.product-list-item-wrapper')
 				, productLink = $productItem.find('.product-link').attr('href') || location.href
-				, productQuantity = parseInt($productItem.find("input[name=quantity]").val())
+				, productQuantity = parseInt($productItem.find("input[name=Quantity]").val())
 				, $variantSelector = $productItem.find(".variants-selector")
 				, productVariant = $variantSelector.val()
 				, redirectLink
@@ -515,21 +515,21 @@ $.extend({
 	addToCart: function (obj, extendQuery, wrapperSelector) {
 		Layout.Cart.AddToCart(obj, extendQuery, wrapperSelector);
 	},
-
 	addAllToCart: function (productListSelector, wrapperSelector) {
 		var productList = $(productListSelector).find(wrapperSelector || '.product-list-item-wrapper');
 		var form = $('<form class="addAllHiddenForm" method="post" />');
 		form.attr("action", "/Default.aspx?ID=48");
 		form.append($('<input name="cartcmd" value="addmulti" />'));
 		productList.each(function (i, el) {
-			var productQuantity = parseInt($(el).find("input[name=quantity]").val());
+			var productQuantity = parseInt($(el).find("input[name=Quantity]").val());
 			var productID = $(el).find("input[name=ProductID]").val();
 
 			if (isNaN(productQuantity) || productQuantity <= 0) return;
 
-			var productInput = $('<input name="ProductID' + (i + 1) + '"/>').attr("value", productID);
-			var quantityInput = $('<input name="quantity' + (i + 1) + '"/>').attr("value", productQuantity);
-			var productLoopCounterInput = $('<input name="ProductLoopCounter' + (i + 1) + '"/>').attr("value", i + 1);
+			var productInput = $('<input name="ProductID1' + (i + 1) + '"/>').attr("value", productID);
+			var productInput = $('<input name="ProductID1' + (i + 1) + '"/>').attr("value", productID);
+			var quantityInput = $('<input name="Quantity1' + (i + 1) + '"/>').attr("value", productQuantity);
+			var productLoopCounterInput = $('<input name="ProductLoopCounter1' + (i + 1) + '"/>').attr("value", i + 1);
 			form.append(productInput);
 			form.append(quantityInput);
 			form.append(productLoopCounterInput);
