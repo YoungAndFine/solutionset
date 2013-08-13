@@ -368,8 +368,6 @@
 	</div>
 </section>
 
-
-
 <section class="products-related">
 	<div class="row-fluid">	
 	<!--@LoopStart(ProductRelatedGroups)--><!--DwTemplateTags-->
@@ -511,6 +509,31 @@
     <!--@LoopEnd(RelatedProducts)-->
 <!--@LoopEnd(ProductRelatedGroups)--> 
 
+<!--@If(eCom:Related.YouHaveSeenTheseProducts.Count>0)-->
+	<!--@Include(eCom/Product/Partials/Related.YouHaveSeenTheseProducts.html)-->
+<!--@EndIf-->
+
+<!--@If(eCom:Related.CustomersWhoBoughtThisItemAlsoBought.Count>0)-->
+	<!--@Include(eCom/Product/Partials/Related.CustomersWhoBoughtThisItemAlsoBought.html)-->
+<!--@EndIf-->
+
+<!--@If(eCom:Related.CustomersWhoSawThisAlsoSaw.Count>0)-->
+	<!--@Include(eCom/Product/Partials/Related.CustomersWhoSawThisAlsoSaw.html)-->
+<!--@EndIf-->
+
+<!--@If(eCom:Related.WhatAboutTheseProducts.Count>0)-->
+	<!--@Include(eCom/Product/Partials/Related.WhatAboutTheseProducts.html)-->
+<!--@EndIf-->
+
+<!--@If(eCom:Related.MostPopularProducts.Count>0)-->
+	<!--@Include(eCom/Product/Partials/Related.MostPopularProducts.html)-->
+<!--@EndIf-->
+
+<!--@If(eCom:Related.ProductSmartSearches.Count>0)-->
+	<!--@Include(eCom/Product/Partials/Related.ProductSmartSearches.html)-->
+<!--@EndIf-->
+		
+		
 	</div>
 </section>
 
