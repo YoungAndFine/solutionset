@@ -16,9 +16,6 @@
 				</div>
 
 				<div class="receipt-actions">
-					<a href="#" data-toggle="modal" data-target="#order_print" ><i class="icon-print"></i> <!--@Translate(printreceipt, "View & print receipt")--></a>
-					&nbsp;&nbsp;&nbsp;
-
 					<!--@If(Global:Extranet.UserID>0)-->
 					<a href="/Default.aspx?ID=<!--@Item.Area.Customer_Center_Page_ID-->&amp;CC=Order&amp;OrderID=<!--@Ecom:Order.ID-->">
 						<i class="icon-truck icon-flip-horizontal"></i> <!--@Translate(orderstatus, "Order status")-->
@@ -41,37 +38,14 @@
 						<div class="row-fluid">
 							<!--@If Defined(Ecom:Product.ImageSmall.Default.Clean)-->
 							<div class="product-image span3">
-								<a href="<!--@Ecom:Product.LinkGroup.Clean-->" title="<!--@Ecom:Product.Name-->" class="thumbnail">
+								<a href="/Default.aspx?ID=<!--@Item.Area.Products_Catalog_Page_ID-->&ProductID=<!--@Ecom:Product.ID-->" title="<!--@Ecom:Product.Name-->" class="thumbnail">								
 									<img src="/Admin/Public/GetImage.ashx?Image=<!--@Ecom:Product.ImageSmall.Default.Clean-->&amp;Width=160" alt="" />
 								</a>
 							</div>
 							<!--@EndIf(Ecom:Product.ImageSmall.Default.Clean)-->
-							<div class="details hidden-phone">
-								<div class="product-price">
-									<!--@Ecom:Product.Price.PriceWithVATFormatted-->
-								</div>
-								<div class="product-rating-comments">
-									<div class="product-rating">
-										<span itemscope="" itemtype="http://data-vocabulary.org/Review-aggregate">
-											<span itemprop="itemreviewed" class="hidden"><!--@Ecom:Product.Name--></span>
-											<span itemprop="rating" itemscope itemtype="http://data-vocabulary.org/Rating">
-												<span itemprop="average"><!--@Ecom:Product.Rating--></span> out of <span itemprop="best">5</span>
-											</span>
-										</span>
-										<div class="stars-container">
-											<i class="icon-star-empty"></i><i class="icon-star-empty"></i><i class="icon-star-empty"></i><i class="icon-star-empty"></i><i class="icon-star-empty"></i>
-										</div>
-									</div>
-								</div>
-								<div class="product-addtocart">
-									<a class="btn" href="<!--@Ecom:Product.LinkGroup.Clean-->" title="<!--@Ecom:Product.Name-->">
-										<!--@Translate(ReadMore, "Read more")-->
-									</a>
-								</div>
-							</div>
 							<div class="content">
 								<div class="product-name">
-									<a href="<!--@Ecom:Product.LinkGroup.Clean-->" class="product-link" title="<!--@Ecom:Product.Name-->">
+									<a href="/Default.aspx?ID=<!--@Item.Area.Products_Catalog_Page_ID-->&ProductID=<!--@Ecom:Product.ID-->" class="product-link" title="<!--@Ecom:Product.Name-->">
 										<!--@Ecom:Product.Name-->
 									</a>
 								</div>
@@ -81,24 +55,6 @@
 								<div class="product-number">
 									<!--@Translate(ProductNumber, "Product no.")-->:
 									&nbsp;<!--@Ecom:Product.Number-->
-								</div>
-								<div class="product-rating-comments visible-phone">
-									<div class="product-rating">
-										<span itemscope="" itemtype="http://data-vocabulary.org/Review-aggregate">
-											<span itemprop="itemreviewed" class="hidden"><!--@Ecom:Product.Name--></span>
-											<span itemprop="rating" itemscope itemtype="http://data-vocabulary.org/Rating">
-												<span itemprop="average"><!--@Ecom:Product.Rating--></span> out of <span itemprop="best">5</span>
-											</span>
-										</span>
-										<div class="stars-container">
-											<i class="icon-star-empty"></i><i class="icon-star-empty"></i><i class="icon-star-empty"></i><i class="icon-star-empty"></i><i class="icon-star-empty"></i>
-										</div>
-									</div>
-								</div>
-								<div class="product-addtocart visible-phone">
-									<a class="btn" href="<!--@Ecom:Product.LinkGroup.Clean-->" title="<!--@Ecom:Product.Name-->">
-										<!--@Translate(ReadMore, "Read more")-->
-									</a>
 								</div>
 							</div>
 						</div>

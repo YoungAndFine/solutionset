@@ -6,12 +6,13 @@
 			<i class="discount-price"><!--@Ecom:Order:OrderLine.Price.PriceWithoutVATFormatted--></i>
 		</div>
 		<!--@Else-->
-		<div class="product-name">
-			<div class="row">
+		<div class="product-name" >
+			<div class="row" >
 				<div class="span8">
 					<a href="/Default.aspx?ID=<!--@Item.Area.Products_Modal_Page_ID-->&amp;ProductID=<!--@Ecom:Order:OrderLine.ProductID-->" data-toggle="modal" data-target="#productPreview"><!--@Ecom:Order:OrderLine.ProductName--></a><br/>
 					<i><!--@Translate(Product_number, "Product no.")-->: <!--@Ecom:Product.Number--></i>
 				</div>
+				<div style="float:right;">
 				<div class="span1 Quantity align-right">
 				<!--@Translate(Product_Quantity, "Quantity:")--><br/>
 					<!--@Ecom:Order:OrderLine.Quantity--> <!--@Translate(pcs, "pcs")-->
@@ -26,10 +27,12 @@
 				<!--@Translate(Product_Total_Price, "Total Price:")--><br/>
 					<!--@Ecom:Order:olPrice-->
 				</div>
+				</div>
 			</div>
 		</div>
 		<!--@EndIf-->
 	</div>
+	<div class="clearfix"></div>
 <hr/>
 <!--@LoopEnd(OrderLines)-->
 
@@ -37,35 +40,32 @@
 	<div class="price-label">
 		<!--@Translate(paymentfee, "Payment fee")-->
 	</div>
-	<div class="price-value">
+	<div class="price-value" style="float:right;">
 		<!--@Ecom:Order.ShippingFee.Currency.Symbol--> <span class="cart_pay_price"><!--@Ecom:Order.PaymentFee.Price--></span> <!--Ecom:Order.PaymentFee.PriceWithoutVATFormatted-->
 	</div>
-	<div class="clearfix"></div>
+
 	<div class="price-label">
 		<!--@Translate(shippingfee, "Shipping fee")-->
 	</div>
-	<div class="price-value">
+	<div class="price-value" style="float:right;">
 		<!--@Ecom:Order.ShippingFee.Currency.Symbol--> <span class="cart_ship_price"><!--@Ecom:Order.ShippingFee.PriceWithVAT--></span> <!--Ecom:Order.ShippingFee.PriceWithoutVATFormatted-->
 	</div>
-	<div class="clearfix"></div>
-</div>
 
-<div class="price-line">
 	<div class="price-label">
 		<!--@Translate(totalPrice, "Total price")--> (<!--@Translate(noVAT, "excl. VAT")-->)
 	</div>
-	<div class="price-value price_withoutvat" data-goods_price="<!--@Ecom:Order.PriceWithoutFees.PriceWithoutVAT-->">
+	<div class="price-value price_withoutvat" data-goods_price="<!--@Ecom:Order.PriceWithoutFees.PriceWithoutVAT-->" style="float:right;">
 		<!--@Ecom:Order.ShippingFee.Currency.Symbol--> <span><!--@Ecom:Order.Price.PriceWithoutVAT--></span>
 	</div>
-	<div class="clearfix"></div>
+
 	<div class="price-label">
 		<!--@Translate(vat, "VAT")-->
 	</div>
-	<div class="price-value goods_vat" data-goodsvat="<!--@Ecom:Order.Price.VAT-->">
+	<div class="price-value goods_vat" data-goodsvat="<!--@Ecom:Order.Price.VAT-->" style="float:right;">
 		<!--@Ecom:Order.Price.VAT-->
 	</div>
-	<div class="clearfix"></div>
 </div>
+<div class="clearfix"></div>
 <hr/>
 
 <div class="row">
@@ -73,7 +73,7 @@
 		<a href="/Default.aspx?ID=<!--@Item.Area.Show_Cart_Page_ID-->" class="btn dw-button-gray"><!--@Translate(showcart, "edit order")--></a>
 	</div>
 	
-	<div class="span1 price-line">
+	<div class="span1 price-line" style="float:right;">
 		<div class="price-label align-right">
 			<strong><!--@Translate(totalPrice, "Total price")--> (<!--@Translate(withVAT, "incl. VAT")-->)</strong>
 		</div>
