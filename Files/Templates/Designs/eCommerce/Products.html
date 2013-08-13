@@ -33,7 +33,9 @@
 				<div class="span3">
 					<div>
 						<strong>
-							<span id="ProductsDisplayCount"><!--@Page:Ecom.ProductList.PageSize--></span> <!--@Translate(of, "of")--> <!--@Page:Ecom.ProductList.PageProdCnt-->&nbsp;<!--@Translate(products, "products")-->
+							<!--@If(Page:Ecom.ProductList.PageProdCnt=0)--> <!--@Translate(NoProducts, "No products found")--> <!--@Else-->
+								<span id="ProductsDisplayCount"><!--@Page:Ecom.ProductList.PageSize--></span> <!--@Translate(of, "of")--> <!--@Page:Ecom.ProductList.PageProdCnt-->&nbsp;<!--@Translate(products, "products")-->
+							<!--@EndIf-->
 						</strong>
 					</div>
 				</div>
@@ -53,12 +55,10 @@
 				<div class="span3">
 					<div class="list-mode">
 						<div class="btn-toolbar">
-							<div class="btn-group">
-								<!-- <button data-list-mode="List" class="sprite mode-list list-mode-list"></button> -->
-								<button type="button" class="btn btn-small list-mode-list" data-list-mode="List"><i class="icon-th-list"></i></button>
-								<!-- <button data-list-mode="Tiles" class="sprite mode-tiles list-mode-tiles"></button> -->
-								<button type="button" class="btn btn-small list-mode-tiles" data-list-mode="Tiles"><i class="icon-th"></i></button>
-								<!-- <button type="button" class="btn btn-small filter-collapse" data-toggle="collapse" data-target=".catalog-content .filler-left"><i class="icon-filter-collapse"></i></button> -->
+							<div class="btn-group">							
+								<button type="button" class="btn btn-small list-mode-list" data-list-mode="Expanded"><i style="font-size:1.2em" class="icon-list-ul"></i></button>
+								<button type="button" class="btn btn-small list-mode-list" data-list-mode="List"><i style="font-size:1.2em" class="icon-th-list"></i></button>								
+								<button type="button" class="btn btn-small list-mode-tiles" data-list-mode="Tiles"><i style="font-size:1.2em" class="icon-th"></i></button>
 							</div>
 						</div>
 					</div>
@@ -163,10 +163,10 @@
 
 			$('[name^=ProductLoopCounter]').each(function(index, el) {
 				var id = index;
-				$(el).attr('value', id);
-				$(el).attr('name', setId($(el).attr('name'), id));
+				$(el).attr('value', id+1);
+				$(el).attr('name', setId($(el).attr('name'), id+1));
 				$(el).siblings('input[name]').each(function(i, el) {
-					$(el).attr('name', setId($(el).attr('name'), id));
+					$(el).attr('name', setId($(el).attr('name'), id+1));
 				});
 			});
 		};
@@ -188,6 +188,8 @@
 				$.updateProductsListCounter({
 					productList: ".productlist-wrapper[data-productlist-mode='list']",
 					productListItem: ".product-list-item-wrapper",
+					productExpandedList: ".productlist-wrapper[data-productlist-mode='expanded']",
+					productExpandedListItem: ".product-list-item-wrapper",
 					productTilesList: ".productlist-wrapper[data-productlist-mode='tiles']",
 					productTilesListItem: ".product-list-item-wrapper",
 					itemsDisplayed: "#ProductsDisplayCount",
