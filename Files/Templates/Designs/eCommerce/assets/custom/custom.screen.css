@@ -1,41 +1,47 @@
 /* Gray buttons */
+/* line 42, custom.screen.scss */
 .dw-button-green {
-  background: #ff8500;
-  background-color: #fb9e25;
-  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='#FFFF8500', endColorstr='#FFFB9E25');";
-  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='#FFFF8500', endColorstr='#FFFB9E25');
+  background: #f9f9f9;
+  background-color: #e7e9eb;
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='#FFF9F9F9', endColorstr='#FFE7E9EB');";
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='#FFF9F9F9', endColorstr='#FFE7E9EB');
   zoom: 1;
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ff8500), color-stop(100%, #fb9e25));
-  background: -webkit-linear-gradient(top, #ff8500, #fb9e25);
-  background: -moz-linear-gradient(top, #ff8500, #fb9e25);
-  background: -o-linear-gradient(top, #ff8500, #fb9e25);
-  background: linear-gradient(top, #ff8500, #fb9e25);
-  border-color: #ff8500;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f9f9f9), color-stop(100%, #e7e9eb));
+  background: -webkit-linear-gradient(top, #f9f9f9, #e7e9eb);
+  background: -moz-linear-gradient(top, #f9f9f9, #e7e9eb);
+  background: -o-linear-gradient(top, #f9f9f9, #e7e9eb);
+  background: linear-gradient(top, #f9f9f9, #e7e9eb);
+  border-color: #f9f9f9;
   text-shadow: 0 1px 1px #ffffff;
   color: #545649;
   border: 1px solid #dfe4e7;
 }
 
+/* line 47, custom.screen.scss */
 .dw-button-green:active, .dw-button-green:hover {
-  background: #ff8500;
+  background: #f9f9f9;
   color: #545649;
   border: 1px solid #DFE4E7;
 }
 
 /* Product and header colors */
+/* line 54, custom.screen.scss */
 .content-wrapper h1 {
   color: #666666;
 }
 
+/* line 58, custom.screen.scss */
 .product-list-item-wrapper .product-link {
   color: #666666;
 }
 
+/* line 62, custom.screen.scss */
 .productlist .catalog-content .filter-wrapper.filter-reset .colored-section {
   background: #666666;
   color: white;
 }
 
+/* line 67, custom.screen.scss */
 .productlist .catalog-content .filter-wrapper.filter-reset .colored-section:after {
   border-color: #666666 transparent transparent transparent;
 }

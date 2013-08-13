@@ -25,13 +25,15 @@ $primary-color: #666666;
 $primary-color-inverted: white;
 
 // Gray buttons
-$button-gradient-color-top: #FF8500;
-$button-gradient-color-bottom: #FB9E25;
+$button-gradient-color-top: #F9F9F9;
+$button-gradient-color-bottom: #E7E9EB;
+
 $button-background-color: $button-gradient-color-top;
 $button-text-color: #545649;
 
 
-/*
+/*COPY THESE LINES AND OVERWRITE THE FIRST TWO LINES ABOVE.
+//Gray buttons:		$button-gradient-color-top: #F9F9F9;  $button-gradient-color-bottom: #E7E9EB;
 //Orange buttons: 	$button-background-color-top:#FF8500; $button-gradient-color-bottom:#FB9E25;
 //Green buttons: 	$button-background-color-top:#009209; $button-gradient-color-bottom:#00dd11;*/
 
