@@ -21,7 +21,6 @@
 			</div>
 			<div class="product-addtocart <!--@If Defined(Ecom:Product.IsInCart)-->product-incart<!--@EndIf(Ecom:Product.IsInCart)-->">
 				<button type="button" class="btn dw-button-green" <!--@If(Ecom:Product.VariantCount>0)-->data-toggle="modal" data-target="#productVariantChooser<!--@Ecom:Product.ID-->"<!--@EndIf--><!--@If(Ecom:Product.VariantCount==0)-->onclick="$.addToCart(this)"<!--@EndIf-->>
-					<i class="icon-shopping-cart"></i>
 					<!--@Translate(AddToCart, "Add to cart")-->
 				</button>
 			</div>
