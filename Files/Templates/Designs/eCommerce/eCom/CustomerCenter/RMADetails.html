@@ -177,7 +177,7 @@
 										<input type="hidden" name="<!--@ParagraphID-->RMAID" id="<!--@ParagraphID-->RMAID" value="<!--@Ecom:RMA.ID-->">
 										<input type="hidden" name="<!--@ParagraphID-->HasSubmit" id="<!--@ParagraphID-->HasSubmit" value="0">
 										<!--@If Defined(Ecom:CustomerCenter.RMA.HasAddContent)-->
-										<input type="submit" value="Create request" class="dw-button dw-button-green dw-button-small cl" />
+										<input type="submit" value="Create request" class="dw-button dw-button-gray dw-button-small cl" />
 										<!--@EndIf(Ecom:CustomerCenter.RMA.HasAddContent)-->
 
 										<!--@If Not Defined(Ecom:CustomerCenter.RMA.HasAddContent)-->
@@ -187,7 +187,7 @@
 
 										<!--@If Not Defined(Ecom:CustomerCenter.RMA.HasCancelContent)-->
 										<!--@If Defined(Ecom:CustomerCenter.RMA.HasAddComment)-->
-										<input class="dw-button dw-button-green dw-button-small cl" type="submit" value="Add comment" />
+										<input class="dw-button dw-button-gray dw-button-small cl" type="submit" value="Add comment" />
 										<!--@EndIf(Ecom:CustomerCenter.RMA.HasAddComment)-->
 										<!--@EndIf(Ecom:CustomerCenter.RMA.HasCancelContent)-->
 										<!--@EndIf(Ecom:CustomerCenter.RMA.HasAddContent)-->
