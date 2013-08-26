@@ -1,4 +1,4 @@
-<script type="text/javascript">
+﻿<script type="text/javascript">
 	require(
 		["jquery", "bootstrap", "jquery-autocomplete", "/Files/Templates/eCom7/CartV2/Step/InfoDirekt.js"],
 		function ($) {
@@ -308,27 +308,15 @@
 						</label>
 						<div class="controls">
 							<select name="EcomOrderCustomerCountry" id="EcomOrderCustomerCountry" tabindex="7">
+								<option value="" selected="selected"><!--@UserManagement:User.Country--></option>	<!--@DwTemplateTags-->			
 								<!--@LoopStart(Countries)-->
-								<option value="<!--@Ecom:Country.Code2-->" <!--@If(Ecom:Country.Code2==Server:Request.ecomordercustomercountry)-->selected="selected"<!--@EndIf--><!--@If Not Defined(Server:Request.ecomordercustomercountry)--><!--@If(Ecom:Country.Code2==Global:Area.Culture.CountryCode)-->selected="selected"<!--@EndIf--><!--@EndIf(Server:Request.ecomordercustomercountry)-->>
+								<option value="">
 									<!--@Ecom:Country.Name-->
 								</option>
 								<!--@LoopEnd(Countries)-->
 							</select>
 						</div>
 					</div>
-					
-					<!--@If(Global:Area.ID!=17)-->
-					<!--@If(Global:Area.ID!=19)-->
-					<div class="control-group">
-						<label class="control-label" for="EcomOrderCustomerPhone">
-							<span><!--@Translate(phone, "Phone")--></span>
-						</label>
-						<div class="controls <!--@If(Global:Area.ID!=1)--><!--@If(Global:Area.ID!=18)-->with-button<!--@EndIf--><!--@EndIf-->">
-							<input type="number" name="EcomOrderCustomerPhone" id="EcomOrderCustomerPhone" value="<!--@Ecom:Order.Customer.Phone-->" tabindex="1" />
-						</div>
-					</div>
-					<!--@EndIf-->
-					<!--@EndIf-->
 					<div class="control-group">
 						<label class="control-label" for="EcomOrderCustomerEmail">
 							<span><!--@Translate(email, "E-mail")--></span>
@@ -338,14 +326,6 @@
 							<input type="email" name="EcomOrderCustomerEmail" id="EcomOrderCustomerEmail" value="<!--@Ecom:Order.Customer.Email-->" tabindex="8"/>
 							<span class="help-block">
 							</span>
-						</div>
-					</div>
-					<div class="control-group">
-						<label class="control-label" for="EcomOrderCustomerCell">
-							<span><!--@Translate(mobile, "Mobile")--></span>
-						</label>
-						<div class="controls">
-							<input type="number" name="EcomOrderCustomerCell" id="EcomOrderCustomerCell" value="<!--@Ecom:Order.Customer.Cell-->" tabindex="9" />
 						</div>
 					</div>
 					<!--@If Defined(Ecom:Cart.UseNewsletterSubscription)-->
@@ -398,6 +378,16 @@
 			<div class="AdressDelivery box-content">
 				<div class="form-horizontal">
 					<div id="delivery-fields">
+					
+					<div class="control-group">
+						<label class="control-label" for="EcomOrderDeliveryCompany">
+							<span><!--@Translate(company, "Company")--></span>
+						</label>
+						<div class="controls">
+							<input type="text" size="10" name="EcomOrderDeliveryCompany" id="EcomOrderDeliveryCompany" value="<!--@Ecom:Order.Customer.Company-->" tabindex="2" />
+						</div>
+					</div>
+					
 						<div class="control-group">
 							<label class="control-label" for="EcomOrderDeliveryName">
 								<span><!--@Translate(name, "Name")--></span>
@@ -457,10 +447,9 @@
 							</label>
 							<div class="controls">
 								<select name="EcomOrderDeliveryCountry" id="EcomOrderDeliveryCountry">
+									<option value="" selected="selected"><!--@UserManagement:User.Country--></option>				
 									<!--@LoopStart(Countries)-->
-									<option value="<!--@Ecom:Country.Code2-->" <!--@If(Ecom:Country.Code2==Server:Request.ecomorderdeliverycountry)-->selected="selected"<!--@EndIf-->
-													<!--@If Not Defined(Server:Request.ecomorderdeliverycountry)--><!--@If(Ecom:Country.Code2==Global:Area.Culture.CountryCode)-->selected="selected"<!--@EndIf--><!--@EndIf(Server:Request.ecomorderdeliverycountry)-->
-													>
+									<option value="">
 										<!--@Ecom:Country.Name-->
 									</option>
 									<!--@LoopEnd(Countries)-->
