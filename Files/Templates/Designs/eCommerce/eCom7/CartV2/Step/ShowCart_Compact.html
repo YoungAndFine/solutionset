@@ -1,7 +1,7 @@
-<div class="box-rounded cart-box">
+﻿<div class="box-rounded cart-box">
 	<legend class="box-headline">
 		<h3>
-			<!--@Translate(translateShoppingCart, "Shopping Cart")-->
+			<!--@Translate(translateShoppingCart, "Order")-->
 
 			<!--@If Not Defined(Ecom:Order.IsEmpty)-->
 			<a href="/Default.aspx?ID=<!--@Item.Area.Checkout_Page_ID-->" class="btn dw-button-green">
@@ -142,7 +142,7 @@
 				<tr>
 					<td class="cart-foot-actions">
 						<a href="<!--@Ecom:Cart.EmptyCartLink-->" class="btn dw-button-gray">
-							<!--@Translate(emptycart, "Empty Cart")-->
+							<!--@Translate(clearorder, "Clear Order")-->
 						</a>
 					</td>
 					<td class="cart-foot-actions right">
@@ -158,7 +158,7 @@
 
 		<!--@If Defined(Ecom:Order.IsEmpty)-->
 		<strong>
-			<!--@Translate(translateEmptyCart, "Your cart is empty")-->
+			<!--@Translate(translateEmptyorder, "Your order is empty")-->
 		</strong>
 		<!--@EndIf-->
 
