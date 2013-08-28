@@ -12,7 +12,13 @@
 				</a>
 			</div>
 			<div class="product-price">
-				<!--@Ecom:Product.Price.PriceWithVATFormatted-->
+				<!--@If Defined(Item.Area.Show_Price_With_VAT)-->
+					<i style="color:red; text-decoration:line-through; font-size:14px;"><!--@Ecom:Product.Price.PriceWithVATFormatted--></i>
+					<!--@Ecom:Product.Discount.Price.PriceWithVATFormatted-->
+				<!--@Else-->
+					<i style="color:red; text-decoration:line-through; font-size:14px;"><!--@Ecom:Product.Price.PriceWithoutVATFormatted--></i>
+					<!--@Ecom:Product.Discount.Price.PriceWithoutVATFormatted-->
+				<!--@EndIf(Item.Area.Show_Price_With_VAT)-->
 			</div>
 			<div class="product-feetooltip">
 				<a href="#" data-rel="tooltip" data-container=".paymentshippingfee">

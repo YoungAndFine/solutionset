@@ -19,13 +19,16 @@
 		</div>
 		<div class="minicart-count">
 			<!--@Ecom:Order.OrderLines.TotalProductQuantity-->
+			
 			<!--@If(Ecom:Order.OrderLines.TotalProductQuantity=1)-->
-			<!--@Translate(productSingle, "product")-->:
+				<!--@Translate(productSingle, "product")-->:
 			<!--@EndIf-->
 			<!--@If(Ecom:Order.OrderLines.TotalProductQuantity>1)-->
-			<!--@Translate(productMultiple, "products")-->:
+				<!--@Translate(productMultiple, "products")-->:
 			<!--@EndIf-->
-			<!--@Ecom:Order.Price.PriceWithVATFormatted-->
+				
+			<!--BEMÆRK UDREGNER FØRST RABAT TIL SIDST I CHECKUD FORLØB-->
+			<!--@Ecom:Order.OrderLines.Total.PriceWithVAT-->
 			<div class="minicart-view">
 				<a class="dropdown-toggle" id="dLabel" role="button" data-toggle="dropdown" data-target=".minicart-popup" href="/Default.aspx?ID=<!--@Item.Area.Show_Cart_Page_ID-->">
 					<!--@Translate(showcart, "View cart")-->

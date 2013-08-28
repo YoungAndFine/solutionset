@@ -12,6 +12,11 @@
           <editorConfuguration />
         </editor>
       </field>
+      <field name="Show Price With VAT" systemName="Show_Price_With_VAT" description="" type="System.Boolean, mscorlib" defaultValueCulture="en-US" defaultValue="False">
+        <editor type="Dynamicweb.Content.Items.Editors.CheckboxEditor, Dynamicweb">
+          <editorConfuguration />
+        </editor>
+      </field>
       <field name="Show Price In InstantSearch" systemName="Show_Price_In_InstantSearch" description="" type="System.Boolean, mscorlib">
         <editor type="Dynamicweb.Content.Items.Editors.CheckboxEditor, Dynamicweb">
           <editorConfuguration />
@@ -117,9 +122,9 @@
           <editorConfuguration />
         </editor>
         <options sourceType="Static">
-          <static>
+          <Static>
             <option name="default" value="" />
-          </static>
+          </Static>
         </options>
       </field>
       <field name="Custom CSS Url" systemName="Custom_CSS_Url" description="" type="System.String, mscorlib">
@@ -162,6 +167,7 @@
           <fields>
             <field systemName="Show_Quick_Add" />
             <field systemName="Show_Cart_Page_ID" />
+            <field systemName="Show_Price_With_VAT" />
             <field systemName="Show_Price_In_InstantSearch" />
             <field systemName="Google_Analytics_ID" />
             <field systemName="Checkout_Page_ID" />

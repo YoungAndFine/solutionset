@@ -38,8 +38,13 @@
 						</div>
 						<div class="product-pricebox">
 							<div>
-								<div>&nbsp;</div>
-								<div><!--@Ecom:Product.Price.PriceWithVATFormatted--> / <!--@Translate(unit, "unit")--></div>
+								<!--@If Defined(Item.Area.Show_Price_With_VAT)-->
+									<i style="color:red; text-decoration:line-through; font-size:14px;"><!--@Ecom:Product.Price.PriceWithVATFormatted--></i>
+									<!--@Ecom:Product.Discount.Price.PriceWithVATFormatted-->
+								<!--@Else-->
+									<i style="color:red; text-decoration:line-through; font-size:14px;"><!--@Ecom:Product.Price.PriceWithoutVATFormatted--></i>
+								<!--@Ecom:Product.Discount.Price.PriceWithoutVATFormatted-->
+								<!--@EndIf(Item.Area.Show_Price_With_VAT)-->
 							</div>
 						</div>
 						<div class="product-addtocart">
