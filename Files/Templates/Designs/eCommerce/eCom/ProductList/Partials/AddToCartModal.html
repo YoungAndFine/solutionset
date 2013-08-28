@@ -46,12 +46,7 @@
 							<input name="quantity" class="input-mini" onclick="this.value='';" value="1" type="text"><span class="help-inline"><!--@Translate(unit, "unit")--></span>
 							<button class="btn dw-button-green" data-dw-cmd="addtocart" onclick="Layout.Cart.AddToCart(this)">
 								<span>
-									<!--@If Defined(Global:OMC.Experiment.Variation.Original)-->
 									<!--@Translate(AddToCart, "Add to cart")-->
-									<!--@EndIf(Global:OMC.Experiment.Variation.Original)-->
-									<!--@If Not Defined(Global:OMC.Experiment.Variation.Original)-->
-									<!--@Translate(BuyNow, "Buy now")-->
-									<!--@EndIf(Global:OMC.Experiment.Variation.Original)-->
 								</span>
 							</button>
 						</div>
