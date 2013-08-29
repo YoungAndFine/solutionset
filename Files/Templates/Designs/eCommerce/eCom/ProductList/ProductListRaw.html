@@ -17,13 +17,35 @@
 		<!--@EndIf(Ecom:Product.ImageSmall.Default.Clean)-->
 		<div class="details hidden-phone">
 			<div class="product-price">
-				<!--@Ecom:Product.Price.PriceWithVATFormatted-->
+				<!--@If(Ecom:Product.Discount.Price.PricePIP<Ecom:Product.Price.PricePIP)-->
+					<div class="product-price">
+						<!--@If Defined(Item.Area.Show_Price_With_VAT)-->
+						<span class="product-price regular-styled"><!--@Ecom:Product.Price.PriceWithVATFormatted--></span>
+						<span class="product-price discount"><!--@Ecom:Product.Discount.Price.PriceWithVATFormatted--></span>
+						<!--@Else-->
+						<span class="product-price regular-styled"><!--@Ecom:Product.Price.PriceWithoutVATFormatted--></span>
+						<span class="product-price discount"><!--@Ecom:Product.Discount.Price.PriceWithoutVATFormatted--></span>
+						<!--@EndIf-->
+					</div>
+				<!--@Else-->
+					<div class="product-price">
+						<!--@If Defined(Item.Area.Show_Price_With_VAT)-->
+						<span class="product-price regular"><!--@Ecom:Product.Price.PriceWithVATFormatted--></span>
+						<!--@Else-->
+						<span class="product-price regular"><!--@Ecom:Product.Price.PriceWithoutVATFormatted--></span>
+						<!--@EndIf-->
+					</div>
+				<!--@EndIf-->
 			</div>
+			<!--@If Defined(Item.Area.Show_Price_With_VAT)-->
 			<div class="product-feetooltip">
-				<a href="#" data-rel="tooltip" data-container=".paymentshippingfee" data-position="bottom">
-					<!--@Translate(expaymentshippingfee, 'Ex. shipping and payment fees')-->
-				</a>
+				<!--@Translate(exPaymentShippingFees, 'Ex. shipping and payment fees')-->
 			</div>
+			<!--@Else-->
+			<div class="product-feetooltip">
+				<!--@Translate(exVATpaymentShippingFees, 'Ex. VAT, shipping and payment fees')-->
+			</div>
+			<!--@EndIf(Item.Area.Show_Price_With_VAT)-->
 			<div class="product-rating-comments <!--@If Defined(Ecom:Product.IsInCart)-->item-added<!--@EndIf(Ecom:Product.IsInCart)-->">
 				<div class="product-rating">
 					<span itemscope="" itemtype="http://data-vocabulary.org/Review-aggregate">
@@ -187,7 +209,23 @@
 						<div class="product-pricebox">
 							<div>
 								<div>&nbsp;</div>
-								<div><!--@Ecom:Product.Price.PriceWithVATFormatted--> / <!--@Translate(unit, "unit")--></div>
+								<div>				
+									<!--@If(Ecom:Product.Discount.Price.PricePIP<Ecom:Product.Price.PricePIP)-->
+										<!--@If Defined(Item.Area.Show_Price_With_VAT)-->
+											<span class="product-price regular-styled"><!--@Ecom:Product.Price.PriceWithVATFormatted--></span>&nbsp;
+											<span class="product-price discount"><!--@Ecom:Product.Discount.Price.PriceWithVATFormatted--></span>
+										<!--@Else-->
+											<span class="product-price regular-styled"><!--@Ecom:Product.Price.PriceWithoutVATFormatted--></span>&nbsp;
+											<span class="product-price discount"><!--@Ecom:Product.Discount.Price.PriceWithoutVATFormatted--></span>
+										<!--@EndIf-->
+									<!--@Else-->
+										<!--@If Defined(Item.Area.Show_Price_With_VAT)-->
+											<span class="product-price regular"><!--@Ecom:Product.Price.PriceWithVATFormatted--></span>
+										<!--@Else-->
+											<span class="product-price regular"><!--@Ecom:Product.Price.PriceWithoutVATFormatted--></span>
+										<!--@EndIf-->
+									<!--@EndIf--> / <!--@Translate(unit, "unit")-->
+								</div>
 							</div>
 						</div>
 						<div class="product-addtocart">

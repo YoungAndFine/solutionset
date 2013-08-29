@@ -16,13 +16,25 @@
 								
 								<!--@If(Item.Area.Require_Login_To_Show_Prices!='True' || Global:Extranet.UserID>0)-->
 								<div class="product-price">
-								<!--@If Defined(Item.Area.Show_Price_With_VAT)-->
-									<i style="color:red; text-decoration:line-through; font-size:14px;"><!--@Ecom:Product.Price.PriceWithVATFormatted--></i>
-									<!--@Ecom:Product.Discount.Price.PriceWithVATFormatted-->
-								<!--@Else-->
-									<i style="color:red; text-decoration:line-through; font-size:14px;"><!--@Ecom:Product.Price.PriceWithoutVATFormatted--></i>
-								<!--@Ecom:Product.Discount.Price.PriceWithoutVATFormatted-->
-								<!--@EndIf(Item.Area.Show_Price_With_VAT)-->
+									<!--@If(Ecom:Product.Discount.Price.PricePIP<Ecom:Product.Price.PricePIP)-->
+										<div class="product-price">
+											<!--@If Defined(Item.Area.Show_Price_With_VAT)-->
+											<span class="product-price regular-styled"><!--@Ecom:Product.Price.PriceWithVATFormatted--> </span>
+											<span class="product-price discount"> <!--@Ecom:Product.Discount.Price.PriceWithVATFormatted--></span>
+											<!--@Else-->
+											<span class="product-price regular-styled"><!--@Ecom:Product.Price.PriceWithoutVATFormatted--></span>
+											<span class="product-price discount"><!--@Ecom:Product.Discount.Price.PriceWithoutVATFormatted--></span>
+											<!--@EndIf-->
+										</div>
+									<!--@Else-->
+										<div class="product-price">
+											<!--@If Defined(Item.Area.Show_Price_With_VAT)-->
+											<span class="product-price regular"><!--@Ecom:Product.Price.PriceWithVATFormatted--></span>
+											<!--@Else-->
+											<span class="product-price regular"><!--@Ecom:Product.Price.PriceWithoutVATFormatted--></span>
+											<!--@EndIf-->
+										</div>
+									<!--@EndIf-->
 								</div>
 
 								<div class="product-action">
