@@ -66,7 +66,7 @@
 </button>
 </div>
 <!--@If Defined(Ecom:Product.IsInCart)-->
-<!--@Include(/eCom/ProductList/Partials/AddedToCart.html)-->
+<!--@Include(Partials/AddedToCart.html)-->
 <!--@EndIf(Ecom:Product.IsInCart)-->
 </div>
 <div class="content">
@@ -194,7 +194,7 @@
 							<input name="quantity" class="input-mini" onclick="this.value='';" value="1" type="text"><span class="help-inline"><!--@Translate(unit, "unit")--></span>
 							<button class="btn dw-button-green" data-dw-cmd="addtocart" onclick="Layout.Cart.AddToCart(this)">
 								<span>
-									<!--@Translate(AddToCart, "Add to cart")-->	
+									<!--@Translate(AddToCart, "Add to cart")-->
 								</span>
 							</button>
 						</div>
