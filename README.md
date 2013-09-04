@@ -3,12 +3,14 @@ Solution Set
 
 This repository contains the Dynamicweb Solution Set templates.
 
-_Note_: Requires Dynamicweb 8.2.3.4 (or later)
+**Note**: Requires Dynamicweb 8.3.0.2 (or later)
 
 Main design: [eCommerce](Files/Templates/Designs/eCommerce/README.md)
 
 Installing the design (eCommerce) on a Dynamicweb solution
 ----------------------------------------------------------
+
+Assuming you already have a running Dynamicweb solution, follow the steps below to get the Solution Set up and running.
 
 1. Click "Download ZIP" from (somewhere on) this page
 2. Extract everything inside the Files/ folder in the archive into the Files/ folder of your solution
