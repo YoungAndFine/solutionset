@@ -75,6 +75,21 @@ Layout = (function (m) {
 		})()
 	};
 
+	// @see http://notes.minty.org/cgi-bin/wiki.pl?Fixing_Base_Href_Javascript_Document.Location_For_Internet_Explorer
+	m.redirect = function(loc) {
+		if (loc && loc[0] != '/' && !(new RegExp('^[a-z]+://').test(loc))) {
+			// loc is the relative path your wish to redirect to
+			var b = document.getElementsByTagName('base');
+			if (b && b[0] && b[0].href) {
+				if (b[0].href.substr(b[0].href.length-1) == '/' && loc.charAt(0) == '/') {
+					loc = loc.substr(1);
+				}
+				loc = b[0].href + loc;
+			}
+		}
+		location.href = loc;
+	}
+
 	return m;
 
 }(Layout || {}));
@@ -329,8 +344,6 @@ Layout.LoginBox = {
 	}
 };
 
-
-
 Layout.Cart = (function (m) {
 
 	m.UpdateProductQuantity = (function () {
@@ -354,7 +367,7 @@ Layout.Cart = (function (m) {
 				url = "CartCmd=updateorderlines&" + orderlineCode + "=" + val;
 			}
 
-			location.href = "/Default.aspx?" + url;
+			Layout.redirect("/Default.aspx?" + url);
 		}
 
 	})();
@@ -378,7 +391,7 @@ Layout.Cart = (function (m) {
 			}
 
 			if (productQuantity < 1) {
-				alert('Quantity can\'t be less then 1');
+				alert('Quantity can\'t be less than 1');
 				return;
 			}
 
@@ -398,7 +411,7 @@ Layout.Cart = (function (m) {
 			}
 			// debugger;
 			eCommerce.Overlay.show(document.body);
-			location.href = redirectLink;
+			Layout.redirect(redirectLink);
 		}
 
 	})();
@@ -491,27 +504,6 @@ $.extend({
 		}
 	},
 
-	// addToCart: function (obj, extendQuery, wrapperSelector) {
-	//     var productItem = $(obj).parents(wrapperSelector || '.product-list-item-wrapper');
-	//     var productLink = productItem.find('.product-link').attr('href') || location.href,
-	//         productQuantity = parseInt(productItem.find("input[name=quantity]").val()),
-	//         productVariant = productItem.find(".variants-selector").val();
-
-	//     if (productItem.find(".variants-selector") && productVariant != "" || extendQuery) {
-	//         var url = productLink +
-	//                   (productLink.indexOf('?') > 0 ? "&" : "?") + "cartcmd=add" +
-	//                   (!productQuantity || productQuantity <= 1 ? "" : "&quantity=" + productQuantity) +
-	//                   (!productVariant ? "" : "&variantid=" + productVariant) +
-	//                   (extendQuery ? "&" + extendQuery : "");
-
-	//         // console.log(url);
-
-	//          eCommerce.Overlay.show(document.body);
-	//          location.href = url;
-	//     } else {
-	//       alert($(obj).data('dw-needvariant'));
-	//     }
-	// },
 	addToCart: function (obj, extendQuery, wrapperSelector) {
 		Layout.Cart.AddToCart(obj, extendQuery, wrapperSelector);
 	},
@@ -706,175 +698,6 @@ function previous() {
 	$("#nextCommentsButton").removeClass("disabledLink");
 }
 
-// function showDetails(selectID) {
-//     gotoValue = $("#configSelect" + selectID).val();
-//     if (gotoValue != "") {
-//         window.open("/default.aspx?id=<!--@Ecom:Product:Page.ID-->&productid=" + gotoValue, "details", "left=1,top=1,width=1100,height=700,scrollbars=yes,resizable=yes");
-//     }
-// }
-//
-// var symbol = "<!--@Ecom:Product.Currency.Symbol-->"
-// var intSep = "<!--@Ecom:Product.Currency.IntegerSeparator-->"
-// var decSep = "<!--@Ecom:Product.Currency.DecimalSeparator-->"
-//
-// function formatCurrency(num) {
-//     num = num.toString().replace(/\$|\,/g, '');
-//     if (isNaN(num))
-//         num = "0";
-
-//     sign = (num == (num = Math.abs(num)));
-//     num = Math.floor(num * 100 + 0.50000000001);
-//     cents = num % 100;
-//     num = Math.floor(num / 100).toString();
-//     if (cents < 10)
-//         cents = "0" + cents;
-
-//     for (var i = 0; i < Math.floor((num.length - (1 + i)) / 3); i++)
-//         num = num.substring(0, num.length - (4 * i + 3)) + intSep +
-
-//     num.substring(num.length - (4 * i + 3));
-//     return (((sign) ? '' : '-') + symbol + num + decSep + cents);
-// }
-//
-// var startPrice = "<!--@Ecom:Product.Price.PriceFormatted-->"
-// var oldPrice = 0;
-// function setOldPrice(selector) {
-//     var value = selector.options[selector.selectedIndex].value;
-//     oldPrice = $("#" + value).val();
-//     startPrice = document.getElementById('configPrice').innerHTML;
-// }
-//
-// function changePrice(selector) {
-//     // no changes if fixedprice
-//     if (pricetype == 1)
-//         return;
-//     var value = selector.options[selector.selectedIndex].value;
-//     var newprice = $("#" + value).val();
-
-//     // fix !!! :)
-//     newprice = replaceSubstring(newprice, symbol, "");
-//     newprice = replaceSubstring(newprice, intSep, "");
-//     newprice = replaceSubstring(newprice, decSep, ".");
-
-//     oldPrice = replaceSubstring(oldPrice, symbol, "");
-//     oldPrice = replaceSubstring(oldPrice, intSep, "");
-//     oldPrice = replaceSubstring(oldPrice, decSep, ".");
-
-//     startPrice = replaceSubstring(startPrice, symbol, "");
-//     startPrice = replaceSubstring(startPrice, intSep, "");
-//     startPrice = replaceSubstring(startPrice, decSep, ".");
-
-//     /*    alert("startPrice " + startPrice);
-//     alert("oldPrice " + parseFloat(oldPrice));
-//     alert("newprice " + parseFloat(newprice));
-//     */
-
-//     var setPrice = (parseFloat(startPrice) - parseFloat(oldPrice)) + parseFloat(newprice);
-//     setProductPrice(setPrice);
-
-//     /* Add variants parameters */
-//     var bomQueryString = $(selector).parents(".product-pricebox").find("select").serialize();
-//     var addtocart = $(selector).parents(".product-pricebox-wrapper").find(".addtocart");
-//     if (addtocart.is("a")) {
-//         addtocart.attr("href", function (i, href) {
-//             var bomSplitted = bomQueryString.split("&"), _index;
-//             for (var i = 0; i < bomSplitted.length; i++) {
-//                 bomValue = bomSplitted[i].split("=");
-//                 _index = href.indexOf(bomValue[0]);
-//                 if (_index !== -1) {
-//                     href = href.replace(new RegExp("(" + bomValue[0] + "=)[a-zA-Z0-9]+", "g"), "$1" + bomValue[1]);
-//                 } else {
-//                     href += "&" + bomValue[0] + "=" + bomValue[1];
-//                 }
-//             }
-//             return href;
-//         });
-//     }
-// }
-//
-// function setProductPrice(price) {
-//     //alert("setPrice " + price);
-//     document.getElementById('configPrice').innerHTML = formatCurrency(price);
-// }
-//
-// var pricetype = '<!--@Ecom:Product.PriceType-->';
-// var stockID = "<!--@Ecom:Product:Stock.ID-->"
-// if (stockID == "") {
-//     document.getElementById("ShowStock").style.display = 'none';
-// }
-
-// function replaceSubstring(inputString, fromString, toString) {
-//     var temp = inputString;
-//     if (fromString == "") {
-//         return inputString;
-//     }
-
-//     fromString = "" + fromString;
-//     toString = "" + toString;
-
-//     if (toString.indexOf(fromString) == -1) {
-//         while (temp.indexOf(fromString) != -1) {
-//             var toTheLeft = temp.substring(0, temp.indexOf(fromString));
-//             var toTheRight = temp.substring(temp.indexOf(fromString) + fromString.length, temp.length);
-//             temp = toTheLeft + toString + toTheRight;
-//         }
-//     } else {
-//         var midStrings = new Array("~", "`", "_", "^", "#");
-//         var midStringLen = 1;
-//         var midString = "";
-
-//         while (midString == "") {
-//             for (var i = 0; i < midStrings.length; i++) {
-//                 var tempMidString = "";
-//                 for (var j = 0; j < midStringLen; j++) { tempMidString += midStrings[i]; }
-//                 if (fromString.indexOf(tempMidString) == -1) {
-//                     midString = tempMidString;
-//                     i = midStrings.length + 1;
-//                 }
-//             }
-//         }
-
-//         while (temp.indexOf(fromString) != -1) {
-//             var toTheLeft = temp.substring(0, temp.indexOf(fromString));
-//             var toTheRight = temp.substring(temp.indexOf(fromString) + fromString.length, temp.length);
-//             temp = toTheLeft + midString + toTheRight;
-//         }
-
-//         while (temp.indexOf(midString) != -1) {
-//             var toTheLeft = temp.substring(0, temp.indexOf(midString));
-//             var toTheRight = temp.substring(temp.indexOf(midString) + midString.length, temp.length);
-//             temp = toTheLeft + toString + toTheRight;
-//         }
-//     }
-//     return temp;
-// }
-
-// function updateCartLineQuantity(orderlineID) {
-//   if (!orderlineID) return;
-
-//   // Find input box containing quantity
-//   var orderlineCode = "QuantityOrderLine" + orderlineID;
-//   var box = $("input#" + orderlineCode);
-
-//   // Verify box
-//   if (!box) return;
-
-//   // Do the update
-//   var val = parseInt(box.val());
-
-//   var url;
-//   if (val <= 0) {
-//     url = "CartCmd=delorderline&key=" + orderlineID;
-//   } else {
-//     url = "CartCmd=updateorderlines&" + orderlineCode + "=" + val;
-//   }
-
-//   location.href = "/Default.aspx?" + url;
-// }
-
-
-
-
 function changeDropdownPosition(dropdownMenu) {
 	var dropdownRight
 	, windowWidth;
@@ -908,7 +731,7 @@ $(document).ready(function () {
 	$(".mainmenu a[data-toggle=dropdown]").on("touchstart click", function (e) {
 		var parent = $(this).parent();
 		if (parent.hasClass("open")) {
-			location.href = $(this).attr("href");
+			Layout.redirect($(this).attr("href"));
 		} else {
 			changeDropdownPosition(parent.find(".dropdown-menu"));
 		}
@@ -1427,7 +1250,7 @@ $(document).ready(function () {
 
 	// Clicks on B2C first page blocks
 	$('.feature-wrapper').on('click', function(){
-		location.href = $(this).find('a:first-child').attr('href');
+		Layout.redirect($(this).find('a:first-child').attr('href'));
 		return false;
 	})
 
