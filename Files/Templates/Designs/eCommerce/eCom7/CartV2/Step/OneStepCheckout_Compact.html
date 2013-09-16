@@ -139,14 +139,12 @@
 					FillAddressDelivery(this);
 					$('.AdressDelivery').find('input').val('');
 				});
-
-
 			});
 
 			function FillAddress(list) {
 				var addressId = list.options[list.selectedIndex].value;
 				$.ajax({
-					url: 'Admin/Module/Usermanagement/UserAddresses.ashx?cmd=GetAddress&AddressID=' + addressId,
+					url: 'Admin/Module/Usermanagement/UserAddresses.ashx?cmd=GetAddress&token=<!--@Ecom:Cart.UserAddressToken-->&AddressID=' + addressId,
 					beforeSend: function(){
 
 					},
@@ -166,7 +164,7 @@
 			function FillAddressDelivery(list) {
 				var addressId = list.options[list.selectedIndex].value;
 				$.ajax({
-					url: 'Admin/Module/Usermanagement/UserAddresses.ashx?cmd=GetAddress&AddressID=' + addressId,
+					url: 'Admin/Module/Usermanagement/UserAddresses.ashx?cmd=GetAddress&token=<!--@Ecom:Cart.UserAddressToken-->&AddressID=' + addressId,
 					beforeSend: function(){
 
 					},
@@ -263,8 +261,8 @@
 							<span><!--@Translate(addressList, "Address List")--></span>
 						</label>
 						<div class="controls">
-							<select name="AddressList" id="AddressList" onchange="changeFunc();">
-								<option><!--@Translate(TypeAdress, "Type adress")--></option>
+							<select name="AddressList" id="AddressList">
+								<option><!--@Translate(Choose_address, "Choose address")--></option>
 								<!--@LoopStart(UserManagement:User.UserAddresses)-->
 								<!--@If Defined(UserManagement:User.UserAddress.Default)-->
 								<option value="<!--@UserManagement:User.UserAddress.ID-->" selected="selected">
@@ -404,7 +402,7 @@
 						</label>
 						<div class="controls">
 							<select name="AddressListDelivery" id="AddressListDelivery">
-								<option selected="selected">Choose adress or type in</option>
+								<option><!--@Translate(Choose_address, "Choose address")--></option>
 								<!--@LoopStart(UserManagement:User.UserAddresses)-->
 								<!--@If Defined(UserManagement:User.UserAddress.Default)-->
 								<option value="<!--@UserManagement:User.UserAddress.ID-->">
