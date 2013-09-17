@@ -7,7 +7,7 @@
 				<div class="span3">
 					<div class="box-rounded product-list-item-wrapper">
 						<div class="box-content">
-							<img src="/Admin/Public/getimage.ashx?Image=<!--@Ecom:Product.ImageSmall.Clean-->&amp;Height=230" alt="" />
+							<a href="<!--@Ecom:Product.LinkGroup.Clean-->" class="product-link"><img src="/Admin/Public/getimage.ashx?Image=<!--@Ecom:Product.ImageSmall.Clean-->&amp;Height=230" alt="" /></a>
 
 							<div class="box-overlay">
 								<h3 class="product-name">
@@ -50,7 +50,7 @@
                       		<!--@LoopStart(Products)-->
 							<!--@If Defined(Ecom:Product.ImageSmall.Clean)-->
 							<!--@If(Ecom:Product.VariantCount>0)-->
-								<!--@Include(../../../eCom/ProductList/Partials/AddToCartModal.html)-->
+								<!--@Include(../eCom/ProductList/Partials/AddToCartModal.html)-->
 							<!-- / .modal.popup-variants -->
 							<!--@EndIf-->
 							<!--@EndIf-->
