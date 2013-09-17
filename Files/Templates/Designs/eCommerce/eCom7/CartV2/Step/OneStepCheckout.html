@@ -190,6 +190,11 @@
 					FillAddress(this);
 				});
 
+
+				$('#AddressListDelivery').change(function(){
+					FillAddressDelivery(this);
+					$('.AdressDelivery').find('input').val('');
+				});
 			});
 
 
@@ -209,7 +214,7 @@
 			function FillAddress(list) {
 				var addressId = list.options[list.selectedIndex].value;
 				$.ajax({
-					url: 'Admin/Module/Usermanagement/UserAddresses.ashx?cmd=GetAddress&AddressID=' + addressId,
+					url: 'Admin/Module/Usermanagement/UserAddresses.ashx?cmd=GetAddress&token=<!--@Ecom:Cart.UserAddressToken-->&AddressID=' + addressId,
 					beforeSend: function(){
 
 					},
@@ -226,6 +231,25 @@
 				});
 			}
 
+			function FillAddressDelivery(list) {
+				var addressId = list.options[list.selectedIndex].value;
+				$.ajax({
+					url: 'Admin/Module/Usermanagement/UserAddresses.ashx?cmd=GetAddress&token=<!--@Ecom:Cart.UserAddressToken-->&AddressID=' + addressId,
+					beforeSend: function(){
+
+					},
+					success: function (data) {
+						var address = data;
+						if (address) {
+							$('#EcomOrderDeliveryAddress, #EcomOrderDeliveryAddress2, #EcomOrderDeliveryZip, #EcomOrderDeliveryCity').prop('disabled',false);
+							$('#EcomOrderDeliveryAddress').val(address.Address);
+							$('#EcomOrderDeliveryAddress2').val(address.Address2);
+							$('#EcomOrderDeliveryZip').val(address.Zip);
+							$('#EcomOrderDeliveryCity').val(address.City);
+						}
+					}
+				});
+			}
 		}
 	);
 </script>
@@ -312,6 +336,7 @@
 						</label>
 						<div class="controls">
 							<select name="AddressList" id="AddressList">
+								<option><!--@Translate(Choose_address, "Choose address")--></option>
 								<!--@LoopStart(UserManagement:User.UserAddresses)-->
 								<!--@If Defined(UserManagement:User.UserAddress.Default)-->
 								<option value="<!--@UserManagement:User.UserAddress.ID-->" selected="selected">
@@ -457,6 +482,30 @@
 								<input type="text" name="EcomOrderDeliveryName" id="EcomOrderDeliveryName" value="<!--@Ecom:Order.Delivery.Name-->" />
 							</div>
 						</div>
+						<!--@If Not Defined(UserManagement:User.UserAddresses.EmptyList)-->
+					<div class="control-group address_drop">
+						<label class="control-label" for="EcomOrderCustomerAddress">
+							<span><!--@Translate(addressList, "Address List")--></span>
+						</label>
+						<div class="controls">
+							<select name="AddressListDelivery" id="AddressListDelivery">
+								<option><!--@Translate(Choose_address, "Choose address")--></option>
+								<!--@LoopStart(UserManagement:User.UserAddresses)-->
+								<!--@If Defined(UserManagement:User.UserAddress.Default)-->
+								<option value="<!--@UserManagement:User.UserAddress.ID-->">
+									<!--@UserManagement:User.UserAddress.Description-->
+								</option>
+								<!--@EndIf(UserManagement:User.UserAddress.Default)-->
+								<!--@If Not Defined(UserManagement:User.UserAddress.Default)-->
+								<option value="<!--@UserManagement:User.UserAddress.ID-->">
+									<!--@UserManagement:User.UserAddress.Description-->
+								</option>
+								<!--@EndIf(UserManagement:User.UserAddress.Default)-->
+								<!--@LoopEnd(UserManagement:User.UserAddresses)-->
+							</select>
+						</div>
+					</div>
+					<!--@EndIf(UserManagement:User.UserAddresses.EmptyList)-->
 						<div class="control-group">
 							<label class="control-label" for="EcomOrderDeliveryAddress">
 								<span><!--@Translate(address, "Address")--></span>
@@ -602,7 +651,7 @@
 			</h3>
 		</div>
 		<div class="box-content box-minicart collapse">
-			<!--@Include(/eCom7/CartV2/Step/Partials/MiniCart.html)-->
+			<!--@Include(Partials/MiniCart.html)-->
 		</div>
 	</div><!-- / .box-rounded -->
 	<div class="checkout-links">

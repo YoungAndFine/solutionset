@@ -12,7 +12,7 @@
 		<link href="assets/vendor/smoothness/jquery-ui-1.8.23.custom.css" rel="stylesheet"/>
 		<link href="assets/stylesheets/screen.css" media="screen" rel="stylesheet"/>
 		<link href="assets/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
-		
+
 		<!--@Snippet(StyleSheet)-->
 		<!--@If Defined(Item.Area.Custom_CSS_Url)-->
 		<link href="<!--@Item.Area.Custom_CSS_Url-->" rel="stylesheet"/>
@@ -31,7 +31,7 @@
 		<!--@Snippet(JavaScriptHead)-->
 	</head>
 	<body data-pageid="<!--@Global:Page.ID-->" data-product-page="<!--@Item.Area.Products_Catalog_Page_ID-->" data-product-paragraph="<!--@Item.Area.Products_Catalog_Paragraph_ID-->">
-		<!--@Include(/Partials/NavigationTop.html)-->
+		<!--@Include(Partials/NavigationTop.html)-->
 
 		<section class="page-wrapper">
 			<header class="header-wrapper">
@@ -55,13 +55,13 @@
 								</div>
 							</div>
 						</div>
-						<!--@Include(/Partials/MiniCart.html)-->
+						<!--@Include(Partials/MiniCart.html)-->
 					</div>
 				</div>
 			</header>
 
-			<!--@Include(/Partials/NavigationMain.html)-->
-			<!--@Include(/Partials/SearchBar.html)-->
+			<!--@Include(Partials/NavigationMain.html)-->
+			<!--@Include(Partials/SearchBar.html)-->
 
 			<!--@If Defined(DwNavigation(NavBreadcrumb))-->
 			<section class="container breadcrumb-wrapper hidden-print">
@@ -79,8 +79,8 @@
 		</section>
 
 		<footer class="hidden-print">
-			<!--@Include(/Partials/NavigationMainBottom.html)-->
-			<!--@Include(/Partials/SearchBarBottom.html)-->
+			<!--@Include(Partials/NavigationMainBottom.html)-->
+			<!--@Include(Partials/SearchBarBottom.html)-->
 
 			<section class="container footer-wrapper">
 				<div class="row " id="footerSections" title="Footer sections">
@@ -91,8 +91,8 @@
 			</section>
 		</footer>
 
-		<!--@Include(/Partials/Login.html)-->
-		<!--@Include(/Partials/GoogleAnalytics.html)-->
+		<!--@Include(Partials/Login.html)-->
+		<!--@Include(Partials/GoogleAnalytics.html)-->
 		<!--@Snippet(JavaScriptBottom)-->
 	</body>
 </html>

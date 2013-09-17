@@ -13,7 +13,7 @@
 								<h3 class="product-name">
 									<a href="<!--@Ecom:Product.LinkGroup.Clean-->" class="product-link"><!--@Ecom:Product.Name--></a>
 								</h3>
-								
+
 								<!--@If(Item.Area.Require_Login_To_Show_Prices!='True' || Global:Extranet.UserID>0)-->
 								<div class="product-price">
 									<!--@If(Ecom:Product.Discount.Price.PricePIP<Ecom:Product.Price.PricePIP)-->
@@ -50,7 +50,7 @@
                       		<!--@LoopStart(Products)-->
 							<!--@If Defined(Ecom:Product.ImageSmall.Clean)-->
 							<!--@If(Ecom:Product.VariantCount>0)-->
-								<!--@Include(../eCom/ProductList/Partials/AddToCartModal.html)-->
+								<!--@Include(../../../eCom/ProductList/Partials/AddToCartModal.html)-->
 							<!-- / .modal.popup-variants -->
 							<!--@EndIf-->
 							<!--@EndIf-->

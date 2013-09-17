@@ -65,7 +65,7 @@
 				<!--@EndIf(Item.Area.Show_Price_With_VAT)-->
 				
 				<div class="product-rating-comments <!--@If Defined(Ecom:Product.IsInCart)-->item-added<!--@EndIf(Ecom:Product.IsInCart)-->">
-					<!--@Include(/eCom/ProductList/Partials/Rating.html)-->
+					<!--@Include(Partials/Rating.html)-->
 				</div>
 				<div class="stock">
 					<!--@If(Ecom:Product.Stock>0)-->
@@ -91,7 +91,7 @@
 					</button>
 				</div>
 				<!--@If Defined(Ecom:Product.IsInCart)-->
-				<!--@Include(/eCom/ProductList/Partials/AddedToCart.html)-->
+				<!--@Include(Partials/AddedToCart.html)-->
 				<!--@EndIf(Ecom:Product.IsInCart)-->
 			</div>
 			<!--@Else-->
@@ -114,7 +114,7 @@
 					&nbsp;<!--@Ecom:Product.Number-->
 				</div>
 				<div class="product-rating-comments visible-phone">
-					<!--@Include(/eCom/ProductList/Partials/Rating.html)-->
+					<!--@Include(Partials/Rating.html)-->
 				</div>
 				<div class="stock visible-phone">
 					<!--@If(Ecom:Product.Stock>0)-->
@@ -149,7 +149,7 @@
 			</div>
 		</div>
 		<!--@If(Ecom:Product.VariantCount>0)-->
-		<!--@Include(/eCom/ProductList/Partials/AddToCartModal.html)-->
+		<!--@Include(Partials/AddToCartModal.html)-->
 		<!--@EndIf-->
 	</section>
 	<!--@LoopEnd(Products)-->

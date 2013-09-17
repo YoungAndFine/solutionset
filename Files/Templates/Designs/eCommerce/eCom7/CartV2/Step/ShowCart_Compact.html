@@ -38,14 +38,17 @@
 				<!--@LoopStart(OrderLines)-->
 				<tr>
 					<td class="cart-cell-product">
-							<!--@If Not Defined(Ecom:Product.ID)-->
-							<!--@Translate(discount, 'Discount')--> <!--@Ecom:Order:OrderLine.ProductName-->
-
+							<!--@If Not Defined(Ecom:Product.IsProduct)-->
+							<!--@If Defined(Ecom:Order:OrderLine.ProductName)-->
+							<!--@Ecom:Order:OrderLine.ProductName-->
+							<!--@Else-->
+							<!--@Translate(discount, 'Discount')-->
+							<!--@EndIf-->
 							<!--@Else-->
 							<a href="/Default.aspx?ID=<!--@Item.Area.Products_Catalog_Page_ID-->&amp;ProductID=<!--@Ecom:Product.ID--><!--@If Defined(Ecom:Order:OrderLine.ProductVariantID)-->&amp;VariantID=<!--@Ecom:Order:OrderLine.ProductVariantID--><!--@EndIf-->">
 								<!--@Ecom:Order:OrderLine.ProductName-->
 								<!--@If Defined(Ecom:Order:OrderLine.ProductVariantText)-->
-								(<!--@Ecom:Order:OrderLine.ProductVariantText-->) 
+								(<!--@Ecom:Order:OrderLine.ProductVariantText-->)
 								<!--@EndIf(Ecom:Order:OrderLine.ProductVariantText)-->
 							</a>
 							<!--@EndIf-->

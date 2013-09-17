@@ -189,7 +189,7 @@
 					</h2>
 					<div class="collapse in">
 						<div class="product-rating-comments hidden-phone">
-							<!--@Include(eCom/Product/Partials/Rating.html)-->
+							<!--@Include(Partials/Rating.html)-->
 						</div>
 						<div class="product-description">
 							<!--@Ecom:Product.ShortDescription.Raw-->
@@ -369,8 +369,8 @@
 </section>
 
 <section class="products-related">
-	<div class="row-fluid">	
-	<!--@LoopStart(ProductRelatedGroups)--><!--DwTemplateTags-->
+	<div class="row-fluid">
+	<!--@LoopStart(ProductRelatedGroups)-->
     <!--@LoopStart(RelatedProducts)-->
         <!--@HeaderStart-->
          <div class="span12">
@@ -378,7 +378,7 @@
               <h2>Related products</h2>
 			  <ul style="list-style:none;" id="relatedproductlist" class="horizontal">
 				<!--@HeaderEnd-->
-		
+
 			  	<div class="collapse in">
 					<section class="product-list-item-wrapper">
 						<div class="row-fluid">
@@ -507,33 +507,33 @@
 			</div>
         <!--@FooterEnd-->
     <!--@LoopEnd(RelatedProducts)-->
-<!--@LoopEnd(ProductRelatedGroups)--> 
+<!--@LoopEnd(ProductRelatedGroups)-->
 
 <!--@If(eCom:Related.YouHaveSeenTheseProducts.Count>0)-->
-	<!--@Include(eCom/Product/Partials/Related.YouHaveSeenTheseProducts.html)-->
+	<!--@Include(Partials/Related.YouHaveSeenTheseProducts.html)-->
 <!--@EndIf-->
 
 <!--@If(eCom:Related.CustomersWhoBoughtThisItemAlsoBought.Count>0)-->
-	<!--@Include(eCom/Product/Partials/Related.CustomersWhoBoughtThisItemAlsoBought.html)-->
+	<!--@Include(Partials/Related.CustomersWhoBoughtThisItemAlsoBought.html)-->
 <!--@EndIf-->
 
 <!--@If(eCom:Related.CustomersWhoSawThisAlsoSaw.Count>0)-->
-	<!--@Include(eCom/Product/Partials/Related.CustomersWhoSawThisAlsoSaw.html)-->
+	<!--@Include(Partials/Related.CustomersWhoSawThisAlsoSaw.html)-->
 <!--@EndIf-->
 
 <!--@If(eCom:Related.WhatAboutTheseProducts.Count>0)-->
-	<!--@Include(eCom/Product/Partials/Related.WhatAboutTheseProducts.html)-->
+	<!--@Include(Partials/Related.WhatAboutTheseProducts.html)-->
 <!--@EndIf-->
 
 <!--@If(eCom:Related.MostPopularProducts.Count>0)-->
-	<!--@Include(eCom/Product/Partials/Related.MostPopularProducts.html)-->
+	<!--@Include(Partials/Related.MostPopularProducts.html)-->
 <!--@EndIf-->
 
 <!--@If(eCom:Related.ProductSmartSearches.Count>0)-->
-	<!--@Include(eCom/Product/Partials/Related.ProductSmartSearches.html)-->
+	<!--@Include(Partials/Related.ProductSmartSearches.html)-->
 <!--@EndIf-->
-		
-		
+
+
 	</div>
 </section>
 
