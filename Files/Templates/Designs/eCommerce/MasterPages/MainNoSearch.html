@@ -31,7 +31,7 @@
 		<!--@Snippet(JavaScriptHead)-->
 	</head>
 	<body data-pageid="<!--@Global:Page.ID-->" data-product-page="<!--@Item.Area.Products_Catalog_Page_ID-->" data-product-paragraph="<!--@Item.Area.Products_Catalog_Paragraph_ID-->">
-		<!--@Include(Partials/NavigationTop.html)-->
+		<!--@Include(MasterPages/Partials/NavigationTop.html)-->
 
 		<section class="page-wrapper">
 			<header class="header-wrapper">
@@ -55,12 +55,12 @@
 								</div>
 							</div>
 						</div>
-						<!--@Include(Partials/MiniCart.html)-->
+						<!--@Include(MasterPages/Partials/MiniCart.html)-->
 					</div>
 				</div>
 			</header>
 
-			<!--@Include(Partials/NavigationMain.html)-->
+			<!--@Include(MasterPages/Partials/NavigationMain.html)-->
 
 			<!--@If Defined(DwNavigation(NavBreadcrumb))-->
 			<section class="container breadcrumb-wrapper">
@@ -78,7 +78,7 @@
 		</section>
 
 		<footer>
-			<!--@Include(Partials/NavigationMainBottom.html)-->
+			<!--@Include(MasterPages/Partials/NavigationMainBottom.html)-->
 
 			<section class="container footer-wrapper">
 				<div class="row" id="footerSections" title="Footer sections">
@@ -89,8 +89,8 @@
 			</section>
 		</footer>
 
-		<!--@Include(Partials/Login.html)-->
-		<!--@Include(Partials/GoogleAnalytics.html)-->
+		<!--@Include(MasterPages/Partials/Login.html)-->
+		<!--@Include(MasterPages/Partials/GoogleAnalytics.html)-->
 		<!--@Snippet(JavaScriptBottom)-->
 	</body>
 </html>
