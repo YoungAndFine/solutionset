@@ -11,27 +11,8 @@
 					<!--@Ecom:Product.Name-->
 				</a>
 			</div>
-			<div class="product-price">
-				<!--@If(Ecom:Product.Discount.Price.PricePIP<Ecom:Product.Price.PricePIP)-->
-					<div class="product-price">
-						<!--@If Defined(Item.Area.Show_Price_With_VAT)-->
-						<span class="product-price regular-styled"><!--@Ecom:Product.Price.PriceWithVATFormatted--></span>
-						<span class="product-price discount"><!--@Ecom:Product.Discount.Price.PriceWithVATFormatted--></span>
-						<!--@Else-->
-						<span class="product-price regular-styled"><!--@Ecom:Product.Price.PriceWithoutVATFormatted--></span>
-						<span class="product-price discount"><!--@Ecom:Product.Discount.Price.PriceWithoutVATFormatted--></span>
-						<!--@EndIf-->
-					</div>
-				<!--@Else-->
-					<div class="product-price">
-						<!--@If Defined(Item.Area.Show_Price_With_VAT)-->
-						<span class="product-price regular"><!--@Ecom:Product.Price.PriceWithVATFormatted--></span>
-						<!--@Else-->
-						<span class="product-price regular"><!--@Ecom:Product.Price.PriceWithoutVATFormatted--></span>
-						<!--@EndIf-->
-					</div>
-				<!--@EndIf-->
-			</div>
+			<!--@Include(../Partials/ProductPrice.html)-->
+
 			<div class="product-feetooltip">
 				<a href="#" data-rel="tooltip" data-container=".paymentshippingfee">
 					<!--@Translate(expaymentshippingfee, 'Ex. shipping and payment fees')-->
@@ -92,23 +73,7 @@
 								<div class="product-pricebox">
 									<div>
 										<div>&nbsp;</div>
-										<div>				
-										<!--@If(Ecom:Product.Discount.Price.PricePIP<Ecom:Product.Price.PricePIP)-->
-											<!--@If Defined(Item.Area.Show_Price_With_VAT)-->
-												<span class="product-price regular-styled"><!--@Ecom:Product.Price.PriceWithVATFormatted--></span>&nbsp;
-												<span class="product-price discount"><!--@Ecom:Product.Discount.Price.PriceWithVATFormatted--></span>
-											<!--@Else-->
-												<span class="product-price regular-styled"><!--@Ecom:Product.Price.PriceWithoutVATFormatted--></span>&nbsp;
-												<span class="product-price discount"><!--@Ecom:Product.Discount.Price.PriceWithoutVATFormatted--></span>
-											<!--@EndIf-->
-										<!--@Else-->
-											<!--@If Defined(Item.Area.Show_Price_With_VAT)-->
-												<span class="product-price regular"><!--@Ecom:Product.Price.PriceWithVATFormatted--></span>
-											<!--@Else-->
-												<span class="product-price regular"><!--@Ecom:Product.Price.PriceWithoutVATFormatted--></span>
-											<!--@EndIf-->
-										<!--@EndIf--> / <!--@Translate(unit, "unit")-->
-										</div>
+										<!--@Include(../Partials/ProductPrice.html)-->
 									</div>
 								</div>
 								<div class="product-addtocart">
@@ -126,8 +91,8 @@
 											<!--@Ecom:Product:Stock.Text-->
 										<!--@Else-->
 											<span class="icon-meh out-of-stock"></span>
-											<!--@Ecom:Product:Stock.Text--> 
-										<!--@EndIf--> 
+											<!--@Ecom:Product:Stock.Text-->
+										<!--@EndIf-->
 									</li>
 									<li>
 										<!--@If(Ecom:Product.Stock>0)-->
@@ -135,7 +100,7 @@
 											<!--@Translate(ProductDelivary, "Delivery")--> <!--@Ecom:Product.IsInCart)--> <!--@Ecom:Product:Stock.DeliveryText--> <!--@Ecom:Product:Stock.DeliveryUnit-->
 										<!--@Else-->
 											<span class="icon-ok out-of-stock"></span>
-											<!--@Translate(ProductDelivary, "Delivery")--> <!--@Ecom:Product.IsInCart)--> <!--@Ecom:Product:Stock.DeliveryText--> <!--@Ecom:Product:Stock.DeliveryUnit--> 
+											<!--@Translate(ProductDelivary, "Delivery")--> <!--@Ecom:Product.IsInCart)--> <!--@Ecom:Product:Stock.DeliveryText--> <!--@Ecom:Product:Stock.DeliveryUnit-->
 										<!--@EndIf-->
 									</li>
 								</ul>

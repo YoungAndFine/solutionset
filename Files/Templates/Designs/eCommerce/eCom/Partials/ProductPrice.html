@@ -1,0 +1,19 @@
+<!--@If(Ecom:Product.Discount.Price.PricePIP<Ecom:Product.Price.PricePIP)-->
+<div class="product-price has-discount">
+	<!--@If Defined(Item.Area.Show_Price_With_VAT)-->
+	<span class="product-price regular"><!--@Ecom:Product.Price.PriceWithVATFormatted--> </span>
+	<span class="product-price discount"> <!--@Ecom:Product.Discount.Price.PriceWithVATFormatted--></span>
+	<!--@Else-->
+	<span class="product-price regular"><!--@Ecom:Product.Price.PriceWithoutVATFormatted--></span>
+	<span class="product-price discount"><!--@Ecom:Product.Discount.Price.PriceWithoutVATFormatted--></span>
+	<!--@EndIf-->
+</div>
+<!--@Else-->
+<div class="product-price">
+	<!--@If Defined(Item.Area.Show_Price_With_VAT)-->
+	<span class="product-price regular"><!--@Ecom:Product.Price.PriceWithVATFormatted--></span>
+	<!--@Else-->
+	<span class="product-price regular"><!--@Ecom:Product.Price.PriceWithoutVATFormatted--></span>
+	<!--@EndIf-->
+</div>
+<!--@EndIf-->

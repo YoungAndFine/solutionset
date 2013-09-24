@@ -3,8 +3,8 @@
 	<div class="row-fluid">
 		<!--@If Defined(Ecom:Product.ImageSmall.Default.Clean)-->
 		<div class="product-image span3">
-			<div class="product-price visible-phone">
-				<!--@Ecom:Product.Price.PriceWithVATFormatted-->
+			<div class="visible-phone">
+				<!--@Include(../Partials/ProductPrice.html)-->
 			</div>
 			<a href="<!--@Ecom:Product.LinkGroup.Clean-->" title="<!--@Ecom:Product.Name-->" class="thumbnail">
 				<img src="/Admin/Public/getimage.ashx?Image=<!--@Ecom:Product.ImageSmall.Default.Clean-->&amp;Width=160" alt="" />
@@ -13,258 +13,110 @@
 				<input type="checkbox" name="Compare" class="product-compare-selection" value="<!--@Ecom:Product.ID-->$<!--@Ecom:Product.LanguageID-->$<!--@Ecom:Product.VariantID-->" title="<!--@Translate(CompareProduct, "Compare")-->" />
 				<button class="btn btn-small dw-button-gray product-compare-activator"><!--@Translate(CompareProduct, "Compare")--></button>
 			</div>
-		</div><!-- / .product-image -->
+		</div>
 		<!--@EndIf(Ecom:Product.ImageSmall.Default.Clean)-->
+
+		<!--@If(Item.Area.Require_Login_To_Show_Prices!='True' || Global:Extranet.UserID>0)-->
 		<div class="details hidden-phone">
-			<div class="product-price">
-				<!--@If(Ecom:Product.Discount.Price.PricePIP<Ecom:Product.Price.PricePIP)-->
-					<div class="product-price">
-						<!--@If Defined(Item.Area.Show_Price_With_VAT)-->
-						<span class="product-price regular-styled"><!--@Ecom:Product.Price.PriceWithVATFormatted--></span>
-						<span class="product-price discount"><!--@Ecom:Product.Discount.Price.PriceWithVATFormatted--></span>
-						<!--@Else-->
-						<span class="product-price regular-styled"><!--@Ecom:Product.Price.PriceWithoutVATFormatted--></span>
-						<span class="product-price discount"><!--@Ecom:Product.Discount.Price.PriceWithoutVATFormatted--></span>
-						<!--@EndIf-->
-					</div>
-				<!--@Else-->
-					<div class="product-price">
-						<!--@If Defined(Item.Area.Show_Price_With_VAT)-->
-						<span class="product-price regular"><!--@Ecom:Product.Price.PriceWithVATFormatted--></span>
-						<!--@Else-->
-						<span class="product-price regular"><!--@Ecom:Product.Price.PriceWithoutVATFormatted--></span>
-						<!--@EndIf-->
-					</div>
-				<!--@EndIf-->
-			</div>
+
+			<!--@Include(../Partials/ProductPrice.html)-->
+
 			<!--@If Defined(Item.Area.Show_Price_With_VAT)-->
-			<div class="product-feetooltip">
-				<!--@Translate(exPaymentShippingFees, 'Ex. shipping and payment fees')-->
-			</div>
-			<!--@Else-->
-			<div class="product-feetooltip">
-				<!--@Translate(exVATpaymentShippingFees, 'Ex. VAT, shipping and payment fees')-->
-			</div>
-			<!--@EndIf(Item.Area.Show_Price_With_VAT)-->
-			<div class="product-rating-comments <!--@If Defined(Ecom:Product.IsInCart)-->item-added<!--@EndIf(Ecom:Product.IsInCart)-->">
-				<div class="product-rating">
-					<span itemscope="" itemtype="http://data-vocabulary.org/Review-aggregate">
-						<span itemprop="itemreviewed" class="hidden"><!--@Ecom:Product.Name--></span>
-						<span itemprop="rating" itemscope itemtype="http://data-vocabulary.org/Rating">
-							<span itemprop="average"><!--@Ecom:Product.Rating--></span> out of <span itemprop="best">5</span>
-						</span>
-					</span>
-					<div class="stars-container">
-						<i class="icon-star-empty"></i><i class="icon-star-empty"></i><i class="icon-star-empty"></i><i class="icon-star-empty"></i><i class="icon-star-empty"></i>
-					</div>
-						<div class="product-comments">
-							<div class="icon-comment-alt icon-flip-horizontal"></div>
-							(<a href="<!--@Ecom:Product.LinkGroup.Clean-->&TabReviews=true"><span itemprop="count"><!--@Ecom:Product.CommentCount--></span></a>)
-						</div>
+				<div class="product-feetooltip">
+					<!--@Translate(exPaymentShippingFees, 'Ex. shipping and payment fees')-->
 				</div>
+			<!--@Else-->
+				<div class="product-feetooltip">
+					<!--@Translate(exVATpaymentShippingFees, 'Ex. VAT, shipping and payment fees')-->
+				</div>
+			<!--@EndIf(Item.Area.Show_Price_With_VAT)-->
+
+			<div class="product-rating-comments <!--@If Defined(Ecom:Product.IsInCart)-->item-added<!--@EndIf(Ecom:Product.IsInCart)-->">
+				<!--@Include(Partials/Rating.html)-->
 			</div>
 			<div class="stock">
 				<!--@If(Ecom:Product.Stock>0)-->
-					<span class="icon-smile in-stock"></span>
-					<!--@Ecom:Product:Stock.Text-->
+				<span class="icon-smile in-stock"></span>
+				<!--@Ecom:Product:Stock.Text-->
 				<!--@Else-->
-					<span class="icon-meh out-of-stock"></span>
-					<!--@Ecom:Product:Stock.Text-->
+				<span class="icon-meh out-of-stock"></span>
+				<!--@Ecom:Product:Stock.Text-->
 				<!--@EndIf-->
 			</div>
 			<div class="delivery">
 				<!--@If(Ecom:Product.Stock>0)-->
-					<span class="icon-ok"></span>
-					<!--@Translate(ProductDelivary, "Delivery")--> <!--@Ecom:Product.IsInCart)--> <!--@Ecom:Product:Stock.DeliveryText--> <!--@Ecom:Product:Stock.DeliveryUnit-->
+				<span class="icon-ok"></span>
+				<!--@Translate(ProductDelivary, "Delivery")--> <!--@Ecom:Product.IsInCart)--> <!--@Ecom:Product:Stock.DeliveryText--> <!--@Ecom:Product:Stock.DeliveryUnit-->
 				<!--@Else-->
-					<span class="icon-ok"></span>
-					<!--@Translate(ProductDelivary, "Delivery")--> <!--@Ecom:Product.IsInCart)--> <!--@Ecom:Product:Stock.DeliveryText--> <!--@Ecom:Product:Stock.DeliveryUnit-->
+				<span class="icon-ok"></span>
+				<!--@Translate(ProductDelivary, "Delivery")--> <!--@Ecom:Product.IsInCart)--> <!--@Ecom:Product:Stock.DeliveryText--> <!--@Ecom:Product:Stock.DeliveryUnit-->
 				<!--@EndIf-->
 			</div>
 			<div class="product-addtocart">
 				<button type="button" class="btn dw-button-green" <!--@If(Ecom:Product.VariantCount>0)-->data-toggle="modal" data-target="#productVariantChooser<!--@Ecom:Product.ID-->"<!--@EndIf--><!--@If(Ecom:Product.VariantCount==0)-->onclick="$.addToCart(this)"<!--@EndIf-->>
+					<!--@Translate(AddToCart, "Add to cart")-->
+				</button>
+			</div>
+			<!--@If Defined(Ecom:Product.IsInCart)-->
+			<!--@Include(Partials/AddedToCart.html)-->
+			<!--@EndIf(Ecom:Product.IsInCart)-->
+		</div>
+		<!--@Else-->
+		<div class="details hidden-phone">
+			<!--@Translate(PleaseLoginToSeePrice, "Please login to see price")-->
+		</div>
+		<!--@EndIf-->
+
+		<div class="content">
+			<div class="product-name">
+				<a href="<!--@Ecom:Product.LinkGroup.Clean-->" class="product-link" title="<!--@Ecom:Product.Name-->">
+					<!--@Ecom:Product.Name-->
+				</a>
+			</div>
+			<div class="product-description">
+				<!--@Ecom:Product.ShortDescription-->
+			</div>
+			<div class="product-number">
+				<!--@Translate(ProductNumber, "Product no.")-->:
+				&nbsp;<!--@Ecom:Product.Number-->
+			</div>
+			<div class="product-rating-comments visible-phone">
+				<!--@Include(Partials/Rating.html)-->
+			</div>
+			<div class="stock visible-phone">
+				<!--@If(Ecom:Product.Stock>0)-->
+				<span class="icon-smile in-stock"></span>
+				<!--@Ecom:Product:Stock.Text-->
+				<!--@Else-->
+				<span class="icon-meh out-of-stock"></span>
+				<!--@Ecom:Product:Stock.Text-->
+				<!--@EndIf-->
+			</div>
+			<div class="delivery visible-phone">
+				<!--@If(Ecom:Product.Stock>0)-->
+				<span class="icon-ok"></span>
+				<!--@Translate(ProductDelivary, "Delivery")--> <!--@Ecom:Product.IsInCart)--> <!--@Ecom:Product:Stock.DeliveryText--> <!--@Ecom:Product:Stock.DeliveryUnit-->
+				<!--@Else-->
+				<span class="icon-ok"></span>
+				<!--@Translate(ProductDelivary, "Delivery")--> <!--@Ecom:Product.IsInCart)--> <!--@Ecom:Product:Stock.DeliveryText--> <!--@Ecom:Product:Stock.DeliveryUnit-->
+				<!--@EndIf-->
+			</div>
+			<div class="product-addtocart visible-phone <!--@If Defined(Ecom:Product.IsInCart)-->product-incart<!--@EndIf(Ecom:Product.IsInCart)-->">
+				<button type="button" class="btn dw-button-green" <!--@If(Ecom:Product.VariantCount>0)-->data-toggle="modal" data-target="#productVariantChooser<!--@Ecom:Product.ID-->"<!--@EndIf--><!--@If(Ecom:Product.VariantCount==0)-->onclick="$.addToCart(this)"<!--@EndIf-->>
 				<i class="icon sprite cart-tiny-white"></i>
 					<!--@Translate(AddToCart, "Add to cart")-->
-</button>
-</div>
-<!--@If Defined(Ecom:Product.IsInCart)-->
-<!--@Include(Partials/AddedToCart.html)-->
-<!--@EndIf(Ecom:Product.IsInCart)-->
-</div>
-<div class="content">
-	<div class="product-name">
-		<a href="<!--@Ecom:Product.LinkGroup.Clean-->" class="product-link" title="<!--@Ecom:Product.Name-->">
-			<!--@Ecom:Product.Name-->
-		</a>
-	</div>
-	<div class="product-description">
-		<!--@Ecom:Product.ShortDescription-->
-	</div>
-	<div class="product-number">
-		<!--@Translate(ProductNumber, "Product no.")-->:
-		&nbsp;<!--@Ecom:Product.Number-->
-	</div>
-	<div class="product-rating-comments visible-phone">
-		<div class="product-rating">
-			<span itemscope="" itemtype="http://data-vocabulary.org/Review-aggregate">
-				<span itemprop="itemreviewed" class="hidden"><!--@Ecom:Product.Name--></span>
-				<span itemprop="rating" itemscope itemtype="http://data-vocabulary.org/Rating">
-					<span itemprop="average"><!--@Ecom:Product.Rating--></span> out of <span itemprop="best">5</span>
-				</span>
-				<div class="stars-container">
-					<i class="icon-star-empty"></i><i class="icon-star-empty"></i><i class="icon-star-empty"></i><i class="icon-star-empty"></i><i class="icon-star-empty"></i>
-				</div>
-				<div class="product-comments">
-					<div class="icon-comment-alt icon-flip-horizontal"></div>
-					(<a href="<!--@Ecom:Product.LinkGroup.Clean-->&TabReviews=true"><span itemprop="count"><!--@Ecom:Product.CommentCount--></span></a>)
-				</div>
-			</span>
-		</div>
-	</div>
-	<div class="stock visible-phone">
-		<!--@If(Ecom:Product.Stock>0)-->
-			<span class="icon-smile in-stock"></span>
-			<!--@Ecom:Product:Stock.Text-->
-		<!--@Else-->
-			<span class="icon-meh out-of-stock"></span>
-			<!--@Ecom:Product:Stock.Text-->
-		<!--@EndIf-->
-	</div>
-	<div class="delivery visible-phone">
-		<!--@If(Ecom:Product.Stock>0)-->
-			<span class="icon-ok"></span>
-			<!--@Translate(ProductDelivary, "Delivery")--> <!--@Ecom:Product.IsInCart)--> <!--@Ecom:Product:Stock.DeliveryText--> <!--@Ecom:Product:Stock.DeliveryUnit-->
-		<!--@Else-->
-			<span class="icon-ok"></span>
-			<!--@Translate(ProductDelivary, "Delivery")--> <!--@Ecom:Product.IsInCart)--> <!--@Ecom:Product:Stock.DeliveryText--> <!--@Ecom:Product:Stock.DeliveryUnit-->
-		<!--@EndIf-->
-	</div>
-	<div class="product-addtocart visible-phone <!--@If Defined(Ecom:Product.IsInCart)-->product-incart<!--@EndIf(Ecom:Product.IsInCart)-->">
-		<button type="button" class="btn dw-button-green" <!--@If(Ecom:Product.VariantCount>0)-->data-toggle="modal" data-target="#productVariantChooser<!--@Ecom:Product.ID-->"<!--@EndIf--><!--@If(Ecom:Product.VariantCount==0)-->onclick="$.addToCart(this)"<!--@EndIf-->>
-		<i class="icon sprite cart-tiny-white"></i>
-			<!--@Translate(AddToCart, "Add to cart")-->
-</button>
-<!--@If Defined(Ecom:Product.IsInCart)-->
-<button type="button" class="btn dw-button-green">
-	<!--@Translate(checkout, "Checkout")-->
-	<i class="icon sprite arr-forward-small-white"></i>
-</button>
-<!--@EndIf(Ecom:Product.IsInCart)-->
-</div>
-</div><!-- / .content -->
-</div>
-<!--@If(Ecom:Product.VariantCount>0)-->
-<div class="modal hide fade modal-type-variants" id="productVariantChooser<!--@Ecom:Product.ID-->" tabindex="-1" role="dialog">
-	<div class="modal-header">
-		<button type="button" class="close blue-close icon-remove" data-dismiss="modal"></button>
-		<h3><!--@Ecom:Product.Name--></h3>
-	</div><!-- / .modal-header -->
-	<div class="modal-body">
-		<div class="row-fluid">
-			<div class="span7">
-				<div class="popup-variants-partleft">
-					<img src="/Admin/Public/getimage.ashx?Image=<!--@Ecom:Product.ImageSmall.Default.Clean-->&amp;Width=350" class="product-image">
-					<div class="product-allinfolink">
-						<a href="<!--@Ecom:Product.LinkGroup.Clean-->"><!--@Translate(allproductinformation, "All product informations - Click here")--></a>
-					</div>
-				</div><!-- / .popup-variants-partleft -->
-			</div>
-			<div class="span5">
-				<div class="popup-variants-partright">
-					<div class="product-rating-comments">
-						<div class="product-rating">
-							<span itemscope="" itemtype="http://data-vocabulary.org/Review-aggregate">
-								<span itemprop="itemreviewed" class="hidden"><!--@Ecom:Product.Name--></span>
-								<span itemprop="rating" itemscope itemtype="http://data-vocabulary.org/Rating">
-									<span itemprop="average"><!--@Ecom:Product.Rating--></span> out of <span itemprop="best">5</span>
-								</span>
-							</span>
-							<div class="stars-container">
-								<i class="icon-star-empty"></i><i class="icon-star-empty"></i><i class="icon-star-empty"></i><i class="icon-star-empty"></i><i class="icon-star-empty"></i>
-							</div>
-						</div>
-						</div>
-						<div class="product-pricelabel"><!--@Translate(ProductNumberShort, "no.")-->:&nbsp;<!--@Ecom:Product.Number--></div>
-						<div class="clearfix"></div>
-					<div class="product-description">
-						<!--@Ecom:Product.ShortDescription-->
-					</div>
-					<div class="product-pricebox-wrapper">
-						<div class="product-pricebox-title"><!--@Translate(shoosevariant, "Choose your variant:")--></div>
-						<div class="product-variants">
-							<select class="variants-selector input-large" name="variantid">
-								<option value=""><!--@Translate(selectyourvariant, 'Select your option')--></option>
-								<!--@LoopStart(VariantCombinations)-->
-								<option id="vOpt<!--@Ecom:VariantCombination.VariantID-->" value="<!--@Ecom:VariantCombination.VariantID-->">
-									<!--@Ecom:VariantCombination.VariantText-->
-								</option>
-								<!--@LoopEnd(VariantCombinations)-->
-							</select>
-							<!--@LoopStart(BOMConfigurators)-->
-							<!--@LoopStart(ConfiguratorProducts)-->
-							<input type="hidden" id="<!--@Ecom:Product.ID-->" value="<!--@Ecom:Product.ActualPrice-->" />
-							<!--@LoopEnd(ConfiguratorProducts)-->
-							<!--@LoopEnd(BOMConfigurators)-->
-						</div>
-						<div class="product-pricebox">
-							<div>
-								<div>&nbsp;</div>
-								<div>				
-									<!--@If(Ecom:Product.Discount.Price.PricePIP<Ecom:Product.Price.PricePIP)-->
-										<!--@If Defined(Item.Area.Show_Price_With_VAT)-->
-											<span class="product-price regular-styled"><!--@Ecom:Product.Price.PriceWithVATFormatted--></span>&nbsp;
-											<span class="product-price discount"><!--@Ecom:Product.Discount.Price.PriceWithVATFormatted--></span>
-										<!--@Else-->
-											<span class="product-price regular-styled"><!--@Ecom:Product.Price.PriceWithoutVATFormatted--></span>&nbsp;
-											<span class="product-price discount"><!--@Ecom:Product.Discount.Price.PriceWithoutVATFormatted--></span>
-										<!--@EndIf-->
-									<!--@Else-->
-										<!--@If Defined(Item.Area.Show_Price_With_VAT)-->
-											<span class="product-price regular"><!--@Ecom:Product.Price.PriceWithVATFormatted--></span>
-										<!--@Else-->
-											<span class="product-price regular"><!--@Ecom:Product.Price.PriceWithoutVATFormatted--></span>
-										<!--@EndIf-->
-									<!--@EndIf--> / <!--@Translate(unit, "unit")-->
-								</div>
-							</div>
-						</div>
-						<div class="product-addtocart">
-							<input name="quantity" class="input-mini" onclick="this.value='';" value="1" type="text"><span class="help-inline"><!--@Translate(unit, "unit")--></span>
-							<button class="btn dw-button-green" data-dw-cmd="addtocart" onclick="Layout.Cart.AddToCart(this)">
-								<span>
-									<!--@Translate(AddToCart, "Add to cart")-->
-								</span>
-							</button>
-						</div>
-					</div>
-					<div class="product-facts">
-						<ul>
-							<li>
-								<!--@If(Ecom:Product.Stock>0)-->
-								<span class="icon-smile in-stock"></span>
-								<!--@Ecom:Product:Stock.Text-->
-								<!--@Else-->
-								<span class="icon-meh out-of-stock"></span>
-								<!--@Ecom:Product:Stock.Text-->
-								<!--@EndIf-->
-							</li>
-							<li>
-								<!--@If(Ecom:Product.Stock>0)-->
-								<span class="icon-ok"></span>
-								<!--@Translate(ProductDelivary, "Delivery")--> <!--@Ecom:Product.IsInCart)--> <!--@Ecom:Product:Stock.DeliveryText--> <!--@Ecom:Product:Stock.DeliveryUnit-->
-								<!--@Else-->
-								<span class="icon-ok"></span>
-								<!--@Translate(ProductDelivary, "Delivery")--> <!--@Ecom:Product.IsInCart)--> <!--@Ecom:Product:Stock.DeliveryText--> <!--@Ecom:Product:Stock.DeliveryUnit-->
-								<!--@EndIf-->
-							</li>
-						</ul>
-					</div>
-					<div class="clearfix"></div>
-				</div><!-- / .popup-variants-partright -->
+				</button>
+				<!--@If Defined(Ecom:Product.IsInCart)-->
+				<button type="button" class="btn dw-button-green">
+					<!--@Translate(checkout, "Checkout")-->
+					<i class="icon sprite arr-forward-small-white"></i>
+				</button>
+				<!--@EndIf(Ecom:Product.IsInCart)-->
 			</div>
 		</div>
-	</div><!-- / .modal-body -->
-</div><!-- / .modal.popup-variants -->
-<!--@EndIf-->
-</section><!-- / .product-list-item-wrapper -->
+	</div>
+	<!--@If(Ecom:Product.VariantCount>0)-->
+	<!--@Include(Partials/AddToCartModal.html)-->
+	<!--@EndIf-->
+</section>
 <!--@LoopEnd(Products)-->

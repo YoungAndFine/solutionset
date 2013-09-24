@@ -18,25 +18,9 @@
 				<img src="/Admin/Public/getimage.ashx?Image=<!--@Ecom:Product.ImageSmall.Default.Clean-->&Width=185" alt="" title="<!--@Ecom:Product.Name-->" />
 			</a>
 			<!--@EndIf(Ecom:Product.ImageSmall.Default.Clean)-->
-			<!--@If(Ecom:Product.Discount.Price.PricePIP<Ecom:Product.Price.PricePIP)-->
-				<div class="product-price">
-					<!--@If Defined(Item.Area.Show_Price_With_VAT)-->
-					<span class="product-price regular-styled"><!--@Ecom:Product.Price.PriceWithVATFormatted--></span>
-					<span class="product-price discount"><!--@Ecom:Product.Discount.Price.PriceWithVATFormatted--></span>
-					<!--@Else-->
-					<span class="product-price regular-styled"><!--@Ecom:Product.Price.PriceWithoutVATFormatted--></span>
-					<span class="product-price discount"><!--@Ecom:Product.Discount.Price.PriceWithoutVATFormatted--></span>
-					<!--@EndIf-->
-				</div>
-			<!--@Else-->
-				<div class="product-price">
-					<!--@If Defined(Item.Area.Show_Price_With_VAT)-->
-					<span class="product-price regular"><!--@Ecom:Product.Price.PriceWithVATFormatted--></span>
-					<!--@Else-->
-					<span class="product-price regular"><!--@Ecom:Product.Price.PriceWithoutVATFormatted--></span>
-					<!--@EndIf-->
-				</div>
-			<!--@EndIf-->
+
+			<!--@Include(../Partials/ProductPrice.html)-->
+
 			<div class="product-description">
 				<!--@Ecom:Product.ShortDescription-->
 			</div>
