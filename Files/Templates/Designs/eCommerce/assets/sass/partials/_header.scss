@@ -76,76 +76,74 @@
 	}
 }
 
-	.logo {
+.logo {
+	height: 80px;
+
+	.logo-image {
+		display: block;
+		background: url('../images/global-logo.png') left center no-repeat;
+		background-size: contain;
 		height: 80px;
-
-		.logo-image {
-			display: block;
-			background: url('../images/global-logo.png') left center no-repeat;
-			background-size: contain;
-			height: 80px;
-			width: auto;
-		}
+		width: auto;
 	}
-	.payoff {
-    display: table;
-    height: 80px;
+}
+.payoff {
+  display: table;
+  height: 80px;
 
-    > div {
+  > div {
 		display: table-cell;
 		vertical-align: middle;
 		font: bold 18px/25px arial;
-    }
-	}
+  }
+}
 
-	@media (max-width: 349px) {
-		.logo .logo-image {
-			background-position: center center;
-		}
-		.payoff {
-			padding-right: 150px;
-			line-height: 24px !important;
+@media (max-width: 349px) {
+	.logo .logo-image {
+		background-position: center center;
+	}
+	.payoff {
+		padding-right: 150px;
+		line-height: 24px !important;
 
-			> div {
-				padding-top: 10px;
-				font: bold 16px/18px arial;
-			}
-		}
-	}
-	@media (min-width: 980px) {
-		.logo {
-			width: 250px;
-		}
-		.payoff {
-			width: 350px;
-		}
-	}
-	@media (min-width: 350px) and (max-width: 479px) {
-		.logo {
-			.logo-image {
-				background-size: contain;
-			}
-		}
-	}
-	@media (min-width: 350px) and (max-width: 767px) {
-		.logo {
-			padding-right: 150px;
-		}
-		.payoff {
-			height: 40px;
-		}
-	}
-	@media (min-width: 1200px) {
-		width: 840px;
-
-		.payoff {
-			width: 560px;
-			height:93px;
+		> div {
+			padding-top: 10px;
+			font: bold 16px/18px arial;
 		}
 	}
 }
+@media (min-width: 980px) {
+	.logo {
+		width: 250px;
+	}
+	.payoff {
+		width: 350px;
+	}
+}
+@media (min-width: 350px) and (max-width: 479px) {
+	.logo {
+		.logo-image {
+			background-size: contain;
+		}
+	}
+}
+@media (min-width: 350px) and (max-width: 767px) {
+	.logo {
+		padding-right: 150px;
+	}
+	.payoff {
+		height: 40px;
+	}
+}
+@media (min-width: 1200px) {
+	width: 840px;
 
-//
+	.payoff {
+		width: 560px;
+		height:93px;
+	}
+}
+
 .minicart-wrapper {
 	height: 80px;
 	margin: 5px 0;
@@ -184,8 +182,8 @@
 
 			i{
 				font-size: 4em;
-			margin-left: 20px;
-		}
+				margin-left: 20px;
+			}
 		}
 	}
 	.minicart-count {
