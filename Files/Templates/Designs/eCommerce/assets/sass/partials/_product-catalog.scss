@@ -485,7 +485,7 @@
 					border: none;
 				}
 			}
-			
+
 			.product-price-vs-fees {
 				width: 25%;
 				float: left;
@@ -498,14 +498,7 @@
 					padding-top: 10px;
 					font: bold 18px/20px arial;
 				}
-				
-				.regular-styled{
-					color: red;
-					font-style: italic !important;
-					text-decoration: line-through;
-					font-size: 12px !important;
-				}
-				
+
 				.product-feetooltip {
 					font: normal 9px/15px arial;
 					margin-bottom: 5px;
@@ -1561,6 +1554,16 @@
 .product-details-content .dw-button-gray {
 	float: right;
 	margin:8px 0 0 0;
+}
+
+.product-price.has-discount {
+	.product-price.regular {
+		color: red;
+		font-style: italic !important;
+		text-decoration: line-through;
+		font-size: 80% !important;
+		padding-right: .5em;
+	}
 }
 
 
