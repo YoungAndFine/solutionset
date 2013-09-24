@@ -4,7 +4,7 @@
 		<!--@If Defined(Ecom:Product.ImageSmall.Default.Clean)-->
 		<div class="product-image span3">
 			<div class="visible-phone">
-				<!--@Include(../Partials/ProductPrice.html)-->
+				<!--@Include(Partials/ProductPrice.html)-->
 			</div>
 			<a href="<!--@Ecom:Product.LinkGroup.Clean-->" title="<!--@Ecom:Product.Name-->" class="thumbnail">
 				<img src="/Admin/Public/getimage.ashx?Image=<!--@Ecom:Product.ImageSmall.Default.Clean-->&amp;Width=160" alt="" />
@@ -19,7 +19,7 @@
 		<!--@If(Item.Area.Require_Login_To_Show_Prices!='True' || Global:Extranet.UserID>0)-->
 		<div class="details hidden-phone">
 
-			<!--@Include(../Partials/ProductPrice.html)-->
+			<!--@Include(Partials/ProductPrice.html)-->
 
 			<!--@If Defined(Item.Area.Show_Price_With_VAT)-->
 				<div class="product-feetooltip">

@@ -23,10 +23,37 @@
 								</div>
 								<div class="product-price" itemprop="offerDetails" itemscope itemtype="http://data-vocabulary.org/Offer">
 									<meta itemprop="currency" content="<!--@Ecom:Product.Currency.Code-->" />
-									<span itemprop="price"><!--@Ecom:Product.Price.PriceWithVATFormatted--></span> / <!--@Translate(unit, "unit")-->
-									<a href="#" data-rel="tooltip" data-container=".paymentshippingfee" data-position="left">
-										<i class="icon sprite info-circle-small"></i>
-									</a>
+									<!--@If(Ecom:Product.Discount.Price.PricePIP<Ecom:Product.Price.PricePIP)-->
+										<div class="product-price has-discount">
+											<!--@If Defined(Item.Area.Show_Price_With_VAT)-->
+											<span itemprop="price" class="product-price regular"><!--@Ecom:Product.Price.PriceWithVATFormatted--> </span>
+											<span itemprop="price" class="product-price discount"> <!--@Ecom:Product.Discount.Price.PriceWithVATFormatted--></span>/ <!--@Translate(unit, "unit")-->
+											<a href="#" data-rel="tooltip" data-container=".paymentshippingfee" data-position="left">
+												<i class="icon sprite info-circle-small"></i>
+											</a>
+											<!--@Else-->
+											<span itemprop="price" class="product-price regular"><!--@Ecom:Product.Price.PriceWithoutVATFormatted--></span>										
+											<span itemprop="price" class="product-price discount"><!--@Ecom:Product.Discount.Price.PriceWithoutVATFormatted--></span>/ <!--@Translate(unit, "unit")-->
+											<a href="#" data-rel="tooltip" data-container=".paymentshippingfee" data-position="left">
+												<i class="icon sprite info-circle-small"></i>
+											</a>
+											<!--@EndIf-->
+										</div>
+										<!--@Else-->
+										<div class="product-price">
+											<!--@If Defined(Item.Area.Show_Price_With_VAT)-->
+											<span itemprop="price" class="product-price regular"><!--@Ecom:Product.Price.PriceWithVATFormatted--></span>/ <!--@Translate(unit, "unit")-->
+											<a href="#" data-rel="tooltip" data-container=".paymentshippingfee" data-position="left">
+												<i class="icon sprite info-circle-small"></i>
+											</a>
+											<!--@Else-->
+											<span itemprop="price" class="product-price regular"><!--@Ecom:Product.Price.PriceWithoutVATFormatted--></span>/ <!--@Translate(unit, "unit")-->
+											<a href="#" data-rel="tooltip" data-container=".paymentshippingfee" data-position="left">
+												<i class="icon sprite info-circle-small"></i>
+											</a>
+											<!--@EndIf-->
+										</div>
+										<!--@EndIf-->
 								</div>
 								<div class="product-addtocart">
 									<button type="button" class="btn dw-button-green" <!--@If(Ecom:Product.VariantCount>0)-->data-toggle="modal" data-target="#productVariantChooser<!--@Ecom:Product.ID-->"<!--@EndIf--><!--@If(Ecom:Product.VariantCount==0)-->onclick="$.addToCart(this)"<!--@EndIf-->>
@@ -85,13 +112,43 @@
 												<div class="product-pricebox">
 													<div>
 														<div>&nbsp;</div>
-														<div><!--@Ecom:Product.Price.PriceWithVATFormatted--> / <!--@Translate(unit, "unit")--></div>
+														<!--@If(Ecom:Product.Discount.Price.PricePIP<Ecom:Product.Price.PricePIP)-->
+															<div class="product-price has-discount">
+																<!--@If Defined(Item.Area.Show_Price_With_VAT)-->
+																<span itemprop="price" class="product-price regular"><!--@Ecom:Product.Price.PriceWithVATFormatted--> </span>
+																<span itemprop="price" class="product-price discount"> <!--@Ecom:Product.Discount.Price.PriceWithVATFormatted--></span>/ <!--@Translate(unit, "unit")-->
+																<a href="#" data-rel="tooltip" data-container=".paymentshippingfee" data-position="left">
+																	<i class="icon sprite info-circle-small"></i>
+																</a>
+																<!--@Else-->
+																<span itemprop="price" class="product-price regular"><!--@Ecom:Product.Price.PriceWithoutVATFormatted--></span>										
+																<span itemprop="price" class="product-price discount"><!--@Ecom:Product.Discount.Price.PriceWithoutVATFormatted--></span>/ <!--@Translate(unit, "unit")-->
+																<a href="#" data-rel="tooltip" data-container=".paymentshippingfee" data-position="left">
+																	<i class="icon sprite info-circle-small"></i>
+																</a>
+																<!--@EndIf-->
+															</div>
+															<!--@Else-->
+															<div class="product-price">
+																<!--@If Defined(Item.Area.Show_Price_With_VAT)-->
+																<span itemprop="price" class="product-price regular"><!--@Ecom:Product.Price.PriceWithVATFormatted--></span>/ <!--@Translate(unit, "unit")-->
+																<a href="#" data-rel="tooltip" data-container=".paymentshippingfee" data-position="left">
+																	<i class="icon sprite info-circle-small"></i>
+																</a>
+																<!--@Else-->
+																<span itemprop="price" class="product-price regular"><!--@Ecom:Product.Price.PriceWithoutVATFormatted--></span>/ <!--@Translate(unit, "unit")-->
+																<a href="#" data-rel="tooltip" data-container=".paymentshippingfee" data-position="left">
+																	<i class="icon sprite info-circle-small"></i>
+																</a>
+																<!--@EndIf-->
+															</div>
+															<!--@EndIf-->
 													</div>
 												</div>
 												<div class="product-addtocart">
 													<input name="quantity" class="input-mini" onclick="this.value='';" value="1" type="text"><span class="help-inline"><!--@Translate(unit, "unit")--></span>
 													<button class="btn dw-button-green" data-dw-cmd="addtocart" onclick="$.addToCart(this)">
-														<span><!--@Translate(AddToCart, "Add to order")--></span>
+														<span><!--@Translate(AddToCart, "Add to Cart")--></span>
 													</button>
 												</div>
 											</div>

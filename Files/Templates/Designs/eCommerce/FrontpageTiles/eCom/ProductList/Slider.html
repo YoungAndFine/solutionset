@@ -7,8 +7,9 @@
 				<div class="span3">
 					<div class="box-rounded product-list-item-wrapper">
 						<div class="box-content">
-							<img src="/Admin/Public/getimage.ashx?Image=<!--@Ecom:Product.ImageSmall.Clean-->&amp;Height=230" alt="" />
-
+							<a href="<!--@Ecom:Product.LinkGroup.Clean-->" class="product-link">
+								<img src="/Admin/Public/getimage.ashx?Image=<!--@Ecom:Product.ImageSmall.Clean-->&amp;Height=230" alt="" />
+							</a>
 							<div class="box-overlay">
 								<h3 class="product-name">
 									<a href="<!--@Ecom:Product.LinkGroup.Clean-->" class="product-link"><!--@Ecom:Product.Name--></a>
@@ -16,7 +17,7 @@
 
 								<!--@If(Item.Area.Require_Login_To_Show_Prices!='True' || Global:Extranet.UserID>0)-->
 
-								<!--@Include(../../../eCom/Partials/ProductPrice.html)-->
+								<!--@Include(../../../eCom/ProductList/Partials/ProductPrice.html)-->
 
 								<div class="product-action">
 									<button type="button" class="btn dw-button-green" <!--@If(Ecom:Product.VariantCount>0)-->data-toggle="modal" data-target="#productVariantChooser<!--@Ecom:Product.ID-->"<!--@EndIf--><!--@If(Ecom:Product.VariantCount==0)-->onclick="$.addToCart(this)"<!--@EndIf-->>

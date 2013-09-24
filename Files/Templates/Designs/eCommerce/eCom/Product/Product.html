@@ -109,21 +109,14 @@
 						<div>&nbsp;</div>
 						<div class="product-price-vs-fees">
 									<div class="product-price" itemprop="offerDetails" itemscope itemtype="http://data-vocabulary.org/Offer">
-									<meta itemprop="currency" content="<!--@Ecom:Product.Currency.Code-->" />
-									<span itemprop="price" class="product-price-total"><!--@Ecom:Product.Price.PriceWithVATFormatted--></span> / <!--@Translate(unit, "unit")-->
-								</div>
-								<div class="product-feetooltip">
-									<a href="#" data-rel="tooltip" data-container=".paymentshippingfee" data-position="left">
-										<!--@Translate(expaymentshippingfee, 'Ex. shipping and payment fees')-->
-									</a>
-								</div>
+										<!--@Include(Partials/ProductPrice.html)-->
 						</div>
 					</div>
 				</div>
 				<div class="product-addtocart">
 					<input class="product-quantity" name="quantity" id="amount" onclick="this.value='';" value="1" type="text"><span class="help-inline"><!--@Translate(unit, "unit")--></span>
 					<button class="btn dw-button-green" data-dw-cmd="addtocart" onclick="Layout.Cart.AddToCart(this, '', '.product-pricebox-wrapper')">
-						<!--@Translate(AddToCart, "Add to order")-->
+						<!--@Translate(AddToCart, "Add to cart")-->
 					</button>
 				</div>
 			</div>
@@ -344,21 +337,14 @@
 					<div>&nbsp;</div>
 					<div class="product-price-vs-fees">
 									<div class="product-price" itemprop="offerDetails" itemscope itemtype="http://data-vocabulary.org/Offer">
-									<meta itemprop="currency" content="<!--@Ecom:Product.Currency.Code-->" />
-									<span itemprop="price" class="product-price-total"><!--@Ecom:Product.Price.PriceWithVATFormatted--></span> / <!--@Translate(unit, "unit")-->
-								</div>
-								<div class="product-feetooltip">
-									<a href="#" data-rel="tooltip" data-container=".paymentshippingfee" data-position="bottom">
-										<!--@Translate(expaymentshippingfee, 'Ex. shipping and payment fees')-->
-									</a>
-								</div>
+									 <!--@Include(Partials/ProductDetailedPrice.html)-->
 						</div>
 				</div>
 			</div>
 			<div class="product-addtocart">
 				<input class="product-quantity" name="quantity" id="amount" onclick="this.value='';" value="1" type="text"><span class="help-inline"><!--@Translate(unit, "unit")--></span>
 				<button class="btn dw-button-green" data-dw-cmd="addtocart" onclick="$.addToCart(this)">
-					<!--@Translate(AddToCart, "Add to order")-->
+					<!--@Translate(AddToCart, "Add to cart")-->
 				</button>
 			</div>
 		</div><!-- / .product-pricebox-wrapper -->
@@ -395,15 +381,13 @@
 									</a>
 								</div>
 								<div class="product-price" itemprop="offerDetails" itemscope itemtype="http://data-vocabulary.org/Offer">
-									<meta itemprop="currency" content="<!--@Ecom:Product.Currency.Code-->" />
-									<span itemprop="price"><!--@Ecom:Product.Price.PriceWithVATFormatted--></span> / <!--@Translate(unit, "unit")-->
+									<!--@Include(Partials/ProductDetailedPrice.html)-->
 									<a href="#" data-rel="tooltip" data-container=".paymentshippingfee" data-position="left">
-										<i class="icon sprite info-circle-small"></i>
 									</a>
 								</div>
 								<div class="product-addtocart">
 									<button type="button" class="btn dw-button-green" style="float:right;" <!--@If(Ecom:Product.VariantCount>0)-->data-toggle="modal" data-target="#productVariantChooser<!--@Ecom:Product.ID-->"<!--@EndIf--><!--@If(Ecom:Product.VariantCount==0)-->onclick="$.addToCart(this)"<!--@EndIf-->>
-										<!--@Translate(AddToCart, "Add to order")-->
+										<!--@Translate(AddToCart, "Add to cart")-->
 									</button>
 								</div>
 							</div><!-- / .content -->
@@ -460,7 +444,7 @@
 												<div class="product-addtocart">
 													<input name="quantity" class="input-mini" onclick="this.value='';" value="1" type="text"><span class="help-inline"><!--@Translate(unit, "unit")--></span>
 													<button class="btn dw-button-green" data-dw-cmd="addtocart" onclick="$.addToCart(this)">
-														<span><!--@Translate(AddToCart, "Add to order")--></span>
+														<span><!--@Translate(AddToCart, "Add to cart")--></span>
 													</button>
 												</div>
 											</div>
