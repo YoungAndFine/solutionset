@@ -2,6 +2,31 @@
 <items>
   <item name="Website Settings" systemName="Website_Settings" description="" icon="" largeIcon="">
     <fields>
+      <field name="Logo Image" systemName="Logo_Image" description="" type="System.String, mscorlib">
+        <editor type="Dynamicweb.Content.Items.Editors.FileEditor, Dynamicweb">
+          <editorConfuguration />
+        </editor>
+      </field>
+      <field name="Skin" systemName="Skin" description="" type="System.String, mscorlib">
+        <editor type="Dynamicweb.Content.Items.Editors.DropDownListEditor`1, Dynamicweb">
+          <editorConfuguration />
+        </editor>
+        <options sourceType="Static">
+          <Static>
+            <option name="default" value="" />
+          </Static>
+        </options>
+      </field>
+      <field name="Custom CSS Url" systemName="Custom_CSS_Url" description="" type="System.String, mscorlib">
+        <editor type="Dynamicweb.Content.Items.Editors.TextEditor, Dynamicweb">
+          <editorConfuguration />
+        </editor>
+      </field>
+      <field name="Favicon" systemName="Favicon" description="" type="System.String, mscorlib">
+        <editor type="Dynamicweb.Content.Items.Editors.FileEditor, Dynamicweb">
+          <editorConfuguration />
+        </editor>
+      </field>
       <field name="Show &quot;Quick add&quot;" systemName="Show_Quick_Add" description="" type="System.Boolean, mscorlib">
         <editor type="Dynamicweb.Content.Items.Editors.CheckboxEditor, Dynamicweb">
           <editorConfuguration />
@@ -112,31 +137,6 @@
           <editorConfuguration />
         </editor>
       </field>
-      <field name="Logo Image" systemName="Logo_Image" description="" type="System.String, mscorlib">
-        <editor type="Dynamicweb.Content.Items.Editors.FileEditor, Dynamicweb">
-          <editorConfuguration />
-        </editor>
-      </field>
-      <field name="Skin" systemName="Skin" description="" type="System.String, mscorlib">
-        <editor type="Dynamicweb.Content.Items.Editors.DropDownListEditor`1, Dynamicweb">
-          <editorConfuguration />
-        </editor>
-        <options sourceType="Static">
-          <Static>
-            <option name="default" value="" />
-          </Static>
-        </options>
-      </field>
-      <field name="Custom CSS Url" systemName="Custom_CSS_Url" description="" type="System.String, mscorlib">
-        <editor type="Dynamicweb.Content.Items.Editors.TextEditor, Dynamicweb">
-          <editorConfuguration />
-        </editor>
-      </field>
-      <field name="Favicon" systemName="Favicon" description="" type="System.String, mscorlib">
-        <editor type="Dynamicweb.Content.Items.Editors.FileEditor, Dynamicweb">
-          <editorConfuguration />
-        </editor>
-      </field>
       <field name="Create Account Page ID" systemName="Create_Account_Page_ID" description="" type="System.Int32, mscorlib">
         <editor type="Dynamicweb.Content.Items.Editors.IntegerEditor, Dynamicweb">
           <editorConfuguration />
@@ -163,6 +163,14 @@
     </rules>
     <layout>
       <groups>
+        <group name="Design" systemName="Design" collapsibleState="None">
+          <fields>
+            <field systemName="Logo_Image" />
+            <field systemName="Skin" />
+            <field systemName="Custom_CSS_Url" />
+            <field systemName="Favicon" />
+          </fields>
+        </group>
         <group name="General" systemName="General" collapsibleState="None">
           <fields>
             <field systemName="Show_Quick_Add" />
@@ -195,14 +203,6 @@
             <field systemName="Products_Catalog_Page_ID" />
             <field systemName="Products_Catalog_Paragraph_ID" />
             <field systemName="Products_Modal_Page_ID" />
-          </fields>
-        </group>
-        <group name="Design" systemName="Design" collapsibleState="None">
-          <fields>
-            <field systemName="Logo_Image" />
-            <field systemName="Skin" />
-            <field systemName="Custom_CSS_Url" />
-            <field systemName="Favicon" />
           </fields>
         </group>
         <group name="Account" systemName="Account" collapsibleState="None">
