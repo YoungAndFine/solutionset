@@ -115,7 +115,7 @@
 				</div>
 				<div class="product-addtocart">
 					<input class="product-quantity" name="quantity" id="amount" onclick="this.value='';" value="1" type="text"><span class="help-inline"><!--@Translate(unit, "unit")--></span>
-					<button class="btn dw-button-green" data-dw-cmd="addtocart" onclick="Layout.Cart.AddToCart(this, '', '.product-pricebox-wrapper')">
+					<button class="btn btn-primary" data-dw-cmd="addtocart" onclick="Layout.Cart.AddToCart(this, '', '.product-pricebox-wrapper')">
 						<!--@Translate(AddToCart, "Add to cart")-->
 					</button>
 				</div>
@@ -343,7 +343,7 @@
 			</div>
 			<div class="product-addtocart">
 				<input class="product-quantity" name="quantity" id="amount" onclick="this.value='';" value="1" type="text"><span class="help-inline"><!--@Translate(unit, "unit")--></span>
-				<button class="btn dw-button-green" data-dw-cmd="addtocart" onclick="$.addToCart(this)">
+				<button class="btn btn-primary" data-dw-cmd="addtocart" onclick="$.addToCart(this)">
 					<!--@Translate(AddToCart, "Add to cart")-->
 				</button>
 			</div>
@@ -386,7 +386,7 @@
 									</a>
 								</div>
 								<div class="product-addtocart">
-									<button type="button" class="btn dw-button-green" style="float:right;" <!--@If(Ecom:Product.VariantCount>0)-->data-toggle="modal" data-target="#productVariantChooser<!--@Ecom:Product.ID-->"<!--@EndIf--><!--@If(Ecom:Product.VariantCount==0)-->onclick="$.addToCart(this)"<!--@EndIf-->>
+									<button type="button" class="btn btn-primary" style="float:right;" <!--@If(Ecom:Product.VariantCount>0)-->data-toggle="modal" data-target="#productVariantChooser<!--@Ecom:Product.ID-->"<!--@EndIf--><!--@If(Ecom:Product.VariantCount==0)-->onclick="$.addToCart(this)"<!--@EndIf-->>
 										<!--@Translate(AddToCart, "Add to cart")-->
 									</button>
 								</div>
@@ -443,7 +443,7 @@
 												</div>
 												<div class="product-addtocart">
 													<input name="quantity" class="input-mini" onclick="this.value='';" value="1" type="text"><span class="help-inline"><!--@Translate(unit, "unit")--></span>
-													<button class="btn dw-button-green" data-dw-cmd="addtocart" onclick="$.addToCart(this)">
+													<button class="btn btn-primary" data-dw-cmd="addtocart" onclick="$.addToCart(this)">
 														<span><!--@Translate(AddToCart, "Add to cart")--></span>
 													</button>
 												</div>
@@ -555,7 +555,7 @@
 				<input type="text" name="Comment.Name" id="Comment.Name" value="" placeholder="<!--@Translate(name, "Name")-->" class="span12">
 				<input type="text" name="Comment.Website" id="Comment.Website" value="" placeholder="http://" class="span12">
 				<textarea name="Comment.Text" id="Comment.Text" placeholder="<!--@Translate(leaveyourcomment, "Leave your comment")-->" class="span12"></textarea>
-				<input type="submit" value="<!--@Translate(addyourcomment, "Add your comment")-->" class="span12 btn dw-button-green">
+				<input type="submit" value="<!--@Translate(addyourcomment, "Add your comment")-->" class="span12 btn btn-primary">
 			</div>
 
 		</form>

@@ -190,7 +190,7 @@
 				<h1><!--@Translate(contactdetails, "Contact details")--></h1>
 				<div class="span5">
 					<!--@If(Global:Extranet.UserID==0)-->
-					<a href="#" class="btn dw-button-green" data-toggle="modal" data-target="#LoginBox"><strong><!--@Translate(alreadymember, 'Already a customer - login here')--></strong></a>
+					<a href="#" class="btn btn-primary" data-toggle="modal" data-target="#LoginBox"><strong><!--@Translate(alreadymember, 'Already a customer - login here')--></strong></a>
 					<!--@EndIf-->
 				</div>
 			</div>
@@ -355,7 +355,7 @@
 						</label>
 						<div class="controls with-button">
 							<input type="text" name="EcomOrderVoucherCode" id="EcomOrderVoucherCode" value="<!--@Ecom:Order.Customer.VoucherCode-->" />
-							<a href="<!--@Global:Request.Url-->" class="btn dw-button-green check_voucher" data-ok="<!--@Translate(accept, "Your voucher is accepted")-->" data-error="<!--@Translate(error, "Your voucher is not accepted")-->">
+							<a href="<!--@Global:Request.Url-->" class="btn btn-primary check_voucher" data-ok="<!--@Translate(accept, "Your voucher is accepted")-->" data-error="<!--@Translate(error, "Your voucher is not accepted")-->">
 								<!--@Translate(add2order, "Add to order")-->
 								<i class="icon-double-angle-right arr-forward-small-white"></i>
 							</a>
@@ -479,7 +479,7 @@
 				<input type="checkbox" id="EcomOrderCustomerAccepted2" name="EcomOrderCustomerAccepted" value="1" />
 				<!--@Translate(Iaccept, "I accept")-->&nbsp;<a href="#" data-toggle="modal" data-target="#checkoutTerms"><!--@Translate(termsandconditions, "Terms and Conditions")--></a>
 			</label>
-			<a href="#" onclick="copy_address(); if($('#EcomOrderCustomerAccepted2').attr('checked')) $('#ordersubmit').submit();else alert('<!--@Translate(pleasetermsandconditions, "Please accept Terms and Conditions")-->')" class="btn dw-button-green">
+			<a href="#" onclick="copy_address(); if($('#EcomOrderCustomerAccepted2').attr('checked')) $('#ordersubmit').submit();else alert('<!--@Translate(pleasetermsandconditions, "Please accept Terms and Conditions")-->')" class="btn btn-primary">
 				<!--@Translate(confirmandpay, "Confirm and pay")-->
 				<i class="icon-double-angle-right arr-forward-small-white"></i>
 			</a>

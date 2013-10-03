@@ -1,5 +1,5 @@
 <form method="post">
-		<button style="float:right;" class="btn dw-button-green" name="CartCmd" value="addmulti"><!--@Translate(Add_all_to_cart, "Add all to cart")--></button>
+		<button style="float:right;" class="btn btn-primary" name="CartCmd" value="addmulti"><!--@Translate(Add_all_to_cart, "Add all to cart")--></button>
 		<div class="clearfix"></div>
 	<div id="product-list">
 		<!--@LoopStart(Products)-->
@@ -30,7 +30,7 @@
 						<input type="hidden" name="VariantID0" value="" />
 						<input type="hidden" name="UnitID0" value="<!--@Ecom:Product.DefaultUnitID-->" />
 						<input type="number" name="Quantity0" placeholder="0" style="width: 4em; float:left;"/>
-						<button style="float:right; float:right;width: 125px;height: 32px;" class="btn dw-button-green" name="CartCmd" value="addmulti"><!--@Translate(Add_to_cart, "Add to cart")--></button>
+						<button style="float:right; float:right;width: 125px;height: 32px;" class="btn btn-primary" name="CartCmd" value="addmulti"><!--@Translate(Add_to_cart, "Add to cart")--></button>
 					</div>
 				</div>
 				<!--@Else-->
@@ -79,7 +79,7 @@
 						<input type="hidden" name="VariantID0" value="" />
 						<input type="hidden" name="UnitID0" value="<!--@Ecom:Product.DefaultUnitID-->" />
 						<input type="number" name="Quantity0" placeholder="0" style="width: 4em; float:left;"/>
-						<button style="float:right; width: 125px;height: 32px;" class="btn dw-button-green" name="CartCmd" value="addmulti"><!--@Translate(Add_to_cart, "Add to cart")--></button>
+						<button style="float:right; width: 125px;height: 32px;" class="btn btn-primary" name="CartCmd" value="addmulti"><!--@Translate(Add_to_cart, "Add to cart")--></button>
 					</div>
 				</div>
 				<!--@Else-->
@@ -109,7 +109,7 @@
 		<!--@LoopEnd(Products)-->
 	</div>
 	<div style="text-align: right; padding: 1em">
-		<button class="btn dw-button-green" name="CartCmd" value="addmulti"><!--@Translate(Add_all_to_cart, "Add all to cart")--></button>
+		<button class="btn btn-primary" name="CartCmd" value="addmulti"><!--@Translate(Add_all_to_cart, "Add all to cart")--></button>
 	</div>
 </form>
 

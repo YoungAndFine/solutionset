@@ -56,7 +56,7 @@
 										<!--@EndIf-->
 								</div>
 								<div class="product-addtocart">
-									<button type="button" class="btn dw-button-green" <!--@If(Ecom:Product.VariantCount>0)-->data-toggle="modal" data-target="#productVariantChooser<!--@Ecom:Product.ID-->"<!--@EndIf--><!--@If(Ecom:Product.VariantCount==0)-->onclick="$.addToCart(this)"<!--@EndIf-->>
+									<button type="button" class="btn btn-primary" <!--@If(Ecom:Product.VariantCount>0)-->data-toggle="modal" data-target="#productVariantChooser<!--@Ecom:Product.ID-->"<!--@EndIf--><!--@If(Ecom:Product.VariantCount==0)-->onclick="$.addToCart(this)"<!--@EndIf-->>
 										<!--@Translate(AddToCart, "Add to order")-->
 									</button>
 								</div>
@@ -147,7 +147,7 @@
 												</div>
 												<div class="product-addtocart">
 													<input name="quantity" class="input-mini" onclick="this.value='';" value="1" type="text"><span class="help-inline"><!--@Translate(unit, "unit")--></span>
-													<button class="btn dw-button-green" data-dw-cmd="addtocart" onclick="$.addToCart(this)">
+													<button class="btn btn-primary" data-dw-cmd="addtocart" onclick="$.addToCart(this)">
 														<span><!--@Translate(AddToCart, "Add to Cart")--></span>
 													</button>
 												</div>
