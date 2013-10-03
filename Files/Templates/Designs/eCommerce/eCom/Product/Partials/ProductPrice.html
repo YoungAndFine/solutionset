@@ -1,24 +1,24 @@
-	<meta itemprop="currency" content="<!--@Ecom:Product.Currency.Code-->" />
+<meta itemprop="currency" content="<!--@Ecom:Product.Currency.Code-->" />
 
-	<!--@If(Ecom:Product.Discount.Price.PricePIP<Ecom:Product.Price.PricePIP)-->
-	<div class="product-price has-discount">
-		<!--@If Defined(Item.Area.Show_Price_With_VAT)-->
-		<span itemprop="price" class="product-price regular"><!--@Ecom:Product.Price.PriceWithVATFormatted--> </span>
-		<span itemprop="price" class="product-price discount"> <!--@Ecom:Product.Discount.Price.PriceWithVATFormatted--></span>/ <!--@Translate(unit, "unit")-->
-		<!--@Else-->
-		<span itemprop="price" class="product-price regular"><!--@Ecom:Product.Price.PriceWithoutVATFormatted--></span>
-		<span itemprop="price" class="product-price discount"><!--@Ecom:Product.Discount.Price.PriceWithoutVATFormatted--></span>/ <!--@Translate(unit, "unit")-->
-		<!--@EndIf-->
-	</div>
+<!--@If(Ecom:Product.Discount.Price.PricePIP<Ecom:Product.Price.PricePIP)-->
+<div class="product-price has-discount">
+	<!--@If Defined(Item.Area.Show_Price_With_VAT)-->
+	<span itemprop="price" class="product-price regular"><!--@Ecom:Product.Price.PriceWithVATFormatted--> </span>
+	<span itemprop="price" class="product-price discount"> <!--@Ecom:Product.Discount.Price.PriceWithVATFormatted--></span>/ <!--@Translate(unit, "unit")-->
 	<!--@Else-->
-	<div class="product-price">
-		<!--@If Defined(Item.Area.Show_Price_With_VAT)-->
-		<span itemprop="price" class="product-price regular"><!--@Ecom:Product.Price.PriceWithVATFormatted--></span>/ <!--@Translate(unit, "unit")-->
-		<!--@Else-->
-		<span itemprop="price" class="product-price regular"><!--@Ecom:Product.Price.PriceWithoutVATFormatted--></span>/ <!--@Translate(unit, "unit")-->
-		<!--@EndIf-->
-	</div>
+	<span itemprop="price" class="product-price regular"><!--@Ecom:Product.Price.PriceWithoutVATFormatted--></span>
+	<span itemprop="price" class="product-price discount"><!--@Ecom:Product.Discount.Price.PriceWithoutVATFormatted--></span>/ <!--@Translate(unit, "unit")-->
 	<!--@EndIf-->
+</div>
+<!--@Else-->
+<div class="product-price">
+	<!--@If Defined(Item.Area.Show_Price_With_VAT)-->
+	<span itemprop="price" class="product-price regular"><!--@Ecom:Product.Price.PriceWithVATFormatted--></span>/ <!--@Translate(unit, "unit")-->
+	<!--@Else-->
+	<span itemprop="price" class="product-price regular"><!--@Ecom:Product.Price.PriceWithoutVATFormatted--></span>/ <!--@Translate(unit, "unit")-->
+	<!--@EndIf-->
+</div>
+<!--@EndIf-->
 								
 </div>
 	

@@ -10,7 +10,13 @@
 		<link href="assets/vendor/bootstrap/bootstrap.css" rel="stylesheet"/>
 		<link href="assets/vendor/bootstrap/bootstrap-responsive.min.css" rel="stylesheet"/>
 		<link href="assets/vendor/smoothness/jquery-ui-1.8.23.custom.css" rel="stylesheet"/>
+		
+		<!--@If Defined(Item.Area.Skin)-->
+		<link href="assets/stylesheets/skin_<!--@Item.Area.Skin-->.css" media="screen" rel="stylesheet"/>
+		<!--@Else-->
 		<link href="assets/stylesheets/screen.css" media="screen" rel="stylesheet"/>
+		<!--@EndIf-->
+		
 		<link href="assets/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
 
 		<!--@Snippet(StyleSheet)-->

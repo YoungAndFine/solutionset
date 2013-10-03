@@ -13,7 +13,8 @@
         </editor>
         <options sourceType="Static">
           <Static>
-            <option name="default" value="" />
+            <option name="Grey" value="grey" />
+            <option name="Red" value="red" />
           </Static>
         </options>
       </field>

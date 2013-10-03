@@ -12,7 +12,6 @@
  * Version: 0.9.0
  *
  */
-
 // Global document backround
 $documentBackground: #F3F2F2 !default;
 // Main content area backround
@@ -55,8 +54,8 @@ $rating-sprite-tile-height: 18px !default;
 // Path to animated loader image
 $loader-image: url(../images/ajax-loader.gif) !default;
 
-$star-color-empty: #bebebe;
-$star-color: #fcba29;
+$star-color-empty: #bebebe !default;
+$star-color: #fcba29 !default;
 
 @mixin rounded-borders($color: black, $border-weight: 1px, $radius: 5px) {
 	border: $border-weight solid $color;
