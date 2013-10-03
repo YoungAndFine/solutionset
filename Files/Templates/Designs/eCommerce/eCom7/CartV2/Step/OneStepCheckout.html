@@ -287,7 +287,7 @@
 			</legend>
 			<div class="box-content">
 				<!--@If(Global:Extranet.UserID==0)-->
-				<a href="#" class="btn dw-button-orange" data-toggle="modal" data-target="#LoginBox"><strong><!--@Translate(alreadymember, 'Already a customer - login here')--></strong></a>
+				<a href="#" class="btn btn-default" data-toggle="modal" data-target="#LoginBox"><strong><!--@Translate(alreadymember, 'Already a customer - login here')--></strong></a>
 				<!--@EndIf-->
 				<div class="form-horizontal">
 					<!--@If(Global:Area.ID!=1)-->
@@ -300,7 +300,7 @@
 						<div class="controls <!--@If(Global:Area.ID!=1)--><!--@If(Global:Area.ID!=18)-->with-button<!--@EndIf--><!--@EndIf-->">
 							<input type="number" name="EcomOrderCustomerPhone" id="EcomOrderCustomerPhone" value="<!--@Ecom:Order.Customer.Phone-->" tabindex="1" />
 							<input type="hidden" id="EcomOrderCustomerPhoneEmpty" value="<!--@Translate(emptyinformationinput, "Please, first fill out the 'Phone' field")-->" />
-							<input type="button" onclick="infoDirectRequest();" class="btn dw-button-gray" value="<!--@Translate(getmyinfo, 'Get my information')-->" />
+							<input type="button" onclick="infoDirectRequest();" class="btn btn-default" value="<!--@Translate(getmyinfo, 'Get my information')-->" />
 							<a href="#" data-toggle="modal" data-target="#checkoutInfoPhone"><!--@Translate(info, "Info")--></a>
 						</div>
 					</div>

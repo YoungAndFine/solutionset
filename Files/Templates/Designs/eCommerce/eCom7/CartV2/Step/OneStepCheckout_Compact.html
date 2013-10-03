@@ -230,7 +230,7 @@
 						<div class="controls <!--@If(Global:Area.ID!=1)--><!--@If(Global:Area.ID!=18)-->with-button<!--@EndIf--><!--@EndIf-->">
 							<input type="number" name="EcomOrderCustomerPhone" id="EcomOrderCustomerPhone" value="<!--@Ecom:Order.Customer.Phone-->" tabindex="1" />
 							<input type="hidden" id="EcomOrderCustomerPhoneEmpty" value="<!--@Translate(emptyinformationinput, "Please, first fill out the 'Phone' field")-->" />
-							<input type="button" onclick="infoDirectRequest();" class="btn dw-button-gray" value="<!--@Translate(getmyinfo, 'Get my information')-->" />
+							<input type="button" onclick="infoDirectRequest();" class="btn btn-default" value="<!--@Translate(getmyinfo, 'Get my information')-->" />
 							<a href="#" data-toggle="modal" data-target="#checkoutInfoPhone"><!--@Translate(info, "Info")--></a>
 						</div>
 					</div>

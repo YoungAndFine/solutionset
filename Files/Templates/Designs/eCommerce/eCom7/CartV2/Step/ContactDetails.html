@@ -250,7 +250,7 @@
 			</legend>
 			<div class="box-content">
 				<!--@If(Global:Extranet.UserID==0)-->
-				<a href="#" class="btn dw-button-orange" data-toggle="modal" data-target="#LoginBox"><strong><!--@Translate(alreadymember, 'Already a customer - login here')--></strong></a>
+				<a href="#" class="btn btn-default" data-toggle="modal" data-target="#LoginBox"><strong><!--@Translate(alreadymember, 'Already a customer - login here')--></strong></a>
 				<!--@EndIf-->
 				<div class="form-horizontal">
 					<div class="control-group">
@@ -263,7 +263,7 @@
 							<!--@If(Global:Area.ID!=1)-->
 							<!--@If(Global:Area.ID!=18)-->
 							<input type="hidden" id="EcomOrderCustomerPhoneEmpty" value="<!--@Translate(emptyinformationinput, "Please, first fill out the 'Phone' field")-->" />
-							<input type="button" onclick="infoDirectRequest();" class="btn dw-button-gray" value="<!--@Translate(getmyinfo, 'Get my information')-->" />
+							<input type="button" onclick="infoDirectRequest();" class="btn btn-default" value="<!--@Translate(getmyinfo, 'Get my information')-->" />
 							<!--@EndIf-->
 							<!--@EndIf-->
 							<a href="#" data-toggle="modal" data-target="#checkoutInfoPhone"><!--@Translate(info, "Info")--></a>

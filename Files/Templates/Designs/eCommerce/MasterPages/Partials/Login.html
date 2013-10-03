@@ -81,11 +81,11 @@
 	<div class="modal-footer">
 		<!--@Translate(donthaveaccount, "Don't have an account?")-->
 		<!--@If(Item.Area.Create_Account_Page_ID__modal_>0)-->
-		<a href="/Default.aspx?ID=<!--@Item.Area.Create_Account_Page_ID__modal_-->" class="btn dw-button-gray" data-toggle="modal" data-target="#signUpModal" onclick="$(this).parents('.modal').modal('hide')">
+		<a href="/Default.aspx?ID=<!--@Item.Area.Create_Account_Page_ID__modal_-->" class="btn btn-default" data-toggle="modal" data-target="#signUpModal" onclick="$(this).parents('.modal').modal('hide')">
 			<!--@Translate(signupforaccount, "Sign up for an account")-->
 		</a>
 		<!--@Else-->
-		<a href="/Default.aspx?ID=<!--@Item.Area.Create_Account_Page_ID-->" class="btn dw-button-gray">
+		<a href="/Default.aspx?ID=<!--@Item.Area.Create_Account_Page_ID-->" class="btn btn-default">
 			<!--@Translate(signupforaccount, "Sign up for an account")-->
 		</a>
 		<!--@EndIf-->
