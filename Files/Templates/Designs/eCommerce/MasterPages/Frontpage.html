@@ -3,30 +3,7 @@
 	<head>
 		<meta charset="utf-8"/>
 		<title>Frontpage master</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-		<meta name="description" content=""/>
-		<meta name="author" content=""/>
-
-		<link href="assets/vendor/bootstrap/bootstrap.css" rel="stylesheet"/>
-		<link href="assets/vendor/bootstrap/bootstrap-responsive.min.css" rel="stylesheet"/>
-		<link href="assets/vendor/smoothness/jquery-ui-1.8.23.custom.css" rel="stylesheet"/>
-		<link href="assets/stylesheets/screen.css" rel="stylesheet"/>
-		<link href="assets/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
-		<!--@Snippet(StyleSheet)-->
-		<!--@If Defined(Item.Area.Custom_CSS_Url)-->
-		<link href="<!--@Item.Area.Custom_CSS_Url-->" rel="stylesheet"/>
-		<!--@EndIf(Item.Area.Custom_CSS_Url)-->
-
-		<link rel="icon" type="image/png" href="assets/images/favicon.ico"/>
-
-		<script src="assets/vendor/require-jquery.js"></script>
-		<script>
-		// @TODO: put this into a tag @Template:BaseUrl
-		var designName = 'eCommerce';
-		var designBaseUrl = '/Files/Templates/Designs/'+designName+'/';
-		</script>
-		<script src="assets/vendor/dynamicweb.start.js"></script>
-		<!--@Snippet(JavaScriptHead)-->
+		<!--@Include(HeadContent.html)-->
 	</head>
 	<body data-pageid="<!--@Global:Page.ID-->" data-product-page="<!--@Item.Area.Products_Catalog_Page_ID-->" data-product-paragraph="<!--@Item.Area.Products_Catalog_Paragraph_ID-->">
 		<!--@Include(Partials/NavigationTop.html)-->
