@@ -2,16 +2,20 @@
 	<div class="container">
 		<div class="row">
 			<div class="span12">
+				<!--@LoopStart(Languages)-->
+				<!--@HeaderStart-->
 				<div class="lang-selector hidden-print">
 					<ul>
-					<!--@If(Global:Area.ID==1)--> <!--@TODO: Implement language selector-->
-					<li><a href="/Default.aspx?ID=698" hreflang="da" class="flags-dk">Dansk</a></li>
-					<!--@EndIf-->
-					<!--@If(Global:Area.ID==17)-->
-					<li><a href="/Default.aspx?ID=680" hreflang="en" class="flags-us">English</a></li>
-					<!--@EndIf-->
+						<!--@HeaderEnd-->
+						<!--@If Not Defined(IsCurrent)-->
+						<li><a href="/Default.aspx?ID=<!--@FirstPageID-->" hreflang="<!--@Culture.Substring(0, 2)-->" class="flags-<!--@Culture.Substring(3).ToLower()-->"><!--@Name--></a></li>
+						<!--@EndIf-->
+						<!--@FooterStart-->
 					</ul>
 				</div>
+				<!--@FooterEnd-->
+				<!--@LoopEnd(Languages)-->
+
 				<div class="topmenu hidden-print">
 					<div class="navbar wrappable">
 						<div class="navbar-inner">

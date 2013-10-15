@@ -27,7 +27,7 @@ $languages: (de, dk, gb, nl, no, se, us);
 		float: left;
 	}
 
-	a {
+	li + li a {
 		border-left: 1px solid #999;
 		padding-left: 10px;
 
