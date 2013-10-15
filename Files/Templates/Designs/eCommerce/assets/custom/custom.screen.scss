@@ -39,12 +39,12 @@ $button-text-color: #545649;
 
 
 /* Gray buttons */
-.dw-button-green {
+.btn-primary {
 	@include button($button-background-color, $button-text-color, $button-gradient-color-top, $button-gradient-color-bottom);
 	border:1px solid #DFE4E7
 }
 	
-.dw-button-green:active,.dw-button-green:hover{
+.btn-primary:active,.btn-primary:hover{
 	background: $button-background-color;
 	color: $button-text-color;
 	border:1px solid #DFE4E7;

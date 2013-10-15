@@ -40,7 +40,7 @@ a.dw-button {
 }
 
 // Button color styles
-.dw-button-green {
+.btn-primary {
 	@include bg-gradient(#00DD11, #009209);
 	border-color: #56a201;
 	text-shadow: 0 -1px 2px #299630;
@@ -51,7 +51,7 @@ a.dw-button {
 		color: white;
 	}
 }
-.dw-button-gray {
+.btn-default {
 	@include bg-gradient(#F9F9F9, #E7E9EB);
 	border-color: rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25);
 	text-shadow: 0 1px 1px #ffffff;
@@ -59,17 +59,5 @@ a.dw-button {
 
 	&:active, &:hover {
 		background: #e7e9eb;
-	}
-}
-
-.dw-button-orange {
-	@include bg-gradient(#FB9E25, #FF8500);
-	border-color: #FF8500;
-	text-shadow: 1px 1px 0 #cc9f52;
-	@include box-shadow(1px 1px 2px #fcbf70);
-	color: #fff !important;
-
-	&:active, &:hover {
-		background: #FF8500;
 	}
 }

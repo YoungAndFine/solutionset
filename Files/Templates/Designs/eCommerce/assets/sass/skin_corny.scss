@@ -2,17 +2,17 @@
 
 // Primary colors
 // Used to change this color to change e.g. h1 colors, and product header color in productlist
-$primary-color: #55564A;
+$primary-color: #0085CA;
 $primary-color-inverted: #FFF;
 
 // Menu colors top and bottom.
-$menu-gradient-color-top: #F9F9F9;  $menu-gradient-color-bottom: #E7E9EB;
+$menu-gradient-color-top: #01b7a0; $menu-gradient-color-bottom: #00fede;
 
 // Button colors top and bottom.
-$button-gradient-color-top: #F9F9F9;  $button-gradient-color-bottom: #E7E9EB;
+$button-gradient-color-top: #e68f01;  $button-gradient-color-bottom: #ff9e01;
 
 .mainmenu-wrapper {
-	@include bg-gradient($menu-gradient-color-bottom, $menu-gradient-color-top);
+	@include bg-gradient($menu-gradient-color-top, $menu-gradient-color-bottom );
 	border-color: rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25);
 	}
 	
@@ -35,13 +35,18 @@ $button-gradient-color-top: #F9F9F9;  $button-gradient-color-bottom: #E7E9EB;
 
 	&:active, &:hover {
 		background: $button-gradient-color-top;
-		color: $primary-color;
+		color: $primary-color-inverted;
 	}
 }
 
 .btn-default {
+	@include bg-gradient(#00b8a0, #00ffde);
+	border-color: rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25);
+	color: $primary-color;
 
 	&:active, &:hover {
+		background: #00b8a0;
+		color: $primary-color;
 	}
 }
 

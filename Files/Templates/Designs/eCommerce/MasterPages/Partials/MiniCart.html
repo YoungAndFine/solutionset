@@ -18,22 +18,28 @@
 			<div class="cart-big-normal"><i class="icon-shopping-cart"></i></div>
 		</div>
 		<div class="minicart-count">
-			<!--@Ecom:Order.OrderLines.TotalProductQuantity-->
-			
-			<!--@If(Ecom:Order.OrderLines.TotalProductQuantity=1)-->
-				<!--@Translate(productSingle, "product")-->:
-			<!--@EndIf-->
-			<!--@If(Ecom:Order.OrderLines.TotalProductQuantity>1)-->
-				<!--@Translate(productMultiple, "products")-->:
-			<!--@EndIf-->
-				
-			<!--BEMÆRK UDREGNER FØRST RABAT TIL SIDST I CHECKUD FORLØB-->
-			<!--@Ecom:Order.OrderLines.Total.PriceWithVAT-->
-			<div class="minicart-view">
-				<a class="dropdown-toggle" id="dLabel" role="button" data-toggle="dropdown" data-target=".minicart-popup" href="/Default.aspx?ID=<!--@Item.Area.Show_Cart_Page_ID-->">
-					<!--@Translate(showcart, "View cart")-->
-				</a>
-			</div>
+<div id="pagecart" class="paragraph">
+  <h2><!--@Translate(shoppingcart, "Shopping Cart")--></h2>
+<!--@If Defined(Ecom:Order.IsEmpty)-->
+  <span class="paragraphtext">
+        <!--@Translate(emptycart, "Your cart is empty")-->
+    </span>
+<!--@EndIf(Ecom:Order.IsEmpty)-->
+<!--@If Not Defined(Ecom:Order.IsEmpty)-->
+    <div id="counter">
+        <span id="cartcount"><!--@Translate(itemsinbasket, "Items in basket")-->: </span>
+        <span id="cartcount_value"><!--@Ecom:Order.OrderLines.TotalQuantity--></span>
+    </div>
+    <div id="amount">
+        <span id="cartamount"><!--@Translate(total, "Total")-->: </span>
+        <span id="cartamount_value"><!--@Ecom:Order.PriceWithoutFees--></span>
+    </div>
+    <div id="cartfunctions">
+        <a href="javascript:confirmation('<!--@Global:Pageview.Url-->&amp;cartcmd=emptycart','Do you want to empty your basket?');">- <!--@Translate(emptybasket, "Empty basket")--></a>
+        <a href="/default.aspx?ID=52">- <!--@Translate(showbasket, "Show basket")--></a>
+    </div>
+<!--@EndIf(Ecom:Order.IsEmpty)-->
+</div>
 		</div>
 	</div>
 
