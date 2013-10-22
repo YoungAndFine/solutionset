@@ -6,10 +6,10 @@ $primary-color: #55564A;
 $primary-color-inverted: #FFF;
 
 // Menu colors top and bottom.
-$menu-gradient-color-top: #F9F9F9;  $menu-gradient-color-bottom: #E7E9EB;
+$menu-gradient-color-top: #F9F9F9; $menu-gradient-color-bottom: #E7E9EB;
 
 // Button colors top and bottom.
-$button-gradient-color-top: #F9F9F9;  $button-gradient-color-bottom: #E7E9EB;
+$button-gradient-color-top: #F9F9F9; $button-gradient-color-bottom: #E7E9EB;
 
 .mainmenu-wrapper {
 	@include bg-gradient($menu-gradient-color-bottom, $menu-gradient-color-top);
