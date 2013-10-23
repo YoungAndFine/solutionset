@@ -422,7 +422,7 @@
 							<b>*</b><hr>
 						</label>
 						<div class="controls">
-							<input type="number" name="EcomOrderCustomerZip" id="EcomOrderCustomerZip" value="<!--@Ecom:Order.Customer.Zip-->" tabindex="5" />
+							<input type="text" name="EcomOrderCustomerZip" id="EcomOrderCustomerZip" value="<!--@Ecom:Order.Customer.Zip-->" tabindex="5" />
 							<input type="text" name="EcomOrderCustomerCity" id="EcomOrderCustomerCity" value="<!--@Ecom:Order.Customer.City-->"	 tabindex="6" />
 						</div>
 					</div>
@@ -526,7 +526,7 @@
 							<b>*</b><hr>
 						</label>
 						<div class="controls">
-							<input type="number" name="EcomOrderDeliveryZip" id="EcomOrderDeliveryZip" value="<!--@If Defined(Ecom:Order.Delivery.Zip)--><!--@Ecom:Order.Delivery.Zip--><!--@EndIf(Ecom:Order.Delivery.Zip)--><!--@If Not Defined(Ecom:Order.Delivery.Zip)--><!--@Ecom:Order.Customer.Zip--><!--@EndIf(Ecom:Order.Delivery.Zip)-->">
+							<input type="text" name="EcomOrderDeliveryZip" id="EcomOrderDeliveryZip" value="<!--@If Defined(Ecom:Order.Delivery.Zip)--><!--@Ecom:Order.Delivery.Zip--><!--@EndIf(Ecom:Order.Delivery.Zip)--><!--@If Not Defined(Ecom:Order.Delivery.Zip)--><!--@Ecom:Order.Customer.Zip--><!--@EndIf(Ecom:Order.Delivery.Zip)-->">
 							<input type="text" name="EcomOrderDeliveryCity" id="EcomOrderDeliveryCity" value="<!--@If Defined(Ecom:Order.Delivery.City)--><!--@Ecom:Order.Delivery.City--><!--@EndIf(Ecom:Order.Delivery.City)--><!--@If Not Defined(Ecom:Order.Delivery.City)--><!--@Ecom:Order.Customer.City--><!--@EndIf(Ecom:Order.Delivery.City)-->">
 						</div>
 					</div>
