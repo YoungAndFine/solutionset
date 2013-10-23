@@ -359,7 +359,9 @@
 
 <section class="products-related">
 	<div class="row-fluid">
-
+	
+		<!--@Include(Partials/Related.Products.html)--> 
+		
 		<!--@If(eCom:Related.YouHaveSeenTheseProducts.Count>0)-->
 			<!--@Include(Partials/Related.YouHaveSeenTheseProducts.html)-->
 		<!--@EndIf-->
@@ -383,10 +385,6 @@
 		<!--@If(eCom:Related.ProductSmartSearches.Count>0)-->
 			<!--@Include(Partials/Related.ProductSmartSearches.html)-->
 		<!--@EndIf-->		
-		
-	<!-- SKAL FIXES! 
-		<!--@Include(Partials/RelatedProducts.html)--> 
-	--> 
 
 	</div>
 </section>
