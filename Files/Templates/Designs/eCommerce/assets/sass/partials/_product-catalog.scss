@@ -176,7 +176,7 @@
 				.filter-content {
 					margin-bottom: 20px;
 
-					.dw-button {
+					.btn {
 						display: block;
 						width: 80%;
 						margin: 0 auto;
@@ -242,7 +242,7 @@
 		@media (min-width: 768px) and (max-width: 979px) {
 			.filter-wrapper {
 				&.filter-reset {
-					.dw-button {
+					.btn {
 						font-size: 12px !important;
 					}
 				}
@@ -1383,7 +1383,7 @@
 		.product-link {
 			font-size: 16px;
 		}
-		.dw-button {
+		.btn {
 			font-size: 12px !important;
 			padding: 0 5%;
 		}
@@ -1418,7 +1418,7 @@
 			}
 		}
 		.product-addtocart {
-			.dw-button {
+			.btn {
 				width: 100%;
 			}
 
@@ -1427,7 +1427,7 @@
 				bottom: 20px;
 				right: 10px;
 
-				.dw-button {
+				.btn {
 					height: 70px;
 					width: 60px;
 
@@ -1469,7 +1469,7 @@
 	}
 	@media (max-width: 349px) {
 		.product-addtocart {
-			.dw-button > span {
+			.btn > span {
 				padding-left: 0px !important;
 			}
 		}
@@ -1551,7 +1551,7 @@
 	}
 }
 
-.product-details-content .dw-button-gray {
+.product-details-content .btn-default {
 	float: right;
 	margin:8px 0 0 0;
 }
@@ -1640,8 +1640,8 @@
 	}
 	/* switching styles for rating/comments and stock status blocks */
 	.product-list-item-wrapper .product-price { text-align: right; }
-	.product-list-item-wrapper .product-addtocart .dw-button { float: right; }
-	.product-list-item-wrapper .product-addtocart .dw-button > span {
+	.product-list-item-wrapper .product-addtocart .btn { float: right; }
+	.product-list-item-wrapper .product-addtocart .btn > span {
 		text-align: center;
 	}
 	/* reverting fluid widthes of '.span*' blocks in the product list item */

@@ -135,7 +135,7 @@ $modal-imagesslider-width: 502px;
 			padding-top: 0;
 		}
 	}
-	.dw-button {
+	.btn {
 		float: right;
 	}
   .login-form-lostpasswordhint, .login-form-signuphint {
@@ -428,17 +428,9 @@ $modal-imagesslider-width: 502px;
 		overflow:hidden;
 		width:90%;
 		margin: 0 auto;
-		.dw-button {
+		.btn {
 			margin: 0 0 0 6%;
-			width: 40%;
-			height: 35px;
-			font-size: 18px;
-			padding: 5px 0 0 0;
-			.sprite {
-				display: inline-block;
-				position: relative;
-				top: 3px;
-			}
+			width: 82%;
 		}
 	}
 	.dont {
