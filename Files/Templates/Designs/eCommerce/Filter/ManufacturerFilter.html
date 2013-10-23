@@ -1,0 +1,11 @@
+<div id="manufacturers-filter">
+	<h3><!--@Translate(ManufacturersFilterTitle, "Manufacturers")--></h3>
+	<ul>
+		<!--@LoopStart(Ecom:Filters.Manufacturers)-->
+		<li>
+			<input type="checkbox" id="<!--@Ecom:Manufacturor.ID-->" name="<!--@Filters:Current.TagName-->" value="<!--@Ecom:Manufacturor.ID-->" <!--@Ecom:Manufacturor.CheckedState--> />
+			<label for="<!--@Ecom:Manufacturor.ID-->"><!--@Ecom:Manufacturor.Name-->&nbsp;<span>(<!--@Ecom:Manufacturor.TotalFormatted-->)</span></label>
+		</li>
+		<!--@LoopEnd(Ecom:Filters.Manufacturers)-->
+	</ul>
+</div>

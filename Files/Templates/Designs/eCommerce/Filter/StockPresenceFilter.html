@@ -1,0 +1,22 @@
+<div class="filter-wrapper">
+	<h3><!--@Filters:Current.Name--></h3>
+	<div class="filter-content">
+		<ul>
+			<li>
+				<label for="chk<!--@Filters:Current.TagName-->" class="radio">
+					<input type="radio" class="filter-option-all-value" id="chk<!--@Filters:Current.TagName-->" name="<!--@Filters:Current.TagName-->" value="" checked="checked" />
+					<!--@Translate(all, "All")-->
+				</label>
+			</li>
+			<!--@LoopStart(Ecom:Filters.StockPresence)-->
+			<li>
+				<label for="chk<!--@Filters:Current.TagName--><!--@Ecom:Filters.StockPresence.LoopCounter-->" class="radio">
+					<input type="radio" id="chk<!--@Filters:Current.TagName--><!--@Ecom:Filters.StockPresence.LoopCounter-->" class="filter-option-value" name="<!--@Filters:Current.TagName-->" value="<!--@Ecom:Filters.StockPresence.Value-->"<!--@If Defined(Ecom:Filters.StockPresence.Selected)--> checked="checked"<!--@EndIf(Ecom:Filters.StockPresence.Selected)--> />
+					<!--@Ecom:Filters.StockPresence.Label-->
+					<span class="badge"><!--@Ecom:Filters.StockPresence.TotalFormatted--></span>
+				</label>
+			</li>
+			<!--@LoopEnd(Ecom:Filters.StockPresence)-->
+		</ul>
+	</div>
+</div>
