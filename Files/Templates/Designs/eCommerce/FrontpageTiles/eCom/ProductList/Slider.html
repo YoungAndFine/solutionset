@@ -7,7 +7,7 @@
 				<div class="span3">
 					<div class="box-rounded product-list-item-wrapper">
 						<div class="box-content">
-							<a href="<!--@Ecom:Product.LinkGroup.Clean-->" class="product-link">
+							<a href="Default.aspx?ID=<!--@Item.Area.Products_Catalog_Page_ID-->&ProductID=<!--@Ecom:Product.ID-->" class="product-link">
 								<img src="/Admin/Public/getimage.ashx?Image=<!--@Ecom:Product.ImageSmall.Clean-->&amp;Height=230" alt="" />
 							</a>
 							<div class="box-overlay">
@@ -20,9 +20,13 @@
 								<!--@Include(../../../eCom/ProductList/Partials/ProductPrice.html)-->
 
 								<div class="product-action">
+								<!--@If(1=0)-->
 									<button type="button" class="btn btn-primary" <!--@If(Ecom:Product.VariantCount>0)-->data-toggle="modal" data-target="#productVariantChooser<!--@Ecom:Product.ID-->"<!--@EndIf--><!--@If(Ecom:Product.VariantCount==0)-->onclick="$.addToCart(this)"<!--@EndIf-->>
 										<!--@Translate(AddToCart, "Add to cart")-->
 									</button>
+								<!--@Else-->
+									<a href="Default.aspx?ID=<!--@Item.Area.Products_Catalog_Page_ID-->&ProductID=<!--@Ecom:Product.ID-->" class="btn btn-primary"><!--@Translate(Details, "Details")--></a>
+								<!--@EndIf-->
 								</div>
 								<!--@Else-->
 									<!--@Translate(PleaseLoginToSeePrice, "Please login to see price")-->
