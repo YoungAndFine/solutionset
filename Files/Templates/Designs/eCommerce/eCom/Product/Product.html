@@ -359,8 +359,9 @@
 
 <section class="products-related">
 	<div class="row-fluid">
-	
-		<!--@Include(Partials/Related.Products.html)--> 
+		<!--@If(Ecom:Product.RelatedCount>0)-->
+			<!--@Include(Partials/Related.Products.html)-->
+		<!--@EndIf-->
 		
 		<!--@If(eCom:Related.YouHaveSeenTheseProducts.Count>0)-->
 			<!--@Include(Partials/Related.YouHaveSeenTheseProducts.html)-->
