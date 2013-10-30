@@ -55,16 +55,16 @@
 		<div class="row-fluid">
 				<div class="span3 pad">
 						<!--@If Defined(UserManagement:User.ManageAddresses.AddAddress)-->
-								<input type="submit" class="dw-button btn-primary dw-button-small cl" id="submitter" value="<!--@Translate(addaddress, "Add address")-->" />
+								<input type="submit" class="btn btn-primary btn-small cl" id="submitter" value="<!--@Translate(addaddress, "Add address")-->" />
 						<!--@EndIf(UserManagement:User.ManageAddresses.AddAddress)-->
 						<!--@If Defined(UserManagement:User.ManageAddresses.UpdateAddress)-->
-								<input type="submit" class="dw-button btn-primary dw-button-small cl" id="submit1" value="<!--@Translate(updateaddress, "Update address")-->" />
+								<input type="submit" class="btn btn-primary btn-small cl" id="submit1" value="<!--@Translate(updateaddress, "Update address")-->" />
 						<!--@EndIf(UserManagement:User.ManageAddresses.UpdateAddress)-->
 						<!--@UserManagement:User.ManageAddresses.FormEnd-->
 				</div>
 				<div class="span5">
 						<!--@If Defined(UserManagement:User.ManageAddresses.DetailUrl)-->
-							<a href="<!--@UserManagement:User.ManageAddresses.DetailUrl-->" class="dw-button btn-primary dw-button-small cl"><!--@Translate(backtoaddresses, "Back to addresses")--></a>
+							<a href="<!--@UserManagement:User.ManageAddresses.DetailUrl-->" class="btn btn-primary btn-small cl"><!--@Translate(backtoaddresses, "Back to addresses")--></a>
 						<!--@EndIf(UserManagement:User.ManageAddresses.DetailUrl)-->
 				</div>
 		</div>
