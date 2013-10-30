@@ -1,4 +1,4 @@
-<div class="row-fluid">
+<div id="product-list" class="row-fluid">
 	<!--@LoopStart(Products)-->
 	<!--@If(Ecom:Product.IsInCart=="True")--><!--@EndIf-->
 	<section class="product-list-item-wrapper mode-tiles">
@@ -22,7 +22,7 @@
 					<!--@Translate(exVATpaymentShippingFees, 'Ex. VAT, shipping and payment fees')-->
 				</div>
 			<!--@EndIf(Item.Area.Show_Price_With_VAT)-->
-			
+
 			<div class="product-addtocart <!--@If Defined(Ecom:Product.IsInCart)-->product-incart<!--@EndIf(Ecom:Product.IsInCart)-->">
 				<button type="button" class="btn btn-primary" <!--@If(Ecom:Product.VariantCount>0)-->data-toggle="modal" data-target="#productVariantChooser<!--@Ecom:Product.ID-->"<!--@EndIf--><!--@If(Ecom:Product.VariantCount==0)-->onclick="$.addToCart(this)"<!--@EndIf-->>
 					<!--@Translate(AddToCart, "Add to cart")-->
