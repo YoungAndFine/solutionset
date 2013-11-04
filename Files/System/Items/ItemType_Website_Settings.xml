@@ -160,6 +160,7 @@
       </field>
     </fields>
     <rules>
+      <rule name="Allow in websites" type="Dynamicweb.Content.Items.Activation.AreaRestrictionRule, Dynamicweb" value="*" />
       <rule name="Limit item type to" type="Dynamicweb.Content.Items.Activation.StructureRestrictionRule, Dynamicweb" value="Websites" />
     </rules>
     <layout>
