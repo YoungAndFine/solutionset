@@ -1,0 +1,19 @@
+<!--@If Defined(Item.Image)-->
+	<img src="http://<!--@Global:Request.Host-->/<!--@Item.Image-->"
+		width="292" height="205" alt="Image Caption" border="0" hspace="0" vspace="0" style="vertical-align:top;" class="col-3-img" />
+<!--@EndIf-->
+
+<!--@If Defined(ParagraphImageClean)-->
+	<img src="http://<!--@Global:Request.Host-->/<!--@ParagraphImageClean-->"
+		width="292" height="205" alt="Image Caption" border="0" hspace="0" vspace="0" style="vertical-align:top;" class="col-3-img" />
+<!--@EndIf-->
+<p style="font-family:'Arial';">
+	<!--@If Defined(Item.Content)-->
+		<!--@Item.Content-->
+	<!--@EndIf-->
+	
+	<!--@If Defined(ParagraphText)-->
+		<!--@ParagraphText-->
+	<!--@EndIf-->
+</p>
+<hr/>

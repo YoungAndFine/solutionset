@@ -1,0 +1,29 @@
+﻿<br/>
+<p>
+	<b style="font-family:'Arial'; line-height:20px;font-size:18px; color:#00415f;">
+	<!--@If Defined(Item.Header)-->
+		<!--@Item.Header-->
+	<!--@EndIf-->
+	
+	<!--@If Defined(ParagraphHeader)-->
+		<!--@ParagraphHeader-->
+	<!--@EndIf-->
+	</b>
+</p>
+<!--@If Defined(Item.Image)-->
+	<img src="http://<!--@Global:Request.Host-->/<!--@Item.Image-->"width="292" height="205" alt="Image Caption" border="0" hspace="0" vspace="0" style="vertical-align:top;" class="col-3-img" />
+<!--@EndIf-->
+
+<!--@If Defined(ParagraphImageClean)-->
+	<img src="http://<!--@Global:Request.Host-->/<!--@ParagraphImageClean-->"width="292" height="205" alt="Image Caption" border="0" hspace="0" vspace="0" style="vertical-align:top;" class="col-3-img" />
+<!--@EndIf-->
+<p style="font-family:'Arial';">
+	<!--@If Defined(Item.Content)-->
+		<!--@Item.Content-->
+	<!--@EndIf-->
+	
+	<!--@If Defined(ParagraphText)-->
+		<!--@ParagraphText-->
+	<!--@EndIf-->
+</p>
+<hr/>

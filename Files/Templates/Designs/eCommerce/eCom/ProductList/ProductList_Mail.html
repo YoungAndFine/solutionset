@@ -1,0 +1,17 @@
+﻿<!--@LoopStart(Products)-->
+<td align="left" valign="top" style="font-size:13px; line-height: 20px; font-family: Arial, sans-serif;"> 
+	<a href="http://<!--@Global:Request.Host-->/Default.aspx?ID=48&ProductID=<!--@Ecom:Product.ID-->" title="<!--@Ecom:Product.Name-->" class="thumbnail">
+		<img src="<!--@If Defined(Ecom:Product.LinkGroup.Clean)-->http://<!--@Global:Request.Host-->/Files/Images/Ecom/Products/<!--@Ecom:Product.Number-->.jpg
+		<!--@Else-->
+			http://internations.github.com/antwort/images/grey-175x130.png
+		<!--@EndIf-->
+			"height="130" width="175" alt="Image Caption" border="0" hspace="0" vspace="0" style="vertical-align:top; padding-bottom:12px;" class="col-3-img">
+	</a>
+  
+	<b>
+		<a href="http://<!--@Global:Request.Host-->/Default.aspx?ID=48&ProductID=<!--@Ecom:Product.ID-->" class="product-link" title="<!--@Ecom:Product.Name-->">
+			<!--@Ecom:Product.Name-->
+		</a>
+	</b>
+</td>
+<!--@LoopEnd(Products)-->
