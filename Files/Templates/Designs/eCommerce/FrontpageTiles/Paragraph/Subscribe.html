@@ -1,0 +1,27 @@
+<div class="span6">
+	<div class="box-rounded">
+		<div class="box-headline">
+			<h3><!--@Translate(SubscribeForNewsletter, "Subscribe for newsletter")--></h3>
+		</div>
+		<div class="EditUser">
+			<!--@UserManagement:User.FormStart-->
+					<div class="row-fluid">
+						<div class="span2"><!--@Translate(Name, "Name")--></div>
+						<div class="span3"><!--@UserManagement:User.Name.Input--></div>
+					</div>	
+
+					<div class="row-fluid">
+						<div class="span2"><!--@Translate(Email, "E-mail")--> <b class="star">*</b></div>
+						<div class="span3"><!--@UserManagement:User.Email.Input--></div>
+					</div>
+
+					<div class="row-fluid">
+						<div class="span2">
+							<input type="submit" id="submitter" class="btn btn-primary btn-small" value="<!--@Translate(createnewuser, "Submit")-->" />
+						</div>
+					</div>
+			<!--@UserManagement:User.FormEnd-->
+		</div>
+   
+	</div>
+</div>
