@@ -18,4 +18,5 @@ Assuming you already have a running Dynamicweb solution, follow the steps below 
 4. Edit Files/GlobalSettings.aspx and update the database settings to match your setup
 5. Rebuild the Products search index (see http://manual.dynamicweb-cms.com/Dynamicweb-On-line-Manual/Management-Center/eCommerce/Advanced-configuration/Searching.aspx)
 
-To get the cookbook visit : <a href="solutionset.dynamicweb.dk/Files/Templates/Designs/eCommerce/Documentation/DocumentationSolutionset2013.pdf"> Download </a>
+To get the cookbook : <a href="http://solutionset.dynamicweb.dk/Files/Templates/Designs/eCommerce/Documentation/DocumentationSolutionset2013.pdf"> Download </a>
+For further information see the wiki section
