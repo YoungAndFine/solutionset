@@ -1,9 +1,25 @@
 <td align="left" valign="top" style="font-size:13px; line-height: 20px; font-family: Arial, sans-serif;">
-	<img src="<!--@If Defined(ParagraphImageClean)--><!--@ParagraphImageClean-->
-				<!--@Else-->http://internations.github.com/antwort/images/grey-175x130.png<!--@EndIf-->" 
-	height="130" width="175" alt="Image Caption" border="0" hspace="0" vspace="0" style="vertical-align:top; padding-bottom:12px;" class="col-3-img">
-	
-	<b><!--@ParagraphHeader--></b><br />
-	<!--@ParagraphText-->
+		<!--@If Defined(ParagraphImageClean)-->
+				<img src="<!--@ParagraphImageClean-->"height="130" width="175" alt="Image Caption" border="0" hspace="0" vspace="0" style="vertical-align:top; padding-bottom:12px;" class="col-3-img">		
+			<!--@Else-->
+			
+			<!--@If Defined(Item.Image)-->
+				<img src="<!--@Item.Image-->"height="130" width="175" alt="Image Caption" border="0" hspace="0" vspace="0" style="vertical-align:top; padding-bottom:12px;" class="col-3-img">
+				<!--@Else-->
+					<img src="http://internations.github.com/antwort/images/grey-175x130.png"height="130" width="175" alt="Image Caption" border="0" hspace="0" vspace="0" style="vertical-align:top; padding-bottom:12px;" class="col-3-img">			
+				<!--@EndIf-->
+		<!--@EndIf-->		
+	<b>
+		<!--@If Defined(Item.Header)--><!--@Item.Header-->
+			<!--@Else--> 
+			<!--@If Defined(ParagraphHeader)--><!--@ParagraphHeader--><!--@EndIf-->
+		
+		<!--@EndIf-->
+	</b><br />
+		<!--@If Defined(Item.Content)--><!--@Item.Content-->
+			<!--@Else--> 
+			<!--@If Defined(ParagraphText)--><!--@ParagraphText--><!--@EndIf-->
+		
+		<!--@EndIf-->
 	<br />
 </td>
