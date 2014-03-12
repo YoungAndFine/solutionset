@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-16" standalone="yes"?>
 <items>
-  <item name="Website Settings" systemName="Website_Settings" description="" icon="" largeIcon="">
+  <item category="" name="Website Settings" systemName="Website_Settings" description="" icon="" largeIcon="" includeInUrlIndex="False">
     <fields>
       <field name="Logo Image" systemName="Logo_Image" description="" type="System.String, mscorlib">
         <editor type="Dynamicweb.Content.Items.Editors.FileEditor, Dynamicweb">
@@ -13,8 +13,8 @@
         </editor>
         <options sourceType="Static">
           <Static>
-            <option name="Grey" value="grey" />
-            <option name="Corny" value="corny" />
+            <option name="Grey" value="grey" icon="" />
+            <option name="Corny" value="corny" icon="" />
           </Static>
         </options>
       </field>

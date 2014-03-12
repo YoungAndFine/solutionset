@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-16" standalone="yes"?>
 <items>
-  <item name="Slider" systemName="Slider" description="" icon="" largeIcon="">
+  <item category="" name="Slider" systemName="Slider" description="" icon="" largeIcon="" includeInUrlIndex="False">
     <fields>
       <field name="Image" systemName="Image" description="" type="System.String, mscorlib">
         <editor type="Dynamicweb.Content.Items.Editors.FileEditor, Dynamicweb">

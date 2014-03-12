@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-16" standalone="yes"?>
 <items>
-  <item name="NewsletterItem" systemName="NewsletterItem" description="" icon="" largeIcon="">
+  <item category="" name="NewsletterItem" systemName="NewsletterItem" description="" icon="" largeIcon="" includeInUrlIndex="False">
     <fields>
       <field name="Header" systemName="Header" description="" type="System.String, mscorlib">
         <editor type="Dynamicweb.Content.Items.Editors.TextEditor, Dynamicweb">
