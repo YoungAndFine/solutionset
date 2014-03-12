@@ -1,0 +1,45 @@
+﻿<table style="width:100%; border:1px solid #CCC;">
+  <!--@LoopStart(OrderLines)-->
+  <tr>
+    <td align="center" style="width:50%;">
+      <img src="http://<!--@Global:Request.Host-->/Files/Images/Ecom/Products/<!--@Ecom:Product.Number-->.jpg" width="150" height="150"/>
+    </td>
+    <td> 
+      <a href ="/Default.aspx?ID=48&ProductID=<!--@Ecom:Product.ID-->" style="font-family:'Arial'; font-size:14px; color:#00415f;">
+		  <b>
+			<!--@Ecom:Order:OrderLine.ProductName.Short--><br />
+		  </b>
+	  </a>
+      
+      <i style="font-family:'Arial'; font-size:12px;">
+		  Art.nr.:
+		  <!--@Ecom:Order:OrderLine.ProductNumber-->
+		  <br/>
+	  </i>
+
+	  <b style="font-family:'Arial'; font-size:14px; color:#00415f;">
+		  <!--@Ecom:Order:OrderLine.UnitPrice-->
+		  <br /> 
+	  </b> <br /> 
+<table border="0" cellpadding="0" cellspacing="0" width="25%" style="background-color:#00415f; border:1px solid #353535; border-radius:5px;">
+    <tr>	  
+	<td align="center" valign="middle" style="color:#FFFFFF; font-family:'Arial'; font-size:12px;">
+		<a href="#" style="color:#FFFFFF; text-decoration:none;" >Bestil nu</a>
+	  </td>
+    </tr>
+</table>
+	 
+    </td>
+  </tr>   
+  <!--@LoopEnd(OrderLines)-->
+</table><br/>	
+
+<table align="right" border="0" cellpadding="0" cellspacing="0" width="25%" style="background-color:#00415f; border:1px solid #353535; border-radius:5px;">
+    <tr>	  
+	<td align="center" valign="middle" style="color:#FFFFFF; font-family:'Arial'; font-size:12px;">
+		<a href="#" style="color:#FFFFFF; text-decoration:none;" >Til Indkøbskurv</a>
+	  </td>
+    </tr>
+</table>
+<br />
+<br />
