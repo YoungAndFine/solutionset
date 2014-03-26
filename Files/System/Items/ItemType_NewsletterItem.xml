@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-16" standalone="yes"?>
 <items>
-  <item category="" name="NewsletterItem" systemName="NewsletterItem" description="" icon="" largeIcon="" includeInUrlIndex="False">
+  <item category="" name="Newsletter item" systemName="NewsletterItem" description="" icon="" largeIcon="" includeInUrlIndex="False">
     <fields>
       <field name="Header" systemName="Header" description="" type="System.String, mscorlib">
         <editor type="Dynamicweb.Content.Items.Editors.TextEditor, Dynamicweb">
@@ -8,31 +8,15 @@
         </editor>
       </field>
       <field name="Image" systemName="Image" description="" type="System.String, mscorlib">
-        <editor type="Dynamicweb.Content.Items.Editors.FileEditor, Dynamicweb">
-          <editorConfuguration><Parameters><Parameter addin="Dynamicweb.Content.Items.Editors.FileEditor" name="Base directory" value="/Images/Newsletter" /><Parameter addin="Dynamicweb.Content.Items.Editors.FileEditor" name="Extensions" value="" /></Parameters></editorConfuguration>
+        <editor type="Dynamicweb.Content.Items.Editors.LongTextEditor, Dynamicweb">
+          <editorConfuguration />
         </editor>
       </field>
       <field name="Content" systemName="Content" description="" type="System.String, mscorlib">
         <editor type="Dynamicweb.Content.Items.Editors.LongTextEditor, Dynamicweb">
-          <editorConfuguration><Parameters><Parameter addin="Dynamicweb.Content.Items.Editors.LongTextEditor" name="Rows" value="" /><Parameter addin="Dynamicweb.Content.Items.Editors.LongTextEditor" name="Cols" value="" /></Parameters></editorConfuguration>
+          <editorConfuguration />
         </editor>
       </field>
     </fields>
-    <rules>
-      <rule name="Allow in websites" type="Dynamicweb.Content.Items.Activation.AreaRestrictionRule, Dynamicweb" value="*" />
-      <rule name="Allowed parents" type="Dynamicweb.Content.Items.Activation.ParentRestrictionRule, Dynamicweb" value="RegularPage" />
-      <rule name="Enable item type for" type="Dynamicweb.Content.Items.Activation.StructureRestrictionRule, Dynamicweb" value="Websites,Pages,Paragraphs,ItemList" />
-    </rules>
-    <layout>
-      <groups>
-        <group name="General" systemName="General" collapsibleState="None">
-          <fields>
-            <field systemName="Header" />
-            <field systemName="Image" />
-            <field systemName="Content" />
-          </fields>
-        </group>
-      </groups>
-    </layout>
   </item>
 </items>
