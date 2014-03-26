@@ -36,7 +36,9 @@
                       		<!--@LoopStart(Products)-->
 							<!--@If Defined(Ecom:Product.ImageSmall.Clean)-->
 							<!--@If(Ecom:Product.VariantCount>0)-->
-								<!--@Include(../../../eCom/ProductList/Partials/AddToCartModal.html)-->
+								<!--@If(1=0)-->
+									<!--@Include(../../../eCom/ProductList/Partials/AddToCartModal.html)-->
+								<!--@EndIf-->
 							<!-- / .modal.popup-variants -->
 							<!--@EndIf-->
 							<!--@EndIf-->

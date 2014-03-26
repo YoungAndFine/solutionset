@@ -119,21 +119,21 @@
 		<li><span class="product-list-paging-separator">|</span></li>
 		<!--@EndIf-->
 
-		<!--@LoopStart(Page:Ecom.ProductList.Pages7)-->
+		<!--@LoopStart(Page:Ecom.ProductList.Pages)-->
 
-		<!--@If Defined(Page:Ecom.ProductList.Pages7.Page.IsCurrent)-->
-		<li class="product-list-paging-current"><a href="<!--@Page:Ecom.ProductList.Pages7.Page.UrlHtmlEncoded-->"><!--@Page:Ecom.ProductList.Pages7.Page.Number--></a></li>
-		<!--@EndIf(Page:Ecom.ProductList.Pages7.Page.IsCurrent)-->
+		<!--@If Defined(Page:Ecom.ProductList.Pages.Page.IsCurrent)-->
+		<li class="product-list-paging-current"><a href="<!--@Page:Ecom.ProductList.Pages.Page.UrlHtmlEncoded-->"><!--@Page:Ecom.ProductList.Pages.Page.Number--></a></li>
+		<!--@EndIf(Page:Ecom.ProductList.Pages.Page.IsCurrent)-->
 
-		<!--@If Not Defined(Page:Ecom.ProductList.Pages7.Page.IsCurrent)-->
-		<li><a class="product-list-paging-page" href="<!--@Page:Ecom.ProductList.Pages7.Page.UrlHtmlEncoded-->"><!--@Page:Ecom.ProductList.Pages7.Page.Number--></a></li>
-		<!--@EndIf(Page:Ecom.ProductList.Pages7.Page.IsCurrent)-->
+		<!--@If Not Defined(Page:Ecom.ProductList.Pages.Page.IsCurrent)-->
+		<li><a class="product-list-paging-page" href="<!--@Page:Ecom.ProductList.Pages.Page.UrlHtmlEncoded-->"><!--@Page:Ecom.ProductList.Pages.Page.Number--></a></li>
+		<!--@EndIf(Page:Ecom.ProductList.Pages.Page.IsCurrent)-->
 
-		<!--@If Not Defined(Page:Ecom.ProductList.Pages7.Page.IsLastPageGlobal)-->
+		<!--@If Not Defined(Page:Ecom.ProductList.Pages.Page.IsLastPageGlobal)-->
 		<li class="separator">|</li>
-		<!--@EndIf(Page:Ecom.ProductList.Pages7.Page.IsLastPageGlobal)-->
+		<!--@EndIf(Page:Ecom.ProductList.Pages.Page.IsLastPageGlobal)-->
 
-		<!--@LoopEnd(Page:Ecom.ProductList.Pages7)-->
+		<!--@LoopEnd(Page:Ecom.ProductList.Pages)-->
 
 		<!--@If(Page:Ecom.ProductList.TotalPages>7)-->
 		<!--@If Not Defined(Page:Ecom.ProductList.Pages7.EndsWithLastPage)-->

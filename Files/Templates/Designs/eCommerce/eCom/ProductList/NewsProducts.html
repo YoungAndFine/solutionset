@@ -1,0 +1,83 @@
+﻿<div class="span12 nospacing products-carousel">
+	<div class="row" id="productCarousel">
+		<div class="carousel-inner">
+			<div class="item">
+				<!--@LoopStart(Products)-->
+				<!--@If Defined(Ecom:Product.ImageSmall.Clean)-->
+				<div class="span3">
+					<div class="box-rounded product-list-item-wrapper">
+						<div class="box-content">
+							<a href="Default.aspx?ID=<!--@Item.Area.Products_Catalog_Page_ID-->&ProductID=<!--@Ecom:Product.ID-->" class="product-link">
+								<img src="/Admin/Public/getimage.ashx?Image=<!--@Ecom:Product.ImageSmall.Clean-->&amp;Height=230" alt="" />
+							</a>
+							<div class="box-overlay">
+								<h3 class="product-name">
+									<a href="<!--@Ecom:Product.LinkGroup.Clean-->" class="product-link"><!--@Ecom:Product.Name--></a>
+								</h3>
+
+								<!--@If(Item.Area.Require_Login_To_Show_Prices!='True' || Global:Extranet.UserID>0)-->
+
+								<!--@Include(../../../eCom/ProductList/Partials/ProductPrice.html)-->
+
+								<div class="product-action">
+								<!--@If(1=0)-->
+									<button type="button" class="btn btn-primary" <!--@If(Ecom:Product.VariantCount>0)-->data-toggle="modal" data-target="#productVariantChooser<!--@Ecom:Product.ID-->"<!--@EndIf--><!--@If(Ecom:Product.VariantCount==0)-->onclick="$.addToCart(this)"<!--@EndIf-->>
+										<!--@Translate(AddToCart, "Add to cart")-->
+									</button>
+								<!--@Else-->
+									<a href="Default.aspx?ID=<!--@Item.Area.Products_Catalog_Page_ID-->&ProductID=<!--@Ecom:Product.ID-->" class="btn btn-primary"><!--@Translate(Details, "Details")--></a>
+								<!--@EndIf-->
+								</div>
+								<!--@Else-->
+									<!--@Translate(PleaseLoginToSeePrice, "Please login to see price")-->
+								<!--@EndIf-->
+							</div>
+						</div>
+                      		<!--@LoopStart(Products)-->
+							<!--@If Defined(Ecom:Product.ImageSmall.Clean)-->
+							<!--@If(Ecom:Product.VariantCount>0)-->
+								<!--@Include(../../../eCom/ProductList/Partials/AddToCartModal.html)-->
+							<!-- / .modal.popup-variants -->
+							<!--@EndIf-->
+							<!--@EndIf-->
+							<!--@LoopEnd(Products)-->
+					</div>
+				</div>
+				<!--@EndIf-->
+				<!--@LoopEnd(Products)-->
+			</div>
+		</div>
+		<a class="carousel-control left" href="#productCarousel" data-slide="prev">&lsaquo;</a>
+		<a class="carousel-control right" href="#productCarousel" data-slide="next">&rsaquo;</a>
+	</div>
+</div>
+
+<script type="text/javascript">(function() {
+	require(['jquery', 'dynamicweb.variant'], function ($) {
+		$('.modal-type-variants').on('shown', function () {
+			var link = 'Default.aspx?ID=669&ProductID=' + $(this).data('id')
+			, div = $(this);
+
+			$('.preloader').show();
+
+			div
+				.find('.fashion_variant')
+				.append('<div class="variant_array hidden" />')
+				.append('<input class="variants-selector" type="hidden" name="variantid" >');
+
+			$.ajax({
+				url: link,
+				success: function (data) {
+					$('.preloader').hide();
+					data = data.split('//VARIANT SELECTOR');
+					eval(data[1]);
+					div.find('.fashion_variant').variantSelector();
+				}
+			});
+		})
+		$('.modal-type-variants').on('hidden', function () {
+			$(this).find('.fashion_variant').variantSelector('destroy');
+			$(this).find('.fashion_variant').html('');
+		});
+	});
+}())</script>

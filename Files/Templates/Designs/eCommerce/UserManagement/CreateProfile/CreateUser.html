@@ -28,72 +28,47 @@
 		<!--@UserManagement:User.FormStart-->
 				<div class="row-fluid">
 						<div class="span2"><!--@Translate(Username, "Username")--> <b class="star">*</b></div>
-						<div class="span3"><!--@UserManagement:User.UserName.Input--></div>
+						<div class="span10"><!--@UserManagement:User.UserName.Input--></div>
 				</div>
 
 				<div class="row-fluid">
 						<div class="span2"><!--@Translate(password, "Password")--> <b class="star">*</b></div>
-						<div class="span3"><!--@UserManagement:User.NewPassword.Input--></div>
+						<div class="span10"><!--@UserManagement:User.NewPassword.Input--></div>
 				</div>
 
 				<div class="row-fluid">
 						<div class="span2"><!--@Translate(confirmpassword, "Confirm password")--> <b class="star">*</b></div>
-						<div class="span3"><!--@UserManagement:User.NewPasswordConfirm.Input--></div>
+						<div class="span10"><!--@UserManagement:User.NewPasswordConfirm.Input--></div>
 				</div>
 
 				<div class="row-fluid">
 						<div class="span2"><!--@Translate(Name, "Name")--></div>
-						<div class="span3"><!--@UserManagement:User.Name.Input--></div>
+						<div class="span10"><!--@UserManagement:User.Name.Input--></div>
 				</div>
-  
-  				<!--@LoopStart(UserManagement:User.CustomFields)-->
-  
-				<div class="row-fluid">
-                  <!--@If(CustomField.Name==Age)-->
-                  <div class="span2"><!--@Translate(Age, "Age")--></div>
-                  <div class="span3"><!--@CustomField.Control--></div>
-                  <!--@EndIf-->
-                  
-                  <!--@Else-->                  
-                  <!--@If(CustomField.Name==Gender)-->
-                  <div class="span2"><!--@Translate(Gender, "Gender")--></div>
-                  <div class="span3"><!--@CustomField.Control--></div>										
-                  <!--@EndIf-->
-                                                        
-				</div>
-  
-  				<!--@LoopEnd(UserManagement:User.CustomFields)-->
 
 				<div class="row-fluid">
 						<div class="span2"><!--@Translate(Email, "E-mail")--> <b class="star">*</b></div>
-						<div class="span3"><!--@UserManagement:User.Email.Input--></div>
+						<div class="span10"><!--@UserManagement:User.Email.Input--></div>
 				</div>
-  
-  
-				<div class="row-fluid" style="display:none;">
-						<div class="span2"><!--@Translate(AllowEmail, "Allow E-mail")--></div>
-                  		<div class="span3"><input type="radio"></div>
-				</div>
-  
 
 				<div class="row-fluid">
 						<div class="span2"><!--@Translate(Address, "Address")--> <b class="star">*</b></div>
-						<div class="span3"><!--@UserManagement:User.Address.Input--></div>
+						<div class="span10"><!--@UserManagement:User.Address.Input--></div>
 				</div>
 
 				<div class="row-fluid">
 						<div class="span2"><!--@Translate(Zip, "Zip")--> <b class="star">*</b></div>
-						<div class="span3"><!--@UserManagement:User.Zip.Input--></div>
+						<div class="span10"><!--@UserManagement:User.Zip.Input--></div>
 				</div>
 
 				<div class="row-fluid">
 						<div class="span2"><!--@Translate(City, "City")--> <b class="star">*</b></div>
-						<div class="span3"><!--@UserManagement:User.City.Input--></div>
+						<div class="span10"><!--@UserManagement:User.City.Input--></div>
 				</div>
 
 				<div class="row-fluid">
 						<div class="span2"><!--@Translate(Country, "Country")--></div>
-						<div class="span3">
+						<div class="span10">
 								<select name="CustomField.AccessUser_AccessUser_Country2" id="CustomField.AccessUser_AccessUser_Country2">
 										<option value="1" selected="selected"><!--@Translate(denmark, "Denmark")--></option>
 										<option value="2"><!--@Translate(finland, "Finland")--></option>
@@ -107,15 +82,14 @@
 
 				<div class="row-fluid">
 						<div class="span2"><!--@Translate(Phone, "Phone")--></div>
-						<div class="span3"><!--@UserManagement:User.Phone.Input--></div>
+						<div class="span10"><!--@UserManagement:User.Phone.Input--></div>
 				</div>
 
 				<div class="row-fluid">
 						<div class="span2">&nbsp;</div>
-						<div class="span3">
-								<input type="submit" id="submitter" class="btn btn-primary btn-small" value="<!--@Translate(createnewuser, "Submit")-->" />
+						<div class="span10">
+								<input type="submit" id="submitter" class="dw-button btn-primary dw-button-small" value="<!--@Translate(createnewuser, "Submit")-->" />
 						</div>
 				</div>
-				<input style="display:none;" name="<!--@UserManagement:User.EmailAllowed.InputName-->" type="checkbox" id="<!--@UserManagement:User.EmailAllowed.InputName-->" value="True" checked="checked" />
 		<!--@UserManagement:User.FormEnd-->
 </div>

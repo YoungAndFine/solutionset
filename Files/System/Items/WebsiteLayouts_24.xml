@@ -1,0 +1,8 @@
+﻿<WebsiteItemLayouts>
+  <PageItemLayouts>
+    <ItemLayout systemname="Slider" template="" />
+  </PageItemLayouts>
+  <ParagraphItemLayouts>
+    <ItemLayout systemname="Slider" template="" />
+  </ParagraphItemLayouts>
+</WebsiteItemLayouts>

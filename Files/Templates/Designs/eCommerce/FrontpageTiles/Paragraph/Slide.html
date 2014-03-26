@@ -4,7 +4,7 @@
 	 <a href="<!--@Item.Link-->">
 		<span class="hidden buttonName"><!--@Item.ButtonName--></span>
 		<!--@If Defined(Item.Image)-->
-		<img alt="" data-src="<!--@Item.Image-->" data-sizes="{'w1200':'original','w768':[750],'w480':[480]}">
+		<img alt="" src="<!--@Item.Image-->" data-sizes="{'w1200':'original','w768':[750],'w480':[480]}">
 		<!--@EndIf(Item.Image)-->
 		<!--@If Not Defined(Item.Image)-->
 		<img src="<!--@ParagraphImageClean-->" alt="">

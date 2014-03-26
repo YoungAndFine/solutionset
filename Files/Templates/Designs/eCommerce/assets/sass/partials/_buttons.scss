@@ -13,6 +13,32 @@
  *
  */
 
+// General button styles
+.dw-button {
+  @include rounded-borders(#CCC);
+	@include box-shadow(1px 1px 2px #c3c3c3);
+	color: #fff;
+	cursor: pointer;
+	display: inline-block;
+	font: bold 14px/31px arial !important;
+	height: 33px;
+	padding-left: 20px;
+	padding-right: 20px;
+	text-align: center;
+	text-decoration: none;
+	white-space: inherit !important;
+
+	&.dw-button-small {
+		height: 26px;
+		line-height: 26px !important;
+		padding: 0 12px !important;
+		width: auto;
+	}
+}
+a.dw-button {
+	text-decoration: none;
+}
+
 // Button color styles
 .btn-primary {
 	@include bg-gradient(#00DD11, #009209);
